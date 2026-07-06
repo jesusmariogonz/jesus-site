@@ -1,0 +1,423 @@
+/* ============================================
+   Tokens de diseño
+   ============================================ */
+:root {
+  --bg: #f6f7f5;
+  --surface: #ffffff;
+  --ink: #131a22;
+  --ink-soft: #4d5661;
+  --meta: #6b7480;
+  --line: #e1e4df;
+  --accent: #1c48c9;
+  --accent-soft: #e8edfb;
+  --code-bg: #0f1626;
+  --code-ink: #d8e0ee;
+  --radius: 10px;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --font-sans: "Archivo", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+.container {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ============================================
+   Header
+   ============================================ */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.wordmark {
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.wordmark:hover {
+  text-decoration: none;
+}
+.wordmark .cursor {
+  color: var(--accent);
+}
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.site-nav a {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+.site-nav a:hover {
+  color: var(--ink);
+  background: var(--accent-soft);
+  text-decoration: none;
+}
+.site-nav a[aria-current="page"] {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* ============================================
+   Firma visual: metadatos estilo comentario SQL
+   ============================================ */
+.sql-meta {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--meta);
+  letter-spacing: 0.01em;
+}
+.sql-meta::before {
+  content: "-- ";
+  color: var(--accent);
+}
+
+/* ============================================
+   Hero (Inicio)
+   ============================================ */
+.hero {
+  padding: 72px 0 56px;
+}
+.hero h1 {
+  font-size: clamp(2.1rem, 5.5vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+  margin: 14px 0 18px;
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--accent);
+}
+.hero p.lede {
+  font-size: 1.12rem;
+  color: var(--ink-soft);
+  max-width: 56ch;
+  margin: 0 0 28px;
+}
+
+.query-card {
+  background: var(--code-bg);
+  color: var(--code-ink);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
+  line-height: 1.75;
+  overflow-x: auto;
+  box-shadow: 0 12px 32px rgba(15, 22, 38, 0.18);
+}
+.query-card .kw {
+  color: #7fb4ff;
+}
+.query-card .str {
+  color: #9ee0a8;
+}
+.query-card .cmt {
+  color: #6b7893;
+}
+
+/* ============================================
+   Secciones y tarjetas
+   ============================================ */
+.section {
+  padding: 40px 0 56px;
+}
+.section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 6px 0 22px;
+}
+
+.post-list {
+  display: grid;
+  gap: 14px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.post-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.post-card:hover {
+  border-color: var(--accent);
+}
+.post-card h3 {
+  margin: 8px 0 6px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+.post-card h3 a {
+  color: var(--ink);
+}
+.post-card p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 26px;
+}
+.chip {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink-soft);
+}
+.chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+}
+.chip.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* ============================================
+   Artículo (post del blog)
+   ============================================ */
+.article {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 56px 0 72px;
+}
+.article header h1 {
+  font-size: clamp(1.7rem, 4.5vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin: 12px 0 30px;
+}
+.prose h2 {
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+  margin-top: 2.2em;
+}
+.prose h3 {
+  font-size: 1.1rem;
+  margin-top: 1.8em;
+}
+.prose p,
+.prose li {
+  color: #29313b;
+}
+.prose img {
+  max-width: 100%;
+  border-radius: var(--radius);
+}
+.prose blockquote {
+  margin: 1.5em 0;
+  padding: 4px 20px;
+  border-left: 3px solid var(--accent);
+  color: var(--ink-soft);
+}
+.prose code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--accent-soft);
+  padding: 2px 6px;
+  border-radius: 5px;
+}
+.prose pre {
+  background: var(--code-bg);
+  color: var(--code-ink);
+  padding: 18px 20px;
+  border-radius: var(--radius);
+  overflow-x: auto;
+  line-height: 1.6;
+}
+.prose pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+  font-size: 0.84rem;
+}
+.prose table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.92rem;
+}
+.prose th,
+.prose td {
+  border: 1px solid var(--line);
+  padding: 8px 12px;
+  text-align: left;
+}
+.prose th {
+  background: var(--surface);
+}
+
+/* ============================================
+   Proyectos
+   ============================================ */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+}
+.project-card h3 {
+  margin: 10px 0 8px;
+  font-size: 1.08rem;
+  letter-spacing: -0.015em;
+}
+.project-card p {
+  margin: 0 0 14px;
+  color: var(--ink-soft);
+  font-size: 0.93rem;
+}
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 3px 9px;
+  border-radius: 5px;
+}
+
+/* ============================================
+   Botones y utilidades
+   ============================================ */
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 11px 22px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+.btn:hover {
+  text-decoration: none;
+  filter: brightness(1.1);
+}
+.btn.ghost {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.pdf-frame {
+  width: 100%;
+  height: 75vh;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+  max-width: 480px;
+}
+.contact-list li {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.contact-list .label {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--meta);
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.site-footer {
+  border-top: 1px solid var(--line);
+  margin-top: 40px;
+  padding: 28px 0 40px;
+  color: var(--meta);
+  font-size: 0.88rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .post-card {
+    transition: none;
+  }
+}
