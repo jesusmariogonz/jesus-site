@@ -1,0 +1,25 @@
+---
+titulo: "Arquitectura Medallion: bronce, plata y oro"
+fecha: "2026-07-07"
+categoria: "arquitectura"
+resumen: "Cómo organizar las capas de un data lake y por qué funciona."
+---
+
+Cuando diseñas un data lake, la pregunta clave es dónde vive cada
+transformación. La arquitectura Medallion propone tres capas:
+
+![Diagrama de las capas bronce, plata y oro](/blog/diagrama-medallion.png)
+
+## Capa bronce
+
+Datos crudos, tal como llegan de la fuente. Sin limpiar, sin juzgar.
+
+## Capa plata
+
+Datos limpios y validados. Aquí viven las reglas de negocio.
+
+Puedes poner otra imagen donde quieras:
+
+![Captura del pipeline en Databricks](/blog/captura-pipeline.png)
+
+![Texto descriptivo](/blog/nombre-del-archivo.png)
