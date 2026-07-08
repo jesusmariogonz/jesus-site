@@ -1,0 +1,451 @@
+/* ═══════════════════════════════════════════════════════════════
+   inicio.css — estilos de las secciones nuevas del inicio
+   Todo va con prefijo jx- para no chocar con tus clases actuales.
+   Impórtalo una vez en app/layout.js:  import "./inicio.css";
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  --font-signature: "Great Vibes", cursive;
+  --jx-bg: #0b1220;
+  --jx-panel: #101a2c;
+  --jx-panel-2: #0d1524;
+  --jx-border: #24344d;
+  --jx-text: #e2e8f0;
+  --jx-muted: #8fa3bd;
+  --jx-faint: #5c6f8a;
+  --jx-accent: #60a5fa;
+  --jx-green: #34d399;
+  --jx-yellow: #facc15;
+}
+html:not(.dark) {
+  --jx-bg: #f6f8fb;
+  --jx-panel: #ffffff;
+  --jx-panel-2: #eef2f7;
+  --jx-border: #d4dce8;
+  --jx-text: #16233a;
+  --jx-muted: #4a5d78;
+  --jx-faint: #7d8ea6;
+  --jx-accent: #2563eb;
+  --jx-green: #059669;
+  --jx-yellow: #b45309;
+}
+
+/* ── Propuesta 6: textura de puntos + firma ─────────────────── */
+.dot-grid {
+  background-color: var(--jx-bg);
+  background-image: radial-gradient(
+    circle,
+    rgba(148, 163, 184, 0.13) 1px,
+    transparent 1px
+  );
+  background-size: 28px 28px;
+}
+html:not(.dark) .dot-grid {
+  background-image: radial-gradient(
+    circle,
+    rgba(71, 85, 105, 0.1) 1px,
+    transparent 1px
+  );
+}
+
+.signature {
+  font-family: var(--font-signature);
+  line-height: 1.15;
+  font-weight: 400;
+}
+
+/* ── Utilidades comunes ─────────────────────────────────────── */
+.jx-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.cursor-blink {
+  animation: jx-blink 1s step-end infinite;
+}
+@keyframes jx-blink {
+  50% { opacity: 0; }
+}
+
+/* ── Propuesta 1 + foto/firma: HERO ─────────────────────────── */
+.jx-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.2rem;
+  padding-top: 4.5rem;
+  text-align: center;
+}
+@media (min-width: 720px) {
+  .jx-hero {
+    flex-direction: row;
+    text-align: left;
+    padding-top: 6rem;
+  }
+}
+.jx-hero > * {
+  animation: jx-fade-up 0.7s ease-out both;
+}
+.jx-hero > *:nth-child(2) { animation-delay: 0.15s; }
+@keyframes jx-fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.jx-foto-anillo {
+  position: relative;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  padding: 4px;
+  background: linear-gradient(135deg, rgba(96,165,250,.7), rgba(52,211,153,.7));
+  box-shadow: 0 12px 40px rgba(0, 20, 60, 0.35);
+}
+.jx-foto {
+  display: block;
+  width: 190px;
+  height: 190px;
+  border-radius: 9999px;
+  object-fit: cover;
+}
+.jx-firma {
+  font-size: clamp(2.6rem, 6vw, 3.6rem);
+  color: var(--jx-text);
+  margin: 0;
+}
+.jx-hero h1 {
+  margin: 0.8rem 0 0;
+  font-size: clamp(1.5rem, 3.4vw, 2.1rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--jx-text);
+}
+.jx-hero h1 .jx-typed {
+  color: var(--jx-accent);
+}
+.jx-hero p.jx-intro {
+  margin: 0.9rem 0 0;
+  max-width: 34rem;
+  color: var(--jx-muted);
+  line-height: 1.6;
+}
+
+/* ── Propuesta 2: TERMINAL SQL ──────────────────────────────── */
+.jx-sql {
+  margin: 3rem auto 0;
+  max-width: 640px;
+  border: 1px solid var(--jx-border);
+  border-radius: 14px;
+  background: var(--jx-panel);
+  box-shadow: 0 24px 60px rgba(0, 15, 45, 0.35);
+  overflow: hidden;
+}
+.jx-sql-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1rem;
+  background: var(--jx-panel-2);
+  border-bottom: 1px solid var(--jx-border);
+}
+.jx-sql-bar i {
+  width: 11px;
+  height: 11px;
+  border-radius: 9999px;
+  display: inline-block;
+}
+.jx-sql-bar i:nth-child(1) { background: #f87171; }
+.jx-sql-bar i:nth-child(2) { background: #fbbf24; }
+.jx-sql-bar i:nth-child(3) { background: #34d399; }
+.jx-sql-bar span {
+  margin-left: 0.6rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  color: var(--jx-faint);
+}
+.jx-sql-body {
+  padding: 1rem 1.25rem 1.25rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.85rem;
+  line-height: 1.9;
+}
+.jx-sql-line {
+  white-space: pre;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  color: var(--jx-text);
+}
+.jx-sql.is-on .jx-sql-line {
+  opacity: 1;
+  transform: none;
+}
+.jx-sql-line .n {
+  color: var(--jx-faint);
+  margin-right: 0.8rem;
+  user-select: none;
+}
+.jx-sql-line .kw { color: var(--jx-accent); }
+.jx-sql-status {
+  min-height: 1.4rem;
+  margin-top: 0.6rem;
+  font-size: 0.72rem;
+}
+.jx-sql-status .run { color: var(--jx-yellow); }
+.jx-sql-status .ok  { color: var(--jx-green); }
+.jx-sql-result {
+  margin-top: 0.5rem;
+  border: 1px solid var(--jx-border);
+  border-radius: 10px;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+.jx-sql.is-done .jx-sql-result {
+  max-height: 240px;
+  opacity: 1;
+}
+.jx-sql-result table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+}
+.jx-sql-result td {
+  padding: 0.5rem 0.8rem;
+}
+.jx-sql-result tr:nth-child(odd)  { background: var(--jx-panel-2); }
+.jx-sql-result tr:nth-child(even) { background: transparent; }
+.jx-sql-result td:first-child { color: var(--jx-green); white-space: nowrap; }
+.jx-sql-result td:last-child  { color: var(--jx-text); }
+
+/* ── Propuesta 3: STATS ─────────────────────────────────────── */
+.jx-stats {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 1.5rem;
+  border-top: 1px solid var(--jx-border);
+  border-bottom: 1px solid var(--jx-border);
+  padding: 2rem 0;
+}
+@media (min-width: 640px) {
+  .jx-stats { grid-template-columns: repeat(4, 1fr); }
+}
+.jx-stat { text-align: center; }
+.jx-stat b {
+  display: block;
+  font-size: 1.9rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--jx-text);
+}
+.jx-stat small {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.72rem;
+  color: var(--jx-faint);
+  line-height: 1.4;
+}
+
+/* ── Propuesta 4: NOTAS ─────────────────────────────────────── */
+.jx-notas { margin-top: 4rem; }
+.jx-notas-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 1.4rem;
+}
+.jx-notas-head h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--jx-text);
+}
+.jx-notas-head a {
+  font-size: 0.85rem;
+  color: var(--jx-accent);
+  text-decoration: none;
+}
+.jx-notas-head a:hover { text-decoration: underline; }
+
+.jx-notas-grid {
+  display: grid;
+  gap: 1.2rem;
+}
+@media (min-width: 720px) {
+  .jx-notas-grid { grid-template-columns: 3fr 2fr; }
+}
+.jx-nota,
+.jx-nota-mini {
+  display: block;
+  border-radius: 16px;
+  border: 1px solid var(--jx-border);
+  text-decoration: none;
+  transition: transform 0.25s ease, border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.jx-nota:hover,
+.jx-nota-mini:hover {
+  transform: translateY(-4px);
+  border-color: var(--jx-accent);
+  box-shadow: 0 18px 45px rgba(0, 15, 45, 0.3);
+}
+.jx-nota {
+  position: relative;
+  overflow: hidden;
+  padding: 1.5rem;
+  background: linear-gradient(140deg, var(--jx-panel), var(--jx-panel-2));
+}
+.jx-nota::after {
+  content: "";
+  position: absolute;
+  top: -3rem;
+  right: -3rem;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(96,165,250,0.16), transparent 70%);
+  pointer-events: none;
+}
+.jx-nota h3 {
+  margin: 0.8rem 0 0;
+  font-size: 1.15rem;
+  color: var(--jx-text);
+  line-height: 1.35;
+}
+.jx-nota:hover h3 { color: var(--jx-accent); }
+.jx-nota p {
+  margin: 0.6rem 0 0;
+  font-size: 0.87rem;
+  color: var(--jx-muted);
+  line-height: 1.55;
+}
+.jx-nota-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.jx-nota-mini {
+  flex: 1;
+  padding: 1.1rem 1.2rem;
+  background: var(--jx-panel);
+}
+.jx-nota-mini h3 {
+  margin: 0.55rem 0 0;
+  font-size: 0.9rem;
+  color: var(--jx-text);
+  line-height: 1.4;
+}
+.jx-nota-mini:hover h3 { color: var(--jx-accent); }
+.jx-meta {
+  margin-top: 0.9rem;
+  font-size: 0.72rem;
+  color: var(--jx-faint);
+}
+
+/* pills por categoría */
+.jx-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.18rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border: 1px solid;
+}
+.jx-pill-snowflake  { color: #7dd3fc; border-color: rgba(125,211,252,.35); background: rgba(14,165,233,.12); }
+.jx-pill-databricks { color: #fdba74; border-color: rgba(253,186,116,.35); background: rgba(249,115,22,.12); }
+.jx-pill-azure      { color: #93c5fd; border-color: rgba(147,197,253,.35); background: rgba(59,130,246,.12); }
+.jx-pill-fintech    { color: #6ee7b7; border-color: rgba(110,231,183,.35); background: rgba(16,185,129,.12); }
+.jx-pill-opinion    { color: #c4b5fd; border-color: rgba(196,181,253,.35); background: rgba(139,92,246,.12); }
+.jx-pill-default    { color: var(--jx-muted); border-color: var(--jx-border); background: var(--jx-panel-2); }
+html:not(.dark) .jx-pill-snowflake  { color: #0369a1; }
+html:not(.dark) .jx-pill-databricks { color: #c2410c; }
+html:not(.dark) .jx-pill-azure      { color: #1d4ed8; }
+html:not(.dark) .jx-pill-fintech    { color: #047857; }
+html:not(.dark) .jx-pill-opinion    { color: #6d28d9; }
+
+/* ── Propuesta 5: CTA ───────────────────────────────────────── */
+.jx-cta {
+  margin: 5rem auto 5rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid var(--jx-border);
+  background: linear-gradient(140deg, var(--jx-panel), var(--jx-panel-2));
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.jx-cta .jx-cta-firma {
+  font-size: 2.4rem;
+  color: var(--jx-text);
+  margin: 0;
+}
+.jx-cta p {
+  margin: 0.8rem auto 0;
+  max-width: 26rem;
+  font-size: 0.88rem;
+  color: var(--jx-muted);
+  line-height: 1.55;
+}
+.jx-cta-botones {
+  margin-top: 1.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+}
+.jx-btn {
+  display: inline-block;
+  padding: 0.65rem 1.3rem;
+  border-radius: 10px;
+  font-size: 0.87rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.jx-btn-primario {
+  background: var(--jx-accent);
+  color: #fff;
+}
+.jx-btn-primario:hover { filter: brightness(1.12); }
+.jx-btn-secundario {
+  border: 1px solid var(--jx-border);
+  color: var(--jx-muted);
+}
+.jx-btn-secundario:hover {
+  border-color: var(--jx-muted);
+  color: var(--jx-text);
+}
+
+/* ── Propuesta 6: TOGGLE DE TEMA ────────────────────────────── */
+.jx-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid var(--jx-border);
+  background: transparent;
+  color: var(--jx-muted);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.jx-toggle:hover {
+  border-color: var(--jx-muted);
+  color: var(--jx-text);
+}
+
+/* ── Accesibilidad: sin animaciones si el usuario lo pide ───── */
+@media (prefers-reduced-motion: reduce) {
+  .jx-hero > *,
+  .cursor-blink {
+    animation: none !important;
+  }
+  .jx-sql-line,
+  .jx-sql-result,
+  .jx-nota,
+  .jx-nota-mini {
+    transition: none !important;
+  }
+}

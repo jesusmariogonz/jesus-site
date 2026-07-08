@@ -23,3 +23,15 @@ Puedes poner otra imagen donde quieras:
 ![Captura del pipeline en Databricks](/blog/captura-pipeline.png)
 
 ![Texto descriptivo](/blog/nombre-del-archivo.png)
+
+npm run dev
+
+agregar categorias:
+lib/posts.js
+
+git add .
+git commit -m "Nota: arquitectura medallion"
+git push
+
+https://jesus-site-silk.vercel.app/
+
