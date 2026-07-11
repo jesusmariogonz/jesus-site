@@ -1,17 +1,17 @@
+import ContactForm from "@/components/ContactForm";
+
 export const metadata = { title: "Contacto" };
 
-// ✏️ Cambia estos datos por los tuyos reales.
 const canales = [
-  { label: "email", valor: "tu@correo.com", href: "mailto:tu@correo.com" },
   {
-    label: "linkedin",
-    valor: "linkedin.com/in/tu-usuario",
-    href: "https://linkedin.com/in/tu-usuario",
+    label: "email",
+    valor: "jesusmariogonz@gmail.com",
+    href: "mailto:jesusmariogonz@gmail.com",
   },
   {
-    label: "github",
-    valor: "github.com/tu-usuario",
-    href: "https://github.com/tu-usuario",
+    label: "linkedin",
+    valor: "linkedin.com/in/jesus-mario-gonzalez-siller",
+    href: "https://www.linkedin.com/in/jesus-mario-gonzalez-siller-545301ab/",
   },
 ];
 
@@ -19,7 +19,7 @@ export default function Contacto() {
   return (
     <section className="section">
       <div className="container">
-        <span className="sql-meta">contacto</span>
+        <span className="sql-meta">-- contacto</span>
         <h2>Hablemos</h2>
         <p style={{ color: "var(--ink-soft)", maxWidth: "56ch" }}>
           Si quieres platicar de datos, IA, retail o de alguna nota del blog,
@@ -35,6 +35,7 @@ export default function Contacto() {
             </li>
           ))}
         </ul>
+        <ContactForm />
       </div>
     </section>
   );

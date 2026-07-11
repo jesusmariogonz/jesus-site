@@ -17,6 +17,21 @@
   --font-sans: "Archivo", system-ui, sans-serif;
 }
 
+/* Tokens de modo oscuro (antes no existían: el texto quedaba
+   casi negro sobre fondo oscuro y era ilegible) */
+html.dark {
+  --bg: #0b1220;
+  --surface: #101a2c;
+  --ink: #e6edf6;
+  --ink-soft: #aebdd2;
+  --meta: #8fa3bd;
+  --line: #24344d;
+  --accent: #60a5fa;
+  --accent-soft: #1a2a45;
+  --code-bg: #0d1524;
+  --code-ink: #d8e0ee;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -72,10 +87,12 @@ button:focus-visible {
   padding-bottom: 20px;
 }
 .wordmark {
-  font-weight: 800;
-  font-size: 1.05rem;
-  letter-spacing: -0.02em;
+  font-family: var(--font-signature, "Great Vibes", cursive);
+  font-weight: 400;
+  font-size: 1.7rem;
+  letter-spacing: 0.01em;
   color: var(--ink);
+  line-height: 1;
 }
 .wordmark:hover {
   text-decoration: none;
@@ -261,6 +278,10 @@ button:focus-visible {
 }
 .prose p,
 .prose li {
+  color: var(--ink-soft);
+}
+html:not(.dark) .prose p,
+html:not(.dark) .prose li {
   color: #29313b;
 }
 .prose img {

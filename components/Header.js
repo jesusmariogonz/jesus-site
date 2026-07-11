@@ -22,8 +22,8 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="container">
-        <Link href="/" className="wordmark">
-          jesus<span className="cursor">_</span>datos
+        <Link href="/" className="wordmark signature">
+          Jesús González
         </Link>
         <nav className="site-nav" aria-label="Navegación principal">
           {links.map((l) => (
