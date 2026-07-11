@@ -11,7 +11,7 @@ const FORMSPREE_ID = "TU_ID_AQUI";
 export default function ContactForm() {
   const [estado, setEstado] = useState("idle"); // idle | enviando | ok | error
 
-  const configurado = FORMSPREE_ID !== "TU_ID_AQUI";
+  const configurado = FORMSPREE_ID !== "xgogwzoe";
 
   async function onSubmit(e) {
     e.preventDefault();
