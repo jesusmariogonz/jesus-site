@@ -6,12 +6,12 @@ import { useState } from "react";
 // 1. Crea una cuenta gratis en https://formspree.io con jesusmariogonz@gmail.com
 // 2. Crea un formulario nuevo y copia su ID (algo como "xzbqwxyz")
 // 3. Pégalo aquí abajo. Listo: los mensajes llegarán a tu correo.
-const FORMSPREE_ID = "TU_ID_AQUI";
+const FORMSPREE_ID = "xgogwzoe";
 
 export default function ContactForm() {
   const [estado, setEstado] = useState("idle"); // idle | enviando | ok | error
 
-  const configurado = FORMSPREE_ID !== "xgogwzoe";
+  const configurado = FORMSPREE_ID !== "TU_ID_AQUI";
 
   async function onSubmit(e) {
     e.preventDefault();
