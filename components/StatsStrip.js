@@ -1,10 +1,10 @@
-/* Propuesta 3: franja de datos duros — edita los valores */
+/* Franja de datos duros — alineada al currículum */
 
 const STATS = [
-  { valor: "10+", etiqueta: "años en datos" },
-  { valor: "4", etiqueta: "plataformas: Snowflake · Databricks · Azure · GCP" },
-  { valor: "Retail", etiqueta: "loyalty y analítica a gran escala" },
-  { valor: "MX", etiqueta: "escribiendo desde Saltillo" },
+  { valor: "20+", etiqueta: "iniciativas de analítica" },
+  { valor: "15+", etiqueta: "productos de datos" },
+  { valor: "4", etiqueta: "países" },
+  { valor: "10+", etiqueta: "tecnologías en el stack" },
 ];
 
 export default function StatsStrip() {

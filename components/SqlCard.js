@@ -2,18 +2,20 @@
 
 import { useEffect, useRef, useState } from "react";
 
-/* Propuesta 2: terminal SQL con ejecución animada */
+/* Terminal SQL con ejecución animada */
 
 const QUERY = [
-  { text: "SELECT rol, stack, ciudad", kw: ["SELECT"] },
-  { text: "FROM   quien_escribe_aqui", kw: ["FROM"] },
-  { text: "WHERE  cafe = TRUE;", kw: ["WHERE", "TRUE"] },
+  { text: "SELECT rol, stack, especialidad, ciudad", kw: ["SELECT"] },
+  { text: "FROM   about_me", kw: ["FROM"] },
+  { text: "WHERE  cafe = TRUE", kw: ["WHERE", "TRUE"] },
+  { text: "  AND  data_changes_decisions = TRUE;", kw: ["AND", "TRUE"] },
 ];
 
 const RESULT = [
-  ["rol", "Data Product Owner"],
-  ["stack", "Snowflake · Databricks · Azure · Python"],
-  ["ciudad", "Saltillo, MX"],
+  ["rol", "Data & Analytics Product Lead"],
+  ["stack", "Snowflake · Databricks · Azure Data Factory · Spark · Python"],
+  ["especialidad", "AI Products · Data Strategy · Cloud Analytics · Retail Intelligence"],
+  ["ciudad", "Saltillo · Monterrey, MX | Working across LATAM & Europe"],
 ];
 
 function resaltar(linea) {

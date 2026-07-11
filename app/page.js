@@ -6,10 +6,9 @@ import SqlCard from "@/components/SqlCard";
 import StatsStrip from "@/components/StatsStrip";
 import NotasDestacadas from "@/components/NotasDestacadas";
 import CtaContacto from "@/components/CtaContacto";
+import Reveal from "@/components/Reveal";
 
 export default function Inicio() {
-  // Adaptador: normaliza los campos de tus posts sin importar
-  // cómo se llamen en tu markdown (title/titulo, date/fecha, etc.)
   const ultimos = getPosts()
     .slice(0, 3)
     .map((p) => ({
@@ -30,10 +29,16 @@ export default function Inicio() {
   return (
     <>
       <Hero />
-      <SqlCard />
-      <StatsStrip />
+      <Reveal delay={0.1}>
+        <SqlCard />
+      </Reveal>
+      <Reveal delay={0.05}>
+        <StatsStrip />
+      </Reveal>
       <NotasDestacadas notas={ultimos} />
-      <CtaContacto />
+      <Reveal>
+        <CtaContacto />
+      </Reveal>
     </>
   );
 }

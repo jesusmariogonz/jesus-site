@@ -6,7 +6,7 @@ export default function CtaContacto() {
   return (
     <section className="jx-wrap">
       <div className="jx-cta">
-        <p className="signature jx-cta-firma">¿Platicamos?</p>
+        <p className="jx-cta-firma">¿Platicamos?</p>
         <p>
           Si trabajas en datos, retail o loyalty y algo de lo que escribo te
           hizo ruido, me da gusto cruzar notas.

@@ -7,8 +7,7 @@ export default function Curriculum() {
         <span className="sql-meta">currículum</span>
         <h2>Mi trayectoria en una página</h2>
         <p style={{ color: "var(--ink-soft)", maxWidth: "60ch" }}>
-          Puedes verlo aquí mismo o descargarlo en PDF. Para actualizarlo,
-          reemplaza el archivo <code>public/cv/cv.pdf</code> del proyecto.
+          Puedes verlo aquí mismo o descargarlo en PDF.
         </p>
         <p style={{ margin: "20px 0 28px" }}>
           <a className="btn" href="/cv/cv.pdf" download>
