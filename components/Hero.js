@@ -1,73 +1,84 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import Link from "next/link";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 
-/* Propuesta 1 + foto y firma */
+/* Hero editorial estilo Stripe/Vercel: titular grande por líneas,
+   subtítulo de valor, stack en chips y CTAs. */
 
-const PALABRAS = ["decisiones", "pipelines", "retail", "criterio"];
+const STACK = [
+  "Snowflake",
+  "Databricks",
+  "Azure",
+  "Python",
+  "AI",
+  "Product Management",
+];
 
-function useTypewriter(words, speed = 90, pause = 2200) {
-  const [texto, setTexto] = useState("");
-  const [i, setI] = useState(0);
-  const [borrando, setBorrando] = useState(false);
-
-  useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setTexto(words[0]);
-      return;
-    }
-    const actual = words[i % words.length];
-    let t;
-    if (!borrando && texto === actual) {
-      t = setTimeout(() => setBorrando(true), pause);
-    } else if (borrando && texto === "") {
-      setBorrando(false);
-      setI((v) => v + 1);
-    } else {
-      t = setTimeout(
-        () => setTexto(actual.slice(0, texto.length + (borrando ? -1 : 1))),
-        borrando ? speed / 2 : speed
-      );
-    }
-    return () => clearTimeout(t);
-  }, [texto, borrando, i, words, speed, pause]);
-
-  return texto;
-}
+const fadeUp = (reduce, delay) =>
+  reduce
+    ? {}
+    : {
+        initial: { opacity: 0, y: 26 },
+        animate: { opacity: 1, y: 0 },
+        transition: { duration: 0.65, delay, ease: [0.21, 0.65, 0.36, 1] },
+      };
 
 export default function Hero() {
-  const palabra = useTypewriter(PALABRAS);
+  const reduce = useReducedMotion();
+  const { scrollY } = useScroll();
+  // Parallax muy ligero: el resplandor de fondo se desplaza a ~25% del scroll
+  const blobY = useTransform(scrollY, [0, 600], [0, 150]);
 
   return (
-    <section className="jx-wrap jx-hero">
-      <div className="jx-foto-anillo">
+    <section className="jx-wrap jx-hero2">
+      {!reduce && (
+        <motion.div className="jx-hero2-blob" style={{ y: blobY }} aria-hidden />
+      )}
+      <motion.div className="jx-hero2-id" {...fadeUp(reduce, 0)}>
         <Image
           src="/jesus-hero.webp"
           alt="Jesús González"
-          width={190}
-          height={190}
+          width={44}
+          height={44}
           priority
-          className="jx-foto"
+          className="jx-hero2-avatar"
         />
-      </div>
+        <span>
+          <b>Jesús González</b> · Data &amp; Analytics Product Lead
+        </span>
+      </motion.div>
 
-      <div>
-        <p className="signature jx-firma">Jesús González</p>
-        <h1>
-          Datos, arquitectura y{" "}
-          <span className="jx-typed">
-            {palabra}
-            <span className="cursor-blink" aria-hidden>
-              |
-            </span>
+      <motion.h1 {...fadeUp(reduce, 0.08)}>
+        Data Products.
+        <br />
+        Inteligencia Artificial.
+        <br />
+        <span className="jx-grad">Analítica.</span>
+      </motion.h1>
+
+      <motion.p className="jx-hero2-sub" {...fadeUp(reduce, 0.16)}>
+        Construyo plataformas de datos escalables para retail y negocios de
+        consumo.
+      </motion.p>
+
+      <motion.div className="jx-hero2-stack" {...fadeUp(reduce, 0.24)}>
+        {STACK.map((t) => (
+          <span key={t} className="jx-hero2-chip">
+            {t}
           </span>
-        </h1>
-        <p className="jx-intro">
-          Notas sobre construir plataformas de datos en el mundo real:
-          decisiones técnicas, trade-offs y lo que aprendí operándolas.
-        </p>
-      </div>
+        ))}
+      </motion.div>
+
+      <motion.div className="jx-hero2-cta" {...fadeUp(reduce, 0.32)}>
+        <Link href="/contacto" className="btn">
+          Hablemos →
+        </Link>
+        <a href="/cv/cv.pdf" target="_blank" rel="noopener" className="btn ghost">
+          Ver CV
+        </a>
+      </motion.div>
     </section>
   );
 }

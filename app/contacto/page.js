@@ -22,8 +22,7 @@ export default function Contacto() {
         <span className="sql-meta">-- contacto</span>
         <h2>Hablemos</h2>
         <p style={{ color: "var(--ink-soft)", maxWidth: "56ch" }}>
-          Si quieres platicar de datos, IA, retail o de alguna nota del blog,
-          estos son los canales donde me encuentras.
+          ¿Datos, IA o retail? Escríbeme.
         </p>
         <ul className="contact-list">
           {canales.map((c) => (

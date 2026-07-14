@@ -2,6 +2,8 @@
 titulo: "Digital Wallets: la nueva infraestructura invisible del sistema financiero"
 fecha: "2026-07-07"
 categoria: "fintech"
+destacada: true
+imagen: "/blog/wallet1.png"
 resumen: "Las billeteras digitales han dejado de ser un simple medio de pago para convertirse en la interfaz desde la que se disputan los datos, la relación con el consumidor y el futuro de los servicios financieros."
 ---
 

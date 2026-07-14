@@ -5,7 +5,6 @@
    ═══════════════════════════════════════════════════════════════ */
 
 :root {
-  --font-signature: "Great Vibes", cursive;
   --jx-bg: #0b1220;
   --jx-panel: #101a2c;
   --jx-panel-2: #0d1524;
@@ -56,7 +55,7 @@ html:not(.dark) .dot-grid {
 
 /* ── Utilidades comunes ─────────────────────────────────────── */
 .jx-wrap {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -376,7 +375,9 @@ html:not(.dark) .jx-pill-opinion    { color: #6d28d9; }
   text-align: center;
 }
 .jx-cta .jx-cta-firma {
-  font-size: 2.4rem;
+  font-size: 2.1rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
   color: var(--jx-text);
   margin: 0;
 }
@@ -449,3 +450,206 @@ html:not(.dark) .jx-pill-opinion    { color: #6d28d9; }
     transition: none !important;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   v2 — Hero editorial, portadas de notas y blog editorial
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── HERO 2 (estilo Stripe/Vercel) ─────────────────────────── */
+.jx-hero2 {
+  padding-top: 5.5rem;
+  padding-bottom: 1rem;
+}
+.jx-hero2-id {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--jx-muted);
+  font-size: 0.95rem;
+}
+.jx-hero2-id b { color: var(--jx-text); font-weight: 700; }
+.jx-hero2-avatar {
+  border-radius: 9999px;
+  border: 2px solid var(--jx-border);
+}
+.jx-hero2 h1 {
+  margin: 1.4rem 0 0;
+  font-size: clamp(2.6rem, 7vw, 4.6rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1.04;
+  color: var(--jx-text);
+}
+.jx-grad {
+  background: linear-gradient(92deg, var(--jx-accent), #34d399 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.jx-hero2-sub {
+  margin: 1.3rem 0 0;
+  max-width: 40rem;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  line-height: 1.6;
+  color: var(--jx-muted);
+}
+.jx-hero2-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.6rem;
+}
+.jx-hero2-chip {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.78rem;
+  color: var(--jx-muted);
+  border: 1px solid var(--jx-border);
+  background: var(--jx-panel);
+  border-radius: 9999px;
+  padding: 0.32rem 0.8rem;
+}
+.jx-hero2-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.8rem;
+}
+
+/* ── Portadas de notas (NotaCover) ─────────────────────────── */
+.jx-cover {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.jx-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(120% 90% at 85% 10%, rgba(255,255,255,0.22), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(0,0,0,0.18), transparent 45%);
+}
+.jx-cover-glifo {
+  font-size: 2.2rem;
+  color: rgba(255, 255, 255, 0.92);
+  z-index: 1;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+}
+.jx-cover-tag {
+  position: absolute;
+  left: 10px;
+  bottom: 8px;
+  z-index: 1;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.85);
+  text-transform: uppercase;
+}
+.jx-cover-lg { width: 100%; height: 210px; }
+.jx-cover-lg .jx-cover-glifo { font-size: 3.4rem; }
+.jx-cover-md { width: 100%; height: 150px; }
+.jx-cover-sm { width: 86px; height: 86px; border-radius: 10px; }
+.jx-cover-sm .jx-cover-glifo { font-size: 1.5rem; }
+.jx-cover-sm .jx-cover-tag { display: none; }
+
+/* ── Notas destacadas con portada ──────────────────────────── */
+.jx-nota-cover {
+  padding: 0 !important;
+  overflow: hidden;
+}
+.jx-nota-cover .jx-nota-body {
+  padding: 1.1rem 1.25rem 1.25rem;
+}
+.jx-nota-mini-cover {
+  display: flex !important;
+  align-items: center;
+  gap: 0.9rem;
+}
+.jx-nota-mini-cover h3 { margin: 0 0 0.3rem; }
+.jx-flecha {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+a:hover .jx-flecha { transform: translateX(4px); }
+
+/* ═══════════════════════════════════════════════════════════════
+   v3 — Thumbnails, SQL interactiva, parallax
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Portada con fotografía (frontmatter `imagen:`) */
+.jx-cover-img {
+  background-size: cover;
+  background-position: center;
+}
+.jx-cover-img::after {
+  background: linear-gradient(180deg, rgba(0,0,0,0) 45%, rgba(0,0,0,0.55) 100%);
+}
+.jx-cover-pick { width: 100%; height: 100%; min-height: 240px; }
+.jx-cover-pick .jx-cover-glifo { font-size: 3.6rem; }
+
+/* Blob de parallax del hero */
+.jx-hero2 { position: relative; }
+.jx-hero2-blob {
+  position: absolute;
+  top: -140px;
+  right: -160px;
+  width: 520px;
+  height: 520px;
+  border-radius: 9999px;
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(
+    circle at center,
+    color-mix(in srgb, var(--jx-accent) 22%, transparent) 0%,
+    transparent 65%
+  );
+  filter: blur(8px);
+}
+
+/* Tabs de la SQL card interactiva */
+.jx-sql-tabs {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 0.35rem 0.75rem 0;
+  background: var(--jx-panel-2);
+  border-bottom: 1px solid var(--jx-border);
+}
+.jx-sql-tab {
+  appearance: none;
+  border: 1px solid transparent;
+  border-bottom: none;
+  background: transparent;
+  color: var(--jx-faint);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  padding: 0.45rem 0.8rem 0.5rem;
+  border-radius: 8px 8px 0 0;
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+.jx-sql-tab:hover { color: var(--jx-text); }
+.jx-sql-tab.is-active {
+  color: var(--jx-text);
+  background: var(--jx-panel);
+  border-color: var(--jx-border);
+}
+.jx-sql-run {
+  appearance: none;
+  margin-left: auto;
+  border: 1px solid var(--jx-border);
+  background: var(--jx-panel);
+  color: var(--jx-green);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.7rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.2s ease;
+}
+.jx-sql-run:hover { transform: translateY(-1px); border-color: var(--jx-green); }

@@ -5,11 +5,9 @@ import { usePathname } from "next/navigation";
 import ThemeToggle from "@/components/ThemeToggle";
 
 const links = [
-  { href: "/", label: "Inicio" },
-  { href: "/sobre-mi", label: "Sobre mí" },
-  { href: "/curriculum", label: "Currículum" },
   { href: "/blog", label: "Blog" },
-  { href: "/proyectos", label: "Proyectos" },
+  { href: "/sobre-mi", label: "Sobre mí" },
+  { href: "/curriculum", label: "CV" },
   { href: "/contacto", label: "Contacto" },
 ];
 
@@ -22,8 +20,8 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="container">
-        <Link href="/" className="wordmark signature">
-          Jesús González
+        <Link href="/" className="wordmark" aria-label="Inicio">
+          J<span className="dot">.</span>
         </Link>
         <nav className="site-nav" aria-label="Navegación principal">
           {links.map((l) => (
