@@ -3,3 +3,7 @@ node_modules/
 out/
 .env*
 .DS_Store
+
+# TinaCMS (artefactos generados)
+public/admin
+tina/__generated__
