@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
+<<<<<<< HEAD
 /* Terminal SQL interactiva: pestañas de queries + botón ejecutar.
    El visitante puede cambiar de query y re-ejecutar la animación. */
 
@@ -49,6 +50,23 @@ const QUERIES = {
     filas: "3 filas",
   },
 };
+=======
+/* Terminal SQL con ejecución animada */
+
+const QUERY = [
+  { text: "SELECT rol, stack, especialidad, ciudad", kw: ["SELECT"] },
+  { text: "FROM   about_me", kw: ["FROM"] },
+  { text: "WHERE  cafe = TRUE", kw: ["WHERE", "TRUE"] },
+  { text: "  AND  data_changes_decisions = TRUE;", kw: ["AND", "TRUE"] },
+];
+
+const RESULT = [
+  ["rol", "Data & Analytics Product Lead"],
+  ["stack", "Snowflake · Databricks · Azure Data Factory · Spark · Python"],
+  ["especialidad", "AI Products · Data Strategy · Cloud Analytics · Retail Intelligence"],
+  ["ciudad", "Saltillo · Monterrey, MX | Working across LATAM & Europe"],
+];
+>>>>>>> e40169ad88cf7072119c9ff793b8c4989a83d7b2
 
 function resaltar(linea) {
   return linea.text.split(/(\s+)/).map((p, i) =>

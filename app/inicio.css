@@ -576,6 +576,7 @@ html:not(.dark) .jx-pill-opinion    { color: #6d28d9; }
   transition: transform 0.25s ease;
 }
 a:hover .jx-flecha { transform: translateX(4px); }
+<<<<<<< HEAD
 
 /* ═══════════════════════════════════════════════════════════════
    v3 — Thumbnails, SQL interactiva, parallax
@@ -653,3 +654,5 @@ a:hover .jx-flecha { transform: translateX(4px); }
   transition: transform 0.15s ease, border-color 0.2s ease;
 }
 .jx-sql-run:hover { transform: translateY(-1px); border-color: var(--jx-green); }
+=======
+>>>>>>> e40169ad88cf7072119c9ff793b8c4989a83d7b2

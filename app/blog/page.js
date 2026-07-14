@@ -1,9 +1,13 @@
 import Link from "next/link";
 import { getPosts, CATEGORIAS } from "@/lib/posts";
 import PostCard from "@/components/PostCard";
+<<<<<<< HEAD
 import NotaCover from "@/components/NotaCover";
 import Reveal from "@/components/Reveal";
 import { calcularMinutos } from "@/lib/lectura";
+=======
+import Reveal from "@/components/Reveal";
+>>>>>>> e40169ad88cf7072119c9ff793b8c4989a83d7b2
 
 export const metadata = { title: "Blog" };
 
@@ -20,7 +24,11 @@ export default function Blog() {
           <span className="sql-meta">
             blog · {posts.length} {posts.length === 1 ? "nota" : "notas"}
           </span>
+<<<<<<< HEAD
           <h2>Notas</h2>
+=======
+          <h2>Todas las notas</h2>
+>>>>>>> e40169ad88cf7072119c9ff793b8c4989a83d7b2
           <div className="chip-row">
             <span className="chip active">Todas</span>
             {Object.entries(CATEGORIAS).map(([slug, nombre]) => (
@@ -30,6 +38,7 @@ export default function Blog() {
             ))}
           </div>
         </Reveal>
+<<<<<<< HEAD
 
         {pick && (
           <Reveal delay={0.05}>
@@ -51,6 +60,10 @@ export default function Blog() {
 
         <ul className="post-list post-list-editorial">
           {resto.map((post, i) => (
+=======
+        <ul className="post-list post-list-editorial">
+          {posts.map((post, i) => (
+>>>>>>> e40169ad88cf7072119c9ff793b8c4989a83d7b2
             <Reveal key={post.slug} delay={Math.min(i * 0.06, 0.3)}>
               <PostCard post={post} />
             </Reveal>

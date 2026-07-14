@@ -11,7 +11,11 @@ export default function PostCard({ post }) {
   return (
     <li className="post-card post-card-editorial">
       <Link href={`/blog/${post.slug}`} className="post-card-link">
+<<<<<<< HEAD
         <NotaCover categoria={post.categoria} imagen={post.imagen} size="md" />
+=======
+        <NotaCover categoria={post.categoria} size="md" />
+>>>>>>> e40169ad88cf7072119c9ff793b8c4989a83d7b2
         <div className="post-card-body">
           <span className="post-card-cat">
             {CATEGORIAS[post.categoria] || post.categoria}
