@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 
 /* Hero editorial estilo Stripe/Vercel: titular grande por líneas,
    subtítulo de valor, stack en chips y CTAs. */
@@ -27,9 +27,15 @@ const fadeUp = (reduce, delay) =>
 
 export default function Hero() {
   const reduce = useReducedMotion();
+  const { scrollY } = useScroll();
+  // Parallax muy ligero: el resplandor de fondo se desplaza a ~25% del scroll
+  const blobY = useTransform(scrollY, [0, 600], [0, 150]);
 
   return (
     <section className="jx-wrap jx-hero2">
+      {!reduce && (
+        <motion.div className="jx-hero2-blob" style={{ y: blobY }} aria-hidden />
+      )}
       <motion.div className="jx-hero2-id" {...fadeUp(reduce, 0)}>
         <Image
           src="/jesus-hero.webp"

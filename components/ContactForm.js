@@ -10,6 +10,7 @@ const FORMSPREE_ID = "xgogwzoe";
 
 export default function ContactForm() {
   const [estado, setEstado] = useState("idle"); // idle | enviando | ok | error
+  const [detalleError, setDetalleError] = useState("");
 
   const configurado = FORMSPREE_ID !== "TU_ID_AQUI";
 
@@ -33,6 +34,7 @@ export default function ContactForm() {
     }
 
     setEstado("enviando");
+    setDetalleError("");
     try {
       const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
         method: "POST",
@@ -43,9 +45,23 @@ export default function ContactForm() {
         setEstado("ok");
         form.reset();
       } else {
+        // Extraer el motivo real que reporta Formspree
+        let motivo = `HTTP ${res.status}`;
+        try {
+          const j = await res.json();
+          if (j.errors && j.errors.length) {
+            motivo += " — " + j.errors.map((x) => x.message || x.code).join("; ");
+          } else if (j.error) {
+            motivo += " — " + j.error;
+          }
+        } catch {
+          /* respuesta sin JSON */
+        }
+        setDetalleError(motivo);
         setEstado("error");
       }
-    } catch {
+    } catch (err) {
+      setDetalleError("Error de red: " + (err?.message || "sin conexión"));
       setEstado("error");
     }
   }
@@ -82,7 +98,7 @@ export default function ContactForm() {
       </label>
       <label style={{ display: "grid", gap: 6, fontSize: "0.88rem" }}>
         Tu correo
-        <input name="correo" type="email" required style={campo} />
+        <input name="email" type="email" required style={campo} />
       </label>
       <label style={{ display: "grid", gap: 6, fontSize: "0.88rem" }}>
         Mensaje
@@ -100,8 +116,9 @@ export default function ContactForm() {
       )}
       {estado === "error" && (
         <p style={{ color: "#e5484d", margin: 0, fontSize: "0.9rem" }}>
-          Ocurrió un error al enviar. Intenta de nuevo o escríbeme directo a
-          jesusmariogonz@gmail.com.
+          Ocurrió un error al enviar
+          {detalleError ? ` (${detalleError})` : ""}. Intenta de nuevo o
+          escríbeme directo a jesusmariogonz@gmail.com.
         </p>
       )}
     </form>

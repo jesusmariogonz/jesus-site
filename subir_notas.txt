@@ -1,37 +1,54 @@
----
-titulo: "Arquitectura Medallion: bronce, plata y oro"
-fecha: "2026-07-07"
-categoria: "arquitectura"
-resumen: "Cómo organizar las capas de un data lake y por qué funciona."
----
+════════════════════════════════════════════════════════════════
+CÓMO PUBLICAR UNA NOTA (con thumbnail) — guía rápida
+════════════════════════════════════════════════════════════════
 
-Cuando diseñas un data lake, la pregunta clave es dónde vive cada
-transformación. La arquitectura Medallion propone tres capas:
+PASO 1 — La imagen de portada (thumbnail)
+  1. Consigue o crea una imagen apaisada (ideal: 1200x630 px, .jpg o .png).
+  2. Guárdala en la carpeta:  public/blog/
+     Ejemplo:  public/blog/mi-nueva-nota.jpg
 
-![Diagrama de las capas bronce, plata y oro](/blog/diagrama-medallion.png)
+PASO 2 — El archivo de la nota
+  Crea un archivo .md en content/blog/ (el nombre será la URL).
+  Ejemplo: content/blog/mi-nueva-nota.md
 
-## Capa bronce
+  ---
+  titulo: "El título de mi nota"
+  fecha: "2026-07-15"
+  categoria: "ia"
+  resumen: "Una o dos frases que venden la nota."
+  imagen: "/blog/mi-nueva-nota.jpg"
+  ---
 
-Datos crudos, tal como llegan de la fuente. Sin limpiar, sin juzgar.
+  Aquí empieza tu contenido en Markdown...
 
-## Capa plata
+  NOTAS:
+  · imagen: es OPCIONAL. Si no la pones, el sitio genera una
+    portada automática con gradiente según la categoría.
+  · destacada: true  → convierte la nota en el "Editor's Pick"
+    del blog (solo debe tenerla UNA nota a la vez).
+  · Dentro del texto puedes insertar más imágenes así:
+    ![Descripción](/blog/otra-imagen.png)
 
-Datos limpios y validados. Aquí viven las reglas de negocio.
+PASO 3 — Categorías válidas (slug → nombre visible)
+  ingenieria-de-datos  → Data Engineering
+  snowflake            → Snowflake
+  arquitectura         → Data Architecture
+  ia                   → IA & GenAI
+  cloud                → Cloud
+  data-model           → Data Model
+  business-analytics   → Business Analytics
+  business             → Business
+  leadership           → Leadership
+  geopolitics          → Geopolitics
+  fintech              → Fintech
+  opinion              → Opinión
 
-Puedes poner otra imagen donde quieras:
+  Para agregar una nueva: edita CATEGORIAS en lib/posts.js
+  y (opcional) su gradiente/glifo en components/NotaCover.js.
 
-![Captura del pipeline en Databricks](/blog/captura-pipeline.png)
-
-![Texto descriptivo](/blog/nombre-del-archivo.png)
-
-npm run dev
-
-agregar categorias:
-lib/posts.js
-
-git add .
-git commit -m "Nota: arquitectura medallion"
-git push
-
-https://jesus-site-silk.vercel.app/
-
+PASO 4 — Probar y publicar
+  npm run dev          → revisa en http://localhost:3000/blog
+  git add .
+  git commit -m "Nueva nota: el título"
+  git push origin main → Vercel publica solo (~2 min)
+════════════════════════════════════════════════════════════════

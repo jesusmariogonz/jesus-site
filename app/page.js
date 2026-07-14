@@ -16,6 +16,7 @@ export default function Inicio() {
       titulo: p.titulo ?? p.title ?? "Sin título",
       resumen: p.resumen ?? p.summary ?? p.description ?? p.excerpt ?? "",
       fecha: p.fecha ?? p.date ?? null,
+      imagen: p.imagen ?? null,
       categoria:
         p.categoria ??
         p.category ??

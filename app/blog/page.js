@@ -1,12 +1,17 @@
 import Link from "next/link";
 import { getPosts, CATEGORIAS } from "@/lib/posts";
 import PostCard from "@/components/PostCard";
+import NotaCover from "@/components/NotaCover";
 import Reveal from "@/components/Reveal";
+import { calcularMinutos } from "@/lib/lectura";
 
 export const metadata = { title: "Blog" };
 
 export default function Blog() {
   const posts = getPosts();
+  // Editor's Pick: la nota con destacada:true, o la más reciente
+  const pick = posts.find((p) => p.destacada) || posts[0];
+  const resto = posts.filter((p) => p.slug !== pick?.slug);
 
   return (
     <section className="section">
@@ -15,7 +20,7 @@ export default function Blog() {
           <span className="sql-meta">
             blog · {posts.length} {posts.length === 1 ? "nota" : "notas"}
           </span>
-          <h2>Todas las notas</h2>
+          <h2>Notas</h2>
           <div className="chip-row">
             <span className="chip active">Todas</span>
             {Object.entries(CATEGORIAS).map(([slug, nombre]) => (
@@ -25,8 +30,27 @@ export default function Blog() {
             ))}
           </div>
         </Reveal>
+
+        {pick && (
+          <Reveal delay={0.05}>
+            <Link href={`/blog/${pick.slug}`} className="editors-pick">
+              <NotaCover categoria={pick.categoria} imagen={pick.imagen} size="pick" />
+              <div className="editors-pick-body">
+                <span className="editors-pick-badge">★ Editor's Pick</span>
+                <h3>{pick.titulo}</h3>
+                <p>{pick.resumen}</p>
+                <span className="post-card-meta">
+                  {CATEGORIAS[pick.categoria] || pick.categoria} ·{" "}
+                  {calcularMinutos(pick.content || "")} min de lectura{" "}
+                  <span className="jx-flecha">→</span>
+                </span>
+              </div>
+            </Link>
+          </Reveal>
+        )}
+
         <ul className="post-list post-list-editorial">
-          {posts.map((post, i) => (
+          {resto.map((post, i) => (
             <Reveal key={post.slug} delay={Math.min(i * 0.06, 0.3)}>
               <PostCard post={post} />
             </Reveal>

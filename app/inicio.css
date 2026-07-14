@@ -576,3 +576,80 @@ html:not(.dark) .jx-pill-opinion    { color: #6d28d9; }
   transition: transform 0.25s ease;
 }
 a:hover .jx-flecha { transform: translateX(4px); }
+
+/* ═══════════════════════════════════════════════════════════════
+   v3 — Thumbnails, SQL interactiva, parallax
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Portada con fotografía (frontmatter `imagen:`) */
+.jx-cover-img {
+  background-size: cover;
+  background-position: center;
+}
+.jx-cover-img::after {
+  background: linear-gradient(180deg, rgba(0,0,0,0) 45%, rgba(0,0,0,0.55) 100%);
+}
+.jx-cover-pick { width: 100%; height: 100%; min-height: 240px; }
+.jx-cover-pick .jx-cover-glifo { font-size: 3.6rem; }
+
+/* Blob de parallax del hero */
+.jx-hero2 { position: relative; }
+.jx-hero2-blob {
+  position: absolute;
+  top: -140px;
+  right: -160px;
+  width: 520px;
+  height: 520px;
+  border-radius: 9999px;
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(
+    circle at center,
+    color-mix(in srgb, var(--jx-accent) 22%, transparent) 0%,
+    transparent 65%
+  );
+  filter: blur(8px);
+}
+
+/* Tabs de la SQL card interactiva */
+.jx-sql-tabs {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 0.35rem 0.75rem 0;
+  background: var(--jx-panel-2);
+  border-bottom: 1px solid var(--jx-border);
+}
+.jx-sql-tab {
+  appearance: none;
+  border: 1px solid transparent;
+  border-bottom: none;
+  background: transparent;
+  color: var(--jx-faint);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  padding: 0.45rem 0.8rem 0.5rem;
+  border-radius: 8px 8px 0 0;
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+.jx-sql-tab:hover { color: var(--jx-text); }
+.jx-sql-tab.is-active {
+  color: var(--jx-text);
+  background: var(--jx-panel);
+  border-color: var(--jx-border);
+}
+.jx-sql-run {
+  appearance: none;
+  margin-left: auto;
+  border: 1px solid var(--jx-border);
+  background: var(--jx-panel);
+  color: var(--jx-green);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.7rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.2s ease;
+}
+.jx-sql-run:hover { transform: translateY(-1px); border-color: var(--jx-green); }

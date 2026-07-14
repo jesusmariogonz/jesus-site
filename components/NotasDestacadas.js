@@ -33,7 +33,7 @@ export default function NotasDestacadas({ notas }) {
       <div className="jx-notas-grid">
         <Reveal delay={0.05}>
           <Link href={`/blog/${principal.slug}`} className="jx-nota jx-nota-cover">
-            <NotaCover categoria={principal.categoria} size="lg" />
+            <NotaCover categoria={principal.categoria} imagen={principal.imagen} size="lg" />
             <div className="jx-nota-body">
               <h3>{principal.titulo}</h3>
               <p>{principal.resumen}</p>
@@ -46,7 +46,7 @@ export default function NotasDestacadas({ notas }) {
           {resto.slice(0, 2).map((n, i) => (
             <Reveal key={n.slug} delay={0.12 + i * 0.08}>
               <Link href={`/blog/${n.slug}`} className="jx-nota-mini jx-nota-mini-cover">
-                <NotaCover categoria={n.categoria} size="sm" />
+                <NotaCover categoria={n.categoria} imagen={n.imagen} size="sm" />
                 <div>
                   <h3>{n.titulo}</h3>
                   <Meta nota={n} />

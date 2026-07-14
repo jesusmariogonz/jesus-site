@@ -1,3 +1,5 @@
+import CvTimeline from "@/components/CvTimeline";
+
 export const metadata = { title: "Currículum" };
 
 export default function Curriculum() {
@@ -5,13 +7,10 @@ export default function Curriculum() {
     <section className="section">
       <div className="container">
         <span className="sql-meta">currículum</span>
-        <h2>Mi trayectoria en una página</h2>
-        <p style={{ color: "var(--ink-soft)", maxWidth: "60ch" }}>
-          Puedes verlo aquí mismo o descargarlo en PDF.
-        </p>
-        <p style={{ margin: "20px 0 28px" }}>
+        <h2>Trayectoria</h2>
+        <p style={{ margin: "20px 0 36px" }}>
           <a className="btn" href="/cv/cv.pdf" download>
-            Descargar PDF
+            Descargar CV (PDF)
           </a>{" "}
           <a
             className="btn ghost"
@@ -20,20 +19,10 @@ export default function Curriculum() {
             rel="noopener"
             style={{ marginLeft: 10 }}
           >
-            Abrir en otra pestaña
+            Ver PDF
           </a>
         </p>
-        <object
-          className="pdf-frame"
-          data="/cv/cv.pdf"
-          type="application/pdf"
-          aria-label="Currículum en PDF"
-        >
-          <p style={{ padding: 24 }}>
-            Tu navegador no puede mostrar el PDF aquí.{" "}
-            <a href="/cv/cv.pdf">Descárgalo directamente</a>.
-          </p>
-        </object>
+        <CvTimeline />
       </div>
     </section>
   );
