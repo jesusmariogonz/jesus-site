@@ -84,6 +84,15 @@ export default defineConfig({
           },
           {
             type: "string",
+            name: "tags",
+            label: "Etiquetas (escribe y presiona Enter)",
+            list: true,
+            ui: {
+              component: "tags",
+            },
+          },
+          {
+            type: "string",
             name: "resumen",
             label: "Resumen (1-2 frases que venden la nota)",
             required: true,

@@ -14,7 +14,7 @@ const QUERIES = {
       { text: "  AND  data_changes_decisions = TRUE;", kw: ["AND", "TRUE"] },
     ],
     resultado: [
-      ["rol", "Data & Analytics Product Lead"],
+      ["rol", "Data, Analytics & AI Solutions Architect"],
       ["stack", "Snowflake · Databricks · Azure Data Factory · Spark · Python"],
       ["especialidad", "AI Products · Data Strategy · Cloud Analytics · Retail Intelligence"],
       ["ciudad", "Saltillo · Monterrey, MX | Working across LATAM & Europe"],
@@ -29,7 +29,7 @@ const QUERIES = {
       { text: "LIMIT  3;", kw: ["LIMIT"] },
     ],
     resultado: [
-      ["FEMSA P&S", "Data & Analytics Product Lead · 2024 → hoy"],
+      ["FEMSA P&S", "Data, Analytics & AI Solutions Architect · 2024 → hoy"],
       ["FEMSA Comercio", "Data Manager · 2019 — 2024"],
       ["Raken Data Group", "Data Engineer · 2018 — 2019"],
     ],

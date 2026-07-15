@@ -46,7 +46,7 @@ export default function Hero() {
           className="jx-hero2-avatar"
         />
         <span>
-          <b>Jesús González</b> · Data &amp; Analytics Product Lead
+          <b>Jesús González</b> · Data, Analytics &amp; AI Solutions Architect
         </span>
       </motion.div>
 
@@ -59,8 +59,9 @@ export default function Hero() {
       </motion.h1>
 
       <motion.p className="jx-hero2-sub" {...fadeUp(reduce, 0.16)}>
-        Construyo plataformas de datos escalables para retail y negocios de
-        consumo.
+        Transformo datos en ventajas competitivas mediante plataformas
+        analíticas, inteligencia artificial y soluciones escalables para
+        empresas de retail y consumo.
       </motion.p>
 
       <motion.div className="jx-hero2-stack" {...fadeUp(reduce, 0.24)}>

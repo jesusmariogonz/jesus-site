@@ -9,7 +9,7 @@ import { motion, useReducedMotion } from "framer-motion";
 
 const EXPERIENCIA = [
   {
-    puesto: "Data & Analytics Product Lead · Arquitecto de Soluciones Analíticas",
+    puesto: "Data, Analytics & AI Solutions Architect",
     empresa: "FEMSA Proximidad y Salud",
     inicial: "F",
     color: "#d61027",

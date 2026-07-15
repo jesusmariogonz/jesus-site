@@ -13,9 +13,25 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const post = getPost(slug);
+  if (!post) return { title: "Nota" };
+  // Open Graph por nota: LinkedIn y Facebook no reciben el texto por
+  // parámetro, rastrean la URL y muestran estas etiquetas.
   return {
-    title: post?.titulo || "Nota",
-    description: post?.resumen || "",
+    title: post.titulo,
+    description: post.resumen,
+    openGraph: {
+      type: "article",
+      url: `/blog/${slug}`,
+      title: post.titulo,
+      description: post.resumen,
+      images: [{ url: post.imagen || "/og-image.png" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.titulo,
+      description: post.resumen,
+      images: [post.imagen || "/og-image.png"],
+    },
   };
 }
 
@@ -37,6 +53,15 @@ export default async function Post({ params }) {
             · {minutos} min de lectura · {formatFecha(post.fecha)}
           </span>
           <h1>{post.titulo}</h1>
+
+          {/* Etiquetas de la nota (solo se muestran si la nota las tiene) */}
+          {post.tags?.length > 0 && (
+            <div className="post-tags">
+              {post.tags.map((tag) => (
+                <span key={tag}>#{tag}</span>
+              ))}
+            </div>
+          )}
         </header>
         <div className="prose">
           <ReactMarkdown remarkPlugins={[remarkGfm]}>

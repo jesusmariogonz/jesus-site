@@ -16,7 +16,16 @@ export default function ShareRow({ titulo }) {
   const url = () => window.location.href;
 
   const abrir = (buildUrl) => {
-    window.open(buildUrl(encodeURIComponent(url())), "_blank", "noopener,width=640,height=520");
+    const destino = buildUrl(encodeURIComponent(url()));
+    // En pantallas táctiles el popup con tamaño fijo hace que la app
+    // nativa intercepte el enlace y pierda la URL a compartir; ahí
+    // abrimos en pestaña normal. En escritorio sí usamos popup.
+    const esMovil = window.matchMedia("(max-width: 760px), (pointer: coarse)").matches;
+    window.open(
+      destino,
+      "_blank",
+      esMovil ? "noopener" : "noopener,width=640,height=520"
+    );
   };
 
   const copiar = async () => {

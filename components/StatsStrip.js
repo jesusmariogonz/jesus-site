@@ -1,10 +1,12 @@
 /* Franja de datos duros — alineada al currículum */
 
 const STATS = [
-  { valor: "20+", etiqueta: "iniciativas de analítica" },
-  { valor: "15+", etiqueta: "productos de datos" },
-  { valor: "4", etiqueta: "países" },
-  { valor: "10+", etiqueta: "tecnologías en el stack" },
+  { valor: "+20", etiqueta: "iniciativas estratégicas" },
+  { valor: "7", etiqueta: "países" },
+  { valor: "+5", etiqueta: "unidades de negocio" },
+  { valor: "Millones", etiqueta: "de transacciones analizadas diariamente" },
+  { valor: "Cloud", etiqueta: "plataformas cloud empresariales" },
+  { valor: "E2E", etiqueta: "equipos multidisciplinarios" },
 ];
 
 export default function StatsStrip() {

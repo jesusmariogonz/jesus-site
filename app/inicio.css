@@ -228,7 +228,7 @@ html:not(.dark) .dot-grid {
   padding: 2rem 0;
 }
 @media (min-width: 640px) {
-  .jx-stats { grid-template-columns: repeat(4, 1fr); }
+  .jx-stats { grid-template-columns: repeat(3, 1fr); }
 }
 .jx-stat { text-align: center; }
 .jx-stat b {
