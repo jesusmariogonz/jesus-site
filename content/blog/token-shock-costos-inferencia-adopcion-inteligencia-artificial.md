@@ -10,6 +10,7 @@ tags:
   - Transformación digital
 resumen: La carrera por adoptar inteligencia artificial ya no depende únicamente de la calidad de los modelos. El costo de operar IA a gran escala está obligando a las empresas a replantear sus estrategias tecnológicas y financieras.
 imagen: /blog/lycs-architecture-U2BI3GMnSSE-unsplash.jpg
+destacada: true
 ---
 
 ## La nueva realidad de la inteligencia artificial
