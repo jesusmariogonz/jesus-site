@@ -2,9 +2,21 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { getPosts, getPost, CATEGORIAS, formatFecha } from "@/lib/posts";
+import {
+  getPosts,
+  getPost,
+  getPostsLite,
+  CATEGORIAS,
+  formatFecha,
+} from "@/lib/posts";
 import { calcularMinutos } from "@/lib/lectura";
 import ShareRow from "@/components/ShareRow";
+import NotasCarrusel from "@/components/NotasCarrusel";
+import NotaCover from "@/components/NotaCover";
+import ReadingProgress from "@/components/ReadingProgress";
+import ArticleToc from "@/components/ArticleToc";
+import VolverArriba from "@/components/VolverArriba";
+import { SITE_NAME, AUTHOR, absUrl } from "@/lib/site";
 
 export function generateStaticParams() {
   return getPosts().map((p) => ({ slug: p.slug }));
@@ -14,23 +26,34 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const post = getPost(slug);
   if (!post) return { title: "Nota" };
-  // Open Graph por nota: LinkedIn y Facebook no reciben el texto por
-  // parámetro, rastrean la URL y muestran estas etiquetas.
+  const url = absUrl(`/blog/${slug}`);
+  const imagen = post.imagen || "/og-image.png";
   return {
     title: post.titulo,
     description: post.resumen,
+    keywords: [
+      ...(post.tags || []),
+      CATEGORIAS[post.categoria] || post.categoria,
+      "datos",
+      "analítica",
+    ],
+    authors: [{ name: AUTHOR.name }],
+    alternates: { canonical: `/blog/${slug}` },
     openGraph: {
       type: "article",
-      url: `/blog/${slug}`,
+      url,
       title: post.titulo,
       description: post.resumen,
-      images: [{ url: post.imagen || "/og-image.png" }],
+      publishedTime: post.fecha,
+      authors: [AUTHOR.name],
+      tags: post.tags || [],
+      images: [{ url: imagen }],
     },
     twitter: {
       card: "summary_large_image",
       title: post.titulo,
       description: post.resumen,
-      images: [post.imagen || "/og-image.png"],
+      images: [imagen],
     },
   };
 }
@@ -41,40 +64,138 @@ export default async function Post({ params }) {
   if (!post) notFound();
 
   const minutos = calcularMinutos(post.content || "");
+  const todas = getPostsLite();
+
+  // Carrusel "una vez adentro": las notas más nuevas, sin la actual.
+  const recientes = todas.filter((n) => n.slug !== slug).slice(0, 5);
+
+  // Notas relacionadas: misma categoría; si no alcanzan, completa con recientes.
+  const mismaCat = todas.filter(
+    (n) => n.slug !== slug && n.categoria === post.categoria
+  );
+  const relacionadas = (
+    mismaCat.length >= 3
+      ? mismaCat
+      : [...mismaCat, ...todas.filter((n) => n.slug !== slug && !mismaCat.includes(n))]
+  ).slice(0, 3);
+
+  // Datos estructurados de artículo + miga de pan (breadcrumbs).
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.titulo,
+    description: post.resumen,
+    inLanguage: "es-MX",
+    datePublished: post.fecha,
+    dateModified: post.fecha,
+    image: [absUrl(post.imagen || "/og-image.png")],
+    mainEntityOfPage: absUrl(`/blog/${slug}`),
+    keywords: (post.tags || []).join(", "),
+    articleSection: CATEGORIAS[post.categoria] || post.categoria,
+    author: {
+      "@type": "Person",
+      name: AUTHOR.name,
+      url: absUrl("/sobre-mi"),
+    },
+    publisher: {
+      "@type": "Person",
+      name: AUTHOR.name,
+    },
+  };
+  const breadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Inicio", item: absUrl("/") },
+      { "@type": "ListItem", position: 2, name: "Blog", item: absUrl("/blog") },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.titulo,
+        item: absUrl(`/blog/${slug}`),
+      },
+    ],
+  };
 
   return (
-    <article className="article">
-      <div className="container">
-        <header>
-          <span className="sql-meta">
-            <Link href={`/blog/categoria/${post.categoria}`}>
-              {CATEGORIAS[post.categoria] || post.categoria}
-            </Link>{" "}
-            · {minutos} min de lectura · {formatFecha(post.fecha)}
-          </span>
-          <h1>{post.titulo}</h1>
+    <>
+      <ReadingProgress />
+      <article className="article">
+        <div className="container">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+          />
 
-          {/* Etiquetas de la nota (solo se muestran si la nota las tiene) */}
-          {post.tags?.length > 0 && (
-            <div className="post-tags">
-              {post.tags.map((tag) => (
-                <span key={tag}>#{tag}</span>
-              ))}
-            </div>
+          {recientes.length > 0 && (
+            <NotasCarrusel notas={recientes} titulo="Lo más reciente" />
           )}
-        </header>
-        <div className="prose">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>
-            {post.content}
-          </ReactMarkdown>
+
+          <header>
+            <span className="sql-meta">
+              <Link href={`/blog/categoria/${post.categoria}`}>
+                {CATEGORIAS[post.categoria] || post.categoria}
+              </Link>{" "}
+              · {minutos} min de lectura · {formatFecha(post.fecha)}
+            </span>
+            <h1>{post.titulo}</h1>
+
+            {post.tags?.length > 0 && (
+              <div className="post-tags">
+                {post.tags.map((tag) => (
+                  <span key={tag}>#{tag}</span>
+                ))}
+              </div>
+            )}
+          </header>
+
+          <ArticleToc />
+
+          <div className="prose">
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {post.content}
+            </ReactMarkdown>
+          </div>
+
+          <ShareRow titulo={post.titulo} />
+
+          {relacionadas.length > 0 && (
+            <section className="relacionadas">
+              <span className="sql-meta">-- sigue leyendo</span>
+              <ul className="post-list post-list-editorial">
+                {relacionadas.map((n) => (
+                  <li key={n.slug} className="post-card post-card-editorial">
+                    <Link href={`/blog/${n.slug}`} className="post-card-link">
+                      <NotaCover
+                        categoria={n.categoria}
+                        imagen={n.imagen}
+                        size="md"
+                      />
+                      <div className="post-card-body">
+                        <span className="post-card-cat">{n.categoriaNombre}</span>
+                        <h3>{n.titulo}</h3>
+                        <span className="post-card-meta">
+                          {n.minutos} min de lectura{" "}
+                          <span className="jx-flecha">→</span>
+                        </span>
+                      </div>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          <p style={{ marginTop: 32 }}>
+            <Link href="/blog">← Volver al blog</Link>
+          </p>
         </div>
-
-        <ShareRow titulo={post.titulo} />
-
-        <p style={{ marginTop: 32 }}>
-          <Link href="/blog">← Volver al blog</Link>
-        </p>
-      </div>
-    </article>
+      </article>
+      <VolverArriba />
+    </>
   );
 }

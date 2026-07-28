@@ -1,6 +1,11 @@
 import CvTimeline from "@/components/CvTimeline";
 
-export const metadata = { title: "Currículum" };
+export const metadata = {
+  title: "Currículum",
+  description:
+    "Trayectoria de Jesús Mario González Siller: 13+ años en datos, analítica e IA en retail y banca. Descarga el CV en PDF.",
+  alternates: { canonical: "/curriculum" },
+};
 
 export default function Curriculum() {
   return (

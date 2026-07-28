@@ -1,61 +1,78 @@
-import Link from "next/link";
-import { getPosts, CATEGORIAS } from "@/lib/posts";
-import PostCard from "@/components/PostCard";
-import NotaCover from "@/components/NotaCover";
+import { getPosts, getPostsLite, CATEGORIAS } from "@/lib/posts";
 import Reveal from "@/components/Reveal";
-import { calcularMinutos } from "@/lib/lectura";
+import NotasCarrusel from "@/components/NotasCarrusel";
+import BlogExplorer from "@/components/BlogExplorer";
+import { SITE_NAME, absUrl } from "@/lib/site";
 
-export const metadata = { title: "Blog" };
+export const metadata = {
+  title: "Blog",
+  description:
+    "Notas sobre ingeniería de datos, Snowflake, Databricks, arquitectura, IA y retail.",
+  alternates: { canonical: "/blog" },
+  openGraph: {
+    type: "website",
+    url: absUrl("/blog"),
+    title: "Blog · Jesús González",
+    description:
+      "Notas sobre ingeniería de datos, Snowflake, Databricks, arquitectura, IA y retail.",
+  },
+};
 
 export default function Blog() {
   const posts = getPosts();
-  // Editor's Pick: la nota con destacada:true, o la más reciente
+  const notas = getPostsLite();
+
+  // Editor's Pick: la nota con destacada:true, o la más reciente.
   const pick = posts.find((p) => p.destacada) || posts[0];
-  const resto = posts.filter((p) => p.slug !== pick?.slug);
+
+  // Carrusel: las 5 notas más nuevas (ya vienen ordenadas por fecha desc).
+  const recientes = notas.slice(0, 5);
+
+  // Datos estructurados: colección de artículos del blog.
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    name: `Blog · ${SITE_NAME}`,
+    url: absUrl("/blog"),
+    inLanguage: "es-MX",
+    blogPost: notas.slice(0, 20).map((n) => ({
+      "@type": "BlogPosting",
+      headline: n.titulo,
+      description: n.resumen,
+      url: absUrl(`/blog/${n.slug}`),
+      datePublished: n.fecha,
+      author: { "@type": "Person", name: "Jesús Mario González Siller" },
+    })),
+  };
 
   return (
     <section className="section">
       <div className="container">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+
         <Reveal>
           <span className="sql-meta">
             blog · {posts.length} {posts.length === 1 ? "nota" : "notas"}
           </span>
           <h2>Notas</h2>
-          <div className="chip-row">
-            <span className="chip active">Todas</span>
-            {Object.entries(CATEGORIAS).map(([slug, nombre]) => (
-              <Link key={slug} href={`/blog/categoria/${slug}`} className="chip">
-                {nombre}
-              </Link>
-            ))}
-          </div>
         </Reveal>
 
-        {pick && (
+        {recientes.length > 0 && (
           <Reveal delay={0.05}>
-            <Link href={`/blog/${pick.slug}`} className="editors-pick">
-              <NotaCover categoria={pick.categoria} imagen={pick.imagen} size="pick" />
-              <div className="editors-pick-body">
-                <span className="editors-pick-badge">★ Editor's Pick</span>
-                <h3>{pick.titulo}</h3>
-                <p>{pick.resumen}</p>
-                <span className="post-card-meta">
-                  {CATEGORIAS[pick.categoria] || pick.categoria} ·{" "}
-                  {calcularMinutos(pick.content || "")} min de lectura{" "}
-                  <span className="jx-flecha">→</span>
-                </span>
-              </div>
-            </Link>
+            <NotasCarrusel notas={recientes} titulo="Lo más reciente" />
           </Reveal>
         )}
 
-        <ul className="post-list post-list-editorial">
-          {resto.map((post, i) => (
-            <Reveal key={post.slug} delay={Math.min(i * 0.06, 0.3)}>
-              <PostCard post={post} />
-            </Reveal>
-          ))}
-        </ul>
+        <Reveal delay={0.05}>
+          <BlogExplorer
+            notas={notas}
+            pickSlug={pick?.slug}
+            categorias={Object.entries(CATEGORIAS)}
+          />
+        </Reveal>
       </div>
     </section>
   );

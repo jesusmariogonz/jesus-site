@@ -1,15 +1,47 @@
 import "./globals.css";
 import "./inicio.css";
 import Header from "@/components/Header";
+import {
+  SITE_URL,
+  SITE_NAME,
+  SITE_DESCRIPTION,
+  AUTHOR,
+  GOOGLE_SITE_VERIFICATION,
+} from "@/lib/site";
 
 export const metadata = {
-  metadataBase: new URL("https://jesus-site-silk.vercel.app"),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Jesús — Datos & Analítica",
-    template: "%s · Jesús — Datos & Analítica",
+    default: "Jesús Mario González Siller — Datos, Analítica & IA",
+    template: "%s · Jesús González — Datos & Analítica",
   },
-  description:
-    "Notas sobre ingeniería de datos, Snowflake, arquitectura, IA y retail desde Saltillo, México.",
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  keywords: [
+    "Jesús Mario González Siller",
+    "Jesús González datos",
+    "Chuy González",
+    "arquitecto de datos",
+    "Snowflake",
+    "Databricks",
+    "ingeniería de datos",
+    "IA generativa",
+    "analítica retail",
+    "FEMSA datos",
+    "Saltillo",
+  ],
+  authors: [{ name: AUTHOR.name, url: SITE_URL }],
+  creator: AUTHOR.name,
+  publisher: AUTHOR.name,
+  alternates: { canonical: "/" },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+  },
+  ...(GOOGLE_SITE_VERIFICATION
+    ? { verification: { google: GOOGLE_SITE_VERIFICATION } }
+    : {}),
   icons: {
     icon: [
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
@@ -21,17 +53,55 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "es_MX",
-    url: "https://jesus-site-silk.vercel.app",
-    siteName: "Jesús — Datos & Analítica",
-    title: "Jesús — Datos & Analítica",
-    description:
-      "Notas sobre ingeniería de datos, Snowflake, arquitectura, IA y retail desde Saltillo, México.",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: "Jesús Mario González Siller — Datos, Analítica & IA",
+    description: SITE_DESCRIPTION,
     images: [{ url: "/og-image.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     images: ["/og-image.png"],
   },
+};
+
+export const viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f6f7f5" },
+    { media: "(prefers-color-scheme: dark)", color: "#0b1220" },
+  ],
+};
+
+// Datos estructurados de identidad: quién es Jesús (Person) y el sitio
+// (WebSite). Es lo que ayuda a que, al buscar tu nombre, Google muestre
+// tu sitio como tu resultado de identidad.
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: AUTHOR.name,
+  alternateName: AUTHOR.alternateName,
+  jobTitle: AUTHOR.jobTitle,
+  url: SITE_URL,
+  image: AUTHOR.image,
+  email: `mailto:${AUTHOR.email}`,
+  worksFor: { "@type": "Organization", name: AUTHOR.worksFor },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: AUTHOR.locality,
+    addressRegion: AUTHOR.region,
+    addressCountry: "MX",
+  },
+  knowsAbout: AUTHOR.knowsAbout,
+  sameAs: AUTHOR.sameAs,
+};
+
+const siteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE_NAME,
+  url: SITE_URL,
+  inLanguage: "es-MX",
+  author: { "@type": "Person", name: AUTHOR.name },
 };
 
 // Anti-flash: aplica el tema guardado ANTES de pintar
@@ -60,6 +130,14 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="dot-grid">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
+        />
         <Header />
         <main>{children}</main>
         <footer className="site-footer">

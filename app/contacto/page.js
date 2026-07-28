@@ -1,6 +1,11 @@
 import ContactForm from "@/components/ContactForm";
 
-export const metadata = { title: "Contacto" };
+export const metadata = {
+  title: "Contacto",
+  description:
+    "Contacta a Jesús Mario González Siller para temas de datos, analítica, IA y retail.",
+  alternates: { canonical: "/contacto" },
+};
 
 const canales = [
   {

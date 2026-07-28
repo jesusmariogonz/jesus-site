@@ -1,6 +1,11 @@
 import Image from "next/image";
 
-export const metadata = { title: "Sobre mí" };
+export const metadata = {
+  title: "Sobre mí",
+  description:
+    "Jesús Mario González Siller (Chuy): Arquitecto de Soluciones y Product Owner de Data, Analytics & IA en FEMSA, desde Saltillo, México.",
+  alternates: { canonical: "/sobre-mi" },
+};
 
 const focos = [
   {

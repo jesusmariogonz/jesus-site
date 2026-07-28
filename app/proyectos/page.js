@@ -4,6 +4,7 @@ export const metadata = {
   title: "Proyectos",
   description:
     "Proyectos de datos, analítica e inteligencia artificial en México, Latinoamérica y Europa.",
+  alternates: { canonical: "/proyectos" },
 };
 
 export default function Proyectos() {

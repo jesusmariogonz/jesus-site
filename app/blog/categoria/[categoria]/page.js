@@ -9,7 +9,13 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const { categoria } = await params;
-  return { title: CATEGORIAS[categoria] || "Categoría" };
+  const nombre = CATEGORIAS[categoria];
+  if (!nombre) return { title: "Categoría" };
+  return {
+    title: nombre,
+    description: `Notas de ${nombre} por Jesús González — datos, analítica e IA.`,
+    alternates: { canonical: `/blog/categoria/${categoria}` },
+  };
 }
 
 export default async function Categoria({ params }) {
