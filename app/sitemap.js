@@ -10,8 +10,8 @@ export default function sitemap() {
     { url: `${SITE_URL}/`, changeFrequency: "weekly", priority: 1 },
     { url: `${SITE_URL}/blog`, changeFrequency: "daily", priority: 0.9 },
     { url: `${SITE_URL}/proyectos`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${SITE_URL}/the-toolkit`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${SITE_URL}/sobre-mi`, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${SITE_URL}/curriculum`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${SITE_URL}/contacto`, changeFrequency: "yearly", priority: 0.5 },
   ].map((r) => ({ ...r, lastModified: ahora }));
 

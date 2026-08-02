@@ -8,8 +8,8 @@ const links = [
   { href: "/blog", label: "Blog" },
   { href: "/proyectos", label: "Proyectos" },
   { href: "/sobre-mi", label: "Sobre mí" },
-  { href: "/curriculum", label: "CV" },
   { href: "/contacto", label: "Contacto" },
+  { href: "/the-toolkit", label: "The Toolkit", accent: true },
 ];
 
 export default function Header() {
@@ -29,6 +29,7 @@ export default function Header() {
             <Link
               key={l.href}
               href={l.href}
+              className={l.accent ? "nav-toolkit" : undefined}
               aria-current={isActive(l.href) ? "page" : undefined}
             >
               {l.label}
