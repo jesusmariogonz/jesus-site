@@ -550,7 +550,12 @@ html:not(.dark) .jx-pill-opinion    { color: #6d28d9; }
   color: rgba(255, 255, 255, 0.85);
   text-transform: uppercase;
 }
-.jx-cover-lg { width: 100%; height: 210px; }
+.jx-cover-lg {
+  width: 100%;
+  height: 210px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
 .jx-cover-lg .jx-cover-glifo { font-size: 3.4rem; }
 .jx-cover-md { width: 100%; height: 150px; }
 .jx-cover-sm { width: 86px; height: 86px; border-radius: 10px; }

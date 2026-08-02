@@ -1,4 +1,5 @@
 import ProjectsMap from "@/components/ProjectsMap";
+import ProjectShowcase from "@/components/ProjectShowcase";
 
 export const metadata = {
   title: "Proyectos",
@@ -19,6 +20,10 @@ export default function Proyectos() {
             que he participado, desde México y Latinoamérica hasta Europa.
           </p>
         </header>
+
+        <ProjectShowcase />
+
+        <h2 style={{ marginTop: 8 }}>¿Dónde?</h2>
         <ProjectsMap />
       </div>
     </section>

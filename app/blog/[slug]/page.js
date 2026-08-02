@@ -16,6 +16,8 @@ import NotaCover from "@/components/NotaCover";
 import ReadingProgress from "@/components/ReadingProgress";
 import ArticleToc from "@/components/ArticleToc";
 import VolverArriba from "@/components/VolverArriba";
+import ToolkitBanner from "@/components/ToolkitBanner";
+import NewsletterForm from "@/components/NewsletterForm";
 import { SITE_NAME, AUTHOR, absUrl } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -153,6 +155,8 @@ export default async function Post({ params }) {
             )}
           </header>
 
+          <ToolkitBanner />
+
           <ArticleToc />
 
           <div className="prose">
@@ -162,6 +166,8 @@ export default async function Post({ params }) {
           </div>
 
           <ShareRow titulo={post.titulo} />
+
+          <NewsletterForm titulo="¿Te sirvió esta nota?" desc="Suscríbete y te aviso cuando publique una nueva." />
 
           {relacionadas.length > 0 && (
             <section className="relacionadas">

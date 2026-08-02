@@ -2,6 +2,7 @@ import { getPosts, getPostsLite, CATEGORIAS } from "@/lib/posts";
 import Reveal from "@/components/Reveal";
 import NotasCarrusel from "@/components/NotasCarrusel";
 import BlogExplorer from "@/components/BlogExplorer";
+import NewsletterForm from "@/components/NewsletterForm";
 import { SITE_NAME, absUrl } from "@/lib/site";
 
 export const metadata = {
@@ -58,6 +59,10 @@ export default function Blog() {
             blog · {posts.length} {posts.length === 1 ? "nota" : "notas"}
           </span>
           <h2>Notas</h2>
+        </Reveal>
+
+        <Reveal delay={0.03}>
+          <NewsletterForm />
         </Reveal>
 
         {recientes.length > 0 && (
