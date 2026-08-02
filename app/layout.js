@@ -1,3 +1,4 @@
+import Script from "next/script";
 import "./globals.css";
 import "./inicio.css";
 import Header from "@/components/Header";
@@ -148,6 +149,7 @@ export default function RootLayout({ children }) {
             </span>
           </div>
         </footer>
+        <Script src="https://app.lemonsqueezy.com/js/lemon.js" strategy="afterInteractive" />
       </body>
     </html>
   );

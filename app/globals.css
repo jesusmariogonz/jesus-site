@@ -1557,6 +1557,106 @@ html.dark {
   font-size: 0.95rem;
 }
 
+/* ── Precio y botón de compra ────────────────────────────────── */
+.tk-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(212, 175, 55, 0.15);
+}
+.tk-card-precio {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--tk-gold-light);
+}
+.tk-buy {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.55rem 1rem;
+  border-radius: 9px;
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-decoration: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--tk-gold-light), var(--tk-gold));
+  color: #1a1508;
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+.tk-buy:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+.tk-buy-soon {
+  background: none;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  color: var(--tk-ink-soft);
+  cursor: default;
+}
+.tk-buy-soon:hover {
+  transform: none;
+  filter: none;
+}
+
+/* ── Bundle destacado ────────────────────────────────────────── */
+.tk-bundle {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 40px;
+  padding: 28px 30px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--tk-black-2), var(--tk-black));
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  box-shadow: 0 24px 50px -16px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(212, 175, 55, 0.08);
+}
+.tk-bundle-eyebrow {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tk-gold);
+  margin-bottom: 6px;
+}
+.tk-bundle-title {
+  margin: 0 0 8px;
+  font-size: 1.3rem;
+  color: var(--tk-ink);
+}
+.tk-bundle-desc {
+  margin: 0;
+  max-width: 480px;
+  font-size: 0.88rem;
+  color: var(--tk-ink-soft);
+  line-height: 1.55;
+}
+.tk-bundle-precio {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.tk-bundle-tachado {
+  text-decoration: line-through;
+  color: var(--tk-ink-soft);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+.tk-bundle-num {
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: 1.6rem;
+  color: var(--tk-gold-light);
+}
+
 /* ── Vitrina de proyectos (/proyectos) ──────────────────────── */
 .pshow-grid {
   display: grid;
