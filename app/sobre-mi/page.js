@@ -1,9 +1,10 @@
 import Image from "next/image";
+import CvTimeline from "@/components/CvTimeline";
 
 export const metadata = {
   title: "Sobre mí",
   description:
-    "Jesús Mario González Siller (Chuy): Arquitecto de Soluciones y Product Owner de Data, Analytics & IA en FEMSA, desde Saltillo, México.",
+    "Jesús Mario González Siller (Chuy): Arquitecto de Soluciones y Product Owner de Data, Analytics & IA en FEMSA, desde Saltillo, México. Trayectoria y CV.",
   alternates: { canonical: "/sobre-mi" },
 };
 
@@ -91,6 +92,22 @@ export default function SobreMi() {
             mezcla me permite hablar el idioma técnico y el de negocio con la
             misma soltura.
           </p>
+
+          <p style={{ margin: "20px 0 8px" }}>
+            <a className="btn" href="/cv/cv.pdf" download>
+              Descargar CV (PDF)
+            </a>{" "}
+            <a
+              className="btn ghost"
+              href="/cv/cv.pdf"
+              target="_blank"
+              rel="noopener"
+              style={{ marginLeft: 10 }}
+            >
+              Ver PDF
+            </a>
+          </p>
+          <CvTimeline />
 
           <h2>Qué encontrarás en este sitio</h2>
           <ul>

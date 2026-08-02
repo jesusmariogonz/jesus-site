@@ -1,0 +1,20 @@
+name: Avisar nota nueva por correo
+
+# Se dispara solo cuando el push a main incluye cambios dentro de
+# content/blog (o sea, cuando publicas o editas una nota).
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content/blog/**"
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Esperar a que Vercel termine de desplegar
+        run: sleep 90
+
+      - name: Disparar aviso de newsletter
+        run: |
+          curl -sf "https://jgonzalez.app/api/newsletter/notify?secret=${{ secrets.NEWSLETTER_NOTIFY_SECRET }}"
