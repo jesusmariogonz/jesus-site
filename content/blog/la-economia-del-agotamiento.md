@@ -72,7 +72,7 @@ Cuando se entiende como un problema organizacional, las preguntas cambian.
 
 Ahí comienza el verdadero costo económico.
 
-![](/blog/photo-1522202176988-66273c2fd55f.jpg)
+![](/blog/photo-1522202176988-66273c2fd55f.jpg "Una sala de juntas con ejecutivos simboliza la toma de decisiones estratégicas que determina cómo se implementa la inteligencia artificial dentro de las organizaciones.")
 
 ## México trabaja mucho. No necesariamente produce mejor.
 
