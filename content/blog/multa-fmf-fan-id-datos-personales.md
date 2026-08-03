@@ -1,10 +1,10 @@
 ---
-titulo: "Cuando el balón deja de ser el protagonista: la multa que reabrió el debate sobre los datos personales"
-fecha: "2026-07-14"
-categoria: "business"
-resumen: "La sanción impuesta por el tratamiento de datos biométricos en el fútbol mexicano evidencia que la privacidad ya no es un asunto legal, sino un activo estratégico para cualquier organización."
-destacada: true
-imagen: "/blog/fan-id-portada.jpg"
+titulo: 'Cuando el balón deja de ser el protagonista: la multa que reabrió el debate sobre los datos personales'
+fecha: 2026-07-14T00:00:00.000Z
+categoria: business
+resumen: 'La sanción impuesta por el tratamiento de datos biométricos en el fútbol mexicano evidencia que la privacidad ya no es un asunto legal, sino un activo estratégico para cualquier organización.'
+imagen: /blog/fan-id-portada.jpg
+destacada: false
 ---
 
 La sanción por el tratamiento de datos biométricos en el sistema FAN ID trasciende al fútbol. Es una advertencia para cualquier empresa que considere que la información de sus clientes es un activo propio y no un préstamo sustentado en la confianza.
