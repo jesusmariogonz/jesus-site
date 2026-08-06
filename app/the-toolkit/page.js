@@ -57,7 +57,12 @@ export default function TheToolkit() {
               </h3>
               <p className="tk-card-desc">{p.resumen}</p>
               <div className="tk-card-footer">
-                <span className="tk-card-precio">${p.precio} USD</span>
+                <span className="tk-card-precio">
+                  {p.precioLista && (
+                    <span className="tk-bundle-tachado tk-card-tachado">${p.precioLista}</span>
+                  )}{" "}
+                  ${p.precio} USD
+                </span>
                 <BuyButton checkoutUrl={p.checkoutUrl} />
               </div>
             </article>

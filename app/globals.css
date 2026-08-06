@@ -1934,6 +1934,224 @@ html.dark {
     height: 240px;
     margin: 0 auto;
   }
+  .tk-laptop {
+    width: 240px;
+  }
+  .tk-book {
+    width: 160px;
+    height: 216px;
+  }
+}
+
+/* ── Badges de features (producto individual) ──────────────── */
+.tk-product-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+.tk-product-badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  color: var(--tk-gold-light);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  background: var(--tk-gold-soft);
+  padding: 0.4rem 0.85rem;
+  border-radius: 9999px;
+}
+
+/* ── Precio con descuento ────────────────────────────────────── */
+.tk-product-precio-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 2px;
+}
+.tk-product-tachado {
+  font-size: 0.95rem;
+}
+.tk-product-ahorro {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #1a1508;
+  background: linear-gradient(135deg, var(--tk-gold-light), var(--tk-gold));
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+}
+.tk-card-tachado {
+  font-size: 0.8rem;
+  margin-right: 2px;
+}
+
+/* ── Mockup 3D de laptop ─────────────────────────────────────── */
+.tk-laptop-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  perspective: 1200px;
+}
+.tk-laptop {
+  width: 320px;
+  transform: rotateX(8deg) rotateY(-14deg);
+  transform-style: preserve-3d;
+  animation: tkLaptopFloat 7s ease-in-out infinite;
+}
+@keyframes tkLaptopFloat {
+  0%, 100% { transform: rotateX(8deg) rotateY(-14deg) translateY(0); }
+  50% { transform: rotateX(8deg) rotateY(-14deg) translateY(-10px); }
+}
+.tk-laptop-screen {
+  background: linear-gradient(160deg, #1c1710, var(--tk-black));
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 12px 12px 4px 4px;
+  padding: 14px 16px 20px;
+  box-shadow: 0 40px 70px -20px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(212, 175, 55, 0.06);
+}
+.tk-laptop-topbar {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.tk-laptop-topbar span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--tk-gold);
+  opacity: 0.55;
+}
+.tk-laptop-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.tk-iso-bars-flat {
+  height: 90px;
+  gap: 6px;
+}
+.tk-laptop-base {
+  height: 12px;
+  margin: 0 -10px;
+  background: linear-gradient(180deg, #2a2318, #100d08);
+  border-radius: 0 0 10px 10px;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-top: none;
+  position: relative;
+}
+.tk-laptop-base::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  border-radius: 4px;
+  background: rgba(212, 175, 55, 0.3);
+}
+.tk-laptop-chip {
+  position: absolute;
+  top: 18%;
+  right: 4%;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--tk-gold-light), var(--tk-gold));
+  color: #1a1508;
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: 0.7rem;
+  box-shadow: 0 16px 30px -8px rgba(212, 175, 55, 0.5);
+  transform: translateZ(40px) rotate(-6deg);
+  animation: tkChipFloat 5s ease-in-out infinite;
+}
+@keyframes tkChipFloat {
+  0%, 100% { transform: translateZ(40px) rotate(-6deg) translateY(0); }
+  50% { transform: translateZ(40px) rotate(-6deg) translateY(-8px); }
+}
+
+/* ── Mockup 3D de libro/PDF (formatos tipo manual/plantillas) ── */
+.tk-book-wrap {
+  display: flex;
+  justify-content: center;
+  perspective: 1200px;
+}
+.tk-book {
+  position: relative;
+  width: 200px;
+  height: 270px;
+  transform-style: preserve-3d;
+  transform: rotateY(-28deg) rotateX(6deg);
+  animation: tkBookFloat 7s ease-in-out infinite;
+}
+@keyframes tkBookFloat {
+  0%, 100% { transform: rotateY(-28deg) rotateX(6deg) translateY(0); }
+  50% { transform: rotateY(-28deg) rotateX(6deg) translateY(-12px); }
+}
+.tk-book-cover {
+  position: absolute;
+  inset: 0;
+  border-radius: 4px 10px 10px 4px;
+  background: linear-gradient(155deg, #1c1710, var(--tk-black));
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  box-shadow: 0 40px 70px -18px rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 22px 18px;
+}
+.tk-book-cover-title {
+  font-family: "Fraunces", var(--font-sans);
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: var(--tk-gold-light);
+}
+.tk-book-cover-mark {
+  align-self: flex-start;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--tk-gold);
+}
+.tk-book-spine {
+  position: absolute;
+  left: -18px;
+  top: 0;
+  width: 18px;
+  height: 100%;
+  background: linear-gradient(90deg, #0a0805, #1c1710);
+  border-radius: 4px 0 0 4px;
+  transform: rotateY(-90deg);
+  transform-origin: right;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+.tk-book-pages {
+  position: absolute;
+  right: -6px;
+  top: 4px;
+  width: 6px;
+  height: calc(100% - 8px);
+  background: repeating-linear-gradient(
+    180deg,
+    #f4ecd8 0px,
+    #f4ecd8 2px,
+    #d8cba8 2px,
+    #d8cba8 3px
+  );
+  border-radius: 0 3px 3px 0;
+  transform: rotateY(90deg);
+  transform-origin: left;
 }
 
 /* ── Vitrina de proyectos (/proyectos) ──────────────────────── */
