@@ -1657,6 +1657,285 @@ html.dark {
   color: var(--tk-gold-light);
 }
 
+.tk-card-title-link {
+  color: inherit;
+  text-decoration: none;
+}
+.tk-card-title-link:hover {
+  color: var(--tk-gold-light);
+}
+
+/* ── Página de producto individual ──────────────────────────── */
+.tk-product-container {
+  max-width: 980px;
+}
+.tk-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--tk-ink-soft);
+  text-decoration: none;
+  margin-bottom: 36px;
+}
+.tk-back:hover {
+  color: var(--tk-gold-light);
+}
+
+.tk-product-hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 56px;
+}
+.tk-product-copy {
+  text-align: left;
+}
+.tk-product-title {
+  font-family: "Fraunces", var(--font-sans);
+  font-weight: 600;
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--tk-ink);
+  margin: 0 0 16px;
+}
+.tk-product-hook {
+  font-family: "Fraunces", var(--font-sans);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.15rem;
+  line-height: 1.5;
+  color: var(--tk-gold-light);
+  margin: 0 0 28px;
+  max-width: 42ch;
+}
+.tk-product-buybar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.tk-product-precio-wrap {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+.tk-product-precio {
+  font-size: 1.7rem;
+}
+.tk-product-precio-nota {
+  font-size: 0.72rem;
+  color: var(--tk-ink-soft);
+  font-family: var(--font-mono);
+}
+.tk-buy-lg {
+  padding: 0.8rem 1.5rem;
+  font-size: 0.92rem;
+}
+.tk-product-soon-note {
+  margin: 18px 0 0;
+  font-size: 0.85rem;
+  color: var(--tk-ink-soft);
+  max-width: 40ch;
+}
+
+/* Mockup 3D isométrico — CSS puro, sin imágenes externas */
+.tk-iso {
+  perspective: 1400px;
+  display: flex;
+  justify-content: center;
+}
+.tk-iso-stage {
+  position: relative;
+  width: 280px;
+  height: 300px;
+  transform-style: preserve-3d;
+  transform: rotateX(52deg) rotateZ(-38deg);
+  animation: tkIsoFloat 7s ease-in-out infinite;
+}
+@keyframes tkIsoFloat {
+  0%, 100% { transform: rotateX(52deg) rotateZ(-38deg) translateZ(0); }
+  50% { transform: rotateX(52deg) rotateZ(-38deg) translateZ(14px); }
+}
+.tk-iso-panel {
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  background: linear-gradient(155deg, var(--tk-black-2), var(--tk-black));
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.7);
+}
+.tk-iso-panel-back {
+  transform: translate3d(0, 0, -64px);
+  display: flex;
+  gap: 8px;
+  padding: 18px;
+  opacity: 0.7;
+}
+.tk-iso-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--tk-gold);
+  opacity: 0.6;
+}
+.tk-iso-panel-mid {
+  transform: translate3d(0, 0, -24px);
+  padding: 24px;
+  display: flex;
+  align-items: flex-end;
+}
+.tk-iso-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  width: 100%;
+  height: 60%;
+}
+.tk-iso-bars i {
+  flex: 1;
+  height: var(--h);
+  border-radius: 4px 4px 0 0;
+  background: linear-gradient(180deg, var(--tk-gold-light), var(--tk-gold-soft));
+  border: 1px solid rgba(212, 175, 55, 0.5);
+}
+.tk-iso-panel-front {
+  transform: translate3d(0, 0, 20px);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.tk-iso-line {
+  width: 100%;
+  height: auto;
+}
+.tk-iso-kpi {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--tk-ink-soft);
+}
+.tk-iso-kpi b {
+  color: var(--tk-gold-light);
+  font-size: 0.95rem;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tk-iso-stage { animation: none; }
+}
+
+.tk-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+.tk-product-block {
+  padding: 26px;
+  border-radius: 16px;
+  background: var(--tk-black-2);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+.tk-product-block-title {
+  font-family: "Fraunces", var(--font-sans);
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--tk-ink);
+  margin: 0 0 16px;
+}
+.tk-product-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.tk-product-list li {
+  padding-left: 22px;
+  position: relative;
+  color: var(--tk-ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+.tk-product-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--tk-gold);
+}
+.tk-product-list-check li::before {
+  border-radius: 3px;
+  transform: rotate(45deg);
+}
+
+.tk-product-resultado {
+  padding: 26px 30px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--tk-black-2), var(--tk-black));
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  margin-bottom: 40px;
+}
+.tk-product-resultado p {
+  margin: 10px 0 0;
+  font-family: "Fraunces", var(--font-sans);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--tk-ink);
+  line-height: 1.5;
+}
+
+.tk-product-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  padding: 24px 0;
+  border-top: 1px solid rgba(212, 175, 55, 0.18);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.18);
+  margin-bottom: 48px;
+}
+.tk-product-meta p {
+  margin: 6px 0 0;
+  color: var(--tk-ink);
+  font-size: 0.92rem;
+}
+
+.tk-product-footer-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 28px 30px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--tk-black-2), var(--tk-black));
+  border: 1px solid rgba(212, 175, 55, 0.4);
+}
+.tk-product-precio-wrap-inline {
+  margin: 0;
+  color: var(--tk-ink-soft);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 760px) {
+  .tk-product-hero {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .tk-iso-stage {
+    width: 220px;
+    height: 240px;
+    margin: 0 auto;
+  }
+}
+
 /* ── Vitrina de proyectos (/proyectos) ──────────────────────── */
 .pshow-grid {
   display: grid;

@@ -50,7 +50,11 @@ export default function TheToolkit() {
           {TOOLKIT_PRODUCTOS.map((p) => (
             <article key={p.id} className="tk-card">
               <span className="tk-card-formato">{p.formato}</span>
-              <h3 className="tk-card-title">{p.nombre}</h3>
+              <h3 className="tk-card-title">
+                <Link href={`/the-toolkit/${p.id}`} className="tk-card-title-link">
+                  {p.nombre}
+                </Link>
+              </h3>
               <p className="tk-card-desc">{p.resumen}</p>
               <div className="tk-card-footer">
                 <span className="tk-card-precio">${p.precio} USD</span>
