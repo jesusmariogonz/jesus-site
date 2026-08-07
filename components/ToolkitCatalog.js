@@ -55,6 +55,8 @@ export default function ToolkitCatalog({ productos, bundles }) {
                 <span className="tk-card-check-box" aria-hidden="true" />
               </label>
 
+              {p.badge && <span className="tk-card-badge">{p.badge}</span>}
+
               <span className="tk-card-formato">{p.formato}</span>
               <h3 className="tk-card-title">
                 <Link href={`/the-toolkit/${p.id}`} className="tk-card-title-link">
@@ -69,7 +71,11 @@ export default function ToolkitCatalog({ productos, bundles }) {
                       ${p.precioLista}
                     </span>
                   )}{" "}
-                  ${p.precio} USD
+                  {p.precio === 0 ? (
+                    <span className="tk-card-gratis">GRATIS</span>
+                  ) : (
+                    `$${p.precio} USD`
+                  )}
                 </span>
                 <BuyButton checkoutUrl={p.checkoutUrl} />
               </div>
