@@ -2324,3 +2324,116 @@ html.dark {
   color: #d64545;
   font-size: 0.85rem;
 }
+/* ── Selector múltiple en /the-toolkit ──────────────────────── */
+.tk-card {
+  padding-top: 40px; /* deja espacio al checkbox */
+}
+.tk-card-check {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+  display: inline-flex;
+}
+.tk-card-check input {
+  position: absolute;
+  opacity: 0;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  cursor: pointer;
+}
+.tk-card-check-box {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  background: var(--tk-black);
+  display: inline-block;
+  position: relative;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.tk-card-check input:checked + .tk-card-check-box {
+  background: linear-gradient(135deg, var(--tk-gold-light), var(--tk-gold));
+  border-color: var(--tk-gold);
+}
+.tk-card-check input:checked + .tk-card-check-box::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid #1a1508;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.tk-card-check input:focus-visible + .tk-card-check-box {
+  outline: 2px solid var(--tk-gold-light);
+  outline-offset: 2px;
+}
+.tk-card-selected {
+  border-color: rgba(212, 175, 55, 0.6);
+  box-shadow: 0 22px 46px -14px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(212, 175, 55, 0.28);
+}
+
+.tk-selector-bar {
+  position: sticky;
+  bottom: 20px;
+  z-index: 20;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0 0 40px;
+  padding: 18px 24px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--tk-black-2), var(--tk-black));
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  box-shadow: 0 24px 50px -16px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(212, 175, 55, 0.1);
+}
+.tk-selector-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.tk-selector-count {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--tk-gold);
+}
+.tk-selector-precio {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--tk-gold-light);
+  font-size: 1rem;
+}
+.tk-selector-nota {
+  font-size: 0.82rem;
+  color: var(--tk-ink-soft);
+  max-width: 46ch;
+}
+.tk-selector-nota a {
+  color: var(--tk-gold-light);
+}
+.tk-selector-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.tk-selector-clear {
+  background: none;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  color: var(--tk-ink-soft);
+  border-radius: 9px;
+  padding: 0.55rem 1rem;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+.tk-selector-clear:hover {
+  border-color: rgba(212, 175, 55, 0.6);
+  color: var(--tk-ink);
+}
