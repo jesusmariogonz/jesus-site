@@ -24,6 +24,10 @@
   "overrides": {
     "@vercel/analytics": {
       "@remix-run/react": false
-    }
+    },
+    "slate": "0.114.0",
+    "slate-dom": "0.114.0",
+    "slate-react": "0.114.2",
+    "slate-hyperscript": "0.100.0"
   }
 }
