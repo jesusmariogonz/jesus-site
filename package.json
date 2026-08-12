@@ -20,5 +20,10 @@
     "remark-gfm": "^4.0.0",
     "tinacms": "^3.10.1",
     "@tinacms/cli": "^2.5.5"
+  },
+  "overrides": {
+    "@vercel/analytics": {
+      "@remix-run/react": false
+    }
   }
 }
