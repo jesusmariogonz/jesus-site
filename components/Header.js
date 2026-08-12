@@ -7,7 +7,7 @@ import ThemeToggle from "@/components/ThemeToggle";
 const links = [
   { href: "/blog", label: "Blog" },
   { href: "/proyectos", label: "Proyectos" },
-  { href: "/recursos", label: "Recursos gratis" },
+  { href: "/recursos", label: "Biblioteca" },
   { href: "/sobre-mi", label: "Sobre mí" },
   { href: "/contacto", label: "Contacto" },
   { href: "/the-toolkit", label: "The Toolkit", accent: true },

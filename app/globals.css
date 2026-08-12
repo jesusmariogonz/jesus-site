@@ -2470,3 +2470,215 @@ html.dark {
   color: #ffffff;
   font-weight: 700;
 }
+
+/* ============================================================
+   Biblioteca (/recursos) — mismo azul/blanco del resto del sitio,
+   NUNCA negro/dorado (eso es exclusivo de The Toolkit).
+   ============================================================ */
+.lib-page {
+  background: var(--bg);
+  padding: 72px 0 96px;
+}
+.lib-hero {
+  max-width: 640px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+.lib-hero-eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  background: var(--accent-soft);
+  padding: 0.3rem 0.8rem;
+  border-radius: 9999px;
+  margin-bottom: 18px;
+}
+.lib-hero-title {
+  margin: 0 0 14px;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1.15;
+}
+.lib-hero-desc {
+  margin: 0 auto 20px;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.lib-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-bottom: 56px;
+}
+.lib-card {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border-radius: 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.lib-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+}
+.lib-card-formato {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.lib-card-title {
+  margin: 0 0 4px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+.lib-card-title a {
+  color: inherit;
+}
+.lib-card-subtitulo {
+  font-size: 0.82rem;
+  color: var(--meta);
+  font-style: italic;
+  margin: 0 0 10px;
+}
+.lib-card-desc {
+  margin: 0 0 16px;
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  flex: 1;
+}
+.lib-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line-soft);
+}
+.lib-badge-gratis {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--accent);
+}
+.lib-cta-final {
+  text-align: center;
+  padding-top: 24px;
+  border-top: 1px solid var(--line-soft);
+}
+.lib-cta-final p {
+  color: var(--ink-soft);
+  margin: 0 0 16px;
+  font-size: 0.95rem;
+}
+
+/* ── Página de detalle de un libro (/recursos/[slug]) ───────── */
+.lib-back {
+  display: inline-block;
+  margin-bottom: 28px;
+  color: var(--accent);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+.lib-product-hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 48px;
+}
+@media (max-width: 760px) {
+  .lib-product-hero {
+    grid-template-columns: 1fr;
+  }
+}
+.lib-product-title {
+  margin: 10px 0 16px;
+  font-size: clamp(1.7rem, 3.6vw, 2.3rem);
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.15;
+}
+.lib-product-subtitulo {
+  color: var(--meta);
+  font-style: italic;
+  margin: 0 0 16px;
+}
+.lib-product-hook {
+  color: var(--ink-soft);
+  font-size: 1.02rem;
+  line-height: 1.6;
+  margin: 0 0 24px;
+}
+.lib-product-cover {
+  aspect-ratio: 3 / 4;
+  border-radius: 16px;
+  background: linear-gradient(150deg, var(--accent-2), var(--accent));
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  text-align: center;
+}
+.lib-product-cover-inner {
+  color: #fff;
+}
+.lib-product-cover-mark {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-bottom: 14px;
+}
+.lib-product-cover-title {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 800;
+  line-height: 1.3;
+}
+.lib-product-section {
+  margin-bottom: 32px;
+}
+.lib-product-section h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 14px;
+}
+.lib-product-section ul {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+.lib-product-section p {
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+.lib-product-resultado {
+  background: var(--accent-soft);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px 20px;
+  color: var(--ink);
+  line-height: 1.6;
+}

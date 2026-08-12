@@ -1,25 +1,31 @@
 "use client";
 
+import Link from "next/link";
 import { trackDescarga } from "@/lib/track";
 
-export default function RecursoCard({ recurso }) {
+export default function LibroCard({ libro }) {
   return (
-    <article className="tk-card recurso-card">
-      <span className="tk-card-formato">PDF · {recurso.paginas} págs.</span>
-      <h3 className="tk-card-title">{recurso.titulo}</h3>
-      {recurso.subtitulo && (
-        <p className="recurso-subtitulo">{recurso.subtitulo}</p>
+    <article className="lib-card">
+      <span className="lib-card-formato">PDF · {libro.paginas} págs.</span>
+      <h3 className="lib-card-title">
+        <Link href={`/recursos/${libro.id}`}>{libro.titulo}</Link>
+      </h3>
+      {libro.subtitulo && (
+        <p className="lib-card-subtitulo">{libro.subtitulo}</p>
       )}
-      <p className="tk-card-desc">{recurso.resumen}</p>
-      <div className="tk-card-footer">
-        <span className="tk-card-gratis">GRATIS</span>
+      <p className="lib-card-desc">{libro.resumen}</p>
+      <div className="lib-card-footer">
+        <span className="lib-badge-gratis">GRATIS</span>
+        <Link href={`/recursos/${libro.id}`} className="btn ghost btn-sm">
+          Ver detalle
+        </Link>
         <a
-          href={recurso.archivo}
+          href={libro.archivo}
           download
-          className="tk-buy"
-          onClick={() => trackDescarga(recurso.titulo, "recurso-gratuito")}
+          className="btn btn-sm"
+          onClick={() => trackDescarga(libro.titulo, "biblioteca")}
         >
-          Descargar PDF
+          Descargar
         </a>
       </div>
     </article>
