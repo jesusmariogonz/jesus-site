@@ -456,6 +456,16 @@ html:not(.dark) .prose li {
   background: var(--accent-soft);
   box-shadow: var(--shadow-sm);
 }
+.btn.btn-copiado {
+  background: #16a34a;
+}
+
+.recurso-subtitulo {
+  font-size: 0.85rem;
+  color: var(--muted, #6b7280);
+  font-style: italic;
+  margin: -6px 0 8px;
+}
 
 .pdf-frame {
   width: 100%;

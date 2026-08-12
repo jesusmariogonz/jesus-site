@@ -1,4 +1,5 @@
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import "./inicio.css";
 import Header from "@/components/Header";
@@ -150,6 +151,7 @@ export default function RootLayout({ children }) {
           </div>
         </footer>
         <Script src="https://app.lemonsqueezy.com/js/lemon.js" strategy="afterInteractive" />
+        <Analytics />
       </body>
     </html>
   );

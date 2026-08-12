@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackCopiarLink } from "@/lib/track";
 
 /* Botonera al final de cada nota:
    - Conectar con Jesús en LinkedIn (perfil)
@@ -32,6 +33,7 @@ export default function ShareRow({ titulo }) {
     try {
       await navigator.clipboard.writeText(url());
       setCopiado(true);
+      trackCopiarLink(titulo || url());
       setTimeout(() => setCopiado(false), 2200);
     } catch {
       /* clipboard no disponible */
@@ -79,8 +81,12 @@ export default function ShareRow({ titulo }) {
         >
           Facebook
         </button>
-        <button type="button" className="btn ghost btn-sm" onClick={copiar}>
-          {copiado ? "✓ Copiado" : "Copiar enlace"}
+        <button
+          type="button"
+          className={`btn btn-sm${copiado ? " btn-copiado" : " ghost"}`}
+          onClick={copiar}
+        >
+          {copiado ? "✓ Link copiado" : "Copiar link"}
         </button>
         {puedeNativo && (
           <button type="button" className="btn ghost btn-sm" onClick={nativo}>
