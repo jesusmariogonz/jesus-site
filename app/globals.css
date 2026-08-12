@@ -2659,6 +2659,48 @@ html.dark {
   line-height: 1.6;
 }
 
+/* ── Autor: quede claro que Jesús escribió el libro ─────────── */
+.lib-card-por {
+  font-size: 0.78rem;
+  color: var(--meta);
+  margin: -2px 0 8px;
+}
+.lib-autor {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.lib-autor:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+.lib-autor-foto {
+  border-radius: 50%;
+  object-fit: cover;
+  flex: none;
+}
+.lib-autor-texto {
+  display: flex;
+  flex-direction: column;
+}
+.lib-autor-label {
+  font-size: 0.72rem;
+  color: var(--meta);
+}
+.lib-autor-nombre {
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+
 /* ── Mockup 3D de libro para /recursos (azul, no negro/dorado) ── */
 .lib-book-wrap {
   display: flex;

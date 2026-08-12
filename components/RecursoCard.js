@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { trackDescarga } from "@/lib/track";
+import { AUTHOR } from "@/lib/site";
 
 export default function LibroCard({ libro }) {
   return (
@@ -24,6 +25,7 @@ export default function LibroCard({ libro }) {
       <h3 className="lib-card-title">
         <Link href={`/recursos/${libro.id}`}>{libro.titulo}</Link>
       </h3>
+      <p className="lib-card-por">Por {AUTHOR.name}</p>
       {libro.subtitulo && (
         <p className="lib-card-subtitulo">{libro.subtitulo}</p>
       )}

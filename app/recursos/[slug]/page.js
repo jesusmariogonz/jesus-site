@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { LIBROS } from "@/lib/recursos";
 import DescargaLibroBtn from "@/components/DescargaLibroBtn";
 import LibroBookIso from "@/components/LibroBookIso";
+import AutorLibro from "@/components/AutorLibro";
 
 export function generateStaticParams() {
   return LIBROS.map((l) => ({ slug: l.id }));
@@ -81,6 +82,8 @@ export default function LibroDetalle({ params }) {
             <p className="lib-product-resultado">{d.resultado}</p>
           </div>
         )}
+
+        <AutorLibro />
 
         <div className="lib-cta-final">
           <p>¿Buscas algo más a fondo, con ejercicios y plantillas?</p>
