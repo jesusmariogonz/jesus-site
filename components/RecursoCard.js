@@ -1,10 +1,23 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
-import { trackDescarga } from "@/lib/track";
+import { trackDescarga, descargarProtegido } from "@/lib/track";
 import { AUTHOR } from "@/lib/site";
 
 export default function LibroCard({ libro }) {
+  const [descargando, setDescargando] = useState(false);
+
+  const onDescargar = async () => {
+    setDescargando(true);
+    const ok = await descargarProtegido(
+      libro.id,
+      libro.archivo.split("/").pop()
+    );
+    if (ok) trackDescarga(libro.titulo, "biblioteca");
+    setDescargando(false);
+  };
+
   return (
     <article className="lib-card">
       <div
@@ -35,14 +48,14 @@ export default function LibroCard({ libro }) {
         <Link href={`/recursos/${libro.id}`} className="btn ghost btn-sm">
           Ver detalle
         </Link>
-        <a
-          href={libro.archivo}
-          download
+        <button
+          type="button"
           className="btn btn-sm"
-          onClick={() => trackDescarga(libro.titulo, "biblioteca")}
+          onClick={onDescargar}
+          disabled={descargando}
         >
-          Descargar
-        </a>
+          {descargando ? "…" : "Descargar"}
+        </button>
       </div>
     </article>
   );

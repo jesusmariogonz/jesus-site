@@ -1,3 +1,5 @@
+import { withBotId } from "botid/next/config";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // El endpoint /api/newsletter/notify lee content/blog en runtime (no en
@@ -7,4 +9,4 @@ const nextConfig = {
     "/api/newsletter/notify": ["./content/blog/**/*"],
   },
 };
-export default nextConfig;
+export default withBotId(nextConfig);
