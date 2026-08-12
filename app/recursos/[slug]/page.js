@@ -45,7 +45,11 @@ export default function LibroDetalle({ params }) {
           </div>
 
           <div className="lib-product-cover">
-            <LibroBookIso titulo={libro.titulo} chip={`${libro.paginas}p`} />
+            <LibroBookIso
+              titulo={libro.titulo}
+              chip={`${libro.paginas}p`}
+              cover={libro.cover}
+            />
           </div>
         </div>
 

@@ -6,7 +6,18 @@ import { trackDescarga } from "@/lib/track";
 export default function LibroCard({ libro }) {
   return (
     <article className="lib-card">
-      <div className="lib-card-cover">
+      <div
+        className="lib-card-cover"
+        style={
+          libro.cover
+            ? {
+                backgroundImage: `linear-gradient(155deg, rgba(15,47,158,0.35), rgba(28,72,201,0.78)), url(${libro.cover})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }
+            : undefined
+        }
+      >
         <span className="lib-card-cover-title">{libro.titulo}</span>
       </div>
       <span className="lib-card-formato">PDF · {libro.paginas} págs.</span>
