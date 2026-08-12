@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { LIBROS } from "@/lib/recursos";
 import DescargaLibroBtn from "@/components/DescargaLibroBtn";
+import LibroBookIso from "@/components/LibroBookIso";
 
 export function generateStaticParams() {
   return LIBROS.map((l) => ({ slug: l.id }));
@@ -44,12 +45,7 @@ export default function LibroDetalle({ params }) {
           </div>
 
           <div className="lib-product-cover">
-            <div className="lib-product-cover-inner">
-              <span className="lib-product-cover-mark">
-                PDF · {libro.paginas} págs.
-              </span>
-              <span className="lib-product-cover-title">{libro.titulo}</span>
-            </div>
+            <LibroBookIso titulo={libro.titulo} chip={`${libro.paginas}p`} />
           </div>
         </div>
 

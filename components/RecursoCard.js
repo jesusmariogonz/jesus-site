@@ -6,6 +6,9 @@ import { trackDescarga } from "@/lib/track";
 export default function LibroCard({ libro }) {
   return (
     <article className="lib-card">
+      <div className="lib-card-cover">
+        <span className="lib-card-cover-title">{libro.titulo}</span>
+      </div>
       <span className="lib-card-formato">PDF · {libro.paginas} págs.</span>
       <h3 className="lib-card-title">
         <Link href={`/recursos/${libro.id}`}>{libro.titulo}</Link>
