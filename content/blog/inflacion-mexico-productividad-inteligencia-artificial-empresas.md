@@ -8,6 +8,7 @@ tags:
   - Inteligencia artificial
   - Economía mexicana
   - Transformación digital
+  - IA
 resumen: 'La inflación de julio cayó a 3.12%, su menor nivel desde 2020. El dato es favorable, pero también elimina una de las excusas más cómodas para esconder un problema más profundo: la baja productividad.'
 imagen: /blog/Afore-19.jpg
 ---
