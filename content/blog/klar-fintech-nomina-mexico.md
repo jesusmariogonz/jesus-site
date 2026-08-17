@@ -1,4 +1,14 @@
 ---
+tesis: 'La expansión de Klar hacia nómina e hipotecas confirma que la inclusión financiera en México no se resuelve con más fintech, sino con fintech que terminan pareciéndose, cada vez más, a los bancos que decían venir a sustituir.'
+datosClave:
+  - valor: '795'
+    etiqueta: 'Fintech activas en México (Finnovista, 2025)'
+  - valor: 76.5%
+    etiqueta: 'Adultos con un producto financiero formal (INEGI, 2024)'
+  - valor: 69.1%
+    etiqueta: Usa banca móvil entre quienes tienen cuenta de ahorro
+  - valor: 28 pts
+    etiqueta: Brecha entre inclusión urbana y comunidades rurales
 titulo: 'Klar no quiere ser tu alternativa al banco: quiere ser tu banco'
 fecha: 2026-08-17T00:00:00.000Z
 categoria: fintech
@@ -14,16 +24,7 @@ tags:
   - regulación financiera
   - México
 resumen: 'El anuncio de expansión de Klar hacia nómina e hipotecas no es una historia de innovación financiera: es la confirmación de que, en México, la inclusión financiera solo se vuelve negocio rentable cuando la fintech empieza a parecerse al banco que decía venir a sustituir.'
-tesis: 'La expansión de Klar hacia nómina e hipotecas confirma que la inclusión financiera en México no se resuelve con más fintech, sino con fintech que terminan pareciéndose, cada vez más, a los bancos que decían venir a sustituir.'
-datosClave:
-  - valor: '795'
-    etiqueta: 'Fintech activas en México (Finnovista, 2025)'
-  - valor: '76.5%'
-    etiqueta: 'Adultos con un producto financiero formal (INEGI, 2024)'
-  - valor: '69.1%'
-    etiqueta: 'Usa banca móvil entre quienes tienen cuenta de ahorro'
-  - valor: '28 pts'
-    etiqueta: 'Brecha entre inclusión urbana y comunidades rurales'
+imagen: /blog/Stefan-Moller-Fundador-de-Klar-1280x720-Foto-Klar.jpg
 destacada: false
 ---
 
@@ -62,6 +63,8 @@ Ese desplazamiento hacia lo digital es, en buena medida, lo que hizo viable el m
 El tránsito de Sofipo a banco no es solo una decisión estratégica: es un proceso regulatorio exigente que la Comisión Nacional Bancaria y de Valores supervisa con particular rigor, precisamente porque una licencia bancaria implica acceso a captación de recursos del público bajo un régimen de protección al ahorro distinto —y más estricto— que el aplicable a una Sofipo. La adquisición de la licencia de Bineo por parte de Klar es reveladora del estado actual de esa regulación: en un mercado donde obtener una licencia bancaria desde cero puede tomar años, comprar una licencia existente se ha convertido en una vía más rápida para instituciones fintech que ya demostraron escala y quieren formalizar su estatus bancario.
 
 Esa dinámica tiene una lectura regulatoria más amplia. La CNBV confirmó en 2024 que había autorizado a la totalidad de las instituciones tecnológicas de financiamiento que solicitaron su licencia bajo la Ley Fintech, lo que sugiere un régimen que, lejos de frenar al sector, ha buscado formalizarlo dentro de las reglas existentes del sistema bancario. Para los bancos tradicionales, esto representa una competencia cualitativamente distinta a la que enfrentaron durante la primera ola fintech: ya no se trata de aplicaciones que ofrecen una cuenta de ahorro con mejor interfaz, sino de instituciones que aspiran a operar bajo las mismas reglas prudenciales y con el mismo alcance de producto que ellos.
+
+![](/blog/pexels-julio-lopez-75309646-13688496.jpg)
 
 ## Qué significa esto para consumidores y trabajadores
 
