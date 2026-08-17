@@ -307,16 +307,87 @@ button:focus-visible {
    Artículo (post del blog)
    ============================================ */
 .article {
-  max-width: 720px;
+  max-width: 1180px;
   margin: 0 auto;
   padding: 56px 0 72px;
 }
-.article header h1 {
-  font-size: clamp(1.7rem, 4.5vw, 2.5rem);
+
+/* Header: título, deck y firma se leen centrados y angostos,
+   como una portada de revista, aunque el artículo ya sea ancho. */
+.article-header-wrap {
+  max-width: 740px;
+  margin: 0 auto;
+  text-align: center;
+}
+.article-header-wrap .sql-meta {
+  display: inline-block;
+}
+.article-header-wrap h1 {
+  font-size: clamp(1.9rem, 4.5vw, 2.7rem);
   font-weight: 800;
   letter-spacing: -0.03em;
-  line-height: 1.15;
-  margin: 12px 0 30px;
+  line-height: 1.14;
+  margin: 14px 0 16px;
+}
+.article-deck {
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 0 auto 22px;
+  max-width: 60ch;
+}
+.article-byline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--meta);
+  margin-bottom: 8px;
+}
+.article-byline-autor {
+  color: var(--ink);
+  font-weight: 700;
+}
+.article-header-wrap .post-tags {
+  justify-content: center;
+}
+
+/* Layout de 2 columnas: artículo + sidebar (índice, highlights, tesis) */
+.article-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 56px;
+  align-items: start;
+  margin-top: 12px;
+}
+.article-main {
+  max-width: 720px;
+}
+.article-aside {
+  position: sticky;
+  top: 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.article-aside .toc {
+  margin: 0;
+}
+@media (max-width: 980px) {
+  .article-layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .article-main {
+    max-width: 100%;
+  }
+  .article-aside {
+    position: static;
+    margin: 0 0 32px;
+  }
 }
 .prose h2 {
   font-size: 1.35rem;
@@ -385,27 +456,42 @@ html:not(.dark) .prose li {
 
 /* ============================================
    Highlights del artículo ("En una mirada" + "Mi tesis")
+   Vive en el sidebar (.article-aside), por eso es angosto:
+   valores apilados en una sola columna, no en grid ancho.
    ============================================ */
 .article-highlights {
-  margin: 28px 0 40px;
-  padding: 24px;
+  padding: 20px;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
 }
+.article-highlights-titulo {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--meta);
+  margin-bottom: 14px;
+}
 .highlights-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 20px;
+  gap: 16px;
 }
 .highlight-item {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line-soft);
+}
+.highlight-item:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
 }
 .highlight-valor {
   font-family: var(--font-mono);
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   font-weight: 800;
   color: var(--accent);
   letter-spacing: -0.02em;
@@ -415,8 +501,8 @@ html:not(.dark) .prose li {
   color: var(--meta);
 }
 .article-tesis {
-  margin: 24px 0 0;
-  padding: 18px 20px;
+  margin: 18px 0 0;
+  padding: 16px 18px;
   border-left: 3px solid var(--accent);
   background: var(--accent-soft);
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
@@ -432,14 +518,21 @@ html:not(.dark) .prose li {
 }
 .article-tesis p {
   margin: 0;
-  font-size: 1.05rem;
+  font-size: 0.98rem;
   font-weight: 600;
   line-height: 1.5;
   color: var(--ink);
 }
-@media (max-width: 640px) {
+/* En mobile el sidebar se apila arriba del cuerpo, ya con más
+   ancho disponible: ahí sí vale la pena una fila de 2-3 columnas
+   para los datos clave en vez de una lista vertical larga. */
+@media (max-width: 980px) {
   .highlights-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  }
+  .highlight-item {
+    padding-bottom: 0;
+    border-bottom: none;
   }
 }
 

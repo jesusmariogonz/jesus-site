@@ -137,14 +137,23 @@ export default async function Post({ params }) {
             <NotasCarrusel notas={recientes} titulo="Lo más reciente" />
           )}
 
-          <header>
+          <header className="article-header-wrap">
             <span className="sql-meta">
               <Link href={`/blog/categoria/${post.categoria}`}>
                 {CATEGORIAS[post.categoria] || post.categoria}
-              </Link>{" "}
-              · {minutos} min de lectura · {formatFecha(post.fecha)}
+              </Link>
             </span>
             <h1>{post.titulo}</h1>
+
+            {post.resumen && <p className="article-deck">{post.resumen}</p>}
+
+            <div className="article-byline">
+              <span className="article-byline-autor">{AUTHOR.name}</span>
+              <span aria-hidden="true">·</span>
+              <span>{formatFecha(post.fecha)}</span>
+              <span aria-hidden="true">·</span>
+              <span>{minutos} min de lectura</span>
+            </div>
 
             {post.tags?.length > 0 && (
               <div className="post-tags">
@@ -155,40 +164,49 @@ export default async function Post({ params }) {
             )}
           </header>
 
-          {(post.tesis || post.datosClave?.length > 0) && (
-            <div className="article-highlights">
-              {post.datosClave?.length > 0 && (
-                <div className="highlights-grid">
-                  {post.datosClave.map((d, i) => (
-                    <div className="highlight-item" key={i}>
-                      <span className="highlight-valor">{d.valor}</span>
-                      <span className="highlight-etiqueta">{d.etiqueta}</span>
-                    </div>
-                  ))}
-                </div>
-              )}
-              {post.tesis && (
-                <blockquote className="article-tesis">
-                  <span className="article-tesis-label">Mi tesis</span>
-                  <p>{post.tesis}</p>
-                </blockquote>
-              )}
-            </div>
-          )}
-
           <ToolkitBanner />
 
-          <ArticleToc />
+          <div className="article-layout">
+            <div className="article-main">
+              <div className="prose">
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  {post.content}
+                </ReactMarkdown>
+              </div>
 
-          <div className="prose">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>
-              {post.content}
-            </ReactMarkdown>
+              <ShareRow titulo={post.titulo} />
+
+              <NewsletterForm titulo="¿Te sirvió esta nota?" desc="Suscríbete y te aviso cuando publique una nueva." />
+            </div>
+
+            <aside className="article-aside">
+              <ArticleToc />
+
+              {(post.tesis || post.datosClave?.length > 0) && (
+                <div className="article-highlights">
+                  {post.datosClave?.length > 0 && (
+                    <>
+                      <span className="article-highlights-titulo">En una mirada</span>
+                      <div className="highlights-grid">
+                        {post.datosClave.map((d, i) => (
+                          <div className="highlight-item" key={i}>
+                            <span className="highlight-valor">{d.valor}</span>
+                            <span className="highlight-etiqueta">{d.etiqueta}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </>
+                  )}
+                  {post.tesis && (
+                    <blockquote className="article-tesis">
+                      <span className="article-tesis-label">Mi tesis</span>
+                      <p>{post.tesis}</p>
+                    </blockquote>
+                  )}
+                </div>
+              )}
+            </aside>
           </div>
-
-          <ShareRow titulo={post.titulo} />
-
-          <NewsletterForm titulo="¿Te sirvió esta nota?" desc="Suscríbete y te aviso cuando publique una nueva." />
 
           {relacionadas.length > 0 && (
             <section className="relacionadas">
