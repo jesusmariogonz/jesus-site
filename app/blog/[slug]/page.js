@@ -164,8 +164,6 @@ export default async function Post({ params }) {
             )}
           </header>
 
-          <ToolkitBanner />
-
           <div className="article-layout">
             <div className="article-main">
               <div className="prose">
@@ -205,6 +203,8 @@ export default async function Post({ params }) {
                   )}
                 </div>
               )}
+
+              <ToolkitBanner className="tk-banner-aside" />
             </aside>
           </div>
 

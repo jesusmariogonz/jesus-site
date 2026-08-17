@@ -1602,6 +1602,30 @@ html.dark {
   }
 }
 
+/* Variante compacta para el sidebar del artículo: siempre apilada
+   (sin importar el ancho de pantalla), márgenes a cero porque el
+   espaciado ya lo da el gap del contenedor .article-aside. */
+.tk-banner-aside {
+  grid-template-columns: 1fr;
+  text-align: left;
+  margin: 0;
+  padding: 20px;
+  gap: 12px;
+}
+.tk-banner-aside .tk-banner-mark {
+  margin-bottom: 0;
+}
+.tk-banner-aside .tk-banner-title {
+  font-size: 1rem;
+}
+.tk-banner-aside .tk-banner-desc {
+  font-size: 0.82rem;
+}
+.tk-banner-aside .tk-banner-cta {
+  width: 100%;
+  justify-content: center;
+}
+
 /* ── Link "The Toolkit" en el menú principal ───────────────── */
 .site-nav a.nav-toolkit {
   color: var(--tk-gold) !important;

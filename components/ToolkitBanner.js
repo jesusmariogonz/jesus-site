@@ -10,9 +10,14 @@ export default function ToolkitBanner({
   description = "Dashboards, plantillas de Excel/Power BI y kits de analítica para retail — lo que uso en proyectos reales, empaquetado para que lo apliques hoy.",
   cta = "Ver The Toolkit",
   href = "/the-toolkit",
+  className = "",
 }) {
   return (
-    <Link href={href} className="tk-banner" aria-label={`${title} — ${cta}`}>
+    <Link
+      href={href}
+      className={`tk-banner${className ? ` ${className}` : ""}`}
+      aria-label={`${title} — ${cta}`}
+    >
       <span className="tk-banner-mark" aria-hidden="true">
         TK
       </span>
