@@ -178,8 +178,6 @@ export default async function Post({ params }) {
             </div>
 
             <aside className="article-aside">
-              <ArticleToc />
-
               {(post.tesis || post.datosClave?.length > 0) && (
                 <div className="article-highlights">
                   {post.datosClave?.length > 0 && (
@@ -203,6 +201,8 @@ export default async function Post({ params }) {
                   )}
                 </div>
               )}
+
+              <ArticleToc />
 
               <ToolkitBanner className="tk-banner-aside" />
             </aside>

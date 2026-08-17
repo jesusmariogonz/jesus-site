@@ -387,6 +387,9 @@ button:focus-visible {
   .article-aside {
     position: static;
     margin: 0 0 32px;
+    /* En mobile el sidebar se apila ARRIBA del cuerpo (no abajo):
+       las cifras funcionan como resumen de la nota antes de leerla. */
+    order: -1;
   }
 }
 .prose h2 {
