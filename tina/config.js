@@ -99,6 +99,35 @@ export default defineConfig({
             ui: { component: "textarea" },
           },
           {
+            type: "string",
+            name: "tesis",
+            label: "Mi tesis (frase editorial, opcional — aparece destacada arriba del artículo)",
+            ui: { component: "textarea" },
+          },
+          {
+            type: "object",
+            name: "datosClave",
+            label: "Datos clave / En una mirada (opcional, 3-4 recomendados)",
+            list: true,
+            ui: {
+              itemProps: (item) => ({ label: item?.valor || "Dato" }),
+            },
+            fields: [
+              {
+                type: "string",
+                name: "valor",
+                label: "Valor (ej. 3.12%)",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "etiqueta",
+                label: "Etiqueta (ej. Inflación anual)",
+                required: true,
+              },
+            ],
+          },
+          {
             type: "image",
             name: "imagen",
             label: "Imagen de portada (opcional)",

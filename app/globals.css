@@ -384,6 +384,66 @@ html:not(.dark) .prose li {
 }
 
 /* ============================================
+   Highlights del artículo ("En una mirada" + "Mi tesis")
+   ============================================ */
+.article-highlights {
+  margin: 28px 0 40px;
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+}
+.highlight-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.highlight-valor {
+  font-family: var(--font-mono);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+}
+.highlight-etiqueta {
+  font-size: 0.82rem;
+  color: var(--meta);
+}
+.article-tesis {
+  margin: 24px 0 0;
+  padding: 18px 20px;
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+.article-tesis-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.article-tesis p {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--ink);
+}
+@media (max-width: 640px) {
+  .highlights-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================
    Proyectos
    ============================================ */
 .project-grid {

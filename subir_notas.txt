@@ -17,6 +17,12 @@ PASO 2 — El archivo de la nota
   categoria: "ia"
   resumen: "Una o dos frases que venden la nota."
   imagen: "/blog/mi-nueva-nota.jpg"
+  tesis: "La frase editorial que resume tu punto de vista."
+  datosClave:
+    - valor: "3.12%"
+      etiqueta: "Inflación anual"
+    - valor: "3.95%"
+      etiqueta: "Inflación subyacente"
   ---
 
   Aquí empieza tu contenido en Markdown...
@@ -26,6 +32,13 @@ PASO 2 — El archivo de la nota
     portada automática con gradiente según la categoría.
   · destacada: true  → convierte la nota en el "Editor's Pick"
     del blog (solo debe tenerla UNA nota a la vez).
+  · tesis: es OPCIONAL. Si la llenas, aparece como una cita
+    destacada ("Mi tesis") arriba del cuerpo del artículo.
+  · datosClave: es OPCIONAL. Lista de 3-4 pares valor/etiqueta
+    que aparecen como highlights ("En una mirada") arriba del
+    artículo, antes de la tesis. Desde el panel de Tina se llena
+    con un formulario (botón "+" para agregar cada dato), no hace
+    falta escribir YAML a mano.
   · Dentro del texto puedes insertar más imágenes así:
     ![Descripción](/blog/otra-imagen.png)
 

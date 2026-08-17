@@ -155,6 +155,27 @@ export default async function Post({ params }) {
             )}
           </header>
 
+          {(post.tesis || post.datosClave?.length > 0) && (
+            <div className="article-highlights">
+              {post.datosClave?.length > 0 && (
+                <div className="highlights-grid">
+                  {post.datosClave.map((d, i) => (
+                    <div className="highlight-item" key={i}>
+                      <span className="highlight-valor">{d.valor}</span>
+                      <span className="highlight-etiqueta">{d.etiqueta}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+              {post.tesis && (
+                <blockquote className="article-tesis">
+                  <span className="article-tesis-label">Mi tesis</span>
+                  <p>{post.tesis}</p>
+                </blockquote>
+              )}
+            </div>
+          )}
+
           <ToolkitBanner />
 
           <ArticleToc />
