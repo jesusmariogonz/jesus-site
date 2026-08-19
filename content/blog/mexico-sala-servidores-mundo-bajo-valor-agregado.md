@@ -1,7 +1,17 @@
 ---
-titulo: "México se volvió la sala de servidores del mundo. La pregunta es quién se queda con el negocio"
-fecha: "2026-08-19"
-categoria: "business"
+tesis: 'México ganó la carrera por ser el mayor proveedor de servidores de Estados Unidos, pero el negocio que sostiene esa cifra no es mexicano: es una capa de ensamblaje de bajo valor agregado, dependiente de componentes taiwaneses, con una inversión extranjera directa marginal y un costo energético e hídrico que el propio gobierno ya empezó a cuestionar.'
+datosClave:
+  - valor: 172.1%
+    etiqueta: Crecimiento anual de exportaciones de servidores a junio de 2026
+  - valor: $177 millones
+    etiqueta: 'IED en electrónica de cómputo en 2025, frente a $85,416 millones exportados'
+  - valor: 93.9%
+    etiqueta: De las exportaciones mexicanas de servidores va a Estados Unidos
+  - valor: 304 millones de litros
+    etiqueta: Agua estimada consumida por centros de datos en México en 2026
+titulo: México se volvió la sala de servidores del mundo. La pregunta es quién se queda con el negocio
+fecha: 2026-08-19T00:00:00.000Z
+categoria: business
 tags:
   - Exportaciones México
   - Centros de datos
@@ -13,17 +23,8 @@ tags:
   - Política industrial
   - Energía
   - Manufactura electrónica
-resumen: "En el primer semestre de 2026 México exportó 136,800 millones de dólares en servidores, casi tanto como la industria automotriz. Pero la inversión extranjera directa que sostiene ese negocio fue de apenas 177 millones de dólares en todo 2025: la señal de que el país está ensamblando la infraestructura de la IA sin quedarse con casi nada de su valor."
-tesis: "México ganó la carrera por ser el mayor proveedor de servidores de Estados Unidos, pero el negocio que sostiene esa cifra no es mexicano: es una capa de ensamblaje de bajo valor agregado, dependiente de componentes taiwaneses, con una inversión extranjera directa marginal y un costo energético e hídrico que el propio gobierno ya empezó a cuestionar."
-datosClave:
-  - valor: "172.1%"
-    etiqueta: "Crecimiento anual de exportaciones de servidores a junio de 2026"
-  - valor: "$177 millones"
-    etiqueta: "IED en electrónica de cómputo en 2025, frente a $85,416 millones exportados"
-  - valor: "93.9%"
-    etiqueta: "De las exportaciones mexicanas de servidores va a Estados Unidos"
-  - valor: "304 millones de litros"
-    etiqueta: "Agua estimada consumida por centros de datos en México en 2026"
+resumen: 'En el primer semestre de 2026 México exportó 136,800 millones de dólares en servidores, casi tanto como la industria automotriz. Pero la inversión extranjera directa que sostiene ese negocio fue de apenas 177 millones de dólares en todo 2025: la señal de que el país está ensamblando la infraestructura de la IA sin quedarse con casi nada de su valor.'
+imagen: /blog/pexels-brett-sayles-5073493.jpg
 ---
 
 En el primer semestre de 2026, México exportó 136,800 millones de dólares en servidores y equipo de cómputo, una cifra que solo quedó por debajo de las exportaciones automotrices y que representó un crecimiento de 172.1% frente al mismo periodo del año anterior. El dato, confirmado por Standard & Poor's Global y Moody's, colocó al país como el principal proveedor de servidores de Estados Unidos, con cerca de dos tercios de todo lo que ese mercado importa en la categoría. Leído rápido, es una historia de éxito industrial. Leído con más cuidado, es una historia distinta: la de un país que capturó volumen sin capturar valor, y que apenas empieza a hacerse la pregunta que debió hacerse antes de celebrar la cifra.
@@ -49,6 +50,8 @@ Ese matiz importa porque el propio mercado ya empezó a corregirlo. Taiwán recu
 El 18 de agosto, el mismo día en que se conocía el dato de las exportaciones récord, la presidenta Claudia Sheinbaum introdujo en su conferencia matutina una idea que hasta entonces circulaba solo entre especialistas en energía: "no necesariamente México debe ser el centro de datos de otros lugares del mundo, porque requiere mucho consumo de energía, mucho consumo de agua". Fue, en los hechos, la primera vez que el gobierno mexicano puso en duda públicamente el relato de que more data centers equals more growth sin matices.
 
 Sheinbaum fue más allá al señalar el problema estructural: "sí generan crecimiento económico, pero con muy poco empleo y mucho consumo de recursos naturales". Es una frase que cualquier funcionario de Hacienda debería subrayar, porque describe con precisión el tipo de crecimiento que produce esta industria: alto en valor exportado, bajo en derrama salarial, intensivo en insumos que el país no puede exportar de vuelta —el agua, sobre todo, no tiene frontera de reexportación—. El gobierno propuso además un esquema de inversión mixta, 54% pública y 46% privada, para resolver el cuello de botella de transmisión eléctrica que ya frena proyectos en el Bajío, una región donde los desarrolladores están teniendo que financiar directamente subestaciones y líneas de transmisión para poder operar.
+
+![](/blog/pexels-cottonbro-6804586.jpg)
 
 ## El costo que no aparece en la balanza comercial
 
