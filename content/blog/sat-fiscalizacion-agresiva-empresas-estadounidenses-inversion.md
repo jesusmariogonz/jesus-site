@@ -1,7 +1,17 @@
 ---
+tesis: 'La disputa entre el SAT y las multinacionales estadounidenses no es un problema de comunicación ni un malentendido corregible con un comunicado de Hacienda: es la primera señal visible de que México intenta financiar su gasto público exprimiendo la base fiscal existente, justo cuando más necesita que esa misma base siga apostando por el país.'
+datosClave:
+  - valor: '300'
+    etiqueta: Empresas representadas por el NFTC ante el Senado de EU
+  - valor: '23,591 mdd'
+    etiqueta: IED récord captada por México en el primer trimestre de 2026
+  - valor: <30 días
+    etiqueta: Nuevo plazo de devolución fiscal del SAT (antes 40 días)
+  - valor: '2036'
+    etiqueta: 'Año hasta el que corre el T-MEC, con revisiones anuales'
 titulo: 'El SAT le puso precio a la certeza: lo que revela la queja de 300 empresas de EU'
-fecha: '2026-08-19'
-categoria: 'business'
+fecha: 2026-08-19T00:00:00.000Z
+categoria: business
 tags:
   - SAT
   - Fiscalización
@@ -12,16 +22,7 @@ tags:
   - Empresas multinacionales
   - Economía mexicana
 resumen: 'Un grupo que representa a 300 empresas estadounidenses, entre ellas Amazon, Ford y Walmart, denunció ante el Senado de Estados Unidos una fiscalización "sin precedentes" del SAT. El episodio, en plena revisión del T-MEC, expone una tensión que va más allá de lo tributario: quién paga el costo de financiar al Estado mexicano sin ahuyentar la inversión que sostiene el nearshoring.'
-tesis: 'La disputa entre el SAT y las multinacionales estadounidenses no es un problema de comunicación ni un malentendido corregible con un comunicado de Hacienda: es la primera señal visible de que México intenta financiar su gasto público exprimiendo la base fiscal existente, justo cuando más necesita que esa misma base siga apostando por el país.'
-datosClave:
-  - valor: '300'
-    etiqueta: 'Empresas representadas por el NFTC ante el Senado de EU'
-  - valor: '23,591 mdd'
-    etiqueta: 'IED récord captada por México en el primer trimestre de 2026'
-  - valor: '<30 días'
-    etiqueta: 'Nuevo plazo de devolución fiscal del SAT (antes 40 días)'
-  - valor: '2036'
-    etiqueta: 'Año hasta el que corre el T-MEC, con revisiones anuales'
+imagen: /blog/pexels-karola-g-7680324.jpg
 ---
 
 Durante años, la relación entre el fisco mexicano y las multinacionales estadounidenses operó bajo un acuerdo tácito: auditorías previsibles, márgenes de negociación razonables y una administración tributaria que, sin ser generosa, tampoco convertía el cumplimiento fiscal en un obstáculo para invertir. Ese acuerdo tácito se rompió, o al menos así lo percibe una parte sustancial del capital estadounidense que opera en el país. El 15 de agosto se conoció que el National Foreign Trade Council (NFTC), organismo que agrupa a cerca de 300 empresas —entre ellas Amazon, Ford, ExxonMobil, FedEx, Walmart y Visa—, envió una carta al Comité de Finanzas del Senado de Estados Unidos calificando el actuar del Servicio de Administración Tributaria (SAT) como una fiscalización "sin precedentes" que amenaza con desincentivar la inversión y la creación de empleo en México.
