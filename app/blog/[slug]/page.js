@@ -71,16 +71,6 @@ export default async function Post({ params }) {
   // Carrusel "una vez adentro": las notas más nuevas, sin la actual.
   const recientes = todas.filter((n) => n.slug !== slug).slice(0, 5);
 
-  // Notas relacionadas: misma categoría; si no alcanzan, completa con recientes.
-  const mismaCat = todas.filter(
-    (n) => n.slug !== slug && n.categoria === post.categoria
-  );
-  const relacionadas = (
-    mismaCat.length >= 3
-      ? mismaCat
-      : [...mismaCat, ...todas.filter((n) => n.slug !== slug && !mismaCat.includes(n))]
-  ).slice(0, 3);
-
   // Datos estructurados de artículo + miga de pan (breadcrumbs).
   const jsonLd = {
     "@context": "https://schema.org",
@@ -207,33 +197,6 @@ export default async function Post({ params }) {
               <ToolkitBanner className="tk-banner-aside" />
             </aside>
           </div>
-
-          {relacionadas.length > 0 && (
-            <section className="relacionadas">
-              <span className="sql-meta">-- sigue leyendo</span>
-              <ul className="post-list post-list-editorial">
-                {relacionadas.map((n) => (
-                  <li key={n.slug} className="post-card post-card-editorial">
-                    <Link href={`/blog/${n.slug}`} className="post-card-link">
-                      <NotaCover
-                        categoria={n.categoria}
-                        imagen={n.imagen}
-                        size="md"
-                      />
-                      <div className="post-card-body">
-                        <span className="post-card-cat">{n.categoriaNombre}</span>
-                        <h3>{n.titulo}</h3>
-                        <span className="post-card-meta">
-                          {n.minutos} min de lectura{" "}
-                          <span className="jx-flecha">→</span>
-                        </span>
-                      </div>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )}
 
           <p style={{ marginTop: 32 }}>
             <Link href="/blog">← Volver al blog</Link>
