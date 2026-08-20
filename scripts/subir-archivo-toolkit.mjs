@@ -1,7 +1,8 @@
 /* ============================================================
-   Sube un archivo local a Vercel Blob (privado, no al repo — el
-   repo es público) y te imprime la URL para pegar en el campo
-   `blobUrl` correspondiente en lib/toolkit.js.
+   Sube un archivo local a Vercel Blob (store PRIVADO — requiere
+   autenticación para leerlo, ni con la URL directa se puede bajar
+   sin pasar por /api/descargar-compra) y te imprime el pathname
+   para pegar en el campo `blobPath` correspondiente en lib/toolkit.js.
 
    Uso:
      BLOB_READ_WRITE_TOKEN=vercel_blob_rw_... \
@@ -30,11 +31,10 @@ async function main() {
   const buffer = await readFile(filePath);
   const filename = path.basename(filePath);
   const blob = await put(`toolkit/${filename}`, buffer, {
-    access: "public",
-    addRandomSuffix: true, // hace la URL impredecible — es la parte "privada"
+    access: "private",
   });
-  console.log(`\nSubido: ${filename}`);
-  console.log(`blobUrl: "${blob.url}"`);
+  console.log(`\nSubido (privado): ${filename}`);
+  console.log(`blobPath: "${blob.pathname}"`);
   console.log("\nPégalo en el archivo correspondiente dentro de `archivos` en lib/toolkit.js.");
 }
 
