@@ -31,19 +31,19 @@ export async function GET(request) {
     return NextResponse.json({ error: "Archivo no encontrado." }, { status: 404 });
   }
 
-  let blob;
+  let resultado;
   try {
-    blob = await get(blobPath, { access: "private" });
+    resultado = await get(blobPath, { access: "private" });
   } catch (err) {
     console.error("descargar-compra: error leyendo de Blob:", err);
     return NextResponse.json({ error: "Archivo no disponible por ahora." }, { status: 502 });
   }
-  if (!blob?.body) {
+  if (!resultado?.stream) {
     return NextResponse.json({ error: "Archivo no disponible por ahora." }, { status: 502 });
   }
 
-  const contentType = blob.contentType || "application/octet-stream";
-  return new NextResponse(blob.body, {
+  const contentType = resultado.blob?.contentType || "application/octet-stream";
+  return new NextResponse(resultado.stream, {
     status: 200,
     headers: {
       "Content-Type": contentType,
