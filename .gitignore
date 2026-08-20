@@ -7,3 +7,7 @@ out/
 # TinaCMS (artefactos generados)
 public/admin
 tina/__generated__
+
+# Archivos de pago de The Toolkit — NUNCA al repo (es público).
+# Viven en Vercel Blob (privado); esta carpeta es solo staging local.
+/Recursos/
