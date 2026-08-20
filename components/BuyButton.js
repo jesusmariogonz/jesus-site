@@ -1,9 +1,9 @@
 "use client";
 
 /* Botón de compra de un producto de The Toolkit.
-   - Si `checkoutUrl` ya es un link real de Lemon Squeezy, abre el
-     checkout como overlay (modal) sobre la misma página gracias a
-     Lemon.js (cargado una vez en la página con <LemonjsScript />).
+   - Si `checkoutUrl` ya tiene valor, es o bien /api/checkout?... (crea
+     la sesión de Stripe en el servidor y redirige) o el link directo
+     a un archivo gratuito (ej. /recursos/algo.pdf).
    - Si todavía no hay link (checkoutUrl === ""), muestra un estado
      "Próximamente" no interactivo. */
 
@@ -15,7 +15,7 @@ export default function BuyButton({ checkoutUrl, label = "Comprar", className = 
   }
 
   return (
-    <a href={checkoutUrl} className={`tk-buy lemonsqueezy-button ${className}`}>
+    <a href={checkoutUrl} className={`tk-buy ${className}`}>
       {label}
     </a>
   );
