@@ -1,0 +1,416 @@
+// =====================================================================
+//  KIT POWER BI · PUNTO DE VENTA — BIBLIOTECA DE MEDIDAS DAX
+//  Jesús González · https://jesus-site-silk.vercel.app/
+// ---------------------------------------------------------------------
+//  CÓMO USARLO
+//  1. En Power BI Desktop: Inicio → Escribir datos → nombra la tabla
+//     "_Medidas" → crea una columna cualquiera → Cargar.
+//  2. Selecciona la tabla _Medidas, borra su única columna, y crea las
+//     medidas una por una pegando el código de abajo.
+//  3. Al final, oculta la tabla FactVentas del panel de campos: nadie
+//     debe arrastrar columnas de hechos directamente a un visual.
+//
+//  Las medidas están en orden de dependencia. Si las creas de arriba
+//  hacia abajo, ninguna te va a marcar referencia inexistente.
+// =====================================================================
+
+
+// ---------------------------------------------------------------------
+//  0 · TABLA DE CALENDARIO  (Modelado → Nueva tabla)
+// ---------------------------------------------------------------------
+//  Prefiere esta tabla sobre la hoja DimCalendario del Excel: se ajusta
+//  sola al rango real de tus datos cuando cambies la fuente.
+
+DimCalendario =
+VAR FechaMin = DATE ( YEAR ( MIN ( FactVentas[Fecha] ) ), 1, 1 )
+VAR FechaMax = DATE ( YEAR ( MAX ( FactVentas[Fecha] ) ), 12, 31 )
+RETURN
+ADDCOLUMNS (
+    CALENDAR ( FechaMin, FechaMax ),
+    "Anio",            YEAR ( [Date] ),
+    "Trimestre",       "T" & QUARTER ( [Date] ),
+    "NumeroMes",       MONTH ( [Date] ),
+    "Mes",             FORMAT ( [Date], "mmm" ),
+    "AnioMes",         FORMAT ( [Date], "yyyy-mm" ),
+    "MesOrden",        YEAR ( [Date] ) * 100 + MONTH ( [Date] ),
+    "Semana",          WEEKNUM ( [Date], 2 ),
+    "NumeroDiaSemana", WEEKDAY ( [Date], 2 ),
+    "DiaSemana",       FORMAT ( [Date], "dddd" ),
+    "EsFinDeSemana",   WEEKDAY ( [Date], 2 ) >= 6,
+    "Dia",             DAY ( [Date] )
+)
+
+//  Después: clic derecho en DimCalendario → Marcar como tabla de fechas
+//  → columna Date. Sin esto, las funciones de inteligencia de tiempo
+//  dan resultados silenciosamente incorrectos en algunos contextos.
+
+
+// =====================================================================
+//  1 · MEDIDAS BASE
+// =====================================================================
+
+Venta Bruta =
+SUMX ( FactVentas, FactVentas[Cantidad] * FactVentas[PrecioUnitario] )
+// Formato: $ #,0 · Lo que costaría sin ninguna promoción.
+
+Descuentos =
+SUM ( FactVentas[Descuento] )
+// Formato: $ #,0
+
+Venta Neta =
+[Venta Bruta] - [Descuentos]
+// Formato: $ #,0 · Es la medida que va en casi todos los visuales.
+
+Costo =
+SUMX ( FactVentas, FactVentas[Cantidad] * FactVentas[CostoUnitario] )
+// Formato: $ #,0
+
+Margen =
+[Venta Neta] - [Costo]
+// Formato: $ #,0
+
+Margen % =
+DIVIDE ( [Margen], [Venta Neta] )
+// Formato: 0.0% · Usa DIVIDE, nunca el operador /, para no reventar
+// con división entre cero cuando un filtro deja la selección vacía.
+
+Tasa de Descuento % =
+DIVIDE ( [Descuentos], [Venta Bruta] )
+// Formato: 0.0% · Cuánto del precio de lista se está regalando.
+
+
+// =====================================================================
+//  2 · VOLUMEN Y COMPORTAMIENTO DE COMPRA
+// =====================================================================
+
+Tickets =
+DISTINCTCOUNT ( FactVentas[TicketID] )
+// Formato: #,0 · Número de transacciones, no de líneas.
+
+Unidades =
+SUM ( FactVentas[Cantidad] )
+// Formato: #,0
+
+Lineas =
+COUNTROWS ( FactVentas )
+// Formato: #,0
+
+Ticket Promedio =
+DIVIDE ( [Venta Neta], [Tickets] )
+// Formato: $ #,0.00 · El indicador más vigilado en conveniencia
+// después de la venta. Sube por precio o por unidades, y conviene
+// saber cuál de los dos lo movió.
+
+Unidades por Ticket =
+DIVIDE ( [Unidades], [Tickets] )
+// Formato: 0.00
+
+Precio Promedio =
+DIVIDE ( [Venta Neta], [Unidades] )
+// Formato: $ #,0.00 · Junto con Unidades por Ticket descompone el
+// movimiento del Ticket Promedio: Ticket = Precio × Unidades.
+
+Lineas por Ticket =
+DIVIDE ( [Lineas], [Tickets] )
+// Formato: 0.00 · Mide profundidad de canasta.
+
+% Venta Fin de Semana =
+DIVIDE (
+    CALCULATE ( [Venta Neta], DimCalendario[EsFinDeSemana] = TRUE () ),
+    [Venta Neta]
+)
+// Formato: 0.0%
+
+Hora Pico =
+VAR TablaHoras =
+    ADDCOLUMNS ( VALUES ( FactVentas[Hora] ), "@Tickets", [Tickets] )
+RETURN
+    MAXX ( TOPN ( 1, TablaHoras, [@Tickets], DESC ), FactVentas[Hora] )
+// Formato: 0 · La hora con más transacciones en el contexto actual.
+// Úsala en una tarjeta con el título "Hora de mayor afluencia".
+
+
+// =====================================================================
+//  3 · INTELIGENCIA DE TIEMPO
+// =====================================================================
+
+Venta Neta AA =
+CALCULATE ( [Venta Neta], SAMEPERIODLASTYEAR ( DimCalendario[Fecha] ) )
+// Formato: $ #,0 · AA = Año Anterior.
+
+Crecimiento vs AA % =
+VAR Anterior = [Venta Neta AA]
+RETURN
+    IF ( NOT ISBLANK ( Anterior ), DIVIDE ( [Venta Neta] - Anterior, Anterior ) )
+// Formato: 0.0% · El IF evita mostrar 100% de crecimiento en periodos
+// donde simplemente no existía el año anterior.
+
+Venta Neta YTD =
+TOTALYTD ( [Venta Neta], DimCalendario[Fecha] )
+// Formato: $ #,0
+
+Venta Neta YTD AA =
+CALCULATE ( [Venta Neta YTD], SAMEPERIODLASTYEAR ( DimCalendario[Fecha] ) )
+// Formato: $ #,0
+
+Crecimiento YTD % =
+DIVIDE ( [Venta Neta YTD] - [Venta Neta YTD AA], [Venta Neta YTD AA] )
+// Formato: 0.0%
+
+Venta Neta MTD =
+TOTALMTD ( [Venta Neta], DimCalendario[Fecha] )
+// Formato: $ #,0
+
+Venta Mes Anterior =
+CALCULATE ( [Venta Neta], DATEADD ( DimCalendario[Fecha], -1, MONTH ) )
+// Formato: $ #,0
+
+Crecimiento vs Mes Anterior % =
+DIVIDE ( [Venta Neta] - [Venta Mes Anterior], [Venta Mes Anterior] )
+// Formato: 0.0%
+
+Venta Media Movil 30D =
+VAR Ventana =
+    DATESINPERIOD ( DimCalendario[Fecha], MAX ( DimCalendario[Fecha] ), -30, DAY )
+RETURN
+    AVERAGEX ( Ventana, [Venta Neta] )
+// Formato: $ #,0 · Suaviza el ruido diario. Ponla como línea sobre
+// las barras de venta diaria: se lee mucho mejor la tendencia.
+
+Ticket Promedio AA =
+CALCULATE ( [Ticket Promedio], SAMEPERIODLASTYEAR ( DimCalendario[Fecha] ) )
+// Formato: $ #,0.00
+
+Variacion Ticket Promedio =
+[Ticket Promedio] - [Ticket Promedio AA]
+// Formato: $ #,0.00
+
+
+// =====================================================================
+//  4 · MISMAS TIENDAS  (same-store sales)
+// =====================================================================
+//  Es la medida que distingue un tablero de retail serio de uno
+//  cualquiera. Comparar venta total contra el año anterior mezcla
+//  crecimiento real con crecimiento por aperturas: si abriste tiendas,
+//  el total sube aunque cada tienda venda menos.
+//
+//  Criterio usado aquí: una tienda es comparable si estaba abierta al
+//  menos 365 días antes del inicio del periodo evaluado. Ajusta ese
+//  número si tu política es distinta (12 o 13 meses son comunes).
+
+Tiendas Comparables =
+VAR FechaCorte = MIN ( DimCalendario[Fecha] ) - 365
+RETURN
+    COUNTROWS (
+        FILTER ( ALLSELECTED ( DimTienda ), DimTienda[FechaApertura] <= FechaCorte )
+    )
+// Formato: #,0
+
+Venta Mismas Tiendas =
+VAR FechaCorte = MIN ( DimCalendario[Fecha] ) - 365
+VAR TiendasComparables =
+    FILTER ( ALLSELECTED ( DimTienda ), DimTienda[FechaApertura] <= FechaCorte )
+RETURN
+    CALCULATE ( [Venta Neta], KEEPFILTERS ( TiendasComparables ) )
+// Formato: $ #,0 · KEEPFILTERS respeta los segmentadores de región o
+// formato que el usuario tenga puestos, en vez de ignorarlos.
+
+Crecimiento Mismas Tiendas % =
+VAR FechaCorte = MIN ( DimCalendario[Fecha] ) - 365
+VAR TiendasComparables =
+    FILTER ( ALLSELECTED ( DimTienda ), DimTienda[FechaApertura] <= FechaCorte )
+VAR VentaActual =
+    CALCULATE ( [Venta Neta], KEEPFILTERS ( TiendasComparables ) )
+VAR VentaAnterior =
+    CALCULATE (
+        [Venta Neta],
+        KEEPFILTERS ( TiendasComparables ),
+        SAMEPERIODLASTYEAR ( DimCalendario[Fecha] )
+    )
+RETURN
+    DIVIDE ( VentaActual - VentaAnterior, VentaAnterior )
+// Formato: 0.0%
+// El conjunto de tiendas se fija UNA vez con la fecha del periodo
+// actual y se usa el mismo en ambos lados. Ese detalle es justo el
+// que se equivoca en la mayoría de las implementaciones que circulan.
+
+Venta Tiendas Nuevas =
+[Venta Neta] - [Venta Mismas Tiendas]
+// Formato: $ #,0 · Cuánto del total viene de aperturas recientes.
+
+
+// =====================================================================
+//  5 · PRODUCTIVIDAD DE LA TIENDA
+// =====================================================================
+
+Metros Cuadrados =
+SUMX ( VALUES ( DimTienda[TiendaID] ), CALCULATE ( MAX ( DimTienda[MetrosCuadrados] ) ) )
+// Formato: #,0 · Suma el área solo de las tiendas en contexto, sin
+// duplicarla por cada línea de venta.
+
+Venta por m2 =
+DIVIDE ( [Venta Neta], [Metros Cuadrados] )
+// Formato: $ #,0 · Permite comparar una tienda grande contra una
+// chica sin que gane siempre la grande.
+
+Cajas =
+SUMX ( VALUES ( DimTienda[TiendaID] ), CALCULATE ( MAX ( DimTienda[NumeroDeCajas] ) ) )
+
+Venta por Caja =
+DIVIDE ( [Venta Neta], [Cajas] )
+// Formato: $ #,0
+
+Dias con Venta =
+DISTINCTCOUNT ( FactVentas[Fecha] )
+// Formato: #,0
+
+Venta Diaria Promedio =
+DIVIDE ( [Venta Neta], [Dias con Venta] )
+// Formato: $ #,0 · Neutraliza meses de 28 y de 31 días.
+
+Tickets por Dia =
+DIVIDE ( [Tickets], [Dias con Venta] )
+// Formato: #,0.0
+
+Tiendas Activas =
+DISTINCTCOUNT ( FactVentas[TiendaID] )
+// Formato: #,0
+
+
+// =====================================================================
+//  6 · CUMPLIMIENTO DE METAS
+// =====================================================================
+//  La tabla Metas tiene grano mensual y FactVentas grano diario. NO la
+//  relaciones a DimCalendario[Fecha] directamente: solo empataría el
+//  día 1 de cada mes y las metas desaparecerían del resto del mes.
+//  TREATAS resuelve el cruce por MesOrden sin relación física.
+
+Meta Venta =
+CALCULATE (
+    SUM ( Metas[MetaVenta] ),
+    TREATAS ( VALUES ( DimCalendario[MesOrden] ), Metas[MesOrden] )
+)
+// Formato: $ #,0
+
+Cumplimiento Meta % =
+DIVIDE ( [Venta Neta], [Meta Venta] )
+// Formato: 0.0%
+
+Brecha vs Meta =
+[Venta Neta] - [Meta Venta]
+// Formato: $ #,0;($ #,0)
+
+Meta Tickets =
+CALCULATE (
+    SUM ( Metas[MetaTickets] ),
+    TREATAS ( VALUES ( DimCalendario[MesOrden] ), Metas[MesOrden] )
+)
+// Formato: #,0
+
+Cumplimiento Tickets % =
+DIVIDE ( [Tickets], [Meta Tickets] )
+// Formato: 0.0%
+
+
+// =====================================================================
+//  7 · MEZCLA, RANKING Y CONCENTRACIÓN
+// =====================================================================
+
+% Participacion Categoria =
+DIVIDE (
+    [Venta Neta],
+    CALCULATE ( [Venta Neta], REMOVEFILTERS ( DimProducto ) )
+)
+// Formato: 0.0% · Participación de la categoría dentro del total de
+// productos, respetando filtros de tienda y de fecha.
+
+% Participacion Tienda =
+DIVIDE (
+    [Venta Neta],
+    CALCULATE ( [Venta Neta], REMOVEFILTERS ( DimTienda ) )
+)
+// Formato: 0.0%
+
+Ranking Tienda =
+IF (
+    HASONEVALUE ( DimTienda[Tienda] ),
+    RANKX ( ALLSELECTED ( DimTienda[Tienda] ), [Venta Neta], , DESC, DENSE )
+)
+// Formato: 0 · El IF evita que aparezca un "1" absurdo en la fila de
+// totales de la tabla.
+
+Ranking Producto =
+IF (
+    HASONEVALUE ( DimProducto[Producto] ),
+    RANKX ( ALLSELECTED ( DimProducto[Producto] ), [Venta Neta], , DESC, DENSE )
+)
+
+Venta Top 10 Productos =
+VAR Top10 =
+    TOPN ( 10, ALLSELECTED ( DimProducto[Producto] ), [Venta Neta], DESC )
+RETURN
+    CALCULATE ( [Venta Neta], KEEPFILTERS ( Top10 ) )
+// Formato: $ #,0
+
+% Concentracion Top 10 =
+DIVIDE (
+    [Venta Top 10 Productos],
+    CALCULATE ( [Venta Neta], REMOVEFILTERS ( DimProducto ) )
+)
+// Formato: 0.0% · Si diez SKU explican más de la mitad de la venta,
+// tu riesgo de desabasto está concentrado en muy pocos artículos.
+
+% Efectivo =
+DIVIDE (
+    CALCULATE ( [Venta Neta], FactVentas[MetodoPago] = "Efectivo" ),
+    [Venta Neta]
+)
+// Formato: 0.0% · Relevante para logística de recolección de valores.
+
+
+// =====================================================================
+//  8 · MEDIDAS DE PRESENTACIÓN
+// =====================================================================
+//  No calculan negocio: hacen que el tablero se lea bien.
+
+Titulo Dinamico =
+VAR Tienda   = SELECTEDVALUE ( DimTienda[Tienda], "Todas las tiendas" )
+VAR Periodo  =
+    IF (
+        HASONEVALUE ( DimCalendario[AnioMes] ),
+        VALUES ( DimCalendario[AnioMes] ),
+        FORMAT ( MIN ( DimCalendario[Fecha] ), "dd/mm/yyyy" ) & " al "
+            & FORMAT ( MAX ( DimCalendario[Fecha] ), "dd/mm/yyyy" )
+    )
+RETURN
+    "Desempeño de " & Tienda & "  ·  " & Periodo
+// Úsala en Formato → Título → fx → Según el campo.
+
+Color Semaforo Meta =
+SWITCH (
+    TRUE (),
+    [Cumplimiento Meta %] >= 1,    "#2F6B4F",
+    [Cumplimiento Meta %] >= 0.95, "#C9913E",
+    "#9B3B34"
+)
+// Formato condicional → Color de fuente → Según el campo.
+
+Etiqueta Variacion =
+VAR V = [Crecimiento vs AA %]
+RETURN
+    IF (
+        ISBLANK ( V ),
+        "sin comparativo",
+        IF ( V >= 0, "▲ ", "▼ " ) & FORMAT ( ABS ( V ), "0.0%" ) & " vs año anterior"
+    )
+
+Sin Datos =
+IF ( ISBLANK ( [Venta Neta] ), "No hay ventas con los filtros seleccionados" )
+// Ponla como tarjeta encima de un visual para no dejar el lienzo mudo
+// cuando el usuario filtra hasta vaciar la selección.
+
+
+// =====================================================================
+//  FIN DE LA BIBLIOTECA — 55 medidas
+//  Jesús González · https://jesus-site-silk.vercel.app/
+// =====================================================================
