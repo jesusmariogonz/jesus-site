@@ -17,84 +17,17 @@ export function generateMetadata({ params }) {
   };
 }
 
-/* Mockup 3D de laptop mostrando el producto en pantalla — inspirado en la
-   referencia (laptop + panel flotando), pero en negro/dorado y con datos
-   reales del curso, hecho en CSS/SVG puro (sin imágenes externas). */
-function LaptopIso({ chip = "PBI" }) {
-  return (
-    <div className="tk-laptop-wrap" aria-hidden="true">
-      <div className="tk-laptop">
-        <div className="tk-laptop-screen">
-          <div className="tk-laptop-topbar">
-            <span />
-            <span />
-            <span />
-          </div>
-          <div className="tk-laptop-content">
-            <div className="tk-iso-bars tk-iso-bars-flat">
-              <i style={{ "--h": "38%" }} />
-              <i style={{ "--h": "62%" }} />
-              <i style={{ "--h": "45%" }} />
-              <i style={{ "--h": "80%" }} />
-              <i style={{ "--h": "58%" }} />
-              <i style={{ "--h": "94%" }} />
-              <i style={{ "--h": "70%" }} />
-              <i style={{ "--h": "52%" }} />
-            </div>
-            <svg viewBox="0 0 220 60" className="tk-iso-line">
-              <polyline
-                points="4,46 34,34 64,38 94,18 124,26 154,8 184,14 216,4"
-                fill="none"
-                stroke="url(#tkGoldLine2)"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <defs>
-                <linearGradient id="tkGoldLine2" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="#8a6a2f" />
-                  <stop offset="100%" stopColor="#f2d879" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-        </div>
-        <div className="tk-laptop-base" />
-      </div>
-      <div className="tk-laptop-chip">{chip}</div>
-    </div>
-  );
-}
-
-/* Mockup 3D de libro/cuadernillo — para productos tipo manual, plantillas
-   o PDF, donde un "librito" flotando comunica mejor el producto que un
-   laptop. También en negro/dorado, CSS puro. */
-function BookIso({ nombre, chip = "PDF" }) {
-  return (
-    <div className="tk-book-wrap" aria-hidden="true">
-      <div className="tk-book">
-        <div className="tk-book-spine" />
-        <div className="tk-book-cover">
-          <span className="tk-book-cover-mark">{chip}</span>
-          <span className="tk-book-cover-title">{nombre}</span>
-        </div>
-        <div className="tk-book-pages" />
-      </div>
-    </div>
-  );
-}
-
-/* Elige el mockup 3D según el formato del producto: cursos en video se
-   ven mejor como laptop con pantalla; manuales/plantillas/PDF se ven
-   mejor como un librito con lomo y páginas. */
+/* Foto temática del producto (ver `imagen` en lib/toolkit.js). */
 function heroVisual(producto) {
-  const f = (producto.formato || "").toLowerCase();
-  const esLibro =
-    f.includes("manual") || f.includes("plantilla") || f.includes("pdf");
-  if (esLibro) {
-    return <BookIso nombre={producto.nombre} chip={producto.id === "prompting-profesional" ? "AI" : "PDF"} />;
-  }
-  return <LaptopIso chip={producto.formato?.includes("Kit") ? "KIT" : "PBI"} />;
+  if (!producto.imagen) return null;
+  return (
+    <div className="tk-product-photo-wrap">
+      <div
+        className="tk-product-photo"
+        style={{ backgroundImage: `url(${producto.imagen})` }}
+      />
+    </div>
+  );
 }
 
 export default function ProductoToolkit({ params }) {

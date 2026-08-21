@@ -45,39 +45,45 @@ export default function ToolkitCatalog({ productos, bundles }) {
               key={p.id}
               className={`tk-card${marcado ? " tk-card-selected" : ""}`}
             >
-              <label className="tk-card-check">
-                <input
-                  type="checkbox"
-                  checked={marcado}
-                  onChange={() => toggle(p.id)}
-                  aria-label={`Seleccionar ${p.nombre}`}
-                />
-                <span className="tk-card-check-box" aria-hidden="true" />
-              </label>
+              <div
+                className="tk-card-cover"
+                style={p.imagen ? { backgroundImage: `url(${p.imagen})` } : undefined}
+              >
+                <label className="tk-card-check">
+                  <input
+                    type="checkbox"
+                    checked={marcado}
+                    onChange={() => toggle(p.id)}
+                    aria-label={`Seleccionar ${p.nombre}`}
+                  />
+                  <span className="tk-card-check-box" aria-hidden="true" />
+                </label>
+                {p.badge && <span className="tk-card-badge">{p.badge}</span>}
+                <span className="tk-card-formato">{p.formato}</span>
+              </div>
 
-              {p.badge && <span className="tk-card-badge">{p.badge}</span>}
-
-              <span className="tk-card-formato">{p.formato}</span>
-              <h3 className="tk-card-title">
-                <Link href={`/the-toolkit/${p.id}`} className="tk-card-title-link">
-                  {p.nombre}
-                </Link>
-              </h3>
-              <p className="tk-card-desc">{p.resumen}</p>
-              <div className="tk-card-footer">
-                <span className="tk-card-precio">
-                  {p.precioLista && (
-                    <span className="tk-bundle-tachado tk-card-tachado">
-                      ${p.precioLista}
-                    </span>
-                  )}{" "}
-                  {p.precio === 0 ? (
-                    <span className="tk-card-gratis">GRATIS</span>
-                  ) : (
-                    `$${p.precio} USD`
-                  )}
-                </span>
-                <BuyButton checkoutUrl={p.checkoutUrl} />
+              <div className="tk-card-body">
+                <h3 className="tk-card-title">
+                  <Link href={`/the-toolkit/${p.id}`} className="tk-card-title-link">
+                    {p.nombre}
+                  </Link>
+                </h3>
+                <p className="tk-card-desc">{p.resumen}</p>
+                <div className="tk-card-footer">
+                  <span className="tk-card-precio">
+                    {p.precioLista && (
+                      <span className="tk-bundle-tachado tk-card-tachado">
+                        ${p.precioLista}
+                      </span>
+                    )}{" "}
+                    {p.precio === 0 ? (
+                      <span className="tk-card-gratis">GRATIS</span>
+                    ) : (
+                      `$${p.precio} USD`
+                    )}
+                  </span>
+                  <BuyButton checkoutUrl={p.checkoutUrl} />
+                </div>
               </div>
             </article>
           );

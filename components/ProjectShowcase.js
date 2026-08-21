@@ -41,7 +41,14 @@ export default function ProjectShowcase() {
               aria-expanded={on}
               aria-label={`Ver detalle: ${p.nombre}`}
             >
-              <ProjectArt variant={p.arte} hueA={hueA} hueB={hueB} />
+              {p.imagen ? (
+                <span
+                  className="pshow-art-photo"
+                  style={{ backgroundImage: `url(${p.imagen})` }}
+                />
+              ) : (
+                <ProjectArt variant={p.arte} hueA={hueA} hueB={hueB} />
+              )}
               <span className="pshow-art-overlay" />
               <span className="pshow-num" style={{ color: hueA }}>
                 {p.num}

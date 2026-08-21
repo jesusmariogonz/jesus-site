@@ -1693,8 +1693,10 @@ html.dark {
 }
 .tk-card {
   position: relative;
-  padding: 24px;
+  display: flex;
+  flex-direction: column;
   border-radius: 14px;
+  overflow: hidden;
   background: var(--tk-black-2);
   border: 1px solid rgba(212, 175, 55, 0.22);
   box-shadow: 0 16px 36px -14px rgba(0, 0, 0, 0.6);
@@ -1705,13 +1707,40 @@ html.dark {
   border-color: rgba(212, 175, 55, 0.5);
   box-shadow: 0 22px 46px -14px rgba(0, 0, 0, 0.65), 0 8px 20px -8px rgba(212, 175, 55, 0.22);
 }
+.tk-card-cover {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--tk-black);
+}
+.tk-card-cover::after {
+  /* legibilidad del badge/checkbox sobre cualquier foto */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 10, 10, 0.55) 0%, rgba(10, 10, 10, 0) 35%, rgba(10, 10, 10, 0.75) 100%);
+}
+.tk-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 18px 20px 20px;
+}
+.tk-card-cover .tk-card-formato {
+  position: absolute;
+  bottom: 12px;
+  left: 16px;
+  z-index: 2;
+  margin: 0;
+}
 .tk-card-formato {
   display: inline-block;
   font-family: var(--font-mono);
   font-size: 0.68rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--tk-gold);
+  color: var(--tk-gold-light);
   margin-bottom: 10px;
 }
 .tk-card-title {
@@ -1882,6 +1911,20 @@ html.dark {
 }
 .tk-product-copy {
   text-align: left;
+}
+.tk-product-photo-wrap {
+  display: flex;
+  justify-content: center;
+}
+.tk-product-photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--tk-black);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(212, 175, 55, 0.08);
 }
 .tk-product-title {
   font-family: "Fraunces", var(--font-sans);
@@ -2382,8 +2425,18 @@ html.dark {
   display: block;
   transition: transform 0.5s ease;
 }
+.pshow-art-photo {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--surface-2);
+  transition: transform 0.5s ease;
+}
 .pshow-card:hover .pshow-art-svg,
-.pshow-card.on .pshow-art-svg {
+.pshow-card.on .pshow-art-svg,
+.pshow-card:hover .pshow-art-photo,
+.pshow-card.on .pshow-art-photo {
   transform: scale(1.06);
 }
 .pshow-art-overlay {
