@@ -1,6 +1,16 @@
 ---
-titulo: 'El dinero caro ya le pasó la factura a la banca digital mexicana'
-fecha: 2026-08-21
+tesis: 'La decisión de Banxico de posponer hasta 2027 la convergencia inflacionaria no es una nota técnica de política monetaria: es la confirmación de que el modelo de comprar participación de mercado con pérdidas subsidiadas, que trajeron a México los bancos digitales extranjeros, se quedó sin el ingrediente que lo hacía viable —dinero barato— y solo la disciplina de originación, no la velocidad de expansión, decide quién sobrevive el ciclo.'
+datosClave:
+  - valor: 6.50%
+    etiqueta: 'Tasa de referencia de Banxico, sin cambios desde julio'
+  - valor: '149,120 mdp'
+    etiqueta: Utilidad de la banca comercial en el 1S2026 (-5.4% real anual)
+  - valor: '124,188 mdp'
+    etiqueta: 'Provisiones preventivas por riesgo crediticio, máximo desde 2020'
+  - valor: '4,268 mdp'
+    etiqueta: 'Pérdidas conjuntas de ocho bancos en el 1S2026, según la CNBV'
+titulo: El dinero caro ya le pasó la factura a la banca digital mexicana
+fecha: 2026-08-21T00:00:00.000Z
 categoria: fintech
 tags:
   - Banxico
@@ -16,16 +26,7 @@ tags:
   - banca tradicional
   - México
 resumen: 'Las minutas de Banxico confirmaron que el dinero seguirá caro en México hasta finales de 2027, justo cuando la banca tradicional reporta su primera caída semestral de utilidades desde la pandemia y ocho instituciones —la mayoría bancos digitales extranjeros— acumulan más de 4,200 millones de pesos en pérdidas.'
-tesis: 'La decisión de Banxico de posponer hasta 2027 la convergencia inflacionaria no es una nota técnica de política monetaria: es la confirmación de que el modelo de comprar participación de mercado con pérdidas subsidiadas, que trajeron a México los bancos digitales extranjeros, se quedó sin el ingrediente que lo hacía viable —dinero barato— y solo la disciplina de originación, no la velocidad de expansión, decide quién sobrevive el ciclo.'
-datosClave:
-  - valor: '6.50%'
-    etiqueta: 'Tasa de referencia de Banxico, sin cambios desde julio'
-  - valor: '149,120 mdp'
-    etiqueta: 'Utilidad de la banca comercial en el 1S2026 (-5.4% real anual)'
-  - valor: '124,188 mdp'
-    etiqueta: 'Provisiones preventivas por riesgo crediticio, máximo desde 2020'
-  - valor: '4,268 mdp'
-    etiqueta: 'Pérdidas conjuntas de ocho bancos en el 1S2026, según la CNBV'
+imagen: /blog/imagess.jpg
 ---
 
 El 20 de agosto, Banxico publicó las minutas de su última decisión de política monetaria y confirmó lo que el mercado sospechaba pero no había escuchado en voz alta: la convergencia de la inflación a la meta de 3% ya no se espera para 2026, sino hasta el último trimestre de 2027. La tasa de referencia se mantuvo en 6.50%, donde ha estado desde julio, y el banco central fue explícito en que bajarla antes de tiempo pondría en riesgo una trayectoria que ya considera más lenta de lo previsto. Leída como nota de coyuntura, la noticia dura un día. Leída junto con los resultados del sistema financiero mexicano del primer semestre, es la confirmación de que el dinero caro dejó de ser una condición temporal para convertirse en el entorno permanente bajo el que la banca —tradicional y digital— tiene que demostrar, ya sin excusas, que su modelo de negocio funciona.
