@@ -1648,18 +1648,13 @@ html.dark {
   margin: 0 auto 56px;
   text-align: center;
 }
-.tk-hero-eyebrow {
+.tk-hero .sql-meta {
   display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--tk-gold);
-  border: 1px solid rgba(212, 175, 55, 0.4);
-  background: var(--tk-gold-soft);
-  padding: 0.3rem 0.8rem;
-  border-radius: 9999px;
+  color: var(--tk-gold-light);
   margin-bottom: 18px;
+}
+.tk-hero .sql-meta::before {
+  color: var(--tk-gold);
 }
 .tk-hero-title {
   margin: 0 0 14px;
@@ -1772,10 +1767,30 @@ html.dark {
   color: var(--tk-ink);
 }
 .tk-card-desc {
-  margin: 0 0 16px;
+  margin: 0;
   font-size: 0.86rem;
   color: var(--tk-ink-soft);
   line-height: 1.55;
+}
+.tk-card-expand {
+  overflow: hidden;
+}
+.tk-card-expand .tk-card-desc {
+  padding-top: 14px;
+}
+.tk-card-toggle {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--tk-gold-light);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.tk-card-toggle:hover {
+  text-decoration: underline;
 }
 .tk-card-status {
   display: inline-block;
@@ -2761,17 +2776,8 @@ html.dark {
   margin: 0 auto 56px;
   text-align: center;
 }
-.lib-hero-eyebrow {
+.lib-hero .sql-meta {
   display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent);
-  border: 1px solid var(--accent);
-  background: var(--accent-soft);
-  padding: 0.3rem 0.8rem;
-  border-radius: 9999px;
   margin-bottom: 18px;
 }
 .lib-hero-title {
@@ -2845,19 +2851,39 @@ html.dark {
   margin: 0 0 10px;
 }
 .lib-card-desc {
-  margin: 0 0 16px;
+  margin: 0;
   font-size: 0.86rem;
   color: var(--ink-soft);
   line-height: 1.55;
-  flex: 1;
 }
 .lib-card-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+  margin-top: auto;
   padding-top: 14px;
   border-top: 1px solid var(--line-soft);
+}
+.lib-card-expand {
+  overflow: hidden;
+}
+.lib-card-expand .lib-card-desc {
+  padding-top: 14px;
+}
+.lib-card-toggle {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.lib-card-toggle:hover {
+  text-decoration: underline;
 }
 .lib-badge-gratis {
   font-weight: 700;
