@@ -3074,9 +3074,24 @@ html.dark {
   backdrop-filter: blur(2px);
 }
 .lc-price-gratis {
-  background: rgba(255, 255, 255, 0.92);
-  color: var(--ink, #0d1420);
+  top: 14px;
+  right: 14px;
+  background: #e0263f;
+  color: #fff;
   border-color: transparent;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  box-shadow: 0 6px 18px -4px rgba(224, 38, 63, 0.65);
+  transform: rotate(3deg);
+}
+.lc-hero .lc-price-gratis {
+  font-size: 14px;
+  padding: 8px 18px;
+  top: 18px;
+  right: 18px;
 }
 .lc-framing { background: linear-gradient(160deg, #04211d 0%, #0b4a41 48%, #12836f 100%); }
 .lc-cognitivo { background: linear-gradient(160deg, #241041 0%, #4a1f7a 46%, #7c2f8f 100%); }
