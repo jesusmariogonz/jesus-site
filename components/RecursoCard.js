@@ -42,9 +42,18 @@ export default function RecursoCard({ libro }) {
         )}
         <p className="lib-card-desc">{libro.resumen}</p>
         <div className="lib-card-footer">
-          <Link href={`/recursos/${libro.id}`} className="btn ghost btn-sm">
-            Ver detalle
-          </Link>
+          <div className="lib-card-footer-info">
+            <span className="lib-card-precio">
+              {gratis ? (
+                <span className="lib-card-precio-gratis">Gratis</span>
+              ) : (
+                `$${libro.precio} USD`
+              )}
+            </span>
+            <Link href={`/recursos/${libro.id}`} className="lib-card-verdetalle">
+              Ver detalle
+            </Link>
+          </div>
           {gratis ? (
             <button
               type="button"
@@ -56,7 +65,7 @@ export default function RecursoCard({ libro }) {
             </button>
           ) : libro.stripePriceId ? (
             <a href={libro.checkoutUrl} className="btn btn-sm">
-              Comprar ${libro.precio}
+              Comprar
             </a>
           ) : (
             <span className="btn ghost btn-sm" aria-disabled="true">

@@ -2864,6 +2864,26 @@ html.dark {
   font-size: 0.85rem;
   color: var(--accent);
 }
+.lib-card-footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.lib-card-precio {
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--ink);
+}
+.lib-card-precio-gratis {
+  color: #e0263f;
+}
+.lib-card-verdetalle {
+  font-size: 0.76rem;
+  color: var(--ink-soft);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
 .lib-cta-final {
   text-align: center;
   padding-top: 24px;
@@ -3060,18 +3080,25 @@ html.dark {
 }
 .lc-price {
   position: absolute;
-  top: 12px;
-  right: 10px;
+  top: 14px;
+  right: 14px;
   z-index: 3;
   font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 600;
-  background: rgba(8, 13, 23, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  font-size: 15px;
+  font-weight: 800;
+  background: rgba(8, 13, 23, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   color: #fff;
-  padding: 3px 8px;
+  padding: 6px 13px;
   border-radius: 20px;
   backdrop-filter: blur(2px);
+  box-shadow: 0 6px 16px -4px rgba(0, 0, 0, 0.5);
+}
+.lc-hero .lc-price {
+  font-size: 18px;
+  padding: 8px 18px;
+  top: 18px;
+  right: 18px;
 }
 .lc-price-gratis {
   top: 14px;
