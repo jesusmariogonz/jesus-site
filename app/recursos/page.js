@@ -14,7 +14,7 @@ export default function Recursos() {
     <section className="lib-page">
       <div className="container">
         <div className="lib-hero">
-          <span className="lib-hero-eyebrow">Biblioteca</span>
+          <span className="sql-meta">biblioteca · {LIBROS.length} libros</span>
           <h1 className="lib-hero-title">Los libros que he escrito.</h1>
           <p className="lib-hero-desc">
             Sobre datos, analítica, IA y liderazgo. Algunos son gratis —

@@ -16,7 +16,7 @@ export default function TheToolkit() {
     <section className="tk-page">
       <div className="container">
         <div className="tk-hero">
-          <span className="tk-hero-eyebrow">The Toolkit</span>
+          <span className="sql-meta">the toolkit · {TOOLKIT_PRODUCTOS.length} recursos</span>
           <h1 className="tk-hero-title">
             Recursos de datos y analítica, listos para usar.
           </h1>

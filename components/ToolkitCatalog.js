@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
 import BuyButton from "@/components/BuyButton";
 
 /* Compara dos conjuntos de ids sin importar el orden. */
@@ -13,6 +14,7 @@ function mismoConjunto(a, b) {
 
 export default function ToolkitCatalog({ productos, bundles }) {
   const [seleccion, setSeleccion] = useState([]);
+  const [abierto, setAbierto] = useState(null);
 
   const toggle = (id) => {
     setSeleccion((prev) =>
@@ -40,10 +42,13 @@ export default function ToolkitCatalog({ productos, bundles }) {
       <div className="tk-grid">
         {productos.map((p) => {
           const marcado = seleccion.includes(p.id);
+          const on = abierto === p.id;
           return (
             <article
               key={p.id}
-              className={`tk-card${marcado ? " tk-card-selected" : ""}`}
+              className={`tk-card${marcado ? " tk-card-selected" : ""}${on ? " on" : ""}`}
+              onMouseEnter={() => setAbierto(p.id)}
+              onMouseLeave={() => setAbierto((cur) => (cur === p.id ? null : cur))}
             >
               <div
                 className="tk-card-cover"
@@ -68,7 +73,6 @@ export default function ToolkitCatalog({ productos, bundles }) {
               </div>
 
               <div className="tk-card-body">
-                <p className="tk-card-desc">{p.resumen}</p>
                 <div className="tk-card-footer">
                   <span className="tk-card-precio">
                     {p.precioLista && (
@@ -84,6 +88,29 @@ export default function ToolkitCatalog({ productos, bundles }) {
                   </span>
                   <BuyButton checkoutUrl={p.checkoutUrl} />
                 </div>
+
+                <AnimatePresence initial={false}>
+                  {on && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.28, ease: "easeInOut" }}
+                      className="tk-card-expand"
+                    >
+                      <p className="tk-card-desc">{p.resumen}</p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
+                <button
+                  type="button"
+                  className="tk-card-toggle"
+                  onClick={() => setAbierto((cur) => (cur === p.id ? null : p.id))}
+                  aria-expanded={on}
+                >
+                  {on ? "Ver menos −" : "Ver detalle +"}
+                </button>
               </div>
             </article>
           );

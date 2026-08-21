@@ -2,12 +2,14 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
 import { trackDescarga, descargarProtegido } from "@/lib/track";
 import { AUTHOR } from "@/lib/site";
 import LibroCover from "@/components/LibroCover";
 
 export default function RecursoCard({ libro }) {
   const [descargando, setDescargando] = useState(false);
+  const [abierto, setAbierto] = useState(false);
   const gratis = !libro.precio;
 
   const onDescargar = async () => {
@@ -21,7 +23,11 @@ export default function RecursoCard({ libro }) {
   };
 
   return (
-    <article className="lib-card">
+    <article
+      className={`lib-card${abierto ? " on" : ""}`}
+      onMouseEnter={() => setAbierto(true)}
+      onMouseLeave={() => setAbierto(false)}
+    >
       <Link href={`/recursos/${libro.id}`} aria-label={libro.titulo}>
         <LibroCover
           variante={libro.variante}
@@ -40,7 +46,7 @@ export default function RecursoCard({ libro }) {
         {libro.subtitulo && (
           <p className="lib-card-subtitulo">{libro.subtitulo}</p>
         )}
-        <p className="lib-card-desc">{libro.resumen}</p>
+
         <div className="lib-card-footer">
           <div className="lib-card-footer-info">
             <span className="lib-card-precio">
@@ -73,6 +79,29 @@ export default function RecursoCard({ libro }) {
             </span>
           )}
         </div>
+
+        <AnimatePresence initial={false}>
+          {abierto && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.28, ease: "easeInOut" }}
+              className="lib-card-expand"
+            >
+              <p className="lib-card-desc">{libro.resumen}</p>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        <button
+          type="button"
+          className="lib-card-toggle"
+          onClick={() => setAbierto((cur) => !cur)}
+          aria-expanded={abierto}
+        >
+          {abierto ? "Ver menos −" : "Ver resumen +"}
+        </button>
       </div>
     </article>
   );
