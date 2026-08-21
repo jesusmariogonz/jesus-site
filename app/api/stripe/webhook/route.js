@@ -67,7 +67,7 @@ export async function POST(request) {
       }));
       await sendPurchaseEmail({
         to: email,
-        nombreProducto: item?.nombre || "tu compra en The Toolkit",
+        nombreProducto: item?.nombre || item?.titulo || "tu compra en jgonzalez.app",
         links,
       });
     }

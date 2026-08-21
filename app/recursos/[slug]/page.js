@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { LIBROS } from "@/lib/recursos";
 import DescargaLibroBtn from "@/components/DescargaLibroBtn";
-import LibroBookIso from "@/components/LibroBookIso";
+import LibroCover from "@/components/LibroCover";
 import AutorLibro from "@/components/AutorLibro";
 
 export function generateStaticParams() {
@@ -42,15 +42,33 @@ export default function LibroDetalle({ params }) {
               <p className="lib-product-subtitulo">{libro.subtitulo}</p>
             )}
             {d.hook && <p className="lib-product-hook">{d.hook}</p>}
-            <DescargaLibroBtn libro={libro} />
+            {libro.precio ? (
+              libro.stripePriceId ? (
+                <a href={libro.checkoutUrl} className="btn">
+                  Comprar ahora · ${libro.precio}
+                </a>
+              ) : (
+                <span className="btn ghost" aria-disabled="true">
+                  Próximamente
+                </span>
+              )
+            ) : (
+              <DescargaLibroBtn libro={libro} />
+            )}
           </div>
 
           <div className="lib-product-cover">
-            <LibroBookIso
-              titulo={libro.titulo}
-              chip={`${libro.paginas}p`}
-              cover={libro.cover}
-            />
+            <div className="lib-book-wrap">
+              <LibroCover
+                variante={libro.variante}
+                titulo={libro.titulo}
+                eyebrow={d.eyebrow || "Biblioteca"}
+                paginas={libro.paginas}
+                precio={libro.precio}
+                gratis={!libro.precio}
+                size="hero"
+              />
+            </div>
           </div>
         </div>
 

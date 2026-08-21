@@ -4,9 +4,11 @@ import { useState } from "react";
 import Link from "next/link";
 import { trackDescarga, descargarProtegido } from "@/lib/track";
 import { AUTHOR } from "@/lib/site";
+import LibroCover from "@/components/LibroCover";
 
-export default function LibroCard({ libro }) {
+export default function RecursoCard({ libro }) {
   const [descargando, setDescargando] = useState(false);
+  const gratis = !libro.precio;
 
   const onDescargar = async () => {
     setDescargando(true);
@@ -20,42 +22,48 @@ export default function LibroCard({ libro }) {
 
   return (
     <article className="lib-card">
-      <div
-        className="lib-card-cover"
-        style={
-          libro.cover
-            ? {
-                backgroundImage: `linear-gradient(155deg, rgba(15,47,158,0.35), rgba(28,72,201,0.78)), url(${libro.cover})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }
-            : undefined
-        }
-      >
-        <span className="lib-card-cover-title">{libro.titulo}</span>
-      </div>
-      <span className="lib-card-formato">PDF · {libro.paginas} págs.</span>
-      <h3 className="lib-card-title">
-        <Link href={`/recursos/${libro.id}`}>{libro.titulo}</Link>
-      </h3>
-      <p className="lib-card-por">Por {AUTHOR.name}</p>
-      {libro.subtitulo && (
-        <p className="lib-card-subtitulo">{libro.subtitulo}</p>
-      )}
-      <p className="lib-card-desc">{libro.resumen}</p>
-      <div className="lib-card-footer">
-        <span className="lib-badge-gratis">GRATIS</span>
-        <Link href={`/recursos/${libro.id}`} className="btn ghost btn-sm">
-          Ver detalle
-        </Link>
-        <button
-          type="button"
-          className="btn btn-sm"
-          onClick={onDescargar}
-          disabled={descargando}
-        >
-          {descargando ? "…" : "Descargar"}
-        </button>
+      <Link href={`/recursos/${libro.id}`} aria-label={libro.titulo}>
+        <LibroCover
+          variante={libro.variante}
+          titulo={libro.titulo}
+          eyebrow={libro.detalle?.eyebrow || "Biblioteca"}
+          paginas={libro.paginas}
+          precio={libro.precio}
+          gratis={gratis}
+        />
+      </Link>
+      <div className="lib-card-body">
+        <h3 className="lib-card-title">
+          <Link href={`/recursos/${libro.id}`}>{libro.titulo}</Link>
+        </h3>
+        <p className="lib-card-por">Por {AUTHOR.name}</p>
+        {libro.subtitulo && (
+          <p className="lib-card-subtitulo">{libro.subtitulo}</p>
+        )}
+        <p className="lib-card-desc">{libro.resumen}</p>
+        <div className="lib-card-footer">
+          <Link href={`/recursos/${libro.id}`} className="btn ghost btn-sm">
+            Ver detalle
+          </Link>
+          {gratis ? (
+            <button
+              type="button"
+              className="btn btn-sm"
+              onClick={onDescargar}
+              disabled={descargando}
+            >
+              {descargando ? "…" : "Descargar"}
+            </button>
+          ) : libro.stripePriceId ? (
+            <a href={libro.checkoutUrl} className="btn btn-sm">
+              Comprar ${libro.precio}
+            </a>
+          ) : (
+            <span className="btn ghost btn-sm" aria-disabled="true">
+              Próximamente
+            </span>
+          )}
+        </div>
       </div>
     </article>
   );

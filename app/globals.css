@@ -2694,19 +2694,29 @@ html.dark {
 
 .lib-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
   margin-bottom: 56px;
 }
 .lib-card {
   display: flex;
   flex-direction: column;
-  padding: 24px;
   border-radius: 14px;
+  overflow: hidden;
   background: var(--surface);
   border: 1px solid var(--line);
   box-shadow: var(--shadow-sm);
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.lib-card .lc {
+  border-radius: 0;
+  box-shadow: none;
+}
+.lib-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 18px 20px 20px;
 }
 .lib-card:hover {
   transform: translateY(-4px);
@@ -2881,103 +2891,109 @@ html.dark {
   font-size: 0.95rem;
 }
 
-/* ── Mockup 3D de libro para /recursos (azul, no negro/dorado) ── */
+/* ── Portadas editoriales (LibroCover) — CSS + SVG, sin fotos ── */
+.lc {
+  position: relative;
+  aspect-ratio: 2 / 3;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  isolation: isolate;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.14) inset,
+    -14px 0 24px -18px rgba(0, 0, 0, 0.55) inset,
+    0 18px 40px -18px rgba(8, 13, 23, 0.5);
+}
+.lc::before {
+  /* lomo */
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 8px;
+  background: rgba(0, 0, 0, 0.22);
+  z-index: 3;
+}
+.lc-motivo {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.lc-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  padding: 16px 56px 0 20px;
+  position: relative;
+  z-index: 2;
+}
+.lc-titulo {
+  font-family: "Fraunces", var(--font-sans);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  padding: 8px 16px 0 20px;
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.lc-hero .lc-titulo {
+  font-size: 26px;
+  -webkit-line-clamp: 6;
+}
+.lc-pie {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.05em;
+  padding: 10px 16px 14px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  position: relative;
+  z-index: 2;
+  opacity: 0.9;
+  min-height: 12px;
+}
+.lc-price {
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  z-index: 3;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  background: rgba(8, 13, 23, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 20px;
+  backdrop-filter: blur(2px);
+}
+.lc-price-gratis {
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink, #0d1420);
+  border-color: transparent;
+}
+.lc-framing { background: linear-gradient(160deg, #04211d 0%, #0b4a41 48%, #12836f 100%); }
+.lc-cognitivo { background: linear-gradient(160deg, #241041 0%, #4a1f7a 46%, #7c2f8f 100%); }
+.lc-analitica { background: linear-gradient(160deg, #06213f 0%, #0d3f70 48%, #1573b0 100%); }
+.lc-tiempo { background: linear-gradient(160deg, #241705 0%, #6b4a12 46%, #b8842a 100%); }
+.lc-seniority { background: linear-gradient(160deg, #0a1730 0%, #163a63 48%, #3b6ea8 100%); }
+
+/* Envoltura de la portada en la página de detalle: quita el flotante
+   3D anterior, deja la portada grande centrada. */
 .lib-book-wrap {
   display: flex;
   justify-content: center;
-  perspective: 1200px;
-  padding: 20px 0;
+  padding: 12px 0;
 }
-.lib-book {
-  position: relative;
-  width: 200px;
-  height: 270px;
-  transform-style: preserve-3d;
-  transform: rotateY(-28deg) rotateX(6deg);
-  animation: libBookFloat 7s ease-in-out infinite;
-}
-@keyframes libBookFloat {
-  0%, 100% { transform: rotateY(-28deg) rotateX(6deg) translateY(0); }
-  50% { transform: rotateY(-28deg) rotateX(6deg) translateY(-12px); }
-}
-.lib-book-cover {
-  position: absolute;
-  inset: 0;
-  border-radius: 4px 10px 10px 4px;
-  background: linear-gradient(155deg, var(--accent-2), var(--accent));
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 40px 70px -18px rgba(16, 30, 65, 0.55);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 22px 18px;
-}
-.lib-book-cover-title {
-  font-family: "Fraunces", var(--font-sans);
-  font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.25;
-  color: #fff;
-}
-.lib-book-cover-mark {
-  align-self: flex-start;
-  width: 34px;
-  height: 34px;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  color: #fff;
-}
-.lib-book-spine {
-  position: absolute;
-  left: -18px;
-  top: 0;
-  width: 18px;
-  height: 100%;
-  background: linear-gradient(90deg, #0f2f9e, var(--accent-2));
-  border-radius: 4px 0 0 4px;
-  transform: rotateY(-90deg);
-  transform-origin: right;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-.lib-book-pages {
-  position: absolute;
-  right: -6px;
-  top: 4px;
-  width: 6px;
-  height: calc(100% - 8px);
-  background: repeating-linear-gradient(
-    180deg,
-    #f4f6fb 0px,
-    #f4f6fb 2px,
-    #d7e0f2 2px,
-    #d7e0f2 3px
-  );
-  border-radius: 0 3px 3px 0;
-  transform: rotateY(90deg);
-  transform-origin: left;
-}
-/* Portada chiquita para las tarjetas del listado /recursos */
-.lib-card-cover {
-  height: 84px;
-  border-radius: 10px;
-  background: linear-gradient(150deg, var(--accent-2), var(--accent));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 14px;
-  box-shadow: var(--shadow-sm);
-}
-.lib-card-cover-title {
-  color: #fff;
-  font-family: "Fraunces", var(--font-sans);
-  font-weight: 600;
-  font-size: 0.8rem;
-  text-align: center;
-  padding: 0 14px;
-  line-height: 1.3;
+.lib-book-wrap .lc-hero {
+  width: 240px;
 }

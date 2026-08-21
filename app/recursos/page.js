@@ -5,7 +5,7 @@ import RecursoCard from "@/components/RecursoCard";
 export const metadata = {
   title: "Biblioteca",
   description:
-    "Libros descargables gratis sobre datos, analítica e IA — sin registro, descarga directa.",
+    "Libros sobre datos, analítica, IA y liderazgo — algunos gratis, sin registro; otros de pago, entrega inmediata.",
   alternates: { canonical: "/recursos" },
 };
 
@@ -15,11 +15,11 @@ export default function Recursos() {
       <div className="container">
         <div className="lib-hero">
           <span className="lib-hero-eyebrow">Biblioteca</span>
-          <h1 className="lib-hero-title">Libros para descargar, sin costo.</h1>
+          <h1 className="lib-hero-title">Los libros que he escrito.</h1>
           <p className="lib-hero-desc">
-            Estos no están a la venta: los escribí para compartir lo que uso
-            en el día a día con datos y analítica. Descarga directa, sin
-            registro ni correo.
+            Sobre datos, analítica, IA y liderazgo. Algunos son gratis —
+            descarga directa, sin registro ni correo — y otros son de pago,
+            con entrega inmediata al comprarlos.
           </p>
         </div>
 
