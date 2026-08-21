@@ -50,14 +50,12 @@ export default function ProjectShowcase() {
                 <ProjectArt variant={p.arte} hueA={hueA} hueB={hueB} />
               )}
               <span className="pshow-art-overlay" />
-              <span className="pshow-num" style={{ color: hueA }}>
-                {p.num}
-              </span>
+              <span className="pshow-num">{p.num}</span>
+              <h3 className="pshow-art-title">{p.corto}</h3>
               <span className="pshow-region">{p.region}</span>
             </button>
 
             <div className="pshow-body">
-              <h3 className="pshow-title">{p.corto}</h3>
               <div className="pshow-chips">
                 {p.chips.slice(0, 3).map((c) => (
                   <span key={c}>{c}</span>

@@ -60,14 +60,14 @@ export default function ToolkitCatalog({ productos, bundles }) {
                 </label>
                 {p.badge && <span className="tk-card-badge">{p.badge}</span>}
                 <span className="tk-card-formato">{p.formato}</span>
-              </div>
-
-              <div className="tk-card-body">
                 <h3 className="tk-card-title">
                   <Link href={`/the-toolkit/${p.id}`} className="tk-card-title-link">
                     {p.nombre}
                   </Link>
                 </h3>
+              </div>
+
+              <div className="tk-card-body">
                 <p className="tk-card-desc">{p.resumen}</p>
                 <div className="tk-card-footer">
                   <span className="tk-card-precio">
