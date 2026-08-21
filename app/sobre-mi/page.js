@@ -82,7 +82,7 @@ export default function SobreMi() {
 
           <h2>Mi trayectoria</h2>
           <p>
-            Antes de mi rol actual fui <strong>Data Manager en FEMSA
+            Antes de mi rol actual fui <strong>Arquitecto de Datos en FEMSA
             Comercio</strong>, administrando el repositorio central de datos y
             automatizando la generación de información para nuevos negocios.
             Pasé también por la ingeniería de datos (Raken Data Group), la
