@@ -25,8 +25,8 @@ export async function GET(_request, { params }) {
       bytes = await readFile(path.join(process.cwd(), "public", libro.archivo));
     } else if (libro.archivos?.[0]?.blobPath) {
       const resultado = await get(libro.archivos[0].blobPath, { access: "private" });
-      if (!resultado?.url) throw new Error("blob sin url");
-      const res = await fetch(resultado.url);
+      if (!resultado?.stream) throw new Error("blob sin stream");
+      const res = new Response(resultado.stream);
       bytes = Buffer.from(await res.arrayBuffer());
     } else {
       return NextResponse.json({ error: "Archivo no disponible" }, { status: 404 });
