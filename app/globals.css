@@ -1653,6 +1653,19 @@ html.dark {
   color: var(--tk-gold-light);
   margin-bottom: 18px;
 }
+.tk-hero-eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tk-gold);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  background: var(--tk-gold-soft);
+  padding: 0.3rem 0.8rem;
+  border-radius: 9999px;
+  margin-bottom: 18px;
+}
 .tk-hero .sql-meta::before {
   color: var(--tk-gold);
 }
@@ -2778,6 +2791,19 @@ html.dark {
 }
 .lib-hero .sql-meta {
   display: inline-block;
+  margin-bottom: 18px;
+}
+.lib-hero-eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  background: var(--accent-soft);
+  padding: 0.3rem 0.8rem;
+  border-radius: 9999px;
   margin-bottom: 18px;
 }
 .lib-hero-title {
