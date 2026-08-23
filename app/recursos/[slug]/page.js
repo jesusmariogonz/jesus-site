@@ -4,6 +4,11 @@ import { LIBROS } from "@/lib/recursos";
 import DescargaLibroBtn from "@/components/DescargaLibroBtn";
 import LibroCover from "@/components/LibroCover";
 import AutorLibro from "@/components/AutorLibro";
+import LibroPreview from "@/components/LibroPreview";
+
+/* La vista previa (primeras 10 páginas) no aplica a manuales que ya
+   son de 10 páginas o menos — ahí no hay nada que "seguir leyendo". */
+const PAGINAS_MIN_PREVIEW = 11;
 
 export function generateStaticParams() {
   return LIBROS.map((l) => ({ slug: l.id }));
@@ -71,6 +76,13 @@ export default function LibroDetalle({ params }) {
             </div>
           </div>
         </div>
+
+        {libro.paginas >= PAGINAS_MIN_PREVIEW && (
+          <div className="lib-product-section">
+            <h2>Lee las primeras páginas</h2>
+            <LibroPreview libro={libro} />
+          </div>
+        )}
 
         {d.paraQuien?.length > 0 && (
           <div className="lib-product-section">
