@@ -50,7 +50,7 @@ export default function LibroDetalle({ params }) {
             {libro.precio ? (
               libro.stripePriceId ? (
                 <a href={libro.checkoutUrl} className="btn">
-                  Comprar ahora · ${libro.precio}
+                  Comprar ahora · ${libro.precio} MXN
                 </a>
               ) : (
                 <span className="btn ghost" aria-disabled="true">

@@ -113,7 +113,7 @@ export default function LibroPreview({ libro }) {
           <DescargaLibroBtn libro={libro} />
         ) : libro.stripePriceId ? (
           <a href={libro.checkoutUrl} className="btn">
-            Comprar para seguir leyendo · ${libro.precio}
+            Comprar para seguir leyendo · ${libro.precio} MXN
           </a>
         ) : (
           <span className="btn ghost" aria-disabled="true">
