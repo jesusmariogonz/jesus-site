@@ -1,6 +1,6 @@
 ---
-titulo: 'El nearshoring que México vendió con certidumbre ahora depende de una revisión anual del T-MEC'
-fecha: 2026-08-24
+titulo: El nearshoring que México vendió con certidumbre ahora depende de una revisión anual del T-MEC
+fecha: 2026-08-24T00:00:00.000Z
 categoria: geopolitics
 tags:
   - T-MEC
@@ -13,17 +13,18 @@ tags:
   - comercio exterior
   - Ebrard
   - México
-resumen: 'Trump adelantó un "nuevo acuerdo" comercial con México justo cuando Washington se negó a renovar el T-MEC por 16 años más y lo dejó sujeto a revisión anual. El nearshoring que México llevaba tres años vendiendo como apuesta de largo plazo ahora tiene que operar sobre un tratado que ya no promete certidumbre estructural.'
+resumen: Trump adelantó un "nuevo acuerdo" comercial con México justo cuando Washington se negó a renovar el T-MEC por 16 años más y lo dejó sujeto a revisión anual. El nearshoring que México llevaba tres años vendiendo como apuesta de largo plazo ahora tiene que operar sobre un tratado que ya no promete certidumbre estructural.
 tesis: 'El verdadero costo de que Estados Unidos haya rechazado renovar automáticamente el T-MEC no es arancelario, es temporal: convirtió la certidumbre de dieciséis años que sostenía la narrativa del nearshoring en una negociación que se repite cada doce meses, y ninguna fábrica nueva se construye sobre un horizonte que puede cambiar en la próxima revisión.'
 datosClave:
   - valor: '23,600 mdd'
     etiqueta: 'IED captada por México en el 1T2026, +10.4% anual — mayoría de empresas ya instaladas'
-  - valor: '75% → 80%'
-    etiqueta: 'Contenido regional automotriz que Washington busca exigir en la revisión (hoy 75%)'
-  - valor: '7%'
+  - valor: 75% → 80%
+    etiqueta: Contenido regional automotriz que Washington busca exigir en la revisión (hoy 75%)
+  - valor: 7%
     etiqueta: 'Vacancia industrial en la frontera norte, multiplicada por siete ante la espera del T-MEC'
-  - valor: '19º lugar'
-    etiqueta: 'Posición de México en el Índice de Confianza de IED de Kearney 2026 (subió del 25º)'
+  - valor: 19º lugar
+    etiqueta: Posición de México en el Índice de Confianza de IED de Kearney 2026 (subió del 25º)
+imagen: /blog/IMG_1234.jpeg
 ---
 
 El 21 de agosto, Donald Trump afirmó que su gobierno ya trabaja en un "nuevo acuerdo" comercial con México, uno que, en sus palabras, será "mucho mejor" para Estados Unidos. El anuncio llegó exactamente en el momento en que la revisión conjunta del T-MEC —arrancada formalmente el 1 de julio— entra en su etapa más sensible, con una nueva ronda de negociaciones prevista para septiembre. Leída de forma aislada, la declaración de Trump es la clase de frase que emite con frecuencia antes de cualquier mesa de negociación. Leída junto con la decisión que Washington ya tomó en julio —negarse a renovar el tratado por dieciséis años más y optar en su lugar por un mecanismo de revisión anual—, la frase deja de ser retórica de negociación para convertirse en la confirmación de algo más estructural: el nearshoring que México ha vendido durante tres años como una apuesta de largo plazo ahora tiene que sostenerse sobre un tratado que ya no promete el horizonte que esa narrativa necesitaba.
