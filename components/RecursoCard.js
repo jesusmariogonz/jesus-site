@@ -53,7 +53,7 @@ export default function RecursoCard({ libro }) {
               {gratis ? (
                 <span className="lib-card-precio-gratis">Gratis</span>
               ) : (
-                `$${libro.precio} USD`
+                `$${libro.precio} MXN`
               )}
             </span>
             <Link href={`/recursos/${libro.id}`} className="lib-card-verdetalle">

@@ -68,13 +68,13 @@ export default function ProductoToolkit({ params }) {
                 <div className="tk-product-precio-row">
                   {producto.precioLista && (
                     <span className="tk-bundle-tachado tk-product-tachado">
-                      ${producto.precioLista} USD
+                      ${producto.precioLista} MXN
                     </span>
                   )}
                   {ahorro && <span className="tk-product-ahorro">-{ahorro}%</span>}
                 </div>
                 <span className="tk-card-precio tk-product-precio">
-                  ${producto.precio} USD
+                  ${producto.precio} MXN
                 </span>
                 <span className="tk-product-precio-nota">pago único · precio de lanzamiento</span>
               </div>
@@ -152,10 +152,10 @@ export default function ProductoToolkit({ params }) {
           <div>
             <p className="tk-product-precio-wrap-inline">
               {producto.precioLista && (
-                <span className="tk-bundle-tachado">${producto.precioLista} USD</span>
+                <span className="tk-bundle-tachado">${producto.precioLista} MXN</span>
               )}{" "}
               <span className="tk-card-precio tk-product-precio">
-                ${producto.precio} USD
+                ${producto.precio} MXN
               </span>{" "}
               · pago único · acceso inmediato
             </p>

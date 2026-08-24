@@ -35,12 +35,12 @@ const forzar = process.env.FORZAR === "1";
 
 const stripe = new Stripe(key, { apiVersion: "2026-07-29.dahlia" });
 
-async function crear(nombre, precioUSD) {
+async function crear(nombre, precioMXN) {
   const product = await stripe.products.create({ name: nombre });
   const price = await stripe.prices.create({
     product: product.id,
-    unit_amount: Math.round(precioUSD * 100),
-    currency: "usd",
+    unit_amount: Math.round(precioMXN * 100),
+    currency: "mxn",
   });
   return price.id;
 }

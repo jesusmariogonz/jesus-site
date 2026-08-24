@@ -53,7 +53,7 @@ export async function POST(request) {
       email,
       productIds,
       amountTotal: session.amount_total ?? 0,
-      currency: session.currency ?? "usd",
+      currency: session.currency ?? "mxn",
       downloadToken,
     });
 

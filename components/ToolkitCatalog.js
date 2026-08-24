@@ -83,7 +83,7 @@ export default function ToolkitCatalog({ productos, bundles }) {
                     {p.precio === 0 ? (
                       <span className="tk-card-gratis">GRATIS</span>
                     ) : (
-                      `$${p.precio} USD`
+                      `$${p.precio} MXN`
                     )}
                   </span>
                   <BuyButton checkoutUrl={p.checkoutUrl} />
@@ -126,16 +126,16 @@ export default function ToolkitCatalog({ productos, bundles }) {
 
             {seleccion.length === 1 && productoUnico && (
               <span className="tk-selector-precio">
-                ${productoUnico.precio} USD
+                ${productoUnico.precio} MXN
               </span>
             )}
 
             {seleccion.length > 1 && bundleActivo && (
               <span className="tk-selector-precio">
                 <span className="tk-bundle-tachado">
-                  ${bundleActivo.precioLista} USD
+                  ${bundleActivo.precioLista} MXN
                 </span>{" "}
-                ${bundleActivo.precio} USD · {bundleActivo.nombre}
+                ${bundleActivo.precio} MXN · {bundleActivo.nombre}
               </span>
             )}
 
@@ -144,7 +144,7 @@ export default function ToolkitCatalog({ productos, bundles }) {
                 Aún no tenemos un bundle para esta combinación exacta
                 (compra por separado, o{" "}
                 <Link href="/contacto">escríbenos</Link> y lo armamos).
-                Suma individual: ${totalIndividual.toFixed(2)} USD
+                Suma individual: ${totalIndividual.toFixed(2)} MXN
               </span>
             )}
           </div>
