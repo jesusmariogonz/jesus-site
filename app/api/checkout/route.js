@@ -35,14 +35,24 @@ export async function GET(request) {
   const base = siteUrl();
   const returnTo = type === "libro" ? "/recursos/gracias" : "/the-toolkit/gracias";
   const cancelTo = type === "libro" ? "/recursos" : "/the-toolkit";
-  const session = await stripe().checkout.sessions.create({
-    mode: "payment",
-    line_items: [{ price: item.stripePriceId, quantity: 1 }],
-    success_url: `${base}${returnTo}?session_id={CHECKOUT_SESSION_ID}`,
-    cancel_url: `${base}${cancelTo}`,
-    customer_creation: "if_required",
-    metadata: { toolkit_type: type, toolkit_id: id },
-  });
+
+  let session;
+  try {
+    session = await stripe().checkout.sessions.create({
+      mode: "payment",
+      line_items: [{ price: item.stripePriceId, quantity: 1 }],
+      success_url: `${base}${returnTo}?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${base}${cancelTo}`,
+      customer_creation: "if_required",
+      metadata: { toolkit_type: type, toolkit_id: id },
+    });
+  } catch (err) {
+    console.error("checkout: error creando la sesión de Stripe:", err.message);
+    return NextResponse.json(
+      { error: "No se pudo iniciar la compra. Intenta de nuevo en un momento." },
+      { status: 502 }
+    );
+  }
 
   return NextResponse.redirect(session.url, { status: 303 });
 }
