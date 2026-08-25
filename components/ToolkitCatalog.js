@@ -74,18 +74,23 @@ export default function ToolkitCatalog({ productos, bundles }) {
 
               <div className="tk-card-body">
                 <div className="tk-card-footer">
-                  <span className="tk-card-precio">
-                    {p.precioLista && (
-                      <span className="tk-bundle-tachado tk-card-tachado">
-                        ${p.precioLista}
-                      </span>
-                    )}{" "}
-                    {p.precio === 0 ? (
-                      <span className="tk-card-gratis">GRATIS</span>
-                    ) : (
-                      `$${p.precio} MXN`
-                    )}
-                  </span>
+                  <div className="tk-card-footer-info">
+                    <span className="tk-card-precio">
+                      {p.precioLista && (
+                        <span className="tk-bundle-tachado tk-card-tachado">
+                          ${p.precioLista}
+                        </span>
+                      )}{" "}
+                      {p.precio === 0 ? (
+                        <span className="tk-card-gratis">GRATIS</span>
+                      ) : (
+                        `$${p.precio} MXN`
+                      )}
+                    </span>
+                    <Link href={`/the-toolkit/${p.id}`} className="tk-card-verdetalle">
+                      Ver detalle
+                    </Link>
+                  </div>
                   <BuyButton checkoutUrl={p.checkoutUrl} />
                 </div>
 
@@ -109,7 +114,7 @@ export default function ToolkitCatalog({ productos, bundles }) {
                   onClick={() => setAbierto((cur) => (cur === p.id ? null : p.id))}
                   aria-expanded={on}
                 >
-                  {on ? "Ver menos −" : "Ver detalle +"}
+                  {on ? "Ver menos −" : "Ver resumen +"}
                 </button>
               </div>
             </article>
