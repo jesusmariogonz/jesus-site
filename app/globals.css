@@ -1018,18 +1018,80 @@ html.dark {
   max-width: 640px;
 }
 
-/* Globo 3D (cobe) */
+/* Globo giratorio — silueta real de continentes en tira horizontal
+   duplicada, con scroll infinito dentro de un círculo recortado
+   (sin WebGL, funciona igual en cualquier dispositivo). */
 .pglobe-wrap {
   display: flex;
   justify-content: center;
   margin-top: 8px;
 }
-.pglobe-canvas {
-  width: 100%;
-  max-width: 480px;
-  height: auto;
+.pglobe-circulo {
+  position: relative;
+  width: clamp(260px, 60vw, 420px);
   aspect-ratio: 1 / 1;
-  cursor: grab;
+  border-radius: 50%;
+  overflow: hidden;
+  background: radial-gradient(circle at 38% 32%, #163257 0%, #0a1730 62%, #060d1c 100%);
+  box-shadow:
+    0 30px 60px -20px rgba(8, 13, 30, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+}
+.pglobe-tira {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: max-content;
+  animation: pglobeGira 26s linear infinite;
+}
+.pglobe-svg {
+  height: 108%;
+  width: auto;
+  flex-shrink: 0;
+  display: block;
+}
+.pglobe-land {
+  fill: #4f79c2;
+  stroke: none;
+}
+html:not(.dark) .pglobe-land {
+  fill: #6f95d6;
+}
+@keyframes pglobeGira {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.pglobe-sombra {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 34%),
+    radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.55) 100%);
+}
+.pglobe-punto {
+  fill: var(--accent);
+  transition: r 0.25s;
+}
+.pglobe-pulso {
+  fill: var(--accent);
+  opacity: 0.2;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+.pglobe-marker.on .pglobe-pulso {
+  animation: pglobePulso 1.6s ease-out infinite;
+  opacity: 0.35;
+}
+.pglobe-marker.on .pglobe-punto {
+  r: 7;
+}
+@keyframes pglobePulso {
+  0% { transform: scale(0.6); opacity: 0.4; }
+  100% { transform: scale(2); opacity: 0; }
 }
 
 /* Chips selectoras */
