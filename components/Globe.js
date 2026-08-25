@@ -1,71 +1,53 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import createGlobe from "cobe";
+/* ============================================================
+   Globo "que gira" sin WebGL: silueta real de continentes (la
+   misma geografía de world-geo.js) repetida dos veces en una tira
+   horizontal, animada con un scroll infinito dentro de un círculo
+   recortado — el truco clásico de "tierra girando" de toda la vida,
+   sin depender de una librería 3D que puede fallar según el
+   dispositivo.
+   ============================================================ */
 
-/* Coordenadas [lat, lon] de cada país en MARCADORES (world-geo.js) —
-   la proyección x/y de ese archivo es para el mapa plano viejo, el
-   globo necesita lat/lon reales. */
-const COORDS = {
-  mexico: [23.6345, -102.5528],
-  chile: [-35.6751, -71.543],
-  colombia: [4.5709, -74.2973],
-  peru: [-9.19, -75.0152],
-  suiza: [46.8182, 8.2275],
-  luxemburgo: [49.8153, 6.1296],
-  alemania: [51.1657, 10.4515],
-};
-
-const TAM = 600; // resolución interna fija; el CSS la escala responsivamente
+import { VIEWBOX, LAND_PATH } from "@/components/world-geo";
 
 export default function Globe({ marcadores, paisesActivos }) {
-  const canvasRef = useRef(null);
-  const phiRef = useRef(0);
-  const activosRef = useRef(paisesActivos);
-  activosRef.current = paisesActivos;
-
-  const paisesDisponibles = Object.keys(marcadores).filter((k) => COORDS[k]);
-
-  useEffect(() => {
-    const globo = createGlobe(canvasRef.current, {
-      devicePixelRatio: 2,
-      width: TAM * 2,
-      height: TAM * 2,
-      phi: 0,
-      theta: 0.28,
-      dark: 1,
-      opacity: 1,
-      diffuse: 3,
-      mapSamples: 16000,
-      mapBrightness: 14,
-      mapBaseBrightness: 0.02,
-      baseColor: [1, 1, 1],
-      markerColor: [0.35, 0.6, 1],
-      glowColor: [1.1, 1.1, 1.1],
-      markers: paisesDisponibles.map((k) => ({ location: COORDS[k], size: 0.05 })),
-      onRender: (state) => {
-        // Marcadores activos más grandes y brillantes que el resto
-        state.markers = paisesDisponibles.map((k) => ({
-          location: COORDS[k],
-          size: activosRef.current.has(k) ? 0.11 : 0.05,
-        }));
-        state.phi = phiRef.current;
-        phiRef.current += 0.0032;
-      },
-    });
-
-    return () => globo.destroy();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const { w, h } = VIEWBOX;
 
   return (
     <div className="pglobe-wrap">
-      <canvas
-        ref={canvasRef}
-        className="pglobe-canvas"
-        role="img"
-        aria-label="Globo terráqueo girando con la ubicación de los proyectos"
-      />
+      <div className="pglobe-circulo">
+        <div className="pglobe-tira">
+          {[0, 1].map((copia) => (
+            <svg
+              key={copia}
+              className="pglobe-svg"
+              viewBox={`0 0 ${w} ${h}`}
+              width={w}
+              height={h}
+              role={copia === 0 ? "img" : undefined}
+              aria-label={
+                copia === 0
+                  ? "Globo terráqueo girando con la ubicación de los proyectos"
+                  : undefined
+              }
+              aria-hidden={copia === 1 || undefined}
+            >
+              <path d={LAND_PATH} className="pglobe-land" />
+              {Object.entries(marcadores).map(([k, m]) => {
+                const on = paisesActivos.has(k);
+                return (
+                  <g key={k} className={`pglobe-marker${on ? " on" : ""}`}>
+                    <circle cx={m.x} cy={m.y} r="10" className="pglobe-pulso" />
+                    <circle cx={m.x} cy={m.y} r="4.5" className="pglobe-punto" />
+                  </g>
+                );
+              })}
+            </svg>
+          ))}
+        </div>
+        <div className="pglobe-sombra" />
+      </div>
     </div>
   );
 }
