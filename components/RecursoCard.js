@@ -11,6 +11,7 @@ export default function RecursoCard({ libro }) {
   const [descargando, setDescargando] = useState(false);
   const [abierto, setAbierto] = useState(false);
   const gratis = !libro.precio;
+  const detalleUrl = libro.landingUrl || `/recursos/${libro.id}`;
 
   const onDescargar = async () => {
     setDescargando(true);
@@ -28,7 +29,7 @@ export default function RecursoCard({ libro }) {
       onMouseEnter={() => setAbierto(true)}
       onMouseLeave={() => setAbierto(false)}
     >
-      <Link href={`/recursos/${libro.id}`} aria-label={libro.titulo} className="lib-card-cover">
+      <Link href={detalleUrl} aria-label={libro.titulo} className="lib-card-cover">
         <LibroCover
           variante={libro.variante}
           titulo={libro.titulo}
@@ -40,7 +41,7 @@ export default function RecursoCard({ libro }) {
       </Link>
       <div className="lib-card-body">
         <h3 className="lib-card-title">
-          <Link href={`/recursos/${libro.id}`}>{libro.titulo}</Link>
+          <Link href={detalleUrl}>{libro.titulo}</Link>
         </h3>
         <p className="lib-card-por">Por {AUTHOR.name}</p>
         {libro.subtitulo && (
@@ -56,7 +57,7 @@ export default function RecursoCard({ libro }) {
                 `$${libro.precio} MXN`
               )}
             </span>
-            <Link href={`/recursos/${libro.id}`} className="lib-card-verdetalle">
+            <Link href={detalleUrl} className="lib-card-verdetalle">
               Ver detalle
             </Link>
           </div>
