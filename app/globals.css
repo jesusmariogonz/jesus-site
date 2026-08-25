@@ -2837,9 +2837,31 @@ html.dark {
   box-shadow: var(--shadow-sm);
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
-.lib-card .lc {
-  border-radius: 0;
-  box-shadow: none;
+.lib-card-cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 20px 34px;
+  background: linear-gradient(180deg, var(--surface-2) 0%, var(--surface) 100%);
+  perspective: 1000px;
+}
+.lib-card-cover .lc {
+  width: 62%;
+  flex-shrink: 0;
+  transform: rotateY(-22deg) rotateX(3deg) rotateZ(-2deg);
+  transform-style: preserve-3d;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.14) inset,
+    -14px 0 24px -18px rgba(0, 0, 0, 0.55) inset,
+    18px 22px 32px -14px rgba(8, 13, 23, 0.45);
+}
+.lib-card:hover .lib-card-cover .lc {
+  transform: rotateY(-14deg) rotateX(2deg) rotateZ(-1deg) translateY(-2px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.14) inset,
+    -14px 0 24px -18px rgba(0, 0, 0, 0.55) inset,
+    22px 28px 38px -14px rgba(8, 13, 23, 0.5);
 }
 .lib-card-body {
   display: flex;
@@ -3174,6 +3196,23 @@ html.dark {
   inset: 0 auto 0 0;
   width: 8px;
   background: rgba(0, 0, 0, 0.22);
+  z-index: 3;
+}
+.lc::after {
+  /* canto de páginas: franja clara a la derecha, para que se lea
+     como el filo de las hojas de un libro real */
+  content: "";
+  position: absolute;
+  inset: 3px 0 3px auto;
+  width: 5px;
+  background: repeating-linear-gradient(
+    180deg,
+    #f2ead9 0px,
+    #f2ead9 2px,
+    #d8cdb4 2px,
+    #d8cdb4 3px
+  );
+  box-shadow: -1px 0 3px -1px rgba(0, 0, 0, 0.3) inset;
   z-index: 3;
 }
 .lc-motivo {
