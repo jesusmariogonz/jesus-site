@@ -3340,6 +3340,7 @@ html:not(.dark) .pglobe-land {
 .lc-analitica { background: linear-gradient(160deg, #06213f 0%, #0d3f70 48%, #1573b0 100%); }
 .lc-tiempo { background: linear-gradient(160deg, #241705 0%, #6b4a12 46%, #b8842a 100%); }
 .lc-seniority { background: linear-gradient(160deg, #0a1730 0%, #163a63 48%, #3b6ea8 100%); }
+.lc-cerebro { background: linear-gradient(160deg, #0c4a6e 0%, #0284c7 55%, #4d7c0f 100%); }
 
 /* Envoltura de la portada en la página de detalle: quita el flotante
    3D anterior, deja la portada grande centrada. */

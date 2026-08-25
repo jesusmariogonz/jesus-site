@@ -67,6 +67,20 @@ const VARIANTES = {
       </g>
     ),
   },
+  cerebro: {
+    claseGradiente: "lc-cerebro",
+    motivo: (
+      <g stroke="rgba(255,255,255,0.32)" strokeWidth="2" fill="none">
+        <rect x="30" y="35" width="140" height="16" rx="4" />
+        <rect x="30" y="60" width="140" height="16" rx="4" />
+        <rect x="30" y="85" width="140" height="16" rx="4" />
+        <rect x="30" y="110" width="140" height="16" rx="4" />
+        <rect x="30" y="135" width="140" height="16" rx="4" />
+        <rect x="30" y="160" width="140" height="16" rx="4" />
+        <rect x="30" y="185" width="140" height="16" rx="4" stroke="rgba(255,255,255,0.5)" />
+      </g>
+    ),
+  },
 };
 
 export default function LibroCover({
