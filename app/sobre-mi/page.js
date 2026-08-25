@@ -1,5 +1,6 @@
 import Image from "next/image";
 import CvTimeline from "@/components/CvTimeline";
+import SobreFocos from "@/components/SobreFocos";
 
 export const metadata = {
   title: "Sobre mí",
@@ -12,18 +13,22 @@ const focos = [
   {
     titulo: "Producto de datos",
     desc: "Definición, evolución y entrega de productos de datos alineados a objetivos de negocio.",
+    icono: "producto",
   },
   {
     titulo: "Arquitectura analítica",
     desc: "Diseño de soluciones sobre Snowflake, Databricks y Azure bajo estándares de gobierno de datos.",
+    icono: "arquitectura",
   },
   {
     titulo: "IA aplicada",
     desc: "Analítica avanzada e inteligencia artificial generativa llevadas a casos de uso reales.",
+    icono: "ia",
   },
   {
     titulo: "Valor y ROI",
     desc: "Casos de negocio, TCO y retorno de inversión de plataformas de datos, contados en lenguaje ejecutivo.",
+    icono: "roi",
   },
 ];
 
@@ -54,31 +59,7 @@ export default function SobreMi() {
           </p>
 
           <h2>En qué me enfoco</h2>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-              gap: 14,
-              margin: "18px 0 8px",
-            }}
-          >
-            {focos.map((f) => (
-              <div
-                key={f.titulo}
-                style={{
-                  background: "var(--surface)",
-                  border: "1px solid var(--line)",
-                  borderRadius: "var(--radius)",
-                  padding: "16px 18px",
-                }}
-              >
-                <strong style={{ color: "var(--accent)" }}>{f.titulo}</strong>
-                <p style={{ margin: "6px 0 0", fontSize: "0.94rem" }}>
-                  {f.desc}
-                </p>
-              </div>
-            ))}
-          </div>
+          <SobreFocos focos={focos} />
 
           <h2>Mi trayectoria</h2>
           <p>
