@@ -1018,102 +1018,26 @@ html.dark {
   max-width: 640px;
 }
 
-.pmap-svg {
-  width: 100%;
-  height: auto;
-  display: block;
+/* Globo 3D (cobe) */
+.pglobe-wrap {
+  display: flex;
+  justify-content: center;
   margin-top: 8px;
 }
-.pmap-land {
-  fill: var(--map-land);
-  stroke: none;
-  transition: fill 0.3s;
+.pglobe-canvas {
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  cursor: grab;
 }
 
-/* Líneas guía */
-.pmap-linea {
-  stroke: var(--map-linea);
-  stroke-width: 1;
-  transition: stroke 0.25s, stroke-width 0.25s, opacity 0.25s;
-  opacity: 0.55;
-}
-.pmap-linea.on {
-  stroke: var(--accent);
-  stroke-width: 2;
-  opacity: 1;
-}
-
-/* Marcadores */
-.pmap-punto {
-  fill: var(--accent);
-  transition: r 0.25s;
-}
-.pmap-pulso {
-  fill: var(--accent);
-  opacity: 0.18;
-  transform-origin: center;
-  transform-box: fill-box;
-}
-.pmap-marker.on .pmap-pulso {
-  animation: pmapPulse 1.6s ease-out infinite;
-  opacity: 0.3;
-}
-.pmap-marker.on .pmap-punto {
-  r: 6.5;
-}
-.pmap-pais {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  fill: var(--accent);
-  paint-order: stroke;
-  stroke: var(--bg);
-  stroke-width: 4px;
-  stroke-linejoin: round;
-}
-@keyframes pmapPulse {
-  0% { transform: scale(0.6); opacity: 0.35; }
-  100% { transform: scale(1.8); opacity: 0; }
-}
-
-/* Etiquetas dentro del SVG */
-.pmap-label {
-  cursor: pointer;
-  outline: none;
-}
-.pmap-num {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  fill: var(--accent);
-  opacity: 0.8;
-}
-.pmap-nombre {
-  font-size: 15px;
-  font-weight: 600;
-  fill: var(--ink-soft);
-  transition: fill 0.2s;
-  paint-order: stroke;
-  stroke: var(--bg);
-  stroke-width: 4px;
-  stroke-linejoin: round;
-}
-.pmap-num {
-  paint-order: stroke;
-  stroke: var(--bg);
-  stroke-width: 3px;
-  stroke-linejoin: round;
-}
-.pmap-label:hover .pmap-nombre,
-.pmap-label:focus-visible .pmap-nombre,
-.pmap-label.on .pmap-nombre {
-  fill: var(--accent);
-}
-
-/* Chips selectoras (móvil) */
+/* Chips selectoras */
 .pmap-chips {
-  display: none;
+  display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 8px;
-  margin-top: 10px;
+  margin-top: 18px;
 }
 .pmap-chip {
   font: inherit;
@@ -1170,17 +1094,6 @@ html.dark {
   background: var(--accent-soft);
   padding: 3px 12px;
   border-radius: 999px;
-}
-
-/* En pantallas chicas: etiquetas del SVG fuera, chips dentro */
-@media (max-width: 760px) {
-  .pmap-label,
-  .pmap-linea {
-    display: none;
-  }
-  .pmap-chips {
-    display: flex;
-  }
 }
 
 /* ============================================
