@@ -34,9 +34,11 @@ export default function Globe({ marcadores, paisesActivos }) {
       phi: 0,
       theta: 0.28,
       dark: 1,
-      diffuse: 1.2,
+      opacity: 1,
+      diffuse: 3,
       mapSamples: 16000,
-      mapBrightness: 6,
+      mapBrightness: 14,
+      mapBaseBrightness: 0.02,
       baseColor: [1, 1, 1],
       markerColor: [0.35, 0.6, 1],
       glowColor: [1.1, 1.1, 1.1],
@@ -61,7 +63,6 @@ export default function Globe({ marcadores, paisesActivos }) {
       <canvas
         ref={canvasRef}
         className="pglobe-canvas"
-        style={{ width: TAM, height: TAM }}
         role="img"
         aria-label="Globo terráqueo girando con la ubicación de los proyectos"
       />
