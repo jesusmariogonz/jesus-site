@@ -1025,9 +1025,10 @@ html.dark {
   margin-top: 8px;
 }
 .pglobe-canvas {
-  max-width: 100%;
+  width: 100%;
+  max-width: 480px;
   height: auto;
-  aspect-ratio: 1;
+  aspect-ratio: 1 / 1;
   cursor: grab;
 }
 
