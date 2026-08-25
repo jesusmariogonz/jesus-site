@@ -17,6 +17,11 @@ export default function GraciasBiblioteca() {
             libro. Si no lo ves en unos minutos, revisa spam/promociones —
             el correo llega de un remitente automático.
           </p>
+          <p className="lib-hero-desc">
+            ¿No te llegó? Escríbenos a{" "}
+            <a href="mailto:jesusmariogonz@gmail.com">jesusmariogonz@gmail.com</a>{" "}
+            y te compartimos el recurso directo.
+          </p>
           <Link href="/recursos" className="btn">
             ← Volver a la Biblioteca
           </Link>

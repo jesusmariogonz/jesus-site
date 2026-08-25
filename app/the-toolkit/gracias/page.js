@@ -17,6 +17,11 @@ export default function GraciasToolkit() {
             archivo(s). Si no lo ves en unos minutos, revisa spam/promociones
             — el correo llega de un remitente automático.
           </p>
+          <p className="tk-hero-desc">
+            ¿No te llegó? Escríbenos a{" "}
+            <a href="mailto:jesusmariogonz@gmail.com">jesusmariogonz@gmail.com</a>{" "}
+            y te compartimos el recurso directo.
+          </p>
           <Link href="/the-toolkit" className="tk-banner-cta">
             ← Volver a The Toolkit
           </Link>
