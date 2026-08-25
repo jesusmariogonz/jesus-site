@@ -28,7 +28,7 @@ export default function RecursoCard({ libro }) {
       onMouseEnter={() => setAbierto(true)}
       onMouseLeave={() => setAbierto(false)}
     >
-      <Link href={`/recursos/${libro.id}`} aria-label={libro.titulo}>
+      <Link href={`/recursos/${libro.id}`} aria-label={libro.titulo} className="lib-card-cover">
         <LibroCover
           variante={libro.variante}
           titulo={libro.titulo}
