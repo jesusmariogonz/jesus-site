@@ -1836,6 +1836,17 @@ html.dark {
   padding-top: 14px;
   border-top: 1px solid rgba(212, 175, 55, 0.15);
 }
+.tk-card-footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.tk-card-verdetalle {
+  font-size: 0.76rem;
+  color: var(--tk-ink-soft);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
 .tk-card-precio {
   font-family: var(--font-mono);
   font-weight: 800;
