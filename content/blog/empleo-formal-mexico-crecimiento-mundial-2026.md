@@ -1,6 +1,6 @@
 ---
-titulo: 'El PIB mexicano se ve bien porque el Mundial está pagando la fiesta que el empleo formal ya no puede sostener'
-fecha: 2026-08-26
+titulo: El PIB mexicano se ve bien porque el Mundial está pagando la fiesta que el empleo formal ya no puede sostener
+fecha: 2026-08-26T00:00:00.000Z
 categoria: business
 tags:
   - empleo formal
@@ -19,11 +19,12 @@ datosClave:
   - valor: '-19,550'
     etiqueta: 'Empleos formales perdidos en julio de 2026, según el IMSS'
   - valor: '243,078'
-    etiqueta: 'Empleos formales creados en los primeros 7 meses de 2026 (ritmo débil histórico)'
-  - valor: '1.3%'
+    etiqueta: Empleos formales creados en los primeros 7 meses de 2026 (ritmo débil histórico)
+  - valor: 1.3%
     etiqueta: 'Pronóstico de crecimiento del PIB de Citi para 2026, revisado al alza'
-  - valor: '38.9%'
+  - valor: 38.9%
     etiqueta: 'Crecimiento anual en obras de electricidad y telecomunicaciones en abril, ligado al Mundial'
+imagen: /blog/IMG_1293.png
 ---
 
 El 10 de agosto, el IMSS reportó que México perdió 19,550 empleos formales durante julio. La cifra, leída sola, podría pasar como ruido estacional. Leída en contexto, es una anomalía que merece más atención de la que ha recibido: en 28 de los últimos 29 años, el número de trabajadores asegurados ante el IMSS aumentó o se mantuvo prácticamente estable durante junio-julio, un periodo tradicionalmente favorable para la contratación formal en México. La caída de este año no solo rompió ese patrón; fue casi tres veces mayor que la peor registrada antes de la pandemia. Trece días antes, Citi había elevado su pronóstico de crecimiento del PIB mexicano para 2026 de 1.1% a 1.3%, citando un repunte del segundo trimestre. Ambas noticias describen la misma economía, en el mismo mes, y cuentan historias casi opuestas. La explicación de esa contradicción no está en ningún error de medición: está en de dónde salió el repunte que Citi celebró.
