@@ -1,6 +1,6 @@
 ---
 titulo: Lo más importante de esta semana 29/08/2026
-fecha: 2026-08-29
+fecha: 2026-08-29T00:00:00.000Z
 categoria: fintech
 tags:
   - Economía
@@ -13,30 +13,31 @@ tags:
   - PIB
   - Jackson Hole
 resumen: 'México rompió su récord histórico de exportaciones en julio y aun así cerró el mes con déficit comercial por el hueco petrolero, mientras Kevin Warsh usó su debut en Jackson Hole para advertir que la inflación en Estados Unidos "todavía no mejora lo suficiente" para bajar la guardia.'
+imagen: /blog/pexels-gabby-k-6289055.jpg
 ---
 
 Esta nota cubre la semana del lunes 24 al viernes 29 de agosto. Tres historias dominaron la agenda económica: el debut de Kevin Warsh como presidente de la Fed en Jackson Hole, donde eligió advertir sobre la inflación en lugar de prometer recortes; el reporte de comercio exterior de México, que combinó un récord histórico de exportaciones con un déficit mensual inesperado; y el Informe Trimestral de Banxico, que mejoró el pronóstico de crecimiento del país al mismo tiempo que alejó, otra vez, la fecha en que espera controlar la inflación.
 
-- La inflación general en México aceleró a 3.26% anual en la primera quincena de agosto, con la subyacente en 3.93%, ambas por encima de la meta de 3% de Banxico.
-- México exportó un récord de 81,420 millones de dólares en julio (+43.7% anual), pero registró un déficit comercial mensual de 848 millones de dólares por el desequilibrio en la balanza petrolera.
-- El peso mexicano se mantuvo fuerte toda la semana, cotizando entre 16.89 y 16.98 pesos por dólar, por debajo de la barrera de los 17 pesos.
-- Banxico elevó su pronóstico de crecimiento del PIB para 2026 de 1.1% a 1.5%, pero pospuso la meta de inflación de 3% hasta el cuarto trimestre de 2027.
-- El PIB de Estados Unidos del segundo trimestre se confirmó en 1.5% anualizado, con el consumo revisado al alza a 3.4%, aunque los pedidos de bienes duraderos ya muestran señales de reversión para la segunda mitad del año.
-- Kevin Warsh, en su primer discurso como presidente de la Fed en Jackson Hole, advirtió que la inflación subyacente "todavía no ha mejorado de manera significativa" y evitó comprometerse con la dirección de la próxima decisión de tasas.
+* La inflación general en México aceleró a 3.26% anual en la primera quincena de agosto, con la subyacente en 3.93%, ambas por encima de la meta de 3% de Banxico.
+* México exportó un récord de 81,420 millones de dólares en julio (+43.7% anual), pero registró un déficit comercial mensual de 848 millones de dólares por el desequilibrio en la balanza petrolera.
+* El peso mexicano se mantuvo fuerte toda la semana, cotizando entre 16.89 y 16.98 pesos por dólar, por debajo de la barrera de los 17 pesos.
+* Banxico elevó su pronóstico de crecimiento del PIB para 2026 de 1.1% a 1.5%, pero pospuso la meta de inflación de 3% hasta el cuarto trimestre de 2027.
+* El PIB de Estados Unidos del segundo trimestre se confirmó en 1.5% anualizado, con el consumo revisado al alza a 3.4%, aunque los pedidos de bienes duraderos ya muestran señales de reversión para la segunda mitad del año.
+* Kevin Warsh, en su primer discurso como presidente de la Fed en Jackson Hole, advirtió que la inflación subyacente "todavía no ha mejorado de manera significativa" y evitó comprometerse con la dirección de la próxima decisión de tasas.
 
 ## Panorama general: cómo cerró todo esta semana
 
-| Qué es | Cómo le fue | En palabras simples |
-| --- | --- | --- |
-| Inflación México (1a quincena de agosto) | 3.26% general anual; 3.93% subyacente | Sigue por encima de la meta de 3%, y acelerando frente a la quincena previa |
-| PIB México (pronóstico Banxico) | Revisado al alza de 1.1% a 1.5% para 2026 | La economía mexicana sorprendió para bien en el segundo trimestre |
-| Meta de inflación México | Pospuesta al 4T2027 | Segunda vez en pocos meses que Banxico aleja la fecha |
-| Balanza comercial México (julio) | Récord de exportaciones ($81,420 mdd, +43.7%); déficit mensual de $848 mdd | Vendimos como nunca, pero el hueco petrolero nos dejó en números rojos ese mes |
-| Tipo de cambio (peso/dólar) | Entre 16.89 y 16.98 durante la semana | El peso se mantuvo fuerte, por debajo de los 17 pesos |
-| PIB Estados Unidos (2T2026, segunda estimación) | 1.5% anualizado, sin cambio frente al estimado inicial | El consumo fue revisado al alza, pero ya se ve desaceleración hacia adelante |
-| Consumo EU (2T2026) | Revisado a 3.4% anualizado (desde 3.2%) | El gasto de los hogares fue más fuerte de lo reportado inicialmente |
-| Pedidos de bienes duraderos EU | +5.7% (revisado ligeramente a la baja) | El repunte se explica por autos y muebles, pero ya se está revirtiendo en julio |
-| Fed / Jackson Hole | Warsh advierte que la inflación "todavía preocupa" | No hay señal clara de recorte de tasas en el corto plazo |
+| Qué es                                          | Cómo le fue                                                                | En palabras simples                                                             |
+| ----------------------------------------------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| Inflación México (1a quincena de agosto)        | 3.26% general anual; 3.93% subyacente                                      | Sigue por encima de la meta de 3%, y acelerando frente a la quincena previa     |
+| PIB México (pronóstico Banxico)                 | Revisado al alza de 1.1% a 1.5% para 2026                                  | La economía mexicana sorprendió para bien en el segundo trimestre               |
+| Meta de inflación México                        | Pospuesta al 4T2027                                                        | Segunda vez en pocos meses que Banxico aleja la fecha                           |
+| Balanza comercial México (julio)                | Récord de exportaciones ($81,420 mdd, +43.7%); déficit mensual de $848 mdd | Vendimos como nunca, pero el hueco petrolero nos dejó en números rojos ese mes  |
+| Tipo de cambio (peso/dólar)                     | Entre 16.89 y 16.98 durante la semana                                      | El peso se mantuvo fuerte, por debajo de los 17 pesos                           |
+| PIB Estados Unidos (2T2026, segunda estimación) | 1.5% anualizado, sin cambio frente al estimado inicial                     | El consumo fue revisado al alza, pero ya se ve desaceleración hacia adelante    |
+| Consumo EU (2T2026)                             | Revisado a 3.4% anualizado (desde 3.2%)                                    | El gasto de los hogares fue más fuerte de lo reportado inicialmente             |
+| Pedidos de bienes duraderos EU                  | +5.7% (revisado ligeramente a la baja)                                     | El repunte se explica por autos y muebles, pero ya se está revirtiendo en julio |
+| Fed / Jackson Hole                              | Warsh advierte que la inflación "todavía preocupa"                         | No hay señal clara de recorte de tasas en el corto plazo                        |
 
 Comparada con las semanas previas, esta fue una semana de mensajes mixtos más que de una sola narrativa dominante: si en semanas anteriores el tema central era el costo del crédito y el mercado laboral débil en México, esta semana el foco se desplazó hacia el comercio exterior y la postura de los bancos centrales de ambos países, con Banxico y la Fed apuntando en la misma dirección —cautela sobre la inflación— pese a que ambas economías mostraron señales de crecimiento mejor de lo esperado.
 
