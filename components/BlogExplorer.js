@@ -101,10 +101,16 @@ function Paginacion({ pagina, totalPaginas, onCambiar }) {
   );
 }
 
-export default function BlogExplorer({ notas = [], pickSlug, categorias = [] }) {
+export default function BlogExplorer({ notas: notasProp = [], pickSlug, categorias = [] }) {
   const [q, setQ] = useState("");
   const [cat, setCat] = useState("todas");
   const [pagina, setPagina] = useState(1);
+
+  // Siempre de la más nueva a la más antigua, sin depender del orden recibido.
+  const notas = useMemo(
+    () => [...notasProp].sort((a, b) => new Date(b.fecha) - new Date(a.fecha)),
+    [notasProp]
+  );
 
   // Solo categorías que tienen al menos una nota (evita chips vacíos).
   const categoriasConNotas = useMemo(() => {
