@@ -13,7 +13,7 @@ tags:
   - PIB
   - Jackson Hole
 resumen: 'México rompió su récord histórico de exportaciones en julio y aun así cerró el mes con déficit comercial por el hueco petrolero, mientras Kevin Warsh usó su debut en Jackson Hole para advertir que la inflación en Estados Unidos "todavía no mejora lo suficiente" para bajar la guardia.'
-imagen: /blog/pexels-gabby-k-6289055.jpg
+imagen: /blog/pexels-karola-g-7680324.jpg
 ---
 
 Esta nota cubre la semana del lunes 24 al viernes 29 de agosto. Tres historias dominaron la agenda económica: el debut de Kevin Warsh como presidente de la Fed en Jackson Hole, donde eligió advertir sobre la inflación en lugar de prometer recortes; el reporte de comercio exterior de México, que combinó un récord histórico de exportaciones con un déficit mensual inesperado; y el Informe Trimestral de Banxico, que mejoró el pronóstico de crecimiento del país al mismo tiempo que alejó, otra vez, la fecha en que espera controlar la inflación.
