@@ -25,6 +25,7 @@ datosClave:
   - valor: 55.6%
     etiqueta: Empresas que citan la tasa de interés como razón para no solicitar crédito nuevo
 imagen: /blog/pexels-rdne-7821473.jpg
+destacada: true
 ---
 
 El 27 de agosto, Banxico publicó su Informe Trimestral correspondiente al segundo trimestre de 2026 con una combinación de cifras que, leídas juntas, cuentan una historia más matizada de lo que sugiere el titular. Por un lado, el banco central elevó su pronóstico de crecimiento del Producto Interno Bruto para el año de 1.1% a 1.5%, resultado de una actividad económica que avanzó 1.42% en el segundo trimestre, muy por encima de la contracción de 0.34% registrada en los primeros tres meses del año. Por otro lado, la misma institución pospuso —otra vez— la fecha en que espera que la inflación converja a su meta de 3%, ahora proyectada hasta el cuarto trimestre de 2027. Un país que crece más de lo esperado y una inflación que tarda más de lo esperado en ceder no son, en principio, noticias contradictorias. Pero cuando se traducen a la variable que de verdad le importa a cualquier empresa que necesita financiarse —el costo real del dinero—, ambas cifras apuntan en la misma dirección: el crédito en México va a seguir siendo caro por más tiempo del que el propio banco central anticipaba hace apenas unos meses.
