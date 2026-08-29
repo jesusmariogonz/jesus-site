@@ -45,9 +45,66 @@ function NotaCard({ nota }) {
   );
 }
 
+const POR_PAGINA = 10;
+
+function Paginacion({ pagina, totalPaginas, onCambiar }) {
+  if (totalPaginas <= 1) return null;
+
+  const paginas = [];
+  for (let i = 1; i <= totalPaginas; i++) {
+    const cerca = Math.abs(i - pagina) <= 1;
+    if (i === 1 || i === totalPaginas || cerca) {
+      paginas.push(i);
+    } else if (paginas[paginas.length - 1] !== "…") {
+      paginas.push("…");
+    }
+  }
+
+  return (
+    <nav className="blog-paginacion" aria-label="Paginación de notas">
+      <button
+        type="button"
+        className="blog-pag-btn"
+        onClick={() => onCambiar(pagina - 1)}
+        disabled={pagina === 1}
+        aria-label="Página anterior"
+      >
+        ‹
+      </button>
+      {paginas.map((p, i) =>
+        p === "…" ? (
+          <span key={`dots-${i}`} className="blog-pag-dots">
+            …
+          </span>
+        ) : (
+          <button
+            key={p}
+            type="button"
+            className={p === pagina ? "blog-pag-btn active" : "blog-pag-btn"}
+            onClick={() => onCambiar(p)}
+            aria-current={p === pagina ? "page" : undefined}
+          >
+            {p}
+          </button>
+        )
+      )}
+      <button
+        type="button"
+        className="blog-pag-btn"
+        onClick={() => onCambiar(pagina + 1)}
+        disabled={pagina === totalPaginas}
+        aria-label="Página siguiente"
+      >
+        ›
+      </button>
+    </nav>
+  );
+}
+
 export default function BlogExplorer({ notas = [], pickSlug, categorias = [] }) {
   const [q, setQ] = useState("");
   const [cat, setCat] = useState("todas");
+  const [pagina, setPagina] = useState(1);
 
   // Solo categorías que tienen al menos una nota (evita chips vacíos).
   const categoriasConNotas = useMemo(() => {
@@ -69,6 +126,31 @@ export default function BlogExplorer({ notas = [], pickSlug, categorias = [] }) 
   const pick = notas.find((n) => n.slug === pickSlug) || notas[0];
   const resto = notas.filter((n) => n.slug !== pick?.slug);
 
+  const lista = buscando ? resultados : resto;
+  const totalPaginas = Math.max(1, Math.ceil(lista.length / POR_PAGINA));
+  const paginaActual = Math.min(pagina, totalPaginas);
+  const listaPagina = lista.slice(
+    (paginaActual - 1) * POR_PAGINA,
+    paginaActual * POR_PAGINA
+  );
+
+  function cambiarPagina(p) {
+    setPagina(p);
+    document
+      .querySelector(".buscador")
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function onBuscar(valor) {
+    setQ(valor);
+    setPagina(1);
+  }
+
+  function onFiltrar(slug) {
+    setCat(slug);
+    setPagina(1);
+  }
+
   return (
     <>
       <div className="buscador">
@@ -80,14 +162,14 @@ export default function BlogExplorer({ notas = [], pickSlug, categorias = [] }) 
           className="buscador-input"
           placeholder="Buscar notas por palabra clave…"
           value={q}
-          onChange={(e) => setQ(e.target.value)}
+          onChange={(e) => onBuscar(e.target.value)}
           aria-label="Buscar notas"
         />
         {q && (
           <button
             type="button"
             className="buscador-limpiar"
-            onClick={() => setQ("")}
+            onClick={() => onBuscar("")}
             aria-label="Limpiar búsqueda"
           >
             ×
@@ -99,7 +181,7 @@ export default function BlogExplorer({ notas = [], pickSlug, categorias = [] }) 
         <button
           type="button"
           className={cat === "todas" ? "chip active" : "chip"}
-          onClick={() => setCat("todas")}
+          onClick={() => onFiltrar("todas")}
         >
           Todas
         </button>
@@ -108,7 +190,7 @@ export default function BlogExplorer({ notas = [], pickSlug, categorias = [] }) 
             key={slug}
             type="button"
             className={cat === slug ? "chip active" : "chip"}
-            onClick={() => setCat(slug)}
+            onClick={() => onFiltrar(slug)}
           >
             {nombre}
           </button>
@@ -134,19 +216,26 @@ export default function BlogExplorer({ notas = [], pickSlug, categorias = [] }) 
                 type="button"
                 className="btn ghost btn-sm"
                 onClick={() => {
-                  setQ("");
-                  setCat("todas");
+                  onBuscar("");
+                  onFiltrar("todas");
                 }}
               >
                 Ver todas las notas
               </button>
             </div>
           ) : (
-            <ul className="post-list post-list-editorial">
-              {resultados.map((nota) => (
-                <NotaCard key={nota.slug} nota={nota} />
-              ))}
-            </ul>
+            <>
+              <ul className="post-list post-list-editorial">
+                {listaPagina.map((nota) => (
+                  <NotaCard key={nota.slug} nota={nota} />
+                ))}
+              </ul>
+              <Paginacion
+                pagina={paginaActual}
+                totalPaginas={totalPaginas}
+                onCambiar={cambiarPagina}
+              />
+            </>
           )}
         </>
       ) : (
@@ -170,10 +259,15 @@ export default function BlogExplorer({ notas = [], pickSlug, categorias = [] }) 
             </Link>
           )}
           <ul className="post-list post-list-editorial">
-            {resto.map((nota) => (
+            {listaPagina.map((nota) => (
               <NotaCard key={nota.slug} nota={nota} />
             ))}
           </ul>
+          <Paginacion
+            pagina={paginaActual}
+            totalPaginas={totalPaginas}
+            onCambiar={cambiarPagina}
+          />
         </>
       )}
     </>
