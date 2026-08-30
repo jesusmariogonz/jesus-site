@@ -1,5 +1,5 @@
 /* ============================================================
-   Descarga ~60 fotos de portada desde Pexels y arma un banco local
+   Descarga ~300 fotos de portada desde Pexels y arma un banco local
    en public/blog/portadas/, con un manifiesto en lib/portadas.js
    que las rutinas automáticas del blog usan para elegir imagen
    por tema — sin depender de llamadas a Pexels en cada corrida
@@ -31,7 +31,8 @@ if (!API_KEY) {
   process.exit(1);
 }
 
-// Cada tema baja ~5 fotos. Ajusta queries o cantidad si quieres más/menos de 60.
+// Cada tema baja ~25 fotos (12 temas x 25 = ~300). Ajusta FOTOS_POR_TEMA o la lista
+// de temas si quieres otro total. Pexels permite hasta per_page=80 por búsqueda.
 const TEMAS = [
   { slug: "banco-central", query: "central bank building", tags: ["banxico", "fed", "tasas de interés", "política monetaria"] },
   { slug: "mercado-bursatil", query: "stock market trading screen", tags: ["mercados", "bolsa", "wall street", "inversiones"] },
@@ -47,7 +48,7 @@ const TEMAS = [
   { slug: "crecimiento-economico", query: "economy growth chart graph", tags: ["pib", "crecimiento económico", "gráficas", "datos"] },
 ];
 
-const FOTOS_POR_TEMA = 5;
+const FOTOS_POR_TEMA = 25;
 const OUT_DIR = path.join(process.cwd(), "public", "blog", "portadas");
 const MANIFEST_PATH = path.join(process.cwd(), "lib", "portadas.js");
 
