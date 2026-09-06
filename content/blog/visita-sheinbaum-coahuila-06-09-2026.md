@@ -14,7 +14,7 @@ tags:
   - México
   - industria
 resumen: 'Claudia Sheinbaum llevó su Segundo Informe de Gobierno a Saltillo este domingo, con el tren de pasajeros México-Nuevo Laredo, la modernización de la carretera Saltillo-Monclova y la ampliación hospitalaria como los proyectos de infraestructura que definieron su mensaje para Coahuila, mientras la reactivación de AHMSA sigue como la demanda pendiente del gobernador Manolo Jiménez.'
-imagen: /blog/portadas/manufactura-fabrica-3.jpg
+imagen: /blog/portadas/oficina-corporativa-5.jpg
 ---
 
 Claudia Sheinbaum presentó este domingo, en el Auditorio Las Maravillas de Saltillo, la réplica estatal de su Segundo Informe de Gobierno, como parte de la gira que su administración realiza por las 32 entidades del país tras el informe nacional del 1 de septiembre. El evento, programado para la 1:15 de la tarde, se centró en tres proyectos de infraestructura que la propia Presidencia ha identificado como prioritarios para Coahuila: el tren de pasajeros México-Nuevo Laredo, la modernización de la carretera federal Saltillo-Monclova y la ampliación de la infraestructura hospitalaria del estado, mientras la reactivación de AHMSA —la demanda más sensible para la región Centro y Carbonífera— llegó al encuentro como petición del gobernador Manolo Jiménez, no como anuncio ya confirmado por el gobierno federal.
