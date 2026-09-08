@@ -1,0 +1,69 @@
+---
+titulo: 'La IA agéntica no está fallando por el modelo: está fallando por falta de observabilidad'
+fecha: 2026-09-08T00:00:00.000Z
+categoria: ia
+tags:
+  - IA Agéntica
+  - Observabilidad
+  - Dynatrace
+  - Gartner
+  - Transformación Digital
+  - Gobernanza de IA
+  - DevOps
+  - Ciberseguridad
+  - Adopción Tecnológica
+resumen: 'Un estudio global con 919 líderes empresariales confirma lo que ya se veía venir en la adopción corporativa de IA: la mitad de los proyectos de IA agéntica sigue atorada en piloto no por dudas sobre el modelo, sino porque las empresas no pueden todavía gobernar, validar ni monitorear agentes autónomos operando a escala.'
+tesis: 'La conversación pública sobre IA agéntica sigue centrada en las capacidades del modelo, pero el cuello de botella real que está frenando la adopción corporativa masiva es de otra naturaleza por completo: es un problema de observabilidad y gobernanza operativa, y las empresas que resuelvan eso primero, antes de perseguir el siguiente modelo más capaz, son las que van a capturar el retorno que hoy casi todas están prometiendo pero pocas están entregando.'
+datosClave:
+  - valor: "919 líderes"
+    etiqueta: "Encuestados en el estudio global de Dynatrace (Pulse of Agentic AI 2026)"
+  - valor: "~50%"
+    etiqueta: "Proyectos de IA agéntica todavía atorados en piloto o prueba de concepto"
+  - valor: "40%"
+    etiqueta: "Proyectos de IA agéntica que Gartner proyecta que serán cancelados para 2027"
+  - valor: "52%"
+    etiqueta: "Empresas que citan seguridad, privacidad o cumplimiento como principal freno a escalar"
+imagen: /blog/portadas/inteligencia-artificial-7.jpg
+---
+
+Cuando un reporte encuestó a 919 líderes de empresas con ingresos de más de 100 millones de dólares para preguntarles, en enero de 2026, qué está frenando realmente la adopción de IA agéntica dentro de sus organizaciones, la respuesta que apareció con más fuerza no fue ninguna de las que domina el discurso público sobre inteligencia artificial. No fue que los modelos todavía alucinen, ni que los ejecutivos duden del valor de negocio, ni que falte presupuesto. La respuesta que apareció con más fuerza —51% de los encuestados la señaló como una barrera central para escalar— fue algo mucho menos glamoroso y mucho más operativo: la dificultad técnica de monitorear y gestionar agentes de IA una vez que dejan de ser un experimento contenido y empiezan a operar con autonomía real dentro de sistemas de producción.
+
+Ese hallazgo, publicado por Dynatrace en su reporte inaugural "The Pulse of Agentic AI 2026", merece más atención de la que suele recibir en la conversación corporativa sobre inteligencia artificial, precisamente porque contradice la narrativa dominante. La narrativa dominante asume que el problema de la IA agéntica es un problema de capacidad del modelo: que en cuanto los agentes sean lo suficientemente inteligentes, confiables y baratos, las empresas los adoptarán sin fricción. Los datos sugieren algo distinto y, en cierto sentido, más incómodo: el problema no es que los agentes no sean capaces. El problema es que las empresas no tienen, todavía, la infraestructura de visibilidad, gobernanza y control necesaria para confiarles operaciones reales sin perder la capacidad de saber qué están haciendo, por qué lo están haciendo, y qué hacer cuando algo sale mal.
+
+## El estado real de la adopción: entre el entusiasmo del presupuesto y el estancamiento de la ejecución
+
+Los números de adopción de IA agéntica, vistos en conjunto, dibujan una imagen de aceleración simultánea a dos velocidades muy distintas. Por un lado, la inversión no muestra señales de desaceleración: 74% de los líderes encuestados por Dynatrace espera que su presupuesto de IA vuelva a crecer el próximo año, y casi la mitad —48%— anticipa incrementos de al menos 2 millones de dólares. El mercado agregado de capacidades agénticas embebidas en software empresarial, según estimaciones de Gartner, pasaría de una fracción marginal en 2025 a 201,900 millones de dólares en 2026, un crecimiento de 141% en un solo año.
+
+Por otro lado, y de manera simultánea, la ejecución real se mueve mucho más despacio que el capital que la persigue. El propio estudio de Dynatrace encuentra que cerca de la mitad de los proyectos de IA agéntica permanece en fase de prueba de concepto o piloto, sin haber cruzado el umbral hacia producción a escala. McKinsey, por su parte, reporta que solamente 23% de las organizaciones ha logrado escalar un sistema agéntico hasta producción plena, mientras que otro 39% se mantiene en fase de experimentación. Y quizás el dato más contundente de todos: Gartner proyecta que 40% de los proyectos de IA agéntica actualmente en marcha serán cancelados antes de que termine 2027 —no porque el modelo subyacente haya decepcionado, sino porque la organización no logró resolver, a tiempo, los problemas operativos que exige sostener un agente autónomo funcionando en el mundo real.
+
+Esta brecha entre el ritmo de la inversión y el ritmo de la ejecución no es un fenómeno nuevo en la historia de la adopción tecnológica empresarial —algo estructuralmente similar ocurrió con la adopción temprana de la nube, y antes con los grandes proyectos de transformación de ERP—, pero tiene una particularidad en el caso de la IA agéntica que la vuelve más urgente de resolver: un ERP mal configurado produce datos incorrectos, mientras que un agente autónomo mal gobernado puede tomar decisiones y ejecutar acciones sin que nadie se entere hasta que el daño ya esté hecho.
+
+## Dónde se concentra el interés, y por qué eso no es casualidad
+
+El estudio de Dynatrace identifica con precisión en qué funciones de negocio se están desplegando agentes de IA con mayor frecuencia, y el patrón resulta revelador sobre la lógica real detrás de la adopción corporativa. El área con mayor penetración es, por un margen amplio, operaciones de TI y DevOps, donde 72% de los encuestados reporta tener agentes desplegados. Le sigue ingeniería de software, con 56%, y atención al cliente, con 51%. En cuanto al retorno de inversión esperado, las áreas con mayor expectativa son monitoreo de sistemas y operaciones de TI (44%), ciberseguridad (27%) y procesamiento y generación de reportes de datos (25%).
+
+Esta concentración no es accidental: son, precisamente, las funciones donde las empresas ya cuentan con telemetría relativamente madura —registros de sistema, métricas de infraestructura, trazas de transacciones— sobre la cual un agente puede operar con un nivel razonable de supervisión automatizada. Dicho de otra forma: las empresas están desplegando IA agéntica primero en los rincones de la organización donde ya tienen, aunque sea de forma parcial, los ojos puestos. Eso explica también, por contraste, por qué funciones de negocio con menos instrumentación histórica —cadena de suministro física, procesos de cumplimiento normativo altamente manuales, decisiones comerciales de alto valor— muestran una adopción agéntica todavía incipiente: ahí, un agente autónomo operaría prácticamente a ciegas desde la perspectiva de quien tendría que supervisarlo.
+
+## La superficie de riesgo que nadie terminó de dimensionar: agentes en las sombras
+
+Si la falta de observabilidad fuera únicamente un problema de eficiencia operativa —agentes lentos, resultados poco confiables, retrabajo—, sería preocupante pero manejable. El hallazgo más inquietante de la investigación reciente sobre IA agéntica no es ese: es que la falta de visibilidad se ha convertido en un vector de riesgo de seguridad de dimensiones considerables. Datos de la industria de ciberseguridad reportan que 88% de las organizaciones ha registrado incidentes de seguridad confirmados o sospechados relacionados con agentes de IA durante el último año, y que 65% de las empresas experimentó específicamente algún incidente de seguridad vinculado a agentes en 2026.
+
+El mecanismo detrás de esa cifra tiene nombre propio en la literatura de gobernanza tecnológica reciente: "shadow AI", o agentes de IA desplegados por equipos individuales o unidades de negocio sin pasar por los procesos formales de aprobación, revisión de seguridad o registro de inventario tecnológico que sí aplicarían a cualquier otro sistema con acceso a datos de producción. Cuando un agente interactúa con datos sensibles antes de haber sido evaluado formalmente, se convierte, en la práctica, en una puerta trasera hacia el resto de la infraestructura corporativa —no porque el agente tenga intención maliciosa, sino porque nadie diseñó, para ese agente específico, los mismos controles de acceso, auditoría y contención que sí existen para el resto del entorno productivo. La consecuencia práctica, documentada por analistas del sector, es que la mayoría de las primeras evaluaciones de riesgo de agentes que hacen las empresas subestima de forma significativa su exposición real, precisamente porque esas evaluaciones parten de un inventario de agentes que la propia organización sabe, de antemano, que está incompleto.
+
+## Por qué la observabilidad, y no el modelo, es la variable que decide quién escala
+
+Vale la pena ser preciso sobre lo que significa "observabilidad" en este contexto, porque es un término que se usa con frecuencia sin suficiente rigor. No se trata simplemente de tener un panel de control (dashboard) que muestre si un agente está "encendido" o "apagado". Observabilidad, en el sentido que aplica a sistemas autónomos, implica tres capacidades específicas que operan de forma simultánea: visibilidad en tiempo real sobre qué decisiones está tomando un agente y con qué información las está tomando; capacidad de trazar, después del hecho, la cadena completa de razonamiento y acciones que llevaron a un resultado específico; y mecanismos de intervención que permitan a un humano pausar, corregir o revertir la actuación de un agente antes de que una decisión autónoma se propague hacia sistemas o clientes.
+
+Esa tercera capacidad —la de intervención— es, en la práctica, la que más empresas descubren que no tienen cuando ya es demasiado tarde. Es relativamente sencillo instrumentar un panel que muestre cuántas tareas completó un agente en una hora. Es considerablemente más difícil construir la infraestructura que permita a un equipo de operaciones detectar, en el momento en que ocurre, que un agente está a punto de tomar una decisión fuera de los parámetros esperados, y detenerlo antes de que esa decisión se ejecute. El estudio de Dynatrace es explícito en señalar que el reto central para las empresas que buscan escalar no es tener más agentes ni modelos más sofisticados, sino convertir la observabilidad de una función de soporte técnico —algo que se revisa cuando algo ya falló— en una capa de control fundamental que opera antes, durante y después de cada decisión autónoma.
+
+## Qué significa esto para las empresas mexicanas y de la región
+
+La conversación sobre IA agéntica en México y América Latina ha estado dominada, hasta ahora, por la pregunta de adopción —cuántas empresas están probando agentes, en qué funciones, con qué proveedores—, y muy poco por la pregunta de gobernanza que este estudio pone en el centro. Esa asimetría representa, al mismo tiempo, un riesgo y una oportunidad para las organizaciones de la región que todavía no han desplegado IA agéntica de forma masiva.
+
+El riesgo es evidente: si el patrón global se repite —adopción impulsada por presupuesto y presión competitiva, sin la infraestructura de observabilidad instalada primero—, las empresas mexicanas que se apresuren a desplegar agentes autónomos en atención al cliente, operaciones financieras o cadena de suministro sin haber resuelto antes la visibilidad y el control sobre esos agentes van a heredar exactamente el mismo problema que hoy documenta el 88% de incidentes de seguridad reportados globalmente, con el agravante de que la madurez promedio de gobernanza de datos en buena parte del tejido empresarial de la región todavía está por debajo del estándar de las grandes corporaciones globales encuestadas por Dynatrace, cuyo umbral de entrada fueron ingresos anuales de al menos 100 millones de dólares.
+
+La oportunidad, sin embargo, es igual de real: las empresas que todavía no han desplegado IA agéntica a escala tienen la posibilidad, poco común en la historia de la adopción tecnológica corporativa, de construir la capa de observabilidad y gobernanza antes de construir la capa de agentes, en lugar de tener que remediarla después sobre una arquitectura ya desplegada y ya comprometida operativamente. Esa secuencia —observabilidad primero, autonomía después— es exactamente la inversa de la que siguió la mayoría de las organizaciones encuestadas en el estudio global, y es, según la propia evidencia que ese estudio aporta, la secuencia que separa a las empresas que lograron escalar de forma sostenible de las que hoy conforman ese 40% de proyectos que Gartner proyecta que terminará cancelado.
+
+## Riesgos y lo que viene
+
+El diagnóstico compartido por Dynatrace, Gartner y McKinsey —cada uno desde su propia metodología— converge en un punto que probablemente defina la siguiente fase de la adopción de IA agéntica: el diferenciador competitivo ya no será quién tenga acceso al modelo más avanzado, dado que esa ventaja se erosiona con rapidez conforme los grandes proveedores de modelos igualan capacidades entre sí, sino quién haya construido la infraestructura operativa —observabilidad, gobernanza, capacidad de intervención en tiempo real— necesaria para desplegar esos modelos con autonomía real y sin comprometer la seguridad ni el control organizacional. Los próximos doce a dieciocho meses van a mostrar, con más claridad de la que existe hoy, cuáles organizaciones entendieron esa distinción a tiempo y cuáles la están aprendiendo de la forma más costosa posible: después de un incidente que ya ocurrió, no antes.
