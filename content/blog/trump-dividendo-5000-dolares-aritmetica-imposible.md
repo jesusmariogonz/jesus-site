@@ -16,15 +16,16 @@ tags:
 resumen: 'Donald Trump prometió un pago de 5,000 dólares a cada estadounidense adulto si los republicanos retienen el Congreso en noviembre, con un costo estimado de entre 1.2 y 1.35 billones de dólares —financiado, según la Casa Blanca, con ingresos arancelarios que la propia Corte Suprema de Estados Unidos ya redujo a la mitad en febrero.'
 tesis: 'El "dividendo Trump" no es una propuesta de política fiscal con un problema de financiamiento: es una promesa de campaña condicionada explícitamente a un resultado electoral, cuyo costo —más de la mitad de todo el déficit anual proyectado de Estados Unidos— ya rebasó por completo la fuente de ingresos que se suponía debía pagarlo antes de que la Corte Suprema se pronunciara al respecto.'
 datosClave:
-  - valor: "$1.2 a $1.35 billones"
-    etiqueta: "Costo estimado del pago de $5,000 a cada adulto estadounidense"
-  - valor: "$2.1 billones"
-    etiqueta: "Déficit fiscal proyectado de EU para el año fiscal 2026 (CBO)"
-  - valor: "70%"
-    etiqueta: "Proporción de la arquitectura arancelaria de EU invalidada por la Corte Suprema en febrero de 2026"
-  - valor: "2.6% del PIB"
-    etiqueta: "Costo de TODOS los programas prioritarios de bienestar social de México en 2026 (1.025 billones de pesos)"
-imagen: /blog/portadas/negocios-reunion-3.jpg
+  - valor: $1.2 a $1.35 billones
+    etiqueta: 'Costo estimado del pago de $5,000 a cada adulto estadounidense'
+  - valor: $2.1 billones
+    etiqueta: Déficit fiscal proyectado de EU para el año fiscal 2026 (CBO)
+  - valor: 70%
+    etiqueta: Proporción de la arquitectura arancelaria de EU invalidada por la Corte Suprema en febrero de 2026
+  - valor: 2.6% del PIB
+    etiqueta: Costo de TODOS los programas prioritarios de bienestar social de México en 2026 (1.025 billones de pesos)
+imagen: /blog/vuelve-donald-trump.jpg
+destacada: true
 ---
 
 El 10 de septiembre de 2026, en la convención de medio término del Partido Republicano en Dallas, Donald Trump prometió enviar un "dividendo" de 5,000 dólares a cada ciudadano estadounidense adulto —pero únicamente si los republicanos conservan el control de la Cámara de Representantes y el Senado en las elecciones de noviembre. No ofreció detalles sobre el mecanismo de pago, ni sobre si pediría al Congreso que autorizara los cheques, ni sobre de dónde saldría el dinero más allá de una referencia genérica a los ingresos arancelarios de su administración. Lo que sí ofreció, de manera explícita, fue una condición: el pago llegaría después de la elección, y solo si su partido ganaba.
