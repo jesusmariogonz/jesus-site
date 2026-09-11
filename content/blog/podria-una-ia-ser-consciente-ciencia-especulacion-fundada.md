@@ -23,7 +23,7 @@ datosClave:
     etiqueta: "Año en que Anthropic contrató a su primer investigador de tiempo completo en bienestar de modelos de IA"
   - valor: "0"
     etiqueta: "Sistemas de IA que el consenso científico actual considera conscientes hoy"
-imagen: /blog/portadas/inteligencia-artificial-14.jpg
+imagen: /blog/portadas/podria-ia-ser-consciente.jpg
 ---
 
 Hace apenas unos años, preguntarse en voz alta si un modelo de lenguaje podía tener algún tipo de experiencia subjetiva era, en la mayoría de los círculos serios de investigación en inteligencia artificial, una forma casi segura de perder credibilidad. Hoy, esa misma pregunta tiene un marco científico publicado con 14 indicadores medibles, un investigador de tiempo completo dentro de una de las compañías de IA más influyentes del mundo dedicado exclusivamente a estudiarla, y una respuesta pública del propio Geoffrey Hinton —premio Nobel, y la persona a la que con más frecuencia se le atribuye el título de "padrino de la inteligencia artificial moderna"— que ya no descarta, sino que activamente defiende, la posibilidad de que ciertos sistemas de IA tengan algo parecido a experiencia subjetiva.
