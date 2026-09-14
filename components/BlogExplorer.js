@@ -27,6 +27,18 @@ function sinAcentos(str = "") {
     .toLowerCase();
 }
 
+// Formato corto de fecha para tarjetas (ej. "14 jul 2026"). Se define aquí
+// (en vez de importarla de lib/posts.js) porque este componente corre en
+// el cliente y lib/posts.js depende de `fs`.
+function formatFechaCorta(fecha) {
+  const d = new Date(String(fecha).includes("T") ? fecha : fecha + "T12:00:00");
+  return d.toLocaleDateString("es-MX", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+}
+
 function NotaCard({ nota }) {
   return (
     <li className="post-card post-card-editorial">
@@ -37,7 +49,8 @@ function NotaCard({ nota }) {
           <h3>{nota.titulo}</h3>
           {nota.resumen && <p>{nota.resumen}</p>}
           <span className="post-card-meta">
-            {nota.minutos} min de lectura <span className="jx-flecha">→</span>
+            {formatFechaCorta(nota.fecha)} · {nota.minutos} min de lectura{" "}
+            <span className="jx-flecha">→</span>
           </span>
         </div>
       </Link>
@@ -258,7 +271,8 @@ export default function BlogExplorer({ notas: notasProp = [], pickSlug, categori
                 <h3>{pick.titulo}</h3>
                 {pick.resumen && <p>{pick.resumen}</p>}
                 <span className="post-card-meta">
-                  {pick.categoriaNombre} · {pick.minutos} min de lectura{" "}
+                  {pick.categoriaNombre} · {formatFechaCorta(pick.fecha)} ·{" "}
+                  {pick.minutos} min de lectura{" "}
                   <span className="jx-flecha">→</span>
                 </span>
               </div>

@@ -1315,6 +1315,9 @@ html:not(.dark) .pglobe-land {
   flex-direction: column;
   justify-content: center;
   gap: 10px;
+  /* Alto fijo para que el carrusel no cambie de tamaño (y no mueva la
+     página) al pasar de una nota con título/resumen corto a uno largo. */
+  min-height: 230px;
 }
 .carrusel-cat {
   font-family: var(--font-mono);
@@ -1330,6 +1333,10 @@ html:not(.dark) .pglobe-land {
   letter-spacing: -0.025em;
   line-height: 1.25;
   color: var(--ink);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .carrusel-cuerpo p {
   margin: 0;

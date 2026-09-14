@@ -123,11 +123,13 @@ export default async function Post({ params }) {
             dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
           />
 
-          {recientes.length > 0 && (
-            <NotasCarrusel notas={recientes} titulo="Lo más reciente" />
-          )}
-
           <header className="article-header-wrap">
+            <NotaCover
+              categoria={post.categoria}
+              imagen={post.imagen}
+              size="article"
+            />
+
             <span className="sql-meta">
               <Link href={`/blog/categoria/${post.categoria}`}>
                 {CATEGORIAS[post.categoria] || post.categoria}
@@ -197,6 +199,10 @@ export default async function Post({ params }) {
               <ToolkitBanner className="tk-banner-aside" />
             </aside>
           </div>
+
+          {recientes.length > 0 && (
+            <NotasCarrusel notas={recientes} titulo="Sigue leyendo" />
+          )}
 
           <p style={{ marginTop: 32 }}>
             <Link href="/blog">← Volver al blog</Link>
