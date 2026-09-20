@@ -22,7 +22,7 @@ datosClave:
     etiqueta: "Proporción de los fuegos artificiales que Estados Unidos usa cada 4 de julio que también provienen de China, según la Asociación Americana de Pirotecnia y el Census Bureau"
   - valor: "5%-50%"
     etiqueta: "Rango de aranceles que México aplicará desde enero de 2026 a más de 1,400 productos chinos sin tratado comercial vigente, presionado explícitamente por la administración Trump"
-imagen: /blog/portadas/comercio-internacional-11.jpg
+imagen: /blog/portadas/viva-mexico-made-in-china.jpg
 ---
 
 El 15 de septiembre de 2026, en la víspera de las celebraciones del Grito de Independencia, la embajada de Estados Unidos en México publicó en redes sociales una nota basada en un reportaje de N+ sobre el origen de banderas, matracas, confeti y fuegos artificiales que se usan en las fiestas patrias, acompañada de la frase: "Gran parte de los símbolos con los que México celebra su independencia no se hacen en México. Viva México, Made in China". La embajada de China en México respondió al día siguiente acusando a su contraparte estadounidense de "escupir veneno" y "sembrar cizaña" durante una celebración que, dijo textualmente, "pertenece al pueblo mexicano" y no es asunto de terceros países. Es un intercambio diplomático que, leído solo como anécdota viral, pierde de vista el dato que realmente lo vuelve interesante: la cifra que la embajada de China usó para responder no fue una negación, fue un espejo.
