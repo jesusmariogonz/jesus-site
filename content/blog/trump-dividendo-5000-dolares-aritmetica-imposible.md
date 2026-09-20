@@ -25,7 +25,7 @@ datosClave:
   - valor: 2.6% del PIB
     etiqueta: Costo de TODOS los programas prioritarios de bienestar social de México en 2026 (1.025 billones de pesos)
 imagen: /blog/vuelve-donald-trump.jpg
-destacada: true
+destacada: false
 ---
 
 El 10 de septiembre de 2026, en la convención de medio término del Partido Republicano en Dallas, Donald Trump prometió enviar un "dividendo" de 5,000 dólares a cada ciudadano estadounidense adulto —pero únicamente si los republicanos conservan el control de la Cámara de Representantes y el Senado en las elecciones de noviembre. No ofreció detalles sobre el mecanismo de pago, ni sobre si pediría al Congreso que autorizara los cheques, ni sobre de dónde saldría el dinero más allá de una referencia genérica a los ingresos arancelarios de su administración. Lo que sí ofreció, de manera explícita, fue una condición: el pago llegaría después de la elección, y solo si su partido ganaba.
