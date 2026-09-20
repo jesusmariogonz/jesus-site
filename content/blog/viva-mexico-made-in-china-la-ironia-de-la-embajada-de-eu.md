@@ -14,15 +14,16 @@ tags:
 resumen: 'La embajada de Estados Unidos en México quiso señalar que la pirotecnia y los adornos de las fiestas patrias vienen de China. China le respondió con un dato incómodo: el 95% de los fuegos artificiales que Estados Unidos usa cada 4 de julio también son chinos. Un mapa de quién depende de quién en la relación comercial trilateral más tensa del momento.'
 tesis: 'El mensaje de la embajada estadounidense no fue un error de comunicación aislado sino un síntoma de una contradicción de fondo en la política comercial de la administración Trump: exigirle a México que rompa su dependencia comercial de China mientras Estados Unidos mantiene, en categorías enteras de consumo —desde la pirotecnia hasta la electrónica—, una dependencia estructural idéntica o mayor a la que critica en su vecino.'
 datosClave:
-  - valor: "96%"
-    etiqueta: "Proporción de las importaciones mexicanas de adornos para fiestas patrias (banderines, matracas, confeti) que provienen de China, sobre 36 millones de dólares importados en 2025"
-  - valor: "98%"
-    etiqueta: "Proporción de los fuegos artificiales importados por México en 2025 que provienen de China, sobre 1.2 millones de dólares"
-  - valor: "95%+"
-    etiqueta: "Proporción de los fuegos artificiales que Estados Unidos usa cada 4 de julio que también provienen de China, según la Asociación Americana de Pirotecnia y el Census Bureau"
-  - valor: "5%-50%"
-    etiqueta: "Rango de aranceles que México aplicará desde enero de 2026 a más de 1,400 productos chinos sin tratado comercial vigente, presionado explícitamente por la administración Trump"
+  - valor: 96%
+    etiqueta: 'Proporción de las importaciones mexicanas de adornos para fiestas patrias (banderines, matracas, confeti) que provienen de China, sobre 36 millones de dólares importados en 2025'
+  - valor: 98%
+    etiqueta: 'Proporción de los fuegos artificiales importados por México en 2025 que provienen de China, sobre 1.2 millones de dólares'
+  - valor: 95%+
+    etiqueta: 'Proporción de los fuegos artificiales que Estados Unidos usa cada 4 de julio que también provienen de China, según la Asociación Americana de Pirotecnia y el Census Bureau'
+  - valor: 5%-50%
+    etiqueta: 'Rango de aranceles que México aplicará desde enero de 2026 a más de 1,400 productos chinos sin tratado comercial vigente, presionado explícitamente por la administración Trump'
 imagen: /blog/portadas/viva-mexico-made-in-china.jpg
+destacada: true
 ---
 
 El 15 de septiembre de 2026, en la víspera de las celebraciones del Grito de Independencia, la embajada de Estados Unidos en México publicó en redes sociales una nota basada en un reportaje de N+ sobre el origen de banderas, matracas, confeti y fuegos artificiales que se usan en las fiestas patrias, acompañada de la frase: "Gran parte de los símbolos con los que México celebra su independencia no se hacen en México. Viva México, Made in China". La embajada de China en México respondió al día siguiente acusando a su contraparte estadounidense de "escupir veneno" y "sembrar cizaña" durante una celebración que, dijo textualmente, "pertenece al pueblo mexicano" y no es asunto de terceros países. Es un intercambio diplomático que, leído solo como anécdota viral, pierde de vista el dato que realmente lo vuelve interesante: la cifra que la embajada de China usó para responder no fue una negación, fue un espejo.
@@ -51,11 +52,11 @@ Queda abierta una pregunta más incómoda que la del origen de las banderas: si 
 
 ## Fuentes
 
-- [Embajada de China arremete contra EU por publicación sobre símbolos patrios "Made in China"](https://www.proceso.com.mx/internacional/2026/9/18/embajada-de-china-arremete-contra-eu-por-publicacion-sobre-simbolos-patrios-made-in-china-380165.html) — Proceso
-- [China acusa a EU de burlarse de fiesta de independencia de México y de 'sembrar cizaña'](https://forbes.com.mx/china-acusa-a-eu-de-burlarse-de-fiesta-de-independencia-de-mexico-y-de-sembrar-cizana/) — Forbes México
-- [Banderas chinas en las fiestas patrias, el lastre que merma las ventas de fabricantes en Edomex](https://diarioportal.com/economia-y-trabajo/banderas-chinas-en-las-fiestas-patrias-el-lastre-que-merma-las-ventas-de-fabricantes-en-edomex) — Diario Portal
-- [¡Viva México, Made in China!: Embajada de EU lanza pulla a México](https://lasillarota.com/nacion/2026/9/16/viva-mexico-made-in-china-embajada-de-eu-lanza-pulla-a-mexico-528726.html) — La Silla Rota
-- [Presupuesto 2026: México alista aumento de aranceles a importaciones de China por presión de Trump](https://www.bloomberg.com/news/articles/2025-08-27/mexico-subira-aranceles-a-china-en-presupuesto-2026-tras-presiones-de-trump) — Bloomberg
-- [Que Beijing pague los 'platos rotos' del T-MEC: México analiza más aranceles a China](https://www.elfinanciero.com.mx/economia/2026/08/18/mexico-analiza-subir-aranceles-a-china-en-plena-revision-del-t-mec/) — El Financiero
-- [China Accounts For 94% Of U.S. Fireworks Imports](https://www.forbes.com/sites/niallmccarthy/2020/07/01/china-accounts-for-94-of-us-fireworks-imports-infographic/) — Forbes
-- [For Independence Day Fireworks, U.S. Depends On China](https://www.npr.org/2018/07/03/625405653/for-independence-day-fireworks-u-s-depends-on-china) — NPR
+* [Embajada de China arremete contra EU por publicación sobre símbolos patrios "Made in China"](https://www.proceso.com.mx/internacional/2026/9/18/embajada-de-china-arremete-contra-eu-por-publicacion-sobre-simbolos-patrios-made-in-china-380165.html) — Proceso
+* [China acusa a EU de burlarse de fiesta de independencia de México y de 'sembrar cizaña'](https://forbes.com.mx/china-acusa-a-eu-de-burlarse-de-fiesta-de-independencia-de-mexico-y-de-sembrar-cizana/) — Forbes México
+* [Banderas chinas en las fiestas patrias, el lastre que merma las ventas de fabricantes en Edomex](https://diarioportal.com/economia-y-trabajo/banderas-chinas-en-las-fiestas-patrias-el-lastre-que-merma-las-ventas-de-fabricantes-en-edomex) — Diario Portal
+* [¡Viva México, Made in China!: Embajada de EU lanza pulla a México](https://lasillarota.com/nacion/2026/9/16/viva-mexico-made-in-china-embajada-de-eu-lanza-pulla-a-mexico-528726.html) — La Silla Rota
+* [Presupuesto 2026: México alista aumento de aranceles a importaciones de China por presión de Trump](https://www.bloomberg.com/news/articles/2025-08-27/mexico-subira-aranceles-a-china-en-presupuesto-2026-tras-presiones-de-trump) — Bloomberg
+* [Que Beijing pague los 'platos rotos' del T-MEC: México analiza más aranceles a China](https://www.elfinanciero.com.mx/economia/2026/08/18/mexico-analiza-subir-aranceles-a-china-en-plena-revision-del-t-mec/) — El Financiero
+* [China Accounts For 94% Of U.S. Fireworks Imports](https://www.forbes.com/sites/niallmccarthy/2020/07/01/china-accounts-for-94-of-us-fireworks-imports-infographic/) — Forbes
+* [For Independence Day Fireworks, U.S. Depends On China](https://www.npr.org/2018/07/03/625405653/for-independence-day-fireworks-u-s-depends-on-china) — NPR
