@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getPosts } from "@/lib/posts";
+import { getPostsListado } from "@/lib/posts";
 import { absUrl } from "@/lib/site";
 import { sendNewPostBroadcast } from "@/lib/resend";
 
@@ -32,7 +32,9 @@ export async function GET(request) {
     return NextResponse.json({ error: "No autorizado." }, { status: 401 });
   }
 
-  const [ultima] = getPosts();
+  // Excluye notas de Pulso de Mercado y ocultas: no queremos mandar un
+  // correo cada vez que se publica un briefing diario de mercados.
+  const [ultima] = getPostsListado();
   if (!ultima) {
     return NextResponse.json({ error: "No hay notas publicadas." }, { status: 404 });
   }

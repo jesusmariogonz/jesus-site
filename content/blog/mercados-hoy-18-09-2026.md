@@ -1,4 +1,5 @@
 ---
+oculta: true
 titulo: Mercados hoy 18/09/2026
 fecha: 2026-09-18
 categoria: fintech

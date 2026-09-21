@@ -138,6 +138,24 @@ export default defineConfig({
             label: "★ Editor's Pick (solo una nota a la vez)",
           },
           {
+            type: "string",
+            name: "pulsoTipo",
+            label:
+              "Pulso de Mercado (dejar vacío si esta nota no es de Pulso de Mercado)",
+            options: [
+              { value: "daily", label: "Daily — briefing diario" },
+              { value: "weekly-review", label: "Weekly Review — cierre de semana" },
+              { value: "weekly-outlook", label: "Weekly Outlook — apertura de semana" },
+              { value: "monthly", label: "Monthly Review — cierre de mes" },
+            ],
+          },
+          {
+            type: "boolean",
+            name: "oculta",
+            label:
+              "Ocultar del listado del blog (sigue accesible por su URL, para SEO/histórico)",
+          },
+          {
             type: "rich-text",
             name: "body",
             label: "Contenido",

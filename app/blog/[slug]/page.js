@@ -5,7 +5,7 @@ import remarkGfm from "remark-gfm";
 import {
   getPosts,
   getPost,
-  getPostsLite,
+  getPostsListadoLite,
   CATEGORIAS,
   formatFecha,
 } from "@/lib/posts";
@@ -66,7 +66,7 @@ export default async function Post({ params }) {
   if (!post) notFound();
 
   const minutos = calcularMinutos(post.content || "");
-  const todas = getPostsLite();
+  const todas = getPostsListadoLite();
 
   // Carrusel "una vez adentro": las notas más nuevas, sin la actual.
   const recientes = todas.filter((n) => n.slug !== slug).slice(0, 5);
