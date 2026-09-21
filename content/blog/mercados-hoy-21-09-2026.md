@@ -1,4 +1,5 @@
 ---
+oculta: true
 titulo: Mercados hoy 21/09/2026
 fecha: 2026-09-21
 categoria: fintech

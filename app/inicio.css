@@ -557,7 +557,11 @@ html:not(.dark) .jx-pill-opinion    { color: #6d28d9; }
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 .jx-cover-lg .jx-cover-glifo { font-size: 3.4rem; }
-.jx-cover-md { width: 100%; height: 150px; }
+/* aspect-ratio en vez de un alto fijo: en pantallas anchas una tarjeta
+   puede quedar mucho más ancha que en celular, y con alto fijo la foto
+   se recortaba muchísimo por los lados. Con aspect-ratio el alto crece
+   junto con el ancho y el recorte se mantiene proporcional. */
+.jx-cover-md { width: 100%; aspect-ratio: 16 / 10; height: auto; }
 .jx-cover-sm { width: 86px; height: 86px; border-radius: 10px; }
 .jx-cover-sm .jx-cover-glifo { font-size: 1.5rem; }
 .jx-cover-sm .jx-cover-tag { display: none; }
@@ -594,7 +598,7 @@ a:hover .jx-flecha { transform: translateX(4px); }
 .jx-cover-img::after {
   background: linear-gradient(180deg, rgba(0,0,0,0) 45%, rgba(0,0,0,0.55) 100%);
 }
-.jx-cover-pick { width: 100%; height: 100%; min-height: 240px; }
+.jx-cover-pick { width: 100%; aspect-ratio: 4 / 3; height: auto; min-height: 200px; }
 .jx-cover-pick .jx-cover-glifo { font-size: 3.6rem; }
 
 /* Portada grande al inicio de una nota, para identificarla de un vistazo */
