@@ -3513,3 +3513,90 @@ html:not(.dark) .pglobe-land {
   font-size: 0.85rem;
   color: var(--meta);
 }
+
+/* ============================================================
+   Dashboard de Pulso de Mercado (/pulso-mercado)
+   ============================================================ */
+.pulsodash-hero { text-align: center; margin: 8px 0 28px; }
+.pulsodash-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--meta);
+}
+.pulsodash-hero h1 {
+  margin: 10px 0 10px;
+  font-size: clamp(1.7rem, 3.6vw, 2.3rem);
+}
+.pulsodash-tagline {
+  max-width: 640px;
+  margin: 0 auto;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.pulsodash-panel {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 22px 24px;
+}
+.pulsodash-snapshot { margin-bottom: 18px; overflow-x: auto; }
+.pulsodash-panel-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.pulsodash-panel-title { font-weight: 700; font-size: 1rem; }
+.pulsodash-panel-sub {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--meta);
+}
+.pulsodash-vacio { color: var(--meta); font-size: 0.9rem; font-style: italic; margin: 0; }
+.pulsodash-grid-2 {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+.pulsodash-horizons-head { text-align: center; margin: 40px 0 6px; }
+.pulsodash-horizons-head h2 { font-size: 1.3rem; margin-top: 6px; }
+.pulsodash-horizons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 18px 0 34px;
+}
+.pulsodash-horizon {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 20px 22px;
+  border-top: 3px solid var(--h-color);
+}
+.pulsodash-horizon.swing { --h-color: #1348d6; }
+.pulsodash-horizon.position { --h-color: #0f766e; }
+.pulsodash-horizon.longterm { --h-color: #6d40c4; }
+.pulsodash-horizon-name { font-weight: 700; font-size: 1.05rem; }
+.pulsodash-horizon-span {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--meta);
+  margin: 2px 0 12px;
+}
+.pulsodash-panel-body.prose,
+.pulsodash-horizon .prose {
+  font-size: 0.92rem;
+}
+.pulsodash-snapshot table { font-size: 0.88rem; }
+
+@media (max-width: 860px) {
+  .pulsodash-grid-2,
+  .pulsodash-horizons {
+    grid-template-columns: 1fr;
+  }
+}

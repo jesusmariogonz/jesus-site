@@ -1,0 +1,129 @@
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import { getPulsoDashboard, formatFecha } from "@/lib/posts";
+import PulsoMercado from "@/components/PulsoMercado";
+import { absUrl } from "@/lib/site";
+
+export const metadata = {
+  title: "Pulso de Mercado",
+  description:
+    "Qué pasó. Qué cambió. Qué importa. El sistema de inteligencia de mercados de Jesús González: Daily, Weekly Review, Weekly Outlook y Monthly Review, sin predicciones ni recomendaciones.",
+  alternates: { canonical: "/pulso-mercado" },
+  openGraph: {
+    type: "website",
+    url: absUrl("/pulso-mercado"),
+    title: "Pulso de Mercado",
+    description: "Qué pasó. Qué cambió. Qué importa.",
+  },
+};
+
+function Seccion({ titulo, subtitulo, markdown, vacio }) {
+  return (
+    <div className="pulsodash-panel">
+      <div className="pulsodash-panel-head">
+        <span className="pulsodash-panel-title">{titulo}</span>
+        {subtitulo && <span className="pulsodash-panel-sub">{subtitulo}</span>}
+      </div>
+      {markdown ? (
+        <div className="pulsodash-panel-body prose">
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdown}</ReactMarkdown>
+        </div>
+      ) : (
+        <p className="pulsodash-vacio">{vacio}</p>
+      )}
+    </div>
+  );
+}
+
+export default function PulsoMercadoDashboard() {
+  const { pulso, snapshot, regimen, importoHoy, swing, position, longTerm } =
+    getPulsoDashboard();
+  const { daily } = pulso;
+
+  return (
+    <section className="section">
+      <div className="container pulsodash">
+        <header className="pulsodash-hero">
+          <span className="pulsodash-eyebrow">
+            Market Pulse{daily ? ` · ${formatFecha(daily.fecha)}` : ""}
+          </span>
+          <h1>Qué pasó. Qué cambió. Qué importa.</h1>
+          <p className="pulsodash-tagline">
+            El sistema de inteligencia de mercados de Jesús González — sin
+            predicciones ni recomendaciones de compra/venta. Solo lo que
+            necesitas para construir tu propio criterio, en tres horizontes:
+            Swing, Position y Long Term.
+          </p>
+        </header>
+
+        {snapshot && (
+          <div className="pulsodash-panel pulsodash-snapshot prose">
+            <span className="pulsodash-panel-title">Market Snapshot</span>
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>{snapshot}</ReactMarkdown>
+          </div>
+        )}
+
+        <div className="pulsodash-grid-2">
+          <Seccion
+            titulo="Qué importó hoy"
+            markdown={importoHoy}
+            vacio="Todavía no se ha publicado el Daily de hoy. Vuelve más tarde."
+          />
+          <Seccion
+            titulo="Market Regime"
+            markdown={regimen}
+            vacio="Sin datos de régimen de mercado por ahora."
+          />
+        </div>
+
+        <div className="pulsodash-horizons-head">
+          <span className="pulsodash-eyebrow">The Three Horizons</span>
+          <h2>Swing · Position · Long Term</h2>
+        </div>
+        <div className="pulsodash-horizons">
+          <article className="pulsodash-horizon swing">
+            <div className="pulsodash-horizon-name">Swing</div>
+            <div className="pulsodash-horizon-span">Días → Semanas</div>
+            {swing ? (
+              <div className="prose">
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  {swing.cuerpo}
+                </ReactMarkdown>
+              </div>
+            ) : (
+              <p className="pulsodash-vacio">Próximamente.</p>
+            )}
+          </article>
+          <article className="pulsodash-horizon position">
+            <div className="pulsodash-horizon-name">Position</div>
+            <div className="pulsodash-horizon-span">Semanas → Meses</div>
+            {position ? (
+              <div className="prose">
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  {position.cuerpo}
+                </ReactMarkdown>
+              </div>
+            ) : (
+              <p className="pulsodash-vacio">Próximamente.</p>
+            )}
+          </article>
+          <article className="pulsodash-horizon longterm">
+            <div className="pulsodash-horizon-name">Long Term</div>
+            <div className="pulsodash-horizon-span">Meses → Años</div>
+            {longTerm ? (
+              <div className="prose">
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  {longTerm.cuerpo}
+                </ReactMarkdown>
+              </div>
+            ) : (
+              <p className="pulsodash-vacio">Próximamente.</p>
+            )}
+          </article>
+        </div>
+
+        <PulsoMercado pulso={pulso} />
+      </div>
+    </section>
+  );
+}
