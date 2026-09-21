@@ -37,9 +37,6 @@ function TarjetaPulso({ tipo, nota }) {
 }
 
 export default function PulsoMercado({ pulso }) {
-  const hayAlguna = TIPOS.some((t) => pulso?.[t.key]);
-  if (!hayAlguna) return null;
-
   return (
     <section className="pulso-mercado">
       <div className="pulso-mercado-head">
