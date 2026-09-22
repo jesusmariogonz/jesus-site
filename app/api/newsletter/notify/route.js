@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { getPostsListado } from "@/lib/posts";
 import { absUrl } from "@/lib/site";
-import { sendNewPostBroadcast } from "@/lib/resend";
+import { sendNewPostBroadcast, sendKindleCopy } from "@/lib/resend";
 
 /* ============================================================
    Aviso de nota nueva por correo
@@ -46,6 +46,17 @@ export async function GET(request) {
       url: absUrl(`/blog/${ultima.slug}`),
       imagen: ultima.imagen ? absUrl(ultima.imagen) : null,
     });
+    try {
+      // Falla independiente del newsletter: si el Kindle rechaza el
+      // remitente o no está configurado, no debe tumbar el aviso ya enviado.
+      await sendKindleCopy({
+        titulo: ultima.titulo,
+        resumen: ultima.resumen,
+        url: absUrl(`/blog/${ultima.slug}`),
+      });
+    } catch (kindleErr) {
+      console.error("newsletter/notify (kindle):", kindleErr);
+    }
     return NextResponse.json({
       ok: true,
       enviado: ultima.titulo,
