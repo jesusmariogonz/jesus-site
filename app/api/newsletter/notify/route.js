@@ -4,6 +4,7 @@ import { absUrl } from "@/lib/site";
 import { sendNewPostBroadcast, sendKindleCopy } from "@/lib/resend";
 import { markdownToHtml } from "@/lib/mdToHtml";
 import { postToFacebookPage } from "@/lib/facebook";
+import { postToLinkedIn } from "@/lib/linkedin";
 
 /* ============================================================
    Aviso de nota nueva por correo
@@ -71,6 +72,18 @@ export async function GET(request) {
       });
     } catch (fbErr) {
       console.error("newsletter/notify (facebook):", fbErr);
+    }
+    try {
+      // Falla independiente: si LinkedIn rechaza el token o no está
+      // configurado, no debe tumbar el resto del aviso ya enviado.
+      await postToLinkedIn({
+        titulo: ultima.titulo,
+        resumen: ultima.resumen,
+        url: absUrl(`/blog/${ultima.slug}`),
+        imagenUrl: ultima.imagen ? absUrl(ultima.imagen) : null,
+      });
+    } catch (liErr) {
+      console.error("newsletter/notify (linkedin):", liErr);
     }
     return NextResponse.json({
       ok: true,
