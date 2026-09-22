@@ -1,7 +1,7 @@
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { getPulsoDashboard, formatFecha } from "@/lib/posts";
+import { getPulsoDashboard, getPulsoMercado, seccion, formatFecha } from "@/lib/posts";
 import PulsoMercado from "@/components/PulsoMercado";
 import { absUrl } from "@/lib/site";
 
@@ -39,7 +39,14 @@ function Seccion({ titulo, subtitulo, markdown, vacio }) {
 export default function PulsoMercadoDashboard() {
   const { pulso, snapshot, regimen, importoHoy, swing, position, longTerm } =
     getPulsoDashboard();
-  const { daily } = pulso;
+  const { daily, weeklyOutlook } = pulso;
+
+  const calendarioSemana = seccion(weeklyOutlook, "calendario economico");
+  const earningsSemana = seccion(weeklyOutlook, "calendario de earnings");
+  const earningsHoy = seccion(daily, "earnings y calendario");
+  const queVigilarManana = seccion(daily, "que vigilar mañana");
+  const hayCalendario =
+    calendarioSemana || earningsSemana || earningsHoy || queVigilarManana;
 
   return (
     <section className="section">
@@ -59,7 +66,6 @@ export default function PulsoMercadoDashboard() {
             <Link href="/swing">Swing</Link>
             <Link href="/position">Position</Link>
             <Link href="/long-term">Long Term</Link>
-            <Link href="/calendario">Calendario</Link>
           </nav>
         </header>
 
@@ -139,6 +145,41 @@ export default function PulsoMercadoDashboard() {
         </div>
 
         <PulsoMercado pulso={pulso} />
+
+        {hayCalendario && (
+          <>
+            <div className="pulsodash-horizons-head">
+              <span className="pulsodash-eyebrow">Calendario</span>
+              <h2>Fed · Banxico · Earnings · Datos económicos</h2>
+            </div>
+            <div className="pulsodash-grid-2">
+              <Seccion
+                titulo="Calendario económico de la semana"
+                subtitulo={weeklyOutlook ? `Semana del ${formatFecha(weeklyOutlook.fecha)}` : null}
+                markdown={calendarioSemana}
+                vacio="Todavía no hay un Weekly Outlook publicado con el calendario de la semana."
+              />
+              <Seccion
+                titulo="Calendario de earnings de la semana"
+                subtitulo={weeklyOutlook ? `Semana del ${formatFecha(weeklyOutlook.fecha)}` : null}
+                markdown={earningsSemana}
+                vacio="Todavía no hay un Weekly Outlook publicado con earnings de la semana."
+              />
+              <Seccion
+                titulo="Earnings y calendario de hoy"
+                subtitulo={daily ? formatFecha(daily.fecha) : null}
+                markdown={earningsHoy}
+                vacio="Todavía no hay un Daily publicado con el calendario de hoy."
+              />
+              <Seccion
+                titulo="Qué vigilar mañana"
+                subtitulo={daily ? formatFecha(daily.fecha) : null}
+                markdown={queVigilarManana}
+                vacio="Todavía no hay un Daily publicado."
+              />
+            </div>
+          </>
+        )}
       </div>
     </section>
   );
