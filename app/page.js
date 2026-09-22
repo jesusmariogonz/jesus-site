@@ -1,16 +1,14 @@
-import { getPostsListado, getPulsoMercado } from "@/lib/posts";
+import { getPostsListado } from "@/lib/posts";
 import { calcularMinutos } from "@/lib/lectura";
 
 import Hero from "@/components/Hero";
 import SqlCard from "@/components/SqlCard";
 import StatsStrip from "@/components/StatsStrip";
 import NotasDestacadas from "@/components/NotasDestacadas";
-import PulsoMercado from "@/components/PulsoMercado";
 import CtaContacto from "@/components/CtaContacto";
 import Reveal from "@/components/Reveal";
 
 export default function Inicio() {
-  const pulso = getPulsoMercado();
   const ultimos = getPostsListado()
     .slice(0, 3)
     .map((p) => ({
@@ -38,9 +36,6 @@ export default function Inicio() {
       <Reveal delay={0.05}>
         <StatsStrip />
       </Reveal>
-      <div className="jx-wrap">
-        <PulsoMercado pulso={pulso} />
-      </div>
       <NotasDestacadas notas={ultimos} />
       <Reveal>
         <CtaContacto />

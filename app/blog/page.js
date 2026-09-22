@@ -1,13 +1,7 @@
-import {
-  getPostsListado,
-  getPostsListadoLite,
-  getPulsoMercado,
-  CATEGORIAS,
-} from "@/lib/posts";
+import { getPostsListado, getPostsListadoLite, CATEGORIAS } from "@/lib/posts";
 import Reveal from "@/components/Reveal";
 import NotasCarrusel from "@/components/NotasCarrusel";
 import BlogExplorer from "@/components/BlogExplorer";
-import PulsoMercado from "@/components/PulsoMercado";
 import NewsletterForm from "@/components/NewsletterForm";
 import { SITE_NAME, absUrl } from "@/lib/site";
 
@@ -28,7 +22,6 @@ export const metadata = {
 export default function Blog() {
   const posts = getPostsListado();
   const notas = getPostsListadoLite();
-  const pulso = getPulsoMercado();
 
   // Editor's Pick: la nota con destacada:true, o la más reciente.
   const pick = posts.find((p) => p.destacada) || posts[0];
@@ -70,10 +63,6 @@ export default function Blog() {
 
         <Reveal delay={0.03}>
           <NewsletterForm />
-        </Reveal>
-
-        <Reveal delay={0.04}>
-          <PulsoMercado pulso={pulso} />
         </Reveal>
 
         {recientes.length > 0 && (
