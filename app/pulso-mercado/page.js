@@ -55,6 +55,12 @@ export default function PulsoMercadoDashboard() {
             necesitas para construir tu propio criterio, en tres horizontes:
             Swing, Position y Long Term.
           </p>
+          <nav className="horizonte-subnav">
+            <Link href="/swing">Swing</Link>
+            <Link href="/position">Position</Link>
+            <Link href="/long-term">Long Term</Link>
+            <Link href="/calendario">Calendario</Link>
+          </nav>
         </header>
 
         {snapshot && (
