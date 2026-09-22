@@ -68,6 +68,8 @@ export async function GET(request) {
     }
 
     return NextResponse.json({
+      access_token: tokenData.access_token,
+      expires_in_days: tokenData.expires_in ? Math.round(tokenData.expires_in / 86400) : null,
       refresh_token: tokenData.refresh_token,
       person_urn: `urn:li:person:${userData.sub}`,
     });
