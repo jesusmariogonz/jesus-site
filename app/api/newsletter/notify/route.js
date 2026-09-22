@@ -3,6 +3,7 @@ import { getPostsListado } from "@/lib/posts";
 import { absUrl } from "@/lib/site";
 import { sendNewPostBroadcast, sendKindleCopy } from "@/lib/resend";
 import { markdownToHtml } from "@/lib/mdToHtml";
+import { postToFacebookPage } from "@/lib/facebook";
 
 /* ============================================================
    Aviso de nota nueva por correo
@@ -58,6 +59,18 @@ export async function GET(request) {
       });
     } catch (kindleErr) {
       console.error("newsletter/notify (kindle):", kindleErr);
+    }
+    try {
+      // Falla independiente: si Facebook rechaza el token o no está
+      // configurado, no debe tumbar el resto del aviso ya enviado.
+      await postToFacebookPage({
+        titulo: ultima.titulo,
+        resumen: ultima.resumen,
+        url: absUrl(`/blog/${ultima.slug}`),
+        imagenUrl: ultima.imagen ? absUrl(ultima.imagen) : null,
+      });
+    } catch (fbErr) {
+      console.error("newsletter/notify (facebook):", fbErr);
     }
     return NextResponse.json({
       ok: true,
