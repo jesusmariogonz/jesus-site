@@ -45,7 +45,14 @@ function NotaCard({ nota }) {
       <Link href={`/blog/${nota.slug}`} className="post-card-link">
         <NotaCover categoria={nota.categoria} imagen={nota.imagen} size="md" />
         <div className="post-card-body">
-          <span className="post-card-cat">{nota.categoriaNombre}</span>
+          {nota.horizonteNombre ? (
+            <span className={`insights-badge insights-badge-${nota.horizonte}`}>
+              {nota.horizonteNombre.toUpperCase()}
+              {nota.regionNombre && <> · {nota.regionNombre.toUpperCase()}</>}
+            </span>
+          ) : (
+            <span className="post-card-cat">{nota.categoriaNombre}</span>
+          )}
           <h3>{nota.titulo}</h3>
           {nota.resumen && <p>{nota.resumen}</p>}
           <span className="post-card-meta">

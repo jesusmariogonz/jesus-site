@@ -2,6 +2,7 @@ import Link from "next/link";
 import { CATEGORIAS, formatFechaCorta } from "@/lib/posts";
 import { calcularMinutos } from "@/lib/lectura";
 import NotaCover from "@/components/NotaCover";
+import InsightsBadge from "@/components/InsightsBadge";
 
 /* Tarjeta editorial: portada visual, categoría, titular grande
    y fecha + "N min de lectura →". */
@@ -13,9 +14,13 @@ export default function PostCard({ post }) {
       <Link href={`/blog/${post.slug}`} className="post-card-link">
         <NotaCover categoria={post.categoria} imagen={post.imagen} size="md" />
         <div className="post-card-body">
-          <span className="post-card-cat">
-            {CATEGORIAS[post.categoria] || post.categoria}
-          </span>
+          {post.horizonte ? (
+            <InsightsBadge horizonte={post.horizonte} region={post.region} />
+          ) : (
+            <span className="post-card-cat">
+              {CATEGORIAS[post.categoria] || post.categoria}
+            </span>
+          )}
           <h3>{post.titulo}</h3>
           <p>{post.resumen}</p>
           <span className="post-card-meta">

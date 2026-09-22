@@ -13,6 +13,7 @@ import { calcularMinutos } from "@/lib/lectura";
 import ShareRow from "@/components/ShareRow";
 import NotasCarrusel from "@/components/NotasCarrusel";
 import NotaCover from "@/components/NotaCover";
+import InsightsBadge from "@/components/InsightsBadge";
 import ReadingProgress from "@/components/ReadingProgress";
 import ArticleToc from "@/components/ArticleToc";
 import VolverArriba from "@/components/VolverArriba";
@@ -135,6 +136,9 @@ export default async function Post({ params }) {
                 {CATEGORIAS[post.categoria] || post.categoria}
               </Link>
             </span>
+            {post.horizonte && (
+              <InsightsBadge horizonte={post.horizonte} region={post.region} />
+            )}
             <h1>{post.titulo}</h1>
 
             {post.resumen && <p className="article-deck">{post.resumen}</p>}

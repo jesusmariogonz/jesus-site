@@ -156,6 +156,28 @@ export default defineConfig({
               "Ocultar del listado del blog (sigue accesible por su URL, para SEO/histórico)",
           },
           {
+            type: "string",
+            name: "horizonte",
+            label:
+              "Horizonte (Insights — opcional, para clasificar la nota como Swing/Position/Long Term/Macro)",
+            options: [
+              { value: "swing", label: "Swing — días a semanas" },
+              { value: "position", label: "Position — semanas a meses" },
+              { value: "long-term", label: "Long Term — meses a años" },
+              { value: "macro", label: "Macro" },
+            ],
+          },
+          {
+            type: "string",
+            name: "region",
+            label: "Región (Insights — opcional)",
+            options: [
+              { value: "us", label: "US" },
+              { value: "mexico", label: "México" },
+              { value: "global", label: "Global" },
+            ],
+          },
+          {
             type: "rich-text",
             name: "body",
             label: "Contenido",

@@ -3671,3 +3671,18 @@ html:not(.dark) .pglobe-land {
   color: var(--meta);
   white-space: nowrap;
 }
+
+/* ============================================================
+   Insights: badge de horizonte en tarjetas y notas del blog
+   ============================================================ */
+.insights-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+.insights-badge-swing { color: #1348d6; }
+.insights-badge-position { color: #0f766e; }
+.insights-badge-long-term { color: #6d40c4; }
+.insights-badge-macro { color: #b7791f; }
