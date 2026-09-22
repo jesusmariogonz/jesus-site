@@ -3711,6 +3711,32 @@ html:not(.dark) .pglobe-land {
   color: var(--ink-soft);
   max-width: 640px;
 }
+.activo-bloque {
+  margin-top: 26px;
+  max-width: 640px;
+}
+.activo-bloque h2 {
+  font-size: 1.02rem;
+  margin: 0 0 8px;
+}
+.activo-bloque p {
+  font-size: 0.96rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin: 0;
+}
+.activo-lista {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.activo-lista li {
+  font-size: 0.96rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
 .activo-otros {
   margin-top: 34px;
   padding-top: 22px;

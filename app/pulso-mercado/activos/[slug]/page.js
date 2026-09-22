@@ -39,6 +39,31 @@ export default async function ActivoPage({ params }) {
         <p className="activo-mercado">{activo.mercado}</p>
         <p className="activo-descripcion">{activo.descripcion}</p>
 
+        {activo.comoSeCalcula && (
+          <div className="activo-bloque">
+            <h2>Cómo se calcula</h2>
+            <p>{activo.comoSeCalcula}</p>
+          </div>
+        )}
+
+        {activo.queLoMueve?.length > 0 && (
+          <div className="activo-bloque">
+            <h2>Qué lo mueve</h2>
+            <ul className="activo-lista">
+              {activo.queLoMueve.map((punto, i) => (
+                <li key={i}>{punto}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {activo.porQueImporta && (
+          <div className="activo-bloque">
+            <h2>Por qué importa</h2>
+            <p>{activo.porQueImporta}</p>
+          </div>
+        )}
+
         <div className="activo-otros">
           <span className="activo-otros-titulo">Otros activos del glosario</span>
           <div className="activo-otros-lista">

@@ -52,11 +52,6 @@ export default function PulsoMercadoDashboard() {
   const { daily, weeklyOutlook } = pulso;
 
   const calendarioSemana = seccion(weeklyOutlook, "macro calendar");
-  const earningsSemana = seccion(weeklyOutlook, "earnings calendar");
-  const earningsHoy = seccion(daily, "earnings y calendario");
-  const queVigilarManana = seccion(daily, "que vigilar mañana");
-  const hayCalendario =
-    calendarioSemana || earningsSemana || earningsHoy || queVigilarManana;
 
   return (
     <section className="section">
@@ -158,38 +153,18 @@ export default function PulsoMercadoDashboard() {
 
         <PulsoMercado pulso={pulso} />
 
-        {hayCalendario && (
+        {calendarioSemana && (
           <>
             <div className="pulsodash-horizons-head">
               <span className="pulsodash-eyebrow">Calendario</span>
-              <h2>Fed · Banxico · Earnings · Datos económicos</h2>
+              <h2>Fed · Banxico · Datos económicos</h2>
             </div>
-            <div className="pulsodash-grid-2">
-              <Seccion
-                titulo="Calendario económico de la semana"
-                subtitulo={weeklyOutlook ? `Semana del ${formatFecha(weeklyOutlook.fecha)}` : null}
-                markdown={calendarioSemana}
-                vacio="Todavía no hay un Weekly Outlook publicado con el calendario de la semana."
-              />
-              <Seccion
-                titulo="Calendario de earnings de la semana"
-                subtitulo={weeklyOutlook ? `Semana del ${formatFecha(weeklyOutlook.fecha)}` : null}
-                markdown={earningsSemana}
-                vacio="Todavía no hay un Weekly Outlook publicado con earnings de la semana."
-              />
-              <Seccion
-                titulo="Earnings y calendario de hoy"
-                subtitulo={daily ? formatFecha(daily.fecha) : null}
-                markdown={earningsHoy}
-                vacio="Todavía no hay un Daily publicado con el calendario de hoy."
-              />
-              <Seccion
-                titulo="Qué vigilar mañana"
-                subtitulo={daily ? formatFecha(daily.fecha) : null}
-                markdown={queVigilarManana}
-                vacio="Todavía no hay un Daily publicado."
-              />
-            </div>
+            <Seccion
+              titulo="Calendario económico de la semana"
+              subtitulo={weeklyOutlook ? `Semana del ${formatFecha(weeklyOutlook.fecha)}` : null}
+              markdown={calendarioSemana}
+              vacio="Todavía no hay un Weekly Outlook publicado con el calendario de la semana."
+            />
           </>
         )}
       </div>
