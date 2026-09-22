@@ -3494,6 +3494,13 @@ html:not(.dark) .pglobe-land {
   font-size: 0.72rem;
   color: var(--meta);
 }
+.pulso-card-proxima {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--accent);
+}
 .pulso-card h3 {
   margin: 0;
   font-size: 0.98rem;
@@ -3686,3 +3693,52 @@ html:not(.dark) .pglobe-land {
 .insights-badge-position { color: #0f766e; }
 .insights-badge-long-term { color: #6d40c4; }
 .insights-badge-macro { color: #b7791f; }
+
+/* ============================================================
+   Ficha de activo (glosario de Pulso de Mercado)
+   ============================================================ */
+.activo-page h1 { margin: 10px 0 4px; font-size: clamp(1.6rem, 4vw, 2.1rem); }
+.activo-mercado {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  color: var(--accent);
+  margin: 0 0 18px;
+}
+.activo-descripcion {
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  max-width: 640px;
+}
+.activo-otros {
+  margin-top: 34px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+.activo-otros-titulo {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--meta);
+  margin-bottom: 10px;
+}
+.activo-otros-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.activo-otros-lista a {
+  font-size: 0.86rem;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+.activo-otros-lista a:hover {
+  color: var(--ink);
+  border-color: var(--accent);
+}

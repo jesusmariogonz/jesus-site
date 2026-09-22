@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { formatFechaCorta } from "@/lib/posts";
+import { proximaCorrida, formatProximaCorrida } from "@/lib/pulsoSchedule";
 
 /* ============================================================
    Pulso de Mercado
@@ -19,12 +20,15 @@ const TIPOS = [
 ];
 
 function TarjetaPulso({ tipo, nota }) {
+  const proxima = formatProximaCorrida(proximaCorrida(tipo.key));
+
   if (!nota) {
     return (
       <div className="pulso-card pulso-card-vacia">
         <span className="pulso-card-tipo">{tipo.etiqueta}</span>
         <span className="pulso-card-cuando">{tipo.cuando}</span>
         <span className="pulso-card-vacia-texto">Próximamente</span>
+        {proxima && <span className="pulso-card-proxima">Próxima: {proxima}</span>}
       </div>
     );
   }
@@ -34,6 +38,7 @@ function TarjetaPulso({ tipo, nota }) {
       <span className="pulso-card-cuando">{tipo.cuando}</span>
       <h3>{nota.titulo}</h3>
       <span className="pulso-card-fecha">{formatFechaCorta(nota.fecha)}</span>
+      {proxima && <span className="pulso-card-proxima">Próxima: {proxima}</span>}
     </Link>
   );
 }

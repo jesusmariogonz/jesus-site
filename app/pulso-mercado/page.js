@@ -1,9 +1,19 @@
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { getPulsoDashboard, getPulsoMercado, seccion, formatFecha } from "@/lib/posts";
+import {
+  getPulsoDashboard,
+  getPulsoMercado,
+  seccion,
+  formatFecha,
+  enlazarActivosEnTabla,
+} from "@/lib/posts";
 import PulsoMercado from "@/components/PulsoMercado";
 import { absUrl } from "@/lib/site";
+
+// Dinámico (no estático) para que "Próxima corrida" en cada tarjeta
+// siempre refleje la hora actual, no la del último build.
+export const dynamic = "force-dynamic";
 
 export const metadata = {
   title: "Pulso de Mercado",
@@ -72,7 +82,9 @@ export default function PulsoMercadoDashboard() {
         {snapshot && (
           <div className="pulsodash-panel pulsodash-snapshot prose">
             <span className="pulsodash-panel-title">Market Snapshot</span>
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>{snapshot}</ReactMarkdown>
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {enlazarActivosEnTabla(snapshot)}
+            </ReactMarkdown>
           </div>
         )}
 
