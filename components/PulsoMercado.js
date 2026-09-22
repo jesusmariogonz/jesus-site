@@ -12,10 +12,10 @@ import { formatFechaCorta } from "@/lib/posts";
    ============================================================ */
 
 const TIPOS = [
-  { key: "daily", etiqueta: "Daily", desc: "Qué pasó hoy" },
-  { key: "weeklyReview", etiqueta: "Weekly Review", desc: "Cierre de semana" },
-  { key: "weeklyOutlook", etiqueta: "Weekly Outlook", desc: "Apertura de semana" },
-  { key: "monthly", etiqueta: "Monthly Review", desc: "Cierre de mes" },
+  { key: "daily", etiqueta: "Daily", desc: "Qué pasó hoy", cuando: "Lun-Vie · 7:00" },
+  { key: "weeklyReview", etiqueta: "Weekly Review", desc: "Cierre de semana", cuando: "Viernes · 15:00" },
+  { key: "weeklyOutlook", etiqueta: "Weekly Outlook", desc: "Apertura de semana", cuando: "Domingo · 12:00" },
+  { key: "monthly", etiqueta: "Monthly Review", desc: "Cierre de mes", cuando: "Día 1 de mes · 7:00" },
 ];
 
 function TarjetaPulso({ tipo, nota }) {
@@ -23,6 +23,7 @@ function TarjetaPulso({ tipo, nota }) {
     return (
       <div className="pulso-card pulso-card-vacia">
         <span className="pulso-card-tipo">{tipo.etiqueta}</span>
+        <span className="pulso-card-cuando">{tipo.cuando}</span>
         <span className="pulso-card-vacia-texto">Próximamente</span>
       </div>
     );
@@ -30,6 +31,7 @@ function TarjetaPulso({ tipo, nota }) {
   return (
     <Link href={`/blog/${nota.slug}`} className="pulso-card">
       <span className="pulso-card-tipo">{tipo.etiqueta}</span>
+      <span className="pulso-card-cuando">{tipo.cuando}</span>
       <h3>{nota.titulo}</h3>
       <span className="pulso-card-fecha">{formatFechaCorta(nota.fecha)}</span>
     </Link>

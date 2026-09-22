@@ -3490,6 +3490,10 @@ html:not(.dark) .pglobe-land {
   text-transform: uppercase;
   color: var(--accent);
 }
+.pulso-card-cuando {
+  font-size: 0.72rem;
+  color: var(--meta);
+}
 .pulso-card h3 {
   margin: 0;
   font-size: 0.98rem;
