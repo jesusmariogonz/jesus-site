@@ -204,7 +204,7 @@ export default async function Post({ params }) {
             </aside>
           </div>
 
-          {recientes.length > 0 && (
+          {!post.pulsoTipo && recientes.length > 0 && (
             <NotasCarrusel notas={recientes} titulo="Sigue leyendo" />
           )}
 
