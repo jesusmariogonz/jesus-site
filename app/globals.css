@@ -3600,3 +3600,70 @@ html:not(.dark) .pglobe-land {
     grid-template-columns: 1fr;
   }
 }
+
+/* ============================================================
+   Páginas de horizonte (/swing, /position, /long-term)
+   ============================================================ */
+.pulsodash-horizon-more {
+  display: inline-block;
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--h-color);
+  text-decoration: none;
+}
+.pulsodash-horizon-more:hover { text-decoration: underline; }
+
+.horizonte-header { text-align: center; margin: 8px 0 6px; }
+.horizonte-header h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); margin: 8px 0 2px; }
+.horizonte-header .pulsodash-eyebrow a { color: var(--accent); text-decoration: none; }
+.horizonte-header .pulsodash-eyebrow a:hover { text-decoration: underline; }
+.horizonte-span { font-family: var(--font-mono); color: var(--meta); margin: 0; }
+.horizonte-swing h1 { color: #1348d6; }
+.horizonte-position h1 { color: #0f766e; }
+.horizonte-longterm h1 { color: #6d40c4; }
+
+.horizonte-subnav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 22px 0 30px;
+}
+.horizonte-subnav a {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  padding: 7px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+.horizonte-subnav a.on {
+  color: var(--ink);
+  border-color: var(--accent);
+  background: var(--surface);
+  font-weight: 600;
+}
+.horizonte-subnav a:hover { color: var(--ink); }
+
+.horizonte-bloque {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 22px 24px;
+  margin-bottom: 16px;
+}
+.horizonte-bloque-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.horizonte-bloque-head h2 { font-size: 1.05rem; }
+.horizonte-bloque-fuente {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--meta);
+  white-space: nowrap;
+}

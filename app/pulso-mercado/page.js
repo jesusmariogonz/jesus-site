@@ -1,3 +1,4 @@
+import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { getPulsoDashboard, formatFecha } from "@/lib/posts";
@@ -93,6 +94,9 @@ export default function PulsoMercadoDashboard() {
             ) : (
               <p className="pulsodash-vacio">Próximamente.</p>
             )}
+            <Link href="/swing" className="pulsodash-horizon-more">
+              Ver Swing completo →
+            </Link>
           </article>
           <article className="pulsodash-horizon position">
             <div className="pulsodash-horizon-name">Position</div>
@@ -106,6 +110,9 @@ export default function PulsoMercadoDashboard() {
             ) : (
               <p className="pulsodash-vacio">Próximamente.</p>
             )}
+            <Link href="/position" className="pulsodash-horizon-more">
+              Ver Position completo →
+            </Link>
           </article>
           <article className="pulsodash-horizon longterm">
             <div className="pulsodash-horizon-name">Long Term</div>
@@ -119,6 +126,9 @@ export default function PulsoMercadoDashboard() {
             ) : (
               <p className="pulsodash-vacio">Próximamente.</p>
             )}
+            <Link href="/long-term" className="pulsodash-horizon-more">
+              Ver Long Term completo →
+            </Link>
           </article>
         </div>
 
