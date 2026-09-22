@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getPostsListado } from "@/lib/posts";
 import { absUrl } from "@/lib/site";
 import { sendNewPostBroadcast, sendKindleCopy } from "@/lib/resend";
+import { markdownToHtml } from "@/lib/mdToHtml";
 
 /* ============================================================
    Aviso de nota nueva por correo
@@ -53,6 +54,7 @@ export async function GET(request) {
         titulo: ultima.titulo,
         resumen: ultima.resumen,
         url: absUrl(`/blog/${ultima.slug}`),
+        contenidoHtml: markdownToHtml(ultima.content || ""),
       });
     } catch (kindleErr) {
       console.error("newsletter/notify (kindle):", kindleErr);
