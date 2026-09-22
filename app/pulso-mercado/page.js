@@ -41,8 +41,8 @@ export default function PulsoMercadoDashboard() {
     getPulsoDashboard();
   const { daily, weeklyOutlook } = pulso;
 
-  const calendarioSemana = seccion(weeklyOutlook, "calendario economico");
-  const earningsSemana = seccion(weeklyOutlook, "calendario de earnings");
+  const calendarioSemana = seccion(weeklyOutlook, "macro calendar");
+  const earningsSemana = seccion(weeklyOutlook, "earnings calendar");
   const earningsHoy = seccion(daily, "earnings y calendario");
   const queVigilarManana = seccion(daily, "que vigilar mañana");
   const hayCalendario =

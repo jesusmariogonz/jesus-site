@@ -41,13 +41,13 @@ export default function LongTermPage() {
         <HorizonteBloque
           titulo="Themes to Watch"
           fuente={weeklyOutlook ? `Semana del ${formatFecha(weeklyOutlook.fecha)}` : null}
-          markdown={seccion(weeklyOutlook, "long-term themes")}
+          markdown={seccion(weeklyOutlook, "long-term radar")}
           vacio="Todavía no hay un Weekly Outlook publicado con temas de largo plazo."
         />
         <HorizonteBloque
           titulo="Thesis Changes"
           fuente={monthly ? formatFecha(monthly.fecha) : null}
-          markdown={seccion(monthly, "cambios de tesis de largo plazo")}
+          markdown={seccion(monthly, "thesis tracker")}
           vacio="Todavía no hay un Monthly Review publicado con cambios de tesis."
         />
       </div>

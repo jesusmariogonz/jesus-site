@@ -29,13 +29,13 @@ export default function CalendarioPage() {
         <HorizonteBloque
           titulo="Calendario económico de la semana"
           fuente={weeklyOutlook ? `Semana del ${formatFecha(weeklyOutlook.fecha)}` : null}
-          markdown={seccion(weeklyOutlook, "calendario economico")}
+          markdown={seccion(weeklyOutlook, "macro calendar")}
           vacio="Todavía no hay un Weekly Outlook publicado con el calendario de la semana."
         />
         <HorizonteBloque
           titulo="Calendario de earnings de la semana"
           fuente={weeklyOutlook ? `Semana del ${formatFecha(weeklyOutlook.fecha)}` : null}
-          markdown={seccion(weeklyOutlook, "calendario de earnings")}
+          markdown={seccion(weeklyOutlook, "earnings calendar")}
           vacio="Todavía no hay un Weekly Outlook publicado con earnings de la semana."
         />
         <HorizonteBloque
