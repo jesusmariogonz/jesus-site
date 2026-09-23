@@ -2,6 +2,7 @@
 titulo: 'Las mismas empresas que crearon el riesgo de ciberataques con IA ahora venden la defensa contra él'
 fecha: 2026-09-02
 categoria: ia
+mundo: tecnologia-y-negocio
 tags:
   - inteligencia artificial
   - ciberseguridad

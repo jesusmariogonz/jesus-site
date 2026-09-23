@@ -2,6 +2,7 @@
 titulo: '¿Se prepara Europa para la guerra? Ocho señales verificadas de la misma semana'
 fecha: 2026-09-21T00:00:00.000Z
 categoria: geopolitics
+mundo: ideas-y-ensayos
 tags:
   - Europa
   - Rusia

@@ -2,6 +2,7 @@
 titulo: '¿Podría una IA ser consciente? Lo que dice la ciencia antes de que lo diga la ciencia ficción'
 fecha: 2026-09-11T00:00:00.000Z
 categoria: ia
+mundo: ideas-y-ensayos
 tags:
   - IA
   - Consciencia

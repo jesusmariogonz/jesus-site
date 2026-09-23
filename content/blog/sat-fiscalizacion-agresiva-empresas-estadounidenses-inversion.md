@@ -12,6 +12,7 @@ datosClave:
 titulo: 'El SAT le puso precio a la certeza: lo que revela la queja de 300 empresas de EU'
 fecha: 2026-08-19T00:00:00.000Z
 categoria: business
+mundo: mexico-y-latam
 tags:
   - SAT
   - Fiscalización

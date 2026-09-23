@@ -2,6 +2,7 @@
 titulo: 'La economía mexicana mantuvo el paso en agosto, y los analistas ya no ven a Banxico moviéndose antes de 2027'
 fecha: 2026-09-23
 categoria: fintech
+mundo: mexico-y-latam
 tags:
   - INEGI
   - IGAE

@@ -2,6 +2,7 @@
 titulo: 'La manufactura mexicana lleva 29 meses seguidos en contracción, y nadie en el discurso oficial lo está diciendo'
 fecha: 2026-09-04
 categoria: business
+mundo: mexico-y-latam
 tags:
   - IMEF
   - manufactura

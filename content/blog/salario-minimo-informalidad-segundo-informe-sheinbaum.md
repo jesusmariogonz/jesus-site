@@ -2,6 +2,7 @@
 titulo: 'El salario mínimo subió 154% en siete años, pero cada vez más mexicanos trabajan fuera de su alcance'
 fecha: 2026-08-31
 categoria: business
+mundo: mexico-y-latam
 tags:
   - salario mínimo
   - informalidad

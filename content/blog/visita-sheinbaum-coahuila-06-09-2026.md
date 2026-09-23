@@ -2,6 +2,7 @@
 titulo: 'Sheinbaum en Coahuila: el tren, la carretera a Monclova y la pregunta pendiente sobre AHMSA'
 fecha: 2026-09-06T00:00:00.000Z
 categoria: business
+mundo: mexico-y-latam
 tags:
   - Sheinbaum
   - Coahuila

@@ -2,6 +2,7 @@
 titulo: 'México no se subió a la ola de la IA: se convirtió en su banda de ensamblaje'
 fecha: 2026-09-23
 categoria: business
+mundo: mexico-y-latam
 tags:
   - nearshoring
   - inteligencia artificial

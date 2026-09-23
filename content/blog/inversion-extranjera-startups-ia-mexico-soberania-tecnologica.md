@@ -2,6 +2,7 @@
 titulo: 'Tres de cada cuatro inversionistas de las startups mexicanas de IA no son mexicanos, y eso importa más que el monto que traen'
 fecha: 2026-09-09
 categoria: business
+mundo: mexico-y-latam
 tags:
   - inteligencia artificial
   - startups

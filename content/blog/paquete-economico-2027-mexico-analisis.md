@@ -2,6 +2,7 @@
 titulo: 'El Paquete Económico 2027 recorta el déficit en el papel — el costo real lo absorbe Pemex, no el gasto social'
 fecha: 2026-09-08
 categoria: business
+mundo: mexico-y-latam
 tags:
   - Paquete Económico 2027
   - déficit fiscal

@@ -2,6 +2,7 @@
 titulo: 'Generación Z: del smartphone al mercado global'
 fecha: 2026-08-10T15:37:01.754Z
 categoria: fintech
+mundo: ideas-y-ensayos
 tags:
   - Generación Z
   - criptomonedas

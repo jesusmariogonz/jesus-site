@@ -2,6 +2,7 @@
 titulo: "Cuando el balón deja de ser el protagonista: la multa que reabrió el debate sobre los datos personales"
 fecha: "2026-07-14"
 categoria: "business"
+mundo: datos-como-negocio
 resumen: "La sanción impuesta por el tratamiento de datos biométricos en el fútbol mexicano evidencia que la privacidad ya no es un asunto legal, sino un activo estratégico para cualquier organización."
 destacada: true
 imagen: "/blog/fan-id-portada.jpg"

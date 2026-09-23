@@ -2,6 +2,7 @@
 titulo: 'México quiere ser el próximo Brasil de los pagos digitales, pero ya lo intentó una vez y fracasó'
 fecha: 2026-09-14
 categoria: fintech
+mundo: mexico-y-latam
 tags:
   - CoDi
   - pagos digitales

@@ -2,6 +2,7 @@
 titulo: Banxico subió su pronóstico de crecimiento y aun así el crédito a empresas está en su punto más débil en cinco años
 fecha: 2026-08-28T00:00:00.000Z
 categoria: fintech
+mundo: mexico-y-latam
 tags:
   - Banxico
   - crédito empresarial

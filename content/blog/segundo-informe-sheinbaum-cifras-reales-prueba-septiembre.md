@@ -2,6 +2,7 @@
 titulo: 'El Segundo Informe presumió cifras récord — la prueba real de la política económica de Sheinbaum llega el 8 de septiembre'
 fecha: 2026-09-01
 categoria: business
+mundo: mexico-y-latam
 tags:
   - Segundo Informe de Gobierno
   - Sheinbaum

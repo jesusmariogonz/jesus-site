@@ -2,6 +2,7 @@
 titulo: 'AHMSA: anatomía de la quiebra industrial más grande de México'
 fecha: 2026-09-06T00:00:00.000Z
 categoria: business
+mundo: mexico-y-latam
 tags:
   - AHMSA
   - Alonso Ancira
