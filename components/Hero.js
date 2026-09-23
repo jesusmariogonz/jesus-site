@@ -8,12 +8,10 @@ import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion
    subtítulo de valor, stack en chips y CTAs. */
 
 const STACK = [
-  "Snowflake",
-  "Databricks",
-  "Azure",
-  "Python",
+  "Data Architecture",
   "AI",
-  "Product Management",
+  "Analytics",
+  "Data Products",
 ];
 
 const fadeUp = (reduce, delay) =>
@@ -51,17 +49,16 @@ export default function Hero() {
       </motion.div>
 
       <motion.h1 {...fadeUp(reduce, 0.08)}>
-        Data Products.
+        Data <span aria-hidden="true">·</span>
         <br />
-        Inteligencia Artificial.
+        AI <span aria-hidden="true">·</span>
         <br />
-        <span className="jx-grad">Analítica.</span>
+        <span className="jx-grad">Business.</span>
       </motion.h1>
 
       <motion.p className="jx-hero2-sub" {...fadeUp(reduce, 0.16)}>
-        Transformo datos en ventajas competitivas mediante plataformas
-        analíticas, inteligencia artificial y soluciones escalables para
-        empresas de retail y consumo.
+        Diseño soluciones de datos e inteligencia artificial que convierten
+        información en decisiones de negocio.
       </motion.p>
 
       <motion.div className="jx-hero2-stack" {...fadeUp(reduce, 0.24)}>
@@ -73,12 +70,12 @@ export default function Hero() {
       </motion.div>
 
       <motion.div className="jx-hero2-cta" {...fadeUp(reduce, 0.32)}>
-        <Link href="/contacto" className="btn">
-          Hablemos →
+        <Link href="/proyectos" className="btn">
+          Ver proyectos →
         </Link>
-        <a href="/cv/cv.pdf" target="_blank" rel="noopener" className="btn ghost">
-          Ver CV
-        </a>
+        <Link href="/blog" className="btn ghost">
+          Leer el blog
+        </Link>
       </motion.div>
     </section>
   );

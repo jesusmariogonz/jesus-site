@@ -4,6 +4,8 @@ import { calcularMinutos } from "@/lib/lectura";
 import Hero from "@/components/Hero";
 import SqlCard from "@/components/SqlCard";
 import StatsStrip from "@/components/StatsStrip";
+import FeaturedProjects from "@/components/FeaturedProjects";
+import PulsoMercadoMini from "@/components/PulsoMercadoMini";
 import NotasDestacadas from "@/components/NotasDestacadas";
 import CtaContacto from "@/components/CtaContacto";
 import Reveal from "@/components/Reveal";
@@ -36,7 +38,11 @@ export default function Inicio() {
       <Reveal delay={0.05}>
         <StatsStrip />
       </Reveal>
+      <Reveal delay={0.05}>
+        <FeaturedProjects />
+      </Reveal>
       <NotasDestacadas notas={ultimos} />
+      <PulsoMercadoMini />
       <Reveal>
         <CtaContacto />
       </Reveal>

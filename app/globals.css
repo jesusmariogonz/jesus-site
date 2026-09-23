@@ -2672,6 +2672,39 @@ html:not(.dark) .pglobe-land {
   line-height: 1.6;
   color: var(--ink-soft);
 }
+.pshow-case {
+  margin: 14px 0 4px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.pshow-case dt {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 3px;
+}
+.pshow-case dd {
+  margin: 0;
+  font-size: 0.87rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.pshow-cta {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+.pshow-cta:hover {
+  text-decoration: underline;
+}
 .pshow-toggle {
   display: inline-block;
   margin-top: 10px;
@@ -3771,4 +3804,159 @@ html:not(.dark) .pglobe-land {
 .activo-otros-lista a:hover {
   color: var(--ink);
   border-color: var(--accent);
+}
+
+/* ============================================================
+   Home: Proyectos destacados
+   ============================================================ */
+.featured-projects { margin: 48px auto; }
+.featured-projects-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.featured-projects-head h2 { margin: 0; font-size: 1.3rem; }
+.featured-projects-head a {
+  font-size: 0.88rem;
+  color: var(--accent);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.featured-projects-head a:hover { text-decoration: underline; }
+.featured-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.featured-project-card {
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+}
+.featured-project-cat {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.featured-project-card h3 {
+  margin: 8px 0 8px;
+  font-size: 1.05rem;
+}
+.featured-project-card p {
+  margin: 0 0 14px;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  flex: 1;
+}
+.featured-project-region {
+  font-size: 0.78rem;
+  color: var(--meta);
+  margin-bottom: 10px;
+}
+.featured-project-cta {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+.featured-project-cta:hover { text-decoration: underline; }
+
+@media (max-width: 860px) {
+  .featured-projects-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   Home: mención discreta de Pulso de Mercado
+   ============================================================ */
+.pulso-mini { margin: 12px auto 40px; }
+.pulso-mini-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 14px 18px;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  background: var(--surface);
+  text-decoration: none;
+  color: inherit;
+}
+.pulso-mini-link:hover { border-color: var(--accent); text-decoration: none; }
+.pulso-mini-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.pulso-mini-titulo {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink);
+  flex: 1;
+}
+.pulso-mini-fecha { font-size: 0.8rem; color: var(--meta); }
+.pulso-mini-flecha { color: var(--accent); }
+
+.footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.footer-name { font-weight: 700; color: var(--ink); font-size: 0.95rem; }
+.footer-tagline {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--accent);
+}
+.footer-linkedin {
+  margin-top: 6px;
+  font-size: 0.84rem;
+  color: var(--ink-soft);
+  text-decoration: none;
+  width: fit-content;
+}
+.footer-linkedin:hover { color: var(--accent); }
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  align-content: flex-start;
+}
+.footer-links a {
+  font-size: 0.86rem;
+  color: var(--meta);
+  text-decoration: none;
+}
+.footer-links a:hover { color: var(--ink); }
+
+.sobre-evolucion {
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
+  color: var(--accent);
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+}
+.sobre-cierre {
+  margin-top: 28px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink);
 }

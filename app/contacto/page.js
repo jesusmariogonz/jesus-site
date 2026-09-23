@@ -25,9 +25,10 @@ export default function Contacto() {
     <section className="section">
       <div className="container">
         <span className="sql-meta">-- contacto</span>
-        <h2>Hablemos</h2>
+        <h2>¿Tienes un reto de datos, IA o analítica?</h2>
         <p style={{ color: "var(--ink-soft)", maxWidth: "56ch" }}>
-          ¿Datos, IA o retail? Escríbeme.
+          Podemos hablar sobre arquitectura, productos de datos, inteligencia
+          artificial, analítica o estrategia.
         </p>
         <ul className="contact-list">
           {canales.map((c) => (

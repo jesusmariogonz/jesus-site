@@ -2,6 +2,7 @@ import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import "./inicio.css";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import {
   SITE_URL,
   SITE_NAME,
@@ -141,14 +142,7 @@ export default function RootLayout({ children }) {
         />
         <Header />
         <main>{children}</main>
-        <footer className="site-footer">
-          <div className="container">
-            <span className="sql-meta">
-              © {new Date().getFullYear()} · hecho con Next.js · desplegado en
-              Vercel
-            </span>
-          </div>
-        </footer>
+        <Footer />
         <Analytics />
       </body>
     </html>

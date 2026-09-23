@@ -58,7 +58,20 @@ export default function SobreMi() {
             inteligencia artificial y capacidades digitales.
           </p>
 
-          <h2>En qué me enfoco</h2>
+          <p className="sobre-evolucion">
+            Infraestructura → Ingeniería de datos → Analítica → Arquitectura
+            de datos → Productos de datos → IA / GenAI
+          </p>
+
+          <h2>Cómo trabajo</h2>
+          <p>
+            Parto siempre del negocio antes que de la tecnología: entender qué
+            decisión se quiere tomar mejor, para luego diseñar la arquitectura
+            de datos que la soporta, construir el producto sobre ella, y
+            aplicar IA donde realmente mueve la aguja — todo bajo estándares
+            de gobierno de datos que hacen esa solución sostenible, no un
+            experimento aislado.
+          </p>
           <SobreFocos focos={focos} />
 
           <h2>Mi trayectoria</h2>
@@ -104,6 +117,11 @@ export default function SobreMi() {
               <strong>Proyectos</strong> personales y experimentos.
             </li>
           </ul>
+
+          <p className="sobre-cierre">
+            Trabajo en la intersección entre datos, inteligencia artificial y
+            negocio.
+          </p>
         </div>
       </div>
     </article>

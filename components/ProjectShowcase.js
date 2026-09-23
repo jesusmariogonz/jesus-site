@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { PROYECTOS } from "@/lib/proyectos";
 import ProjectArt from "@/components/ProjectArt";
@@ -79,6 +80,49 @@ export default function ProjectShowcase() {
                         ))}
                       </div>
                     )}
+
+                    <dl className="pshow-case">
+                      {p.problema && (
+                        <div>
+                          <dt>Problema</dt>
+                          <dd>{p.problema}</dd>
+                        </div>
+                      )}
+                      {p.contexto && (
+                        <div>
+                          <dt>Contexto</dt>
+                          <dd>{p.contexto}</dd>
+                        </div>
+                      )}
+                      {p.solucion && (
+                        <div>
+                          <dt>Solución</dt>
+                          <dd>{p.solucion}</dd>
+                        </div>
+                      )}
+                      {p.arquitectura && (
+                        <div>
+                          <dt>Arquitectura</dt>
+                          <dd>{p.arquitectura}</dd>
+                        </div>
+                      )}
+                      {p.rol && (
+                        <div>
+                          <dt>Mi rol</dt>
+                          <dd>{p.rol}</dd>
+                        </div>
+                      )}
+                      {p.impacto && (
+                        <div>
+                          <dt>Impacto</dt>
+                          <dd>{p.impacto}</dd>
+                        </div>
+                      )}
+                    </dl>
+
+                    <Link href="/contacto" className="pshow-cta">
+                      Hablemos sobre este tipo de proyecto →
+                    </Link>
                   </motion.div>
                 )}
               </AnimatePresence>
