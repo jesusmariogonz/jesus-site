@@ -2711,6 +2711,37 @@ html:not(.dark) .pglobe-land {
   color: var(--accent);
   text-decoration: none;
 }
+.proyecto-relacionado {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 28px 0;
+  padding: 16px 18px;
+  border: 1px solid var(--line-soft);
+  border-radius: 12px;
+  background: var(--surface);
+  text-decoration: none;
+  transition: border-color 0.15s ease;
+}
+.proyecto-relacionado:hover {
+  border-color: var(--accent);
+}
+.proyecto-relacionado-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.proyecto-relacionado-nombre {
+  flex: 1;
+  font-weight: 600;
+  color: var(--ink);
+}
+.proyecto-relacionado-flecha {
+  color: var(--accent);
+}
 .pshow-cta:hover {
   text-decoration: underline;
 }

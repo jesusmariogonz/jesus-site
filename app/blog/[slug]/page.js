@@ -20,6 +20,7 @@ import VolverArriba from "@/components/VolverArriba";
 import ToolkitBanner from "@/components/ToolkitBanner";
 import NewsletterForm from "@/components/NewsletterForm";
 import { SITE_NAME, AUTHOR, absUrl } from "@/lib/site";
+import { PROYECTOS, CATEGORIA_PROYECTO } from "@/lib/proyectos";
 
 export function generateStaticParams() {
   return getPosts().map((p) => ({ slug: p.slug }));
@@ -69,8 +70,17 @@ export default async function Post({ params }) {
   const minutos = calcularMinutos(post.content || "");
   const todas = getPostsListadoLite();
 
-  // Carrusel "una vez adentro": las notas más nuevas, sin la actual.
-  const recientes = todas.filter((n) => n.slug !== slug).slice(0, 5);
+  // Carrusel "una vez adentro": primero notas de la misma categoría
+  // ("también te puede interesar"), luego el resto de las más nuevas.
+  const otras = todas.filter((n) => n.slug !== slug);
+  const relacionadas = otras.filter((n) => n.categoria === post.categoria);
+  const resto = otras.filter((n) => n.categoria !== post.categoria);
+  const recientes = [...relacionadas, ...resto].slice(0, 5);
+
+  const proyectoRelacionadoId = CATEGORIA_PROYECTO[post.categoria];
+  const proyectoRelacionado = proyectoRelacionadoId
+    ? PROYECTOS.find((p) => p.id === proyectoRelacionadoId)
+    : null;
 
   // Datos estructurados de artículo + miga de pan (breadcrumbs).
   const jsonLd = {
@@ -170,6 +180,16 @@ export default async function Post({ params }) {
 
               <ShareRow titulo={post.titulo} />
 
+              {proyectoRelacionado && (
+                <Link href="/proyectos" className="proyecto-relacionado">
+                  <span className="proyecto-relacionado-label">Proyecto relacionado</span>
+                  <span className="proyecto-relacionado-nombre">
+                    {proyectoRelacionado.corto}
+                  </span>
+                  <span className="proyecto-relacionado-flecha">→</span>
+                </Link>
+              )}
+
               <NewsletterForm titulo="¿Te sirvió esta nota?" desc="Suscríbete y te aviso cuando publique una nueva." />
             </div>
 
@@ -205,7 +225,10 @@ export default async function Post({ params }) {
           </div>
 
           {!post.pulsoTipo && recientes.length > 0 && (
-            <NotasCarrusel notas={recientes} titulo="Sigue leyendo" />
+            <NotasCarrusel
+              notas={recientes}
+              titulo={relacionadas.length > 0 ? "También te puede interesar" : "Sigue leyendo"}
+            />
           )}
 
           <p style={{ marginTop: 32 }}>
