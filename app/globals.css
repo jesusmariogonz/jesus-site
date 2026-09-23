@@ -1865,6 +1865,15 @@ html:not(.dark) .pglobe-land {
   color: var(--tk-gold-light);
   margin-bottom: 10px;
 }
+.tk-card-categoria {
+  display: inline-block;
+  padding: 2px 7px;
+  margin-right: 8px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 0.65rem;
+}
 .tk-card-title {
   margin: 0 0 8px;
   font-size: 1.05rem;
@@ -2957,6 +2966,20 @@ html:not(.dark) .pglobe-land {
   line-height: 1.6;
 }
 
+.lib-categoria {
+  margin-bottom: 8px;
+}
+.lib-categoria-titulo {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line-soft);
+}
 .lib-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));

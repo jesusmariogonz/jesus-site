@@ -64,7 +64,10 @@ export default function ToolkitCatalog({ productos, bundles }) {
                   <span className="tk-card-check-box" aria-hidden="true" />
                 </label>
                 {p.badge && <span className="tk-card-badge">{p.badge}</span>}
-                <span className="tk-card-formato">{p.formato}</span>
+                <span className="tk-card-formato">
+                  {p.categoria && <span className="tk-card-categoria">{p.categoria}</span>}
+                  {p.formato}
+                </span>
                 <h3 className="tk-card-title">
                   <Link href={`/the-toolkit/${p.id}`} className="tk-card-title-link">
                     {p.nombre}

@@ -9,7 +9,13 @@ export const metadata = {
   alternates: { canonical: "/recursos" },
 };
 
+const ORDEN_CATEGORIAS = ["Analytics", "AI", "Data", "Architecture", "Business"];
+
 export default function Recursos() {
+  const categorias = ORDEN_CATEGORIAS.filter((cat) =>
+    LIBROS.some((l) => l.categoria === cat)
+  );
+
   return (
     <section className="lib-page">
       <div className="container">
@@ -23,11 +29,16 @@ export default function Recursos() {
           </p>
         </div>
 
-        <div className="lib-grid">
-          {LIBROS.map((l) => (
-            <RecursoCard key={l.id} libro={l} />
-          ))}
-        </div>
+        {categorias.map((cat) => (
+          <div key={cat} className="lib-categoria">
+            <h2 className="lib-categoria-titulo">{cat}</h2>
+            <div className="lib-grid">
+              {LIBROS.filter((l) => l.categoria === cat).map((l) => (
+                <RecursoCard key={l.id} libro={l} />
+              ))}
+            </div>
+          </div>
+        ))}
 
         <div className="lib-cta-final">
           <p>¿Buscas algo más a fondo, con ejercicios y plantillas?</p>

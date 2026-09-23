@@ -34,9 +34,9 @@ export default function TheToolkit() {
         <ToolkitCatalog productos={TOOLKIT_PRODUCTOS} bundles={TOOLKIT_BUNDLES} />
 
         <div className="tk-cta-final">
-          <p>¿Quieres que te avise en cuanto abra un recurso nuevo?</p>
+          <p>¿Quieres leer sobre cómo aplico estas herramientas en proyectos reales?</p>
           <Link href="/blog" className="tk-banner-cta">
-            Suscríbete al newsletter →
+            Lee el blog →
           </Link>
         </div>
       </div>
