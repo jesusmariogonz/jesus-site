@@ -5,6 +5,7 @@ import Hero from "@/components/Hero";
 import SqlCard from "@/components/SqlCard";
 import StatsStrip from "@/components/StatsStrip";
 import FeaturedProjects from "@/components/FeaturedProjects";
+import MundosGrid from "@/components/MundosGrid";
 import PulsoMercadoMini from "@/components/PulsoMercadoMini";
 import NotasDestacadas from "@/components/NotasDestacadas";
 import CtaContacto from "@/components/CtaContacto";
@@ -40,6 +41,9 @@ export default function Inicio() {
       </Reveal>
       <Reveal delay={0.05}>
         <FeaturedProjects />
+      </Reveal>
+      <Reveal delay={0.05}>
+        <MundosGrid />
       </Reveal>
       <NotasDestacadas notas={ultimos} />
       <PulsoMercadoMini />

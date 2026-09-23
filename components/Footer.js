@@ -2,7 +2,7 @@ import Link from "next/link";
 import { AUTHOR } from "@/lib/site";
 
 const LINKS = [
-  { href: "/blog", label: "Blog" },
+  { href: "/blog", label: "Ideas" },
   { href: "/mundos", label: "Mundos" },
   { href: "/pulso-mercado", label: "Pulso de Mercado" },
   { href: "/proyectos", label: "Proyectos" },
