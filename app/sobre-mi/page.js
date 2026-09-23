@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import CvTimeline from "@/components/CvTimeline";
 import SobreFocos from "@/components/SobreFocos";
 
@@ -121,6 +122,14 @@ export default function SobreMi() {
           <p className="sobre-cierre">
             Trabajo en la intersección entre datos, inteligencia artificial y
             negocio.
+          </p>
+
+          <p style={{ margin: "24px 0 0" }}>
+            <Link href="/proyectos">Ver proyectos →</Link>{" "}
+            ·{" "}
+            <Link href="/blog">Leer el blog →</Link>{" "}
+            ·{" "}
+            <Link href="/contacto">Contactar →</Link>
           </p>
         </div>
       </div>
