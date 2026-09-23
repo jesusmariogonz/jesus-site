@@ -188,6 +188,104 @@ const MOTIVOS = {
     </>
   ),
 
+  // 09 · Producto de datos — pipeline de dos bloques conectados
+  producto: ({ variant, hueA, hueB }) => (
+    <>
+      <Defs variant={variant} hueA={hueA} hueB={hueB} />
+      <rect width="400" height="240" fill={`url(#${GRAD_ID(variant)}-glow)`} />
+      <rect x="55" y="90" width="110" height="80" rx="14" fill={`url(#${GRAD_ID(variant)})`} opacity="0.9" />
+      <rect x="235" y="150" width="110" height="80" rx="14" fill="none" stroke={hueA} strokeWidth="1.6" opacity="0.65" />
+      <path
+        d="M165 120 H210 a20 20 0 0 1 20 20 V150"
+        stroke={hueA}
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        fill="none"
+      />
+      <circle cx="100" cy="60" r="16" fill="none" stroke={hueA} strokeWidth="1.4" opacity="0.5" />
+    </>
+  ),
+
+  // 10 · Arquitectura analítica — capas apiladas de plataforma
+  arquitectura: ({ variant, hueA, hueB }) => (
+    <>
+      <Defs variant={variant} hueA={hueA} hueB={hueB} />
+      <rect width="400" height="240" fill={`url(#${GRAD_ID(variant)}-glow)`} />
+      {[0, 1, 2].map((i) => (
+        <rect
+          key={i}
+          x="70"
+          y={55 + i * 45}
+          width="260"
+          height="32"
+          rx="7"
+          fill={i === 1 ? `url(#${GRAD_ID(variant)})` : "none"}
+          stroke={hueA}
+          strokeWidth="1.6"
+          opacity={i === 1 ? 0.95 : 0.5}
+        />
+      ))}
+      {[110, 200, 290].map((x, i) => (
+        <circle key={x} cx={x} cy={71 + i * 0} r="3" fill={hueA} opacity="0.7" />
+      ))}
+    </>
+  ),
+
+  // 11 · IA aplicada — red neuronal simple
+  ia: ({ variant, hueA, hueB }) => {
+    const nodos = [
+      [80, 120], [160, 70], [160, 170], [240, 45], [240, 120], [240, 195], [330, 120],
+    ];
+    const bordes = [[0,1],[0,2],[1,3],[1,4],[2,4],[2,5],[3,6],[4,6],[5,6]];
+    return (
+      <>
+        <Defs variant={variant} hueA={hueA} hueB={hueB} />
+        <rect width="400" height="240" fill={`url(#${GRAD_ID(variant)}-glow)`} />
+        {bordes.map(([a, b], i) => (
+          <line
+            key={i}
+            x1={nodos[a][0]} y1={nodos[a][1]}
+            x2={nodos[b][0]} y2={nodos[b][1]}
+            stroke={hueA} strokeWidth="1" opacity="0.45"
+          />
+        ))}
+        {nodos.map(([x, y], i) => (
+          <circle key={i} cx={x} cy={y} r={i === 6 ? 9 : 5.5} fill={`url(#${GRAD_ID(variant)})`} />
+        ))}
+      </>
+    );
+  },
+
+  // 12 · Valor y ROI — barras crecientes + flecha de retorno
+  roi: ({ variant, hueA, hueB }) => (
+    <>
+      <Defs variant={variant} hueA={hueA} hueB={hueB} />
+      <rect width="400" height="240" fill={`url(#${GRAD_ID(variant)}-glow)`} />
+      <path d="M60 190 V50 M60 190 H340" stroke={hueA} strokeWidth="1.6" opacity="0.4" strokeLinecap="round" />
+      {[30, 55, 45, 80, 110].map((h, i) => (
+        <rect
+          key={i}
+          x={90 + i * 48}
+          y={190 - h}
+          width="26"
+          height={h}
+          rx="4"
+          fill={`url(#${GRAD_ID(variant)})`}
+          opacity={0.5 + i * 0.1}
+        />
+      ))}
+      <path
+        d="M95 150 L165 110 L215 130 L330 55"
+        stroke={hueA}
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      />
+      <path d="M305 55 H330 V80" stroke={hueA} strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    </>
+  ),
+
   // 08 · GenAI — halo/burst radiante
   genai: ({ variant, hueA, hueB }) => (
     <>
