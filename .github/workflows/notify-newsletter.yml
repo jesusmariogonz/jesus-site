@@ -12,9 +12,27 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Detectar la nota de este push
+        id: nota
+        run: |
+          # Toma el .md nuevo/modificado en content/blog en este push (si hay
+          # varios, el primero). Fijar el slug evita que, si otro push a main
+          # llega casi al mismo tiempo y gana la carrera de despliegues en
+          # Vercel, el aviso termine tomando "la nota más reciente" equivocada
+          # de un deploy momentáneamente desactualizado.
+          archivo=$(git diff --name-only HEAD^ HEAD -- 'content/blog/*.md' | head -1)
+          slug=$(basename "$archivo" .md)
+          echo "slug=$slug" >> "$GITHUB_OUTPUT"
+          echo "Nota detectada: $slug"
+
       - name: Esperar a que Vercel termine de desplegar
         run: sleep 90
 
       - name: Disparar aviso de newsletter
         run: |
-          curl -sf "https://jgonzalez.app/api/newsletter/notify?secret=${{ secrets.NEWSLETTER_NOTIFY_SECRET }}"
+          curl -sf "https://jgonzalez.app/api/newsletter/notify?secret=${{ secrets.NEWSLETTER_NOTIFY_SECRET }}&slug=${{ steps.nota.outputs.slug }}"
