@@ -121,9 +121,9 @@ function Paginacion({ pagina, totalPaginas, onCambiar }) {
   );
 }
 
-export default function BlogExplorer({ notas: notasProp = [], pickSlug, categorias = [] }) {
+export default function BlogExplorer({ notas: notasProp = [], pickSlug, mundos = [] }) {
   const [q, setQ] = useState("");
-  const [cat, setCat] = useState("todas");
+  const [mundo, setMundo] = useState("todos");
   const [pagina, setPagina] = useState(1);
 
   // Siempre de la más nueva a la más antigua, sin depender del orden recibido.
@@ -132,22 +132,22 @@ export default function BlogExplorer({ notas: notasProp = [], pickSlug, categori
     [notasProp]
   );
 
-  // Solo categorías que tienen al menos una nota (evita chips vacíos).
-  const categoriasConNotas = useMemo(() => {
-    const usadas = new Set(notas.map((n) => n.categoria));
-    return categorias.filter(([slug]) => usadas.has(slug));
-  }, [notas, categorias]);
+  // Solo mundos que tienen al menos una nota (evita chips vacíos).
+  const mundosConNotas = useMemo(() => {
+    const usados = new Set(notas.map((n) => n.mundo));
+    return mundos.filter(([slug]) => usados.has(slug));
+  }, [notas, mundos]);
 
   const query = sinAcentos(q.trim());
-  const buscando = query.length > 0 || cat !== "todas";
+  const buscando = query.length > 0 || mundo !== "todos";
 
   const resultados = useMemo(() => {
     return notas.filter((n) => {
-      const okCat = cat === "todas" || n.categoria === cat;
+      const okMundo = mundo === "todos" || n.mundo === mundo;
       const okQuery = query === "" || n.buscar.includes(query);
-      return okCat && okQuery;
+      return okMundo && okQuery;
     });
-  }, [notas, cat, query]);
+  }, [notas, mundo, query]);
 
   const pick = notas.find((n) => n.slug === pickSlug) || notas[0];
   const resto = notas.filter((n) => n.slug !== pick?.slug);
@@ -173,7 +173,7 @@ export default function BlogExplorer({ notas: notasProp = [], pickSlug, categori
   }
 
   function onFiltrar(slug) {
-    setCat(slug);
+    setMundo(slug);
     setPagina(1);
   }
 
@@ -206,19 +206,19 @@ export default function BlogExplorer({ notas: notasProp = [], pickSlug, categori
       <div className="chip-row">
         <button
           type="button"
-          className={cat === "todas" ? "chip active" : "chip"}
-          onClick={() => onFiltrar("todas")}
+          className={mundo === "todos" ? "chip active" : "chip"}
+          onClick={() => onFiltrar("todos")}
         >
           Todas
         </button>
-        {categoriasConNotas.map(([slug, nombre]) => (
+        {mundosConNotas.map(([slug, m]) => (
           <button
             key={slug}
             type="button"
-            className={cat === slug ? "chip active" : "chip"}
+            className={mundo === slug ? "chip active" : "chip"}
             onClick={() => onFiltrar(slug)}
           >
-            {nombre}
+            {m.nombre}
           </button>
         ))}
       </div>

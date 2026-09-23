@@ -10,15 +10,15 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { mundo } = await params;
   const m = MUNDOS[mundo];
-  if (!m) return { title: "Mundo" };
+  if (!m) return { title: "Ideas" };
   return {
-    title: m.nombre,
+    title: `${m.nombre} · Ideas`,
     description: m.descripcion,
-    alternates: { canonical: `/mundos/${mundo}` },
+    alternates: { canonical: `/blog/mundo/${mundo}` },
   };
 }
 
-export default async function Mundo({ params }) {
+export default async function BlogMundo({ params }) {
   const { mundo } = await params;
   const m = MUNDOS[mundo];
   if (!m) notFound();
@@ -28,20 +28,20 @@ export default async function Mundo({ params }) {
     <section className="section">
       <div className="container">
         <span className="sql-meta">
-          mundos · {posts.length} {posts.length === 1 ? "nota" : "notas"}
+          ideas · {posts.length} {posts.length === 1 ? "nota" : "notas"}
         </span>
         <h2>{m.nombre}</h2>
         <p style={{ color: "var(--ink-soft)", maxWidth: "60ch", margin: "0 0 24px" }}>
           {m.descripcion}
         </p>
         <div className="chip-row">
-          <Link href="/mundos" className="chip">
-            Todos los mundos
+          <Link href="/blog" className="chip">
+            Todas
           </Link>
           {Object.entries(MUNDOS).map(([slug, mm]) => (
             <Link
               key={slug}
-              href={`/mundos/${slug}`}
+              href={`/blog/mundo/${slug}`}
               className={slug === mundo ? "chip active" : "chip"}
             >
               {mm.nombre}

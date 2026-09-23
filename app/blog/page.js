@@ -1,4 +1,5 @@
-import { getPostsListado, getPostsListadoLite, CATEGORIAS } from "@/lib/posts";
+import { getPostsListado, getPostsListadoLite } from "@/lib/posts";
+import { MUNDOS } from "@/lib/mundos";
 import Reveal from "@/components/Reveal";
 import NotasCarrusel from "@/components/NotasCarrusel";
 import BlogExplorer from "@/components/BlogExplorer";
@@ -75,7 +76,7 @@ export default function Blog() {
           <BlogExplorer
             notas={notas}
             pickSlug={pick?.slug}
-            categorias={Object.entries(CATEGORIAS)}
+            mundos={Object.entries(MUNDOS)}
           />
         </Reveal>
       </div>
