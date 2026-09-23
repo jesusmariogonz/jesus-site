@@ -5,6 +5,7 @@ import { sendNewPostBroadcast, sendKindleCopy } from "@/lib/resend";
 import { markdownToHtml } from "@/lib/mdToHtml";
 import { postToFacebookPage } from "@/lib/facebook";
 import { postToLinkedIn } from "@/lib/linkedin";
+import { ensureNotifySchema, reclamarAviso } from "@/lib/db";
 
 /* ============================================================
    Aviso de nota nueva por correo
@@ -27,6 +28,11 @@ import { postToLinkedIn } from "@/lib/linkedin";
    - slug=mi-nota             → usa esa nota en vez de "la más
      reciente" (por si el deploy que sirvió la corrida automática
      estaba momentáneamente desactualizado).
+   - force=true               → reenvía aunque ya se haya avisado
+     antes ese (slug, canal). Sin esto, cada (slug, canal) se envía
+     una sola vez para siempre — así una corrida repetida del
+     GitHub Action, un rerun manual o una llamada duplicada nunca
+     vuelve a publicar lo mismo.
    ============================================================ */
 
 const CANALES_VALIDOS = ["newsletter", "kindle", "facebook", "linkedin"];
@@ -74,48 +80,101 @@ export async function GET(request) {
 
   const url = absUrl(`/blog/${ultima.slug}`);
   const imagen = ultima.imagen ? absUrl(ultima.imagen) : null;
-  const resultado = { ok: true, enviado: ultima.titulo, slug: ultima.slug, canales };
+  const force = searchParams.get("force") === "true";
+
+  // Anti-duplicado: cada (slug, canal) se reclama una sola vez en la base
+  // de datos antes de enviarlo. Si ya se había reclamado (un rerun del
+  // Action, una llamada manual repetida, una carrera de despliegues que
+  // dispara el aviso dos veces), se omite en vez de volver a publicar.
+  let dbDisponible = true;
+  try {
+    await ensureNotifySchema();
+  } catch (err) {
+    // Si la base no está disponible, no bloqueamos el aviso —mejor
+    // arriesgar un duplicado ocasional que no avisar nada— pero lo
+    // reportamos para poder investigarlo.
+    dbDisponible = false;
+    console.error("newsletter/notify (db):", err);
+  }
+  async function puedeEnviar(canal) {
+    if (!dbDisponible || force) return true;
+    try {
+      return await reclamarAviso(ultima.slug, canal);
+    } catch (err) {
+      console.error(`newsletter/notify (reclamar ${canal}):`, err);
+      return true; // ante la duda, no bloquear el envío
+    }
+  }
+
+  const enviados = [];
+  const omitidos = [];
 
   if (canales.includes("newsletter")) {
-    try {
-      await sendNewPostBroadcast({ titulo: ultima.titulo, resumen: ultima.resumen, url, imagen });
-    } catch (err) {
-      console.error("newsletter/notify (newsletter):", err);
-      return NextResponse.json({ error: String(err.message || err) }, { status: 500 });
+    if (await puedeEnviar("newsletter")) {
+      try {
+        await sendNewPostBroadcast({ titulo: ultima.titulo, resumen: ultima.resumen, url, imagen });
+        enviados.push("newsletter");
+      } catch (err) {
+        console.error("newsletter/notify (newsletter):", err);
+        return NextResponse.json({ error: String(err.message || err) }, { status: 500 });
+      }
+    } else {
+      omitidos.push("newsletter");
     }
   }
   if (canales.includes("kindle")) {
-    try {
-      // Falla independiente del newsletter: si el Kindle rechaza el
-      // remitente o no está configurado, no debe tumbar el aviso ya enviado.
-      await sendKindleCopy({
-        titulo: ultima.titulo,
-        resumen: ultima.resumen,
-        url,
-        contenidoHtml: markdownToHtml(ultima.content || ""),
-      });
-    } catch (kindleErr) {
-      console.error("newsletter/notify (kindle):", kindleErr);
+    if (await puedeEnviar("kindle")) {
+      try {
+        // Falla independiente del newsletter: si el Kindle rechaza el
+        // remitente o no está configurado, no debe tumbar el aviso ya enviado.
+        await sendKindleCopy({
+          titulo: ultima.titulo,
+          resumen: ultima.resumen,
+          url,
+          contenidoHtml: markdownToHtml(ultima.content || ""),
+        });
+        enviados.push("kindle");
+      } catch (kindleErr) {
+        console.error("newsletter/notify (kindle):", kindleErr);
+      }
+    } else {
+      omitidos.push("kindle");
     }
   }
   if (canales.includes("facebook")) {
-    try {
-      // Falla independiente: si Facebook rechaza el token o no está
-      // configurado, no debe tumbar el resto del aviso ya enviado.
-      await postToFacebookPage({ titulo: ultima.titulo, resumen: ultima.resumen, url, imagenUrl: imagen });
-    } catch (fbErr) {
-      console.error("newsletter/notify (facebook):", fbErr);
+    if (await puedeEnviar("facebook")) {
+      try {
+        // Falla independiente: si Facebook rechaza el token o no está
+        // configurado, no debe tumbar el resto del aviso ya enviado.
+        await postToFacebookPage({ titulo: ultima.titulo, resumen: ultima.resumen, url, imagenUrl: imagen });
+        enviados.push("facebook");
+      } catch (fbErr) {
+        console.error("newsletter/notify (facebook):", fbErr);
+      }
+    } else {
+      omitidos.push("facebook");
     }
   }
   if (canales.includes("linkedin")) {
-    try {
-      // Falla independiente: si LinkedIn rechaza el token o no está
-      // configurado, no debe tumbar el resto del aviso ya enviado.
-      await postToLinkedIn({ titulo: ultima.titulo, resumen: ultima.resumen, url, imagenUrl: imagen });
-    } catch (liErr) {
-      console.error("newsletter/notify (linkedin):", liErr);
+    if (await puedeEnviar("linkedin")) {
+      try {
+        // Falla independiente: si LinkedIn rechaza el token o no está
+        // configurado, no debe tumbar el resto del aviso ya enviado.
+        await postToLinkedIn({ titulo: ultima.titulo, resumen: ultima.resumen, url, imagenUrl: imagen });
+        enviados.push("linkedin");
+      } catch (liErr) {
+        console.error("newsletter/notify (linkedin):", liErr);
+      }
+    } else {
+      omitidos.push("linkedin");
     }
   }
 
-  return NextResponse.json(resultado);
+  return NextResponse.json({
+    ok: true,
+    enviado: ultima.titulo,
+    slug: ultima.slug,
+    canales_enviados: enviados,
+    canales_omitidos_por_duplicado: omitidos,
+  });
 }
