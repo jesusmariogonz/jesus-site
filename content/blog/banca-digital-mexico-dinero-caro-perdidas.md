@@ -12,6 +12,7 @@ datosClave:
 titulo: El dinero caro ya le pasó la factura a la banca digital mexicana
 fecha: 2026-08-21T00:00:00.000Z
 categoria: fintech
+mundo: tecnologia-y-negocio
 tags:
   - Banxico
   - tasas de interés

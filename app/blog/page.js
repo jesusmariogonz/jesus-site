@@ -1,6 +1,8 @@
-import { getPostsListado, getPostsListadoLite, CATEGORIAS } from "@/lib/posts";
+import { getPostsListado, getPostsListadoLite } from "@/lib/posts";
+import { MUNDOS } from "@/lib/mundos";
 import Reveal from "@/components/Reveal";
 import NotasCarrusel from "@/components/NotasCarrusel";
+import IdeasMundos from "@/components/IdeasMundos";
 import BlogExplorer from "@/components/BlogExplorer";
 import NewsletterForm from "@/components/NewsletterForm";
 import { SITE_NAME, absUrl } from "@/lib/site";
@@ -72,10 +74,14 @@ export default function Blog() {
         )}
 
         <Reveal delay={0.05}>
+          <IdeasMundos notas={notas} />
+        </Reveal>
+
+        <Reveal delay={0.05}>
           <BlogExplorer
             notas={notas}
             pickSlug={pick?.slug}
-            categorias={Object.entries(CATEGORIAS)}
+            mundos={Object.entries(MUNDOS)}
           />
         </Reveal>
       </div>

@@ -12,9 +12,42 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-      - name: Esperar a que Vercel termine de desplegar
-        run: sleep 90
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
 
-      - name: Disparar aviso de newsletter
+      - name: Detectar la nota de este push
+        id: nota
         run: |
-          curl -sf "https://jgonzalez.app/api/newsletter/notify?secret=${{ secrets.NEWSLETTER_NOTIFY_SECRET }}"
+          # Toma el .md nuevo/modificado en content/blog en este push (si hay
+          # varios, el primero). Fijar el slug evita que, si otro push a main
+          # llega casi al mismo tiempo y gana la carrera de despliegues en
+          # Vercel, el aviso termine tomando "la nota más reciente" equivocada
+          # de un deploy momentáneamente desactualizado.
+          archivo=$(git diff --name-only HEAD^ HEAD -- 'content/blog/*.md' | head -1)
+          slug=$(basename "$archivo" .md)
+          echo "slug=$slug" >> "$GITHUB_OUTPUT"
+          echo "Nota detectada: $slug"
+
+      - name: Esperar a que Vercel termine de desplegar y disparar el aviso
+        run: |
+          # El build de Vercel (con Tina CMS) a veces tarda bastante más de
+          # 90s, sobre todo si hay varios pushes casi al mismo tiempo. En vez
+          # de un solo intento con un sleep fijo, reintenta hasta 8 veces
+          # (90s + hasta 7×30s ≈ 5.5 min) hasta que el deploy en vivo ya
+          # tenga esta nota — si no, el endpoint responde "enviado: null" en
+          # vez de un error (por diseño, para no avisar la nota equivocada),
+          # así que hay que revisar el campo, no solo el código HTTP.
+          sleep 90
+          for intento in 1 2 3 4 5 6 7 8; do
+            respuesta=$(curl -sf "https://jgonzalez.app/api/newsletter/notify?secret=${{ secrets.NEWSLETTER_NOTIFY_SECRET }}&slug=${{ steps.nota.outputs.slug }}")
+            echo "$respuesta"
+            if echo "$respuesta" | grep -q '"enviado":"'; then
+              exit 0
+            fi
+            echo "Todavía no está desplegada (intento $intento/8), reintentando en 30s..."
+            sleep 30
+          done
+          echo "::error::La nota ${{ steps.nota.outputs.slug }} nunca apareció en el deploy en vivo tras ~5.5 min."
+          exit 1

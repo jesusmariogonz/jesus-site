@@ -1,6 +1,7 @@
 ---
 titulo: La economía del agotamiento
 categoria: business
+mundo: ideas-y-ensayos
 tags:
   - Burnout en México
   - Inteligencia artificial y productividad

@@ -2,6 +2,7 @@
 titulo: 'El registro del Buen Fin 2026 abre el 8 de septiembre, pero la mitad del comercio electrónico mexicano ya eligió a su ganador'
 fecha: 2026-09-03
 categoria: business
+mundo: mexico-y-latam
 tags:
   - Buen Fin
   - comercio electrónico

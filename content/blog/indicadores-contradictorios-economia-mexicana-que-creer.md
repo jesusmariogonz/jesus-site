@@ -2,6 +2,7 @@
 titulo: 'La industria mexicana creció 2.4% en julio. Los propios empresarios llevan 28 meses sin creérselo'
 fecha: 2026-09-16
 categoria: business-analytics
+mundo: mexico-y-latam
 tags:
   - INEGI
   - IMAI

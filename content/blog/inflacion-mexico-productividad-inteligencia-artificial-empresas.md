@@ -2,6 +2,7 @@
 titulo: 'Cuando baja la inflación, empieza la verdadera prueba para las empresas mexicanas'
 fecha: 2026-08-17T16:05:58.998Z
 categoria: business
+mundo: mexico-y-latam
 tags:
   - Inflación en México
   - Productividad empresarial

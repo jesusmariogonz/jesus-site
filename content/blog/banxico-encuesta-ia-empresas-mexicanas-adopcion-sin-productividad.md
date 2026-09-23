@@ -2,6 +2,7 @@
 titulo: 'La encuesta de Banxico que desmonta el relato fácil sobre la IA en las empresas mexicanas'
 fecha: 2026-09-22
 categoria: ia
+mundo: mexico-y-latam
 tags:
   - Banxico
   - Inteligencia Artificial

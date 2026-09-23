@@ -2,6 +2,7 @@
 titulo: 'La maldición del conocimiento: por qué quien más sabe suele explicar peor'
 fecha: 2026-09-12T00:00:00.000Z
 categoria: business-analytics
+mundo: notas-de-campo
 tags:
   - Comunicación
   - Liderazgo

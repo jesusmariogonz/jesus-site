@@ -12,6 +12,7 @@ datosClave:
 titulo: México se volvió la sala de servidores del mundo. La pregunta es quién se queda con el negocio
 fecha: 2026-08-19T00:00:00.000Z
 categoria: business
+mundo: mexico-y-latam
 tags:
   - Exportaciones México
   - Centros de datos

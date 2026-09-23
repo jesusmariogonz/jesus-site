@@ -22,7 +22,7 @@ La semana tiene un solo día que concentra casi todo el riesgo: el jueves 24 de 
 
 | Fecha | Evento | País | Importancia | Qué puede afectar |
 |---|---|---|---|---|
-| Martes 22-sep | Indicador Oportuno de la Actividad Económica (IOAE) de agosto + Encuesta Citi México | México | Media | Peso, expectativas de crecimiento |
+| Martes 22-sep | [Indicador Oportuno de la Actividad Económica (IOAE) de agosto + Encuesta Citi México](/blog/actividad-economica-agosto-encuesta-citi-mexico-septiembre-2026) | México | Media | Peso, expectativas de crecimiento |
 | Miércoles 23-sep, 9:45 am ET | S&P Global PMI compuesto flash de septiembre | Estados Unidos | Media-Alta | Primer termómetro post-Fed de actividad económica |
 | Jueves 24-sep | Decisión de tasas de Banxico (consenso: sin cambios en 6.50%) | México | Alta | Peso, diferencial de tasas con la Fed |
 | Jueves 24-sep | Cumbre Trump-Xi Jinping en Washington, D.C. | Estados Unidos / China | Alta | Sentimiento de riesgo global, comercio |

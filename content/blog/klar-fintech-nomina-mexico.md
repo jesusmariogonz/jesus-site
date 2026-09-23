@@ -12,6 +12,7 @@ datosClave:
 titulo: 'Klar no quiere ser tu alternativa al banco: quiere ser tu banco'
 fecha: 2026-08-17T00:00:00.000Z
 categoria: fintech
+mundo: tecnologia-y-negocio
 tags:
   - Klar
   - fintech

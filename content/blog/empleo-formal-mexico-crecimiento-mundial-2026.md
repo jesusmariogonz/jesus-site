@@ -2,6 +2,7 @@
 titulo: El PIB mexicano se ve bien porque el Mundial está pagando la fiesta que el empleo formal ya no puede sostener
 fecha: 2026-08-26T00:00:00.000Z
 categoria: business
+mundo: mexico-y-latam
 tags:
   - empleo formal
   - IMSS

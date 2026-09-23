@@ -2,6 +2,7 @@
 titulo: 'México quiere ser la sala de servidores de Norteamérica, pero su red eléctrica todavía no está invitada a la conversación'
 fecha: 2026-09-07
 categoria: cloud
+mundo: mexico-y-latam
 tags:
   - centros de datos
   - energía eléctrica

@@ -2,6 +2,7 @@
 titulo: 'La implementación de la inteligencia artificial en las organizaciones: el reto ya no es tecnológico, sino organizacional'
 fecha: 2026-07-20T15:16:41.006Z
 categoria: business-analytics
+mundo: ia-nueva-economia
 tags:
   - Inteligencia artificial en empresas
   - Transformación digital

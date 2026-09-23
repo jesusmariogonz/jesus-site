@@ -75,7 +75,12 @@ def generar(entrada, salida, titulo, categoria):
 
     draw = ImageDraw.Draw(base)
 
-    margen = 72
+    # Margen "title-safe": el sitio recorta esta imagen 16:9 a proporciones
+    # más angostas en distintos lugares (el carrusel la muestra en 4:3), lo
+    # que recorta ~12.5% de cada lado. Un margen de 72px quedaba fuera de
+    # esa zona segura y el texto se cortaba por los bordes; 230px asegura
+    # que el texto sobreviva incluso el recorte 4:3 más agresivo del sitio.
+    margen = 230
     ancho_texto = ANCHO - margen * 2
 
     # Título, en 2-4 líneas según longitud (se calcula primero para poder

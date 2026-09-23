@@ -2,6 +2,7 @@
 titulo: 'El "dividendo Trump" de $5,000: la aritmética que ningún discurso de campaña resuelve'
 fecha: 2026-09-10T00:00:00.000Z
 categoria: geopolitics
+mundo: ideas-y-ensayos
 tags:
   - Trump
   - Estados Unidos

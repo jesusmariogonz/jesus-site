@@ -2,6 +2,7 @@
 titulo: 'La trampa de la línea base: por qué tu éxito de ayer se vuelve tu obligación de hoy'
 fecha: 2026-09-15T00:00:00.000Z
 categoria: leadership
+mundo: ideas-y-ensayos
 tags:
   - Psicología del Rendimiento
   - Liderazgo
