@@ -141,15 +141,22 @@ export async function GET(request) {
       omitidos.push("kindle");
     }
   }
+  let fbDebug = null;
   if (canales.includes("facebook")) {
     if (await puedeEnviar("facebook")) {
       try {
         // Falla independiente: si Facebook rechaza el token o no está
         // configurado, no debe tumbar el resto del aviso ya enviado.
-        await postToFacebookPage({ titulo: ultima.titulo, resumen: ultima.resumen, url, imagenUrl: imagen });
-        enviados.push("facebook");
+        const fbResult = await postToFacebookPage({ titulo: ultima.titulo, resumen: ultima.resumen, url, imagenUrl: imagen });
+        if (fbResult === undefined) {
+          fbDebug = "sin_credenciales_configuradas";
+        } else {
+          fbDebug = fbResult;
+          enviados.push("facebook");
+        }
       } catch (fbErr) {
         console.error("newsletter/notify (facebook):", fbErr);
+        fbDebug = { error: String(fbErr.message || fbErr) };
       }
     } else {
       omitidos.push("facebook");
@@ -176,5 +183,6 @@ export async function GET(request) {
     slug: ultima.slug,
     canales_enviados: enviados,
     canales_omitidos_por_duplicado: omitidos,
+    facebook_debug: fbDebug,
   });
 }
