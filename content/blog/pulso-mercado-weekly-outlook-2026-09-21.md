@@ -24,9 +24,9 @@ La semana tiene un solo día que concentra casi todo el riesgo: el jueves 24 de 
 |---|---|---|---|---|
 | Martes 22-sep | [Indicador Oportuno de la Actividad Económica (IOAE) de agosto + Encuesta Citi México](/blog/actividad-economica-agosto-encuesta-citi-mexico-septiembre-2026) | México | Media | Peso, expectativas de crecimiento |
 | Miércoles 23-sep, 9:45 am ET | [S&P Global PMI compuesto flash de septiembre](/blog/pmi-flash-septiembre-2026-estados-unidos-maximo-cinco-anos) | Estados Unidos | Media-Alta | Primer termómetro post-Fed de actividad económica |
-| Jueves 24-sep | Decisión de tasas de Banxico (consenso: sin cambios en 6.50%) | México | Alta | Peso, diferencial de tasas con la Fed |
-| Jueves 24-sep | Cumbre Trump-Xi Jinping en Washington, D.C. | Estados Unidos / China | Alta | Sentimiento de riesgo global, comercio |
-| Jueves 24-sep | INPC primera quincena de septiembre | México | Alta | Primera lectura de inflación tras la depreciación reciente del peso |
+| Jueves 24-sep | [Decisión de tasas de Banxico (consenso: sin cambios en 6.50%)](/blog/banxico-trump-xi-inpc-jueves-24-septiembre-2026) | México | Alta | Peso, diferencial de tasas con la Fed |
+| Jueves 24-sep | [Cumbre Trump-Xi Jinping en Washington, D.C.](/blog/banxico-trump-xi-inpc-jueves-24-septiembre-2026) | Estados Unidos / China | Alta | Sentimiento de riesgo global, comercio |
+| Jueves 24-sep | [INPC primera quincena de septiembre](/blog/banxico-trump-xi-inpc-jueves-24-septiembre-2026) | México | Alta | Primera lectura de inflación tras la depreciación reciente del peso |
 
 No localizamos con confianza una fecha específica de publicaciones de PCE, nóminas o CPI de Estados Unidos dentro de esta ventana semanal; no se incluyen para evitar inventar fechas.
 
