@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { MARCADORES } from "@/components/world-geo";
 import { PROYECTOS } from "@/lib/proyectos";
 import Globe from "@/components/Globe";
@@ -18,9 +18,14 @@ export default function ProjectsMap() {
   const proyecto = PROYECTOS.find((p) => p.id === activo) || null;
 
   const paisesActivos = new Set(proyecto ? proyecto.paises : []);
+  const totalPaises = useMemo(() => Object.keys(MARCADORES).length, []);
 
   return (
     <div className="pmap">
+      <p className="pmap-contador">
+        <b>{totalPaises}</b> países · <b>{PROYECTOS.length}</b> proyectos —
+        toca uno para verlo en el globo
+      </p>
       <Globe marcadores={MARCADORES} paisesActivos={paisesActivos} />
 
       <div className="pmap-chips" role="tablist" aria-label="Proyectos">

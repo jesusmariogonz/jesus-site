@@ -1096,6 +1096,16 @@ html.dark {
 /* Globo giratorio — silueta real de continentes en tira horizontal
    duplicada, con scroll infinito dentro de un círculo recortado
    (sin WebGL, funciona igual en cualquier dispositivo). */
+.pmap-contador {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin: 0 0 4px;
+}
+.pmap-contador b {
+  color: var(--ink);
+  font-family: var(--font-mono);
+}
 .pglobe-wrap {
   display: flex;
   justify-content: center;
@@ -1103,7 +1113,7 @@ html.dark {
 }
 .pglobe-circulo {
   position: relative;
-  width: clamp(260px, 60vw, 420px);
+  width: clamp(280px, 62vw, 460px);
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   overflow: hidden;
@@ -1146,6 +1156,21 @@ html:not(.dark) .pglobe-land {
   background:
     radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 34%),
     radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.55) 100%);
+}
+.pglobe-meridiano {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.14);
+  stroke-width: 1;
+}
+.pglobe-etiqueta {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 700;
+  fill: #fff;
+  paint-order: stroke;
+  stroke: rgba(6, 13, 28, 0.85);
+  stroke-width: 4px;
+  stroke-linejoin: round;
 }
 .pglobe-punto {
   fill: var(--accent);

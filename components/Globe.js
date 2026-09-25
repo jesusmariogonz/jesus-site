@@ -34,12 +34,33 @@ export default function Globe({ marcadores, paisesActivos }) {
               aria-hidden={copia === 1 || undefined}
             >
               <path d={LAND_PATH} className="pglobe-land" />
+              {/* Líneas de longitud, para reforzar la ilusión de esfera. */}
+              {[0.16, 0.32, 0.48, 0.64, 0.84].map((frac) => (
+                <ellipse
+                  key={frac}
+                  cx={w / 2}
+                  cy={h / 2}
+                  rx={w * 0.5 * Math.abs(Math.cos(frac * Math.PI))}
+                  ry={h * 0.5}
+                  className="pglobe-meridiano"
+                />
+              ))}
               {Object.entries(marcadores).map(([k, m]) => {
                 const on = paisesActivos.has(k);
                 return (
                   <g key={k} className={`pglobe-marker${on ? " on" : ""}`}>
                     <circle cx={m.x} cy={m.y} r="10" className="pglobe-pulso" />
                     <circle cx={m.x} cy={m.y} r="4.5" className="pglobe-punto" />
+                    {on && (
+                      <text
+                        x={m.x}
+                        y={m.y - 14}
+                        textAnchor="middle"
+                        className="pglobe-etiqueta"
+                      >
+                        {m.nombre}
+                      </text>
+                    )}
                   </g>
                 );
               })}
