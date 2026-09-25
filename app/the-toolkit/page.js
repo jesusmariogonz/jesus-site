@@ -34,8 +34,11 @@ export default function TheToolkit() {
         <ToolkitCatalog productos={TOOLKIT_PRODUCTOS} bundles={TOOLKIT_BUNDLES} />
 
         <div className="tk-cta-final">
-          <p>¿Quieres leer sobre cómo aplico estas herramientas en proyectos reales?</p>
-          <Link href="/blog" className="tk-banner-cta">
+          <p>¿Buscas algo más específico, o quieres leer cómo aplico estas herramientas en proyectos reales?</p>
+          <Link href="/recursos" className="tk-banner-cta">
+            Explora la Biblioteca →
+          </Link>{" "}
+          <Link href="/blog" className="tk-banner-cta" style={{ marginLeft: 10 }}>
             Lee el blog →
           </Link>
         </div>

@@ -5,13 +5,11 @@ import { usePathname } from "next/navigation";
 import ThemeToggle from "@/components/ThemeToggle";
 
 const links = [
+  { href: "/proyectos", label: "Trabajo" },
   { href: "/blog", label: "Ideas" },
   { href: "/pulso-mercado", label: "Pulso de Mercado" },
-  { href: "/proyectos", label: "Proyectos" },
-  { href: "/recursos", label: "Biblioteca" },
-  { href: "/sobre-mi", label: "Sobre mí" },
-  { href: "/contacto", label: "Contacto" },
-  { href: "/the-toolkit", label: "The Toolkit", accent: true },
+  { href: "/the-toolkit", label: "Toolkit" },
+  { href: "/contacto", label: "Hablemos →", accent: true },
 ];
 
 export default function Header() {

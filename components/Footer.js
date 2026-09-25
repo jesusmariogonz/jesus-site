@@ -6,7 +6,7 @@ const LINKS = [
   { href: "/pulso-mercado", label: "Pulso de Mercado" },
   { href: "/proyectos", label: "Proyectos" },
   { href: "/recursos", label: "Biblioteca" },
-  { href: "/the-toolkit", label: "The Toolkit" },
+  { href: "/the-toolkit", label: "Toolkit" },
   { href: "/sobre-mi", label: "Sobre mí" },
   { href: "/contacto", label: "Contacto" },
 ];

@@ -395,6 +395,22 @@ html:not(.dark) .jx-pill-opinion    { color: #6d28d9; }
   gap: 0.8rem;
   justify-content: center;
 }
+.jx-cta-redes {
+  margin-top: 1.4rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+.jx-cta-redes a {
+  color: var(--jx-muted);
+  text-decoration: none;
+}
+.jx-cta-redes a:hover {
+  color: var(--jx-text);
+  text-decoration: underline;
+}
 .jx-btn {
   display: inline-block;
   padding: 0.65rem 1.3rem;

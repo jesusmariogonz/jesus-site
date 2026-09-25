@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ProjectsMap from "@/components/ProjectsMap";
 import ProjectShowcase from "@/components/ProjectShowcase";
+import StatsStrip from "@/components/StatsStrip";
 
 export const metadata = {
   title: "Proyectos",
@@ -22,18 +23,23 @@ export default function Proyectos() {
           </p>
         </header>
 
+        <StatsStrip />
+
         <ProjectShowcase />
 
         <h2 style={{ marginTop: 8 }}>¿Dónde?</h2>
         <ProjectsMap />
 
         <div className="lib-cta-final">
-          <p>¿Quieres leer cómo pienso estos problemas, o llevarte plantillas listas para usar?</p>
-          <Link href="/blog" className="btn ghost">
+          <p>¿Quieres conocer mi trayectoria completa, leer cómo pienso estos problemas, o llevarte plantillas listas para usar?</p>
+          <Link href="/sobre-mi" className="btn ghost">
+            Sobre mí →
+          </Link>{" "}
+          <Link href="/blog" className="btn ghost" style={{ marginLeft: 10 }}>
             Leer el blog →
           </Link>{" "}
           <Link href="/the-toolkit" className="btn" style={{ marginLeft: 10 }}>
-            Ver The Toolkit →
+            Ver Toolkit →
           </Link>
         </div>
       </div>
