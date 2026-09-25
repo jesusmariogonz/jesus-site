@@ -18,10 +18,10 @@ imagen: /blog/portadas/mercados-hoy-fija.jpg
 
 | Activo | Nivel | Cambio |
 |---|---|---|
-| S&P 500 | — | -0.8% |
-| Nasdaq Composite | — | -1.1% |
-| Russell 2000 | — | +0.51% |
-| Dow Jones | — | -0.7% |
+| S&P 500 | ≈7,702.52 | -0.8% |
+| Nasdaq Composite | ≈26,944.59 | -1.1% |
+| Russell 2000 | — (sin nivel base confiable en notas anteriores) | +0.51% |
+| Dow Jones | ≈51,498.42 | -0.7% |
 | VIX | 15.18 | +6.83% |
 | S&P/BMV IPC | 64,263.44 | -0.30% |
 | USD/MXN | 17.51 (mercado); FIX 17.3015 | peso a su nivel más débil desde finales de julio |

@@ -20,8 +20,8 @@ imagen: /blog/portadas/mercados-hoy-fija.jpg
 |---|---|---|
 | S&P 500 | 7,764.64 | ~0.0% (prácticamente plano) |
 | Nasdaq Composite | 27,244.28 | +0.45% (récord, segundo consecutivo) |
-| Russell 2000 | — | +0.68% |
-| Dow Jones | — | -0.36% |
+| Russell 2000 | — (sin nivel base confiable en notas anteriores) | +0.68% |
+| Dow Jones | ≈51,861.45 | -0.36% |
 | VIX | 14.30 | -3.8% (mínimo de varias semanas) |
 | S&P/BMV IPC | 64,456.59 | +1.45% (mejor sesión desde el 21 de agosto) |
 | USD/MXN | 17.2904 | -0.37% (el peso se depreció) |
