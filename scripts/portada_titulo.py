@@ -107,6 +107,17 @@ def generar(entrada, salida, titulo, categoria):
         draw.text((margen, y), linea, font=fuente_titulo, fill=(255, 255, 255, 255))
         y += alto_linea
 
+    # Marca "jgonzalez.app" en la esquina superior derecha, siempre visible
+    # (branding para reconocimiento cuando la imagen circula fuera del sitio).
+    fuente_marca = ImageFont.truetype(FUENTE_TAG, 28)
+    marca = "jgonzalez.app"
+    ancho_marca = draw.textlength(marca, font=fuente_marca)
+    marca_x = ANCHO - margen - ancho_marca
+    marca_y = 48
+    # sombra sutil para legibilidad sobre fotos claras
+    draw.text((marca_x + 2, marca_y + 2), marca, font=fuente_marca, fill=(0, 0, 0, 160))
+    draw.text((marca_x, marca_y), marca, font=fuente_marca, fill=(255, 255, 255, 235))
+
     base.convert("RGB").save(salida, quality=90)
     print(f"OK: {salida} ({len(lineas)} líneas, fuente {tam_fuente}px)")
 
