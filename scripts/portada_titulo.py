@@ -107,16 +107,26 @@ def generar(entrada, salida, titulo, categoria):
         draw.text((margen, y), linea, font=fuente_titulo, fill=(255, 255, 255, 255))
         y += alto_linea
 
-    # Marca "jgonzalez.app" en la esquina superior derecha, siempre visible
-    # (branding para reconocimiento cuando la imagen circula fuera del sitio).
-    fuente_marca = ImageFont.truetype(FUENTE_TAG, 28)
+    # Marca "jgonzalez.app" en la esquina superior derecha, con una placa
+    # oscura semi-opaca detrás para que sea legible incluso sobre fotos
+    # claras o con mucho detalle (antes era casi invisible).
+    fuente_marca = ImageFont.truetype(FUENTE_TAG, 40)
     marca = "jgonzalez.app"
     ancho_marca = draw.textlength(marca, font=fuente_marca)
-    marca_x = ANCHO - margen - ancho_marca
-    marca_y = 48
-    # sombra sutil para legibilidad sobre fotos claras
-    draw.text((marca_x + 2, marca_y + 2), marca, font=fuente_marca, fill=(0, 0, 0, 160))
-    draw.text((marca_x, marca_y), marca, font=fuente_marca, fill=(255, 255, 255, 235))
+    pad_x, pad_y = 22, 14
+    placa_x1 = ANCHO - 40
+    placa_y1 = 40
+    placa_x0 = placa_x1 - ancho_marca - pad_x * 2
+    placa_y0 = placa_y1
+    placa_alto = 40 + pad_y * 2
+    draw.rounded_rectangle(
+        (placa_x0, placa_y0, placa_x1, placa_y0 + placa_alto),
+        radius=10,
+        fill=(10, 12, 18, 190),
+    )
+    marca_x = placa_x0 + pad_x
+    marca_y = placa_y0 + pad_y
+    draw.text((marca_x, marca_y), marca, font=fuente_marca, fill=(255, 255, 255, 255))
 
     base.convert("RGB").save(salida, quality=90)
     print(f"OK: {salida} ({len(lineas)} líneas, fuente {tam_fuente}px)")
