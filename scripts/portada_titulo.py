@@ -110,23 +110,23 @@ def generar(entrada, salida, titulo, categoria):
     # Marca "jgonzalez.app" en la esquina superior derecha, con una placa
     # oscura semi-opaca detrás para que sea legible incluso sobre fotos
     # claras o con mucho detalle (antes era casi invisible).
-    fuente_marca = ImageFont.truetype(FUENTE_TAG, 40)
+    fuente_marca = ImageFont.truetype(FUENTE_TAG, 44)
     marca = "jgonzalez.app"
     ancho_marca = draw.textlength(marca, font=fuente_marca)
-    pad_x, pad_y = 22, 14
+    pad_x, pad_y = 24, 16
     placa_x1 = ANCHO - 40
     placa_y1 = 40
     placa_x0 = placa_x1 - ancho_marca - pad_x * 2
     placa_y0 = placa_y1
-    placa_alto = 40 + pad_y * 2
+    placa_alto = 44 + pad_y * 2
     draw.rounded_rectangle(
         (placa_x0, placa_y0, placa_x1, placa_y0 + placa_alto),
-        radius=10,
-        fill=(10, 12, 18, 190),
+        radius=12,
+        fill=(255, 200, 90, 235),
     )
     marca_x = placa_x0 + pad_x
     marca_y = placa_y0 + pad_y
-    draw.text((marca_x, marca_y), marca, font=fuente_marca, fill=(255, 255, 255, 255))
+    draw.text((marca_x, marca_y), marca, font=fuente_marca, fill=(10, 12, 18, 255))
 
     base.convert("RGB").save(salida, quality=90)
     print(f"OK: {salida} ({len(lineas)} líneas, fuente {tam_fuente}px)")
