@@ -5,13 +5,14 @@ de escribir cualquier entrega, la rutina/sesión debe leer este archivo y
 confirmar contra `content/blog/` (slugs con `tesis-rag-semana-NN`) — nunca
 inferir la semana solo contando fechas transcurridas.
 
-**Próxima semana pendiente: 2** (Marco teórico + Metodología parte 1)
+**Próxima semana pendiente: 3** (Metodología parte 2 — diseño del Experimento 1; **debe ejecutarse antes de la Semana 4**)
 
 ## Historial
 
 | Semana | Fecha publicación | Slug | Resumen de una línea |
 |---|---|---|---|
 | 1 | 2026-09-27 | `tesis-rag-semana-01-introduccion-planteamiento` | Introducción al problema de persistencia no gobernada en RAG y planteamiento formal de H1/H2. |
+| 2 | 2026-09-27 | `tesis-rag-semana-02-marco-teorico-metodologia` | Marco teórico (gobernanza como propiedad estructural) y metodología unificada: diseño pareado, McNemar, IC 95% Wilson, criterio de falsabilidad popperiano. |
 
 ## Recordatorios operativos para la siguiente sesión
 
