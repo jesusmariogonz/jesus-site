@@ -125,10 +125,10 @@ def generar(datos_nota, salida):
 
     # ---- headline ----
     ancho_texto = ANCHO - margen * 2
-    tam = 42
+    tam = 56
     f_h1 = ImageFont.truetype(F_SERIF_BLACK, tam)
     lineas_h1 = envolver(draw, titulo, f_h1, ancho_texto)
-    while len(lineas_h1) > 4 and tam > 30:
+    while len(lineas_h1) > 4 and tam > 38:
         tam -= 2
         f_h1 = ImageFont.truetype(F_SERIF_BLACK, tam)
         lineas_h1 = envolver(draw, titulo, f_h1, ancho_texto)
