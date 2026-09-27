@@ -198,7 +198,13 @@ export async function GET(request) {
       try {
         // Falla independiente: si LinkedIn rechaza el token o no está
         // configurado, no debe tumbar el resto del aviso ya enviado.
-        await postToLinkedIn({ titulo: ultima.titulo, resumen: ultima.resumen, url, imagenUrl: imagen });
+        await postToLinkedIn({
+          titulo: ultima.titulo,
+          resumen: ultima.resumen,
+          url,
+          imagenUrl: imagenSocial,
+          esTarjetaSocial: Boolean(socialImagen),
+        });
         enviados.push("linkedin");
       } catch (liErr) {
         console.error("newsletter/notify (linkedin):", liErr);
