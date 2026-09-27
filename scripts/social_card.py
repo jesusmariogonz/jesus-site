@@ -248,6 +248,31 @@ def generar(datos_nota, salida):
 
     contenido_fin_y = max(cuerpo_fin_y, caja_y1)
 
+    # ---- miniatura de portada: llena el hueco que deja la sub-columna más
+    # corta (casi siempre la A, por la letra capital) en vez de dejarlo en blanco ----
+    portada_path = datos_nota.get("portada")
+    hueco_y0, hueco_y1 = cy, contenido_fin_y
+    hueco_x = margen
+    if portada_path and (hueco_y1 - hueco_y0) > 70:
+        try:
+            thumb = Image.open(portada_path).convert("RGB")
+            tw, th = sub_w, min(hueco_y1 - hueco_y0 - 16, sub_w * 9 / 16)
+            ratio_obj = tw / th
+            w, h = thumb.size
+            ratio = w / h
+            if ratio > ratio_obj:
+                nw = int(h * ratio_obj)
+                x0 = (w - nw) // 2
+                thumb = thumb.crop((x0, 0, x0 + nw, h))
+            else:
+                nh = int(w / ratio_obj)
+                y0 = (h - nh) // 2
+                thumb = thumb.crop((0, y0, w, y0 + nh))
+            thumb = thumb.resize((int(tw), int(th)), Image.LANCZOS)
+            img.paste(thumb, (int(hueco_x), int(hueco_y0 + 12)))
+        except (FileNotFoundError, OSError):
+            pass
+
     # divisores verticales, solo hasta donde llega el contenido real
     div2_x = margen + sub_w + sub_gap / 2
     draw.line((div2_x, body_top, div2_x, contenido_fin_y), fill=LINEA, width=1)
