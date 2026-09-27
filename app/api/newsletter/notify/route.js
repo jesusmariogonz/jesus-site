@@ -4,6 +4,7 @@ import { absUrl } from "@/lib/site";
 import { sendNewPostBroadcast, sendKindleCopy } from "@/lib/resend";
 import { markdownToHtml } from "@/lib/mdToHtml";
 import { postToFacebookPage } from "@/lib/facebook";
+import { postToInstagram } from "@/lib/instagram";
 import { postToLinkedIn } from "@/lib/linkedin";
 import { ensureNotifySchema, reclamarAviso } from "@/lib/db";
 
@@ -35,7 +36,7 @@ import { ensureNotifySchema, reclamarAviso } from "@/lib/db";
      vuelve a publicar lo mismo.
    ============================================================ */
 
-const CANALES_VALIDOS = ["newsletter", "kindle", "facebook", "linkedin"];
+const CANALES_VALIDOS = ["newsletter", "kindle", "facebook", "linkedin", "instagram"];
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
@@ -80,6 +81,11 @@ export async function GET(request) {
 
   const url = absUrl(`/blog/${ultima.slug}`);
   const imagen = ultima.imagen ? absUrl(ultima.imagen) : null;
+  // Tarjeta social (Facebook/Instagram): si la nota ya tiene una generada
+  // (scripts/social_card.py), se usa en vez de la portada + resumen de
+  // antes — la imagen trae toda la información, el post solo el link.
+  const socialImagen = ultima.socialImagen ? absUrl(ultima.socialImagen) : null;
+  const imagenSocial = socialImagen || imagen;
   const force = searchParams.get("force") === "true";
 
   // Anti-duplicado: cada (slug, canal) se reclama una sola vez en la base
@@ -147,7 +153,13 @@ export async function GET(request) {
       try {
         // Falla independiente: si Facebook rechaza el token o no está
         // configurado, no debe tumbar el resto del aviso ya enviado.
-        const fbResult = await postToFacebookPage({ titulo: ultima.titulo, resumen: ultima.resumen, url, imagenUrl: imagen });
+        const fbResult = await postToFacebookPage({
+          titulo: ultima.titulo,
+          resumen: ultima.resumen,
+          url,
+          imagenUrl: imagenSocial,
+          esTarjetaSocial: Boolean(socialImagen),
+        });
         if (fbResult === undefined) {
           fbDebug = "sin_credenciales_configuradas";
         } else {
@@ -160,6 +172,25 @@ export async function GET(request) {
       }
     } else {
       omitidos.push("facebook");
+    }
+  }
+  let igDebug = null;
+  if (canales.includes("instagram")) {
+    if (await puedeEnviar("instagram")) {
+      try {
+        const igResult = await postToInstagram({ url, imagenUrl: imagenSocial });
+        if (igResult === undefined) {
+          igDebug = "sin_credenciales_o_imagen_configurada";
+        } else {
+          igDebug = igResult;
+          enviados.push("instagram");
+        }
+      } catch (igErr) {
+        console.error("newsletter/notify (instagram):", igErr);
+        igDebug = { error: String(igErr.message || igErr) };
+      }
+    } else {
+      omitidos.push("instagram");
     }
   }
   if (canales.includes("linkedin")) {
@@ -184,5 +215,6 @@ export async function GET(request) {
     canales_enviados: enviados,
     canales_omitidos_por_duplicado: omitidos,
     facebook_debug: fbDebug,
+    instagram_debug: igDebug,
   });
 }

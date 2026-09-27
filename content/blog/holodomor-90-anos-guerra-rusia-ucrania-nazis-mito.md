@@ -24,6 +24,7 @@ datosClave:
   - valor: '90 años'
     etiqueta: 'Distancia entre el Holodomor (1932-33) y la invasión rusa a gran escala de 2022, usada por Ucrania como marco histórico de la guerra actual'
 imagen: /blog/portadas/holodomor-90-anos-guerra-rusia-ucrania-nazis-mito.jpg
+socialImagen: /blog/social/holodomor-90-anos-guerra-rusia-ucrania-nazis-mito.jpg
 ---
 
 Cada cuarto sábado de noviembre, Ucrania enciende velas en las ventanas para recordar a los millones de personas que murieron de hambre entre 1932 y 1933, en una hambruna que no fue producto de una mala cosecha sino de una política deliberada de Moscú para quebrar la resistencia campesina ucraniana a la colectivización soviética. Ese evento se llama Holodomor —"muerte por hambre" en ucraniano— y noventa años después sigue siendo, para entender la guerra que Rusia libra hoy contra Ucrania, una de las claves históricas más citadas y más manipuladas al mismo tiempo. Manipuladas porque el mismo conflicto que invoca esa memoria como advertencia también está saturado de una acusación específica, repetida desde Moscú desde el primer día de la invasión de 2022: que Ucrania está gobernada por nazis. Entender por qué la primera es central y la segunda es desinformación documentada requiere separar ambas con el mismo rigor.
