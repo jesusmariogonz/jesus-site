@@ -253,10 +253,11 @@ def generar(datos_nota, salida):
     portada_path = datos_nota.get("portada")
     hueco_y0, hueco_y1 = cy, contenido_fin_y
     hueco_x = margen
-    if portada_path and (hueco_y1 - hueco_y0) > 70:
+    separacion_arriba = 26
+    if portada_path and (hueco_y1 - hueco_y0 - separacion_arriba) > 70:
         try:
             thumb = Image.open(portada_path).convert("RGB")
-            tw, th = sub_w, min(hueco_y1 - hueco_y0 - 16, sub_w * 9 / 16)
+            tw, th = sub_w, min(hueco_y1 - hueco_y0 - separacion_arriba, sub_w * 9 / 16)
             ratio_obj = tw / th
             w, h = thumb.size
             ratio = w / h
@@ -269,7 +270,7 @@ def generar(datos_nota, salida):
                 y0 = (h - nh) // 2
                 thumb = thumb.crop((0, y0, w, y0 + nh))
             thumb = thumb.resize((int(tw), int(th)), Image.LANCZOS)
-            img.paste(thumb, (int(hueco_x), int(hueco_y0 + 12)))
+            img.paste(thumb, (int(hueco_x), int(hueco_y0 + separacion_arriba)))
         except (FileNotFoundError, OSError):
             pass
 
