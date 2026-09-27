@@ -2,9 +2,8 @@
 """
 Genera la tarjeta social (Facebook/Instagram) de una nota: réplica del
 diseño de "portada de diario" de dos columnas + sidebar de datos, con el
-logo de jgonzalez.app. Reemplaza la plantilla anterior (portada + resumen
-en el caption): ahora la imagen lleva toda la información y el caption
-del post solo trae el link.
+logo de jgonzalez.app. El alto de la imagen se ajusta al contenido real
+(nunca deja espacio en blanco de más al final).
 
 Uso (todo por stdin, JSON, para no pelear con el escapado de shell):
   echo '{...}' | python3 scripts/social_card.py --out ruta.jpg
@@ -25,7 +24,8 @@ import sys
 import json
 from PIL import Image, ImageDraw, ImageFont
 
-ANCHO, ALTO = 1080, 1350
+ANCHO = 1080
+ALTO_MAX = 2000  # lienzo de trabajo; se recorta al contenido real al final
 CREMA = (243, 240, 232)
 TINTA = (20, 26, 36)
 GRIS = (91, 100, 114)
@@ -61,7 +61,6 @@ def envolver(draw, texto, fuente, ancho_max):
 
 
 def dibujar_logo(draw, img, x, y, escala=1.0):
-    """Dibuja icono + 'jgonzalez.app' con la punta izquierda en (x,y). Regresa el ancho total."""
     tam_icono = int(46 * escala)
     tam_fuente = int(34 * escala)
     f_word = ImageFont.truetype(F_SANS_BOLD, tam_fuente)
@@ -97,7 +96,7 @@ def generar(datos_nota, salida):
     tesis = datos_nota.get("tesis", "")
     otras = datos_nota.get("otras", [])[:3]
 
-    img = Image.new("RGB", (ANCHO, ALTO), CREMA)
+    img = Image.new("RGB", (ANCHO, ALTO_MAX), CREMA)
     draw = ImageDraw.Draw(img)
     margen = 56
 
@@ -179,8 +178,6 @@ def generar(datos_nota, salida):
                 draw.line((sidebar_x + dx, sy, sidebar_x + dx + 4, sy), fill=LINEA, width=1)
             sy += 14
 
-    # tesis: caja oscura que llena el resto del sidebar hasta donde termine el cuerpo (calculado luego)
-
     # ---- cuerpo en dos sub-columnas con letra capital ----
     f_cuerpo = ImageFont.truetype(F_SERIF_REG, 16)
     interlinea = 22
@@ -190,12 +187,9 @@ def generar(datos_nota, salida):
     resto_primera = palabras[0][1:] if palabras else ""
     texto_sin_capital = " ".join([resto_primera] + palabras[1:]) if palabras else ""
 
-    # letra capital: ocupa ~2 líneas de alto
     f_cap = ImageFont.truetype(F_SERIF_BLACK, int(interlinea * 2.35))
     cap_w = draw.textlength(primera_letra, font=f_cap) + 8
 
-    # arma todas las líneas del cuerpo respetando el hueco de la letra capital
-    # en las primeras 2 líneas de la primera sub-columna.
     def envolver_con_hueco(texto, ancho_normal, ancho_reducido, n_reducidas):
         palabras = texto.split()
         lineas, actual = [], ""
@@ -214,19 +208,13 @@ def generar(datos_nota, salida):
             lineas.append(actual)
         return lineas
 
-    pie_franja_y = ALTO - 130
-    otras_h = 118 if otras else 0
-    limite_cuerpo_y = pie_franja_y - otras_h - 20
-
     todas_lineas = envolver_con_hueco(texto_sin_capital, sub_w, sub_w - cap_w, 2)
-    # reparte en dos sub-columnas por mitad de líneas (como column-count:2),
-    # nunca más de lo que cabe verticalmente antes de la franja de abajo.
-    max_por_col = max(6, int((limite_cuerpo_y - body_top) / interlinea))
-    mitad = min(-(-len(todas_lineas) // 2), max_por_col)  # ceil, acotado
+    # reparte en dos sub-columnas por mitad de líneas (como column-count:2) —
+    # sin límite artificial: el lienzo se recorta al contenido real al final.
+    mitad = -(-len(todas_lineas) // 2)  # ceil
     colA = todas_lineas[:mitad]
-    colB = todas_lineas[mitad:mitad + max_por_col]
+    colB = todas_lineas[mitad:]
 
-    # columna A, con letra capital sobrepuesta en la esquina
     cx, cy = margen, body_top
     draw.text((cx, cy - 4), primera_letra, font=f_cap, fill=TINTA)
     for i, linea in enumerate(colA):
@@ -240,39 +228,45 @@ def generar(datos_nota, salida):
         cy2 += interlinea
 
     cuerpo_fin_y = max(cy, cy2)
-    limite_visual = max(limite_cuerpo_y, cuerpo_fin_y)
 
-    # divisor vertical entre sub-columnas
-    div2_x = margen + sub_w + sub_gap / 2
-    draw.line((div2_x, body_top, div2_x, limite_visual), fill=LINEA, width=1)
-
-    # divisor vertical principal, entre cuerpo y sidebar
-    draw.line((divisor_x, body_top, divisor_x, limite_visual), fill=LINEA, width=1)
-
-    # ---- caja de tesis: llena el resto del sidebar hasta la franja de abajo ----
+    # ---- caja de tesis: alto ajustado a su propio texto, no estirada ----
+    caja_y1 = sy
     if tesis:
         caja_y0 = sy + 6
-        caja_y1 = max(limite_cuerpo_y, caja_y0 + 90)
+        f_te = ImageFont.truetype(F_SANS_BOLD, 13)
+        lineas_te = envolver(draw, tesis, f_te, sidebar_w - 32)
+        alto_texto_te = len(lineas_te) * 19
+        caja_alto = 40 + alto_texto_te + 18
+        caja_y1 = caja_y0 + caja_alto
         draw.rectangle((sidebar_x, caja_y0, ANCHO - margen, caja_y1), fill=TINTA)
         f_tk = ImageFont.truetype(F_MONO, 11)
         draw.text((sidebar_x + 16, caja_y0 + 16), "LA TESIS", font=f_tk, fill=(255, 200, 90))
-        f_te = ImageFont.truetype(F_SANS_BOLD, 13)
         ty = caja_y0 + 40
-        for linea in envolver(draw, tesis, f_te, sidebar_w - 32):
+        for linea in lineas_te:
             draw.text((sidebar_x + 16, ty), linea, font=f_te, fill=(237, 242, 250))
             ty += 19
 
+    contenido_fin_y = max(cuerpo_fin_y, caja_y1)
+
+    # divisores verticales, solo hasta donde llega el contenido real
+    div2_x = margen + sub_w + sub_gap / 2
+    draw.line((div2_x, body_top, div2_x, contenido_fin_y), fill=LINEA, width=1)
+    draw.line((divisor_x, body_top, divisor_x, contenido_fin_y), fill=LINEA, width=1)
+
+    y = contenido_fin_y + 28
+
     # ---- franja de otras notas ----
     if otras:
-        fy = pie_franja_y - otras_h + 14
-        draw.line((margen, fy - 14, ANCHO - margen, fy - 14), fill=TINTA, width=1)
+        draw.line((margen, y, ANCHO - margen, y), fill=TINTA, width=1)
+        y += 20
         col_w = (ancho_texto - 24 * (len(otras) - 1)) / len(otras)
         f_ok = ImageFont.truetype(F_MONO_BOLD, 11)
         f_ot = ImageFont.truetype(F_SERIF_BOLD, 17)
         f_od = ImageFont.truetype(F_SERIF_REG, 13)
+        max_oy = y
         for i, item in enumerate(otras):
             ox = margen + i * (col_w + 24)
-            oy = fy
+            oy = y
             draw.text((ox, oy), item.get("kicker", "").upper(), font=f_ok, fill=ROJO)
             oy += 20
             for linea in envolver(draw, item.get("titulo", ""), f_ot, col_w)[:2]:
@@ -282,19 +276,24 @@ def generar(datos_nota, salida):
             for linea in envolver(draw, item.get("desc", ""), f_od, col_w)[:2]:
                 draw.text((ox, oy), linea, font=f_od, fill=(58, 67, 81))
                 oy += 17
+            max_oy = max(max_oy, oy)
             if i < len(otras) - 1:
-                draw.line((ox + col_w + 12, fy, ox + col_w + 12, fy + otras_h - 30), fill=LINEA, width=1)
+                draw.line((ox + col_w + 12, y, ox + col_w + 12, max_oy), fill=LINEA, width=1)
+        y = max_oy + 20
 
     # ---- pie ----
-    pie_y = ALTO - 96
-    draw.line((margen, pie_y, ANCHO - margen, pie_y), fill=TINTA, width=3)
+    draw.line((margen, y, ANCHO - margen, y), fill=TINTA, width=3)
+    y += 22
     f_pie = ImageFont.truetype(F_MONO, 15)
-    draw.text((margen, pie_y + 22), "Nota completa, con fuentes verificadas, en", font=f_pie, fill=GRIS)
+    draw.text((margen, y), "Nota completa, con fuentes verificadas, en", font=f_pie, fill=GRIS)
     aw2 = ancho_logo(draw, escala=0.72)
-    dibujar_logo(draw, img, ANCHO - margen - aw2, pie_y + 12, escala=0.72)
+    dibujar_logo(draw, img, ANCHO - margen - aw2, y - 10, escala=0.72)
+    y += 46
 
+    alto_final = y + 30
+    img = img.crop((0, 0, ANCHO, alto_final))
     img.save(salida, quality=92)
-    print(f"OK: {salida}")
+    print(f"OK: {salida} ({alto_final}px alto)")
 
 
 if __name__ == "__main__":
