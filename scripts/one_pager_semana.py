@@ -73,21 +73,17 @@ LATERAL_DER = {
 }
 
 DATOS = [
-    ("18", "Lectores únicos — AHMSA/CIESA, la nota más leída"),
-    ("41", "Vistas a /blog esta semana"),
-    ("13", "Notas nuevas publicadas del 22 al 28 de sep."),
-    ("77", "Vistas a Pulso de Mercado, la página más visitada"),
+    ("$1,400M", "Oferta de CIESA por AHMSA"),
+    ("160M", "Niños en trabajo infantil en el mundo"),
+    ("90 años", "Del Holodomor a la guerra en Ucrania"),
+    ("10 semanas", "Nueva serie: tesis sobre gobernanza en RAG"),
 ]
 
+# Solo las notas #4 y #5 más visitadas (las #1, #2 y #3 ya van arriba,
+# como historia principal y laterales).
 OTRAS = [
-    ("IA Y NUEVA ECONOMÍA", "Lo que Altman y Amodei pidieron a la ONU", "Un día después de que Trump llamara \"globalista\" a esa misma idea."),
-    ("DATOS COMO NEGOCIO", "El Excel paralelo", "Por qué los equipos siguen desconfiando del dato \"oficial\"."),
-    ("NOTAS DE CAMPO", "El experimento de la ciudad de las ratas", "Qué pasó cuando el Universo 25 tuvo todo, menos espacio."),
-    ("GEOPOLÍTICA", "90 años del Holodomor", "La clave para entender —y desinformar sobre— la guerra en Ucrania."),
-    ("TESIS · SEMANA 1", "Persistencia no gobernada en RAG", "Arranca la serie de 10 semanas sobre gobernanza de datos en IA."),
-    ("MÉXICO Y LATAM", "La encuesta de Banxico sobre IA", "Casi la mitad de las grandes empresas ya usa IA — el doble que hace 9 meses."),
-    ("MÉXICO Y LATAM", "México exporta servidores, no autos", "Las exportaciones de cómputo ya superaron a las automotrices este semestre."),
-    ("OPINIÓN", "El mito de las ocho horas de sueño", "No lo inventó un vendedor de colchones — la verdad es más rara."),
+    ("IA Y NUEVA ECONOMÍA · 4ª MÁS LEÍDA", "Lo que Altman y Amodei pidieron a la ONU", "Un día después de que Trump llamara \"globalista\" a esa misma idea."),
+    ("NOTAS DE CAMPO · 5ª MÁS LEÍDA", "El experimento de la ciudad de las ratas", "Qué pasó cuando el Universo 25 tuvo todo, menos espacio."),
 ]
 
 
@@ -188,7 +184,7 @@ def generar(salida):
 
     # ---- franja de datos clave ----
     f_dk_k = ImageFont.truetype(F_MONO_BOLD, 15)
-    draw.text((margen, y), "LA SEMANA SEGÚN VERCEL ANALYTICS", font=f_dk_k, fill=GRIS)
+    draw.text((margen, y), "LA SEMANA EN NÚMEROS", font=f_dk_k, fill=GRIS)
     y += 30
     n = len(DATOS)
     col_w = (ANCHO - margen * 2 - 24 * (n - 1)) / n
@@ -212,13 +208,13 @@ def generar(salida):
     f_ot_k = ImageFont.truetype(F_MONO_BOLD, 14)
     draw.text((margen, y), "TAMBIÉN ESTA SEMANA", font=f_ot_k, fill=GRIS)
     y += 32
-    cols = 4
-    gap = 30
+    cols = len(OTRAS)
+    gap = 60
     ow = (ANCHO - margen * 2 - gap * (cols - 1)) / cols
-    f_ok = ImageFont.truetype(F_MONO_BOLD, 13)
-    f_ot = ImageFont.truetype(F_SERIF_BLACK, 19)
-    f_od = ImageFont.truetype(F_SERIF_REG, 15)
-    row_h = 190
+    f_ok = ImageFont.truetype(F_MONO_BOLD, 14)
+    f_ot = ImageFont.truetype(F_SERIF_BLACK, 24)
+    f_od = ImageFont.truetype(F_SERIF_REG, 17)
+    row_h = 150
     for i, (kicker, titulo, desc) in enumerate(OTRAS):
         col = i % cols
         row = i // cols
