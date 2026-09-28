@@ -1,0 +1,64 @@
+name: Publicar resumen semanal (one pager) en Facebook y LinkedIn
+
+# Se dispara solo cuando el push a main incluye el marcador del resumen
+# semanal — lo escribe la rutina automática de los domingos junto con
+# la imagen ya generada y el caption.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "public/blog/social/one-pager-semana-latest.json"
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Leer el marcador de la edición
+        id: marcador
+        run: |
+          imagen=$(jq -r '.imagen' public/blog/social/one-pager-semana-latest.json)
+          edicion=$(jq -r '.edicion' public/blog/social/one-pager-semana-latest.json)
+          caption=$(jq -r '.caption' public/blog/social/one-pager-semana-latest.json)
+          echo "imagen=$imagen" >> "$GITHUB_OUTPUT"
+          echo "edicion=$edicion" >> "$GITHUB_OUTPUT"
+          {
+            echo "caption<<CAPTION_EOF"
+            echo "$caption"
+            echo "CAPTION_EOF"
+          } >> "$GITHUB_OUTPUT"
+          echo "Edición: $edicion — imagen: $imagen"
+
+      - name: Esperar a que Vercel termine de desplegar y publicar
+        env:
+          IMAGEN: ${{ steps.marcador.outputs.imagen }}
+          EDICION: ${{ steps.marcador.outputs.edicion }}
+          CAPTION: ${{ steps.marcador.outputs.caption }}
+        run: |
+          # Igual que en notify-newsletter.yml: el build de Vercel puede
+          # tardar bastante, así que reintenta hasta que la imagen ya esté
+          # servida en vivo antes de disparar la publicación.
+          sleep 90
+          for intento in 1 2 3 4 5 6 7 8; do
+            if curl -sf -o /dev/null "https://jgonzalez.app${IMAGEN}"; then
+              break
+            fi
+            echo "La imagen todavía no está desplegada (intento $intento/8), reintentando en 30s..."
+            sleep 30
+            if [ "$intento" = "8" ]; then
+              echo "::error::La imagen $IMAGEN nunca apareció en el deploy en vivo tras ~5.5 min."
+              exit 1
+            fi
+          done
+
+          payload=$(jq -n --arg secret "${{ secrets.NEWSLETTER_NOTIFY_SECRET }}" \
+                          --arg imagen "$IMAGEN" \
+                          --arg caption "$CAPTION" \
+                          --arg edicion "$EDICION" \
+                          '{secret: $secret, imagen: $imagen, caption: $caption, edicion: $edicion}')
+          respuesta=$(curl -sf -X POST "https://jgonzalez.app/api/newsletter/weekly-digest" \
+                            -H "Content-Type: application/json" \
+                            -d "$payload")
+          echo "$respuesta"
