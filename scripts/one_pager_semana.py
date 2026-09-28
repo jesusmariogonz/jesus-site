@@ -7,6 +7,7 @@ tamaño. Uso puntual, no forma parte del pipeline automático.
 
 Uso: python3 scripts/one_pager_semana.py --out ruta.jpg
 """
+import json
 from PIL import Image, ImageDraw, ImageFont
 
 ANCHO = 1600
@@ -110,82 +111,25 @@ def dibujar_historia(draw, img, x, y, w, historia, *, foto_h=0, tam_titulo=22,
 
 
 # ------------------------------------------------------------------
-# Contenido: top 13 de la semana por Vercel Analytics (22-28 sep 2026)
+# El contenido (INTRO, FLASH, MAIN, SECUNDARIA_LARGA/CORTA, DATOS,
+# MEDIA, ABAJO, semana/edicion) ahora vive en un JSON externo, para que
+# la rutina automática semanal pueda regenerarlo sin tocar este código.
+# Ver scripts/one_pager_semana_datos.json (o --datos <ruta>).
 # ------------------------------------------------------------------
 
-INTRO = (
-    "Una semana marcada por el cierre de la quiebra más larga del acero mexicano, un giro de fondo en "
-    "la infraestructura de datos para IA, y un cambio de fase en la carrera de la inteligencia artificial "
-    "global. Abajo, las 13 notas más leídas de la semana."
-)
 
-FLASH = [
-    {"kicker": "TESIS · SEMANA 1", "fecha": "27 SEP", "titulo": "Persistencia no gobernada en RAG",
-     "desc": "Arranca la serie de 10 semanas sobre gobernanza de datos en sistemas de IA."},
-    {"kicker": "SERIE SEMANAL", "fecha": "28 SEP", "titulo": "Lo que se espera esta semana",
-     "desc": "Proyecciones verificables de mercado y economía para la semana que entra."},
-    {"kicker": "MÉXICO Y LATAM", "fecha": "22 SEP", "titulo": "La encuesta de Banxico sobre IA",
-     "desc": "Casi la mitad de las grandes empresas ya usa IA — el doble que hace 9 meses."},
-]
+def generar(salida, datos):
+    INTRO = datos["intro"]
+    FLASH = datos["flash"]
+    MAIN = datos["main"]
+    SECUNDARIA_LARGA = datos["secundaria_larga"]
+    SECUNDARIA_CORTA = datos["secundaria_corta"]
+    DATOS = [(d["valor"], d["etiqueta"]) for d in datos["datos"]]
+    MEDIA = datos["media"]
+    ABAJO = datos["abajo"]
+    semana_texto = datos.get("semana_texto", "")
+    edicion_texto = datos.get("edicion_texto", "EDICIÓN SEMANAL · TOP 13")
 
-MAIN = {
-    "kicker": "LO MÁS LEÍDO DE LA SEMANA · BUSINESS", "fecha": "25 SEP",
-    "titulo": "AHMSA ya tiene comprador: CIESA pagó $1,400 millones por una empresa que debe casi el triple",
-    "dek": "El grupo de Arturo Domínguez ganó la subasta de Altos Hornos de México. Tiene 90 días para completar el pago — y una promesa de hacer la planta 12 veces más grande que ningún operador ha demostrado poder cumplir.",
-    "cuerpo": "CIESA se convirtió en comprador virtual de AHMSA y su filial minera Minosa, con un depósito de garantía de apenas 56.4 millones de dólares —el 4% de su oferta total— y 90 días para completar el pago. Contra una deuda de casi 3,900 millones de dólares, la recuperación para más de 1,600 acreedores será parcial. Domínguez prometió reactivar la planta en seis meses bajo la marca CIESA Desarrollo Acero — una promesa hecha por una constructora sin trayectoria previa operando una acerería de esta escala. Fuentes locales en Monclova ya han expresado dudas sobre si cualquiera de los postores tiene la capacidad real para reactivar una planta que lleva sin operar desde 2022.",
-    "foto": "public/blog/portadas/ahmsa-venta-ciesa-1400-millones-dolares.jpg",
-}
-
-SECUNDARIA_LARGA = {
-    "kicker": "DATOS COMO NEGOCIO · 2ª MÁS LEÍDA", "fecha": "24 SEP",
-    "titulo": "Fivetran y dbt Labs ya no construyen su stack para analistas",
-    "desc": "Lo están rediseñando para agentes de IA. El 16 de septiembre, Fivetran y dbt Labs anunciaron una capa de contexto para que agentes consulten datos empresariales de forma confiable. No es un anuncio aislado: Snowflake y Databricks están convergiendo en la misma apuesta, y juntos describen un cambio de fondo en para quién se construye la infraestructura de datos — ya no el analista humano, sino el agente que consulta en su nombre.",
-    "foto": None,
-}
-
-SECUNDARIA_CORTA = {
-    "kicker": "IA Y NUEVA ECONOMÍA · 3ª MÁS LEÍDA", "fecha": "23 SEP",
-    "titulo": "La carrera de la IA cambia de fase",
-    "desc": "De los benchmarks a los robots, la energía y las reglas — mientras OpenAI pide que el gobierno de EU le imponga reglas obligatorias.",
-    "foto": "public/blog/portadas/carrera-ia-cambia-de-fase-robots-energia-reglas.jpg",
-}
-
-DATOS = [
-    ("$1,400M", "Oferta de CIESA por AHMSA"),
-    ("160M", "Niños en trabajo infantil en el mundo"),
-    ("90 años", "Del Holodomor a la guerra en Ucrania"),
-    ("10 semanas", "Nueva serie: tesis sobre gobernanza en RAG"),
-]
-
-MEDIA = [
-    {"kicker": "IA Y NUEVA ECONOMÍA", "fecha": "24 SEP", "titulo": "Lo que Altman y Amodei pidieron a la ONU",
-     "desc": "Se dirigieron al Consejo de Seguridad sobre IA, un día después de que Trump llamara \"globalista\" a esa misma idea de estándares globales.",
-     "foto": "public/blog/portadas/altman-amodei-consejo-seguridad-onu-ia.jpg"},
-    {"kicker": "DATOS COMO NEGOCIO", "fecha": "25 SEP", "titulo": "El Excel paralelo",
-     "desc": "Una empresa puede invertir millones en una plataforma de datos impecable y seguir viendo cómo sus equipos toman decisiones desde una hoja de Excel paralela que nadie autorizó. El problema casi nunca es técnico — es que el Excel paralelo resuelve, mejor que la plataforma oficial, un problema de confianza que la plataforma nunca se propuso resolver: el analista confía en la hoja porque él mismo puso cada fórmula, mientras el dato \"oficial\" llega de una caja negra que nadie en el equipo puede auditar en el momento.",
-     "foto": None},
-    {"kicker": "NOTAS DE CAMPO", "fecha": "22 SEP", "titulo": "El experimento de la ciudad de las ratas",
-     "desc": "Qué pasó cuando el Universo 25 tuvo todo: comida, agua y refugio ilimitados — menos espacio.",
-     "foto": "public/blog/portadas/experimento-ciudad-de-las-ratas.jpg"},
-]
-
-ABAJO = [
-    {"kicker": "GEOPOLÍTICA", "fecha": "26 SEP", "titulo": "90 años del Holodomor",
-     "desc": "La clave para entender —y para desinformar sobre— la guerra en Ucrania.",
-     "foto": "public/blog/portadas/holodomor-90-anos-guerra-rusia-ucrania-nazis-mito.jpg"},
-    {"kicker": "MÉXICO Y LATAM", "fecha": "23 SEP", "titulo": "México exporta servidores, no autos",
-     "desc": "Fitch subió su pronóstico de crecimiento para México en 2026 de 1.0% a 1.4%, citando el auge de la IA en Estados Unidos como uno de los motores. Pero el detalle detrás del titular es más revelador que la cifra: en el primer semestre de 2026, las exportaciones de servidores y equipo de cómputo ya superaron a las automotrices, que durante tres décadas fueron el pilar manufacturero del país.",
-     "foto": None},
-    {"kicker": "NOTAS DE CAMPO", "fecha": "23 SEP", "titulo": "El mito de las ocho horas de sueño",
-     "desc": "No lo inventó un vendedor de colchones en 1938 — la verdad es más rara.",
-     "foto": "public/blog/portadas/mito-ocho-horas-sueno-vendedor-colchones.jpg"},
-    {"kicker": "IDEAS Y ENSAYOS", "fecha": "26 SEP", "titulo": "La paradoja de Jevons y la IA",
-     "desc": "En 1865 un economista inglés observó que máquinas de vapor más eficientes no redujeron el consumo de carbón de Inglaterra: lo multiplicaron. Ese mismo mecanismo es la razón por la que cada modelo de IA más eficiente que sale al mercado viene acompañado de más consumo total de energía, no de menos — porque cuando algo se vuelve más barato de usar, se usa muchísimo más.",
-     "foto": None},
-]
-
-
-def generar(salida):
     img = Image.new("RGB", (ANCHO, 3400), CREMA)
     draw = ImageDraw.Draw(img)
     margen = 60
@@ -216,8 +160,8 @@ def generar(salida):
     draw.line((margen, y, ANCHO - margen, y), fill=TINTA, width=2)
     y += 14
     f_meta = ImageFont.truetype(F_SANS, 18)
-    draw.text((margen, y), "SEMANA DEL 22 AL 28 DE SEPTIEMBRE DE 2026", font=f_meta, fill=TINTA)
-    ed = "EDICIÓN SEMANAL · TOP 13"
+    draw.text((margen, y), semana_texto, font=f_meta, fill=TINTA)
+    ed = edicion_texto
     ew = draw.textlength(ed, font=f_meta)
     draw.text((ANCHO - margen - ew, y), ed, font=f_meta, fill=TINTA)
     y += 30
@@ -389,4 +333,9 @@ def generar(salida):
 if __name__ == "__main__":
     import sys
     idx = sys.argv.index("--out")
-    generar(sys.argv[idx + 1])
+    salida = sys.argv[idx + 1]
+    idx_d = sys.argv.index("--datos")
+    ruta_datos = sys.argv[idx_d + 1]
+    with open(ruta_datos, encoding="utf-8") as f:
+        datos = json.load(f)
+    generar(salida, datos)
