@@ -53,23 +53,68 @@ def texto_bloque(draw, img, x, y, texto, fuente, ancho_max, color, interlinea, m
     return y
 
 
+def foto_cover(path, ancho, alto, recorte_superior=None):
+    """Abre y recorta una foto para llenar ancho x alto sin deformarla.
+    Las portadas del sitio llevan el título incrustado en el tercio
+    inferior: para miniaturas (recorte_superior) usamos solo la mitad de
+    arriba de la imagen, que es foto limpia sin texto encima."""
+    im = Image.open(path).convert("RGB")
+    if recorte_superior:
+        w0, h0 = im.size
+        im = im.crop((0, 0, w0, int(h0 * recorte_superior)))
+    w, h = im.size
+    ratio_obj = ancho / alto
+    ratio = w / h
+    if ratio > ratio_obj:
+        nw = int(h * ratio_obj)
+        x0 = (w - nw) // 2
+        im = im.crop((x0, 0, x0 + nw, h))
+    else:
+        nh = int(w / ratio_obj)
+        y0 = (h - nh) // 2
+        im = im.crop((0, y0, w, y0 + nh))
+    return im.resize((int(ancho), int(alto)), Image.LANCZOS)
+
+
+def pegar_foto(img, path, x, y, ancho, alto, recorte_superior=None):
+    try:
+        foto = foto_cover(path, ancho, alto, recorte_superior=recorte_superior)
+        img.paste(foto, (int(x), int(y)))
+        return True
+    except (FileNotFoundError, OSError):
+        return False
+
+
+INTRO = (
+    "Una semana marcada por el cierre de la quiebra más larga del acero mexicano, un giro de fondo en "
+    "la infraestructura de datos para IA, y un cambio de fase en la carrera de la inteligencia artificial "
+    "global — de los benchmarks a los robots, la energía y quién escribe las reglas. Abajo, las 13 notas "
+    "más leídas de la semana, con fecha y resumen, para quien se las perdió."
+)
+
 MAIN = {
     "kicker": "LO MÁS LEÍDO DE LA SEMANA · BUSINESS",
+    "fecha": "25 SEP",
     "titulo": "AHMSA ya tiene comprador: CIESA pagó $1,400 millones por una empresa que debe casi el triple",
     "dek": "El grupo de Arturo Domínguez ganó la subasta de Altos Hornos de México. Tiene 90 días para completar el pago — y una promesa de hacer la planta 12 veces más grande que ningún operador ha demostrado poder cumplir.",
-    "cuerpo": "CIESA se convirtió en comprador virtual de AHMSA y su filial minera Minosa, con un depósito de garantía de apenas 56.4 millones de dólares —el 4% de su oferta total— y 90 días para completar el pago. Contra una deuda de casi 3,900 millones de dólares, la recuperación para más de 1,600 acreedores será parcial. Domínguez prometió reactivar la planta en seis meses bajo la marca CIESA Desarrollo Acero — una promesa hecha por una constructora sin trayectoria previa operando una acerería a esta escala.",
+    "cuerpo": "CIESA se convirtió en comprador virtual de AHMSA y su filial minera Minosa, con un depósito de garantía de apenas 56.4 millones de dólares —el 4% de su oferta total— y 90 días para completar el pago. Contra una deuda de casi 3,900 millones de dólares, la recuperación para más de 1,600 acreedores será parcial.",
+    "foto": "public/blog/portadas/ahmsa-venta-ciesa-1400-millones-dolares.jpg",
 }
 
 LATERAL_IZQ = {
     "kicker": "DATOS COMO NEGOCIO · 2º MÁS LEÍDA",
+    "fecha": "24 SEP",
     "titulo": "Fivetran y dbt Labs rediseñan su stack para agentes de IA",
-    "desc": "No es un anuncio aislado: Snowflake y Databricks convergen en la misma apuesta — un cambio de fondo en para quién se construye la infraestructura de datos.",
+    "desc": "Snowflake y Databricks convergen en la misma apuesta — un cambio de fondo en para quién se construye la infraestructura de datos.",
+    "foto": "public/blog/portadas/fivetran-dbt-labs-datos-listos-para-agentes-ia.jpg",
 }
 
 LATERAL_DER = {
     "kicker": "IA Y NUEVA ECONOMÍA · 3ª MÁS LEÍDA",
+    "fecha": "23 SEP",
     "titulo": "La carrera de la IA cambia de fase",
     "desc": "De los benchmarks a los robots, la energía y las reglas — mientras OpenAI pide que el gobierno de EU le imponga reglas obligatorias.",
+    "foto": "public/blog/portadas/carrera-ia-cambia-de-fase-robots-energia-reglas.jpg",
 }
 
 DATOS = [
@@ -79,37 +124,47 @@ DATOS = [
     ("10 semanas", "Nueva serie: tesis sobre gobernanza en RAG"),
 ]
 
-# Todas las demás notas de la semana (las #1, #2 y #3 más visitadas ya
-# van arriba, como historia principal y laterales).
+# Top 4 a 13 por visitas (Vercel Analytics), con foto, fecha y resumen corto.
 OTRAS = [
-    ("IA Y NUEVA ECONOMÍA", "Lo que Altman y Amodei pidieron a la ONU", "Un día después de que Trump llamara \"globalista\" a esa misma idea."),
-    ("NOTAS DE CAMPO", "El experimento de la ciudad de las ratas", "Qué pasó cuando el Universo 25 tuvo todo, menos espacio."),
-    ("GEOPOLÍTICA", "90 años del Holodomor", "La clave para entender —y desinformar sobre— la guerra en Ucrania."),
-    ("OPINIÓN", "Raskolnikov y el mito del fundador", "La teoría del hombre extraordinario, 160 años después."),
-    ("OPINIÓN", "El trabajo infantil en el mundo", "Historia, datos duros y por qué la meta 2025 se dio por perdida."),
-    ("DATOS COMO NEGOCIO", "El Excel paralelo", "Por qué los equipos siguen desconfiando del dato \"oficial\"."),
-    ("IA Y NUEVA ECONOMÍA", "Qué es un \"agent context layer\"", "La pieza que falta entre tus datos y un agente que no invente."),
-    ("MÉXICO Y LATAM", "LEGO y el mito del nearshoring", "400 millones más en Nuevo León: capital que ya no puede irse, no una apuesta nueva."),
-    ("MÉXICO Y LATAM", "La encuesta de Banxico sobre IA", "Casi la mitad de las grandes empresas ya usa IA — el doble que hace 9 meses."),
-    ("MÉXICO Y LATAM", "México exporta servidores, no autos", "Las exportaciones de cómputo ya superaron a las automotrices este semestre."),
-    ("TECNOLOGÍA Y NEGOCIO", "Microsoft admite que el cobro por asiento no alcanza", "El negocio agéntico obliga a repensar cómo Microsoft cobra por Copilot."),
-    ("MERCADOS Y CAPITAL", "Los bonos le cobran una prima de riesgo a la IA", "Silicon Valley ya no se financia solo con efectivo."),
-    ("OPINIÓN", "El mito de las ocho horas de sueño", "No lo inventó un vendedor de colchones — la verdad es más rara."),
-    ("FINTECH", "El PMI de EU tocó un máximo de 5 años", "Y el mercado lo castigó en vez de celebrarlo."),
-    ("MÉXICO Y LATAM", "El jueves cargado: Banxico, Trump-Xi e INPC", "Tres eventos de peso el mismo día, en resumen."),
-    ("MÉXICO Y LATAM", "La economía mexicana mantuvo el paso en agosto", "Los analistas ya no ven a Banxico moviéndose antes de 2027."),
-    ("TESIS · SEMANA 1-2", "Persistencia no gobernada en RAG", "Arranca la serie de 10 semanas sobre gobernanza de datos en IA."),
-    ("SERIE SEMANAL", "Lo más importante y lo que se espera", "Los recaps semanales de mercados y economía, viernes y domingo."),
+    {"kicker": "IA Y NUEVA ECONOMÍA", "fecha": "24 SEP", "titulo": "Lo que Altman y Amodei pidieron a la ONU",
+     "desc": "Pidieron estándares globales un día después de que Trump llamara \"globalista\" a esa misma idea.",
+     "foto": "public/blog/portadas/altman-amodei-consejo-seguridad-onu-ia.jpg"},
+    {"kicker": "DATOS COMO NEGOCIO", "fecha": "25 SEP", "titulo": "El Excel paralelo",
+     "desc": "Por qué los equipos siguen desconfiando del dato \"oficial\" aunque la plataforma sea impecable.",
+     "foto": "public/blog/portadas/el-excel-paralelo-por-que-los-equipos-desconfian-del-dato-oficial.jpg"},
+    {"kicker": "NOTAS DE CAMPO", "fecha": "22 SEP", "titulo": "El experimento de la ciudad de las ratas",
+     "desc": "Qué pasó cuando el Universo 25 tuvo todo: comida, agua y refugio — menos espacio.",
+     "foto": "public/blog/portadas/experimento-ciudad-de-las-ratas.jpg"},
+    {"kicker": "GEOPOLÍTICA", "fecha": "26 SEP", "titulo": "90 años del Holodomor",
+     "desc": "La clave para entender —y para desinformar sobre— la guerra en Ucrania.",
+     "foto": "public/blog/portadas/holodomor-90-anos-guerra-rusia-ucrania-nazis-mito.jpg"},
+    {"kicker": "TESIS · SEMANA 1", "fecha": "27 SEP", "titulo": "Persistencia no gobernada en RAG",
+     "desc": "Arranca la serie de 10 semanas sobre gobernanza de datos en sistemas de IA.",
+     "foto": "public/blog/portadas/tesis-rag-semana-01-introduccion-planteamiento.jpg"},
+    {"kicker": "MÉXICO Y LATAM", "fecha": "22 SEP", "titulo": "La encuesta de Banxico sobre IA",
+     "desc": "Casi la mitad de las grandes empresas mexicanas ya usa IA — el doble que hace 9 meses.",
+     "foto": "public/blog/portadas/inteligencia-artificial-6.jpg"},
+    {"kicker": "SERIE SEMANAL", "fecha": "28 SEP", "titulo": "Lo que se espera esta semana",
+     "desc": "Proyecciones verificables de mercado y economía para la semana que entra.",
+     "foto": "public/blog/portadas/lo-que-se-espera-esta-semana-28-09-2026.jpg"},
+    {"kicker": "MÉXICO Y LATAM", "fecha": "23 SEP", "titulo": "México exporta servidores, no autos",
+     "desc": "Las exportaciones de cómputo ya superaron a las automotrices en este semestre.",
+     "foto": "public/blog/portadas/mexico-exporta-servidores-no-autos-boom-ia.jpg"},
+    {"kicker": "NOTAS DE CAMPO", "fecha": "23 SEP", "titulo": "El mito de las ocho horas de sueño",
+     "desc": "No lo inventó un vendedor de colchones — la verdad es más rara.",
+     "foto": "public/blog/portadas/mito-ocho-horas-sueno-vendedor-colchones.jpg"},
+    {"kicker": "IDEAS Y ENSAYOS", "fecha": "26 SEP", "titulo": "La paradoja de Jevons y la IA",
+     "desc": "Hacer los modelos más eficientes no baja el consumo de energía — lo dispara.",
+     "foto": "public/blog/portadas/paradoja-de-jevons-ia-eficiencia-mas-consumo.jpg"},
 ]
 
 
 def generar(salida):
-    img = Image.new("RGB", (ANCHO, 100), CREMA)  # temporal, se recorta al final
-    img = Image.new("RGB", (ANCHO, 3000), CREMA)
+    img = Image.new("RGB", (ANCHO, 3400), CREMA)
     draw = ImageDraw.Draw(img)
     margen = 60
 
-    # masthead
+    # ---- masthead ----
     y = 50
     try:
         icono = Image.open(ICONO_PATH).convert("RGBA").resize((90, 90), Image.LANCZOS)
@@ -136,11 +191,21 @@ def generar(salida):
     y += 14
     f_meta = ImageFont.truetype(F_SANS, 18)
     draw.text((margen, y), "SEMANA DEL 22 AL 28 DE SEPTIEMBRE DE 2026", font=f_meta, fill=TINTA)
-    ed = "EDICIÓN SEMANAL"
+    ed = "EDICIÓN SEMANAL · TOP 13"
     ew = draw.textlength(ed, font=f_meta)
     draw.text((ANCHO - margen - ew, y), ed, font=f_meta, fill=TINTA)
     y += 30
     draw.line((margen, y, ANCHO - margen, y), fill=TINTA, width=1)
+    y += 24
+
+    # ---- intro / resumen de la semana ----
+    f_intro_k = ImageFont.truetype(F_MONO_BOLD, 15)
+    draw.text((margen, y), "EN ESTA EDICIÓN", font=f_intro_k, fill=AZUL)
+    y += 26
+    f_intro = ImageFont.truetype(F_SERIF_ITALIC, 21)
+    y = texto_bloque(draw, img, margen, y, INTRO, f_intro, ANCHO - margen * 2, (45, 40, 33), 29)
+    y += 20
+    draw.line((margen, y, ANCHO - margen, y), fill=TINTA, width=2)
     y += 30
 
     # ---- fila superior: lateral izq | historia principal | lateral der ----
@@ -152,45 +217,55 @@ def generar(salida):
     x_der = x_main + col_main_w + col_gap
 
     fila_top_y = y
+    foto_lat_h = 170
 
     # lateral izquierda
-    f_kicker_s = ImageFont.truetype(F_MONO_BOLD, 15)
-    draw.text((x_izq, y), LATERAL_IZQ["kicker"], font=f_kicker_s, fill=AZUL)
-    yl = y + 26
-    f_h3 = ImageFont.truetype(F_SERIF_BLACK, 26)
-    yl = texto_bloque(draw, img, x_izq, yl, LATERAL_IZQ["titulo"], f_h3, col_lat_w, TINTA, 30)
-    yl += 8
-    f_desc = ImageFont.truetype(F_SERIF_REG, 17)
-    yl = texto_bloque(draw, img, x_izq, yl, LATERAL_IZQ["desc"], f_desc, col_lat_w, GRIS, 23)
+    pegar_foto(img, LATERAL_IZQ["foto"], x_izq, y, col_lat_w, foto_lat_h, recorte_superior=0.55)
+    yl = y + foto_lat_h + 14
+    f_kicker_s = ImageFont.truetype(F_MONO_BOLD, 13)
+    f_fecha_s = ImageFont.truetype(F_MONO_BOLD, 13)
+    yl = texto_bloque(draw, img, x_izq, yl, LATERAL_IZQ["kicker"], f_kicker_s, col_lat_w, AZUL, 18)
+    draw.text((x_izq, yl), LATERAL_IZQ["fecha"], font=f_fecha_s, fill=GRIS)
+    yl += 22
+    f_h3 = ImageFont.truetype(F_SERIF_BLACK, 25)
+    yl = texto_bloque(draw, img, x_izq, yl, LATERAL_IZQ["titulo"], f_h3, col_lat_w, TINTA, 29)
+    yl += 6
+    f_desc = ImageFont.truetype(F_SERIF_REG, 16)
+    yl = texto_bloque(draw, img, x_izq, yl, LATERAL_IZQ["desc"], f_desc, col_lat_w, GRIS, 22)
 
     # lateral derecha
-    draw.text((x_der, y), LATERAL_DER["kicker"], font=f_kicker_s, fill=AZUL)
-    yr = y + 26
-    yr = texto_bloque(draw, img, x_der, yr, LATERAL_DER["titulo"], f_h3, col_lat_w, TINTA, 30)
-    yr += 8
-    yr = texto_bloque(draw, img, x_der, yr, LATERAL_DER["desc"], f_desc, col_lat_w, GRIS, 23)
+    pegar_foto(img, LATERAL_DER["foto"], x_der, y, col_lat_w, foto_lat_h, recorte_superior=0.55)
+    yr = y + foto_lat_h + 14
+    yr = texto_bloque(draw, img, x_der, yr, LATERAL_DER["kicker"], f_kicker_s, col_lat_w, AZUL, 18)
+    draw.text((x_der, yr), LATERAL_DER["fecha"], font=f_fecha_s, fill=GRIS)
+    yr += 22
+    yr = texto_bloque(draw, img, x_der, yr, LATERAL_DER["titulo"], f_h3, col_lat_w, TINTA, 29)
+    yr += 6
+    yr = texto_bloque(draw, img, x_der, yr, LATERAL_DER["desc"], f_desc, col_lat_w, GRIS, 22)
 
-    # separadores verticales
-    fila_top_fin = max(yl, yr) + 10
-    div_x1 = x_main - col_gap / 2
-    div_x2 = x_der - col_gap / 2
-
-    # ---- historia principal (centro) ----
+    # ---- historia principal (centro), con foto ----
     ym = y
+    foto_main_h = 260
+    pegar_foto(img, MAIN["foto"], x_main, ym, col_main_w, foto_main_h, recorte_superior=0.48)
+    ym += foto_main_h + 16
     f_kicker_m = ImageFont.truetype(F_MONO_BOLD, 16)
     draw.text((x_main, ym), MAIN["kicker"], font=f_kicker_m, fill=AZUL)
-    ym += 30
-    f_h1 = ImageFont.truetype(F_SERIF_BLACK, 46)
-    ym = texto_bloque(draw, img, x_main, ym, MAIN["titulo"], f_h1, col_main_w, TINTA, 52)
-    ym += 12
-    f_dek = ImageFont.truetype(F_SERIF_ITALIC, 21)
-    ym = texto_bloque(draw, img, x_main, ym, MAIN["dek"], f_dek, col_main_w, (60, 55, 48), 29)
-    ym += 16
-    f_body = ImageFont.truetype(F_SERIF_REG, 18)
-    ym = texto_bloque(draw, img, x_main, ym, MAIN["cuerpo"], f_body, col_main_w, TINTA, 26)
+    f_fecha_m = ImageFont.truetype(F_MONO_BOLD, 16)
+    fw = draw.textlength(MAIN["fecha"], font=f_fecha_m)
+    draw.text((x_main + col_main_w - fw, ym), MAIN["fecha"], font=f_fecha_m, fill=GRIS)
+    ym += 32
+    f_h1 = ImageFont.truetype(F_SERIF_BLACK, 40)
+    ym = texto_bloque(draw, img, x_main, ym, MAIN["titulo"], f_h1, col_main_w, TINTA, 46)
+    ym += 10
+    f_dek = ImageFont.truetype(F_SERIF_ITALIC, 19)
+    ym = texto_bloque(draw, img, x_main, ym, MAIN["dek"], f_dek, col_main_w, (60, 55, 48), 26)
+    ym += 14
+    f_body = ImageFont.truetype(F_SERIF_REG, 17)
+    ym = texto_bloque(draw, img, x_main, ym, MAIN["cuerpo"], f_body, col_main_w, TINTA, 24)
 
-    fila_top_fin = max(fila_top_fin, ym + 10)
-
+    fila_top_fin = max(yl, yr, ym) + 10
+    div_x1 = x_main - col_gap / 2
+    div_x2 = x_der - col_gap / 2
     draw.line((div_x1, fila_top_y, div_x1, fila_top_fin), fill=LINEA, width=1)
     draw.line((div_x2, fila_top_y, div_x2, fila_top_fin), fill=LINEA, width=1)
 
@@ -220,30 +295,33 @@ def generar(salida):
     draw.line((margen, y, ANCHO - margen, y), fill=TINTA, width=2)
     y += 30
 
-    # ---- otras notas de la semana, grid 4x2 ----
+    # ---- top 4-13, grid con fotos ----
     f_ot_k = ImageFont.truetype(F_MONO_BOLD, 14)
-    draw.text((margen, y), "TAMBIÉN ESTA SEMANA", font=f_ot_k, fill=GRIS)
+    draw.text((margen, y), "TOP 13 DE LA SEMANA (4ª A 13ª MÁS LEÍDA)", font=f_ot_k, fill=GRIS)
     y += 32
-    cols = 4
-    gap = 30
+    cols = 3
+    gap = 34
     ow = (ANCHO - margen * 2 - gap * (cols - 1)) / cols
+    foto_h = 130
     f_ok = ImageFont.truetype(F_MONO_BOLD, 13)
-    f_ot = ImageFont.truetype(F_SERIF_BLACK, 19)
+    f_fecha_o = ImageFont.truetype(F_MONO_BOLD, 13)
+    f_ot = ImageFont.truetype(F_SERIF_BLACK, 20)
     f_od = ImageFont.truetype(F_SERIF_REG, 15)
-    row_h = 190
-    for i, (kicker, titulo, desc) in enumerate(OTRAS):
+    row_h = 300
+    for i, item in enumerate(OTRAS):
         col = i % cols
         row = i // cols
         ox = margen + col * (ow + gap)
         oy = y + row * row_h
-        draw.text((ox, oy), kicker, font=f_ok, fill=AZUL)
-        oyy = oy + 22
-        oyy = texto_bloque(draw, img, ox, oyy, titulo, f_ot, ow, TINTA, 23, max_lineas=3)
+        pegar_foto(img, item["foto"], ox, oy, ow, foto_h, recorte_superior=0.55)
+        oyy = oy + foto_h + 12
+        draw.text((ox, oyy), item["kicker"], font=f_ok, fill=AZUL)
+        fw = draw.textlength(item["fecha"], font=f_fecha_o)
+        draw.text((ox + ow - fw, oyy), item["fecha"], font=f_fecha_o, fill=GRIS)
+        oyy += 22
+        oyy = texto_bloque(draw, img, ox, oyy, item["titulo"], f_ot, ow, TINTA, 24, max_lineas=2)
         oyy += 6
-        texto_bloque(draw, img, ox, oyy, desc, f_od, ow, GRIS, 19, max_lineas=3)
-        if col < cols - 1:
-            lx = ox + ow + gap / 2
-            draw.line((lx, oy, lx, oy + row_h - 30), fill=LINEA, width=1)
+        texto_bloque(draw, img, ox, oyy, item["desc"], f_od, ow, GRIS, 20, max_lineas=3)
     filas = -(-len(OTRAS) // cols)
     y = y + filas * row_h + 10
 
