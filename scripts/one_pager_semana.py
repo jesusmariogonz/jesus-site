@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 """
-Genera un "one pager" estilo portada de diario (tipo El Economista) con
-las notas publicadas esta semana en jgonzalez.app. Uso puntual, no forma
-parte del pipeline automático de tarjetas sociales.
+Genera un "one pager" estilo portada de diario (tipo El País/El Economista)
+con las notas más leídas de la semana en jgonzalez.app. Distribución
+asimétrica: no todas las historias tienen foto, no todas tienen el mismo
+tamaño. Uso puntual, no forma parte del pipeline automático.
 
 Uso: python3 scripts/one_pager_semana.py --out ruta.jpg
-Los datos de las notas están hardcodeados abajo (EDICIONES) — editar ahí
-para reusar el script en otra semana.
 """
 from PIL import Image, ImageDraw, ImageFont
 
@@ -43,7 +42,7 @@ def envolver(draw, texto, fuente, ancho_max):
     return lineas
 
 
-def texto_bloque(draw, img, x, y, texto, fuente, ancho_max, color, interlinea, max_lineas=None):
+def texto_bloque(draw, x, y, texto, fuente, ancho_max, color, interlinea, max_lineas=None):
     lineas = envolver(draw, texto, fuente, ancho_max)
     if max_lineas:
         lineas = lineas[:max_lineas]
@@ -54,10 +53,6 @@ def texto_bloque(draw, img, x, y, texto, fuente, ancho_max, color, interlinea, m
 
 
 def foto_cover(path, ancho, alto, recorte_superior=None):
-    """Abre y recorta una foto para llenar ancho x alto sin deformarla.
-    Las portadas del sitio llevan el título incrustado en el tercio
-    inferior: para miniaturas (recorte_superior) usamos solo la mitad de
-    arriba de la imagen, que es foto limpia sin texto encima."""
     im = Image.open(path).convert("RGB")
     if recorte_superior:
         w0, h0 = im.size
@@ -76,7 +71,9 @@ def foto_cover(path, ancho, alto, recorte_superior=None):
     return im.resize((int(ancho), int(alto)), Image.LANCZOS)
 
 
-def pegar_foto(img, path, x, y, ancho, alto, recorte_superior=None):
+def pegar_foto(img, path, x, y, ancho, alto, recorte_superior=0.55):
+    if not path:
+        return False
     try:
         foto = foto_cover(path, ancho, alto, recorte_superior=recorte_superior)
         img.paste(foto, (int(x), int(y)))
@@ -85,33 +82,69 @@ def pegar_foto(img, path, x, y, ancho, alto, recorte_superior=None):
         return False
 
 
+def dibujar_historia(draw, img, x, y, w, historia, *, foto_h=0, tam_titulo=22,
+                      interlinea_titulo=26, max_lineas_titulo=3, tam_desc=15,
+                      interlinea_desc=20, max_lineas_desc=4, con_regla_fecha=True):
+    """Dibuja una historia (kicker+fecha, título, descripción) en (x,y) con
+    ancho w. Si foto_h > 0, pega la foto arriba. Regresa la y final."""
+    if foto_h and historia.get("foto"):
+        pegar_foto(img, historia["foto"], x, y, w, foto_h)
+        y += foto_h + 10
+
+    f_kicker = ImageFont.truetype(F_MONO_BOLD, 13)
+    f_fecha = ImageFont.truetype(F_MONO_BOLD, 13)
+    if con_regla_fecha:
+        draw.text((x, y), historia["kicker"], font=f_kicker, fill=AZUL)
+        fw = draw.textlength(historia["fecha"], font=f_fecha)
+        draw.text((x + w - fw, y), historia["fecha"], font=f_fecha, fill=GRIS)
+        y += 20
+
+    f_titulo = ImageFont.truetype(F_SERIF_BLACK, tam_titulo)
+    y = texto_bloque(draw, x, y, historia["titulo"], f_titulo, w, TINTA,
+                      interlinea_titulo, max_lineas=max_lineas_titulo)
+    y += 6
+    f_desc = ImageFont.truetype(F_SERIF_REG, tam_desc)
+    y = texto_bloque(draw, x, y, historia["desc"], f_desc, w, GRIS,
+                      interlinea_desc, max_lineas=max_lineas_desc)
+    return y
+
+
+# ------------------------------------------------------------------
+# Contenido: top 13 de la semana por Vercel Analytics (22-28 sep 2026)
+# ------------------------------------------------------------------
+
 INTRO = (
     "Una semana marcada por el cierre de la quiebra más larga del acero mexicano, un giro de fondo en "
     "la infraestructura de datos para IA, y un cambio de fase en la carrera de la inteligencia artificial "
-    "global — de los benchmarks a los robots, la energía y quién escribe las reglas. Abajo, las 13 notas "
-    "más leídas de la semana, con fecha y resumen, para quien se las perdió."
+    "global. Abajo, las 13 notas más leídas de la semana."
 )
 
+FLASH = [
+    {"kicker": "TESIS · SEMANA 1", "fecha": "27 SEP", "titulo": "Persistencia no gobernada en RAG",
+     "desc": "Arranca la serie de 10 semanas sobre gobernanza de datos en sistemas de IA."},
+    {"kicker": "SERIE SEMANAL", "fecha": "28 SEP", "titulo": "Lo que se espera esta semana",
+     "desc": "Proyecciones verificables de mercado y economía para la semana que entra."},
+    {"kicker": "MÉXICO Y LATAM", "fecha": "22 SEP", "titulo": "La encuesta de Banxico sobre IA",
+     "desc": "Casi la mitad de las grandes empresas ya usa IA — el doble que hace 9 meses."},
+]
+
 MAIN = {
-    "kicker": "LO MÁS LEÍDO DE LA SEMANA · BUSINESS",
-    "fecha": "25 SEP",
+    "kicker": "LO MÁS LEÍDO DE LA SEMANA · BUSINESS", "fecha": "25 SEP",
     "titulo": "AHMSA ya tiene comprador: CIESA pagó $1,400 millones por una empresa que debe casi el triple",
     "dek": "El grupo de Arturo Domínguez ganó la subasta de Altos Hornos de México. Tiene 90 días para completar el pago — y una promesa de hacer la planta 12 veces más grande que ningún operador ha demostrado poder cumplir.",
-    "cuerpo": "CIESA se convirtió en comprador virtual de AHMSA y su filial minera Minosa, con un depósito de garantía de apenas 56.4 millones de dólares —el 4% de su oferta total— y 90 días para completar el pago. Contra una deuda de casi 3,900 millones de dólares, la recuperación para más de 1,600 acreedores será parcial.",
+    "cuerpo": "CIESA se convirtió en comprador virtual de AHMSA y su filial minera Minosa, con un depósito de garantía de apenas 56.4 millones de dólares —el 4% de su oferta total— y 90 días para completar el pago. Contra una deuda de casi 3,900 millones de dólares, la recuperación para más de 1,600 acreedores será parcial. Domínguez prometió reactivar la planta en seis meses bajo la marca CIESA Desarrollo Acero — una promesa hecha por una constructora sin trayectoria previa operando una acerería de esta escala. Fuentes locales en Monclova ya han expresado dudas sobre si cualquiera de los postores tiene la capacidad real para reactivar una planta que lleva sin operar desde 2022.",
     "foto": "public/blog/portadas/ahmsa-venta-ciesa-1400-millones-dolares.jpg",
 }
 
-LATERAL_IZQ = {
-    "kicker": "DATOS COMO NEGOCIO · 2º MÁS LEÍDA",
-    "fecha": "24 SEP",
-    "titulo": "Fivetran y dbt Labs rediseñan su stack para agentes de IA",
-    "desc": "Snowflake y Databricks convergen en la misma apuesta — un cambio de fondo en para quién se construye la infraestructura de datos.",
-    "foto": "public/blog/portadas/fivetran-dbt-labs-datos-listos-para-agentes-ia.jpg",
+SECUNDARIA_LARGA = {
+    "kicker": "DATOS COMO NEGOCIO · 2ª MÁS LEÍDA", "fecha": "24 SEP",
+    "titulo": "Fivetran y dbt Labs ya no construyen su stack para analistas",
+    "desc": "Lo están rediseñando para agentes de IA. El 16 de septiembre, Fivetran y dbt Labs anunciaron una capa de contexto para que agentes consulten datos empresariales de forma confiable. No es un anuncio aislado: Snowflake y Databricks están convergiendo en la misma apuesta, y juntos describen un cambio de fondo en para quién se construye la infraestructura de datos — ya no el analista humano, sino el agente que consulta en su nombre.",
+    "foto": None,
 }
 
-LATERAL_DER = {
-    "kicker": "IA Y NUEVA ECONOMÍA · 3ª MÁS LEÍDA",
-    "fecha": "23 SEP",
+SECUNDARIA_CORTA = {
+    "kicker": "IA Y NUEVA ECONOMÍA · 3ª MÁS LEÍDA", "fecha": "23 SEP",
     "titulo": "La carrera de la IA cambia de fase",
     "desc": "De los benchmarks a los robots, la energía y las reglas — mientras OpenAI pide que el gobierno de EU le imponga reglas obligatorias.",
     "foto": "public/blog/portadas/carrera-ia-cambia-de-fase-robots-energia-reglas.jpg",
@@ -124,38 +157,31 @@ DATOS = [
     ("10 semanas", "Nueva serie: tesis sobre gobernanza en RAG"),
 ]
 
-# Top 4 a 13 por visitas (Vercel Analytics), con foto, fecha y resumen corto.
-OTRAS = [
+MEDIA = [
     {"kicker": "IA Y NUEVA ECONOMÍA", "fecha": "24 SEP", "titulo": "Lo que Altman y Amodei pidieron a la ONU",
-     "desc": "Pidieron estándares globales un día después de que Trump llamara \"globalista\" a esa misma idea.",
+     "desc": "Se dirigieron al Consejo de Seguridad sobre IA, un día después de que Trump llamara \"globalista\" a esa misma idea de estándares globales.",
      "foto": "public/blog/portadas/altman-amodei-consejo-seguridad-onu-ia.jpg"},
     {"kicker": "DATOS COMO NEGOCIO", "fecha": "25 SEP", "titulo": "El Excel paralelo",
-     "desc": "Por qué los equipos siguen desconfiando del dato \"oficial\" aunque la plataforma sea impecable.",
-     "foto": "public/blog/portadas/el-excel-paralelo-por-que-los-equipos-desconfian-del-dato-oficial.jpg"},
+     "desc": "Una empresa puede invertir millones en una plataforma de datos impecable y seguir viendo cómo sus equipos deciden desde una hoja de Excel que nadie autorizó — el problema casi nunca es técnico, es de confianza.",
+     "foto": None},
     {"kicker": "NOTAS DE CAMPO", "fecha": "22 SEP", "titulo": "El experimento de la ciudad de las ratas",
-     "desc": "Qué pasó cuando el Universo 25 tuvo todo: comida, agua y refugio — menos espacio.",
+     "desc": "Qué pasó cuando el Universo 25 tuvo todo: comida, agua y refugio ilimitados — menos espacio.",
      "foto": "public/blog/portadas/experimento-ciudad-de-las-ratas.jpg"},
+]
+
+ABAJO = [
     {"kicker": "GEOPOLÍTICA", "fecha": "26 SEP", "titulo": "90 años del Holodomor",
      "desc": "La clave para entender —y para desinformar sobre— la guerra en Ucrania.",
      "foto": "public/blog/portadas/holodomor-90-anos-guerra-rusia-ucrania-nazis-mito.jpg"},
-    {"kicker": "TESIS · SEMANA 1", "fecha": "27 SEP", "titulo": "Persistencia no gobernada en RAG",
-     "desc": "Arranca la serie de 10 semanas sobre gobernanza de datos en sistemas de IA.",
-     "foto": "public/blog/portadas/tesis-rag-semana-01-introduccion-planteamiento.jpg"},
-    {"kicker": "MÉXICO Y LATAM", "fecha": "22 SEP", "titulo": "La encuesta de Banxico sobre IA",
-     "desc": "Casi la mitad de las grandes empresas mexicanas ya usa IA — el doble que hace 9 meses.",
-     "foto": "public/blog/portadas/inteligencia-artificial-6.jpg"},
-    {"kicker": "SERIE SEMANAL", "fecha": "28 SEP", "titulo": "Lo que se espera esta semana",
-     "desc": "Proyecciones verificables de mercado y economía para la semana que entra.",
-     "foto": "public/blog/portadas/lo-que-se-espera-esta-semana-28-09-2026.jpg"},
     {"kicker": "MÉXICO Y LATAM", "fecha": "23 SEP", "titulo": "México exporta servidores, no autos",
-     "desc": "Las exportaciones de cómputo ya superaron a las automotrices en este semestre.",
-     "foto": "public/blog/portadas/mexico-exporta-servidores-no-autos-boom-ia.jpg"},
+     "desc": "Las exportaciones de cómputo ya superaron a las automotrices en este semestre, según Fitch.",
+     "foto": None},
     {"kicker": "NOTAS DE CAMPO", "fecha": "23 SEP", "titulo": "El mito de las ocho horas de sueño",
-     "desc": "No lo inventó un vendedor de colchones — la verdad es más rara.",
+     "desc": "No lo inventó un vendedor de colchones en 1938 — la verdad es más rara.",
      "foto": "public/blog/portadas/mito-ocho-horas-sueno-vendedor-colchones.jpg"},
     {"kicker": "IDEAS Y ENSAYOS", "fecha": "26 SEP", "titulo": "La paradoja de Jevons y la IA",
      "desc": "Hacer los modelos más eficientes no baja el consumo de energía — lo dispara.",
-     "foto": "public/blog/portadas/paradoja-de-jevons-ia-eficiencia-mas-consumo.jpg"},
+     "foto": None},
 ]
 
 
@@ -196,89 +222,100 @@ def generar(salida):
     draw.text((ANCHO - margen - ew, y), ed, font=f_meta, fill=TINTA)
     y += 30
     draw.line((margen, y, ANCHO - margen, y), fill=TINTA, width=1)
-    y += 24
-
-    # ---- intro / resumen de la semana ----
-    f_intro_k = ImageFont.truetype(F_MONO_BOLD, 15)
-    draw.text((margen, y), "EN ESTA EDICIÓN", font=f_intro_k, fill=AZUL)
-    y += 26
-    f_intro = ImageFont.truetype(F_SERIF_ITALIC, 21)
-    y = texto_bloque(draw, img, margen, y, INTRO, f_intro, ANCHO - margen * 2, (45, 40, 33), 29)
     y += 20
-    draw.line((margen, y, ANCHO - margen, y), fill=TINTA, width=2)
-    y += 30
 
-    # ---- fila superior: lateral izq | historia principal | lateral der ----
-    col_gap = 40
-    col_lat_w = 330
-    col_main_w = ANCHO - margen * 2 - col_lat_w * 2 - col_gap * 2
+    # ---- intro ----
+    f_intro = ImageFont.truetype(F_SERIF_ITALIC, 19)
+    y = texto_bloque(draw, margen, y, INTRO, f_intro, ANCHO - margen * 2, (45, 40, 33), 26)
+    y += 16
+    draw.line((margen, y, ANCHO - margen, y), fill=TINTA, width=1)
+    y += 22
+
+    # ---- franja flash: 3 notas cortas, sin foto ----
+    fila_y = y
+    n = len(FLASH)
+    gap = 40
+    fw_col = (ANCHO - margen * 2 - gap * (n - 1)) / n
+    max_y = fila_y
+    for i, h in enumerate(FLASH):
+        fx = margen + i * (fw_col + gap)
+        fin = dibujar_historia(draw, img, fx, fila_y, fw_col, h, foto_h=0,
+                                tam_titulo=19, interlinea_titulo=23, max_lineas_titulo=2,
+                                tam_desc=14, interlinea_desc=18, max_lineas_desc=2)
+        max_y = max(max_y, fin)
+        if i < n - 1:
+            lx = fx + fw_col + gap / 2
+            draw.line((lx, fila_y, lx, max_y + 10), fill=LINEA, width=1)
+    y = max_y + 16
+    draw.line((margen, y, ANCHO - margen, y), fill=TINTA, width=2)
+    y += 26
+
+    # ---- fila principal: historia grande (izq, ~62%) + columna derecha (~38%) ----
+    col_gap = 50
+    w_izq = int((ANCHO - margen * 2 - col_gap) * 0.62)
+    w_der = ANCHO - margen * 2 - col_gap - w_izq
     x_izq = margen
-    x_main = margen + col_lat_w + col_gap
-    x_der = x_main + col_main_w + col_gap
-
+    x_der = margen + w_izq + col_gap
     fila_top_y = y
-    foto_lat_h = 170
 
-    # lateral izquierda
-    pegar_foto(img, LATERAL_IZQ["foto"], x_izq, y, col_lat_w, foto_lat_h, recorte_superior=0.55)
-    yl = y + foto_lat_h + 14
-    f_kicker_s = ImageFont.truetype(F_MONO_BOLD, 13)
-    f_fecha_s = ImageFont.truetype(F_MONO_BOLD, 13)
-    yl = texto_bloque(draw, img, x_izq, yl, LATERAL_IZQ["kicker"], f_kicker_s, col_lat_w, AZUL, 18)
-    draw.text((x_izq, yl), LATERAL_IZQ["fecha"], font=f_fecha_s, fill=GRIS)
-    yl += 22
-    f_h3 = ImageFont.truetype(F_SERIF_BLACK, 25)
-    yl = texto_bloque(draw, img, x_izq, yl, LATERAL_IZQ["titulo"], f_h3, col_lat_w, TINTA, 29)
-    yl += 6
-    f_desc = ImageFont.truetype(F_SERIF_REG, 16)
-    yl = texto_bloque(draw, img, x_izq, yl, LATERAL_IZQ["desc"], f_desc, col_lat_w, GRIS, 22)
-
-    # lateral derecha
-    pegar_foto(img, LATERAL_DER["foto"], x_der, y, col_lat_w, foto_lat_h, recorte_superior=0.55)
-    yr = y + foto_lat_h + 14
-    yr = texto_bloque(draw, img, x_der, yr, LATERAL_DER["kicker"], f_kicker_s, col_lat_w, AZUL, 18)
-    draw.text((x_der, yr), LATERAL_DER["fecha"], font=f_fecha_s, fill=GRIS)
-    yr += 22
-    yr = texto_bloque(draw, img, x_der, yr, LATERAL_DER["titulo"], f_h3, col_lat_w, TINTA, 29)
-    yr += 6
-    yr = texto_bloque(draw, img, x_der, yr, LATERAL_DER["desc"], f_desc, col_lat_w, GRIS, 22)
-
-    # ---- historia principal (centro), con foto ----
-    ym = y
-    foto_main_h = 260
-    pegar_foto(img, MAIN["foto"], x_main, ym, col_main_w, foto_main_h, recorte_superior=0.48)
-    ym += foto_main_h + 16
+    foto_main_h = 320
+    pegar_foto(img, MAIN["foto"], x_izq, y, w_izq, foto_main_h, recorte_superior=0.48)
+    ym = y + foto_main_h + 16
     f_kicker_m = ImageFont.truetype(F_MONO_BOLD, 16)
-    draw.text((x_main, ym), MAIN["kicker"], font=f_kicker_m, fill=AZUL)
-    f_fecha_m = ImageFont.truetype(F_MONO_BOLD, 16)
-    fw = draw.textlength(MAIN["fecha"], font=f_fecha_m)
-    draw.text((x_main + col_main_w - fw, ym), MAIN["fecha"], font=f_fecha_m, fill=GRIS)
+    draw.text((x_izq, ym), MAIN["kicker"], font=f_kicker_m, fill=AZUL)
+    fw = draw.textlength(MAIN["fecha"], font=f_kicker_m)
+    draw.text((x_izq + w_izq - fw, ym), MAIN["fecha"], font=f_kicker_m, fill=GRIS)
     ym += 32
-    f_h1 = ImageFont.truetype(F_SERIF_BLACK, 40)
-    ym = texto_bloque(draw, img, x_main, ym, MAIN["titulo"], f_h1, col_main_w, TINTA, 46)
+    f_h1 = ImageFont.truetype(F_SERIF_BLACK, 38)
+    ym = texto_bloque(draw, x_izq, ym, MAIN["titulo"], f_h1, w_izq, TINTA, 44)
     ym += 10
-    f_dek = ImageFont.truetype(F_SERIF_ITALIC, 19)
-    ym = texto_bloque(draw, img, x_main, ym, MAIN["dek"], f_dek, col_main_w, (60, 55, 48), 26)
+    f_dek = ImageFont.truetype(F_SERIF_ITALIC, 18)
+    ym = texto_bloque(draw, x_izq, ym, MAIN["dek"], f_dek, w_izq, (60, 55, 48), 25)
     ym += 14
-    f_body = ImageFont.truetype(F_SERIF_REG, 17)
-    ym = texto_bloque(draw, img, x_main, ym, MAIN["cuerpo"], f_body, col_main_w, TINTA, 24)
 
-    fila_top_fin = max(yl, yr, ym) + 10
-    div_x1 = x_main - col_gap / 2
-    div_x2 = x_der - col_gap / 2
-    draw.line((div_x1, fila_top_y, div_x1, fila_top_fin), fill=LINEA, width=1)
-    draw.line((div_x2, fila_top_y, div_x2, fila_top_fin), fill=LINEA, width=1)
+    sub_gap = 30
+    sub_w = (w_izq - sub_gap) / 2
+    f_body = ImageFont.truetype(F_SERIF_REG, 16)
+    lineas_cuerpo = envolver(draw, MAIN["cuerpo"], f_body, sub_w)
+    mitad = -(-len(lineas_cuerpo) // 2)
+    colA, colB = lineas_cuerpo[:mitad], lineas_cuerpo[mitad:]
+    yA = ym
+    for linea in colA:
+        draw.text((x_izq, yA), linea, font=f_body, fill=TINTA)
+        yA += 23
+    yB = ym
+    for linea in colB:
+        draw.text((x_izq + sub_w + sub_gap, yB), linea, font=f_body, fill=TINTA)
+        yB += 23
+    div_sub_x = x_izq + sub_w + sub_gap / 2
+    izq_fin = max(yA, yB)
+    draw.line((div_sub_x, ym, div_sub_x, izq_fin), fill=LINEA, width=1)
 
-    y = fila_top_fin + 26
+    yd = fila_top_y
+    yd = dibujar_historia(draw, img, x_der, yd, w_der, SECUNDARIA_LARGA, foto_h=0,
+                          tam_titulo=24, interlinea_titulo=28, max_lineas_titulo=2,
+                          tam_desc=16, interlinea_desc=23, max_lineas_desc=8)
+    yd += 20
+    draw.line((x_der, yd, x_der + w_der, yd), fill=LINEA, width=1)
+    yd += 20
+    yd = dibujar_historia(draw, img, x_der, yd, w_der, SECUNDARIA_CORTA, foto_h=150,
+                          tam_titulo=21, interlinea_titulo=25, max_lineas_titulo=2,
+                          tam_desc=15, interlinea_desc=20, max_lineas_desc=3)
+
+    fila_fin = max(izq_fin, yd) + 10
+    div_x = x_der - col_gap / 2
+    draw.line((div_x, fila_top_y, div_x, fila_fin), fill=LINEA, width=1)
+
+    y = fila_fin + 26
     draw.line((margen, y, ANCHO - margen, y), fill=TINTA, width=2)
-    y += 30
+    y += 26
 
     # ---- franja de datos clave ----
     f_dk_k = ImageFont.truetype(F_MONO_BOLD, 15)
     draw.text((margen, y), "LA SEMANA EN NÚMEROS", font=f_dk_k, fill=GRIS)
     y += 30
-    n = len(DATOS)
-    col_w = (ANCHO - margen * 2 - 24 * (n - 1)) / n
+    n4 = len(DATOS)
+    col_w = (ANCHO - margen * 2 - 24 * (n4 - 1)) / n4
     f_val = ImageFont.truetype(F_SERIF_BLACK, 40)
     f_lab = ImageFont.truetype(F_SANS, 15)
     max_dy = y
@@ -286,44 +323,55 @@ def generar(salida):
         cx = margen + i * (col_w + 24)
         draw.text((cx, y), valor, font=f_val, fill=AZUL)
         dy = y + 52
-        dy = texto_bloque(draw, img, cx, dy, etiqueta, f_lab, col_w, GRIS, 19)
+        dy = texto_bloque(draw, cx, dy, etiqueta, f_lab, col_w, GRIS, 19)
         max_dy = max(max_dy, dy)
-        if i < n - 1:
+        if i < n4 - 1:
             lx = cx + col_w + 12
             draw.line((lx, y, lx, max_dy), fill=LINEA, width=1)
     y = max_dy + 20
     draw.line((margen, y, ANCHO - margen, y), fill=TINTA, width=2)
-    y += 30
+    y += 26
 
-    # ---- top 4-13, grid con fotos ----
+    # ---- fila media: 3 historias, mixtas (foto/sin foto) ----
+    fila_y = y
+    n3 = len(MEDIA)
+    gap3 = 40
+    w3 = (ANCHO - margen * 2 - gap3 * (n3 - 1)) / n3
+    max_y = fila_y
+    for i, h in enumerate(MEDIA):
+        mx = margen + i * (w3 + gap3)
+        fh = 160 if h["foto"] else 0
+        fin = dibujar_historia(draw, img, mx, fila_y, w3, h, foto_h=fh,
+                                tam_titulo=21, interlinea_titulo=25, max_lineas_titulo=3,
+                                tam_desc=15, interlinea_desc=20, max_lineas_desc=4)
+        max_y = max(max_y, fin)
+        if i < n3 - 1:
+            lx = mx + w3 + gap3 / 2
+            draw.line((lx, fila_y, lx, max_y + 10), fill=LINEA, width=1)
+    y = max_y + 20
+    draw.line((margen, y, ANCHO - margen, y), fill=TINTA, width=2)
+    y += 26
+
+    # ---- fila inferior: 4 historias compactas, mixtas ----
     f_ot_k = ImageFont.truetype(F_MONO_BOLD, 14)
-    draw.text((margen, y), "TOP 13 DE LA SEMANA (4ª A 13ª MÁS LEÍDA)", font=f_ot_k, fill=GRIS)
-    y += 32
-    cols = 3
-    gap = 34
-    ow = (ANCHO - margen * 2 - gap * (cols - 1)) / cols
-    foto_h = 130
-    f_ok = ImageFont.truetype(F_MONO_BOLD, 13)
-    f_fecha_o = ImageFont.truetype(F_MONO_BOLD, 13)
-    f_ot = ImageFont.truetype(F_SERIF_BLACK, 20)
-    f_od = ImageFont.truetype(F_SERIF_REG, 15)
-    row_h = 300
-    for i, item in enumerate(OTRAS):
-        col = i % cols
-        row = i // cols
-        ox = margen + col * (ow + gap)
-        oy = y + row * row_h
-        pegar_foto(img, item["foto"], ox, oy, ow, foto_h, recorte_superior=0.55)
-        oyy = oy + foto_h + 12
-        draw.text((ox, oyy), item["kicker"], font=f_ok, fill=AZUL)
-        fw = draw.textlength(item["fecha"], font=f_fecha_o)
-        draw.text((ox + ow - fw, oyy), item["fecha"], font=f_fecha_o, fill=GRIS)
-        oyy += 22
-        oyy = texto_bloque(draw, img, ox, oyy, item["titulo"], f_ot, ow, TINTA, 24, max_lineas=2)
-        oyy += 6
-        texto_bloque(draw, img, ox, oyy, item["desc"], f_od, ow, GRIS, 20, max_lineas=3)
-    filas = -(-len(OTRAS) // cols)
-    y = y + filas * row_h + 10
+    draw.text((margen, y), "TAMBIÉN ESTA SEMANA", font=f_ot_k, fill=GRIS)
+    y += 28
+    fila_y = y
+    n5 = len(ABAJO)
+    gap4 = 32
+    w4 = (ANCHO - margen * 2 - gap4 * (n5 - 1)) / n5
+    max_y = fila_y
+    for i, h in enumerate(ABAJO):
+        bx = margen + i * (w4 + gap4)
+        fh = 110 if h["foto"] else 0
+        fin = dibujar_historia(draw, img, bx, fila_y, w4, h, foto_h=fh,
+                                tam_titulo=18, interlinea_titulo=22, max_lineas_titulo=2,
+                                tam_desc=14, interlinea_desc=18, max_lineas_desc=3)
+        max_y = max(max_y, fin)
+        if i < n5 - 1:
+            lx = bx + w4 + gap4 / 2
+            draw.line((lx, fila_y, lx, max_y + 10), fill=LINEA, width=1)
+    y = max_y + 20
 
     draw.line((margen, y, ANCHO - margen, y), fill=TINTA, width=3)
     y += 24
