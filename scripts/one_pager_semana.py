@@ -162,7 +162,7 @@ MEDIA = [
      "desc": "Se dirigieron al Consejo de Seguridad sobre IA, un día después de que Trump llamara \"globalista\" a esa misma idea de estándares globales.",
      "foto": "public/blog/portadas/altman-amodei-consejo-seguridad-onu-ia.jpg"},
     {"kicker": "DATOS COMO NEGOCIO", "fecha": "25 SEP", "titulo": "El Excel paralelo",
-     "desc": "Una empresa puede invertir millones en una plataforma de datos impecable y seguir viendo cómo sus equipos deciden desde una hoja de Excel que nadie autorizó — el problema casi nunca es técnico, es de confianza.",
+     "desc": "Una empresa puede invertir millones en una plataforma de datos impecable y seguir viendo cómo sus equipos toman decisiones desde una hoja de Excel paralela que nadie autorizó. El problema casi nunca es técnico — es que el Excel paralelo resuelve, mejor que la plataforma oficial, un problema de confianza que la plataforma nunca se propuso resolver: el analista confía en la hoja porque él mismo puso cada fórmula, mientras el dato \"oficial\" llega de una caja negra que nadie en el equipo puede auditar en el momento.",
      "foto": None},
     {"kicker": "NOTAS DE CAMPO", "fecha": "22 SEP", "titulo": "El experimento de la ciudad de las ratas",
      "desc": "Qué pasó cuando el Universo 25 tuvo todo: comida, agua y refugio ilimitados — menos espacio.",
@@ -174,13 +174,13 @@ ABAJO = [
      "desc": "La clave para entender —y para desinformar sobre— la guerra en Ucrania.",
      "foto": "public/blog/portadas/holodomor-90-anos-guerra-rusia-ucrania-nazis-mito.jpg"},
     {"kicker": "MÉXICO Y LATAM", "fecha": "23 SEP", "titulo": "México exporta servidores, no autos",
-     "desc": "Las exportaciones de cómputo ya superaron a las automotrices en este semestre, según Fitch.",
+     "desc": "Fitch subió su pronóstico de crecimiento para México en 2026 de 1.0% a 1.4%, citando el auge de la IA en Estados Unidos como uno de los motores. Pero el detalle detrás del titular es más revelador que la cifra: en el primer semestre de 2026, las exportaciones de servidores y equipo de cómputo ya superaron a las automotrices, que durante tres décadas fueron el pilar manufacturero del país.",
      "foto": None},
     {"kicker": "NOTAS DE CAMPO", "fecha": "23 SEP", "titulo": "El mito de las ocho horas de sueño",
      "desc": "No lo inventó un vendedor de colchones en 1938 — la verdad es más rara.",
      "foto": "public/blog/portadas/mito-ocho-horas-sueno-vendedor-colchones.jpg"},
     {"kicker": "IDEAS Y ENSAYOS", "fecha": "26 SEP", "titulo": "La paradoja de Jevons y la IA",
-     "desc": "Hacer los modelos más eficientes no baja el consumo de energía — lo dispara.",
+     "desc": "En 1865 un economista inglés observó que máquinas de vapor más eficientes no redujeron el consumo de carbón de Inglaterra: lo multiplicaron. Ese mismo mecanismo es la razón por la que cada modelo de IA más eficiente que sale al mercado viene acompañado de más consumo total de energía, no de menos — porque cuando algo se vuelve más barato de usar, se usa muchísimo más.",
      "foto": None},
 ]
 
@@ -343,7 +343,8 @@ def generar(salida):
         fh = 160 if h["foto"] else 0
         fin = dibujar_historia(draw, img, mx, fila_y, w3, h, foto_h=fh,
                                 tam_titulo=21, interlinea_titulo=25, max_lineas_titulo=3,
-                                tam_desc=15, interlinea_desc=20, max_lineas_desc=4)
+                                tam_desc=15, interlinea_desc=20,
+                                max_lineas_desc=4 if h["foto"] else 10)
         max_y = max(max_y, fin)
         if i < n3 - 1:
             lx = mx + w3 + gap3 / 2
@@ -366,7 +367,8 @@ def generar(salida):
         fh = 110 if h["foto"] else 0
         fin = dibujar_historia(draw, img, bx, fila_y, w4, h, foto_h=fh,
                                 tam_titulo=18, interlinea_titulo=22, max_lineas_titulo=2,
-                                tam_desc=14, interlinea_desc=18, max_lineas_desc=3)
+                                tam_desc=14, interlinea_desc=18,
+                                max_lineas_desc=3 if h["foto"] else 8)
         max_y = max(max_y, fin)
         if i < n5 - 1:
             lx = bx + w4 + gap4 / 2
