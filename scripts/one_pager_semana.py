@@ -54,40 +54,40 @@ def texto_bloque(draw, img, x, y, texto, fuente, ancho_max, color, interlinea, m
 
 
 MAIN = {
-    "kicker": "EN PRIMER PLANO · BUSINESS",
+    "kicker": "LO MÁS LEÍDO DE LA SEMANA · BUSINESS",
     "titulo": "AHMSA ya tiene comprador: CIESA pagó $1,400 millones por una empresa que debe casi el triple",
     "dek": "El grupo de Arturo Domínguez ganó la subasta de Altos Hornos de México. Tiene 90 días para completar el pago — y una promesa de hacer la planta 12 veces más grande que ningún operador ha demostrado poder cumplir.",
     "cuerpo": "CIESA se convirtió en comprador virtual de AHMSA y su filial minera Minosa, con un depósito de garantía de apenas 56.4 millones de dólares —el 4% de su oferta total— y 90 días para completar el pago. Contra una deuda de casi 3,900 millones de dólares, la recuperación para más de 1,600 acreedores será parcial. Domínguez prometió reactivar la planta en seis meses bajo la marca CIESA Desarrollo Acero — una promesa hecha por una constructora sin trayectoria previa operando una acerería a esta escala.",
 }
 
 LATERAL_IZQ = {
-    "kicker": "IDEAS Y ENSAYOS",
-    "titulo": "La paradoja de Jevons y la IA",
-    "desc": "Hacer los modelos más eficientes no baja el consumo de energía de la IA — lo dispara. El mismo mecanismo que multiplicó el consumo de carbón en 1865.",
+    "kicker": "DATOS COMO NEGOCIO · 2º MÁS LEÍDA",
+    "titulo": "Fivetran y dbt Labs rediseñan su stack para agentes de IA",
+    "desc": "No es un anuncio aislado: Snowflake y Databricks convergen en la misma apuesta — un cambio de fondo en para quién se construye la infraestructura de datos.",
 }
 
 LATERAL_DER = {
-    "kicker": "MÉXICO Y LATAM",
-    "titulo": "LEGO y el mito del nearshoring",
-    "desc": "400 millones de dólares más en Nuevo León no es una empresa descubriendo México: es una que ya no puede irse sin perder mil millones invertidos.",
+    "kicker": "IA Y NUEVA ECONOMÍA · 3ª MÁS LEÍDA",
+    "titulo": "La carrera de la IA cambia de fase",
+    "desc": "De los benchmarks a los robots, la energía y las reglas — mientras OpenAI pide que el gobierno de EU le imponga reglas obligatorias.",
 }
 
 DATOS = [
-    ("$1,400M", "Oferta de CIESA por AHMSA"),
-    ("160M", "Niños en trabajo infantil en el mundo"),
-    ("90 años", "Del Holodomor a la guerra en Ucrania"),
-    ("10 semanas", "Nueva serie: tesis sobre gobernanza en RAG"),
+    ("18", "Lectores únicos — AHMSA/CIESA, la nota más leída"),
+    ("41", "Vistas a /blog esta semana"),
+    ("13", "Notas nuevas publicadas del 22 al 28 de sep."),
+    ("77", "Vistas a Pulso de Mercado, la página más visitada"),
 ]
 
 OTRAS = [
-    ("GEOPOLÍTICA", "90 años del Holodomor", "La clave para entender —y desinformar sobre— la guerra en Ucrania."),
-    ("OPINIÓN", "Raskolnikov y el mito del fundador", "La teoría del hombre extraordinario, 160 años después."),
-    ("OPINIÓN", "El trabajo infantil en el mundo", "Historia, datos duros y por qué la meta 2025 se dio por perdida."),
-    ("NOTAS DE CAMPO", "El experimento de la ciudad de las ratas", "Qué pasó cuando el Universo 25 tuvo todo, menos espacio."),
-    ("NOTAS DE CAMPO", "El mito de las ocho horas de sueño", "No lo inventó un vendedor de colchones — la verdad es más rara."),
+    ("IA Y NUEVA ECONOMÍA", "Lo que Altman y Amodei pidieron a la ONU", "Un día después de que Trump llamara \"globalista\" a esa misma idea."),
     ("DATOS COMO NEGOCIO", "El Excel paralelo", "Por qué los equipos siguen desconfiando del dato \"oficial\"."),
-    ("IA Y NUEVA ECONOMÍA", "Qué es un \"agent context layer\"", "La pieza que falta entre tus datos y un agente que no invente."),
-    ("TESIS · SEMANA 1-2", "Persistencia no gobernada en RAG", "Arranca la serie de 10 semanas sobre gobernanza de datos en IA."),
+    ("NOTAS DE CAMPO", "El experimento de la ciudad de las ratas", "Qué pasó cuando el Universo 25 tuvo todo, menos espacio."),
+    ("GEOPOLÍTICA", "90 años del Holodomor", "La clave para entender —y desinformar sobre— la guerra en Ucrania."),
+    ("TESIS · SEMANA 1", "Persistencia no gobernada en RAG", "Arranca la serie de 10 semanas sobre gobernanza de datos en IA."),
+    ("MÉXICO Y LATAM", "La encuesta de Banxico sobre IA", "Casi la mitad de las grandes empresas ya usa IA — el doble que hace 9 meses."),
+    ("MÉXICO Y LATAM", "México exporta servidores, no autos", "Las exportaciones de cómputo ya superaron a las automotrices este semestre."),
+    ("OPINIÓN", "El mito de las ocho horas de sueño", "No lo inventó un vendedor de colchones — la verdad es más rara."),
 ]
 
 
@@ -188,7 +188,7 @@ def generar(salida):
 
     # ---- franja de datos clave ----
     f_dk_k = ImageFont.truetype(F_MONO_BOLD, 15)
-    draw.text((margen, y), "LA SEMANA EN NÚMEROS", font=f_dk_k, fill=GRIS)
+    draw.text((margen, y), "LA SEMANA SEGÚN VERCEL ANALYTICS", font=f_dk_k, fill=GRIS)
     y += 30
     n = len(DATOS)
     col_w = (ANCHO - margen * 2 - 24 * (n - 1)) / n
