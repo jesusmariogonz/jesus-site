@@ -79,11 +79,27 @@ DATOS = [
     ("10 semanas", "Nueva serie: tesis sobre gobernanza en RAG"),
 ]
 
-# Solo las notas #4 y #5 más visitadas (las #1, #2 y #3 ya van arriba,
-# como historia principal y laterales).
+# Todas las demás notas de la semana (las #1, #2 y #3 más visitadas ya
+# van arriba, como historia principal y laterales).
 OTRAS = [
-    ("IA Y NUEVA ECONOMÍA · 4ª MÁS LEÍDA", "Lo que Altman y Amodei pidieron a la ONU", "Un día después de que Trump llamara \"globalista\" a esa misma idea."),
-    ("NOTAS DE CAMPO · 5ª MÁS LEÍDA", "El experimento de la ciudad de las ratas", "Qué pasó cuando el Universo 25 tuvo todo, menos espacio."),
+    ("IA Y NUEVA ECONOMÍA", "Lo que Altman y Amodei pidieron a la ONU", "Un día después de que Trump llamara \"globalista\" a esa misma idea."),
+    ("NOTAS DE CAMPO", "El experimento de la ciudad de las ratas", "Qué pasó cuando el Universo 25 tuvo todo, menos espacio."),
+    ("GEOPOLÍTICA", "90 años del Holodomor", "La clave para entender —y desinformar sobre— la guerra en Ucrania."),
+    ("OPINIÓN", "Raskolnikov y el mito del fundador", "La teoría del hombre extraordinario, 160 años después."),
+    ("OPINIÓN", "El trabajo infantil en el mundo", "Historia, datos duros y por qué la meta 2025 se dio por perdida."),
+    ("DATOS COMO NEGOCIO", "El Excel paralelo", "Por qué los equipos siguen desconfiando del dato \"oficial\"."),
+    ("IA Y NUEVA ECONOMÍA", "Qué es un \"agent context layer\"", "La pieza que falta entre tus datos y un agente que no invente."),
+    ("MÉXICO Y LATAM", "LEGO y el mito del nearshoring", "400 millones más en Nuevo León: capital que ya no puede irse, no una apuesta nueva."),
+    ("MÉXICO Y LATAM", "La encuesta de Banxico sobre IA", "Casi la mitad de las grandes empresas ya usa IA — el doble que hace 9 meses."),
+    ("MÉXICO Y LATAM", "México exporta servidores, no autos", "Las exportaciones de cómputo ya superaron a las automotrices este semestre."),
+    ("TECNOLOGÍA Y NEGOCIO", "Microsoft admite que el cobro por asiento no alcanza", "El negocio agéntico obliga a repensar cómo Microsoft cobra por Copilot."),
+    ("MERCADOS Y CAPITAL", "Los bonos le cobran una prima de riesgo a la IA", "Silicon Valley ya no se financia solo con efectivo."),
+    ("OPINIÓN", "El mito de las ocho horas de sueño", "No lo inventó un vendedor de colchones — la verdad es más rara."),
+    ("FINTECH", "El PMI de EU tocó un máximo de 5 años", "Y el mercado lo castigó en vez de celebrarlo."),
+    ("MÉXICO Y LATAM", "El jueves cargado: Banxico, Trump-Xi e INPC", "Tres eventos de peso el mismo día, en resumen."),
+    ("MÉXICO Y LATAM", "La economía mexicana mantuvo el paso en agosto", "Los analistas ya no ven a Banxico moviéndose antes de 2027."),
+    ("TESIS · SEMANA 1-2", "Persistencia no gobernada en RAG", "Arranca la serie de 10 semanas sobre gobernanza de datos en IA."),
+    ("SERIE SEMANAL", "Lo más importante y lo que se espera", "Los recaps semanales de mercados y economía, viernes y domingo."),
 ]
 
 
@@ -208,13 +224,13 @@ def generar(salida):
     f_ot_k = ImageFont.truetype(F_MONO_BOLD, 14)
     draw.text((margen, y), "TAMBIÉN ESTA SEMANA", font=f_ot_k, fill=GRIS)
     y += 32
-    cols = len(OTRAS)
-    gap = 60
+    cols = 4
+    gap = 30
     ow = (ANCHO - margen * 2 - gap * (cols - 1)) / cols
-    f_ok = ImageFont.truetype(F_MONO_BOLD, 14)
-    f_ot = ImageFont.truetype(F_SERIF_BLACK, 24)
-    f_od = ImageFont.truetype(F_SERIF_REG, 17)
-    row_h = 150
+    f_ok = ImageFont.truetype(F_MONO_BOLD, 13)
+    f_ot = ImageFont.truetype(F_SERIF_BLACK, 19)
+    f_od = ImageFont.truetype(F_SERIF_REG, 15)
+    row_h = 190
     for i, (kicker, titulo, desc) in enumerate(OTRAS):
         col = i % cols
         row = i // cols
