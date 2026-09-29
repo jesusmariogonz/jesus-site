@@ -156,6 +156,7 @@ export async function GET(request) {
         const fbResult = await postToFacebookPage({
           titulo: ultima.titulo,
           resumen: ultima.resumen,
+          gancho: ultima.gancho,
           url,
           imagenUrl: imagenSocial,
           esTarjetaSocial: Boolean(socialImagen),
@@ -201,6 +202,7 @@ export async function GET(request) {
         await postToLinkedIn({
           titulo: ultima.titulo,
           resumen: ultima.resumen,
+          gancho: ultima.gancho,
           url,
           imagenUrl: imagenSocial,
           esTarjetaSocial: Boolean(socialImagen),
