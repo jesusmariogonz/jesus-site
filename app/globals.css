@@ -3929,10 +3929,38 @@ html:not(.dark) .pglobe-land {
 }
 .pulsodash-snapshot table { font-size: 0.88rem; }
 
+/* Calendario económico: la columna "Evento" trae texto largo — que
+   envuelva en vez de forzar una sola línea (nowrap), si no se corta o
+   obliga a hacer scroll horizontal para leerlo. */
+.pulsodash-panel-body.prose table {
+  white-space: normal;
+  table-layout: fixed;
+  width: 100%;
+}
+.pulsodash-panel-body.prose th,
+.pulsodash-panel-body.prose td {
+  word-break: break-word;
+}
+.pulsodash-panel-body.prose th:first-child,
+.pulsodash-panel-body.prose td:first-child {
+  width: 110px;
+}
+
 @media (max-width: 860px) {
   .pulsodash-grid-2,
   .pulsodash-horizons {
     grid-template-columns: 1fr;
+  }
+  .pulsodash-panel-body.prose table {
+    font-size: 0.82rem;
+  }
+  .pulsodash-panel-body.prose th,
+  .pulsodash-panel-body.prose td {
+    padding: 6px 8px;
+  }
+  .pulsodash-panel-body.prose th:first-child,
+  .pulsodash-panel-body.prose td:first-child {
+    width: 84px;
   }
 }
 
