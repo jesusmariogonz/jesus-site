@@ -1,3 +1,4 @@
+import { Children, cloneElement, isValidElement } from "react";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -28,7 +29,48 @@ export const metadata = {
   },
 };
 
-function Seccion({ titulo, subtitulo, markdown, vacio }) {
+// Convierte los children de un <th> (texto, o texto con markdown anidado)
+// en una cadena plana, para usarla como etiqueta en las celdas de la fila
+// (móvil: la tabla se convierte en tarjetas, cada celda necesita saber a
+// qué columna pertenece).
+function textoPlano(children) {
+  return Children.toArray(children)
+    .map((c) => (typeof c === "string" ? c : isValidElement(c) ? textoPlano(c.props.children) : ""))
+    .join("");
+}
+
+// Componentes de tabla para ReactMarkdown que capturan el texto de cada
+// <th> y lo inyectan como data-label en el <td> correspondiente de cada
+// fila — así el CSS responsive (.pulsodash-calendario en móvil) puede
+// mostrar "Fecha: ...", "Evento: ..." como tarjeta en vez de columnas
+// angostas. Cierra sobre `encabezados` porque los <th> siempre se
+// renderizan antes que las filas del <tbody> en el mismo table.
+function componentesTablaConEtiquetas() {
+  let encabezados = [];
+  return {
+    table: (props) => {
+      encabezados = [];
+      return <table {...props} />;
+    },
+    th: ({ children, ...props }) => {
+      encabezados.push(textoPlano(children));
+      return <th {...props}>{children}</th>;
+    },
+    tr: ({ children, ...props }) => {
+      let i = -1;
+      const hijos = Children.map(children, (hijo) => {
+        if (isValidElement(hijo) && hijo.type === "td") {
+          i += 1;
+          return cloneElement(hijo, { "data-label": encabezados[i] || "" });
+        }
+        return hijo;
+      });
+      return <tr {...props}>{hijos}</tr>;
+    },
+  };
+}
+
+function Seccion({ titulo, subtitulo, markdown, vacio, claseExtra }) {
   return (
     <div className="pulsodash-panel">
       <div className="pulsodash-panel-head">
@@ -36,8 +78,10 @@ function Seccion({ titulo, subtitulo, markdown, vacio }) {
         {subtitulo && <span className="pulsodash-panel-sub">{subtitulo}</span>}
       </div>
       {markdown ? (
-        <div className="pulsodash-panel-body prose">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdown}</ReactMarkdown>
+        <div className={`pulsodash-panel-body prose${claseExtra ? ` ${claseExtra}` : ""}`}>
+          <ReactMarkdown remarkPlugins={[remarkGfm]} components={componentesTablaConEtiquetas()}>
+            {markdown}
+          </ReactMarkdown>
         </div>
       ) : (
         <p className="pulsodash-vacio">{vacio}</p>
@@ -164,6 +208,7 @@ export default function PulsoMercadoDashboard() {
               subtitulo={weeklyOutlook ? `Semana del ${formatFecha(weeklyOutlook.fecha)}` : null}
               markdown={calendarioSemana}
               vacio="Todavía no hay un Weekly Outlook publicado con el calendario de la semana."
+              claseExtra="pulsodash-calendario"
             />
           </>
         )}

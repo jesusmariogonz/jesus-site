@@ -23,6 +23,11 @@ export default function IdeasMundos({ notas = [] }) {
       <div className="ideas-mundos-grid">
         {mundosConNotas.map(([slug, m]) => (
           <article key={slug} className="ideas-mundo-card">
+            {m.imagen && (
+              <Link href={`/blog/mundo/${slug}`} className="ideas-mundo-foto">
+                <span style={{ backgroundImage: `url(${m.imagen})` }} />
+              </Link>
+            )}
             <h4>{m.nombre}</h4>
             <p className="ideas-mundo-desc">{m.descripcion}</p>
             <ul className="ideas-mundo-notas">
