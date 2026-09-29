@@ -24,7 +24,7 @@ La semana que arranca el lunes 28 de septiembre concentra su mayor riesgo en el 
 
 | Fecha | Evento | País | Importancia | Qué puede afectar |
 |---|---|---|---|---|
-| Lunes 28-sep | Balanza Comercial de Mercancías de agosto | México | Media | Peso, lectura de demanda externa |
+| Lunes 28-sep | [Balanza Comercial de Mercancías de agosto](/blog/exportaciones-mexico-superavit-comercial-agosto-2026) | México | Media | Peso, lectura de demanda externa |
 | Miércoles 30-sep | PCE de agosto + tercera estimación del PIB del 2T + revisiones anuales del BEA | Estados Unidos | Alta | Expectativas de política monetaria de la Fed |
 | Miércoles 30-sep | Estadísticas de finanzas públicas de agosto | México | Media | Lectura de balance fiscal |
 | Jueves 1-oct | Solicitudes iniciales de desempleo + ISM manufacturero (PMI) | Estados Unidos | Media-Alta | Primer termómetro de actividad industrial post-Fed |
