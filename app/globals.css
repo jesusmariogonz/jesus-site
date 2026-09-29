@@ -3945,6 +3945,15 @@ html:not(.dark) .pglobe-land {
 .pulsodash-panel-body.prose td:first-child {
   width: 110px;
 }
+/* País e Importancia: texto corto de una sola palabra — que no se
+   parta letra por letra, se les da un ancho fijo angosto sin wrap. */
+.pulsodash-panel-body.prose th:nth-child(3),
+.pulsodash-panel-body.prose td:nth-child(3),
+.pulsodash-panel-body.prose th:nth-child(4),
+.pulsodash-panel-body.prose td:nth-child(4) {
+  width: 72px;
+  white-space: nowrap;
+}
 
 @media (max-width: 860px) {
   .pulsodash-grid-2,
@@ -3961,6 +3970,13 @@ html:not(.dark) .pglobe-land {
   .pulsodash-panel-body.prose th:first-child,
   .pulsodash-panel-body.prose td:first-child {
     width: 84px;
+  }
+  .pulsodash-panel-body.prose th:nth-child(3),
+  .pulsodash-panel-body.prose td:nth-child(3),
+  .pulsodash-panel-body.prose th:nth-child(4),
+  .pulsodash-panel-body.prose td:nth-child(4) {
+    width: 58px;
+    white-space: normal;
   }
 }
 
