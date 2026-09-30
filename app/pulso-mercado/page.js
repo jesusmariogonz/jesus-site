@@ -29,6 +29,102 @@ export const metadata = {
   },
 };
 
+// Explicación de cada dimensión del "scorecard" de Market Regime/Market
+// Pulse (Trend/Breadth/Momentum/Volatility/Rates/USD): qué significa cada
+// una y cómo se mide, para el tooltip de cada chip.
+const CONCEPTOS_PULSO = {
+  trend: {
+    etiqueta: "Trend",
+    explicacion:
+      "La dirección predominante de los precios en el marco de tiempo vigente. Se mide comparando el precio contra sus medias móviles (ej. de 50 y 200 días) y la pendiente de esas medias: si el precio está por encima y las medias suben, la tendencia es alcista; si está por debajo y bajan, es bajista.",
+  },
+  breadth: {
+    etiqueta: "Breadth",
+    explicacion:
+      "Qué tan generalizado está un movimiento del mercado, no solo qué tan grande. Se mide con la proporción de acciones que suben contra las que bajan (línea avance-declive) o cuántas están por encima de su media móvil — un rally con \"breadth\" débil depende de pocas acciones y es más frágil.",
+  },
+  momentum: {
+    etiqueta: "Momentum",
+    explicacion:
+      "La velocidad y aceleración del movimiento reciente de precios, no solo su dirección. Se mide con osciladores técnicos como el RSI o el MACD, que comparan las ganancias y pérdidas recientes para detectar si un movimiento se está acelerando, desacelerando o revirtiendo.",
+  },
+  volatility: {
+    etiqueta: "Volatility",
+    explicacion:
+      "Qué tan grandes son las oscilaciones de precio, esperadas o recientes. Se mide típicamente con el VIX (la volatilidad implícita que el mercado de opciones del S&P 500 está pagando) o con la volatilidad histórica realizada de los propios precios.",
+  },
+  rates: {
+    etiqueta: "Rates",
+    explicacion:
+      "La dirección de las tasas de interés de referencia. Se mide con el nivel y la pendiente de los rendimientos de bonos del Tesoro de EU (ej. a 2, 10 y 30 años) — rendimientos al alza generalmente reflejan expectativas de tasas más altas o más inflación.",
+  },
+  usd: {
+    etiqueta: "USD",
+    explicacion:
+      "La fortaleza del dólar estadounidense frente a otras divisas principales. Se mide con el índice DXY, una canasta ponderada del dólar contra el euro, el yen, la libra y otras monedas — un DXY al alza significa un dólar más fuerte en términos relativos.",
+  },
+};
+
+// Busca en el markdown de una sección la línea tipo "scorecard"
+// (Trend ↑ · Breadth ↓ · Momentum → · ...) que generan las rutinas de
+// Market Regime / Market Pulse, la separa del resto del texto y la
+// convierte en {clave, simbolo, nota} por dimensión — para renderizarla
+// como chips interactivos en vez de texto plano.
+function extraerScorecardPulso(markdown) {
+  if (!markdown) return { texto: markdown, items: null };
+  const lineas = markdown.split("\n");
+  const idx = lineas.findIndex(
+    (l) => /\bTrend\b/i.test(l) && /\bBreadth\b/i.test(l) && /\bMomentum\b/i.test(l)
+  );
+  if (idx === -1) return { texto: markdown, items: null };
+
+  const partes = lineas[idx]
+    .split("·")
+    .map((p) => p.trim())
+    .filter(Boolean);
+  const items = [];
+  for (const parte of partes) {
+    const m = parte.match(/^(Trend|Breadth|Momentum|Volatility|Rates|USD)\s*([↑↓→])\s*(.*)$/i);
+    if (m && CONCEPTOS_PULSO[m[1].toLowerCase()]) {
+      items.push({
+        clave: m[1].toLowerCase(),
+        simbolo: m[2],
+        nota: m[3].replace(/\.\s*$/, "").trim(),
+      });
+    }
+  }
+  if (items.length < 4) return { texto: markdown, items: null };
+
+  lineas.splice(idx, 1);
+  return { texto: lineas.join("\n").trim(), items };
+}
+
+const COLOR_SIMBOLO = { "↑": "#3b82f6", "↓": "#e2725b", "→": "#8a93a6" };
+
+function ScorecardPulso({ items }) {
+  return (
+    <div className="pulso-scorecard">
+      {items.map((it) => {
+        const c = CONCEPTOS_PULSO[it.clave];
+        return (
+          <details key={it.clave} className="pulso-chip">
+            <summary>
+              <span className="pulso-chip-etiqueta">{c.etiqueta}</span>
+              <span className="pulso-chip-simbolo" style={{ color: COLOR_SIMBOLO[it.simbolo] }}>
+                {it.simbolo}
+              </span>
+            </summary>
+            <div className="pulso-chip-tooltip">
+              <p className="pulso-chip-explicacion">{c.explicacion}</p>
+              {it.nota && <p className="pulso-chip-nota">Hoy: {it.nota}</p>}
+            </div>
+          </details>
+        );
+      })}
+    </div>
+  );
+}
+
 // Convierte los children de un <th> (texto, o texto con markdown anidado)
 // en una cadena plana, para usarla como etiqueta en las celdas de la fila
 // (móvil: la tabla se convierte en tarjetas, cada celda necesita saber a
@@ -70,7 +166,10 @@ function componentesTablaConEtiquetas() {
   };
 }
 
-function Seccion({ titulo, subtitulo, markdown, vacio, claseExtra }) {
+function Seccion({ titulo, subtitulo, markdown, vacio, claseExtra, conScorecard }) {
+  const { texto, items } = conScorecard
+    ? extraerScorecardPulso(markdown)
+    : { texto: markdown, items: null };
   return (
     <div className="pulsodash-panel">
       <div className="pulsodash-panel-head">
@@ -80,8 +179,9 @@ function Seccion({ titulo, subtitulo, markdown, vacio, claseExtra }) {
       {markdown ? (
         <div className={`pulsodash-panel-body prose${claseExtra ? ` ${claseExtra}` : ""}`}>
           <ReactMarkdown remarkPlugins={[remarkGfm]} components={componentesTablaConEtiquetas()}>
-            {markdown}
+            {texto}
           </ReactMarkdown>
+          {items && <ScorecardPulso items={items} />}
         </div>
       ) : (
         <p className="pulsodash-vacio">{vacio}</p>
@@ -137,6 +237,7 @@ export default function PulsoMercadoDashboard() {
             titulo="Market Regime"
             markdown={regimen}
             vacio="Sin datos de régimen de mercado por ahora."
+            conScorecard
           />
         </div>
 

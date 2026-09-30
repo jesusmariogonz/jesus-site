@@ -3923,6 +3923,76 @@ html:not(.dark) .pglobe-land {
   gap: 16px;
   margin-bottom: 8px;
 }
+/* Scorecard de Market Regime/Market Pulse (Trend/Breadth/Momentum/
+   Volatility/Rates/USD): chips clicables — <details>/<summary> nativo,
+   sin JS — que muestran el concepto al hacer clic o tap, con qué se mide
+   y el dato de hoy. */
+.pulso-scorecard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line-soft);
+}
+.pulso-chip {
+  position: relative;
+}
+.pulso-chip summary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+  cursor: pointer;
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  font-size: 0.82rem;
+  font-weight: 600;
+  user-select: none;
+}
+.pulso-chip summary::-webkit-details-marker { display: none; }
+.pulso-chip summary:hover {
+  border-color: var(--accent);
+}
+.pulso-chip[open] summary {
+  border-color: var(--accent);
+  background: var(--accent-soft, var(--surface));
+}
+.pulso-chip-etiqueta { color: var(--ink); }
+.pulso-chip-simbolo { font-size: 1rem; font-weight: 700; }
+.pulso-chip-tooltip {
+  position: absolute;
+  z-index: 5;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 260px;
+  max-width: 70vw;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+.pulso-chip-explicacion {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+.pulso-chip-nota {
+  margin: 8px 0 0;
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  color: var(--meta);
+}
+@media (max-width: 640px) {
+  .pulso-chip-tooltip {
+    width: 220px;
+  }
+}
+
 .pulsodash-horizons-head { text-align: center; margin: 40px 0 6px; }
 .pulsodash-horizons-head h2 { font-size: 1.3rem; margin-top: 6px; }
 .pulsodash-horizons {
