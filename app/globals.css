@@ -4082,27 +4082,31 @@ html:not(.dark) .pglobe-land {
    Importancia/Qué puede afectar) es fijo, lo genera siempre así la
    rutina automática — por eso las etiquetas pueden ir hardcodeadas. */
 @media (max-width: 640px) {
-  .pulsodash-calendario table,
-  .pulsodash-calendario thead,
-  .pulsodash-calendario tbody,
-  .pulsodash-calendario th,
-  .pulsodash-calendario td,
-  .pulsodash-calendario tr {
+  /* Especificidad: debe ganarle a ".pulsodash-panel-body.prose td" (2
+     clases) — de ahí encadenar las 3 clases reales del markup en vez de
+     solo ".pulsodash-calendario", que perdía la cascada y dejaba el
+     padding-left / position en 0, con la etiqueta y el valor superpuestos. */
+  .pulsodash-panel-body.prose.pulsodash-calendario table,
+  .pulsodash-panel-body.prose.pulsodash-calendario thead,
+  .pulsodash-panel-body.prose.pulsodash-calendario tbody,
+  .pulsodash-panel-body.prose.pulsodash-calendario th,
+  .pulsodash-panel-body.prose.pulsodash-calendario td,
+  .pulsodash-panel-body.prose.pulsodash-calendario tr {
     display: block;
     width: auto !important;
   }
-  .pulsodash-calendario thead tr {
+  .pulsodash-panel-body.prose.pulsodash-calendario thead tr {
     position: absolute;
     top: -9999px;
     left: -9999px;
   }
-  .pulsodash-calendario tr {
+  .pulsodash-panel-body.prose.pulsodash-calendario tr {
     border: 1px solid var(--line);
     border-radius: 8px;
     margin-bottom: 12px;
     overflow: hidden;
   }
-  .pulsodash-calendario td {
+  .pulsodash-panel-body.prose.pulsodash-calendario td {
     border: none;
     border-bottom: 1px solid var(--line-soft);
     padding: 8px 10px 8px 38%;
@@ -4110,8 +4114,8 @@ html:not(.dark) .pglobe-land {
     min-height: 20px;
     white-space: normal;
   }
-  .pulsodash-calendario td:last-child { border-bottom: none; }
-  .pulsodash-calendario td::before {
+  .pulsodash-panel-body.prose.pulsodash-calendario td:last-child { border-bottom: none; }
+  .pulsodash-panel-body.prose.pulsodash-calendario td::before {
     content: attr(data-label);
     position: absolute;
     left: 10px;
