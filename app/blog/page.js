@@ -65,6 +65,14 @@ export default function Blog() {
         </Reveal>
 
         <Reveal delay={0.03}>
+          <BlogExplorer
+            notas={notas}
+            pickSlug={pick?.slug}
+            mundos={Object.entries(MUNDOS)}
+          />
+        </Reveal>
+
+        <Reveal delay={0.03}>
           <NewsletterForm />
         </Reveal>
 
@@ -80,14 +88,6 @@ export default function Blog() {
 
         <Reveal delay={0.05}>
           <IdeasMundos notas={notas} />
-        </Reveal>
-
-        <Reveal delay={0.05}>
-          <BlogExplorer
-            notas={notas}
-            pickSlug={pick?.slug}
-            mundos={Object.entries(MUNDOS)}
-          />
         </Reveal>
       </div>
     </section>
