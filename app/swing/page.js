@@ -4,6 +4,10 @@ import HorizonteBloque from "@/components/HorizonteBloque";
 import HorizonteSubnav from "@/components/HorizonteSubnav";
 import { absUrl } from "@/lib/site";
 
+// Dinámico para que "Próxima actualización" siempre refleje la hora
+// actual, no la del último build.
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Swing",
   description: "Días a semanas: momentum, breakouts, pullbacks y catalizadores puntuales — parte de Pulso de Mercado.",
@@ -35,18 +39,21 @@ export default function SwingPage() {
         <HorizonteBloque
           titulo="Market Context"
           fuente={daily ? formatFecha(daily.fecha) : null}
+          tipoCorrida="daily"
           markdown={seccion(daily, "market regime")}
           vacio="Todavía no hay un Daily publicado para dar contexto de mercado."
         />
         <HorizonteBloque
           titulo="Today's Setups"
           fuente={daily ? formatFecha(daily.fecha) : null}
+          tipoCorrida="daily"
           markdown={seccion(daily, "swing")}
           vacio="Todavía no hay un Daily publicado con setups de swing."
         />
         <HorizonteBloque
           titulo="Swing Radar"
           fuente={weeklyOutlook ? `Semana del ${formatFecha(weeklyOutlook.fecha)}` : null}
+          tipoCorrida="weeklyOutlook"
           markdown={seccion(weeklyOutlook, "swing radar")}
           vacio="Todavía no hay un Weekly Outlook publicado con el Swing Radar."
         />

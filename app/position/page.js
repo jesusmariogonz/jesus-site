@@ -4,6 +4,10 @@ import HorizonteBloque from "@/components/HorizonteBloque";
 import HorizonteSubnav from "@/components/HorizonteSubnav";
 import { absUrl } from "@/lib/site";
 
+// Dinámico para que "Próxima actualización" siempre refleje la hora
+// actual, no la del último build.
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Position",
   description: "Semanas a meses: tendencia, rotación sectorial, relative strength y MA50/MA200 — parte de Pulso de Mercado.",
@@ -35,18 +39,21 @@ export default function PositionPage() {
         <HorizonteBloque
           titulo="Market Trend"
           fuente={daily ? formatFecha(daily.fecha) : null}
+          tipoCorrida="daily"
           markdown={seccion(daily, "market regime")}
           vacio="Todavía no hay un Daily publicado para dar contexto de tendencia."
         />
         <HorizonteBloque
           titulo="This Week"
           fuente={daily ? formatFecha(daily.fecha) : null}
+          tipoCorrida="daily"
           markdown={seccion(daily, "position")}
           vacio="Todavía no hay un Daily publicado con novedades de position."
         />
         <HorizonteBloque
           titulo="Position Radar"
           fuente={weeklyOutlook ? `Semana del ${formatFecha(weeklyOutlook.fecha)}` : null}
+          tipoCorrida="weeklyOutlook"
           markdown={seccion(weeklyOutlook, "position radar")}
           vacio="Todavía no hay un Weekly Outlook publicado con el Position Radar."
         />

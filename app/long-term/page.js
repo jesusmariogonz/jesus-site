@@ -4,6 +4,10 @@ import HorizonteBloque from "@/components/HorizonteBloque";
 import HorizonteSubnav from "@/components/HorizonteSubnav";
 import { absUrl } from "@/lib/site";
 
+// Dinámico para que "Próxima actualización" siempre refleje la hora
+// actual, no la del último build.
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Long Term",
   description: "Meses a años: macro, valuaciones, earnings y temas estructurales (IA, energía, nearshoring) — parte de Pulso de Mercado.",
@@ -35,18 +39,21 @@ export default function LongTermPage() {
         <HorizonteBloque
           titulo="Structural View"
           fuente={daily ? formatFecha(daily.fecha) : null}
+          tipoCorrida="daily"
           markdown={seccion(daily, "long term")}
           vacio="Sin cambios estructurales reportados en el Daily más reciente."
         />
         <HorizonteBloque
           titulo="Themes to Watch"
           fuente={weeklyOutlook ? `Semana del ${formatFecha(weeklyOutlook.fecha)}` : null}
+          tipoCorrida="weeklyOutlook"
           markdown={seccion(weeklyOutlook, "long-term radar")}
           vacio="Todavía no hay un Weekly Outlook publicado con temas de largo plazo."
         />
         <HorizonteBloque
           titulo="Thesis Changes"
           fuente={monthly ? formatFecha(monthly.fecha) : null}
+          tipoCorrida="monthly"
           markdown={seccion(monthly, "thesis tracker")}
           vacio="Todavía no hay un Monthly Review publicado con cambios de tesis."
         />

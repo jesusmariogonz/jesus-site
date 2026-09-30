@@ -4182,11 +4182,28 @@ html:not(.dark) .pglobe-land {
   margin-bottom: 12px;
 }
 .horizonte-bloque-head h2 { font-size: 1.05rem; }
-.horizonte-bloque-fuente {
+.horizonte-bloque-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  flex-shrink: 0;
+}
+.horizonte-bloque-fuente,
+.horizonte-bloque-proxima {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   color: var(--meta);
   white-space: nowrap;
+}
+.horizonte-bloque-proxima { color: var(--accent); }
+@media (max-width: 640px) {
+  .horizonte-bloque-head {
+    flex-wrap: wrap;
+  }
+  .horizonte-bloque-meta {
+    align-items: flex-start;
+  }
 }
 
 /* ============================================================
