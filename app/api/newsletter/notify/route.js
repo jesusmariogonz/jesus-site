@@ -81,11 +81,12 @@ export async function GET(request) {
 
   const url = absUrl(`/blog/${ultima.slug}`);
   const imagen = ultima.imagen ? absUrl(ultima.imagen) : null;
-  // Tarjeta social (Facebook/Instagram): si la nota ya tiene una generada
-  // (scripts/social_card.py), se usa en vez de la portada + resumen de
-  // antes — la imagen trae toda la información, el post solo el link.
-  const socialImagen = ultima.socialImagen ? absUrl(ultima.socialImagen) : null;
-  const imagenSocial = socialImagen || imagen;
+  // La tarjeta social estilo "portada de diario" (scripts/social_card.py)
+  // queda reservada para el resumen semanal (one pager con las notas más
+  // leídas según Vercel Analytics). En redes, cada nota individual usa su
+  // portada normal (foto + título superpuesto) — más simple, se ve como
+  // una foto real en el feed en vez de un recorte de periódico.
+  const imagenSocial = imagen;
   const force = searchParams.get("force") === "true";
 
   // Anti-duplicado: cada (slug, canal) se reclama una sola vez en la base
@@ -159,7 +160,7 @@ export async function GET(request) {
           gancho: ultima.gancho,
           url,
           imagenUrl: imagenSocial,
-          esTarjetaSocial: Boolean(socialImagen),
+          esTarjetaSocial: true,
         });
         if (fbResult === undefined) {
           fbDebug = "sin_credenciales_configuradas";
@@ -205,7 +206,7 @@ export async function GET(request) {
           gancho: ultima.gancho,
           url,
           imagenUrl: imagenSocial,
-          esTarjetaSocial: Boolean(socialImagen),
+          esTarjetaSocial: true,
         });
         enviados.push("linkedin");
       } catch (liErr) {
