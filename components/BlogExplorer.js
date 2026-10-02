@@ -121,7 +121,7 @@ function Paginacion({ pagina, totalPaginas, onCambiar }) {
   );
 }
 
-export default function BlogExplorer({ notas: notasProp = [], pickSlug, mundos = [] }) {
+export default function BlogExplorer({ notas: notasProp = [], pickSlug, mundos = [], children }) {
   const [q, setQ] = useState("");
   const [mundo, setMundo] = useState("todos");
   const [pagina, setPagina] = useState(1);
@@ -222,6 +222,8 @@ export default function BlogExplorer({ notas: notasProp = [], pickSlug, mundos =
           </button>
         ))}
       </div>
+
+      {children}
 
       {buscando ? (
         <>

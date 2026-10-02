@@ -69,25 +69,25 @@ export default function Blog() {
             notas={notas}
             pickSlug={pick?.slug}
             mundos={Object.entries(MUNDOS)}
-          />
-        </Reveal>
+          >
+            <Reveal delay={0.03}>
+              <NewsletterForm />
+            </Reveal>
 
-        <Reveal delay={0.03}>
-          <NewsletterForm />
-        </Reveal>
+            {recientes.length > 0 && (
+              <Reveal delay={0.05}>
+                <NotasCarrusel notas={recientes} titulo="Lo más reciente" />
+              </Reveal>
+            )}
 
-        {recientes.length > 0 && (
-          <Reveal delay={0.05}>
-            <NotasCarrusel notas={recientes} titulo="Lo más reciente" />
-          </Reveal>
-        )}
+            <Reveal delay={0.04}>
+              <TesisRagBanner publicadas={getPostsBySerie("tesis-rag").length} />
+            </Reveal>
 
-        <Reveal delay={0.04}>
-          <TesisRagBanner publicadas={getPostsBySerie("tesis-rag").length} />
-        </Reveal>
-
-        <Reveal delay={0.05}>
-          <IdeasMundos notas={notas} />
+            <Reveal delay={0.05}>
+              <IdeasMundos notas={notas} />
+            </Reveal>
+          </BlogExplorer>
         </Reveal>
       </div>
     </section>
