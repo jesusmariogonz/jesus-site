@@ -265,37 +265,25 @@ export default function BlogExplorer({ notas: notasProp = [], pickSlug, mundos =
           )}
         </>
       ) : (
-        <>
-          {pick && (
-            <Link href={`/blog/${pick.slug}`} className="editors-pick">
-              <NotaCover
-                categoria={pick.categoria}
-                imagen={pick.imagen}
-                size="pick"
-              />
-              <div className="editors-pick-body">
-                <span className="editors-pick-badge">★ Editor's Pick</span>
-                <h3>{pick.titulo}</h3>
-                {pick.resumen && <p>{pick.resumen}</p>}
-                <span className="post-card-meta">
-                  {pick.categoriaNombre} · {formatFechaCorta(pick.fecha)} ·{" "}
-                  {pick.minutos} min de lectura{" "}
-                  <span className="jx-flecha">→</span>
-                </span>
-              </div>
-            </Link>
-          )}
-          <ul className="post-list post-list-editorial">
-            {listaPagina.map((nota) => (
-              <NotaCard key={nota.slug} nota={nota} />
-            ))}
-          </ul>
-          <Paginacion
-            pagina={paginaActual}
-            totalPaginas={totalPaginas}
-            onCambiar={cambiarPagina}
-          />
-        </>
+        pick && (
+          <Link href={`/blog/${pick.slug}`} className="editors-pick">
+            <NotaCover
+              categoria={pick.categoria}
+              imagen={pick.imagen}
+              size="pick"
+            />
+            <div className="editors-pick-body">
+              <span className="editors-pick-badge">★ Editor's Pick</span>
+              <h3>{pick.titulo}</h3>
+              {pick.resumen && <p>{pick.resumen}</p>}
+              <span className="post-card-meta">
+                {pick.categoriaNombre} · {formatFechaCorta(pick.fecha)} ·{" "}
+                {pick.minutos} min de lectura{" "}
+                <span className="jx-flecha">→</span>
+              </span>
+            </div>
+          </Link>
+        )
       )}
     </>
   );
