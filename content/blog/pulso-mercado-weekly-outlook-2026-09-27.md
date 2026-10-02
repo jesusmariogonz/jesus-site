@@ -27,7 +27,7 @@ La semana que arranca el lunes 28 de septiembre concentra su mayor riesgo en el 
 | Lunes 28-sep | [Balanza Comercial de Mercancías de agosto](/blog/exportaciones-mexico-superavit-comercial-agosto-2026) | México | Media | Peso, lectura de demanda externa |
 | Miércoles 30-sep | [PCE de agosto + tercera estimación del PIB del 2T + revisiones anuales del BEA](/blog/pce-agosto-pib-2t-finanzas-publicas-mexico-septiembre-2026) | Estados Unidos | Alta | Expectativas de política monetaria de la Fed |
 | Miércoles 30-sep | [Estadísticas de finanzas públicas de agosto](/blog/pce-agosto-pib-2t-finanzas-publicas-mexico-septiembre-2026) | México | Media | Lectura de balance fiscal |
-| Jueves 1-oct | Solicitudes iniciales de desempleo + ISM manufacturero (PMI) | Estados Unidos | Media-Alta | Primer termómetro de actividad industrial post-Fed |
+| Jueves 1-oct | [Solicitudes iniciales de desempleo + ISM manufacturero (PMI)](/blog/ism-manufacturero-solicitudes-desempleo-septiembre-2026) | Estados Unidos | Media-Alta | Primer termómetro de actividad industrial post-Fed |
 | Viernes 2-oct | Nóminas no agrícolas de septiembre (consenso: ~100,000; previo: 162,000) | Estados Unidos | Alta | Primer reporte de empleo completo tras el alza de tasas de la Fed; tasa de desempleo esperada en 4.2% |
 
 No localizamos con confianza una fecha específica de la decisión de Banxico ni de datos de inflación de México dentro de esta ventana semanal; no se incluyen para evitar inventar fechas.
