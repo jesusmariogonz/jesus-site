@@ -3,6 +3,7 @@ titulo: '2 de octubre no se olvida: lo que realmente pasó en Tlatelolco y por q
 fecha: 2026-10-02
 categoria: opinion
 mundo: mexico-y-latam
+destacada: true
 tags:
   - 2 de octubre
   - tlatelolco

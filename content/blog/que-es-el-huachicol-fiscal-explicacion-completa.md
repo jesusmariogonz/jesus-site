@@ -3,7 +3,6 @@ titulo: 'Qué es el huachicol fiscal: la guía completa de cómo funciona, quié
 fecha: 2026-09-29
 categoria: geopolitics
 mundo: mexico-y-latam
-destacada: true
 tags:
   - huachicol fiscal
   - contrabando de combustible
