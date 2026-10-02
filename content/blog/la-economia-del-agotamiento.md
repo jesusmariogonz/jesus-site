@@ -14,7 +14,6 @@ tags:
   - innovación
 resumen: 'Las empresas están invirtiendo miles de millones en inteligencia artificial para aumentar la productividad, mientras continúan operando con modelos de gestión que convierten el agotamiento en un costo estructural del negocio.'
 imagen: /blog/pexels-tima-miroshnichenko-7567197.jpg
-destacada: true
 ---
 
 ## Cuando trabajar más significa producir menos

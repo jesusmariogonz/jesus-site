@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
-import { getPostsListado } from "@/lib/posts";
+import { getPostsListado, formatFecha, CATEGORIAS } from "@/lib/posts";
+import { calcularMinutos } from "@/lib/lectura";
 import { absUrl } from "@/lib/site";
 import { sendNewPostBroadcast, sendKindleCopy } from "@/lib/resend";
 import { markdownToHtml } from "@/lib/mdToHtml";
@@ -139,6 +140,10 @@ export async function GET(request) {
           resumen: ultima.resumen,
           url,
           contenidoHtml: markdownToHtml(ultima.content || ""),
+          imagen,
+          categoriaNombre: CATEGORIAS[ultima.categoria] || ultima.categoria,
+          fecha: formatFecha(ultima.fecha),
+          minutos: calcularMinutos(ultima.content || ""),
         });
         enviados.push("kindle");
       } catch (kindleErr) {
