@@ -23,7 +23,7 @@ datosClave:
     etiqueta: 'Incidentes armados en escuelas mexicanas registrados en los primeros tres meses de 2026, cerca ya del récord anual de 30 en 2025'
   - valor: '143 incidentes'
     etiqueta: 'Total de incidentes con armas en escuelas de México documentados entre 2000 y marzo de 2026'
-imagen: /blog/portadas/oficina-corporativa-17.jpg
+imagen: /blog/portadas/ataque-secundaria-torreon-coahuila-radicalizacion-online.jpg
 gancho: 'Dos gemelos de 18 años atacaron su antigua secundaria en Torreón con machetes y bombas molotov. La fiscalía primero habló de venganza escolar. Luego encontró, en sus teléfonos, fotografías de atacantes extranjeros que idolatraban. ¿Cuántos casos más de radicalización silenciosa existen ahora mismo en algún chat de WhatsApp en México?'
 socialImagen: /blog/social/ataque-secundaria-torreon-coahuila-radicalizacion-online.jpg
 ---

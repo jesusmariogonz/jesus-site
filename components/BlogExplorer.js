@@ -223,8 +223,6 @@ export default function BlogExplorer({ notas: notasProp = [], pickSlug, mundos =
         ))}
       </div>
 
-      {children}
-
       {buscando ? (
         <>
           <p className="buscador-conteo" aria-live="polite">
@@ -287,6 +285,8 @@ export default function BlogExplorer({ notas: notasProp = [], pickSlug, mundos =
           </Link>
         )
       )}
+
+      {children}
     </>
   );
 }
