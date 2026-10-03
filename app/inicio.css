@@ -392,137 +392,16 @@ html:not(.dark) .jx-pill-opinion    { color: #6d28d9; }
   color: transparent;
 }
 
-/* ── Tarjeta de marca: panel oscuro fijo (independiente del tema
-   claro/oscuro del sitio), foto recortada + cifras superpuestas ── */
-.jx-hero-card {
-  position: relative;
-  overflow: hidden;
+/* ── Tarjeta de marca: imagen ya diseñada, usada tal cual ── */
+.jx-hero-card-img {
   border-radius: 1.6rem;
-  background: linear-gradient(155deg, #0c1a33 0%, #0a1830 45%, #132743 100%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 2rem 1.4rem 1.8rem;
+  overflow: hidden;
   box-shadow: 0 40px 80px -30px rgba(5, 15, 35, 0.6);
 }
-@media (min-width: 640px) {
-  .jx-hero-card { padding: 2.6rem 2.6rem 2.2rem; }
-}
-.jx-hero-brand {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.15rem;
-  position: relative;
-  z-index: 2;
-}
-.jx-hero-brand-nombre {
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: -0.01em;
-}
-.jx-hero-brand-tag {
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.68rem;
-  letter-spacing: 0.18em;
-  color: rgba(255, 255, 255, 0.55);
-}
-.jx-hero-brand-url {
-  margin-top: 0.3rem;
-  font-size: 0.82rem;
-  color: #8fb4ff;
-}
-.jx-hero-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  align-items: end;
-  position: relative;
-  margin-top: 0.5rem;
-}
-@media (min-width: 860px) {
-  .jx-hero-grid { grid-template-columns: 1.2fr 0.8fr; gap: 1.5rem; }
-}
-.jx-hero-copy { position: relative; z-index: 2; }
-.jx-hero2 h1 {
-  margin: 0;
-  font-size: clamp(2rem, 5.2vw, 3.1rem);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1.12;
-  color: #fff;
-}
-.jx-hero2-sub {
-  margin: 1.1rem 0 0;
-  max-width: 34rem;
-  font-size: clamp(1rem, 1.6vw, 1.1rem);
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.72);
-}
-.jx-hero2-stack {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1.4rem;
-}
-.jx-hero2-chip {
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.78);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 9999px;
-  padding: 0.32rem 0.8rem;
-}
-.jx-hero-foto {
-  order: -1;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  z-index: 1;
-}
-@media (min-width: 860px) {
-  .jx-hero-foto { order: 0; justify-content: flex-end; }
-}
-.jx-hero-foto-img {
-  width: 72%;
-  max-width: 320px;
+.jx-hero-card-img-el {
+  width: 100%;
   height: auto;
   display: block;
-  border-radius: 1.1rem;
-  box-shadow: 0 24px 50px -16px rgba(0, 0, 0, 0.55);
-}
-@media (min-width: 860px) {
-  .jx-hero-foto-img { width: 100%; max-width: 340px; }
-}
-.jx-hero-stats {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.6rem 1rem;
-  margin-top: 2.2rem;
-  padding-top: 1.8rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-}
-@media (min-width: 640px) {
-  .jx-hero-stats { grid-template-columns: repeat(3, 1fr); }
-}
-@media (min-width: 1100px) {
-  .jx-hero-stats { grid-template-columns: repeat(5, 1fr); gap: 1rem; }
-}
-.jx-hero-stat b {
-  display: block;
-  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: #fff;
-}
-.jx-hero-stat small {
-  display: block;
-  margin-top: 0.3rem;
-  font-size: 0.78rem;
-  line-height: 1.35;
-  color: rgba(255, 255, 255, 0.6);
 }
 .jx-hero2-cta {
   display: flex;
