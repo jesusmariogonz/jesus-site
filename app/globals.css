@@ -87,6 +87,9 @@ a {
   color: var(--accent);
   text-decoration: none;
 }
+a:visited {
+  color: var(--accent);
+}
 a:hover {
   text-decoration: underline;
 }
@@ -1526,7 +1529,8 @@ html:not(.dark) .pglobe-land {
   padding: 9px 0;
   border-bottom: 1px solid var(--line-soft);
 }
-.ideas-mundo-notas a {
+.ideas-mundo-notas a,
+.ideas-mundo-notas a:visited {
   font-size: 0.9rem;
   color: var(--ink);
   text-decoration: none;
