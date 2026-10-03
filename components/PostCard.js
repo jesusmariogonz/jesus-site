@@ -1,31 +1,20 @@
 import Link from "next/link";
-import { CATEGORIAS, formatFechaCorta } from "@/lib/posts";
 import { calcularMinutos } from "@/lib/lectura";
 import NotaCover from "@/components/NotaCover";
-import InsightsBadge from "@/components/InsightsBadge";
 
-/* Tarjeta editorial: portada visual, categoría, titular grande
-   y fecha + "N min de lectura →". */
+/* Tarjeta compacta: miniatura cuadrada + título + minutos de lectura,
+   para los listados de notas por mundo/categoría. */
 
 export default function PostCard({ post }) {
   const minutos = calcularMinutos(post.content || "");
   return (
-    <li className="post-card post-card-editorial">
-      <Link href={`/blog/${post.slug}`} className="post-card-link">
-        <NotaCover categoria={post.categoria} imagen={post.imagen} size="md" />
-        <div className="post-card-body">
-          {post.horizonte ? (
-            <InsightsBadge horizonte={post.horizonte} region={post.region} />
-          ) : (
-            <span className="post-card-cat">
-              {CATEGORIAS[post.categoria] || post.categoria}
-            </span>
-          )}
+    <li className="post-card-compacta">
+      <Link href={`/blog/${post.slug}`} className="post-card-compacta-link">
+        <NotaCover categoria={post.categoria} imagen={post.imagen} size="sm" />
+        <div className="post-card-compacta-body">
           <h3>{post.titulo}</h3>
-          <p>{post.resumen}</p>
           <span className="post-card-meta">
-            {formatFechaCorta(post.fecha)} · {minutos} min de lectura{" "}
-            <span className="jx-flecha">→</span>
+            {minutos} min de lectura <span className="jx-flecha">→</span>
           </span>
         </div>
       </Link>

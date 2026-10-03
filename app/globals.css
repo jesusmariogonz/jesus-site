@@ -811,6 +811,43 @@ html:not(.dark) .prose li {
   color: var(--accent);
 }
 
+/* Tarjeta compacta (listados por mundo/categoría): miniatura cuadrada
+   + título + minutos de lectura, en fila. */
+.post-card-compacta { list-style: none; }
+.post-card-compacta-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.post-card-compacta-link:hover {
+  text-decoration: none;
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-lg);
+}
+.post-card-compacta-link .jx-cover { flex-shrink: 0; }
+.post-card-compacta-body { min-width: 0; }
+.post-card-compacta-body h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  line-height: 1.35;
+  color: var(--ink);
+}
+.post-card-compacta-body .post-card-meta {
+  display: inline-block;
+  margin-top: 8px;
+}
+
 /* ============================================
    Botonera de compartir en cada nota
    ============================================ */
