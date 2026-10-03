@@ -1522,29 +1522,35 @@ html:not(.dark) .pglobe-land {
   border-top: 1px solid var(--line-soft);
 }
 .ideas-mundo-notas li {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 10px;
   padding: 9px 0;
   border-bottom: 1px solid var(--line-soft);
 }
-.ideas-mundo-notas a,
-.ideas-mundo-notas a:visited {
-  font-size: 0.9rem;
+.ideas-mundo-nota-link,
+.ideas-mundo-nota-link:visited {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   color: var(--ink);
   text-decoration: none;
-  line-height: 1.4;
 }
-.ideas-mundo-notas a:hover {
+.ideas-mundo-nota-link .jx-cover { flex-shrink: 0; }
+.ideas-mundo-nota-texto {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  min-width: 0;
+}
+.ideas-mundo-nota-link:hover .ideas-mundo-nota-texto {
   color: var(--accent);
   text-decoration: underline;
 }
 .ideas-mundo-nota-min {
+  display: block;
+  margin-top: 3px;
   font-family: var(--font-mono);
   font-size: 0.72rem;
   color: var(--meta);
   white-space: nowrap;
+  text-decoration: none;
 }
 .ideas-mundo-cta {
   margin-top: auto;

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MUNDOS } from "@/lib/mundos";
+import NotaCover from "@/components/NotaCover";
 
 /* Debajo del carrusel de "Ideas": una tarjeta por mundo con su
    descripción y las últimas 3 notas (título + minutos de lectura), para
@@ -33,12 +34,17 @@ export default function IdeasMundos({ notas = [] }) {
             <ul className="ideas-mundo-notas">
               {porMundo[slug].slice(0, 3).map((n) => (
                 <li key={n.slug}>
-                  <Link href={`/blog/${n.slug}`}>{n.titulo}</Link>
-                  {n.minutos ? (
-                    <span className="ideas-mundo-nota-min">
-                      {n.minutos} min
+                  <Link href={`/blog/${n.slug}`} className="ideas-mundo-nota-link">
+                    <NotaCover categoria={n.categoria} imagen={n.imagen} size="sm" />
+                    <span className="ideas-mundo-nota-texto">
+                      {n.titulo}
+                      {n.minutos ? (
+                        <span className="ideas-mundo-nota-min">
+                          {n.minutos} min
+                        </span>
+                      ) : null}
                     </span>
-                  ) : null}
+                  </Link>
                 </li>
               ))}
             </ul>
