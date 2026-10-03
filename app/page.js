@@ -2,8 +2,6 @@ import { getPostsListado } from "@/lib/posts";
 import { calcularMinutos } from "@/lib/lectura";
 
 import Hero from "@/components/Hero";
-import SqlCard from "@/components/SqlCard";
-import StatsStrip from "@/components/StatsStrip";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import PulsoMercadoMini from "@/components/PulsoMercadoMini";
 import NotasDestacadas from "@/components/NotasDestacadas";
@@ -32,12 +30,6 @@ export default function Inicio() {
   return (
     <>
       <Hero />
-      <Reveal delay={0.1}>
-        <SqlCard />
-      </Reveal>
-      <Reveal delay={0.05}>
-        <StatsStrip />
-      </Reveal>
       <Reveal delay={0.05}>
         <FeaturedProjects />
       </Reveal>

@@ -4,14 +4,23 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 
-/* Hero editorial estilo Stripe/Vercel: titular grande por líneas,
-   subtítulo de valor, stack en chips y CTAs. */
+/* Hero editorial con foto grande + cifras de impacto integradas,
+   visibles sin hacer scroll. */
 
 const STACK = [
   "Data Architecture",
   "AI",
   "Analytics",
   "Data Products",
+];
+
+const STATS = [
+  { valor: "+13", etiqueta: "años de experiencia" },
+  { valor: "7", etiqueta: "países" },
+  { valor: "+20", etiqueta: "iniciativas estratégicas" },
+  { valor: "+5", etiqueta: "unidades de negocio" },
+  { valor: "+100M", etiqueta: "transacciones analizadas" },
+  { valor: "$130M", etiqueta: "en valor de negocio documentado" },
 ];
 
 const fadeUp = (reduce, delay) =>
@@ -34,48 +43,66 @@ export default function Hero() {
       {!reduce && (
         <motion.div className="jx-hero2-blob" style={{ y: blobY }} aria-hidden />
       )}
-      <motion.div className="jx-hero2-id" {...fadeUp(reduce, 0)}>
-        <Image
-          src="/jesus-hero.webp"
-          alt="Jesús González"
-          width={44}
-          height={44}
-          priority
-          className="jx-hero2-avatar"
-        />
-        <span>
-          <b>Jesús González</b> · Data, Analytics &amp; AI Solutions Architect
-        </span>
-      </motion.div>
 
-      <motion.h1 {...fadeUp(reduce, 0.08)}>
-        Data <span aria-hidden="true">·</span>
-        <br />
-        AI <span aria-hidden="true">·</span>
-        <br />
-        <span className="jx-grad">Business.</span>
-      </motion.h1>
+      <div className="jx-hero2-grid">
+        <div className="jx-hero2-copy">
+          <motion.div className="jx-hero2-id" {...fadeUp(reduce, 0)}>
+            <span>
+              <b>Jesús González</b> · Data, Analytics &amp; AI Solutions Architect
+            </span>
+          </motion.div>
 
-      <motion.p className="jx-hero2-sub" {...fadeUp(reduce, 0.16)}>
-        Diseño soluciones de datos e inteligencia artificial que convierten
-        información en decisiones de negocio.
-      </motion.p>
+          <motion.h1 {...fadeUp(reduce, 0.08)}>
+            Data <span aria-hidden="true">·</span>
+            <br />
+            AI <span aria-hidden="true">·</span>
+            <br />
+            <span className="jx-grad">Business.</span>
+          </motion.h1>
 
-      <motion.div className="jx-hero2-stack" {...fadeUp(reduce, 0.24)}>
-        {STACK.map((t) => (
-          <span key={t} className="jx-hero2-chip">
-            {t}
-          </span>
+          <motion.p className="jx-hero2-sub" {...fadeUp(reduce, 0.16)}>
+            Más de 13 años convirtiendo datos en decisiones que generan valor.
+            Diseño soluciones de datos e inteligencia artificial que
+            convierten información en decisiones de negocio.
+          </motion.p>
+
+          <motion.div className="jx-hero2-stack" {...fadeUp(reduce, 0.24)}>
+            {STACK.map((t) => (
+              <span key={t} className="jx-hero2-chip">
+                {t}
+              </span>
+            ))}
+          </motion.div>
+
+          <motion.div className="jx-hero2-cta" {...fadeUp(reduce, 0.32)}>
+            <Link href="/proyectos" className="btn">
+              Ver proyectos →
+            </Link>
+            <Link href="/blog" className="btn ghost">
+              Leer el blog
+            </Link>
+          </motion.div>
+        </div>
+
+        <motion.div className="jx-hero2-foto" {...fadeUp(reduce, 0.14)}>
+          <Image
+            src="/jesus-hero-full.webp"
+            alt="Jesús González"
+            width={900}
+            height={1325}
+            priority
+            className="jx-hero2-foto-img"
+          />
+        </motion.div>
+      </div>
+
+      <motion.div className="jx-hero2-stats" {...fadeUp(reduce, 0.4)}>
+        {STATS.map((s) => (
+          <div key={s.etiqueta} className="jx-hero2-stat">
+            <b>{s.valor}</b>
+            <small>{s.etiqueta}</small>
+          </div>
         ))}
-      </motion.div>
-
-      <motion.div className="jx-hero2-cta" {...fadeUp(reduce, 0.32)}>
-        <Link href="/proyectos" className="btn">
-          Ver proyectos →
-        </Link>
-        <Link href="/blog" className="btn ghost">
-          Leer el blog
-        </Link>
       </motion.div>
     </section>
   );

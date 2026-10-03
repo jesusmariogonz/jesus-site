@@ -128,95 +128,6 @@ html:not(.dark) .dot-grid {
   line-height: 1.6;
 }
 
-/* ── Propuesta 2: TERMINAL SQL ──────────────────────────────── */
-.jx-sql {
-  margin: 3rem auto 0;
-  max-width: 640px;
-  border: 1px solid var(--jx-border);
-  border-radius: 14px;
-  background: var(--jx-panel);
-  box-shadow: 0 24px 60px rgba(0, 15, 45, 0.35);
-  overflow: hidden;
-}
-.jx-sql-bar {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.65rem 1rem;
-  background: var(--jx-panel-2);
-  border-bottom: 1px solid var(--jx-border);
-}
-.jx-sql-bar i {
-  width: 11px;
-  height: 11px;
-  border-radius: 9999px;
-  display: inline-block;
-}
-.jx-sql-bar i:nth-child(1) { background: #f87171; }
-.jx-sql-bar i:nth-child(2) { background: #fbbf24; }
-.jx-sql-bar i:nth-child(3) { background: #34d399; }
-.jx-sql-bar span {
-  margin-left: 0.6rem;
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.72rem;
-  color: var(--jx-faint);
-}
-.jx-sql-body {
-  padding: 1rem 1.25rem 1.25rem;
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.85rem;
-  line-height: 1.9;
-}
-.jx-sql-line {
-  white-space: pre;
-  opacity: 0;
-  transform: translateY(4px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  color: var(--jx-text);
-}
-.jx-sql.is-on .jx-sql-line {
-  opacity: 1;
-  transform: none;
-}
-.jx-sql-line .n {
-  color: var(--jx-faint);
-  margin-right: 0.8rem;
-  user-select: none;
-}
-.jx-sql-line .kw { color: var(--jx-accent); }
-.jx-sql-status {
-  min-height: 1.4rem;
-  margin-top: 0.6rem;
-  font-size: 0.72rem;
-}
-.jx-sql-status .run { color: var(--jx-yellow); }
-.jx-sql-status .ok  { color: var(--jx-green); }
-.jx-sql-result {
-  margin-top: 0.5rem;
-  border: 1px solid var(--jx-border);
-  border-radius: 10px;
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  transition: max-height 0.5s ease, opacity 0.5s ease;
-}
-.jx-sql.is-done .jx-sql-result {
-  max-height: 240px;
-  opacity: 1;
-}
-.jx-sql-result table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.78rem;
-}
-.jx-sql-result td {
-  padding: 0.5rem 0.8rem;
-}
-.jx-sql-result tr:nth-child(odd)  { background: var(--jx-panel-2); }
-.jx-sql-result tr:nth-child(even) { background: transparent; }
-.jx-sql-result td:first-child { color: var(--jx-green); white-space: nowrap; }
-.jx-sql-result td:last-child  { color: var(--jx-text); }
-
 /* ── Propuesta 3: STATS ─────────────────────────────────────── */
 .jx-stats {
   margin-top: 4rem;
@@ -459,8 +370,6 @@ html:not(.dark) .jx-pill-opinion    { color: #6d28d9; }
   .cursor-blink {
     animation: none !important;
   }
-  .jx-sql-line,
-  .jx-sql-result,
   .jx-nota,
   .jx-nota-mini {
     transition: none !important;
@@ -523,6 +432,63 @@ html:not(.dark) .jx-pill-opinion    { color: #6d28d9; }
   background: var(--jx-panel);
   border-radius: 9999px;
   padding: 0.32rem 0.8rem;
+}
+.jx-hero2-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.2rem;
+  align-items: center;
+}
+@media (min-width: 900px) {
+  .jx-hero2-grid { grid-template-columns: 1.15fr 0.85fr; gap: 3rem; }
+}
+.jx-hero2-foto {
+  order: -1;
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 900px) {
+  .jx-hero2-foto { order: 0; justify-content: flex-end; }
+}
+.jx-hero2-foto-img {
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  border-radius: 1.4rem;
+  border: 1px solid var(--jx-border);
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.45);
+  object-fit: cover;
+}
+@media (min-width: 900px) {
+  .jx-hero2-foto-img { max-width: 100%; }
+}
+.jx-hero2-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.4rem 1.2rem;
+  margin-top: 3rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--jx-border);
+}
+@media (min-width: 640px) {
+  .jx-hero2-stats { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 1100px) {
+  .jx-hero2-stats { grid-template-columns: repeat(6, 1fr); }
+}
+.jx-hero2-stat b {
+  display: block;
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--jx-text);
+}
+.jx-hero2-stat small {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  color: var(--jx-muted);
 }
 .jx-hero2-cta {
   display: flex;
@@ -640,45 +606,3 @@ a:hover .jx-flecha { transform: translateX(4px); }
   filter: blur(8px);
 }
 
-/* Tabs de la SQL card interactiva */
-.jx-sql-tabs {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-  padding: 0.35rem 0.75rem 0;
-  background: var(--jx-panel-2);
-  border-bottom: 1px solid var(--jx-border);
-}
-.jx-sql-tab {
-  appearance: none;
-  border: 1px solid transparent;
-  border-bottom: none;
-  background: transparent;
-  color: var(--jx-faint);
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.72rem;
-  padding: 0.45rem 0.8rem 0.5rem;
-  border-radius: 8px 8px 0 0;
-  cursor: pointer;
-  transition: color 0.2s ease, background 0.2s ease;
-}
-.jx-sql-tab:hover { color: var(--jx-text); }
-.jx-sql-tab.is-active {
-  color: var(--jx-text);
-  background: var(--jx-panel);
-  border-color: var(--jx-border);
-}
-.jx-sql-run {
-  appearance: none;
-  margin-left: auto;
-  border: 1px solid var(--jx-border);
-  background: var(--jx-panel);
-  color: var(--jx-green);
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.7rem;
-  padding: 0.3rem 0.7rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.15s ease, border-color 0.2s ease;
-}
-.jx-sql-run:hover { transform: translateY(-1px); border-color: var(--jx-green); }
