@@ -51,7 +51,7 @@ export default async function BlogMundo({ params }) {
         {posts.length === 0 ? (
           <p>Todavía no hay notas en este mundo.</p>
         ) : (
-          <ul className="post-list">
+          <ul className="post-list post-list-editorial">
             {posts.map((post) => (
               <PostCard key={post.slug} post={post} />
             ))}

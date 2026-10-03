@@ -54,7 +54,7 @@ export default async function Categoria({ params }) {
             <code>categoria: {categoria}</code> y aparecerá aquí.
           </p>
         ) : (
-          <ul className="post-list">
+          <ul className="post-list post-list-editorial">
             {posts.map((post) => (
               <PostCard key={post.slug} post={post} />
             ))}
