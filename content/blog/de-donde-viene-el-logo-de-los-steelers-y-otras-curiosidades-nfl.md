@@ -4,7 +4,6 @@ fecha: 2026-10-04
 categoria: opinion
 mundo: notas-de-campo
 destacada: true
-oculta: true
 tags:
   - nfl
   - steelers
