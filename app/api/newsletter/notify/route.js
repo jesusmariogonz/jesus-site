@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getPostsListado, formatFecha, CATEGORIAS } from "@/lib/posts";
+import { getPosts, getPostsListado, formatFecha, CATEGORIAS } from "@/lib/posts";
 import { calcularMinutos } from "@/lib/lectura";
 import { absUrl } from "@/lib/site";
 import { sendNewPostBroadcast, sendKindleCopy } from "@/lib/resend";
@@ -63,8 +63,13 @@ export async function GET(request) {
   const listado = getPostsListado();
   // Excluye notas de Pulso de Mercado y ocultas: no queremos mandar un
   // correo cada vez que se publica un briefing diario de mercados.
+  // Excepción: si viene un slug explícito, también se busca entre las
+  // notas ocultas (pero nunca entre las de Pulso de Mercado) — permite
+  // mandar un envío privado (ej. solo a Kindle) de una nota que a propósito
+  // no se quiere publicar ni anunciar en el sitio.
   const ultima = slugParam
-    ? listado.find((p) => p.slug === slugParam)
+    ? listado.find((p) => p.slug === slugParam) ||
+      getPosts().find((p) => p.slug === slugParam && !p.pulsoTipo)
     : listado[0];
   if (!ultima) {
     // Si vino un slug explícito (ej. desde el GitHub Action) y no aparece
