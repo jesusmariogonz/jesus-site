@@ -11,3 +11,6 @@ tina/__generated__
 # Archivos de pago de The Toolkit — NUNCA al repo (es público).
 # Viven en Vercel Blob (privado); esta carpeta es solo staging local.
 /Recursos/
+__pycache__/
+tesis-rag/experimento-1/run.log
+tesis-rag/experimento-2/run.log
