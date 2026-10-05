@@ -1,63 +1,63 @@
 {
-  "semana_texto": "SEMANA DEL 22 AL 28 DE SEPTIEMBRE DE 2026",
+  "semana_texto": "SEMANA DEL 29 DE SEPTIEMBRE AL 5 DE OCTUBRE DE 2026",
   "edicion_texto": "EDICIÓN SEMANAL · TOP 13",
-  "intro": "Una semana marcada por el cierre de la quiebra más larga del acero mexicano, un giro de fondo en la infraestructura de datos para IA, y un cambio de fase en la carrera de la inteligencia artificial global. Abajo, las 13 notas más leídas de la semana.",
+  "intro": "Una semana que cruzó la cuarta ampliación de LEGO en Nuevo León, el 58 aniversario de Tlatelolco, el ataque armado en una secundaria de Torreón y un reporte de empleo en Estados Unidos que rompió la narrativa de resiliencia económica. Abajo, las 13 notas más leídas de la semana.",
   "flash": [
-    {"kicker": "TESIS · SEMANA 1", "fecha": "27 SEP", "titulo": "Persistencia no gobernada en RAG",
-     "desc": "Arranca la serie de 10 semanas sobre gobernanza de datos en sistemas de IA."},
-    {"kicker": "SERIE SEMANAL", "fecha": "28 SEP", "titulo": "Lo que se espera esta semana",
-     "desc": "Proyecciones verificables de mercado y economía para la semana que entra."},
-    {"kicker": "MÉXICO Y LATAM", "fecha": "22 SEP", "titulo": "La encuesta de Banxico sobre IA",
-     "desc": "Casi la mitad de las grandes empresas ya usa IA — el doble que hace 9 meses."}
+    {"kicker": "MÉXICO Y LATAM", "fecha": "01 OCT", "titulo": "El partido que se detuvo en el minuto 89:59",
+     "desc": "Konyaspor-Palestina y el estado real de la guerra, en medio de un alto el fuego frágil que todavía no se traduce en paz."},
+    {"kicker": "NOTAS DE CAMPO", "fecha": "04 OCT", "titulo": "El logo de los Steelers no se diseñó para ellos",
+     "desc": "Es el logo de la industria del acero de EU, adoptado en 1962 — y por eso solo va de un lado del casco."},
+    {"kicker": "SERIE SEMANAL", "fecha": "05 OCT", "titulo": "Lo que se espera esta semana",
+     "desc": "El miércoles concentra el mayor riesgo: minutas de la Fed e inflación de septiembre en México, el mismo día."}
   ],
   "main": {
-    "kicker": "LO MÁS LEÍDO DE LA SEMANA · BUSINESS", "fecha": "25 SEP",
-    "titulo": "AHMSA ya tiene comprador: CIESA pagó $1,400 millones por una empresa que debe casi el triple",
-    "dek": "El grupo de Arturo Domínguez ganó la subasta de Altos Hornos de México. Tiene 90 días para completar el pago — y una promesa de hacer la planta 12 veces más grande que ningún operador ha demostrado poder cumplir.",
-    "cuerpo": "CIESA se convirtió en comprador virtual de AHMSA y su filial minera Minosa, con un depósito de garantía de apenas 56.4 millones de dólares —el 4% de su oferta total— y 90 días para completar el pago. Contra una deuda de casi 3,900 millones de dólares, la recuperación para más de 1,600 acreedores será parcial. Domínguez prometió reactivar la planta en seis meses bajo la marca CIESA Desarrollo Acero — una promesa hecha por una constructora sin trayectoria previa operando una acerería de esta escala. Fuentes locales en Monclova ya han expresado dudas sobre si cualquiera de los postores tiene la capacidad real para reactivar una planta que lleva sin operar desde 2022.",
-    "foto": "public/blog/portadas/ahmsa-venta-ciesa-1400-millones-dolares.jpg"
+    "kicker": "LO MÁS LEÍDO DE LA SEMANA · MÉXICO Y LATAM", "fecha": "25 SEP",
+    "titulo": "LEGO no está descubriendo México: está pagando el costo de no poder irse",
+    "dek": "LEGO anunció 400 millones de dólares más para su planta en Ciénega de Flores, Nuevo León —la más grande del mundo—, con arranque de obra el 30 de septiembre.",
+    "cuerpo": "Es la cuarta ampliación de la planta desde que abrió en 2008, no el primer boleto de un nuevo inversionista descubriendo el nearshoring mexicano. La diferencia importa: una empresa que ya construyó, operó y volvió a ampliar su planta más grande del mundo en el mismo punto geográfico durante casi dos décadas no está \"apostando\" por México en el sentido especulativo que domina buena parte de la narrativa del nearshoring — está describiendo una dependencia operativa que ya no tiene una alternativa barata de deshacer. Esa lectura cambia la pregunta que vale la pena hacerse sobre cada nuevo anuncio de inversión extranjera: no es solo cuánto dinero llega, sino qué tan reversible es la decisión que ese dinero representa.",
+    "foto": "public/blog/portadas/lego-inversion-400-millones-nuevo-leon-2026.jpg"
   },
   "secundaria_larga": {
-    "kicker": "DATOS COMO NEGOCIO · 2ª MÁS LEÍDA", "fecha": "24 SEP",
-    "titulo": "Fivetran y dbt Labs ya no construyen su stack para analistas",
-    "desc": "Lo están rediseñando para agentes de IA. El 16 de septiembre, Fivetran y dbt Labs anunciaron una capa de contexto para que agentes consulten datos empresariales de forma confiable. No es un anuncio aislado: Snowflake y Databricks están convergiendo en la misma apuesta, y juntos describen un cambio de fondo en para quién se construye la infraestructura de datos — ya no el analista humano, sino el agente que consulta en su nombre.",
+    "kicker": "MÉXICO Y LATAM · 2ª MÁS LEÍDA", "fecha": "30 SEP",
+    "titulo": "Lo que se pierde sin tauromaquia",
+    "desc": "El Senado avanza la primera Ley General de Bienestar Animal de México, pero deja la tauromaquia en manos de los estados — seis ya la prohibieron y el Estado de México la blindó. Detrás del debate hay una raza entera, el toro de lidia, cuya supervivencia depende de un modelo económico que la prohibición desarma pieza por pieza, y un precedente incómodo: lo que realmente pasó con los animales cuando se prohibieron en los circos.",
     "foto": null
   },
   "secundaria_corta": {
-    "kicker": "IA Y NUEVA ECONOMÍA · 3ª MÁS LEÍDA", "fecha": "23 SEP",
-    "titulo": "La carrera de la IA cambia de fase",
-    "desc": "De los benchmarks a los robots, la energía y las reglas — mientras OpenAI pide que el gobierno de EU le imponga reglas obligatorias.",
-    "foto": "public/blog/portadas/carrera-ia-cambia-de-fase-robots-energia-reglas.jpg"
+    "kicker": "MÉXICO Y LATAM · 3ª MÁS LEÍDA", "fecha": "02 OCT",
+    "titulo": "2 de octubre no se olvida",
+    "desc": "58 años después de Tlatelolco, nadie sabe cuántos murieron esa noche, y nadie ha sido condenado por ello.",
+    "foto": "public/blog/portadas/2-de-octubre-no-se-olvida-tlatelolco-1968.jpg"
   },
   "datos": [
-    {"valor": "$1,400M", "etiqueta": "Oferta de CIESA por AHMSA"},
-    {"valor": "160M", "etiqueta": "Niños en trabajo infantil en el mundo"},
-    {"valor": "90 años", "etiqueta": "Del Holodomor a la guerra en Ucrania"},
-    {"valor": "10 semanas", "etiqueta": "Nueva serie: tesis sobre gobernanza en RAG"}
+    {"valor": "$400M", "etiqueta": "Cuarta ampliación de LEGO en Nuevo León"},
+    {"valor": "58 años", "etiqueta": "Desde Tlatelolco, sin cifra oficial de muertos"},
+    {"valor": "29,000", "etiqueta": "Empleos creados en EU en septiembre, vs. ~90,000 esperados"},
+    {"valor": "11 de 15", "etiqueta": "Víctimas mortales de ataques armados escolares en México que han sido mujeres"}
   ],
   "media": [
-    {"kicker": "IA Y NUEVA ECONOMÍA", "fecha": "24 SEP", "titulo": "Lo que Altman y Amodei pidieron a la ONU",
-     "desc": "Se dirigieron al Consejo de Seguridad sobre IA, un día después de que Trump llamara \"globalista\" a esa misma idea de estándares globales.",
-     "foto": "public/blog/portadas/altman-amodei-consejo-seguridad-onu-ia.jpg"},
-    {"kicker": "DATOS COMO NEGOCIO", "fecha": "25 SEP", "titulo": "El Excel paralelo",
-     "desc": "Una empresa puede invertir millones en una plataforma de datos impecable y seguir viendo cómo sus equipos toman decisiones desde una hoja de Excel paralela que nadie autorizó. El problema casi nunca es técnico — es que el Excel paralelo resuelve, mejor que la plataforma oficial, un problema de confianza que la plataforma nunca se propuso resolver: el analista confía en la hoja porque él mismo puso cada fórmula, mientras el dato \"oficial\" llega de una caja negra que nadie en el equipo puede auditar en el momento.",
+    {"kicker": "DATOS COMO NEGOCIO", "fecha": "29 SEP", "titulo": "Por qué ningún cerebro humano puede sostener una estrategia entre áreas",
+     "desc": "La tesis de Harvard Business Review, con investigación de campo en Walmart, Amazon, Ericsson, Ramp y Medtronic: las ejecuciones cross-funcionales fallan porque ningún cerebro humano puede sostener toda la información relevante de una decisión, y la orquestación de agentes de IA —no la automatización de tareas sueltas— es la respuesta real.",
+     "foto": "public/blog/portadas/negocios-reunion-9.jpg"},
+    {"kicker": "MÉXICO Y LATAM", "fecha": "01 OCT", "titulo": "Los gemelos de Torreón no atacaron por venganza escolar",
+     "desc": "La fiscalía de Coahuila encontró, entre las pertenencias de los dos hermanos detenidos, fotografías de atacantes extranjeros que aparentemente idolatraban — un giro hacia la hipótesis de radicalización por contenido consumido en línea.",
      "foto": null},
-    {"kicker": "NOTAS DE CAMPO", "fecha": "22 SEP", "titulo": "El experimento de la ciudad de las ratas",
-     "desc": "Qué pasó cuando el Universo 25 tuvo todo: comida, agua y refugio ilimitados — menos espacio.",
-     "foto": "public/blog/portadas/experimento-ciudad-de-las-ratas.jpg"}
+    {"kicker": "NOTAS DE CAMPO", "fecha": "30 SEP", "titulo": "\"Dad brain\": la neurociencia real detrás de un padre primerizo",
+     "desc": "El cerebro de un hombre pierde volumen de materia gris en las primeras semanas tras el nacimiento de su hijo — no es deterioro, es la misma poda neuronal ya documentada en madres, aunque con un costo real en sueño y ansiedad.",
+     "foto": "public/blog/portadas/negocios-reunion-14.jpg"}
   ],
   "abajo": [
-    {"kicker": "GEOPOLÍTICA", "fecha": "26 SEP", "titulo": "90 años del Holodomor",
-     "desc": "La clave para entender —y para desinformar sobre— la guerra en Ucrania.",
-     "foto": "public/blog/portadas/holodomor-90-anos-guerra-rusia-ucrania-nazis-mito.jpg"},
-    {"kicker": "MÉXICO Y LATAM", "fecha": "23 SEP", "titulo": "México exporta servidores, no autos",
-     "desc": "Fitch subió su pronóstico de crecimiento para México en 2026 de 1.0% a 1.4%, citando el auge de la IA en Estados Unidos como uno de los motores. Pero el detalle detrás del titular es más revelador que la cifra: en el primer semestre de 2026, las exportaciones de servidores y equipo de cómputo ya superaron a las automotrices, que durante tres décadas fueron el pilar manufacturero del país.",
+    {"kicker": "NOTAS DE CAMPO", "fecha": "03 OCT", "titulo": "\"Creo en el Dios de Spinoza\"",
+     "desc": "La respuesta de Einstein, en 1929, a la pregunta que todos le hacían — y cómo convirtió a un filósofo excomulgado 273 años antes en el nombre que la ciencia moderna sigue usando para hablar de lo divino.",
+     "foto": "public/blog/portadas/el-dios-de-spinoza-y-la-pregunta-a-einstein.jpg"},
+    {"kicker": "TESIS · SEMANA 3", "fecha": "04 OCT", "titulo": "Diseño y ejecución del Experimento 1: fuga de confidencialidad en RAG",
+     "desc": "El experimento ya se corrió contra la API real de Anthropic, sobre un corpus de 18 documentos ficticios y 62 pruebas pareadas — los resultados estadísticos completos llegan en las próximas entregas.",
      "foto": null},
-    {"kicker": "NOTAS DE CAMPO", "fecha": "23 SEP", "titulo": "El mito de las ocho horas de sueño",
-     "desc": "No lo inventó un vendedor de colchones en 1938 — la verdad es más rara.",
-     "foto": "public/blog/portadas/mito-ocho-horas-sueno-vendedor-colchones.jpg"},
-    {"kicker": "IDEAS Y ENSAYOS", "fecha": "26 SEP", "titulo": "La paradoja de Jevons y la IA",
-     "desc": "En 1865 un economista inglés observó que máquinas de vapor más eficientes no redujeron el consumo de carbón de Inglaterra: lo multiplicaron. Ese mismo mecanismo es la razón por la que cada modelo de IA más eficiente que sale al mercado viene acompañado de más consumo total de energía, no de menos — porque cuando algo se vuelve más barato de usar, se usa muchísimo más.",
+    {"kicker": "TECNOLOGÍA Y NEGOCIO", "fecha": "29 SEP", "titulo": "CrowdStrike vale más caro que casi toda la bolsa de Nueva York",
+     "desc": "Un canasto de acciones de ciberseguridad se ha más que duplicado desde abril, cuando Anthropic restringió el acceso a Mythos por temor a que su capacidad ofensiva superara la defensiva — CrowdStrike cotiza hoy a más de 170 veces utilidades.",
+     "foto": "public/blog/portadas/ciberseguridad-valuaciones-burbuja-mythos-crowdstrike.jpg"},
+    {"kicker": "MERCADOS Y CAPITAL", "fecha": "02 OCT", "titulo": "El agosto en que el mundo dejó de prestarle barato a sus gobiernos",
+     "desc": "El bono a 30 años de EU llegó a su nivel más alto desde 2007, el JGB japonés a 10 años tocó un máximo de 30 años, y el bono francés subió a su nivel más caro desde 2008 — mismo mes, mismo motivo de fondo.",
      "foto": null}
   ]
 }
