@@ -8,8 +8,8 @@ const links = [
   { href: "/proyectos", label: "Trabajo" },
   { href: "/blog", label: "Ideas" },
   { href: "/pulso-mercado", label: "Pulso de Mercado" },
-  { href: "/the-toolkit", label: "Toolkit" },
-  { href: "/contacto", label: "Hablemos →", accent: true },
+  { href: "/the-toolkit", label: "Toolkit →", accent: true },
+  { href: "/contacto", label: "Hablemos" },
 ];
 
 export default function Header() {
