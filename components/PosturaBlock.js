@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { trackEvent } from "@/components/PostHogProvider";
 
 function formatFechaCorta(iso) {
   try {
@@ -46,6 +47,7 @@ export default function PosturaBlock({ slug }) {
       });
       const d = await res.json();
       if (res.ok) {
+        trackEvent("postura_vote", { slug, voto });
         setData((prev) => ({ ...prev, votos: d.votos, miVoto: d.miVoto }));
       }
     } finally {
@@ -66,6 +68,7 @@ export default function PosturaBlock({ slug }) {
       });
       const d = await res.json();
       setAvisoComentario({ ok: d.ok, mensaje: d.mensaje });
+      trackEvent("postura_comment_submit", { slug, estado: d.estado });
       if (d.ok) {
         setTexto("");
         if (d.comentario) {

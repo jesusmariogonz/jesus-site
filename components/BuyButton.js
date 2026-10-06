@@ -1,5 +1,7 @@
 "use client";
 
+import { trackEvent } from "@/components/PostHogProvider";
+
 /* Botón de compra de un producto de The Toolkit.
    - Si `checkoutUrl` ya tiene valor, es o bien /api/checkout?... (crea
      la sesión de Stripe en el servidor y redirige) o el link directo
@@ -15,7 +17,11 @@ export default function BuyButton({ checkoutUrl, label = "Comprar", className = 
   }
 
   return (
-    <a href={checkoutUrl} className={`tk-buy ${className}`}>
+    <a
+      href={checkoutUrl}
+      className={`tk-buy ${className}`}
+      onClick={() => trackEvent("toolkit_buy_click", { checkoutUrl, label })}
+    >
       {label}
     </a>
   );

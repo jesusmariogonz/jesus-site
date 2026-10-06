@@ -4,6 +4,7 @@ import { stripe, siteUrl } from "@/lib/stripe";
 import { ensureSchema, createOrder } from "@/lib/db";
 import { getArchivosEntrega, getProductIdsCubiertos, getCheckoutItem } from "@/lib/toolkit";
 import { sendPurchaseEmail } from "@/lib/resend";
+import { capturarEventoServidor } from "@/lib/posthog";
 
 /* Webhook de Stripe. Configúralo en Stripe Dashboard → Developers →
    Webhooks → Add endpoint:
@@ -69,6 +70,14 @@ export async function POST(request) {
         to: email,
         nombreProducto: item?.nombre || item?.titulo || "tu compra en jgonzalez.app",
         links,
+      });
+      await capturarEventoServidor("toolkit_purchase_completed", {
+        distinctId: email,
+        properties: {
+          producto: item?.nombre || item?.titulo || id,
+          monto: (session.amount_total ?? 0) / 100,
+          moneda: session.currency ?? "mxn",
+        },
       });
     }
   } catch (err) {

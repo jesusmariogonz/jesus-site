@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackEvent } from "@/components/PostHogProvider";
 
 /* Formulario de newsletter. Se puede reutilizar en el blog,
    al final de cada nota, o donde haga falta. */
@@ -25,6 +26,7 @@ export default function NewsletterForm({
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data?.error || "Algo salió mal.");
+      trackEvent("newsletter_subscribe", { titulo });
       setEstado("ok");
       setEmail("");
     } catch (err) {

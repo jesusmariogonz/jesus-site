@@ -3,6 +3,7 @@ import "./globals.css";
 import "./inicio.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PostHogProvider from "@/components/PostHogProvider";
 import {
   SITE_URL,
   SITE_NAME,
@@ -144,6 +145,7 @@ export default function RootLayout({ children }) {
         <main>{children}</main>
         <Footer />
         <Analytics />
+        <PostHogProvider />
       </body>
     </html>
   );

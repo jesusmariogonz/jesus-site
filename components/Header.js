@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ThemeToggle from "@/components/ThemeToggle";
+import { trackEvent } from "@/components/PostHogProvider";
 
 const links = [
   { href: "/proyectos", label: "Trabajo" },
@@ -31,6 +32,10 @@ export default function Header() {
               href={l.href}
               className={l.accent ? "nav-toolkit" : undefined}
               aria-current={isActive(l.href) ? "page" : undefined}
+              onClick={() =>
+                l.href === "/the-toolkit" &&
+                trackEvent("toolkit_nav_click", { desde: pathname })
+              }
             >
               {l.label}
             </Link>
