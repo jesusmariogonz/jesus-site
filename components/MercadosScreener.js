@@ -123,9 +123,10 @@ export default function MercadosScreener() {
       </div>
 
       <p className="screener-nota">
-        Precio y velas diarias reales vía Finnhub. Retorno/volatilidad/Sharpe se calculan a partir de esas velas
-        (últimos ~180 días; Sharpe usa 4.5% como tasa libre de riesgo aproximada). "No disponible" significa que
-        Finnhub no devolvió datos para ese símbolo (frecuente en BMV con el plan gratuito) — no se inventa ningún valor.
+        Precio en vivo vía Finnhub; velas diarias reales vía Yahoo Finance. Retorno/volatilidad/Sharpe se calculan a
+        partir de esas velas (últimos ~180 días; Sharpe usa 4.5% como tasa libre de riesgo aproximada). "No disponible"
+        significa que ninguna fuente devolvió datos para ese símbolo (frecuente en BMV con el plan gratuito de
+        Finnhub) — no se inventa ningún valor.
       </p>
 
       {seleccionadas.length > 0 && (

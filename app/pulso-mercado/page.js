@@ -11,6 +11,7 @@ import {
 } from "@/lib/posts";
 import PulsoMercado from "@/components/PulsoMercado";
 import TickerTape from "@/components/TickerTape";
+import MercadosScreener from "@/components/MercadosScreener";
 import { absUrl } from "@/lib/site";
 
 // Dinámico (no estático) para que "Próxima corrida" en cada tarjeta
@@ -317,6 +318,12 @@ export default function PulsoMercadoDashboard() {
             />
           </>
         )}
+
+        <div className="pulsodash-horizons-head">
+          <span className="pulsodash-eyebrow">Screener</span>
+          <h2>Magníficas 7 y BMV, con datos reales</h2>
+        </div>
+        <MercadosScreener />
       </div>
       </section>
     </>
