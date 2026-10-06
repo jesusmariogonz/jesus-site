@@ -21,7 +21,11 @@ export default function Hero() {
 
   return (
     <section className="jx-wrap jx-hero2">
-      <motion.div className="jx-hero-card-img" {...fadeUp(reduce, 0)}>
+      <motion.h1 className="jx-hero-nombre" {...fadeUp(reduce, 0)}>
+        Jesús González
+      </motion.h1>
+
+      <motion.div className="jx-hero-card-img" {...fadeUp(reduce, 0.06)}>
         <Image
           src="/jesus-hero-card.jpg"
           alt="Jesús González — Data, AI & Business. Más de 13 años convirtiendo datos en decisiones que generan valor."
