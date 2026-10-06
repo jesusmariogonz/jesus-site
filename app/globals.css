@@ -4840,35 +4840,3 @@ html:not(.dark) .pglobe-land {
   line-height: 1.5;
 }
 
-.screener-grafica {
-  margin-top: 32px;
-  padding: 20px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--surface);
-}
-.screener-grafica-titulo {
-  display: block;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-.screener-grafica-svg { display: block; }
-.screener-grafica-leyenda {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 14px;
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-}
-.screener-grafica-leyenda-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-.screener-grafica-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 999px;
-  display: inline-block;
-}
