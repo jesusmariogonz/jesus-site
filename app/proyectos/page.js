@@ -32,15 +32,17 @@ export default function Proyectos() {
 
         <div className="lib-cta-final">
           <p>¿Quieres conocer mi trayectoria completa, leer cómo pienso estos problemas, o llevarte plantillas listas para usar?</p>
-          <Link href="/sobre-mi" className="btn ghost">
-            Sobre mí →
-          </Link>{" "}
-          <Link href="/blog" className="btn ghost" style={{ marginLeft: 10 }}>
-            Leer el blog →
-          </Link>{" "}
-          <Link href="/the-toolkit" className="btn" style={{ marginLeft: 10 }}>
-            Ver Toolkit →
-          </Link>
+          <div className="lib-cta-botones">
+            <Link href="/sobre-mi" className="btn ghost">
+              Sobre mí →
+            </Link>
+            <Link href="/blog" className="btn ghost">
+              Leer el blog →
+            </Link>
+            <Link href="/the-toolkit" className="btn-gold">
+              Ver Toolkit →
+            </Link>
+          </div>
         </div>
       </div>
     </section>
