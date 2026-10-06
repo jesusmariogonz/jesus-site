@@ -35,3 +35,31 @@ muy narrow como Tesis RAG donde no aplica un debate de opinión.
 Cuando se publique una nota sin este campo por alguna de esas
 excepciones, decirlo explícitamente en la respuesta al usuario (igual
 que se hace con cualquier otra omisión), no omitirlo en silencio.
+
+## Esto ya NO depende solo de que una sesión se acuerde
+
+Como varias rutinas automáticas (triggers programados) publican notas
+sin pasar por esta instrucción, hay un gate real a nivel de Vercel que
+hace cumplir la regla: `scripts/check-postura.mjs`, configurado como
+"Ignored Build Step" del proyecto en Vercel.
+
+Qué hace: en cada push a `main`, revisa solo los archivos **nuevos**
+en `content/blog/` (no ediciones a notas viejas). Si alguno no trae
+`postura` completo (pregunta + aFavor + enContra) y no cae en una de
+las 3 excepciones de arriba, **el deploy se salta por completo** —el
+sitio se queda en la versión anterior— y se manda un correo de aviso
+a jesusmariogonz@gmail.com. El sitio nunca se rompe para los
+visitantes; simplemente no se actualiza hasta que se corrija.
+
+Para desbloquear un deploy saltado: agrega el `postura` que falta (o
+la excepción correspondiente) y vuelve a hacer push — el siguiente
+push dispara el check de nuevo y, si pasa, despliega todo lo
+pendiente.
+
+Si vas a publicar una nota de calendario/rutina que no sea opinión
+real (ej. "lo que se espera esta semana", resúmenes de agenda
+económica) y no quieres agregarle postura, **no hay excepción
+automática para ese caso todavía** — cuenta como nota normal para el
+gate. O le agregas un `postura` real, o le pones `pulsoTipo`/`oculta`
+si aplica, o le avisas al usuario que ese tipo de nota también
+necesita el campo.
