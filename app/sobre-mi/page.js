@@ -15,21 +15,25 @@ const focos = [
     titulo: "Producto de datos",
     desc: "Definición, evolución y entrega de productos de datos alineados a objetivos de negocio.",
     icono: "producto",
+    imagen: "/images/sobre-mi/producto.jpg",
   },
   {
     titulo: "Arquitectura analítica",
     desc: "Diseño de soluciones sobre Snowflake, Databricks y Azure bajo estándares de gobierno de datos.",
     icono: "arquitectura",
+    imagen: "/images/sobre-mi/arquitectura.jpg",
   },
   {
     titulo: "IA aplicada",
     desc: "Analítica avanzada e inteligencia artificial generativa llevadas a casos de uso reales.",
     icono: "ia",
+    imagen: "/images/sobre-mi/ia.jpg",
   },
   {
     titulo: "Valor y ROI",
     desc: "Casos de negocio, TCO y retorno de inversión de plataformas de datos, contados en lenguaje ejecutivo.",
     icono: "roi",
+    imagen: "/images/sobre-mi/roi.jpg",
   },
 ];
 

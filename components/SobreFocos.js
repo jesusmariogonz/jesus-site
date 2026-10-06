@@ -1,8 +1,9 @@
 import ProjectArt from "@/components/ProjectArt";
 
 /* Tarjetas de "Cómo trabajo" (Sobre mí) — mismo lenguaje visual que
-   las tarjetas de Proyectos: arte SVG propio con degradado y overlay,
-   título sobre la imagen, sin fotos de stock. */
+   las tarjetas de Proyectos: si el foco trae `imagen`, se usa esa
+   foto (igual que ProjectShowcase); si no, cae al arte SVG propio
+   con degradado, como antes. */
 
 const PALETA = {
   producto: ["#38bdf8", "#0c2a3a"],
@@ -19,7 +20,14 @@ export default function SobreFocos({ focos }) {
         return (
           <article key={f.titulo} className="sobre-foco-card">
             <div className="sobre-foco-art">
-              <ProjectArt variant={f.icono} hueA={hueA} hueB={hueB} />
+              {f.imagen ? (
+                <span
+                  className="pshow-art-photo"
+                  style={{ backgroundImage: `url(${f.imagen})` }}
+                />
+              ) : (
+                <ProjectArt variant={f.icono} hueA={hueA} hueB={hueB} />
+              )}
               <span className="sobre-foco-overlay" />
               <strong className="sobre-foco-titulo">{f.titulo}</strong>
             </div>
