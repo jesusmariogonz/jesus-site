@@ -26,6 +26,10 @@ datosClave:
 imagen: /blog/portadas/inteligencia-artificial-15.jpg
 gancho: 'Un investigador de seguridad escaneó 300,000 sitios construidos con IA. Encontró 16,326 bases de datos abiertas al público, muchas con información personal real. No las hackeó nadie — simplemente nadie marcó la casilla que las protege. ¿Cuántas aplicaciones "vibe-codeadas" ahí afuera tienen el mismo problema?'
 socialImagen: /blog/social/supabase-16000-bases-datos-expuestas-vibe-coding.jpg
+postura:
+  pregunta: '¿La responsabilidad de estas 16,326 bases de datos expuestas es de Supabase, por tener un default inseguro, o de los desarrolladores que no activaron la seguridad?'
+  aFavor: 'Un mecanismo tan crítico como RLS no debería tener "abierto a cualquiera" como comportamiento por defecto — una plataforma dirigida a desarrolladores sin experiencia previa en bases de datos debería negar acceso hasta que se configure explícitamente.'
+  enContra: 'Supabase documenta claramente cómo activar RLS, y cualquier infraestructura seria asume que quien la despliega entiende lo que está publicando; exigir "seguro por defecto" universal limitaría la flexibilidad que hace útil a la plataforma en los casos legítimos donde sí se necesita acceso público a ciertas tablas.'
 ---
 
 El 25 de septiembre, la firma de seguridad UpGuard publicó los resultados de un escaneo sobre cerca de 300,000 dominios que mostraban señales de estar construidos sobre Supabase, una de las plataformas de backend más populares entre desarrolladores que usan asistentes de IA para programar rápido. El resultado: 16,326 bases de datos con tablas que cualquier persona, sin necesidad de credenciales ni de explotar ninguna vulnerabilidad, podía leer directamente. Más de la mitad de esas bases mostraba indicios de contener información personal identificable, y un subconjunto más pequeño exponía contraseñas, tokens de autenticación y, en casos aislados, datos de tarjetas de crédito. UpGuard confirmó filtraciones reales en servicios de India, Filipinas, Estados Unidos, países de África y Canadá.

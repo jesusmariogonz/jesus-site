@@ -19,6 +19,10 @@ datosClave:
     etiqueta: 'Fuentes primarias (ismworld.org) o reportes de agencia con atribución clara que logramos verificar directamente para el dato de septiembre'
 imagen: /blog/portadas/ism-servicios-septiembre-2026-dato-sin-confirmar.jpg
 socialImagen: /blog/social/ism-servicios-septiembre-2026-dato-sin-confirmar.jpg
+postura:
+  pregunta: '¿Debería un medio publicar la cifra más citada aunque no pueda confirmarla con una fuente primaria, en vez de admitir que no la pudo verificar?'
+  aFavor: 'Un lector busca información útil, no un ensayo sobre metodología periodística — dar el número más repetido junto con una advertencia clara es más útil que no dar ningún número.'
+  enContra: 'Presentar como dato algo que ni el propio medio pudo verificar entrena al lector a confiar en cifras sin respaldo real; basta que una fuente de baja calidad se repita varias veces para que parezca consenso sin serlo.'
 ---
 
 La Weekly Outlook de esta semana señalaba el lunes 5 de octubre como la fecha de publicación del ISM Servicios de septiembre, calificándolo como el "primer termómetro de actividad del sector servicios tras el reporte de empleo débil" de la semana pasada, con importancia alta. El reporte efectivamente se publicó esa fecha, según coincide la cobertura disponible sobre el calendario económico de la semana. Lo que no pudimos confirmar, pese a múltiples intentos de búsqueda con distintas combinaciones de términos, es el resultado específico que arrojó.
