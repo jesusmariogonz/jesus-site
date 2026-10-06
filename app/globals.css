@@ -4501,3 +4501,203 @@ html:not(.dark) .pglobe-land {
   font-weight: 600;
   color: var(--ink);
 }
+
+/* ── Postura (voto + comentarios dentro de una nota) ─────────── */
+.postura-block {
+  margin: 40px 0;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.postura-pregunta {
+  font-size: 1.3rem;
+  margin: 0 0 16px;
+}
+.postura-argumentos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+@media (max-width: 640px) {
+  .postura-argumentos { grid-template-columns: 1fr; }
+}
+.postura-argumento {
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.92rem;
+}
+.postura-argumento p { margin: 6px 0 0; color: var(--ink-soft); }
+.postura-favor { background: color-mix(in srgb, #1fa45c 12%, var(--surface)); }
+.postura-contra { background: color-mix(in srgb, #d64545 10%, var(--surface)); }
+.postura-argumento-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+}
+.postura-favor .postura-argumento-label { color: #1fa45c; }
+.postura-contra .postura-argumento-label { color: #d64545; }
+
+.postura-votar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.postura-boton-voto {
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+.postura-boton-voto:hover { border-color: var(--accent); }
+.postura-boton-voto.activo {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.postura-boton-voto:disabled { opacity: 0.6; cursor: default; }
+
+.postura-resultado { margin-bottom: 24px; }
+.postura-barra {
+  height: 8px;
+  border-radius: 999px;
+  background: color-mix(in srgb, #d64545 25%, var(--surface-2));
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+.postura-barra-favor {
+  height: 100%;
+  background: #1fa45c;
+}
+.postura-resultado-texto {
+  font-size: 0.82rem;
+  color: var(--meta);
+}
+
+.postura-comentarios-titulo {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.postura-comentario {
+  padding: 12px 0;
+  border-top: 1px solid var(--line-soft);
+}
+.postura-comentario-cabeza {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: var(--meta);
+  margin-bottom: 4px;
+}
+.postura-comentario p { margin: 0; }
+
+.postura-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line-soft);
+}
+.postura-form input,
+.postura-form textarea {
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  resize: vertical;
+}
+.postura-form button {
+  align-self: flex-start;
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+.postura-form button:disabled { opacity: 0.6; cursor: default; }
+.postura-aviso { font-size: 0.85rem; color: var(--accent); margin: 0; }
+.postura-aviso.error { color: #d64545; }
+
+/* ── Panel de moderación /admin/moderacion ───────────────────── */
+.admin-login {
+  max-width: 360px;
+  padding: 80px 16px;
+  text-align: center;
+}
+.admin-login form {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+.admin-login input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+}
+.admin-login button {
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+.admin-moderacion {
+  max-width: 720px;
+  padding: 48px 16px 96px;
+}
+.admin-moderacion-sub { color: var(--meta); margin-bottom: 28px; }
+.admin-comentario {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  margin-bottom: 14px;
+}
+.admin-comentario-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: var(--meta);
+  margin-bottom: 8px;
+}
+.admin-comentario-texto { margin: 0 0 8px; }
+.admin-comentario-justificacion {
+  font-size: 0.82rem;
+  color: var(--meta);
+  font-style: italic;
+  margin: 0 0 12px;
+}
+.admin-comentario-acciones { display: flex; gap: 8px; }
+.admin-boton-aceptar,
+.admin-boton-rechazar {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+.admin-boton-aceptar { background: #1fa45c; color: #fff; }
+.admin-boton-rechazar { background: #d64545; color: #fff; }
+.admin-boton-aceptar:disabled,
+.admin-boton-rechazar:disabled { opacity: 0.6; cursor: default; }

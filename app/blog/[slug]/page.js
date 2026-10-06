@@ -19,6 +19,7 @@ import ArticleToc from "@/components/ArticleToc";
 import VolverArriba from "@/components/VolverArriba";
 import ToolkitBanner from "@/components/ToolkitBanner";
 import NewsletterForm from "@/components/NewsletterForm";
+import PosturaBlock from "@/components/PosturaBlock";
 import { SITE_NAME, AUTHOR, absUrl } from "@/lib/site";
 import { PROYECTOS, CATEGORIA_PROYECTO } from "@/lib/proyectos";
 
@@ -179,6 +180,8 @@ export default async function Post({ params }) {
               </div>
 
               <ShareRow titulo={post.titulo} />
+
+              {post.postura && <PosturaBlock slug={slug} />}
 
               {proyectoRelacionado && (
                 <Link href="/proyectos" className="proyecto-relacionado">

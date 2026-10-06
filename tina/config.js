@@ -128,6 +128,30 @@ export default defineConfig({
             ],
           },
           {
+            type: "object",
+            name: "postura",
+            label: "Postura (opcional — convierte la nota en debate con voto y comentarios)",
+            fields: [
+              {
+                type: "string",
+                name: "pregunta",
+                label: "Pregunta de debate",
+              },
+              {
+                type: "string",
+                name: "aFavor",
+                label: "Argumento a favor",
+                ui: { component: "textarea" },
+              },
+              {
+                type: "string",
+                name: "enContra",
+                label: "Argumento en contra",
+                ui: { component: "textarea" },
+              },
+            ],
+          },
+          {
             type: "image",
             name: "imagen",
             label: "Imagen de portada (opcional)",
