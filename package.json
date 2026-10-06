@@ -17,6 +17,7 @@
     "framer-motion": "^12.42.2",
     "fs-extra": "^11.2.0",
     "gray-matter": "^4.0.3",
+    "jszip": "^3.10.2",
     "next": "^15.1.6",
     "pdf-lib": "^1.17.1",
     "pdfjs-dist": "^4.10.38",
