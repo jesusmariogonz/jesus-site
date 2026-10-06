@@ -4729,3 +4729,140 @@ html:not(.dark) .pglobe-land {
 .admin-boton-rechazar { background: #d64545; color: #fff; }
 .admin-boton-aceptar:disabled,
 .admin-boton-rechazar:disabled { opacity: 0.6; cursor: default; }
+
+/* ── Cinta de cotizaciones (TickerTape) ──────────────────────── */
+.ticker-tape {
+  overflow: hidden;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+.ticker-tape-track {
+  display: inline-flex;
+  animation: ticker-scroll 40s linear infinite;
+}
+.ticker-tape:hover .ticker-tape-track {
+  animation-play-state: paused;
+}
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.ticker-tape-item {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 10px 20px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  border-right: 1px solid var(--line-soft);
+  color: var(--ink);
+  flex: none;
+}
+.ticker-tape-item strong {
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+.ticker-up { color: #1fa45c; }
+.ticker-down { color: #d64545; }
+@media (prefers-reduced-motion: reduce) {
+  .ticker-tape-track { animation: none; }
+  .ticker-tape { overflow-x: auto; }
+}
+
+/* ── Screener de mercados ─────────────────────────────────────── */
+.screener-cargando { color: var(--meta); padding: 24px 0; }
+.mercados-screener { margin-top: 16px; }
+.screener-controles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.screener-controles input[type="text"],
+.screener-controles select {
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 0.9rem;
+}
+.screener-controles input[type="text"] { flex: 1; min-width: 180px; }
+.screener-conteo { font-size: 0.82rem; color: var(--meta); margin-left: auto; }
+
+.screener-tabla-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.screener-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+.screener-tabla th {
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  color: var(--meta);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.screener-tabla td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line-soft);
+  white-space: nowrap;
+}
+.screener-tabla tr:last-child td { border-bottom: none; }
+.screener-tabla tr.fila-no-disponible { opacity: 0.55; }
+.screener-nombre {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--meta);
+  font-weight: 400;
+}
+.screener-spark { width: 150px; }
+.sparkline-vacio { color: var(--meta); }
+
+.screener-nota {
+  font-size: 0.8rem;
+  color: var(--meta);
+  margin-top: 12px;
+  line-height: 1.5;
+}
+
+.screener-grafica {
+  margin-top: 32px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.screener-grafica-titulo {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.screener-grafica-svg { display: block; }
+.screener-grafica-leyenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+}
+.screener-grafica-leyenda-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.screener-grafica-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  display: inline-block;
+}

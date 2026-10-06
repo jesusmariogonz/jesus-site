@@ -10,6 +10,7 @@ import {
   enlazarActivosEnTabla,
 } from "@/lib/posts";
 import PulsoMercado from "@/components/PulsoMercado";
+import TickerTape from "@/components/TickerTape";
 import { absUrl } from "@/lib/site";
 
 // Dinámico (no estático) para que "Próxima corrida" en cada tarjeta
@@ -198,7 +199,9 @@ export default function PulsoMercadoDashboard() {
   const calendarioSemana = seccion(weeklyOutlook, "macro calendar");
 
   return (
-    <section className="section">
+    <>
+      <TickerTape />
+      <section className="section">
       <div className="container pulsodash">
         <header className="pulsodash-hero">
           <span className="pulsodash-eyebrow">
@@ -215,6 +218,7 @@ export default function PulsoMercadoDashboard() {
             <Link href="/swing">Swing</Link>
             <Link href="/position">Position</Link>
             <Link href="/long-term">Long Term</Link>
+            <Link href="/pulso-mercado/screener">Screener →</Link>
           </nav>
         </header>
 
@@ -314,6 +318,7 @@ export default function PulsoMercadoDashboard() {
           </>
         )}
       </div>
-    </section>
+      </section>
+    </>
   );
 }
