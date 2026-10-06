@@ -511,12 +511,16 @@ html:not(.dark) .prose li {
   max-width: 100%;
   -webkit-overflow-scrolling: touch;
   white-space: nowrap;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 .prose th,
 .prose td {
   border: 1px solid var(--line);
   padding: 8px 12px;
   text-align: left;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 .prose th {
   background: var(--surface);
