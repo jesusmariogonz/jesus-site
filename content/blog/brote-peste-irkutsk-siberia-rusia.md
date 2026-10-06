@@ -23,6 +23,10 @@ datosClave:
     etiqueta: 'Empleados del propio instituto que permanecen aislados dentro del edificio, según Rospotrebnadzor'
 gancho: 'Una investigadora de 28 años murió en un instituto ruso dedicado, por nombre, a combatir la peste. Las autoridades dicen que fue neumonía. Casi 200 personas siguen en cuarentena.'
 imagen: /blog/portadas/brote-peste-irkutsk-siberia-rusia.jpg
+postura:
+  pregunta: '¿Es creíble la versión oficial rusa de que la investigadora murió de neumonía y no de peste?'
+  aFavor: 'Las pruebas de Rospotrebnadzor no encontraron el patógeno, y la neumonía severa es una complicación médica común que no requiere un patógeno exótico para explicar una muerte.'
+  enContra: 'La escala de la respuesta —casi 200 personas aisladas, cinco hospitales en cuarentena, incluida una maternidad y un hospital infantil— es desproporcionada para un caso ordinario de neumonía, y Rusia tiene un historial de opacidad en crisis sanitarias.'
 ---
 
 El jueves 1 de octubre murió en un hospital de Shelekhov, cerca de la capital de la región siberiana de Irkutsk, Daria Shipilova, una trabajadora de 28 años del Instituto de Investigación Antipeste de Irkutsk. Su muerte, y las circunstancias que la rodean, dispararon una respuesta sanitaria que ya puso bajo observación médica a cerca de 200 personas y bajo cuarentena a varios hospitales de la región —al tiempo que las autoridades rusas insisten en que no hubo peste de por medio.

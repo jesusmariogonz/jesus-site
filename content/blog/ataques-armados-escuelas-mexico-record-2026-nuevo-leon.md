@@ -26,6 +26,10 @@ datosClave:
 imagen: /blog/portadas/ataques-armados-escuelas-mexico-record-2026-nuevo-leon.jpg
 gancho: '2026 todavía no termina y ya es, oficialmente, el peor año registrado para ataques armados en escuelas mexicanas desde que existe un conteo. Nuevo León encabeza la lista. ¿Cuántos ataques más hacen falta para que esto deje de tratarse caso por caso?'
 socialImagen: /blog/social/ataques-armados-escuelas-mexico-record-2026-nuevo-leon.jpg
+postura:
+  pregunta: '¿El aumento de ataques armados en escuelas mexicanas en 2026 refleja una tendencia real o solo mejor registro de incidentes?'
+  aFavor: 'Superar el récord anual antes de que termine el periodo es consistente con otros indicadores de violencia armada en México y no puede explicarse solo por mejor conteo.'
+  enContra: 'Un conteo académico depende de qué se clasifica como incidente y de la cobertura mediática/digital, que ha crecido con el tiempo — eso infla los números recientes frente a los históricos sin que haya más violencia real.'
 ---
 
 El 4 de octubre, Infobae México publicó un conteo elaborado por Víctor Sánchez Valdés, investigador de seguridad pública de la Universidad Autónoma de Coahuila, que documenta 31 incidentes con armas de fuego en escuelas mexicanas en lo que va de 2026 —una cifra que ya supera los 30 registrados en todo 2025, el año que hasta ahora tenía el récord del periodo que el investigador documenta desde el año 2000. Nuevo León y Baja California encabezan el conteo de este año específico, mientras que en el acumulado histórico de 26 años, Nuevo León comparte el primer lugar nacional con Puebla, con 11 casos cada uno.

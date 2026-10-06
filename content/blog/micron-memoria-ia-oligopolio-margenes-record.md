@@ -26,6 +26,10 @@ datosClave:
 imagen: /blog/portadas/mercado-bursatil-12.jpg
 gancho: 'Micron no vendió más memoria este trimestre que el anterior. La vendió casi el doble de cara. Sus propios ejecutivos ya avisaron que los precios de 2027 serán "mucho más altos" — y ya está prácticamente vendido todo. ¿Qué tan sólido es un boom de IA que depende de que un puñado de fabricantes de memoria sigan subiendo precios sin que nadie pueda decir que no?'
 socialImagen: /blog/social/micron-memoria-ia-oligopolio-margenes-record.jpg
+postura:
+  pregunta: '¿Es justificable que fabricantes de memoria como Micron capturen márgenes de casi 87% durante el boom de IA?'
+  aFavor: 'Después de dos décadas de márgenes brutales en un negocio cíclico de commodities, es razonable que una ventana de demanda estructural les permita recuperar rentabilidad — así funciona cualquier mercado de oferta y demanda real.'
+  enContra: 'Un margen de 87% en un insumo del que depende toda la cadena de IA empresarial funciona como un impuesto oculto al resto de la industria, concentrando valor en unos pocos fabricantes en vez de distribuirlo hacia la innovación.'
 ---
 
 El 30 de septiembre, Micron reportó resultados de su cuarto trimestre fiscal que, en términos de magnitud, son difíciles de exagerar: 54,200 millones de dólares en ingresos, un salto de 379% frente al mismo trimestre del año anterior, con un margen bruto cercano a 87%, casi el doble del margen que la empresa reportaba apenas doce meses atrás. Es el sexto trimestre consecutivo de récord para la compañía, y cierra un año fiscal completo con 133,190 millones de dólares en ingresos, 256% más que los 37,380 millones del año fiscal 2025. La pregunta que vale la pena hacerse no es si estos números son impresionantes —lo son—, sino de dónde salió exactamente ese crecimiento.

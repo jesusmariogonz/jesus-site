@@ -24,6 +24,10 @@ datosClave:
     etiqueta: 'Militares rusos indiciados por Ucrania por crímenes de violencia sexual relacionados con el conflicto; 26 ya cuentan con condena'
 gancho: 'De los 1,004 casos de violencia sexual que la ONU documentó en la guerra de Ucrania, 892 se le atribuyen a Rusia. La víctima más joven tenía 4 años. La mayor, 82.'
 imagen: /blog/portadas/violencia-sexual-arma-de-guerra-rusia-ucrania.jpg
+postura:
+  pregunta: '¿La evidencia documentada por la ONU alcanza para calificar esto legalmente como arma de guerra sistemática y no solo como crímenes individuales dispersos?'
+  aFavor: 'La escala, la dispersión geográfica, la consistencia de métodos y la prevalencia contra prisioneros bajo custodia total del perpetrador son exactamente el patrón que el derecho internacional humanitario usa para esa clasificación.'
+  enContra: 'Clasificar algo jurídicamente como arma de guerra sistemática requiere probar intención y orden desde la cadena de mando, algo que ni el propio informe de la ONU afirma haber establecido con la evidencia disponible hasta ahora.'
 ---
 
 El 18 de septiembre, la Misión de Monitoreo de Derechos Humanos de la ONU en Ucrania (HRMMU, por sus siglas en inglés) publicó un informe que documenta, con el rigor y las limitaciones propias de la verificación en zona de guerra, uno de los patrones más sistemáticos y menos cubiertos del conflicto: el uso de la violencia sexual contra prisioneros de guerra y civiles ucranianos por parte de fuerzas rusas.

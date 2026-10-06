@@ -23,6 +23,10 @@ datosClave:
     etiqueta: 'Ningún bono es 100% libre de riesgo: siempre existe, en teoría, el riesgo de que el emisor no pague (riesgo de default), aunque en bonos gubernamentales de países estables ese riesgo es muy bajo'
 gancho: '¿Alguna vez le has prestado dinero a un amigo con la condición de que te lo devuelva con un poco más? Eso, básicamente, es un bono del gobierno — solo que el "amigo" es un país entero, y hay papeleo de por medio.'
 imagen: /blog/portadas/que-son-los-bonos-del-gobierno-explicado-facil.jpg
+postura:
+  pregunta: '¿Conviene a un inversionista individual promedio meter una parte relevante de sus ahorros en bonos gubernamentales de largo plazo?'
+  aFavor: 'Son de los instrumentos más seguros que existen, con rendimiento predecible y respaldado por la capacidad fiscal del estado emisor — ideal para quien prioriza preservar capital sobre maximizar retorno.'
+  enContra: 'Atarse a un bono de largo plazo expone a perder valor de mercado si suben las tasas, y a perder poder adquisitivo frente a la inflación si el rendimiento fijo no la supera durante años.'
 ---
 
 Imagina que un amigo te pide prestados 1,000 pesos y te promete devolverte 1,050 pesos en un año. Tú le prestas porque confías en que te va a pagar, y porque esos 50 pesos extra son tu ganancia por haberle prestado en vez de quedarte con el dinero guardado. Un bono del gobierno es exactamente esa misma lógica, solo que en vez de un amigo, el que te pide prestado es un país.

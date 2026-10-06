@@ -24,6 +24,10 @@ datosClave:
     etiqueta: 'Rediseños que ha tenido el logo de los Jacksonville Jaguars desde 1993, el más inestable de la liga'
 gancho: 'El logo de los Steelers no se diseñó para los Steelers: es el logo de la industria del acero de Estados Unidos, adoptado en 1962. Y solo aparece de un lado del casco porque en su momento alguien dijo "pruébenlo en un lado primero" — y nadie nunca terminó el otro lado. Van 64 temporadas así.'
 imagen: /blog/portadas/de-donde-viene-el-logo-de-los-steelers-y-otras-curiosidades-nfl.jpg
+postura:
+  pregunta: '¿Debería un equipo con la trayectoria de los Steelers rediseñar su logo para dejar de usar el símbolo de otra industria?'
+  aFavor: 'Un logo prestado de la industria del acero no refleja ninguna identidad propia del equipo ni del deporte — 64 años de tradición no cambian el hecho de que, técnicamente, es branding ajeno.'
+  enContra: 'El reconocimiento de marca acumulado durante más de seis décadas tiene un valor que ningún rediseño podría replicar; cambiarlo rompería una de las identidades visuales más reconocibles del deporte profesional solo por pureza conceptual.'
 ---
 
 Es domingo de NFL, y hay un dato que la mayoría de los aficionados que ven el casco dorado de los Pittsburgh Steelers cada semana no conocen: ese logo —tres figuras de cuatro puntas en amarillo, naranja y azul dentro de un círculo— no fue diseñado para un equipo de fútbol americano. Es el "Steelmark", el logo oficial de la industria siderúrgica de Estados Unidos, y los Steelers simplemente lo pidieron prestado.

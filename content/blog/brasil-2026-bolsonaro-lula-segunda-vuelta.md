@@ -23,6 +23,10 @@ datosClave:
     etiqueta: 'Fecha de la segunda vuelta entre Bolsonaro y Lula, al no haber alcanzado ninguno el 50% requerido para ganar en primera ronda'
 gancho: 'Brasil vuelve a quedar partido casi a la mitad: Flávio Bolsonaro, hijo del expresidente, terminó arriba de Lula por menos de dos puntos — y el país entero se va a definir en tres semanas, el 25 de octubre.'
 imagen: /blog/portadas/brasil-2026-bolsonaro-lula-segunda-vuelta.jpg
+postura:
+  pregunta: '¿Debería preocuparle a Lula el resultado de la primera vuelta de cara al balotaje del 25 de octubre?'
+  aFavor: 'Quedó abajo en la ronda más visible mediáticamente, y el peso simbólico de perder la primera vuelta puede desmoralizar a su base y dar impulso narrativo a Bolsonaro.'
+  enContra: 'Dos puntos es un margen mínimo, Lula ya remontó más de ocho puntos durante el propio conteo, y el bloque de centro-izquierda eliminado en primera vuelta probablemente se consolide con él en el balotaje.'
 ---
 
 Con el conteo de votos prácticamente cerrado en Brasil, el resultado de la primera vuelta presidencial de 2026 ya es definitivo en lo esencial: ningún candidato alcanzó el 50% de los votos válidos necesario para ganar directamente, así que el país se va a una segunda vuelta el 25 de octubre entre Flávio Bolsonaro y el presidente Luiz Inácio Lula da Silva.

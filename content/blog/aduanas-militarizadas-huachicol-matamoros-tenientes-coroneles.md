@@ -26,6 +26,10 @@ datosClave:
 imagen: /blog/portadas/aduanas-militarizadas-huachicol-matamoros-tenientes-coroneles.jpg
 gancho: 'México le quitó las aduanas a los civiles para dárselas al Ejército y evitar la corrupción. Seis años después, dos tenientes coroneles están prófugos por meter 144 millones de litros de combustible declarándolos como "cloruro de calcio". ¿A quién se le entregan las aduanas cuando quien las vigila también falla?'
 socialImagen: /blog/social/aduanas-militarizadas-huachicol-matamoros-tenientes-coroneles.jpg
+postura:
+  pregunta: '¿Debería México revertir la militarización de las aduanas tras el caso de Matamoros?'
+  aFavor: 'Si el mismo patrón de corrupción reaparece dentro de las fuerzas armadas, la militarización no eliminó el problema, solo cambió quién lo comete, sin la rendición de cuentas civil que existía antes.'
+  enContra: 'Dos casos en seis años no invalidan la estrategia si la alternativa (control civil) tenía una corrupción histórica mayor y más normalizada; el problema real es la falta de auditoría independiente, no quién vigila la aduana.'
 ---
 
 El 5 de octubre, múltiples medios nacionales —Reforma, El Universal, AM, Diario.mx, La Verdad y El Imparcial, entre otros— reportaron la misma historia el mismo día: la Fiscalía General de la República acusa a 13 personas de operar una red de huachicol fiscal en la aduana de Matamoros, Tamaulipas, y entre los señalados con orden de aprehensión están dos tenientes coroneles del Ejército, Armando Barrera Trujillo y Blas Pedro Sarabia García, quienes dirigieron esa aduana entre 2024 y 2026. Según la FGR, entre el 1 de junio y el 22 de julio de 2025 la red introdujo 144.5 millones de litros de combustible —diésel, gasolina y nafta ligera— a través de 291 pedimentos aduaneros que cubrían 1,366 carros tanque, declarados falsamente como una solución de cloruro de calcio. Un juez federal ya giró las órdenes de aprehensión; siete de los trece implicados ya fueron detenidos, pero los tenientes coroneles y un tercer señalado, Jorge García García, permanecen prófugos.

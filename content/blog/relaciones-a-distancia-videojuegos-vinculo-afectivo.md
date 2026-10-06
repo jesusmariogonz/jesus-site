@@ -23,6 +23,10 @@ datosClave:
     etiqueta: 'Ningún videojuego reemplaza la cercanía física — funciona como complemento de comunicación, no como solución a la distancia en sí'
 gancho: 'Dos controles, un mismo mundo, dos ciudades distintas. Para muchas parejas a distancia, la pregunta ya no es "¿hablamos por videollamada?" sino "¿jugamos?" — y resulta que la segunda dice más sobre la relación que la primera.'
 imagen: /blog/portadas/relaciones-a-distancia-videojuegos-vinculo-afectivo.jpg
+postura:
+  pregunta: '¿Jugar videojuegos juntos es una forma real de intimidad en una relación a distancia, o una manera cómoda de evitar la distancia real?'
+  aFavor: 'La cooperación en tiempo real y la toma de decisiones conjunta generan complicidad genuina, no un sustituto vacío — la evidencia académica muestra menos conflicto en parejas que juegan juntas.'
+  enContra: 'Ningún videojuego resuelve la ausencia física real; apoyarse en una actividad lúdica compartida puede ser una forma cómoda de postergar las conversaciones difíciles sobre cuándo y cómo termina la separación.'
 ---
 
 Hay una escena que se repite todas las noches en miles de hogares separados por cientos o miles de kilómetros: dos personas, cada una en su propia ciudad, conectadas no por una llamada donde una mira fijamente a la cámara de su teléfono, sino por un mundo virtual compartido donde ambas están resolviendo, al mismo tiempo, el mismo problema. Una construye, la otra defiende. Una planta, la otra cosecha. Una dispara, la otra cubre. No están viendo la misma pantalla —están viendo pantallas distintas que muestran el mismo lugar—, y esa diferencia, aparentemente pequeña, es el motivo por el que el videojuego cooperativo se volvió, para muchas parejas a distancia, un lenguaje afectivo propio.

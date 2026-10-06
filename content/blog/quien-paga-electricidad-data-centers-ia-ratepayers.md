@@ -26,6 +26,10 @@ datosClave:
 imagen: /blog/portadas/inteligencia-artificial-10.jpg
 gancho: 'Nunca usaste ChatGPT para nada serio. Pero si vives cerca de un data center nuevo, probablemente ya pagaste parte de su factura eléctrica sin saberlo. Un reportaje de NPR documenta cómo funciona el subsidio que nadie votó.'
 socialImagen: /blog/social/quien-paga-electricidad-data-centers-ia-ratepayers.jpg
+postura:
+  pregunta: '¿Es justo que el costo de la infraestructura eléctrica para data centers de IA se reparta entre todos los usuarios de la red?'
+  aFavor: 'La red eléctrica siempre ha funcionado así: los grandes consumidores industriales comparten infraestructura con los residenciales, y esa infraestructura eventualmente da más capacidad y resiliencia a toda la red.'
+  enContra: 'Los data centers de IA son una demanda nueva y discrecional impulsada por unas cuantas empresas tecnológicas, no una necesidad pública — subsidiar su infraestructura con tarifas residenciales transfiere riqueza de hogares comunes hacia las empresas más valiosas del mundo.'
 ---
 
 El 4 de octubre, NPR publicó un reportaje con una pregunta directa en el título: ¿cuánto están añadiendo los data centers de inteligencia artificial a tu factura eléctrica? La respuesta que documenta, con cifras de reguladores y operadores de red, es menos abstracta de lo que el título sugiere: en la red eléctrica más grande de Estados Unidos, PJM, el propio monitor independiente del mercado estima que los data centers ya le costaron a sus 67 millones de usuarios cerca de 29,000 millones de dólares en los últimos dos años. Ese costo no lo pagan exclusivamente las empresas de IA que construyeron esos centros de datos. Lo pagan, repartido en la factura mensual, todos los usuarios conectados a esa misma red —incluidos quienes nunca usan un solo producto de inteligencia artificial.
