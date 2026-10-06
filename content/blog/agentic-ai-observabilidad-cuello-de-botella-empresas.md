@@ -23,7 +23,7 @@ datosClave:
     etiqueta: "Proyectos de IA agéntica que Gartner proyecta que serán cancelados para 2027"
   - valor: "52%"
     etiqueta: "Empresas que citan seguridad, privacidad o cumplimiento como principal freno a escalar"
-imagen: /blog/portadas/inteligencia-artificial-7.jpg
+imagen: /blog/portadas/agentic-ai-observabilidad-cuello-de-botella-empresas.jpg
 ---
 
 Cuando un reporte encuestó a 919 líderes de empresas con ingresos de más de 100 millones de dólares para preguntarles, en enero de 2026, qué está frenando realmente la adopción de IA agéntica dentro de sus organizaciones, la respuesta que apareció con más fuerza no fue ninguna de las que domina el discurso público sobre inteligencia artificial. No fue que los modelos todavía alucinen, ni que los ejecutivos duden del valor de negocio, ni que falte presupuesto. La respuesta que apareció con más fuerza —51% de los encuestados la señaló como una barrera central para escalar— fue algo mucho menos glamoroso y mucho más operativo: la dificultad técnica de monitorear y gestionar agentes de IA una vez que dejan de ser un experimento contenido y empiezan a operar con autonomía real dentro de sistemas de producción.

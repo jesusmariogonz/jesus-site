@@ -11,7 +11,7 @@ tags:
   - Banxico
   - Peso Mexicano
 resumen: 'Agosto fue el mejor mes del S&P 500 y el Nasdaq-100 desde 2021, con energía subiendo 44.2% en lo que va de 2026 — hasta que el discurso de Kevin Warsh en Jackson Hole, el 28 de agosto, cambió la narrativa de "posible recorte" a "posible alza", la señal que definiría todo septiembre.'
-imagen: /blog/portadas/crecimiento-economico-3.jpg
+imagen: /blog/portadas/pulso-mercado-monthly-review-2026-08.jpg
 ---
 
 ## The Month in Review

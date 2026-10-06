@@ -24,7 +24,7 @@ datosClave:
   - valor: '100%'
     etiqueta: 'Precisión con la que un algoritmo distinguió, por resonancia magnética, si una mujer había estado embarazada (estudio original de Hoekzema, 2017, la base de esta línea de investigación)'
 gancho: 'Escaneos cerebrales de 40 padres primerizos muestran que su cerebro literalmente se encoge tras el nacimiento. Entre más se encoge, más fuerte es el vínculo con el bebé. Pero el mismo estudio encontró que esa misma pérdida de volumen también predice peor sueño y más ansiedad — el costo neurológico de ser padre es real, y tiene datos.'
-imagen: /blog/portadas/negocios-reunion-14.jpg
+imagen: /blog/portadas/dad-brain-neurociencia-paternidad-cerebro-padres.jpg
 socialImagen: /blog/social/dad-brain-neurociencia-paternidad-cerebro-padres.jpg
 ---
 

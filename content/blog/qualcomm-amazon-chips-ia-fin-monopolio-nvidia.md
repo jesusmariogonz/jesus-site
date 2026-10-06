@@ -24,7 +24,7 @@ datosClave:
     etiqueta: 'Guía de gasto de capital (capex) de Amazon para 2026, +76% frente a 2025, destinada casi en su totalidad a AWS'
   - valor: '$20,000 millones'
     etiqueta: 'Ingreso anualizado que ya generan los chips propios de AWS (Trainium, Inferentia, Graviton) a inicios de 2026'
-imagen: /blog/portadas/inteligencia-artificial-3.jpg
+imagen: /blog/portadas/qualcomm-amazon-chips-ia-fin-monopolio-nvidia.jpg
 ---
 
 El 8 de septiembre, Qualcomm y Amazon Web Services anunciaron una colaboración multigeneracional para construir infraestructura de centros de datos de inteligencia artificial de próxima generación, un acuerdo que, según su estructura financiera, podría representar hasta 60,000 millones de dólares en compras de chips, hardware de red y servicios de manufactura a lo largo de una década, hasta 2036. Como parte del acuerdo, Qualcomm otorgó a Amazon warrants valuados en 4,000 millones de dólares para adquirir hasta 25 millones de sus acciones, un instrumento que se ejerce por completo solo si Amazon efectivamente alcanza ese nivel de gasto. Las acciones de Qualcomm saltaron 10% con el anuncio. Leído como una noticia bursátil aislada, es una historia sobre dos compañías tecnológicas cerrando un contrato grande. Leído en el contexto de cómo Amazon ha estado reconstruyendo, de forma sistemática, su relación con Nvidia durante los últimos dos años, es la confirmación más reciente de un movimiento estratégico mucho más amplio: los compradores más grandes de cómputo de inteligencia artificial del planeta ya no están dispuestos a depender de un solo proveedor para la pieza más crítica —y más cara— de su infraestructura.

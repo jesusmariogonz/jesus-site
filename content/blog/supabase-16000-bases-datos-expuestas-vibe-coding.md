@@ -23,7 +23,7 @@ datosClave:
     etiqueta: 'De las bases de datos expuestas mostraba indicios de información personal identificable'
   - valor: '5 regiones'
     etiqueta: 'Donde UpGuard confirmó filtraciones reales: India, Filipinas, Estados Unidos, África y Canadá'
-imagen: /blog/portadas/inteligencia-artificial-15.jpg
+imagen: /blog/portadas/supabase-16000-bases-datos-expuestas-vibe-coding.jpg
 gancho: 'Un investigador de seguridad escaneó 300,000 sitios construidos con IA. Encontró 16,326 bases de datos abiertas al público, muchas con información personal real. No las hackeó nadie — simplemente nadie marcó la casilla que las protege. ¿Cuántas aplicaciones "vibe-codeadas" ahí afuera tienen el mismo problema?'
 socialImagen: /blog/social/supabase-16000-bases-datos-expuestas-vibe-coding.jpg
 postura:

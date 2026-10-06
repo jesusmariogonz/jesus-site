@@ -25,7 +25,7 @@ datosClave:
     etiqueta: 'Rango de crecimiento del PIB proyectado por Hacienda para 2027'
   - valor: 'Baa3 / BBB-'
     etiqueta: 'Calificación soberana de México en Moody´s y Fitch, ambas a un escalón de perder el grado de inversión'
-imagen: /blog/portadas/crecimiento-economico-2.jpg
+imagen: /blog/portadas/paquete-economico-2027-mexico-analisis.jpg
 ---
 
 Hacienda entregó este martes al Congreso de la Unión el Paquete Económico 2027, y la cifra que domina el mensaje oficial es la que ya se venía anticipando desde el Segundo Informe de Gobierno del 1 de septiembre: un recorte del déficit fiscal de 4.1% a 3.5% del PIB, medido como Requerimientos Financieros del Sector Público, sin sacrificar el gasto en bienestar, salud, educación ni inversión pública. Es una promesa políticamente coherente con la narrativa que ha sostenido el gobierno de Claudia Sheinbaum desde su Segundo Informe, y en el papel, matemáticamente factible. La pregunta que de verdad importa, sin embargo, no es si el número cuadra en el documento que Hacienda acaba de entregar, sino de dónde sale exactamente ese ajuste de 0.6 puntos porcentuales del PIB si no proviene del gasto social —y la respuesta, ya visible en el propio paquete, es que la carga recae de forma desproporcionada sobre Petróleos Mexicanos, justo en el momento en que la petrolera estatal enfrenta el escenario operativo y competitivo más adverso en años.

@@ -25,7 +25,7 @@ datosClave:
     etiqueta: "Valor mínimo de referencia de la subasta"
   - valor: "6 años"
     etiqueta: "Del concurso mercantil (mayo 2020) a la subasta (sept. 2026)"
-imagen: /blog/portadas/manufactura-fabrica-12.jpg
+imagen: /blog/portadas/ahmsa-anatomia-de-una-quiebra-industrial.jpg
 ---
 
 El 25 de septiembre de 2026, en el auditorio del Poder Judicial de la Federación, un juez de distrito presidirá la subasta de la planta industrial más grande que ha entrado en liquidación en México durante lo que va del siglo. No es una hipérbole editorial, sino una descripción literal de la magnitud del expediente: Altos Hornos de México (AHMSA) y su empresa minera hermana, Minera del Norte (Minosa), acumulan pasivos reconocidos por más de 61,000 millones de pesos, sostuvieron hasta 17,000 empleos directos en Monclova, Coahuila, y llegaron a representar el 8% del producto interno bruto estatal en su periodo de mayor actividad. La compañía lleva seis años bajo concurso mercantil —la figura mexicana más próxima al Capítulo 11 estadounidense, aunque con un desenlace considerablemente menos favorable para los acreedores— y su fundador y expresidente, Alonso Ancira, arrastra un historial judicial que incluye una acusación formal de la Fiscalía General de la República por sobornar con 3.5 millones de dólares a un exdirector de Pemex.

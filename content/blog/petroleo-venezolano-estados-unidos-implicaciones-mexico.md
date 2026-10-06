@@ -26,7 +26,7 @@ datosClave:
     etiqueta: 'Reservas de los 17 campos venezolanos incluidos en el acuerdo petrolero anunciado por Trump, con 35% de participación para el Pentágono'
   - valor: '$7,000 millones'
     etiqueta: 'Inversión que Chevron comprometió el 2 de septiembre de 2026 para duplicar su producción venezolana a 600,000 b/d en cinco años'
-imagen: /blog/portadas/comercio-internacional-1.jpg
+imagen: /blog/portadas/petroleo-venezolano-estados-unidos-implicaciones-mexico.jpg
 ---
 
 El 3 de enero de 2026, fuerzas especiales estadounidenses ejecutaron la Operación Resolución Absoluta, capturando a Nicolás Maduro y a su esposa Cilia Flores, y poniendo fin —de una manera que ningún analista serio había considerado probable apenas semanas antes— a más de una década de régimen chavista en Venezuela. Ocho meses después, el resultado más medible de esa operación no se encuentra en la política venezolana, todavía en transición incompleta bajo la vicepresidenta Delcy Rodríguez, sino en los muelles de la Costa del Golfo de Estados Unidos, donde las refinerías de Texas y Luisiana reciben hoy cargamentos de crudo pesado venezolano en volúmenes que no se veían desde 2017. Ese flujo de crudo, que compite exactamente por el mismo tipo de refinería y el mismo perfil de cliente que ha absorbido durante décadas al crudo Maya mexicano, coloca a Pemex frente a una competencia que no había enfrentado en esta escala en más de un lustro, justo cuando la petrolera estatal mexicana necesita sostener sus ingresos de exportación para no ensanchar todavía más un déficit fiscal que el gobierno de Claudia Sheinbaum ya se comprometió a recortar en 0.7 puntos del PIB en el Paquete Económico 2027, entregado apenas esta semana al Congreso.

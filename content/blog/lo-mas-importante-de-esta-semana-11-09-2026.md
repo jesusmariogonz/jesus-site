@@ -14,7 +14,7 @@ tags:
   - T-MEC
   - Tipo de Cambio
 resumen: 'La inflación de agosto cerró prácticamente igual en México (3.26%) y aceleró más de lo esperado en Estados Unidos (CPI +0.4% mensual), reforzando las apuestas de un alza de tasas de la Fed la próxima semana, mientras el empleo formal mexicano marcó un máximo histórico para un mes de agosto y la cuarta ronda del T-MEC sigue sin fecha confirmada.'
-imagen: /blog/portadas/inflacion-precios-1.jpg
+imagen: /blog/portadas/lo-mas-importante-de-esta-semana-11-09-2026.jpg
 ---
 
 Esta nota cubre la semana del lunes 7 al viernes 11 de septiembre. Dos datos de inflación —uno en cada lado de la frontera— dominaron la agenda: INEGI confirmó que la inflación mexicana de agosto cerró en 3.26%, prácticamente sin cambio frente a julio, mientras que en Estados Unidos el CPI de agosto, publicado este mismo viernes, aceleró más de lo esperado y reforzó las apuestas de que la Reserva Federal suba tasas la próxima semana. En paralelo, el empleo formal mexicano marcó un máximo histórico para un mes de agosto, y la cuarta ronda de negociación del T-MEC sigue sin fecha confirmada, pese a que originalmente se esperaba para este mes.

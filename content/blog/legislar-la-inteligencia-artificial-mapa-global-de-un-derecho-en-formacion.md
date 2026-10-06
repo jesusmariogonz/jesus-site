@@ -24,7 +24,7 @@ datosClave:
     etiqueta: "Fecha de apertura a firma del Convenio Marco del Consejo de Europa sobre IA, el único tratado internacional jurídicamente vinculante sobre la materia hasta la fecha"
   - valor: "2023"
     etiqueta: "Año en que China empezó a regular la IA generativa por reglamento administrativo específico, sin esperar a una ley marco única"
-imagen: /blog/portadas/inteligencia-artificial-1.jpg
+imagen: /blog/portadas/legislar-la-inteligencia-artificial-mapa-global-de-un-derecho-en-formacion.jpg
 ---
 
 Entre 2021, cuando la Comisión Europea presentó la primera propuesta formal de un reglamento horizontal sobre inteligencia artificial, y septiembre de 2026, el mundo pasó de la ausencia casi total de derecho positivo aplicable a sistemas de IA a un mosaico de al menos cuatro arquitecturas regulatorias que no solo difieren en contenido, sino en la lógica jurídica que las sostiene: una basada en la clasificación ex ante del riesgo del sistema, otra construida por acumulación de leyes estatales bajo tensión federal creciente, una tercera que regula por reglamento administrativo sectorial sin ley marco única, y una cuarta que delega deliberadamente la tarea a los reguladores ya existentes en lugar de crear uno nuevo. Ninguna de estas cuatro lógicas es reducible a las otras, y esa irreductibilidad —no la simple diferencia de detalle técnico— es la razón por la que hablar de una "regulación global de la IA" es, en el estado actual del derecho comparado, una simplificación que oculta más de lo que explica.

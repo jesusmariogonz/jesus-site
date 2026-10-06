@@ -25,7 +25,7 @@ datosClave:
     etiqueta: 'Meses consecutivos del Indicador IMEF Manufacturero en zona de contracción (por debajo de 50 puntos)'
   - valor: 'Lugar 62 de 70'
     etiqueta: 'Posición de México en el ranking de competitividad mundial del IMD 2026, siete lugares por debajo de 2025'
-imagen: /blog/portadas/crecimiento-economico-4.jpg
+imagen: /blog/portadas/indicadores-contradictorios-economia-mexicana-que-creer.jpg
 ---
 
 Cuatro indicadores oficiales sobre la economía mexicana, todos publicados o vigentes en las últimas semanas, cuentan cuatro historias que a primera vista no pueden ser ciertas al mismo tiempo. El Indicador Mensual de la Actividad Industrial de INEGI muestra que la industria mexicana creció 2.4% anual en julio, extendiendo cuatro meses consecutivos de variaciones positivas, con la construcción avanzando 7.3% y la manufactura 1.6% frente al año anterior. El Indicador Global de Opinión Empresarial de Confianza, publicado por la misma institución, acumula 28 meses consecutivos de deterioro, con 18 meses seguidos por debajo del umbral que separa el optimismo del pesimismo. El Indicador IMEF Manufacturero lleva 29 meses en zona de contracción. Y el ranking de competitividad mundial del IMD ubicó a México en el lugar 62 de 70 economías este año, una caída de siete posiciones frente a 2025. ¿Cómo puede una economía estar produciendo más mes con mes mientras sus propios empresarios se sienten, de manera consistente y prolongada, cada vez más pesimistas al respecto?

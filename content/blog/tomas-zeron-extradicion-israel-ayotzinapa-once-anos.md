@@ -24,7 +24,7 @@ datosClave:
     etiqueta: 'Enviadas por el gobierno mexicano para insistir en la extradición, según Sheinbaum'
   - valor: '0 tratados'
     etiqueta: 'De extradición vigentes entre México e Israel, base legal del estancamiento del caso'
-imagen: /blog/portadas/oficina-corporativa-11.jpg
+imagen: /blog/portadas/tomas-zeron-extradicion-israel-ayotzinapa-once-anos.jpg
 gancho: 'México lleva casi cinco años pidiéndole formalmente a Israel que extradite al hombre que, según el GIEI, sembró evidencia y torturó testigos para fabricar la "verdad histórica" de Ayotzinapa. No hay tratado de extradición entre ambos países. ¿Cuánto tiempo más puede sostenerse una petición diplomática sin mecanismo que la haga exigible?'
 socialImagen: /blog/social/tomas-zeron-extradicion-israel-ayotzinapa-once-anos.jpg
 ---

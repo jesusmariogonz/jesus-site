@@ -24,7 +24,7 @@ datosClave:
     etiqueta: 'Valuación objetivo que Revolut busca en una eventual oferta pública, su CEO ha señalado 2028 como posible fecha'
   - valor: '16 millones'
     etiqueta: 'Usuarios de Monzo en el Reino Unido, con ingresos de £1,700 millones en el año fiscal 2026'
-imagen: /blog/portadas/mercado-bursatil-15.jpg
+imagen: /blog/portadas/consolidacion-fintech-londres-revolut-monzo-nubank.jpg
 gancho: 'Hace una década, 44% del capital de riesgo fintech del Reino Unido iba a startups de consumo. Hoy es 5%. Pero Nubank acaba de evaluar pagar hasta £10,000 millones por una de ellas. El sector no se está muriendo — se está dividiendo entre quien ganó y todos los demás.'
 socialImagen: /blog/social/consolidacion-fintech-londres-revolut-monzo-nubank.jpg
 ---

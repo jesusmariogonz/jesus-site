@@ -9,7 +9,7 @@ tags:
   - Tipo de Cambio
   - Mercados
 resumen: 'Hoy la Fed anuncia su decisión de tasas con 92.7% de probabilidad implícita de un alza de un cuarto de punto, la primera en tres años, mientras el peso mexicano ya cotiza por encima de 17 por dólar.'
-imagen: /blog/portadas/mercado-bursatil-1.jpg
+imagen: /blog/portadas/mercados-hoy-16-09-2026.jpg
 ---
 
 Hoy es el día que el mercado lleva semanas anticipando: la Reserva Federal anuncia su decisión de tasas, con el CME FedWatch asignando 92.7% de probabilidad a un alza de un cuarto de punto, la primera subida en tres años. Los futuros amanecieron con ganancias moderadas —Dow +0.1%, S&P 500 +0.2%, Nasdaq-100 +0.4%— después de una sesión de ayer que cerró en rojo por tercer día consecutivo.

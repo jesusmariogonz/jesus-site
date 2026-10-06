@@ -25,7 +25,7 @@ datosClave:
     etiqueta: 'Empresas que esperan mejoras de productividad por el uso de IA'
   - valor: '88%'
     etiqueta: 'Organizaciones que usan IA en al menos una función a nivel global (McKinsey, 2025)'
-imagen: /blog/portadas/inteligencia-artificial-6.jpg
+imagen: /blog/portadas/banxico-encuesta-ia-empresas-mexicanas-adopcion-sin-productividad.jpg
 ---
 ¿Qué significa, exactamente, que una empresa "use" inteligencia artificial? Es la pregunta que debería acompañar cualquier lectura de la encuesta especial que el Banco de México aplicó en junio de 2026 como módulo adicional de la Encuesta Mensual de Actividad Económica Regional (EMAER), cuyos resultados —publicados esta semana— muestran que 48.5% de los establecimientos con más de 100 trabajadores ya utiliza al menos una tecnología de inteligencia artificial, frente a apenas 24.3% que reportaba lo mismo en septiembre de 2025. Duplicar una tasa de adopción en nueve meses es, en cualquier lectura superficial, una noticia extraordinaria: sugiere que el país que durante años fue descrito como rezagado en la carrera tecnológica global de pronto encontró el paso. Pero la pregunta inicial —qué cuenta como "usar" IA— es la que separa esa lectura optimista de la que en realidad sostienen los datos, porque la propia encuesta de Banxico, leída completa y no solo en su titular, describe algo bastante más modesto y bastante más familiar en la historia económica reciente de México: una ola de compra tecnológica que corre, como casi siempre, muy por delante de cualquier evidencia de que esa compra se esté traduciendo en productividad.
 

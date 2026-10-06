@@ -22,7 +22,7 @@ datosClave:
   - valor: '7 años'
     etiqueta: 'El tiempo que pasó entre la publicación anónima (2011) y su verificación académica formal (2018)'
 gancho: 'Un usuario anónimo de 4chan resolvió en una tarde un problema matemático que llevaba 25 años estancado, solo para saber en qué orden ver un anime. Nadie lo verificó hasta 7 años después. Hoy su prueba es literatura académica oficial, y el autor sigue firmado como "Anonymous".'
-imagen: /blog/portadas/inteligencia-artificial-1.jpg
+imagen: /blog/portadas/superpermutaciones-problema-haruhi-4chan.jpg
 ---
 
 En septiembre de 2011, en el foro de ciencia y matemáticas de 4chan (conocido como /sci/), alguien publicó una pregunta sobre un anime. *The Melancholy of Haruhi Suzumiya* había transmitido sus 14 episodios en un orden deliberadamente no cronológico, y distintas emisiones y ediciones en video los reordenaron de formas distintas — lo suficiente para que los fans discutieran, durante años, cuál era el "mejor" orden para verla. La pregunta que alguien hizo ese día no fue "¿cuál es el mejor orden?", sino una mucho más extraña: si quisieras ver los 14 episodios en *cada posible orden* al menos una vez, ¿cuál es la secuencia más corta que lo logra?

@@ -22,7 +22,7 @@ datosClave:
     etiqueta: 'Año del experimento seminal de Elizabeth Loftus y John Palmer sobre cómo el lenguaje de una pregunta altera el recuerdo de un accidente automovilístico'
   - valor: '50 años'
     etiqueta: 'Tiempo que lleva estudiándose de forma intensiva el "efecto de desinformación" en la memoria humana'
-imagen: /blog/portadas/negocios-reunion-16.jpg
+imagen: /blog/portadas/eyewitness-memoria-loftus-falibilidad-testigos.jpg
 socialImagen: /blog/social/eyewitness-memoria-loftus-falibilidad-testigos.jpg
 gancho: 'Cambiar una sola palabra en una pregunta —"chocaron" en vez de "se toparon"— bastó para que testigos de un choque "recordaran" vidrios rotos que nunca existieron. Ese experimento tiene 50 años. La pregunta que la ciencia apenas empieza a responder no es si la memoria falla, sino cuándo confiar en ella y cuándo no.'
 ---

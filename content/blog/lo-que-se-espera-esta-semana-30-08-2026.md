@@ -12,7 +12,7 @@ tags:
   - Nóminas
   - IMEF
 resumen: 'La semana que arranca trae el reporte de nóminas de agosto en Estados Unidos (consenso: +90,000 empleos), el Segundo Informe de Gobierno de Claudia Sheinbaum y el indicador IMEF de manufactura, que llega a su lectura de agosto tras 27 meses en zona de contracción.'
-imagen: /blog/portadas/banco-central-1.jpg
+imagen: /blog/portadas/lo-que-se-espera-esta-semana-30-08-2026.jpg
 ---
 
 La semana del 31 de agosto al 5 de septiembre está cargada de datos duros de empleo en ambos lados de la frontera —ADP, ISM y el reporte de nóminas del viernes en Estados Unidos— además del Segundo Informe de Gobierno de Claudia Sheinbaum el martes y el indicador IMEF de manufactura, que lleva más de dos años sin salir de terreno de contracción. Con la Fed todavía procesando el tono cauteloso de Kevin Warsh en Jackson Hole, el dato de nóminas del viernes será la primera pieza dura que el mercado pueda usar para calibrar la decisión de tasas de septiembre.

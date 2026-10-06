@@ -25,7 +25,7 @@ datosClave:
     etiqueta: 'Proporción del comercio electrónico mexicano concentrada en Mercado Libre y Amazon'
   - valor: '+16.2%'
     etiqueta: 'Crecimiento del e-commerce de Walmart México en el segundo trimestre, pese a tráfico en tienda física a la baja'
-imagen: /blog/portadas/negocios-reunion-2.jpg
+imagen: /blog/portadas/buen-fin-2026-registro-comercios-ecommerce-concentracion.jpg
 ---
 
 El pasado 30 de agosto, el gobierno mexicano confirmó las fechas oficiales del Buen Fin 2026: cinco días de descuentos, del viernes 13 al martes 17 de noviembre, precedidos por una ventana de registro para comercios que abre este 8 de septiembre y se extiende hasta el 12 de noviembre, gratuita e independiente del sorteo fiscal que administra el SAT. Es, en la superficie, una noticia administrativa: fechas, requisitos —RFC vigente, Buzón Tributario activo, opinión positiva de cumplimiento fiscal— y un trámite sencillo. Pero la lógica de dar doce semanas de anticipación entre el registro y el evento no es casualidad burocrática. Es, en la práctica, el tiempo que el propio gobierno asume que un comercio mexicano necesita para preparar su operación logística antes de competir en el evento de ventas más importante del año. Y es exactamente en esa preparación logística donde el comercio electrónico mexicano revela una concentración que ninguna fecha de registro va a modificar.

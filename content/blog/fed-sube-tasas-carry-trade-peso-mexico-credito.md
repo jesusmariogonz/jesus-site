@@ -24,7 +24,7 @@ datosClave:
     etiqueta: 'Diferencial de tasas entre Banxico (6.50%) y la Fed tras el alza, el más estrecho en meses'
   - valor: '16 de 18'
     etiqueta: 'Miembros del FOMC que proyectan al menos una subida adicional de tasas antes de que termine 2026'
-imagen: /blog/portadas/banco-central-4.jpg
+imagen: /blog/portadas/fed-sube-tasas-carry-trade-peso-mexico-credito.jpg
 ---
 
 Dieciocho votos a favor, cero en contra. Así aprobó el Comité Federal de Mercado Abierto, el miércoles 16 de septiembre, la primera alza de tasas de interés en Estados Unidos desde julio de 2023, llevando su tasa de referencia a un rango de 3.75% a 4.00%. La unanimidad importa tanto como la decisión misma: es la primera vez en tres años que ningún miembro del comité disiente, una señal de consenso interno que llega justo cuando la Casa Blanca había desplegado, en los días previos, una campaña de presión pública para que la Fed hiciera exactamente lo contrario. El mercado que reaccionó primero y con más claridad a esa decisión no fue, sin embargo, el de bonos ni el de acciones estadounidenses: fue el tipo de cambio del peso mexicano, que revirtió sus ganancias matutinas y cerró la sesión con una depreciación de 0.6%, tocando un máximo de 17.267 pesos por dólar.

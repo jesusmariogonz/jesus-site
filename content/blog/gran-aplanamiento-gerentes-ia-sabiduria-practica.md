@@ -22,7 +22,7 @@ datosClave:
     etiqueta: 'De las organizaciones que, según proyección de Gartner, usarán IA para aplanar su estructura, eliminando más de la mitad de sus puestos de gerencia media actuales'
   - valor: '5-10 horas'
     etiqueta: 'Tiempo semanal que un gerente medio típico dedica a reportes, dashboards y resúmenes — tareas que agentes de IA ya pueden ensamblar en segundos'
-imagen: /blog/portadas/negocios-reunion-8.jpg
+imagen: /blog/portadas/gran-aplanamiento-gerentes-ia-sabiduria-practica.jpg
 gancho: 'Las empresas están usando IA para eliminar capas enteras de gerencia media. Un estudio publicado esta semana advierte que la misma IA erosiona el juicio práctico de los gerentes que sobreviven al recorte. ¿Qué pasa cuando resuelves un problema de costos con la herramienta que debilita la capacidad que vas a necesitar después?'
 socialImagen: /blog/social/gran-aplanamiento-gerentes-ia-sabiduria-practica.jpg
 ---

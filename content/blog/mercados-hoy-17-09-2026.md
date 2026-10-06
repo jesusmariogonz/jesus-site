@@ -9,7 +9,7 @@ tags:
   - Tipo de Cambio
   - Mercados
 resumen: 'Wall Street intenta recuperarse hoy después de que el Dow cayera 1.21% ayer, no por la subida de tasas en sí sino porque la Fed señaló que vienen más alzas antes de fin de año.'
-imagen: /blog/portadas/mercado-bursatil-2.jpg
+imagen: /blog/portadas/mercados-hoy-17-09-2026.jpg
 ---
 
 El golpe de ayer no fue la subida de tasas —eso ya lo tenía descontado el mercado—, fue enterarse de que la Fed no piensa parar ahí. Los futuros suben esta mañana mientras Wall Street procesa que el tono de Kevin Warsh, más que el número mismo, es lo que va a definir el resto del año.

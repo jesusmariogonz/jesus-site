@@ -23,7 +23,7 @@ datosClave:
     etiqueta: 'Costo adicional proyectado por hogar en Maryland atribuible a data centers, según la oficina estatal de defensoría del consumidor'
   - valor: '$100 a $281'
     etiqueta: 'Salto en la factura eléctrica mensual de un residente de Virginia citado por NPR, en una sola facturación'
-imagen: /blog/portadas/inteligencia-artificial-10.jpg
+imagen: /blog/portadas/quien-paga-electricidad-data-centers-ia-ratepayers.jpg
 gancho: 'Nunca usaste ChatGPT para nada serio. Pero si vives cerca de un data center nuevo, probablemente ya pagaste parte de su factura eléctrica sin saberlo. Un reportaje de NPR documenta cómo funciona el subsidio que nadie votó.'
 socialImagen: /blog/social/quien-paga-electricidad-data-centers-ia-ratepayers.jpg
 postura:

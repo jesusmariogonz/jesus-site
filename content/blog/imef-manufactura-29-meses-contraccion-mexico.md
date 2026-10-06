@@ -25,7 +25,7 @@ datosClave:
     etiqueta: 'Indicador IMEF No Manufacturero de agosto, cayó desde 49.6 en julio'
   - valor: '50 puntos'
     etiqueta: 'Umbral que separa expansión de contracción en la metodología del índice'
-imagen: /blog/portadas/manufactura-fabrica-1.jpg
+imagen: /blog/portadas/imef-manufactura-29-meses-contraccion-mexico.jpg
 ---
 
 El Instituto Mexicano de Ejecutivos de Finanzas publicó, el 1 de septiembre, su Indicador IMEF de agosto: el componente manufacturero se mantuvo en 49.7 puntos, exactamente igual que en julio, y por debajo del umbral de 50 puntos que separa expansión de contracción desde hace 29 meses consecutivos. El componente no manufacturero, que veinte años de historia del indicador han tratado como el termómetro de servicios y comercio, retrocedió de 49.6 a 48.7 puntos, alejándose todavía más de la neutralidad. Son cifras que no aparecieron en ningún discurso oficial de la semana pasada, ni en el Segundo Informe de Gobierno del 1 de septiembre, que privilegió la inversión extranjera récord y los ingresos fiscales históricos. La pregunta que esa ausencia deja abierta no es si el gobierno mintió —no lo hizo, las cifras que presumió también son reales— sino por qué la conversación pública sobre la economía mexicana puede sostener dos historias tan distintas sin que ninguna de las dos desmienta a la otra.

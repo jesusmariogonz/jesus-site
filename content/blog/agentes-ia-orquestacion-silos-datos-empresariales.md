@@ -22,7 +22,7 @@ datosClave:
     etiqueta: 'Ahorro en costos de tokens que logran los equipos que restructuran el contexto de sus agentes, según análisis de ingeniería de contexto'
   - valor: '54%'
     etiqueta: 'Porcentaje de empresas que citan los silos de datos como su principal obstáculo para escalar IA agéntica, según encuesta de HBR Analytic Services'
-imagen: /blog/portadas/negocios-reunion-9.jpg
+imagen: /blog/portadas/agentes-ia-orquestacion-silos-datos-empresariales.jpg
 gancho: 'Ningún cerebro humano puede sostener toda la información de una decisión cross-funcional. Harvard dice que la solución son agentes que orquestan entre áreas. Pero si esos agentes heredan datos obsoletos, ¿están resolviendo el problema o solo ejecutándolo más rápido?'
 socialImagen: /blog/social/agentes-ia-orquestacion-silos-datos-empresariales.jpg
 ---

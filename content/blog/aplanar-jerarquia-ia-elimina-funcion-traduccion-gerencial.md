@@ -27,7 +27,7 @@ postura:
   pregunta: '¿Aplanar la estructura organizacional con IA es una eficiencia real que la tecnología por fin hace posible, o es eliminar precisamente la función humana que hacía que cualquier estrategia corporativa funcionara en la práctica?'
   aFavor: 'Durante décadas, buena parte de la gerencia intermedia funcionó como una capa burocrática costosa y lenta cuyo valor real era limitado —reportar hacia arriba, repetir instrucciones hacia abajo—, y si la IA puede absorber genuinamente esa función de enrutamiento de información, recortarla libera presupuesto para inversión real en capacidad productiva.'
   enContra: 'Un gerente intermedio competente no solo enruta información: interpreta una estrategia ambigua a la luz del contexto específico de su equipo, negocia prioridades en conflicto y asume responsabilidad por decisiones que ningún sistema de IA puede, todavía, asumir con la misma rendición de cuentas —eliminar esa capa sin sustituir esa función deja a la IA coordinando tareas sin nadie que traduzca el verdadero propósito detrás de ellas.'
-imagen: /blog/portadas/startup-innovacion-1.jpg
+imagen: /blog/portadas/aplanar-jerarquia-ia-elimina-funcion-traduccion-gerencial.jpg
 gancho: 'Gartner dice que 1 de cada 5 empresas va a usar IA para eliminar más de la mitad de sus puestos de gerencia intermedia. La pregunta que casi nadie se está haciendo: ¿la IA puede hacer lo que esos gerentes realmente hacían, o solo puede hacer lo que parecía que hacían desde el organigrama?'
 socialImagen: /blog/social/aplanar-jerarquia-ia-elimina-funcion-traduccion-gerencial.jpg
 ---

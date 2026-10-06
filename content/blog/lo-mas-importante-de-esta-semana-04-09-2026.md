@@ -14,7 +14,7 @@ tags:
   - PIB
   - Banxico
 resumen: 'El Segundo Informe de Sheinbaum presumió inversión récord mientras el IMEF confirmó 29 meses de contracción manufacturera, las remesas hilaron seis meses al alza y el reporte de empleo de Estados Unidos sorprendió con 162,000 nuevas nóminas, muy por encima de lo esperado.'
-imagen: /blog/portadas/crecimiento-economico-1.jpg
+imagen: /blog/portadas/lo-mas-importante-de-esta-semana-04-09-2026.jpg
 ---
 
 Esta nota cubre la semana del lunes 31 de agosto al viernes 4 de septiembre. Tres historias organizaron la agenda: el Segundo Informe de Gobierno de Claudia Sheinbaum, que presumió cifras récord de inversión e ingresos el mismo día en que el Indicador IMEF confirmaba 29 meses consecutivos de contracción manufacturera; las remesas de julio, que hilaron su sexto mes al alza; y un reporte de empleo estadounidense que sorprendió al mercado por mucho más de lo esperado, justo cuando los datos previos de la semana apuntaban en la dirección contraria.

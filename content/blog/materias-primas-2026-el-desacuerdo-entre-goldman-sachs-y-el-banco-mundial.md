@@ -22,7 +22,7 @@ datosClave:
     etiqueta: "Compras de oro proyectadas por bancos centrales en 2026 según Goldman Sachs — 4 veces el promedio previo a 2022"
   - valor: "-6%"
     etiqueta: "Caída proyectada por el Banco Mundial en precios agrícolas para 2026, por exceso de oferta en café y otros suaves pese al alza en granos"
-imagen: /blog/portadas/mercado-bursatil-7.jpg
+imagen: /blog/portadas/materias-primas-2026-el-desacuerdo-entre-goldman-sachs-y-el-banco-mundial.jpg
 ---
 
 Un anuncio de StoneX que circula estos días promociona su reporte trimestral de perspectivas de materias primas —edición 34, la que cubre julio-septiembre— con la pregunta obvia que cualquier inversionista se hace en este momento: ¿qué esperar del mercado de commodities el resto del año? La respuesta corta, y la más interesante, no está en ese reporte específico sino en el contraste entre dos de las casas de análisis con más peso institucional del planeta: Goldman Sachs y el Banco Mundial. Ambas publicaron sus proyecciones de 2026 usando esencialmente el mismo conjunto de datos macroeconómicos y geopolíticos disponibles públicamente. Sus conclusiones sobre el petróleo son, en la práctica, opuestas.

@@ -23,7 +23,7 @@ datosClave:
     etiqueta: 'Ingresos totales del año fiscal 2026, +256% frente a los $37,380 millones del año fiscal 2025'
   - valor: '~700%'
     etiqueta: 'Aumento en los precios spot de memoria DRAM en el último año, según reportes de Bloomberg'
-imagen: /blog/portadas/mercado-bursatil-12.jpg
+imagen: /blog/portadas/micron-memoria-ia-oligopolio-margenes-record.jpg
 gancho: 'Micron no vendió más memoria este trimestre que el anterior. La vendió casi el doble de cara. Sus propios ejecutivos ya avisaron que los precios de 2027 serán "mucho más altos" — y ya está prácticamente vendido todo. ¿Qué tan sólido es un boom de IA que depende de que un puñado de fabricantes de memoria sigan subiendo precios sin que nadie pueda decir que no?'
 socialImagen: /blog/social/micron-memoria-ia-oligopolio-margenes-record.jpg
 postura:

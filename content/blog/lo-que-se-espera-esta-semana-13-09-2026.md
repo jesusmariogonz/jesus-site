@@ -13,7 +13,7 @@ tags:
   - Estados Unidos
   - México
 resumen: 'La semana que arranca trae la decisión de tasas más disputada de la Fed en meses (15-16 de septiembre), ventas minoristas de agosto en Estados Unidos el mismo día, y el Indicador Oportuno de Consumo Privado en México, sin que la cuarta ronda del T-MEC tenga todavía fecha confirmada.'
-imagen: /blog/portadas/banco-central-3.jpg
+imagen: /blog/portadas/lo-que-se-espera-esta-semana-13-09-2026.jpg
 ---
 
 La semana del 15 al 19 de septiembre concentra su peso casi por completo en dos días: el 16, cuando la Fed anuncia su decisión de tasas justo después de publicarse las ventas minoristas de agosto, y el 17, cuando México reporta su indicador más reciente de consumo privado. A diferencia de reuniones previas, esta vez ni siquiera los pronosticadores más seguidos coinciden en el resultado.

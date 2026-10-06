@@ -25,7 +25,7 @@ datosClave:
     etiqueta: 'Plataformas de defensa cibernética con IA ya lanzadas: Daybreak (OpenAI), Mythos (Anthropic), Perception (Microsoft)'
   - valor: 'Meses'
     etiqueta: 'Ventana que la propia carta advierte que las organizaciones tienen para prepararse'
-imagen: /blog/portadas/inteligencia-artificial-1.jpg
+imagen: /blog/portadas/ia-ciberataques-empresas-tecnologia-defensa-negocio.jpg
 ---
 
 El 27 de agosto, OpenAI, Anthropic, Microsoft, Google, Amazon Web Services y más de un centenar de empresas —desde Mastercard y Visa hasta Cloudflare, CrowdStrike y General Motors— firmaron una carta abierta advirtiendo que las organizaciones tienen una "ventana limitada" para reforzar sus defensas antes de que los ciberataques impulsados por inteligencia artificial se vuelvan sustancialmente más comunes y sofisticados. El documento señala hospitales, plantas de tratamiento de agua e infraestructura de internet como algunos de los servicios esenciales en mayor riesgo, y llama a gobiernos e industria a colaborar en una respuesta coordinada. Leída de forma aislada, es una advertencia responsable de una industria consciente de su propio impacto. Leída junto con el hecho de que las mismas firmantes ya operan, o están lanzando, plataformas comerciales diseñadas específicamente para vender defensa contra esa amenaza —y que simultáneamente sostienen algunos de los aparatos de cabildeo más grandes de Washington para frenar la regulación que podría haber mitigado el riesgo desde su origen—, la carta deja de leerse como advertencia altruista y empieza a leerse como el anuncio de un mercado que la propia industria ayudó a crear.

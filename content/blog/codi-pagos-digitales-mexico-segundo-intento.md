@@ -25,7 +25,7 @@ datosClave:
     etiqueta: 'Usuarios individuales de Pix en Brasil (82% de la población), con 84% de las empresas del país también usándolo'
   - valor: 'R$35.3 billones'
     etiqueta: 'Monto movido por Pix en 2025, un 33% más que en 2024, equivalente a casi tres veces el PIB brasileño en un mes de operación'
-imagen: /blog/portadas/finanzas-personales-1.jpg
+imagen: /blog/portadas/codi-pagos-digitales-mexico-segundo-intento.jpg
 ---
 
 El gobierno mexicano prepara, para este mes de septiembre, el lanzamiento de un ecosistema unificado de pagos digitales basado en códigos QR, explícitamente inspirado en los modelos de Brasil y la India, con el objetivo declarado de resolver las fricciones de las transferencias electrónicas actuales y facilitar pagos cotidianos —una comida, un estacionamiento— con solo escanear un código. Es, en esencia, la misma promesa que Banco de México hizo en 2019 con el lanzamiento de CoDi, su plataforma de Cobro Digital, que después de seis años de operación ha sido usada alguna vez por apenas 1% de la población mexicana, según un estudio del propio Banxico, frente a un Pix brasileño que hoy usa 82% de la población y 84% de las empresas del país. La pregunta que ese contraste obliga a hacer no es si México puede construir la tecnología necesaria para un sistema de pagos instantáneos —ya la construyó, y fracasó en su adopción—, sino si esta vez va a corregir las razones específicas, ya documentadas con detalle, por las que la primera versión nunca despegó.

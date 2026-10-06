@@ -21,7 +21,7 @@ datosClave:
     etiqueta: 'Fecha de publicación del ensayo de Gebru y Bender que documenta el patrón de titulares exagerados sobre capacidades de IA'
   - valor: '2'
     etiqueta: 'Casos documentados en el ensayo donde un titular sobre un supuesto logro técnico de IA resultó, tras escrutinio, ser una historia distinta (una falla de seguridad convencional presentada como modelo "fuera de control"; un hallazgo matemático calificado como no original)'
-imagen: /blog/portadas/inteligencia-artificial-6.jpg
+imagen: /blog/portadas/brecha-productividad-ia-hype-reestructuracion-corporativa.jpg
 gancho: 'Casi 9 de cada 10 empresas no ven ganancia medible de productividad por IA. Y sin embargo, ya recortaron personal, aplanaron jerarquías y redefinieron qué significa un puesto de nivel inicial. ¿Qué pasa cuando la evidencia alcanza a la decisión que ya se tomó sin ella?'
 socialImagen: /blog/social/brecha-productividad-ia-hype-reestructuracion-corporativa.jpg
 ---

@@ -25,7 +25,7 @@ datosClave:
     etiqueta: 'Personas que salieron de la pobreza laboral entre 2018 y 2022 según Coneval'
   - valor: '55.0%'
     etiqueta: 'Tasa de informalidad laboral en México, julio de 2026 (ENOE, INEGI)'
-imagen: /blog/portadas/negocios-reunion-1.jpg
+imagen: /blog/portadas/salario-minimo-informalidad-segundo-informe-sheinbaum.jpg
 ---
 
 Este martes 1 de septiembre, Claudia Sheinbaum presenta su Segundo Informe de Gobierno desde el Patio de Honor de Palacio Nacional, y entre los indicadores que la campaña de comunicación oficial ya adelantó como eje central está el salario mínimo: su incremento sostenido desde 2019, la reducción de la pobreza laboral que ese incremento produjo, y la fortaleza del peso frente al dólar. Son cifras reales y verificables, no ficción política. El salario mínimo general pasó de 88.4 a 315 pesos diarios entre 2018 y 2026, un acumulado de 154% en términos nominales que ningún otro periodo presidencial mexicano reciente había alcanzado. Lo que ese discurso rara vez pone junto, sin embargo, es la otra mitad de la fotografía laboral: mientras el salario mínimo subía a ese ritmo, la proporción de mexicanos trabajando fuera del sistema formal —donde ese mismo salario mínimo no aplica ni se fiscaliza— se mantiene alrededor de 55%, uno de los niveles más altos registrados en años recientes.

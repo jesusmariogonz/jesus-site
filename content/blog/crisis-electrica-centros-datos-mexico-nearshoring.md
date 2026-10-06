@@ -25,7 +25,7 @@ datosClave:
     etiqueta: 'Capacidad instalada nacional de centros de datos concentrada en Querétaro'
   - valor: '4.5 GW'
     etiqueta: 'Capacidad adicional que la CFE planea sumar a la red antes de 2027'
-imagen: /blog/portadas/inteligencia-artificial-2.jpg
+imagen: /blog/portadas/crisis-electrica-centros-datos-mexico-nearshoring.jpg
 ---
 
 Un reporte del IPADE Business School, difundido esta semana, describe una paradoja que la narrativa oficial del nearshoring mexicano rara vez menciona con esa claridad: el mismo país que en 2025 recibió una cifra récord de inversión extranjera directa —40,871 millones de dólares— tiene, simultáneamente, al 91% de sus parques industriales reportando fallas en el suministro eléctrico. La coexistencia de ambas cifras no es una curiosidad estadística. Es la evidencia más clara hasta ahora de que la infraestructura eléctrica mexicana dejó de ser un detalle operativo y se convirtió en la variable que puede determinar, en los próximos dos o tres años, cuánta de la inversión que México negocia hoy efectivamente se instala, opera a plena capacidad y se queda en el país.

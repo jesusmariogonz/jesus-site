@@ -25,7 +25,7 @@ datosClave:
     etiqueta: 'Inversionistas nacionales identificados en el estudio, frente a 89 estadounidenses'
   - valor: '$944 millones'
     etiqueta: 'Capital de riesgo captado por startups mexicanas en el segundo trimestre de 2026 (+131% anual)'
-imagen: /blog/portadas/startup-innovacion-1.jpg
+imagen: /blog/portadas/inversion-extranjera-startups-ia-mexico-soberania-tecnologica.jpg
 ---
 
 Un estudio publicado esta semana por el Centre for International Governance Innovation, un centro de investigación canadiense especializado en gobernanza tecnológica, ofrece una fotografía incómoda del ecosistema mexicano de inteligencia artificial: de 215 inversionistas identificados como activos en startups mexicanas de IA, apenas 38 son de origen nacional. El resto —75.3% del total— proviene del extranjero, y dentro de ese grupo foráneo, Estados Unidos concentra por sí solo 41.4% de la muestra completa, o alrededor de 55% del capital extranjero identificado. México y Nigeria encabezan, según el mismo estudio, la lista de las diez economías de ingreso medio analizadas con mayor concentración de capital estadounidense en sus respectivos ecosistemas de inteligencia artificial. El dato llega en el mismo trimestre en que las startups mexicanas captaron 944 millones de dólares en capital de riesgo, un salto de 131% frente al año anterior según cifras de Crunchbase —una cifra que, leída de forma aislada, sonaría a buena noticia sin matices, y que solo se complica cuando se le añade la pregunta de quién es, exactamente, el dueño de ese capital que está llegando.

@@ -12,7 +12,7 @@ tags:
   - Inflación
   - Proyecciones
 resumen: 'El 24 de septiembre concentra tres eventos que normalmente ocurrirían en semanas distintas: la decisión de tasas de Banxico, la cumbre entre Trump y Xi Jinping en Washington, y el INPC de la primera quincena en México. La cuarta ronda del T-MEC, en cambio, no llega esta semana.'
-imagen: /blog/portadas/comercio-internacional-1.jpg
+imagen: /blog/portadas/lo-que-se-espera-esta-semana-20-09-2026.jpg
 ---
 
 Hay semanas en las que los eventos relevantes se distribuyen de forma pareja entre lunes y viernes. Esta no es una de ellas: el jueves 24 de septiembre concentra tres eventos que, por separado, ya serían la noticia central de cualquier semana normal.

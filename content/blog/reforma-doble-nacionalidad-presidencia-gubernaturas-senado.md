@@ -24,7 +24,7 @@ datosClave:
     etiqueta: 'Mínimo requerido para que la reforma entre en vigor, de los 32 existentes'
   - valor: '2028'
     etiqueta: 'Primer proceso electoral en el que aplicaría la nueva regla, según el proyecto aprobado'
-imagen: /blog/portadas/oficina-corporativa-14.jpg
+imagen: /blog/portadas/reforma-doble-nacionalidad-presidencia-gubernaturas-senado.jpg
 gancho: 'El Senado acaba de aprobar que nadie con doble nacionalidad pueda ser presidente o gobernador en México a partir de 2028. El gobierno lo llama soberanía. La oposición dice que apunta, con nombre y apellido, a varios de sus posibles candidatos. ¿Cuál de las dos lecturas sobrevive cuando se mira la lista de quién queda fuera?'
 socialImagen: /blog/social/reforma-doble-nacionalidad-presidencia-gubernaturas-senado.jpg
 ---

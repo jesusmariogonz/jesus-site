@@ -22,7 +22,7 @@ datosClave:
     etiqueta: 'De los proyectos de forward-deployed engineering que, según Gartner, terminan convirtiéndose en capacidades del producto central del proveedor'
   - valor: '2028'
     etiqueta: 'Año horizonte de la proyección de Gartner, publicada el 29 de septiembre de 2026'
-imagen: /blog/portadas/inteligencia-artificial-14.jpg
+imagen: /blog/portadas/fde-agentes-ia-abandono-vendor-gartner.jpg
 gancho: 'Gartner proyecta que 7 de cada 10 empresas van a abandonar, antes de 2028, los agentes de IA que sus propios proveedores les construyeron a medida. El problema no es que la tecnología falle — es que nadie diseñó, desde el día uno, quién sería dueño del sistema cuando el ingeniero del proveedor se fuera.'
 socialImagen: /blog/social/fde-agentes-ia-abandono-vendor-gartner.jpg
 ---

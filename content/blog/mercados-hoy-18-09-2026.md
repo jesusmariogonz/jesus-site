@@ -9,7 +9,7 @@ tags:
   - Tipo de Cambio
   - Mercados
 resumen: 'El Dow saltó 0.6%, el S&P 1.1% y el Nasdaq 1.7% ayer en el rebote post-Fed, pero los futuros de hoy están planos mientras el bono a 10 años vuelve a subir y analistas proyectan al peso perdiendo terreno hacia fin de año.'
-imagen: /blog/portadas/mercado-bursatil-3.jpg
+imagen: /blog/portadas/mercados-hoy-18-09-2026.jpg
 ---
 
 Ayer llegó el rebote que muchos esperaban: el Nasdaq saltó 1.7% en su mejor sesión en semanas. Hoy, sin embargo, los futuros apenas se mueven, atrapados entre el alivio por la decisión de la Fed y un bono a 10 años que ya volvió a subir.

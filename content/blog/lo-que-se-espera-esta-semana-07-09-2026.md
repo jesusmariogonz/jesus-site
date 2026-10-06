@@ -14,7 +14,7 @@ tags:
   - Inflación
   - Proyecciones
 resumen: 'La semana que arranca trae el Paquete Económico 2027, la inflación de agosto en México, el CPI de Estados Unidos y la cuarta ronda del T-MEC, todo en la antesala directa de la decisión de la Fed del 16 de septiembre.'
-imagen: /blog/portadas/banco-central-2.jpg
+imagen: /blog/portadas/lo-que-se-espera-esta-semana-07-09-2026.jpg
 ---
 
 La semana del 8 al 12 de septiembre concentra más eventos de calendario que cualquiera de las últimas semanas: el gobierno mexicano entrega su propuesta de presupuesto para 2027, INEGI publica la inflación completa de agosto, Estados Unidos reporta su dato de inflación más esperado del mes, y arranca la cuarta ronda de negociación del T-MEC. Todo ocurre a cinco días de la decisión de tasas de la Reserva Federal del 16 de septiembre, lo que convierte a esta semana en el último bloque de datos relevante antes de esa reunión.

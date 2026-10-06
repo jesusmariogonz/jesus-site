@@ -11,7 +11,7 @@ tags:
   - mercados
   - economía mexicana
 resumen: 'La Fed subió tasas por primera vez en tres años y el peso lo resintió de inmediato, el bono a 10 años tocó su nivel más alto desde 2007, y una nueva encuesta de consumo mexicano muestra la desaceleración más marcada en más de un año. Con Banxico decidiendo el 24 de septiembre y la cuarta ronda de revisión del T-MEC arrancando el 21, la semana que entra puede mover más de lo que se ve a simple vista.'
-imagen: /blog/portadas/crecimiento-economico-2.jpg
+imagen: /blog/portadas/lo-mas-importante-de-esta-semana-18-09-2026.jpg
 ---
 
 Esta semana el protagonista no fue un solo evento, sino la forma en que tres piezas —una decisión de tasas, un dato de consumo y una fecha diplomática que llevaba semanas sin confirmarse— terminaron de encajar. El miércoles la Fed subió tasas por primera vez desde 2023; dos días después, el rebote en bolsa ya convive con un bono a 10 años que no deja de subir y con una economía mexicana que, según el dato de consumo más reciente, se está desacelerando más rápido de lo que el discurso oficial sugiere.
