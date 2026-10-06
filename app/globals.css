@@ -4823,6 +4823,40 @@ html:not(.dark) .pglobe-land {
   font-weight: 600;
   white-space: nowrap;
 }
+.screener-th-info {
+  position: relative;
+  display: inline-block;
+}
+.screener-th-info summary {
+  cursor: help;
+  list-style: none;
+  border-bottom: 1px dotted var(--meta);
+}
+.screener-th-info summary::-webkit-details-marker { display: none; }
+.screener-th-info summary::marker { content: ""; }
+.screener-th-tooltip {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 50;
+  width: 260px;
+  max-width: 70vw;
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  color: var(--ink);
+  font-weight: 400;
+  font-size: 0.78rem;
+  white-space: normal;
+  line-height: 1.5;
+}
+@media (hover: hover) {
+  .screener-th-info:hover .screener-th-tooltip { display: block; }
+}
+.screener-th-info[open] .screener-th-tooltip { display: block; }
 .screener-tabla td {
   padding: 10px 14px;
   border-bottom: 1px solid var(--line-soft);

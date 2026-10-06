@@ -8,10 +8,29 @@ function fmtPct(v) {
   return `${v >= 0 ? "+" : ""}${(v * 100).toFixed(1)}%`;
 }
 
+const EXPLICACIONES = {
+  retorno:
+    "Retorno anualizado: el promedio de los retornos diarios (en log) de los últimos ~180 días, proyectado a un año (×252 días de trading). Es cuánto hubiera rendido el activo en un año si mantuviera ese mismo ritmo — no una predicción, un promedio histórico.",
+  volatilidad:
+    "Volatilidad anualizada: qué tanto se mueve el precio día a día, medido como la desviación estándar de los retornos diarios y proyectado a un año. Más alta = oscilaciones más bruscas (mayor riesgo), no necesariamente peor desempeño.",
+  sharpe:
+    "Sharpe: retorno anualizado menos una tasa libre de riesgo (~4.5%, aprox. de un bono del Tesoro), dividido entre la volatilidad anualizada. Mide cuánto retorno dio el activo por cada unidad de riesgo tomado — más alto es mejor; negativo significa que ni siquiera superó la tasa libre de riesgo.",
+};
+
+function ThConExplicacion({ titulo, explicacion }) {
+  return (
+    <th>
+      <details className="screener-th-info">
+        <summary>{titulo}</summary>
+        <div className="screener-th-tooltip">{explicacion}</div>
+      </details>
+    </th>
+  );
+}
+
 export default function MercadosScreener() {
   const [data, setData] = useState(null);
   const [busqueda, setBusqueda] = useState("");
-  const [mercado, setMercado] = useState("todas");
 
   useEffect(() => {
     fetch("/api/mercados/screener")
@@ -24,12 +43,11 @@ export default function MercadosScreener() {
     if (!data?.rows) return [];
     return data.rows.filter((r) => {
       if (!r.disponible) return false;
-      if (mercado !== "todas" && r.mercado !== mercado) return false;
       if (!busqueda.trim()) return true;
       const q = busqueda.toLowerCase();
       return r.symbol.toLowerCase().includes(q) || r.name.toLowerCase().includes(q);
     });
-  }, [data, busqueda, mercado]);
+  }, [data, busqueda]);
 
   if (!data) {
     return <p className="screener-cargando">Cargando precios en vivo…</p>;
@@ -44,11 +62,6 @@ export default function MercadosScreener() {
           value={busqueda}
           onChange={(e) => setBusqueda(e.target.value)}
         />
-        <select value={mercado} onChange={(e) => setMercado(e.target.value)}>
-          <option value="todas">Todos los mercados</option>
-          <option value="us">Estados Unidos</option>
-          <option value="mx">BMV (México)</option>
-        </select>
         <span className="screener-conteo">{filas.length} activos</span>
       </div>
 
@@ -59,14 +72,14 @@ export default function MercadosScreener() {
               <th>Activo</th>
               <th>Precio</th>
               <th>Tendencia</th>
-              <th>Retorno anual.</th>
-              <th>Volatilidad</th>
-              <th>Sharpe</th>
+              <ThConExplicacion titulo="Retorno anual." explicacion={EXPLICACIONES.retorno} />
+              <ThConExplicacion titulo="Volatilidad" explicacion={EXPLICACIONES.volatilidad} />
+              <ThConExplicacion titulo="Sharpe" explicacion={EXPLICACIONES.sharpe} />
             </tr>
           </thead>
           <tbody>
             {filas.map((r) => (
-              <tr key={r.symbol} className={!r.disponible ? "fila-no-disponible" : undefined}>
+              <tr key={r.symbol}>
                 <td>
                   <strong>{r.symbol}</strong>
                   <span className="screener-nombre">{r.name}</span>
@@ -96,10 +109,9 @@ export default function MercadosScreener() {
       </div>
 
       <p className="screener-nota">
-        Precio en vivo vía Finnhub; velas diarias reales vía Yahoo Finance. Retorno/volatilidad/Sharpe se calculan a
-        partir de esas velas (últimos ~180 días; Sharpe usa 4.5% como tasa libre de riesgo aproximada). "No disponible"
-        significa que ninguna fuente devolvió datos para ese símbolo (frecuente en BMV con el plan gratuito de
-        Finnhub) — no se inventa ningún valor.
+        Precio en vivo vía Finnhub; velas diarias reales vía Yahoo Finance. Solo EE.UU. — Finnhub no da precio en
+        vivo para la BMV en el plan gratuito. Pasa el cursor (o toca en celular) sobre "Retorno anual.", "Volatilidad"
+        o "Sharpe" para ver cómo se calcula cada uno.
       </p>
     </div>
   );
