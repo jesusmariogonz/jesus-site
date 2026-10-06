@@ -4740,9 +4740,6 @@ html:not(.dark) .pglobe-land {
   top: 64px;
   z-index: 39;
 }
-@media (max-width: 720px) {
-  .ticker-tape { position: static; }
-}
 .ticker-tape-track {
   display: inline-flex;
   animation: ticker-scroll 40s linear infinite;
