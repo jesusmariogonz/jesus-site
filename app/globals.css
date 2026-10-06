@@ -4800,6 +4800,8 @@ html:not(.dark) .pglobe-land {
 
 .screener-tabla-wrap {
   overflow-x: auto;
+  overflow-y: auto;
+  max-height: 290px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
@@ -4810,9 +4812,12 @@ html:not(.dark) .pglobe-land {
   font-size: 0.88rem;
 }
 .screener-tabla th {
+  position: sticky;
+  top: 0;
   text-align: left;
   padding: 10px 14px;
   border-bottom: 1px solid var(--line);
+  background: var(--surface);
   color: var(--meta);
   font-weight: 600;
   white-space: nowrap;

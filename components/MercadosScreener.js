@@ -23,6 +23,7 @@ export default function MercadosScreener() {
   const filas = useMemo(() => {
     if (!data?.rows) return [];
     return data.rows.filter((r) => {
+      if (!r.disponible) return false;
       if (mercado !== "todas" && r.mercado !== mercado) return false;
       if (!busqueda.trim()) return true;
       const q = busqueda.toLowerCase();
