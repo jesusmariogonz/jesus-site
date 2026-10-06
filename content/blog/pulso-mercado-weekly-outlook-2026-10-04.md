@@ -24,7 +24,7 @@ Wall Street cerró la semana pasada con un repunte marcado el viernes —el Nasd
 
 | Fecha | Evento | País | Importancia | Qué puede afectar |
 |---|---|---|---|---|
-| Lunes 5-oct | ISM Servicios de septiembre (PMI) | Estados Unidos | Alta | Primer termómetro de actividad del sector servicios tras el reporte de empleo débil |
+| Lunes 5-oct | [ISM Servicios de septiembre (PMI)](/blog/ism-servicios-septiembre-2026-dato-sin-confirmar) | Estados Unidos | Alta | Primer termómetro de actividad del sector servicios tras el reporte de empleo débil |
 | Miércoles 7-oct | Minutas de la reunión de la Fed del 15-16 de septiembre | Estados Unidos | Alta | Detalle sobre el grado de división interna de la Fed respecto al ritmo de alzas |
 | Miércoles 7-oct | Crédito al consumidor (G.19, datos de agosto) | Estados Unidos | Media | Lectura del apetito de endeudamiento de los hogares |
 | Miércoles 7-oct | INPC de septiembre (inflación general y subyacente) | México | Alta | Insumo clave para la decisión de Banxico de noviembre |
