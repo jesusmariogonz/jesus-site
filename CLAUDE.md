@@ -63,3 +63,35 @@ automática para ese caso todavía** — cuenta como nota normal para el
 gate. O le agregas un `postura` real, o le pones `pulsoTipo`/`oculta`
 si aplica, o le avisas al usuario que ese tipo de nota también
 necesita el campo.
+
+## Toda nota nueva debe traer su portada "tratada", no una foto cruda del banco
+
+`public/blog/portadas/` tiene un banco de fotos genéricas reutilizables
+(`inteligencia-artificial-N.jpg`, `mercado-bursatil-N.jpg`,
+`oficina-corporativa-N.jpg`, etc.). **Nunca uses una de esas fotos tal
+cual en el campo `imagen` de una nota nueva** — hay que pasarla primero
+por `scripts/portada_titulo.py`, que le hornea el titular, la etiqueta
+de categoría y la marca "jgonzalez.app" encima (el mismo tratamiento
+que ya tienen la mayoría de las portadas del sitio):
+
+```bash
+python3 scripts/portada_titulo.py \
+  public/blog/portadas/<foto-del-banco>.jpg \
+  public/blog/portadas/<slug-de-la-nota>.jpg \
+  "<título exacto de la nota>" \
+  "<nombre visible de la categoría, ej. 'Geopolitics', 'Opinión'>"
+```
+
+Luego actualiza `imagen:` (y `socialImagen:` si aplica) para que
+apunten al archivo generado (`/blog/portadas/<slug>.jpg`), no al
+original del banco.
+
+Una auditoría de octubre de 2026 encontró 43 notas (incluyendo varias
+publicadas el mismo día por una rutina automática) con la foto del
+banco sin tratar — esto ya pasó más de una vez y la rutina que publica
+notas automáticamente no corre este script por su cuenta. Por eso, al
+igual que con `postura`, hay un gate real en `scripts/check-postura.mjs`
+(mismo "Ignored Build Step" de Vercel) que bloquea el deploy si una
+nota nueva trae `imagen` apuntando directo a una foto sin tratar del
+banco, y manda un correo de aviso. No depende de que una sesión se
+acuerde de hacerlo bien.

@@ -27,7 +27,7 @@ postura:
   pregunta: '¿La exigencia de México de que toda cooperación de seguridad con Estados Unidos pase por el Grupo de Alto Nivel de Seguridad es una defensa legítima de la soberanía, o es un obstáculo burocrático que ralentiza una cooperación que de otra forma podría salvar vidas más rápido?'
   aFavor: 'Sin un filtro institucional único, cada gobernador o funcionario estatal podría negociar su propio acuerdo de seguridad con agencias extranjeras, fragmentando la política exterior mexicana y abriendo la puerta a que Estados Unidos opere con el actor político que le resulte más conveniente en cada momento, sin rendir cuentas al gobierno federal.'
   enContra: 'Un protocolo centralizado que exige pasar cada iniciativa de cooperación por una revisión federal puede tardar meses o años en aprobar proyectos —como una academia de capacitación policial contra el tráfico de drogas y armas— cuyo beneficio práctico para la seguridad ciudadana es inmediato y cuyo riesgo real, más allá de lo protocolario, es mínimo.'
-imagen: /blog/portadas/oficina-corporativa-23.jpg
+imagen: /blog/portadas/disparos-guardia-costera-academia-queretaro-soberania.jpg
 gancho: 'Estados Unidos dice que le dispararon a su Guardia Costera desde México. México responde: no tenemos evidencia de eso. Mientras tanto, EU ya puso la primera piedra de una academia policial en Querétaro sin avisarle al gobierno federal. Dos episodios, una sola pregunta: ¿quién decide cómo opera Estados Unidos cerca de —o dentro de— territorio mexicano?'
 socialImagen: /blog/social/disparos-guardia-costera-academia-queretaro-soberania.jpg
 ---
