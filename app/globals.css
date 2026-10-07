@@ -510,7 +510,6 @@ html:not(.dark) .prose li {
   overflow-x: auto;
   max-width: 100%;
   -webkit-overflow-scrolling: touch;
-  white-space: nowrap;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
@@ -519,6 +518,14 @@ html:not(.dark) .prose li {
   border: 1px solid var(--line);
   padding: 8px 12px;
   text-align: left;
+  /* Antes la tabla heredaba white-space:nowrap del padre, lo que
+     fuerza a una celda con texto largo (ej. una fecha+resultado) a
+     imponer un ancho de columna que ni max-width ni overflow-x
+     lograban contener en tablas con table-layout automático —
+     reventaba el ancho de TODA la página en mobile, no solo el de
+     la tabla. Con wrap normal, la celda crece en alto, no en ancho. */
+  white-space: normal;
+  word-break: break-word;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
