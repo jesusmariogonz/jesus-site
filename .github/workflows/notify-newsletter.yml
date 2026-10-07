@@ -1,12 +1,30 @@
 name: Avisar nota nueva por correo
 
-# Se dispara solo cuando el push a main incluye cambios dentro de
-# content/blog (o sea, cuando publicas o editas una nota).
+# Se dispara cuando el push a main incluye cambios dentro de
+# content/blog (o sea, cuando publicas o editas una nota), o a mano
+# desde la pestaña Actions (workflow_dispatch) — por ejemplo, para
+# reenviar solo un canal de una nota específica (ej. tras corregir la
+# portada) sin repetir todo el aviso.
 on:
   push:
     branches: [main]
     paths:
       - "content/blog/**"
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: "Slug de la nota a avisar (vacío = la más reciente)"
+        required: false
+        type: string
+      canal:
+        description: "Canales separados por coma (newsletter,kindle,facebook,linkedin,instagram). Vacío = todos."
+        required: false
+        type: string
+      force:
+        description: "Reenviar aunque ya se haya avisado antes ese (slug, canal)"
+        required: false
+        type: boolean
+        default: false
 
 jobs:
   notify:
@@ -19,6 +37,7 @@ jobs:
 
       - name: Detectar la nota de este push
         id: nota
+        if: github.event_name == 'push'
         run: |
           # Toma el .md nuevo/modificado en content/blog en este push (si hay
           # varios, el primero). Fijar el slug evita que, si otro push a main
@@ -39,9 +58,25 @@ jobs:
           # tenga esta nota — si no, el endpoint responde "enviado: null" en
           # vez de un error (por diseño, para no avisar la nota equivocada),
           # así que hay que revisar el campo, no solo el código HTTP.
-          sleep 90
+          #
+          # En un disparo manual (workflow_dispatch) no hay push que esperar
+          # (la nota ya está desplegada de antes), así que se salta el sleep
+          # inicial y se usan los inputs en vez del slug detectado del push.
+          slug="${{ github.event.inputs.slug || steps.nota.outputs.slug }}"
+          canal="${{ github.event.inputs.canal }}"
+          force="${{ github.event.inputs.force }}"
+          extra=""
+          [ -n "$canal" ] && extra="$extra&canal=$canal"
+          [ "$force" = "true" ] && extra="$extra&force=true"
+
+          if [ "${{ github.event_name }}" = "push" ]; then
+            sleep 90
+          fi
           for intento in 1 2 3 4 5 6 7 8; do
-            respuesta=$(curl -sf "https://jgonzalez.app/api/newsletter/notify?secret=${{ secrets.NEWSLETTER_NOTIFY_SECRET }}&slug=${{ steps.nota.outputs.slug }}")
+            url="https://jgonzalez.app/api/newsletter/notify?secret=${{ secrets.NEWSLETTER_NOTIFY_SECRET }}"
+            [ -n "$slug" ] && url="$url&slug=$slug"
+            url="$url$extra"
+            respuesta=$(curl -sf "$url")
             echo "$respuesta"
             if echo "$respuesta" | grep -q '"enviado":"'; then
               exit 0
@@ -49,5 +84,5 @@ jobs:
             echo "Todavía no está desplegada (intento $intento/8), reintentando en 30s..."
             sleep 30
           done
-          echo "::error::La nota ${{ steps.nota.outputs.slug }} nunca apareció en el deploy en vivo tras ~5.5 min."
+          echo "::error::La nota $slug nunca apareció en el deploy en vivo tras ~5.5 min."
           exit 1
