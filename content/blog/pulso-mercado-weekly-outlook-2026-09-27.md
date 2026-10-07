@@ -35,7 +35,7 @@ No localizamos con confianza una fecha específica de la decisión de Banxico ni
 ## Earnings Calendar
 
 | Empresa | Ticker | Fecha | Momento | Sector | Por qué importa |
-|---|---|---|---|---|
+|---|---|---|---|---|---|
 | Carnival | CCL | Martes 29-sep | Antes de la apertura | Cruceros / consumo discrecional | Termómetro del gasto del consumidor en viajes y experiencias |
 | Nike | NKE | Semana del 29-sep al 1-oct | Por confirmar | Consumo / retail | Guía de demanda global de calzado y ropa deportiva |
 | Micron | MU | Semana del 29-sep al 1-oct | Por confirmar | Semiconductores | Guía de demanda de memoria, ligada al ciclo de infraestructura de IA |

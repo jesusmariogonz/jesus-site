@@ -198,6 +198,7 @@ export default function PulsoMercadoDashboard() {
   const { daily, weeklyOutlook } = pulso;
 
   const calendarioSemana = seccion(weeklyOutlook, "macro calendar");
+  const calendarioResultados = seccion(weeklyOutlook, "earnings calendar");
 
   return (
     <>
@@ -314,8 +315,16 @@ export default function PulsoMercadoDashboard() {
               subtitulo={weeklyOutlook ? `Semana del ${formatFecha(weeklyOutlook.fecha)}` : null}
               markdown={calendarioSemana}
               vacio="Todavía no hay un Weekly Outlook publicado con el calendario de la semana."
-              claseExtra="pulsodash-calendario"
+              claseExtra="pulsodash-calendario pulsodash-calendario-macro"
             />
+            {calendarioResultados && (
+              <Seccion
+                titulo="Reportes de resultados de la semana"
+                subtitulo={weeklyOutlook ? `Semana del ${formatFecha(weeklyOutlook.fecha)}` : null}
+                markdown={calendarioResultados}
+                claseExtra="pulsodash-calendario pulsodash-earnings"
+              />
+            )}
           </>
         )}
 
