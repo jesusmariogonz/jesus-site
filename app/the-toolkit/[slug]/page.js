@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { TOOLKIT_PRODUCTOS } from "@/lib/toolkit";
+import { TOOLKIT_PRODUCTOS, getArchivoPreview } from "@/lib/toolkit";
 import BuyButton from "@/components/BuyButton";
 import ProductReviews from "@/components/ProductReviews";
+import ToolkitPreview from "@/components/ToolkitPreview";
 import { AUTHOR } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -60,6 +61,7 @@ export default function ProductoToolkit({ params }) {
 
   const d = producto.detalle || {};
   const faq = construirFaq(producto);
+  const archivoPreview = producto.checkoutUrl ? getArchivoPreview(producto) : null;
 
   return (
     <section className="tk-page tk-product-page">
@@ -147,6 +149,13 @@ export default function ProductoToolkit({ params }) {
           </div>
         )}
 
+        {archivoPreview && (
+          <div className="lib-product-section">
+            <h2>Mira el contenido</h2>
+            <ToolkitPreview producto={producto} />
+          </div>
+        )}
+
         {d.resultado && (
           <div className="tk-product-resultado">
             <span className="tk-hero-eyebrow">Resultado</span>
@@ -208,6 +217,13 @@ export default function ProductoToolkit({ params }) {
         </div>
 
         <ProductReviews productoId={producto.id} />
+
+        <div className="lib-cta-final">
+          <p>¿Buscas algo más teórico, para entender el "por qué" detrás de las herramientas?</p>
+          <Link href="/recursos" className="btn">
+            Explora la Biblioteca →
+          </Link>
+        </div>
 
         <div className="tk-product-footer-cta">
           <div>

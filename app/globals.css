@@ -4569,37 +4569,84 @@ html:not(.dark) .pglobe-land {
 }
 
 /* ============================================================
-   Home: mención discreta de Pulso de Mercado
+   Home: tarjeta de Pulso de Mercado — con más presencia que un
+   renglón de texto (antes se empalmaba visualmente con la caja de
+   newsletter justo debajo), separada con su propio margen.
    ============================================================ */
-.pulso-mini { margin: 12px auto 40px; }
-.pulso-mini-link {
+.pulso-mini { margin: 32px auto 48px; }
+.pulso-mini-card {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 10px;
-  flex-wrap: wrap;
-  padding: 14px 18px;
+  padding: 26px 28px;
   border: 1px solid var(--line-soft);
-  border-radius: var(--radius);
-  background: var(--surface);
+  border-radius: var(--radius-lg, 16px);
+  background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
   text-decoration: none;
   color: inherit;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.15s ease, transform 0.15s ease;
 }
-.pulso-mini-link:hover { border-color: var(--accent); text-decoration: none; }
+.pulso-mini-card:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+.pulso-mini-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
 .pulso-mini-kicker {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.05em;
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--accent);
-}
-.pulso-mini-titulo {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--ink);
-  flex: 1;
+  font-weight: 700;
 }
 .pulso-mini-fecha { font-size: 0.8rem; color: var(--meta); }
-.pulso-mini-flecha { color: var(--accent); }
+.pulso-mini-titulo {
+  font-size: 1.3rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.pulso-mini-resumen {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  max-width: 68ch;
+}
+.pulso-mini-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4px;
+}
+.pulso-mini-chip {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--bg);
+  border: 1px solid var(--line-soft);
+  font-size: 0.84rem;
+}
+.pulso-mini-chip-nombre { font-weight: 600; color: var(--ink); }
+.pulso-mini-chip-nivel { font-family: var(--font-mono); color: var(--ink-soft); }
+.pulso-mini-chip-cambio { font-family: var(--font-mono); font-weight: 700; }
+.pulso-mini-chip-cambio.alza { color: #3b82f6; }
+.pulso-mini-chip-cambio.baja { color: #e2725b; }
+.pulso-mini-cta {
+  margin-top: 6px;
+  font-weight: 600;
+  color: var(--accent);
+}
 
 .footer-grid {
   display: flex;
