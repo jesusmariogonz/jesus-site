@@ -1,10 +1,7 @@
 #!/usr/bin/env node
 /* ============================================================
    Ignored Build Step de Vercel — bloquea el deploy si una nota
-   NUEVA en content/blog/ no trae el bloque `postura` (ver CLAUDE.md)
-   O si su `imagen` apunta a una foto cruda del banco de portadas sin
-   el tratamiento de scripts/portada_titulo.py (titular + categoría +
-   marca "jgonzalez.app" horneados).
+   NUEVA en content/blog/ no trae el bloque `postura` (ver CLAUDE.md).
    ------------------------------------------------------------
    Convención de Vercel para este comando (NO es la convención normal
    de shell): exit code 0 = SALTAR este deploy (se queda el anterior
@@ -17,19 +14,15 @@
    determinar con confianza qué se agregó (ej. clon superficial sin
    HEAD~1), deja pasar el build en vez de bloquear por error.
 
-   Por qué se agregó el check de portada: una auditoría (oct-2026)
-   encontró que 43 de 162 notas usaban una foto del banco tal cual
-   (ej. /blog/portadas/inteligencia-artificial-10.jpg) sin pasar por
-   portada_titulo.py — la rutina automática de publicación nunca lo
-   corre. Como esa rutina vive fuera de este repo, no se puede
-   arreglar en el código; este gate evita que se sigan acumulando
-   notas nuevas con portada sin tratar, igual que el gate de postura
-   evita notas nuevas sin ese campo.
-
    Manda un correo de aviso (vía la API REST de Resend directamente —
    este script corre antes de `npm install`, sin node_modules
    disponibles) cuando bloquea un deploy, con enfriamiento para no
    mandar un correo por cada reintento de Vercel.
+
+   Nota sobre portadas: el problema de notas con foto del banco sin
+   tratar (titular+marca) ya NO se bloquea aquí — se arregla solo en
+   cada build, ver scripts/fix-portadas-auto.mjs (enganchado desde
+   next.config.mjs).
    ============================================================ */
 
 import { execSync } from "node:child_process";
@@ -89,27 +82,7 @@ function tienePosturaCompleta(lineas) {
   return Boolean(campo("pregunta") && campo("aFavor") && campo("enContra"));
 }
 
-// Prefijos del banco de fotos genéricas reutilizables (public/blog/portadas/
-// <prefijo>-<N>.jpg) — si `imagen` en el frontmatter apunta directo a uno de
-// estos archivos, significa que nunca pasó por portada_titulo.py.
-const PREFIJOS_BANCO_GENERICO = [
-  "banco-central", "comercio-internacional", "crecimiento-economico",
-  "finanzas-personales", "inflacion-precios", "inteligencia-artificial",
-  "manufactura-fabrica", "mercado-bursatil", "negocios-reunion",
-  "oficina-corporativa", "startup-innovacion", "vivienda-hipotecas",
-];
-const RE_BANCO_GENERICO = new RegExp(
-  `^(${PREFIJOS_BANCO_GENERICO.join("|")})-\\d+$`
-);
-
-function tieneImagenSinTratar(lineas) {
-  const imagen = valorDeLinea(lineas, "imagen");
-  if (!imagen) return false;
-  const base = imagen.split("/").pop().replace(/\.(jpg|jpeg|png|webp)$/i, "");
-  return RE_BANCO_GENERICO.test(base);
-}
-
-async function avisar({ asunto, intro, archivos, instrucciones }) {
+async function avisar(archivosFaltantes) {
   const fromEmail = process.env.RESEND_FROM_EMAIL;
   const apiKey = process.env.RESEND_API_KEY;
   const to = process.env.ADMIN_ALERT_EMAIL || "jesusmariogonz@gmail.com";
@@ -124,13 +97,19 @@ async function avisar({ asunto, intro, archivos, instrucciones }) {
       body: JSON.stringify({
         from: fromEmail,
         to,
-        subject: asunto,
+        subject: "⚠️ jgonzalez.app — deploy bloqueado: nota sin bloque Postura",
         html: `
-          <p>${intro}</p>
+          <p>Vercel <strong>no desplegó</strong> el último push porque trae una nota
+          nueva en <code>content/blog/</code> sin el campo <code>postura</code>
+          completo (pregunta + aFavor + enContra), como lo exige
+          <code>CLAUDE.md</code>.</p>
           <p>Archivo(s):</p>
-          <ul>${archivos.map((f) => `<li><code>${f}</code></li>`).join("")}</ul>
+          <ul>${archivosFaltantes.map((f) => `<li><code>${f}</code></li>`).join("")}</ul>
           <p>El sitio sigue mostrando el deploy anterior (nada se rompió para los
-          visitantes). ${instrucciones}</p>
+          visitantes). Para desbloquearlo: agrega el bloque <code>postura</code>
+          a esas notas (o márcalas como excepción válida: <code>pulsoTipo</code>,
+          <code>oculta: true</code> o <code>serie: tesis-rag</code>) y vuelve a
+          hacer push.</p>
         `,
       }),
     });
@@ -149,16 +128,10 @@ if (agregados.length === 0) {
 }
 
 const faltantes = [];
-const portadasSinTratar = [];
 for (const ruta of agregados) {
   if (!existsSync(ruta)) continue;
   const fm = extraerFrontmatter(ruta);
   if (!fm) continue;
-
-  if (tieneImagenSinTratar(fm)) {
-    portadasSinTratar.push(ruta);
-  }
-
   const excepcion = esExcepcion(fm);
   if (excepcion) {
     console.log(`[check-postura] ${ruta}: excepción válida (${excepcion}), no requiere postura.`);
@@ -171,35 +144,8 @@ for (const ruta of agregados) {
 
 if (faltantes.length > 0) {
   bloquear(`${faltantes.length} nota(s) nueva(s) sin bloque postura completo: ${faltantes.join(", ")}`);
-  await avisar({
-    asunto: "⚠️ jgonzalez.app — deploy bloqueado: nota sin bloque Postura",
-    intro: `Vercel <strong>no desplegó</strong> el último push porque trae una nota
-      nueva en <code>content/blog/</code> sin el campo <code>postura</code>
-      completo (pregunta + aFavor + enContra), como lo exige <code>CLAUDE.md</code>.`,
-    archivos: faltantes,
-    instrucciones: `Para desbloquearlo: agrega el bloque <code>postura</code>
-      a esas notas (o márcalas como excepción válida: <code>pulsoTipo</code>,
-      <code>oculta: true</code> o <code>serie: tesis-rag</code>) y vuelve a hacer push.`,
-  });
+  await avisar(faltantes);
   process.exit(0); // 0 = saltar este deploy (ver nota arriba)
 }
 
-if (portadasSinTratar.length > 0) {
-  bloquear(`${portadasSinTratar.length} nota(s) nueva(s) con portada sin tratar: ${portadasSinTratar.join(", ")}`);
-  await avisar({
-    asunto: "⚠️ jgonzalez.app — deploy bloqueado: nota con portada sin tratar",
-    intro: `Vercel <strong>no desplegó</strong> el último push porque trae una nota
-      nueva en <code>content/blog/</code> cuyo campo <code>imagen</code> apunta
-      directo a una foto del banco de portadas (ej. <code>inteligencia-artificial-10.jpg</code>)
-      sin pasar por <code>scripts/portada_titulo.py</code> — le falta el titular,
-      la categoría y la marca "jgonzalez.app" horneados que trae el resto del sitio.`,
-    archivos: portadasSinTratar,
-    instrucciones: `Para desbloquearlo: corre
-      <code>python3 scripts/portada_titulo.py &lt;foto-banco&gt; public/blog/portadas/&lt;slug&gt;.jpg "&lt;título&gt;" "&lt;categoría&gt;"</code>
-      y actualiza el campo <code>imagen</code> de la nota para que apunte al
-      archivo generado, luego vuelve a hacer push.`,
-  });
-  process.exit(0); // 0 = saltar este deploy (ver nota arriba)
-}
-
-proceder("todas las notas nuevas de este push tienen postura y portada tratada");
+proceder("todas las notas nuevas de este push tienen postura o son excepción válida");

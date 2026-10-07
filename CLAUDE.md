@@ -68,11 +68,11 @@ necesita el campo.
 
 `public/blog/portadas/` tiene un banco de fotos genéricas reutilizables
 (`inteligencia-artificial-N.jpg`, `mercado-bursatil-N.jpg`,
-`oficina-corporativa-N.jpg`, etc.). **Nunca uses una de esas fotos tal
-cual en el campo `imagen` de una nota nueva** — hay que pasarla primero
-por `scripts/portada_titulo.py`, que le hornea el titular, la etiqueta
-de categoría y la marca "jgonzalez.app" encima (el mismo tratamiento
-que ya tienen la mayoría de las portadas del sitio):
+`oficina-corporativa-N.jpg`, etc.). Si publicas una nota a mano, **no
+uses una de esas fotos tal cual en el campo `imagen`** — pásala primero
+por `scripts/portada_titulo.py` (Python) o `scripts/portada-titulo.mjs`
+(Node, mismo resultado, sin depender de Python/Pillow), que le hornea
+el titular, la etiqueta de categoría y la marca "jgonzalez.app" encima:
 
 ```bash
 python3 scripts/portada_titulo.py \
@@ -86,12 +86,22 @@ Luego actualiza `imagen:` (y `socialImagen:` si aplica) para que
 apunten al archivo generado (`/blog/portadas/<slug>.jpg`), no al
 original del banco.
 
+### Esto ya NO depende solo de que una sesión se acuerde (y no bloquea el deploy)
+
 Una auditoría de octubre de 2026 encontró 43 notas (incluyendo varias
-publicadas el mismo día por una rutina automática) con la foto del
-banco sin tratar — esto ya pasó más de una vez y la rutina que publica
-notas automáticamente no corre este script por su cuenta. Por eso, al
-igual que con `postura`, hay un gate real en `scripts/check-postura.mjs`
-(mismo "Ignored Build Step" de Vercel) que bloquea el deploy si una
-nota nueva trae `imagen` apuntando directo a una foto sin tratar del
-banco, y manda un correo de aviso. No depende de que una sesión se
-acuerde de hacerlo bien.
+publicadas el mismo día por una rutina automática externa a este repo)
+con la foto del banco sin tratar. A diferencia de `postura`, esto **no
+se resuelve bloqueando el deploy** — se arregla solo, como parte normal
+de cada build: `next.config.mjs` llama a
+`scripts/fix-portadas-auto.mjs` antes de compilar, el cual revisa
+TODAS las notas en `content/blog/`, detecta cuáles tienen `imagen`
+apuntando a una foto genérica sin tratar, genera la versión tratada con
+`scripts/portada-titulo.mjs` y reescribe el frontmatter de esa nota
+(imagen + socialImagen) en el checkout antes de que Next compile las
+páginas — sin intervención humana y sin saltarse el deploy.
+
+Nota importante: ese arreglo ocurre en el filesystem efímero del build
+de Vercel, no se commitea de vuelta al repo automáticamente. Si quieres
+que el `imagen:` correcto quede también en git (recomendado para que no
+se regenere en cada build), haz el mismo cambio a mano en una sesión y
+commitéalo — igual que se hizo con las 43 notas de la auditoría inicial.
