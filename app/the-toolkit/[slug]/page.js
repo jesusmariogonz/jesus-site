@@ -2,6 +2,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { TOOLKIT_PRODUCTOS } from "@/lib/toolkit";
 import BuyButton from "@/components/BuyButton";
+import ProductReviews from "@/components/ProductReviews";
+import { AUTHOR } from "@/lib/site";
 
 export function generateStaticParams() {
   return TOOLKIT_PRODUCTOS.map((p) => ({ slug: p.id }));
@@ -30,15 +32,34 @@ function heroVisual(producto) {
   );
 }
 
+/* FAQ genérico para todos los productos de pago + una pregunta extra
+   por producto cuando aplica (ver `faqExtra` en lib/toolkit.js). */
+function construirFaq(producto) {
+  const base = [
+    {
+      q: "¿Cómo recibo el archivo después de comprar?",
+      a: "De inmediato: al completar el pago te redirigimos a una página de descarga y, además, te llega todo por correo — sin esperas, sin aprobación manual.",
+    },
+    {
+      q: "¿Hay factura?",
+      a: `Sí. Si necesitas factura, escríbeme a ${AUTHOR.email} con tu RFC y datos fiscales después de la compra y te la genero.`,
+    },
+    {
+      q: "¿Y si no me sirve?",
+      a: "Tienes 7 días de garantía: si revisas el material y sientes que no te sirvió, me escribes y te devuelvo tu dinero, sin preguntas.",
+    },
+  ];
+  return producto.detalle?.faqExtra
+    ? [...base.slice(0, 1), producto.detalle.faqExtra, ...base.slice(1)]
+    : base;
+}
+
 export default function ProductoToolkit({ params }) {
   const producto = TOOLKIT_PRODUCTOS.find((p) => p.id === params.slug);
   if (!producto) notFound();
 
   const d = producto.detalle || {};
-  const ahorro =
-    producto.precioLista && producto.precioLista > producto.precio
-      ? Math.round(100 - (producto.precio / producto.precioLista) * 100)
-      : null;
+  const faq = construirFaq(producto);
 
   return (
     <section className="tk-page tk-product-page">
@@ -68,15 +89,17 @@ export default function ProductoToolkit({ params }) {
                 <div className="tk-product-precio-row">
                   {producto.precioLista && (
                     <span className="tk-bundle-tachado tk-product-tachado">
-                      ${producto.precioLista} MXN
+                      Antes ${producto.precioLista} MXN
                     </span>
                   )}
-                  {ahorro && <span className="tk-product-ahorro">-{ahorro}%</span>}
                 </div>
                 <span className="tk-card-precio tk-product-precio">
                   ${producto.precio} MXN
                 </span>
-                <span className="tk-product-precio-nota">pago único · precio de lanzamiento</span>
+                <span className="tk-product-precio-nota">
+                  pago único · precio de lanzamiento
+                  {d.lanzamientoHasta ? ` hasta el ${d.lanzamientoHasta}` : ""}
+                </span>
               </div>
               <BuyButton
                 checkoutUrl={producto.checkoutUrl}
@@ -84,6 +107,10 @@ export default function ProductoToolkit({ params }) {
                 className="tk-buy-lg"
               />
             </div>
+            <p className="tk-product-garantia">
+              🛡️ Si en 7 días revisas el material y sientes que no te sirvió,
+              escríbeme y te devuelvo tu dinero. Sin preguntas.
+            </p>
             {!producto.checkoutUrl && (
               <p className="tk-product-soon-note">
                 Estamos por abrir este producto. Déjanos tu correo en el
@@ -148,11 +175,45 @@ export default function ProductoToolkit({ params }) {
           )}
         </div>
 
+        <div className="tk-product-autor">
+          <img
+            src="/jesus-hero.png"
+            alt={AUTHOR.name}
+            className="tk-product-autor-foto"
+          />
+          <div>
+            <h2 className="tk-product-block-title">Quién lo escribió</h2>
+            <p>
+              Soy Jesús González, Arquitecto de Soluciones y Product Owner de
+              Data &amp; Analytics en FEMSA. Estas consultas y modelos salen
+              de más de 13 años resolviendo problemas reales de retail, no de
+              ejemplos de tutorial.
+            </p>
+            <a href={AUTHOR.sameAs?.[0]} target="_blank" rel="noopener">
+              Ver perfil en LinkedIn →
+            </a>
+          </div>
+        </div>
+
+        <div className="tk-product-faq">
+          <h2 className="tk-product-block-title">Preguntas frecuentes</h2>
+          <div className="tk-product-faq-lista">
+            {faq.map((item, i) => (
+              <details key={i} className="tk-product-faq-item">
+                <summary>{item.q}</summary>
+                <p>{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+
+        <ProductReviews productoId={producto.id} />
+
         <div className="tk-product-footer-cta">
           <div>
             <p className="tk-product-precio-wrap-inline">
               {producto.precioLista && (
-                <span className="tk-bundle-tachado">${producto.precioLista} MXN</span>
+                <span className="tk-bundle-tachado">Antes ${producto.precioLista} MXN</span>
               )}{" "}
               <span className="tk-card-precio tk-product-precio">
                 ${producto.precio} MXN

@@ -3,11 +3,12 @@
 /* ============================================================
    Panel de moderación — /admin/moderacion
    ------------------------------------------------------------
-   Muestra los comentarios que la IA clasificó como "ambiguos" (ni
-   claramente limpios ni claramente tóxicos) para que tú decidas.
-   Protegido con una clave simple (ADMIN_MODERATION_SECRET en Vercel),
-   la misma idea que NEWSLETTER_NOTIFY_SECRET — no es un login de
-   usuarios, solo evita que cualquiera entre a aceptar/rechazar.
+   Muestra los comentarios (de notas) y las reseñas (de productos)
+   que la IA clasificó como "ambiguos" (ni claramente limpios ni
+   claramente tóxicos) para que tú decidas. Protegido con una clave
+   simple (ADMIN_MODERATION_SECRET en Vercel), la misma idea que
+   NEWSLETTER_NOTIFY_SECRET — no es un login de usuarios, solo evita
+   que cualquiera entre a aceptar/rechazar.
    La clave se guarda en sessionStorage (se borra al cerrar la
    pestaña), nunca en la URL ni en localStorage.
    ============================================================ */
@@ -16,10 +17,20 @@ import { useEffect, useState } from "react";
 
 const CLAVE_STORAGE = "jx_admin_secret";
 
+function Estrellas({ n }) {
+  return (
+    <span className="admin-estrellas" aria-label={`${n} de 5 estrellas`}>
+      {"★".repeat(n)}
+      {"☆".repeat(5 - n)}
+    </span>
+  );
+}
+
 export default function ModeracionPage() {
   const [secret, setSecret] = useState("");
   const [secretGuardado, setSecretGuardado] = useState(false);
   const [pendientes, setPendientes] = useState(null);
+  const [resenasPendientes, setResenasPendientes] = useState(null);
   const [error, setError] = useState(null);
   const [procesando, setProcesando] = useState(null);
 
@@ -51,6 +62,7 @@ export default function ModeracionPage() {
       }
       const data = await res.json();
       setPendientes(data.pendientes || []);
+      setResenasPendientes(data.resenasPendientes || []);
     } catch {
       setError("No se pudo cargar la cola de moderación.");
     }
@@ -62,16 +74,20 @@ export default function ModeracionPage() {
     setSecretGuardado(true);
   }
 
-  async function decidir(id, decision) {
+  async function decidir(id, decision, tipo) {
     setProcesando(id);
     try {
       const res = await fetch("/api/admin/comentarios", {
         method: "PATCH",
         headers: { "Content-Type": "application/json", "x-admin-secret": secret },
-        body: JSON.stringify({ id, decision }),
+        body: JSON.stringify({ id, decision, tipo }),
       });
       if (res.ok) {
-        setPendientes((prev) => prev.filter((p) => p.id !== id));
+        if (tipo === "resena") {
+          setResenasPendientes((prev) => prev.filter((p) => p.id !== id));
+        } else {
+          setPendientes((prev) => prev.filter((p) => p.id !== id));
+        }
       }
     } finally {
       setProcesando(null);
@@ -99,16 +115,18 @@ export default function ModeracionPage() {
 
   return (
     <div className="container admin-moderacion">
-      <h1>Comentarios pendientes de revisión</h1>
+      <h1>Pendientes de revisión</h1>
       <p className="admin-moderacion-sub">
         Clasificados por la IA como ambiguos — no se publican hasta que tú decidas.
       </p>
 
       {error && <p className="postura-aviso error">{error}</p>}
 
+      <h2 className="admin-moderacion-seccion">
+        Comentarios de notas {pendientes && `(${pendientes.length})`}
+      </h2>
       {pendientes === null && <p>Cargando…</p>}
       {pendientes?.length === 0 && <p>No hay comentarios pendientes 🎉</p>}
-
       {pendientes?.map((c) => (
         <div className="admin-comentario" key={c.id}>
           <div className="admin-comentario-meta">
@@ -126,7 +144,7 @@ export default function ModeracionPage() {
               type="button"
               className="admin-boton-aceptar"
               disabled={procesando === c.id}
-              onClick={() => decidir(c.id, "aceptar")}
+              onClick={() => decidir(c.id, "aceptar", "comentario")}
             >
               ✓ Aceptar
             </button>
@@ -134,7 +152,45 @@ export default function ModeracionPage() {
               type="button"
               className="admin-boton-rechazar"
               disabled={procesando === c.id}
-              onClick={() => decidir(c.id, "rechazar")}
+              onClick={() => decidir(c.id, "rechazar", "comentario")}
+            >
+              ✕ Rechazar
+            </button>
+          </div>
+        </div>
+      ))}
+
+      <h2 className="admin-moderacion-seccion">
+        Reseñas de productos {resenasPendientes && `(${resenasPendientes.length})`}
+      </h2>
+      {resenasPendientes === null && <p>Cargando…</p>}
+      {resenasPendientes?.length === 0 && <p>No hay reseñas pendientes 🎉</p>}
+      {resenasPendientes?.map((r) => (
+        <div className="admin-comentario" key={r.id}>
+          <div className="admin-comentario-meta">
+            <span>
+              <strong>{r.nombre}</strong> en <code>{r.producto_id}</code> · <Estrellas n={r.estrellas} />
+            </span>
+            <span>{new Date(r.created_at).toLocaleString("es-MX")}</span>
+          </div>
+          <p className="admin-comentario-texto">{r.texto}</p>
+          {r.justificacion && (
+            <p className="admin-comentario-justificacion">Nota de la IA: {r.justificacion}</p>
+          )}
+          <div className="admin-comentario-acciones">
+            <button
+              type="button"
+              className="admin-boton-aceptar"
+              disabled={procesando === r.id}
+              onClick={() => decidir(r.id, "aceptar", "resena")}
+            >
+              ✓ Aceptar
+            </button>
+            <button
+              type="button"
+              className="admin-boton-rechazar"
+              disabled={procesando === r.id}
+              onClick={() => decidir(r.id, "rechazar", "resena")}
             >
               ✕ Rechazar
             </button>

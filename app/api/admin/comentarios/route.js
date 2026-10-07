@@ -1,5 +1,12 @@
 import { NextResponse } from "next/server";
-import { ensurePosturasSchema, listarComentariosPendientes, moderarComentario } from "@/lib/db";
+import {
+  ensurePosturasSchema,
+  listarComentariosPendientes,
+  moderarComentario,
+  ensureResenasSchema,
+  listarResenasPendientes,
+  moderarResena,
+} from "@/lib/db";
 
 function autorizado(request) {
   const secret = request.headers.get("x-admin-secret");
@@ -11,19 +18,32 @@ export async function GET(request) {
   if (!autorizado(request)) {
     return NextResponse.json({ error: "No autorizado." }, { status: 401 });
   }
-  await ensurePosturasSchema();
-  const pendientes = await listarComentariosPendientes();
-  return NextResponse.json({ pendientes });
+  await Promise.all([ensurePosturasSchema(), ensureResenasSchema()]);
+  const [pendientes, resenasPendientes] = await Promise.all([
+    listarComentariosPendientes(),
+    listarResenasPendientes(),
+  ]);
+  return NextResponse.json({ pendientes, resenasPendientes });
 }
 
 export async function PATCH(request) {
   if (!autorizado(request)) {
     return NextResponse.json({ error: "No autorizado." }, { status: 401 });
   }
-  const { id, decision } = await request.json().catch(() => ({}));
+  const { id, decision, tipo } = await request.json().catch(() => ({}));
   if (!id || !["aceptar", "rechazar"].includes(decision)) {
     return NextResponse.json({ error: "Falta id o la decisión no es válida." }, { status: 400 });
   }
+
+  if (tipo === "resena") {
+    await ensureResenasSchema();
+    const actualizado = await moderarResena(id, decision);
+    if (!actualizado) {
+      return NextResponse.json({ error: "La reseña ya no está pendiente." }, { status: 409 });
+    }
+    return NextResponse.json({ ok: true, resena: actualizado });
+  }
+
   await ensurePosturasSchema();
   const actualizado = await moderarComentario(id, decision);
   if (!actualizado) {

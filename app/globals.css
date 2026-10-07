@@ -2452,6 +2452,12 @@ html:not(.dark) .pglobe-land {
   color: var(--tk-ink-soft);
   max-width: 40ch;
 }
+.tk-product-garantia {
+  margin: 14px 0 0;
+  font-size: 0.86rem;
+  color: var(--tk-ink-soft);
+  max-width: 48ch;
+}
 
 /* Mockup 3D isométrico — CSS puro, sin imágenes externas */
 .tk-iso {
@@ -2617,6 +2623,74 @@ html:not(.dark) .pglobe-land {
   color: var(--tk-ink);
   font-size: 0.92rem;
 }
+
+.tk-product-autor {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  padding: 24px;
+  margin-bottom: 40px;
+  border-radius: 16px;
+  background: var(--tk-black-2);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+}
+.tk-product-autor-foto {
+  width: 72px;
+  height: 72px;
+  border-radius: 999px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid var(--tk-gold);
+}
+.tk-product-autor p {
+  color: var(--tk-ink-soft);
+  font-size: 0.94rem;
+  line-height: 1.6;
+  margin: 8px 0 10px;
+}
+.tk-product-autor a {
+  color: var(--tk-gold);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.tk-product-faq {
+  margin-bottom: 40px;
+}
+.tk-product-faq-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 14px;
+}
+.tk-product-faq-item {
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 12px;
+  padding: 14px 18px;
+  background: var(--tk-black-2);
+}
+.tk-product-faq-item summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--tk-ink);
+  list-style: none;
+}
+.tk-product-faq-item summary::-webkit-details-marker { display: none; }
+.tk-product-faq-item summary::after {
+  content: "+";
+  float: right;
+  color: var(--tk-gold);
+  font-weight: 700;
+}
+.tk-product-faq-item[open] summary::after { content: "–"; }
+.tk-product-faq-item p {
+  margin: 10px 0 0;
+  color: var(--tk-ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.resenas-block { margin-bottom: 40px; }
 
 .tk-product-footer-cta {
   display: flex;
@@ -3102,6 +3176,29 @@ html:not(.dark) .pglobe-land {
 }
 .jx-newsletter-home .newsletter-form {
   justify-content: center;
+}
+.jx-toolkit-home {
+  margin: 16px 0 40px;
+}
+.jx-toolkit-home-texto {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 20px 26px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%);
+  border: 1px solid var(--line-soft);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+.jx-toolkit-home-texto strong {
+  color: var(--ink);
+}
+.jx-toolkit-home-texto a {
+  font-weight: 600;
+  white-space: nowrap;
 }
 .newsletter-titulo {
   margin: 0 0 4px;
@@ -4684,6 +4781,105 @@ html:not(.dark) .pglobe-land {
 .postura-form button:disabled { opacity: 0.6; cursor: default; }
 .postura-aviso { font-size: 0.85rem; color: var(--accent); margin: 0; }
 .postura-aviso.error { color: #d64545; }
+
+/* ── Reseñas de producto (The Toolkit) ────────────────────────── */
+.resenas-block {
+  margin-top: 40px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line-soft);
+}
+.resenas-cabeza {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.resenas-resumen {
+  font-size: 0.88rem;
+  color: var(--meta);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.resenas-vacio { color: var(--meta); font-size: 0.9rem; }
+
+.resena-estrellas span,
+.resena-selector button {
+  color: var(--line);
+  font-size: 1.05rem;
+  line-height: 1;
+}
+.resena-estrellas span.on { color: #f2b84a; }
+
+.resena-selector {
+  display: inline-flex;
+  gap: 2px;
+  margin: 4px 0 2px;
+}
+.resena-selector button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 2px;
+}
+.resena-selector button.on { color: #f2b84a; }
+
+.resena-item {
+  padding: 14px 0;
+  border-top: 1px solid var(--line-soft);
+}
+.resena-item-cabeza {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.82rem;
+  color: var(--meta);
+  margin-bottom: 4px;
+}
+.resena-item-cabeza strong { color: var(--ink); }
+.resena-item p { margin: 0; }
+
+.resena-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line-soft);
+}
+.resena-form-titulo { font-weight: 700; margin: 0; }
+.resena-form input,
+.resena-form textarea {
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  resize: vertical;
+}
+.resena-form button {
+  align-self: flex-start;
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+.resena-form button:disabled { opacity: 0.6; cursor: default; }
+
+/* Estrellas reutilizadas también en el panel de admin */
+.admin-estrellas { color: #f2b84a; letter-spacing: 1px; }
+.admin-moderacion-seccion {
+  margin: 32px 0 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
 
 /* ── Panel de moderación /admin/moderacion ───────────────────── */
 .admin-login {

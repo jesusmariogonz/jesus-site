@@ -8,6 +8,7 @@ import NotasDestacadas from "@/components/NotasDestacadas";
 import CtaContacto from "@/components/CtaContacto";
 import NewsletterForm from "@/components/NewsletterForm";
 import Reveal from "@/components/Reveal";
+import Link from "next/link";
 
 export default function Inicio() {
   const ultimos = getPostsListado()
@@ -33,6 +34,16 @@ export default function Inicio() {
       <Hero />
       <Reveal delay={0.05}>
         <FeaturedProjects />
+      </Reveal>
+      <Reveal>
+        <section className="jx-wrap jx-toolkit-home">
+          <p className="jx-toolkit-home-texto">
+            <strong>Aprende con lo que uso en proyectos reales.</strong> 22
+            consultas SQL de retail ya resueltas y un curso de Power BI desde
+            cero. Descarga inmediata, pago único.{" "}
+            <Link href="/the-toolkit">Ver Toolkit →</Link>
+          </p>
+        </section>
       </Reveal>
       <NotasDestacadas notas={ultimos} />
       <PulsoMercadoMini />
