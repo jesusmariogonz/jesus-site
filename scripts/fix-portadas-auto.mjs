@@ -1,31 +1,46 @@
 #!/usr/bin/env node
 /* ============================================================
-   Se corre en CADA build (ver next.config.js) — ANTES de que Next
-   compile las páginas. Revisa TODAS las notas en content/blog/ y, si
-   alguna tiene `imagen` apuntando directo a una foto cruda del banco
-   de portadas (sin pasar por el generador de titular+marca), la
+   Se corre en CADA build de producción (ver next.config.mjs) — ANTES
+   de que Next compile las páginas. Revisa SOLO las notas NUEVAS del
+   último commit (igual que scripts/check-postura.mjs — mismo criterio
+   de "archivos agregados" vía git diff, no ediciones a notas viejas) y,
+   si alguna tiene `imagen` apuntando directo a una foto cruda del
+   banco de portadas (sin pasar por el generador de titular+marca), la
    genera automáticamente con scripts/portada-titulo.mjs y reescribe
-   el frontmatter para que apunte al archivo tratado — sin bloquear
-   el deploy ni depender de que una sesión se acuerde de hacerlo.
+   el frontmatter para que apunte al archivo tratado — sin bloquear el
+   deploy ni depender de que una sesión se acuerde de hacerlo, y sin
+   reprocesar las ~160 notas viejas en cada build.
 
    Por qué existe: la rutina automática que publica notas (fuera de
    este repo) elige la foto del banco pero nunca corre el generador
    de portadas. Antes esto se corregía a mano nota por nota; ahora se
-   arregla solo, en cada build, como parte normal del pipeline.
+   arregla solo, antes de publicarse, como parte normal del pipeline.
 
-   Es seguro correrlo muchas veces: una nota cuya `imagen` ya NO
-   coincide con el patrón del banco genérico (porque ya se trató antes)
-   simplemente se salta, no se vuelve a procesar.
+   Si no se puede determinar con confianza qué se agregó en el último
+   commit (ej. clon superficial sin HEAD~1), no revisa nada — se queda
+   como estaba, no bloquea ni falla el build.
    ============================================================ */
 
-import { readdirSync, readFileSync, writeFileSync, existsSync } from "node:fs";
+import { execSync } from "node:child_process";
+import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { generarPortada } from "./portada-titulo.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
-const BLOG_DIR = path.join(ROOT, "content/blog");
+
+function notasNuevas() {
+  try {
+    const out = execSync(
+      "git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'content/blog/*.md'",
+      { encoding: "utf8", cwd: ROOT }
+    );
+    return out.split("\n").map((l) => l.trim()).filter(Boolean);
+  } catch {
+    return [];
+  }
+}
 
 const PREFIJOS_BANCO_GENERICO = [
   "banco-central", "comercio-internacional", "crecimiento-economico",
@@ -73,13 +88,13 @@ function esGenerica(imagen) {
 }
 
 export async function arreglarPortadasAutomaticamente() {
-  if (!existsSync(BLOG_DIR)) return { revisadas: 0, arregladas: [] };
-
-  const archivos = readdirSync(BLOG_DIR).filter((f) => f.endsWith(".md"));
+  const archivos = notasNuevas();
   const arregladas = [];
 
-  for (const nombre of archivos) {
-    const ruta = path.join(BLOG_DIR, nombre);
+  for (const rutaRelativa of archivos) {
+    const ruta = path.join(ROOT, rutaRelativa);
+    if (!existsSync(ruta)) continue;
+    const nombre = path.basename(ruta);
     const texto = readFileSync(ruta, "utf8");
     const fm = extraerFrontmatter(texto);
     if (!fm) continue;
