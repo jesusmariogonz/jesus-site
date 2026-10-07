@@ -518,14 +518,14 @@ html:not(.dark) .prose li {
   border: 1px solid var(--line);
   padding: 8px 12px;
   text-align: left;
-  /* Antes la tabla heredaba white-space:nowrap del padre, lo que
-     fuerza a una celda con texto largo (ej. una fecha+resultado) a
-     imponer un ancho de columna que ni max-width ni overflow-x
-     lograban contener en tablas con table-layout automático —
-     reventaba el ancho de TODA la página en mobile, no solo el de
-     la tabla. Con wrap normal, la celda crece en alto, no en ancho. */
-  white-space: normal;
-  word-break: break-word;
+  /* La tabla ya vive en un contenedor display:block + overflow-x:auto
+     (ver .prose table arriba), así que una celda ancha simplemente
+     hace scrollear la tabla en vez de reventar el ancho de la página.
+     Por eso aquí basta con nowrap: antes forzábamos word-break en
+     cada celda para evitar el blowout de ancho, pero eso partía
+     textos cortos como "S&P 500" letra por letra en celdas angostas
+     (min-content de una celda con word-break es ~1 carácter). */
+  white-space: nowrap;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
@@ -4229,6 +4229,7 @@ html:not(.dark) .pglobe-land {
 }
 .pulsodash-panel-body.prose th,
 .pulsodash-panel-body.prose td {
+  white-space: normal;
   word-break: break-word;
 }
 .pulsodash-panel-body.prose th:first-child,
