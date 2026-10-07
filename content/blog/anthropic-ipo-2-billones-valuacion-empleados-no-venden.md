@@ -27,7 +27,7 @@ postura:
   pregunta: '¿Que los empleados de Anthropic hayan preferido quedarse con sus acciones en lugar de venderlas en la oferta de recompra es una señal de que genuinamente creen que la empresa vale más de lo que el mercado privado ya le asigna, o es simplemente lo que cualquier empleado haría frente a la presión social y las restricciones típicas de este tipo de ofertas internas?'
   aFavor: 'Quienes trabajan dentro de Anthropic tienen información directa sobre el ritmo real de crecimiento de ingresos, la calidad de los contratos empresariales y la hoja de ruta técnica que ningún inversionista externo puede replicar con la misma profundidad, así que su decisión colectiva de no vender es una señal de convicción genuinamente informada.'
   enContra: 'Las ofertas de recompra para empleados suelen tener condiciones, ventanas de tiempo y presión social que no reflejan una decisión de inversión fría y calculada —muchos empleados simplemente no quieren ser percibidos como los que "no creyeron" en la empresa justo antes de una salida a bolsa que todo el entorno corporativo presenta como inminente y segura.'
-imagen: /blog/portadas/mercado-bursatil-14.jpg
+imagen: /blog/portadas/anthropic-ipo-2-billones-valuacion-empleados-no-venden.jpg
 gancho: 'Anthropic va a salir a bolsa valuada en el doble de lo que valía hace cinco meses. Sus propios empleados tuvieron la oportunidad de vender acciones antes y prefirieron no hacerlo. ¿Es convicción genuina, o es exactamente lo que cualquier empleado haría en esa situación, se justifique o no?'
 socialImagen: /blog/social/anthropic-ipo-2-billones-valuacion-empleados-no-venden.jpg
 ---
