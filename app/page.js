@@ -6,6 +6,7 @@ import FeaturedProjects from "@/components/FeaturedProjects";
 import PulsoMercadoMini from "@/components/PulsoMercadoMini";
 import NotasDestacadas from "@/components/NotasDestacadas";
 import CtaContacto from "@/components/CtaContacto";
+import NewsletterForm from "@/components/NewsletterForm";
 import Reveal from "@/components/Reveal";
 
 export default function Inicio() {
@@ -35,6 +36,14 @@ export default function Inicio() {
       </Reveal>
       <NotasDestacadas notas={ultimos} />
       <PulsoMercadoMini />
+      <Reveal>
+        <section className="jx-wrap jx-newsletter-home">
+          <NewsletterForm
+            titulo="Recibe las notas nuevas por correo"
+            desc="Sin spam: solo aviso cuando publico una nota nueva. Cancela cuando quieras."
+          />
+        </section>
+      </Reveal>
       <Reveal>
         <CtaContacto />
       </Reveal>
