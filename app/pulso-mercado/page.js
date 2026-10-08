@@ -193,7 +193,7 @@ function Seccion({ titulo, subtitulo, markdown, vacio, claseExtra, conScorecard 
 }
 
 export default function PulsoMercadoDashboard() {
-  const { pulso, snapshot, regimen, importoHoy, swing, position, longTerm } =
+  const { pulso, snapshot, snapshotFecha, regimen, importoHoy, swing, position, longTerm } =
     getPulsoDashboard();
   const { daily, weeklyOutlook } = pulso;
 
@@ -226,7 +226,12 @@ export default function PulsoMercadoDashboard() {
 
         {snapshot && (
           <div className="pulsodash-panel pulsodash-snapshot prose">
-            <span className="pulsodash-panel-title">Market Snapshot</span>
+            <div className="pulsodash-panel-head">
+              <span className="pulsodash-panel-title">Market Snapshot</span>
+              {snapshotFecha && (
+                <span className="pulsodash-panel-sub">Última actualización: {snapshotFecha}</span>
+              )}
+            </div>
             <ReactMarkdown remarkPlugins={[remarkGfm]}>
               {enlazarActivosEnTabla(snapshot)}
             </ReactMarkdown>
