@@ -8,7 +8,9 @@ import {
   seccion,
   formatFecha,
   enlazarActivosEnTabla,
+  tablaAMarkdown,
 } from "@/lib/posts";
+import { fetchMarketSnapshotReal } from "@/lib/mercados/snapshot";
 import PulsoMercado from "@/components/PulsoMercado";
 import TickerTape from "@/components/TickerTape";
 import MercadosScreener from "@/components/MercadosScreener";
@@ -192,10 +194,37 @@ function Seccion({ titulo, subtitulo, markdown, vacio, claseExtra, conScorecard 
   );
 }
 
-export default function PulsoMercadoDashboard() {
-  const { pulso, snapshot, snapshotFecha, regimen, importoHoy, swing, position, longTerm } =
+/* Combina el Market Snapshot que escribió la Routine (buscando en la
+   web, con su propio respaldo — ver completarMarketSnapshot en
+   lib/posts.js) con datos reales de Yahoo Finance: donde Yahoo
+   responde para un activo, su nivel/cambio real gana sobre lo que
+   escribió la Routine — así esta tabla deja de depender de que una
+   búsqueda de IA salga bien. Si Yahoo no responde para algún símbolo,
+   esa fila cae de vuelta a lo que ya traía (dato de hoy o respaldo). */
+async function construirSnapshotFinal(snapshotTabla) {
+  if (!snapshotTabla) return { markdown: null, fecha: null };
+
+  const real = await fetchMarketSnapshotReal();
+  let fechaMasReciente = null;
+
+  const filas = snapshotTabla.filas.map(([activo, nivel, cambio]) => {
+    const r = real[activo];
+    if (r) {
+      if (!fechaMasReciente || r.fecha > fechaMasReciente) fechaMasReciente = r.fecha;
+      return [activo, r.nivel, r.cambio];
+    }
+    return [activo, nivel, cambio];
+  });
+
+  const fecha = fechaMasReciente ? formatFecha(fechaMasReciente) : formatFecha(snapshotTabla.fechaActualizacion);
+  return { markdown: tablaAMarkdown({ ...snapshotTabla, filas }), fecha };
+}
+
+export default async function PulsoMercadoDashboard() {
+  const { pulso, snapshotTabla, regimen, importoHoy, swing, position, longTerm } =
     getPulsoDashboard();
   const { daily, weeklyOutlook } = pulso;
+  const { markdown: snapshot, fecha: snapshotFecha } = await construirSnapshotFinal(snapshotTabla);
 
   const calendarioSemana = seccion(weeklyOutlook, "macro calendar");
   const calendarioResultados = seccion(weeklyOutlook, "earnings calendar");
