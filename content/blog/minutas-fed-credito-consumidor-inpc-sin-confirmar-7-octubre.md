@@ -10,17 +10,17 @@ tags:
   - Banxico
   - inflación México
   - política monetaria
-resumen: 'El calendario económico de esta semana esperaba tres publicaciones el miércoles 7 de octubre: las minutas de la Fed de septiembre, el reporte G.19 de crédito al consumidor de agosto, y el INPC de septiembre de México. Ninguna de las tres aparece todavía con un resultado verificable en fuentes confiables -y en el caso del INPC, la fecha correcta de publicación de INEGI resultó ser hoy, no ayer.'
+resumen: 'Actualización 8 de octubre: las minutas de la Fed de septiembre y el INPC de septiembre de México ya se confirmaron -minutas con tono más bien hawkish y poca reacción de mercado; inflación mexicana acelerando a 3.45% anual por segundo mes consecutivo. El reporte G.19 de crédito al consumidor de agosto sigue sin aparecer en fuentes confiables.'
 tesis: 'Cuando un calendario económico marca una fecha de publicación y, al día siguiente, ninguna fuente primaria ni medio especializado reporta el resultado real, la explicación más probable no es que el dato se haya ocultado, sino que la mecánica de publicación de cada institución -horarios exactos, rezagos de indexación, o errores de calendario como el del INPC- no siempre coincide con la expectativa simplificada de un calendario de consenso.'
 datosClave:
-  - valor: '7 de octubre, 2:00pm ET'
-    etiqueta: 'Hora programada de publicación de las minutas del FOMC de la reunión del 15-16 de septiembre, según el calendario oficial de la Fed'
-  - valor: '+4.2% anualizado'
-    etiqueta: 'Último dato confirmado de crédito al consumidor (G.19), correspondiente a julio de 2026, publicado el 8 de septiembre'
-  - valor: '3.42%'
-    etiqueta: 'Inflación anual general de México en la primera quincena de septiembre de 2026, el dato más reciente de INEGI disponible'
-  - valor: '8 de octubre'
-    etiqueta: 'Fecha real de publicación del INPC mensual de septiembre según el calendario de INEGI -un día después de lo que esta columna había anotado'
+  - valor: '3.75%-4.00%'
+    etiqueta: 'Rango de tasas tras el alza de septiembre, confirmado por las minutas del FOMC publicadas el 7 de octubre -los 19 integrantes del comité la respaldaron'
+  - valor: '~20-25%'
+    etiqueta: 'Probabilidad implícita en futuros de un alza adicional en la reunión del 27-28 de octubre, tras datos de empleo más débiles de lo esperado'
+  - valor: '3.45% anual'
+    etiqueta: 'Inflación general de México en septiembre de 2026 (INPC), acelerando por segundo mes consecutivo desde 3.26% en agosto'
+  - valor: 'Sin confirmar'
+    etiqueta: 'El reporte G.19 de crédito al consumidor de agosto de la Fed sigue sin aparecer en fuentes confiables al momento de esta actualización'
 imagen: /blog/portadas/minutas-fed-credito-consumidor-inpc-sin-confirmar-7-octubre.jpg
 socialImagen: /blog/social/minutas-fed-credito-consumidor-inpc-sin-confirmar-7-octubre.jpg
 postura:
@@ -29,7 +29,15 @@ postura:
   enContra: 'Publicar una nota sobre datos no confirmados, aunque sea transparente sobre esa limitación, le resta peso editorial a la columna y arriesga que el lector se quede con una impresión parcial o equivocada; es preferible esperar uno o dos días más y publicar una sola nota con los tres resultados reales confirmados.'
 ---
 
-El calendario económico de la semana que publicamos el domingo marcaba el miércoles 7 de octubre como una fecha cargada: las minutas de la reunión de la Fed del 15 y 16 de septiembre, el reporte G.19 de crédito al consumidor correspondiente a agosto, y el INPC de septiembre de México, los tres el mismo día. Un día después, ninguno de los tres aparece todavía con un resultado verificable en una fuente primaria o en cobertura especializada confiable. Vale la pena explicar, evento por evento, qué se sabe y qué no, en lugar de dejar la tabla de calendario con una fecha vencida y sin respuesta.
+El calendario económico de la semana que publicamos el domingo marcaba el miércoles 7 de octubre como una fecha cargada: las minutas de la reunión de la Fed del 15 y 16 de septiembre, el reporte G.19 de crédito al consumidor correspondiente a agosto, y el INPC de septiembre de México, los tres el mismo día. Un día después, ninguno de los tres aparecía todavía con un resultado verificable en una fuente primaria o en cobertura especializada confiable. Vale la pena explicar, evento por evento, qué se sabía y qué no en ese momento, en lugar de dejar la tabla de calendario con una fecha vencida y sin respuesta.
+
+## Actualización — 8 de octubre: dos de los tres datos ya se confirmaron
+
+**Las minutas de la Fed sí se publicaron a la hora prevista, y el tono fue más bien hawkish.** La Reserva Federal liberó las minutas de la reunión del 15-16 de septiembre el miércoles 7 de octubre a las 2:00pm hora del este, como estaba calendarizado. Confirman que los 19 integrantes del comité (votantes y no votantes) respaldaron el alza de 25 puntos base de esa reunión, llevando el rango de tasas a 3.75%-4.00%, y que la mayoría de los funcionarios seguía anticipando un alza adicional antes de fin de año. La reacción de mercado fue moderada: el índice del dólar (DXY) subió 0.42% a cerca de 102.3 puntos el día de la publicación. Desde entonces, el reporte de empleo de septiembre —más débil de lo esperado, con la tasa de desempleo subiendo a 4.2%— redujo la probabilidad implícita en futuros de un alza en la reunión del 27-28 de octubre a un rango de 20%-25%, frente a cerca de 70% antes de ese dato. Nota de transparencia: las fuentes consultadas no coinciden en la cifra de inflación PCE que citan las minutas (una ubica el PCE de agosto en 3.8% anual con subyacente en 3.4%, otra en 3.0% subyacente) — quien busque esa cifra exacta debe verificarla directamente contra el documento de la Fed.
+
+**El INPC de septiembre confirmó la aceleración que ya insinuaba la primera quincena.** INEGI publicó el dato mensual completo el 8 de octubre: inflación general anual de 3.45%, con un incremento mensual de 0.42%. Es el segundo mes consecutivo de aceleración, desde 3.26% en agosto y 3.12% en julio. La inflación subyacente se ubicó en 3.75% anual (por debajo del 3.88% de agosto), mientras la no subyacente —la más volátil, ligada a frutas, verduras y energéticos— subió a 2.45% anual, presionada en buena medida por el jitomate (+30.25% mensual) y la cebolla (+23% mensual). Es el insumo más reciente de cara a la decisión de Banxico de noviembre.
+
+**El reporte G.19 de crédito al consumidor de agosto sigue sin aparecer.** A pesar de que el calendario de la Fed lo ubicaba para el 7 de octubre a las 3:00pm ET, no encontramos todavía ese release específico en fuentes confiables -ni en cobertura especializada ni en el propio sitio de la Fed indexado por los buscadores disponibles. El último dato que sí pudimos confirmar sigue siendo julio (+4.2% anualizado, publicado el 8 de septiembre). Mantenemos la postura original: preferimos decir explícitamente que no lo encontramos a reportar una cifra no verificada.
 
 ## Las minutas de la Fed: la hora estaba bien, el contenido sigue sin aparecer
 
@@ -52,3 +60,7 @@ Hay una tentación editorial de no escribir nada cuando los datos esperados toda
 - [G.19 Consumer Credit — July 2026](https://www.federalreserve.gov/releases/g19/20260908/) — Reserva Federal
 - [Índice Nacional de Precios al Consumidor, primera quincena de septiembre de 2026](https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2026/inpc/inpc_1q2026_09.pdf) — INEGI
 - [México Cómo Vamos — seguimiento de inflación](https://mexicocomovamos.mx/?p=40750) — México ¿Cómo Vamos?
+- [September FOMC Minutes Back Hawkish Stance, But October Hopes Fade](https://www.babypips.com/news/headline-sept-fomc-minutes-support-hawkish-stance-2026-10-08) — Babypips
+- [Primer: FOMC Minutes due Wednesday 7th October 2026](https://www.newsquawk.com/headlines/primer-fomc-minutes-due-wednesday-7th-october-2026-at-1900bst1400edt) — Newsquawk
+- [Inflación de México se acelera a 3.45% en septiembre; jitomate y cebolla lideran alza de precios](https://www.excelsior.com.mx/finanzas/inflacion-mexico-sube-septiembre-2026) — Excélsior
+- [Inflación en México sube en septiembre de 2026](https://www.milenio.com/negocios/inflacion-en-mexico-sube-en-septiembre-de-2026-inegi) — Milenio
