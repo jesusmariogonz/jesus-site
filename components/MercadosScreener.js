@@ -109,9 +109,10 @@ export default function MercadosScreener() {
       </div>
 
       <p className="screener-nota">
-        Precio en vivo vía Finnhub; velas diarias reales vía Yahoo Finance. Solo EE.UU. — Finnhub no da precio en
-        vivo para la BMV en el plan gratuito. Pasa el cursor (o toca en celular) sobre "Retorno anual.", "Volatilidad"
-        o "Sharpe" para ver cómo se calcula cada uno.
+        Precio en vivo vía Finnhub; velas diarias reales vía Yahoo Finance. Incluye acciones de EE.UU. y
+        commodities vía ETFs (oro, plata, petróleo, dólar) — no incluye la BMV, porque Finnhub no da precio en
+        vivo para ese mercado en el plan gratuito. Pasa el cursor (o toca en celular) sobre "Retorno anual.",
+        "Volatilidad" o "Sharpe" para ver cómo se calcula cada uno.
       </p>
     </div>
   );

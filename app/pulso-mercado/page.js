@@ -364,7 +364,7 @@ export default async function PulsoMercadoDashboard() {
 
         <div className="pulsodash-horizons-head">
           <span className="pulsodash-eyebrow">Screener</span>
-          <h2>Magníficas 7 y BMV, con datos reales</h2>
+          <h2>Magníficas 7 y más, con datos reales</h2>
         </div>
         <MercadosScreener />
       </div>
