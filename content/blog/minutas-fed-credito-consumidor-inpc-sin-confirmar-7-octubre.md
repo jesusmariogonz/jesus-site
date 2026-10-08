@@ -23,6 +23,10 @@ datosClave:
     etiqueta: 'Fecha real de publicación del INPC mensual de septiembre según el calendario de INEGI -un día después de lo que esta columna había anotado'
 imagen: /blog/portadas/minutas-fed-credito-consumidor-inpc-sin-confirmar-7-octubre.jpg
 socialImagen: /blog/social/minutas-fed-credito-consumidor-inpc-sin-confirmar-7-octubre.jpg
+postura:
+  pregunta: '¿Debería un medio de análisis financiero publicar una nota de seguimiento cuando el dato esperado todavía no está confirmado, o es mejor esperar a tener la cifra real antes de escribir algo?'
+  aFavor: 'Documentar explícitamente qué no se sabe todavía —y por qué— es información útil por sí misma: le ahorra al lector la tarea de buscar un dato que no existe, y dejar la tabla de calendario sin actualizar sería peor, porque no distingue entre "no pasó" y "no lo hemos verificado".'
+  enContra: 'Publicar una nota sobre datos no confirmados, aunque sea transparente sobre esa limitación, le resta peso editorial a la columna y arriesga que el lector se quede con una impresión parcial o equivocada; es preferible esperar uno o dos días más y publicar una sola nota con los tres resultados reales confirmados.'
 ---
 
 El calendario económico de la semana que publicamos el domingo marcaba el miércoles 7 de octubre como una fecha cargada: las minutas de la reunión de la Fed del 15 y 16 de septiembre, el reporte G.19 de crédito al consumidor correspondiente a agosto, y el INPC de septiembre de México, los tres el mismo día. Un día después, ninguno de los tres aparece todavía con un resultado verificable en una fuente primaria o en cobertura especializada confiable. Vale la pena explicar, evento por evento, qué se sabe y qué no, en lugar de dejar la tabla de calendario con una fecha vencida y sin respuesta.
