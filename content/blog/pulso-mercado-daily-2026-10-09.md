@@ -10,7 +10,7 @@ tags:
   - Nasdaq
   - Petróleo
   - Treasuries
-resumen: 'El Nasdaq tuvo el jueves su peor caída desde mediados de agosto (-1.25%), arrastrado por un reporte sobre los ingresos de OpenAI por debajo de lo señalado antes, que golpeó a los fabricantes de chips; el S&P 500 cayó 0.47% pero el índice de igual ponderación subió 0.60%, señal de que la debilidad se concentró en las tecnológicas más grandes. El Dow cerró con una ligera ganancia.'
+resumen: 'El Nasdaq tuvo el jueves su peor caída desde mediados de agosto (-1.25%), arrastrado por un reporte sobre los ingresos de OpenAI que golpeó a los fabricantes de chips; el viernes, Wall Street rebotó por completo, con el S&P 500 subiendo 0.59% hasta 7,811.54 puntos, cerca de su máximo histórico, y el VIX cediendo hacia la zona de 15 puntos.'
 imagen: /blog/portadas/mercados-hoy-fija.jpg
 socialImagen: /blog/social/pulso-mercado-daily-2026-10-09.jpg
 ---
@@ -19,17 +19,19 @@ socialImagen: /blog/social/pulso-mercado-daily-2026-10-09.jpg
 
 | Activo | Nivel | Cambio |
 |---|---|---|
-| S&P 500 | 7,765.36 | -0.47% (-36.41 pts) |
-| Nasdaq Composite | 27,193.34 | -1.25% (-345.35 pts) |
-| Dow Jones | 51,231.64 | +0.10% (+51.77 pts) |
-| Russell 2000 | — | No localizamos con confianza el cierre del jueves 8 de octubre |
-| VIX | — | No localizamos con confianza el cierre del jueves 8 de octubre |
-| S&P/BMV IPC | — | No localizamos con confianza el cierre del jueves 8 de octubre |
-| USD/MXN | — | No localizamos con confianza el cierre/fix del jueves 8 de octubre |
-| US 10Y | — | No localizamos con confianza el rendimiento de cierre del jueves 8 de octubre |
-| WTI | — | No localizamos con confianza el cierre del jueves 8 de octubre |
+| S&P 500 | 7,811.54 | +0.59% (+46.18 pts) |
+| Nasdaq Composite | ≈27,356.50 | +0.6% |
+| Dow Jones | ≈51,641.50 | +0.8% |
+| Russell 2000 | — | No localizamos con confianza el cierre del viernes 9 de octubre |
+| VIX | — | No localizamos con confianza el cierre del viernes 9 de octubre |
+| S&P/BMV IPC | — | No localizamos con confianza el cierre del viernes 9 de octubre |
+| USD/MXN | — | No localizamos con confianza el cierre/fix del viernes 9 de octubre |
+| US 10Y | — | No localizamos con confianza el rendimiento de cierre del viernes 9 de octubre |
+| WTI | — | No localizamos con confianza el cierre del viernes 9 de octubre |
 
-Nota de transparencia: los niveles de S&P 500, Nasdaq Composite y Dow Jones están confirmados con múltiples fuentes consistentes entre sí (CNBC, Yahoo Finance, The Motley Fool) y además encajan de forma exacta con la continuidad aritmética desde el cierre ya confirmado del miércoles 7 de octubre (S&P 500 en 7,801.77, Nasdaq en 27,538.69, Dow en 51,179.87). No logramos, en cambio, confirmar con la misma confianza el Russell 2000, el VIX, el IPC de la BMV, el USD/MXN, el Treasury a 10 años ni el WTI para el jueves 8 — las búsquedas no devolvieron cifras puntuales atribuibles a una fuente primaria para esa fecha específica, así que preferimos dejarlo explícito en vez de reportar un número sin verificar.
+## Cómo cerró la sesión
+
+Wall Street rebotó el viernes tras la venta masiva del jueves en semiconductores de IA: el S&P 500 subió 0.59% hasta 7,811.54 puntos (Yahoo Finance), cerca de su máximo histórico. El Nasdaq y el Dow también cerraron al alza (aproximadamente +0.6% y +0.8% respectivamente, según cobertura de mercado del día), con el VIX cediendo hacia la zona de 15 puntos —consistente con una sesión de apetito por riesgo recuperado, no con una continuación del nerviosismo del jueves. La cobertura disponible describe el movimiento como un "rebote tecnológico" generalizado, sin una causa puntual nueva distinta a la ya cubierta ayer (el reporte sobre ingresos de OpenAI).
 
 ## Market Regime
 
@@ -93,6 +95,16 @@ El riesgo principal de esta edición sigue siendo informativo en varios activos:
 - Cualquier declaración adicional de OpenAI o sus proveedores de infraestructura que confirme o descarte el reporte de ingresos que movió el mercado el jueves.
 - Evolución de la tensión en el Estrecho de Ormuz y su efecto en el precio del petróleo.
 
+## Pendientes de esta edición
+
+- Russell 2000: no localizamos con confianza el cierre del viernes 9 de octubre.
+- VIX: dirección (a la baja, hacia la zona de 15) razonablemente confirmada, pero el nivel exacto de cierre varía entre fuentes (15.10 vs. 14.87 intradía) — no lo reportamos como cifra definitiva.
+- S&P/BMV IPC: no localizamos con confianza el cierre del viernes 9 de octubre.
+- USD/MXN: no localizamos con confianza el cierre/fix del viernes 9 de octubre.
+- US Treasury a 10, 2 y 30 años: la cobertura describe rendimientos cediendo el viernes, pero sin cifra de cierre confirmada.
+- WTI: no localizamos con confianza el cierre del viernes 9 de octubre.
+- Nasdaq Composite y Dow Jones: el nivel exacto en puntos reportado arriba (≈27,356.50 y ≈51,641.50) es derivado del cierre confirmado del jueves más el % de cambio reportado por Yahoo Finance, no una cifra de cierre tomada directamente de una fuente — tratar como aproximación, no como cifra oficial.
+
 ## Fuentes
 
-Los niveles de S&P 500, Nasdaq Composite y Dow Jones reportados en esta edición provienen de cobertura consistente entre CNBC, Yahoo Finance y The Motley Fool del 8 de octubre de 2026, y coinciden de forma exacta con la continuidad aritmética desde el cierre ya confirmado del 7 de octubre. No localizamos fuentes que nos dieran suficiente confianza para citar cifras específicas de Russell 2000, VIX, USD/MXN, IPC, Treasuries ni WTI de esa misma fecha; el nivel de Brent (104.28, +4%) proviene de cobertura de mercado del mismo día sobre tensión en el Estrecho de Ormuz.
+Los niveles de S&P 500, Nasdaq Composite y Dow Jones del jueves 8 de octubre reportados originalmente en esta edición provienen de cobertura consistente entre CNBC, Yahoo Finance y The Motley Fool, y coinciden de forma exacta con la continuidad aritmética desde el cierre ya confirmado del 7 de octubre. El cierre del S&P 500 del viernes 9 de octubre (7,811.54, +0.59%) proviene de Yahoo Finance; el % de cambio de Nasdaq y Dow del mismo día proviene de cobertura de mercado consistente entre Yahoo Finance y 24/7 Wall St., aunque sus niveles exactos en puntos no están confirmados con una fuente primaria. No localizamos fuentes que nos dieran suficiente confianza para citar cifras específicas de Russell 2000, VIX, USD/MXN, IPC, Treasuries ni WTI del viernes 9 de octubre; el nivel de Brent del jueves (104.28, +4%) proviene de cobertura de mercado de ese día sobre tensión en el Estrecho de Ormuz.
