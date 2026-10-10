@@ -85,8 +85,11 @@ export async function GET() {
         // Datos para el comparador (gráfica + indicadores). Se manda algo
         // más de 3 años (+200 ruedas de colchón) para que la SMA 200 se
         // pueda calcular incluso en el primer punto visible de la ventana 3A.
+        // Formato de cada punto: [fecha, apertura, máximo, mínimo, cierre, volumen].
         historial: velas
-          ? velas.slice(-(DIAS_3A + 200)).map((v) => [v.date, v.close, v.volume])
+          ? velas
+              .slice(-(DIAS_3A + 200))
+              .map((v) => [v.date, v.open, v.high, v.low, v.close, v.volume])
           : null,
         indicadores: {
           retorno12m,

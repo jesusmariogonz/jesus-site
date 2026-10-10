@@ -5163,6 +5163,27 @@ html:not(.dark) .pglobe-land {
   color: var(--meta);
   margin-bottom: 8px;
 }
+.screener-comparador-controles-derecha {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.screener-tipo-grafica {
+  display: flex;
+  gap: 6px;
+  padding-right: 10px;
+  border-right: 1px solid var(--line);
+}
+.screener-velas-selector {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 14px;
+  font-size: 0.8rem;
+  color: var(--meta);
+}
 .screener-rangos { display: flex; gap: 6px; flex-wrap: wrap; }
 .screener-rango-btn,
 .screener-indicador-btn {

@@ -266,6 +266,17 @@ export default function MercadosScreener() {
 function Comparador({ seleccionadas, rango, setRango, indicador, setIndicador }) {
   const rangoActivo = RANGOS.find((r) => r.id === rango) || RANGOS[3];
   const indicadorActivo = INDICADORES.find((i) => i.id === indicador) || INDICADORES[0];
+  const esModoPrecio = indicadorActivo.modo === "precio";
+
+  const [tipoGrafica, setTipoGrafica] = useState("lineas");
+  const [simboloVelas, setSimboloVelas] = useState(seleccionadas[0]?.symbol);
+
+  // Velas solo tiene sentido para indicadores de precio (no para volatilidad/
+  // liquidez/tendencia, que ya grafican otra cosa). Si el indicador cambia a
+  // uno que no es de precio, regresa a líneas automáticamente.
+  const modoVelasActivo = tipoGrafica === "velas" && esModoPrecio;
+  const simboloActivoVelas =
+    seleccionadas.find((r) => r.symbol === simboloVelas) || seleccionadas[0];
 
   return (
     <div className="screener-comparador">
@@ -273,22 +284,62 @@ function Comparador({ seleccionadas, rango, setRango, indicador, setIndicador })
         <span className="screener-grafica-titulo">
           {indicadorActivo.etiqueta} — comparativa ({seleccionadas.length} activo{seleccionadas.length !== 1 ? "s" : ""})
         </span>
-        <div className="screener-rangos">
-          {RANGOS.map((r) => (
-            <button
-              key={r.id}
-              type="button"
-              className={r.id === rango ? "screener-rango-btn activo" : "screener-rango-btn"}
-              onClick={() => setRango(r.id)}
-            >
-              {r.etiqueta}
-            </button>
-          ))}
+        <div className="screener-comparador-controles-derecha">
+          {esModoPrecio && (
+            <div className="screener-tipo-grafica">
+              <button
+                type="button"
+                className={tipoGrafica === "lineas" ? "screener-rango-btn activo" : "screener-rango-btn"}
+                onClick={() => setTipoGrafica("lineas")}
+              >
+                Líneas
+              </button>
+              <button
+                type="button"
+                className={tipoGrafica === "velas" ? "screener-rango-btn activo" : "screener-rango-btn"}
+                onClick={() => setTipoGrafica("velas")}
+              >
+                Velas
+              </button>
+            </div>
+          )}
+          <div className="screener-rangos">
+            {RANGOS.map((r) => (
+              <button
+                key={r.id}
+                type="button"
+                className={r.id === rango ? "screener-rango-btn activo" : "screener-rango-btn"}
+                onClick={() => setRango(r.id)}
+              >
+                {r.etiqueta}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
+      {modoVelasActivo && seleccionadas.length > 1 && (
+        <div className="screener-velas-selector">
+          <span>Mostrando velas de:</span>
+          {seleccionadas.map((r) => (
+            <button
+              key={r.symbol}
+              type="button"
+              className={r.symbol === simboloActivoVelas?.symbol ? "screener-rango-btn activo" : "screener-rango-btn"}
+              onClick={() => setSimboloVelas(r.symbol)}
+            >
+              {r.symbol}
+            </button>
+          ))}
+        </div>
+      )}
+
       <div className="screener-comparador-cuerpo">
-        <GraficaComparativa filas={seleccionadas} ruedas={rangoActivo.ruedas} indicador={indicadorActivo} />
+        {modoVelasActivo ? (
+          <GraficaVelas fila={simboloActivoVelas} ruedas={rangoActivo.ruedas} />
+        ) : (
+          <GraficaComparativa filas={seleccionadas} ruedas={rangoActivo.ruedas} indicador={indicadorActivo} />
+        )}
 
         <div className="screener-indicadores">
           <span className="screener-indicadores-titulo">Indicadores</span>
@@ -354,9 +405,9 @@ function smaEn(cierres, periodo, i) {
  *  - "liquidez": precio × volumen, promedio móvil de 20 ruedas.
  */
 function serieParaModo(fila, modo, ruedas) {
-  const historial = fila.historial; // [[date, close, volume], ...] con colchón de 200 ruedas extra
-  const cierres = historial.map((h) => h[1]);
-  const volumenes = historial.map((h) => h[2]);
+  const historial = fila.historial; // [[date, open, high, low, close, volume], ...] con colchón de 200 ruedas extra
+  const cierres = historial.map((h) => h[4]);
+  const volumenes = historial.map((h) => h[5]);
   const n = cierres.length;
 
   if (modo === "tendencia") {
@@ -466,6 +517,59 @@ function GraficaComparativa({ filas, ruedas, indicador }) {
           </span>
         ))}
       </div>
+    </div>
+  );
+}
+
+/** Velas japonesas (OHLC) de un solo activo — un vistazo clásico de precio,
+ *  en vez de la línea normalizada del modo comparativo. */
+function GraficaVelas({ fila, ruedas }) {
+  const width = 760;
+  const height = 320;
+  const padding = 36;
+
+  if (!fila?.historial?.length) {
+    return <p className="screener-cargando">Sin historial suficiente para este activo.</p>;
+  }
+
+  const ventana = fila.historial.slice(-ruedas); // [date, open, high, low, close, volume]
+  const minimos = ventana.map((v) => v[3]);
+  const maximos = ventana.map((v) => v[2]);
+  const min = Math.min(...minimos);
+  const max = Math.max(...maximos);
+  const range = max - min || 1;
+  const n = ventana.length;
+  const anchoDisponible = width - padding * 2;
+  const anchoVela = Math.max(1.5, (anchoDisponible / n) * 0.6);
+
+  function y(valor) {
+    return height - padding - ((valor - min) / range) * (height - padding * 2);
+  }
+
+  return (
+    <div className="screener-grafica">
+      <span className="screener-grafica-eje">
+        {fila.symbol} — OHLC diario ({n} ruedas)
+      </span>
+      <svg width="100%" viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="xMidYMid meet" className="screener-grafica-svg">
+        <line x1={padding} y1={height - padding} x2={width - padding} y2={height - padding} stroke="var(--line)" strokeWidth="1" />
+        {ventana.map((v, i) => {
+          const [, open, high, low, close] = v;
+          const x = padding + ((i + 0.5) / n) * anchoDisponible;
+          const alza = close >= open;
+          const color = alza ? "#22c39a" : "#ef476f";
+          const yAbierto = y(open);
+          const yCerrado = y(close);
+          const cuerpoY = Math.min(yAbierto, yCerrado);
+          const cuerpoAlto = Math.max(1, Math.abs(yCerrado - yAbierto));
+          return (
+            <g key={v[0]}>
+              <line x1={x} x2={x} y1={y(high)} y2={y(low)} stroke={color} strokeWidth="1" />
+              <rect x={x - anchoVela / 2} y={cuerpoY} width={anchoVela} height={cuerpoAlto} fill={color} />
+            </g>
+          );
+        })}
+      </svg>
     </div>
   );
 }
