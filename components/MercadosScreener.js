@@ -11,22 +11,30 @@ const RANGOS = [
   { id: "1M", etiqueta: "1M", ruedas: 21 },
   { id: "3M", etiqueta: "3M", ruedas: 63 },
   { id: "6M", etiqueta: "6M", ruedas: 126 },
+  { id: "YTD", etiqueta: "YTD", ytd: true },
   { id: "1A", etiqueta: "1A", ruedas: 252 },
   { id: "3A", etiqueta: "3A", ruedas: 756 },
+  { id: "5A", etiqueta: "5A", ruedas: 1260 },
 ];
 
-// Los 10 indicadores que se pidieron: los primeros 6 se calculan con datos
-// reales de precio/volumen (Yahoo Finance) ya disponibles en el screener.
-// Los últimos 4 (crecimiento de ingresos, EPS, ROIC, P/E forward) requieren
-// datos fundamentales que esta fuente gratuita no provee de forma confiable
-// todavía — quedan deshabilitados en vez de mostrar un número inventado.
+/** Ruedas transcurridas en lo que va del año, contando hacia atrás desde el
+ *  final del historial (que siempre termina en la rueda más reciente). */
+function ruedasYTD(historial) {
+  if (!historial?.length) return 252;
+  const anioActual = historial[historial.length - 1][0].slice(0, 4);
+  let i = historial.length - 1;
+  while (i >= 0 && historial[i][0].slice(0, 4) === anioActual) i--;
+  return historial.length - 1 - i;
+}
+
+// Indicadores del comparador — todos calculados con datos reales de
+// precio/volumen (Yahoo Finance + Finnhub), sin ninguna cifra inventada.
 const INDICADORES = [
   {
     id: "retorno12m",
     etiqueta: "Rendimiento 12 meses",
     formula: "(Pₜ / Pₜ₋₂₅₂ − 1) × 100",
     uso: "Identifica activos con buen desempeño de largo plazo.",
-    disponible: true,
     modo: "precio",
     ejeTitulo: "Precio normalizado (inicio de la ventana = 100)",
     formato: (v) => (v == null ? "—" : `${v >= 0 ? "+" : ""}${v.toFixed(1)}%`),
@@ -36,7 +44,6 @@ const INDICADORES = [
     etiqueta: "Fuerza relativa vs. mercado",
     formula: "Rendimiento del activo − rendimiento del S&P 500",
     uso: "Detecta activos que superan al mercado.",
-    disponible: true,
     modo: "precio",
     ejeTitulo: "Precio normalizado (inicio de la ventana = 100)",
     formato: (v) => (v == null ? "—" : `${v >= 0 ? "+" : ""}${v.toFixed(1)} pp`),
@@ -46,7 +53,6 @@ const INDICADORES = [
     etiqueta: "Tendencia de largo plazo",
     formula: "Precio > SMA 200 días",
     uso: "Filtra activos cuya tendencia principal es alcista.",
-    disponible: true,
     modo: "tendencia",
     ejeTitulo: "Precio vs. SMA 200 (100 = sobre la media)",
     formato: (v) => (v == null ? "—" : v ? "Alcista" : "Bajista"),
@@ -56,45 +62,15 @@ const INDICADORES = [
     etiqueta: "Pendiente de SMA 200",
     formula: "SMA 200 actual vs. SMA 200 de hace 20 días",
     uso: "Confirma si la tendencia está mejorando.",
-    disponible: true,
     modo: "tendencia",
     ejeTitulo: "Precio vs. SMA 200 (100 = sobre la media)",
     formato: (v) => (v == null ? "—" : v >= 0 ? "Mejorando" : "Empeorando"),
-  },
-  {
-    id: "crecimientoIngresos",
-    etiqueta: "Crecimiento de ingresos",
-    formula: "Variación interanual de ventas (%)",
-    uso: "Evalúa si el negocio está creciendo.",
-    disponible: false,
-  },
-  {
-    id: "crecimientoEPS",
-    etiqueta: "Crecimiento de EPS",
-    formula: "Variación interanual del EPS",
-    uso: "Identifica empresas con crecimiento de beneficios.",
-    disponible: false,
-  },
-  {
-    id: "roic",
-    etiqueta: "Rentabilidad sobre capital (ROIC)",
-    formula: "NOPAT / capital invertido",
-    uso: "Evalúa la eficiencia con la que la empresa genera rendimientos.",
-    disponible: false,
-  },
-  {
-    id: "peForward",
-    etiqueta: "Valoración (P/E forward)",
-    formula: "Precio / EPS esperado a 12 meses",
-    uso: "Ayuda a detectar valoraciones exigentes o razonables.",
-    disponible: false,
   },
   {
     id: "volatilidadAnualizada",
     etiqueta: "Volatilidad anualizada",
     formula: "Desv. estándar de retornos diarios × √252",
     uso: "Compara el riesgo histórico de los activos.",
-    disponible: true,
     modo: "volatilidad",
     ejeTitulo: "Volatilidad anualizada móvil (ventana de 20 ruedas)",
     formato: (v) => (v == null ? "—" : `${(v * 100).toFixed(1)}%`),
@@ -104,7 +80,6 @@ const INDICADORES = [
     etiqueta: "Liquidez promedio",
     formula: "Precio × volumen promedio de 20 días",
     uso: "Evita activos difíciles o costosos de operar.",
-    disponible: true,
     modo: "liquidez",
     ejeTitulo: "Precio × volumen, promedio móvil de 20 ruedas",
     formato: (v) =>
@@ -264,7 +239,9 @@ export default function MercadosScreener() {
 }
 
 function Comparador({ seleccionadas, rango, setRango, indicador, setIndicador }) {
-  const rangoActivo = RANGOS.find((r) => r.id === rango) || RANGOS[3];
+  const rangoDef = RANGOS.find((r) => r.id === rango) || RANGOS[3];
+  const ruedasRango = rangoDef.ytd ? ruedasYTD(seleccionadas[0]?.historial) : rangoDef.ruedas;
+  const rangoActivo = { ...rangoDef, ruedas: ruedasRango };
   const indicadorActivo = INDICADORES.find((i) => i.id === indicador) || INDICADORES[0];
   const esModoPrecio = indicadorActivo.modo === "precio";
 
@@ -318,9 +295,9 @@ function Comparador({ seleccionadas, rango, setRango, indicador, setIndicador })
         </div>
       </div>
 
-      {modoVelasActivo && seleccionadas.length > 1 && (
+      {seleccionadas.length > 1 && (
         <div className="screener-velas-selector">
-          <span>Mostrando velas de:</span>
+          <span>Activo enfocado (velas y ficha):</span>
           {seleccionadas.map((r) => (
             <button
               key={r.symbol}
@@ -348,13 +325,11 @@ function Comparador({ seleccionadas, rango, setRango, indicador, setIndicador })
               <button
                 key={ind.id}
                 type="button"
-                disabled={!ind.disponible}
-                title={!ind.disponible ? "Requiere datos fundamentales que esta fuente gratuita no provee todavía" : ind.uso}
+                title={ind.uso}
                 className={ind.id === indicador ? "screener-indicador-btn activo" : "screener-indicador-btn"}
-                onClick={() => ind.disponible && setIndicador(ind.id)}
+                onClick={() => setIndicador(ind.id)}
               >
                 {ind.etiqueta}
-                {!ind.disponible && <span className="screener-indicador-pendiente"> (próx.)</span>}
               </button>
             ))}
           </div>
@@ -382,6 +357,95 @@ function Comparador({ seleccionadas, rango, setRango, indicador, setIndicador })
           </div>
         </div>
       </div>
+
+      {simboloActivoVelas && <FichaActivo symbol={simboloActivoVelas.symbol} name={simboloActivoVelas.name} />}
+    </div>
+  );
+}
+
+/** Panel de estadísticas clave + noticias reales del activo enfocado,
+ *  similar a lo que trae la ficha de un activo en Yahoo Finance: rango de
+ *  52 semanas, capitalización de mercado, volumen promedio y noticias
+ *  reales recientes (Finnhub /company-news, gratis para símbolos de EE.UU.). */
+function FichaActivo({ symbol, name }) {
+  const [ficha, setFicha] = useState(null);
+
+  useEffect(() => {
+    setFicha(null);
+    fetch(`/api/mercados/ficha?symbol=${encodeURIComponent(symbol)}`)
+      .then((r) => r.json())
+      .then(setFicha)
+      .catch(() => setFicha({ error: true }));
+  }, [symbol]);
+
+  if (!ficha) {
+    return <p className="screener-cargando">Cargando ficha de {symbol}…</p>;
+  }
+  if (ficha.error) {
+    return null;
+  }
+
+  const fmtUSD = (v, decimales = 2) =>
+    v == null ? "—" : v.toLocaleString("en-US", { minimumFractionDigits: decimales, maximumFractionDigits: decimales });
+  const fmtVolumen = (v) => (v == null ? "—" : `${(v / 1e6).toLocaleString("en-US", { maximumFractionDigits: 1 })}M`);
+  const fmtMarketCap = (v) =>
+    v == null ? "—" : v >= 1e6 ? `$${(v / 1e6).toFixed(2)}T` : `$${(v / 1e3).toFixed(2)}B`;
+
+  return (
+    <div className="screener-ficha">
+      <span className="screener-ficha-titulo">
+        {ficha.perfil?.name || name} ({symbol})
+      </span>
+
+      <div className="screener-ficha-stats">
+        <div>
+          <span className="screener-ficha-stat-label">Rango 52 semanas</span>
+          <span className="screener-ficha-stat-valor">
+            {ficha.rango52 ? `${fmtUSD(ficha.rango52.min)} – ${fmtUSD(ficha.rango52.max)}` : "—"}
+          </span>
+        </div>
+        <div>
+          <span className="screener-ficha-stat-label">Precio actual</span>
+          <span className="screener-ficha-stat-valor">{fmtUSD(ficha.quote?.price)}</span>
+        </div>
+        <div>
+          <span className="screener-ficha-stat-label">Rango del día</span>
+          <span className="screener-ficha-stat-valor">
+            {ficha.quote?.dayLow != null ? `${fmtUSD(ficha.quote.dayLow)} – ${fmtUSD(ficha.quote.dayHigh)}` : "—"}
+          </span>
+        </div>
+        <div>
+          <span className="screener-ficha-stat-label">Capitalización de mercado</span>
+          <span className="screener-ficha-stat-valor">{fmtMarketCap(ficha.perfil?.marketCapMillones)}</span>
+        </div>
+        <div>
+          <span className="screener-ficha-stat-label">Volumen promedio (20d)</span>
+          <span className="screener-ficha-stat-valor">{fmtVolumen(ficha.volumenPromedio20)}</span>
+        </div>
+        <div>
+          <span className="screener-ficha-stat-label">Industria</span>
+          <span className="screener-ficha-stat-valor">{ficha.perfil?.industria || "—"}</span>
+        </div>
+      </div>
+
+      {ficha.noticias?.length > 0 && (
+        <div className="screener-ficha-noticias">
+          <span className="screener-ficha-titulo">Noticias recientes</span>
+          <ul>
+            {ficha.noticias.slice(0, 6).map((n) => (
+              <li key={n.url}>
+                <a href={n.url} target="_blank" rel="noopener noreferrer">
+                  {n.titulo}
+                </a>
+                <span className="screener-ficha-noticia-meta">
+                  {n.fuente}
+                  {n.fecha ? ` · ${new Date(n.fecha).toLocaleDateString("es-MX")}` : ""}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }
@@ -404,6 +468,15 @@ function smaEn(cierres, periodo, i) {
  *  - "volatilidad": volatilidad anualizada móvil (ventana de 20 ruedas), en %.
  *  - "liquidez": precio × volumen, promedio móvil de 20 ruedas.
  */
+/** Formatea un punto individual de la serie para el tooltip, según el modo
+ *  de la gráfica activa (distinto del formato del indicador agregado). */
+function formatoPuntoSerie(modo, v) {
+  if (modo === "tendencia") return `${v.toFixed(1)}% de la SMA200`;
+  if (modo === "volatilidad") return `${v.toFixed(1)}% anualizada`;
+  if (modo === "liquidez") return `$${v.toFixed(1)}M`;
+  return `índice ${v.toFixed(1)}`; // modo "precio"
+}
+
 function serieParaModo(fila, modo, ruedas) {
   const historial = fila.historial; // [[date, open, high, low, close, volume], ...] con colchón de 200 ruedas extra
   const cierres = historial.map((h) => h[4]);
@@ -462,22 +535,27 @@ function GraficaComparativa({ filas, ruedas, indicador }) {
   const modo = indicador?.modo || "precio";
 
   const series = filas.map((r) => serieParaModo(r, modo, ruedas));
+  const fechas = filas.map((r) => r.historial.slice(-ruedas).map((h) => h[0]));
 
   const todos = series.flat().filter((v) => v != null);
   const min = todos.length ? Math.min(...todos) : 0;
   const max = todos.length ? Math.max(...todos) : 1;
   const range = max - min || 1;
   const nPuntos = Math.max(...series.map((s) => s.length), 2);
+  // Marcadores con tooltip nativo, muestreados para no saturar el SVG en ventanas largas (5A).
+  const pasoMarcador = Math.max(1, Math.floor(nPuntos / 80));
+
+  function coord(i, v) {
+    const x = padding + (i / (nPuntos - 1)) * (width - padding * 2);
+    const y = height - padding - ((v - min) / range) * (height - padding * 2);
+    return [x, y];
+  }
 
   function puntos(serie) {
     return serie
       .map((v, i) => (v == null ? null : [i, v]))
       .filter(Boolean)
-      .map(([i, v]) => {
-        const x = padding + (i / (nPuntos - 1)) * (width - padding * 2);
-        const y = height - padding - ((v - min) / range) * (height - padding * 2);
-        return `${x.toFixed(1)},${y.toFixed(1)}`;
-      })
+      .map(([i, v]) => coord(i, v).map((n) => n.toFixed(1)).join(","))
       .join(" ");
   }
 
@@ -508,6 +586,19 @@ function GraficaComparativa({ filas, ruedas, indicador }) {
             strokeLinejoin="round"
           />
         ))}
+        {filas.map((r, i) =>
+          series[i].map((v, j) => {
+            if (v == null || j % pasoMarcador !== 0) return null;
+            const [x, y] = coord(j, v);
+            return (
+              <circle key={`${r.symbol}-${j}`} cx={x} cy={y} r="7" fill="transparent" stroke="none">
+                <title>
+                  {r.symbol} · {fechas[i][j]} · {formatoPuntoSerie(modo, v)}
+                </title>
+              </circle>
+            );
+          })
+        )}
       </svg>
       <div className="screener-grafica-leyenda">
         {filas.map((r, i) => (
@@ -565,7 +656,11 @@ function GraficaVelas({ fila, ruedas }) {
           return (
             <g key={v[0]}>
               <line x1={x} x2={x} y1={y(high)} y2={y(low)} stroke={color} strokeWidth="1" />
-              <rect x={x - anchoVela / 2} y={cuerpoY} width={anchoVela} height={cuerpoAlto} fill={color} />
+              <rect x={x - anchoVela / 2} y={cuerpoY} width={anchoVela} height={cuerpoAlto} fill={color}>
+                <title>
+                  {v[0]} · A: {open.toFixed(2)} · M: {high.toFixed(2)} · m: {low.toFixed(2)} · C: {close.toFixed(2)}
+                </title>
+              </rect>
             </g>
           );
         })}

@@ -5184,6 +5184,55 @@ html:not(.dark) .pglobe-land {
   font-size: 0.8rem;
   color: var(--meta);
 }
+
+.screener-ficha {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.screener-ficha-titulo {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.screener-ficha-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.screener-ficha-stat-label {
+  display: block;
+  font-size: 0.74rem;
+  color: var(--meta);
+  margin-bottom: 2px;
+}
+.screener-ficha-stat-valor {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+}
+.screener-ficha-noticias ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.screener-ficha-noticias li a {
+  color: var(--ink);
+  font-size: 0.88rem;
+  text-decoration: none;
+  border-bottom: 1px dotted var(--line);
+}
+.screener-ficha-noticias li a:hover { border-bottom-style: solid; }
+.screener-ficha-noticia-meta {
+  display: block;
+  font-size: 0.74rem;
+  color: var(--meta);
+  margin-top: 2px;
+}
 .screener-rangos { display: flex; gap: 6px; flex-wrap: wrap; }
 .screener-rango-btn,
 .screener-indicador-btn {

@@ -9,7 +9,7 @@ import {
 
 export const revalidate = 300; // 5 min — no consumir el límite de Finnhub de más
 
-const DIAS_3A = 756; // ~252 ruedas/año × 3
+const DIAS_5A = 1260; // ~252 ruedas/año × 5
 
 function retornoDesde(cierres, diasAtras) {
   if (!cierres || cierres.length <= diasAtras) return null;
@@ -21,7 +21,7 @@ function retornoDesde(cierres, diasAtras) {
 
 export async function GET() {
   // Benchmark (S&P 500 vía SPY) para "fuerza relativa vs. mercado".
-  const velasSpy = await fetchDailyCandlesRange("SPY", "5y");
+  const velasSpy = await fetchDailyCandlesRange("SPY", "10y");
   const cierresSpy = velasSpy?.map((v) => v.close) || null;
   const retornoSpy12m = cierresSpy ? retornoDesde(cierresSpy, 252) : null;
 
@@ -29,7 +29,7 @@ export async function GET() {
     UNIVERSO.map(async (a) => {
       const [quote, velas] = await Promise.all([
         fetchQuote(a.symbol),
-        fetchDailyCandlesRange(a.symbol, "5y"),
+        fetchDailyCandlesRange(a.symbol, "10y"),
       ]);
 
       const cierres = velas?.map((v) => v.close) || null;
@@ -41,9 +41,7 @@ export async function GET() {
           : null;
 
       // Indicadores adicionales del comparador — todos calculados a partir
-      // de precio/volumen reales (Yahoo Finance). Los que requieren datos
-      // fundamentales (ingresos, EPS, ROIC, P/E forward) no se incluyen:
-      // no hay fuente gratuita confiable conectada todavía para esos — ver nota en UI.
+      // de precio/volumen reales (Yahoo Finance).
       const n = cierres?.length ?? 0;
       const sma200Hoy = cierres ? calcularSMA(cierres, 200) : null;
       const sma200Hace20 = cierres && n > 20 ? calcularSMA(cierres, 200, n - 1 - 20) : null;
@@ -83,12 +81,12 @@ export async function GET() {
         sparkline: cierres ? cierres.slice(-30) : null,
         disponible: Boolean(quote),
         // Datos para el comparador (gráfica + indicadores). Se manda algo
-        // más de 3 años (+200 ruedas de colchón) para que la SMA 200 se
-        // pueda calcular incluso en el primer punto visible de la ventana 3A.
+        // más de 5 años (+200 ruedas de colchón) para que la SMA 200 se
+        // pueda calcular incluso en el primer punto visible de la ventana 5A.
         // Formato de cada punto: [fecha, apertura, máximo, mínimo, cierre, volumen].
         historial: velas
           ? velas
-              .slice(-(DIAS_3A + 200))
+              .slice(-(DIAS_5A + 200))
               .map((v) => [v.date, v.open, v.high, v.low, v.close, v.volume])
           : null,
         indicadores: {
