@@ -4098,6 +4098,17 @@ html:not(.dark) .pglobe-land {
   padding: 22px 24px;
 }
 .pulsodash-snapshot { margin-bottom: 18px; overflow-x: auto; }
+@media (min-width: 820px) {
+  /* La tabla es angosta (3 columnas) pero el panel hereda el ancho completo
+     del contenedor — en pantallas grandes se ve como una caja enorme con
+     la tabla pegada a la izquierda. La limitamos y centramos para que el
+     panel se ajuste a su contenido real. */
+  .pulsodash-snapshot {
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 .pulsodash-panel-head {
   display: flex;
   align-items: baseline;
