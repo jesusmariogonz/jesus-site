@@ -5157,6 +5157,12 @@ html:not(.dark) .pglobe-land {
   margin-bottom: 14px;
 }
 .screener-grafica-titulo { font-weight: 700; }
+.screener-grafica-eje {
+  display: block;
+  font-size: 0.74rem;
+  color: var(--meta);
+  margin-bottom: 8px;
+}
 .screener-rangos { display: flex; gap: 6px; flex-wrap: wrap; }
 .screener-rango-btn,
 .screener-indicador-btn {

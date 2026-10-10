@@ -82,8 +82,12 @@ export async function GET() {
         sharpe,
         sparkline: cierres ? cierres.slice(-30) : null,
         disponible: Boolean(quote),
-        // Datos para el comparador (gráfica + indicadores):
-        historial: velas ? velas.slice(-DIAS_3A).map((v) => [v.date, v.close]) : null,
+        // Datos para el comparador (gráfica + indicadores). Se manda algo
+        // más de 3 años (+200 ruedas de colchón) para que la SMA 200 se
+        // pueda calcular incluso en el primer punto visible de la ventana 3A.
+        historial: velas
+          ? velas.slice(-(DIAS_3A + 200)).map((v) => [v.date, v.close, v.volume])
+          : null,
         indicadores: {
           retorno12m,
           fuerzaRelativa,

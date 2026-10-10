@@ -27,6 +27,8 @@ const INDICADORES = [
     formula: "(Pₜ / Pₜ₋₂₅₂ − 1) × 100",
     uso: "Identifica activos con buen desempeño de largo plazo.",
     disponible: true,
+    modo: "precio",
+    ejeTitulo: "Precio normalizado (inicio de la ventana = 100)",
     formato: (v) => (v == null ? "—" : `${v >= 0 ? "+" : ""}${v.toFixed(1)}%`),
   },
   {
@@ -35,6 +37,8 @@ const INDICADORES = [
     formula: "Rendimiento del activo − rendimiento del S&P 500",
     uso: "Detecta activos que superan al mercado.",
     disponible: true,
+    modo: "precio",
+    ejeTitulo: "Precio normalizado (inicio de la ventana = 100)",
     formato: (v) => (v == null ? "—" : `${v >= 0 ? "+" : ""}${v.toFixed(1)} pp`),
   },
   {
@@ -43,6 +47,8 @@ const INDICADORES = [
     formula: "Precio > SMA 200 días",
     uso: "Filtra activos cuya tendencia principal es alcista.",
     disponible: true,
+    modo: "tendencia",
+    ejeTitulo: "Precio vs. SMA 200 (100 = sobre la media)",
     formato: (v) => (v == null ? "—" : v ? "Alcista" : "Bajista"),
   },
   {
@@ -51,6 +57,8 @@ const INDICADORES = [
     formula: "SMA 200 actual vs. SMA 200 de hace 20 días",
     uso: "Confirma si la tendencia está mejorando.",
     disponible: true,
+    modo: "tendencia",
+    ejeTitulo: "Precio vs. SMA 200 (100 = sobre la media)",
     formato: (v) => (v == null ? "—" : v >= 0 ? "Mejorando" : "Empeorando"),
   },
   {
@@ -87,6 +95,8 @@ const INDICADORES = [
     formula: "Desv. estándar de retornos diarios × √252",
     uso: "Compara el riesgo histórico de los activos.",
     disponible: true,
+    modo: "volatilidad",
+    ejeTitulo: "Volatilidad anualizada móvil (ventana de 20 ruedas)",
     formato: (v) => (v == null ? "—" : `${(v * 100).toFixed(1)}%`),
   },
   {
@@ -95,6 +105,8 @@ const INDICADORES = [
     formula: "Precio × volumen promedio de 20 días",
     uso: "Evita activos difíciles o costosos de operar.",
     disponible: true,
+    modo: "liquidez",
+    ejeTitulo: "Precio × volumen, promedio móvil de 20 ruedas",
     formato: (v) =>
       v == null
         ? "—"
@@ -259,7 +271,7 @@ function Comparador({ seleccionadas, rango, setRango, indicador, setIndicador })
     <div className="screener-comparador">
       <div className="screener-comparador-cabecera">
         <span className="screener-grafica-titulo">
-          Comparativa normalizada ({seleccionadas.length} activo{seleccionadas.length !== 1 ? "s" : ""})
+          {indicadorActivo.etiqueta} — comparativa ({seleccionadas.length} activo{seleccionadas.length !== 1 ? "s" : ""})
         </span>
         <div className="screener-rangos">
           {RANGOS.map((r) => (
@@ -276,7 +288,7 @@ function Comparador({ seleccionadas, rango, setRango, indicador, setIndicador })
       </div>
 
       <div className="screener-comparador-cuerpo">
-        <GraficaComparativa filas={seleccionadas} ruedas={rangoActivo.ruedas} />
+        <GraficaComparativa filas={seleccionadas} ruedas={rangoActivo.ruedas} indicador={indicadorActivo} />
 
         <div className="screener-indicadores">
           <span className="screener-indicadores-titulo">Indicadores</span>
@@ -323,27 +335,94 @@ function Comparador({ seleccionadas, rango, setRango, indicador, setIndicador })
   );
 }
 
-/** Gráfica de líneas normalizada (primer punto de la ventana = 100). */
-function GraficaComparativa({ filas, ruedas }) {
+const SMA_PERIODO = 200;
+const VENTANA_MOVIL = 20; // para volatilidad/liquidez "móviles"
+
+/** Media móvil simple terminando en el índice `i` (null si no hay suficiente historial antes). */
+function smaEn(cierres, periodo, i) {
+  if (i - periodo + 1 < 0) return null;
+  let suma = 0;
+  for (let k = i - periodo + 1; k <= i; k++) suma += cierres[k];
+  return suma / periodo;
+}
+
+/** Serie completa de un activo según el modo del indicador activo, ya
+ *  recortada a los últimos `ruedas` puntos. Cada modo cambia qué se grafica:
+ *  - "precio": precio normalizado a 100 al inicio de la ventana.
+ *  - "tendencia": precio ÷ SMA200 × 100 (100 = exactamente sobre la media).
+ *  - "volatilidad": volatilidad anualizada móvil (ventana de 20 ruedas), en %.
+ *  - "liquidez": precio × volumen, promedio móvil de 20 ruedas.
+ */
+function serieParaModo(fila, modo, ruedas) {
+  const historial = fila.historial; // [[date, close, volume], ...] con colchón de 200 ruedas extra
+  const cierres = historial.map((h) => h[1]);
+  const volumenes = historial.map((h) => h[2]);
+  const n = cierres.length;
+
+  if (modo === "tendencia") {
+    const serieCompleta = cierres.map((_, i) => {
+      const sma = smaEn(cierres, SMA_PERIODO, i);
+      return sma ? (cierres[i] / sma) * 100 : null;
+    });
+    return serieCompleta.slice(-ruedas);
+  }
+
+  if (modo === "volatilidad") {
+    const serieCompleta = cierres.map((_, i) => {
+      if (i - VENTANA_MOVIL < 0) return null;
+      const retornos = [];
+      for (let k = i - VENTANA_MOVIL + 1; k <= i; k++) {
+        retornos.push(Math.log(cierres[k] / cierres[k - 1]));
+      }
+      const media = retornos.reduce((a, b) => a + b, 0) / retornos.length;
+      const varianza = retornos.reduce((a, r) => a + (r - media) ** 2, 0) / retornos.length;
+      return Math.sqrt(varianza) * Math.sqrt(252) * 100;
+    });
+    return serieCompleta.slice(-ruedas);
+  }
+
+  if (modo === "liquidez") {
+    const serieCompleta = cierres.map((_, i) => {
+      if (i - VENTANA_MOVIL + 1 < 0) return null;
+      let suma = 0;
+      let dias = 0;
+      for (let k = i - VENTANA_MOVIL + 1; k <= i; k++) {
+        if (typeof volumenes[k] === "number") {
+          suma += volumenes[k] * cierres[k];
+          dias++;
+        }
+      }
+      return dias > 0 ? suma / dias / 1e6 : null; // en millones de USD
+    });
+    return serieCompleta.slice(-ruedas);
+  }
+
+  // modo "precio" (default): normalizado a 100 al inicio de la ventana visible.
+  const ventana = cierres.slice(-ruedas);
+  const base = ventana[0];
+  return ventana.map((c) => (base ? (c / base) * 100 : 100));
+}
+
+/** Gráfica de líneas que cambia según el indicador activo (ver serieParaModo). */
+function GraficaComparativa({ filas, ruedas, indicador }) {
   const width = 760;
   const height = 320;
   const padding = 36;
+  const modo = indicador?.modo || "precio";
 
-  const series = filas.map((r) => {
-    const puntos = r.historial.slice(-ruedas);
-    const base = puntos[0]?.[1];
-    return puntos.map(([, close]) => (base ? (close / base) * 100 : 100));
-  });
+  const series = filas.map((r) => serieParaModo(r, modo, ruedas));
 
-  const todos = series.flat();
-  const min = Math.min(...todos);
-  const max = Math.max(...todos);
+  const todos = series.flat().filter((v) => v != null);
+  const min = todos.length ? Math.min(...todos) : 0;
+  const max = todos.length ? Math.max(...todos) : 1;
   const range = max - min || 1;
   const nPuntos = Math.max(...series.map((s) => s.length), 2);
 
   function puntos(serie) {
     return serie
-      .map((v, i) => {
+      .map((v, i) => (v == null ? null : [i, v]))
+      .filter(Boolean)
+      .map(([i, v]) => {
         const x = padding + (i / (nPuntos - 1)) * (width - padding * 2);
         const y = height - padding - ((v - min) / range) * (height - padding * 2);
         return `${x.toFixed(1)},${y.toFixed(1)}`;
@@ -353,8 +432,20 @@ function GraficaComparativa({ filas, ruedas }) {
 
   return (
     <div className="screener-grafica">
+      {indicador?.ejeTitulo && <span className="screener-grafica-eje">{indicador.ejeTitulo}</span>}
       <svg width="100%" viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="xMidYMid meet" className="screener-grafica-svg">
         <line x1={padding} y1={height - padding} x2={width - padding} y2={height - padding} stroke="var(--line)" strokeWidth="1" />
+        {modo === "tendencia" && min < 100 && max > 100 && (
+          <line
+            x1={padding}
+            x2={width - padding}
+            y1={height - padding - ((100 - min) / range) * (height - padding * 2)}
+            y2={height - padding - ((100 - min) / range) * (height - padding * 2)}
+            stroke="var(--line)"
+            strokeDasharray="4 4"
+            strokeWidth="1"
+          />
+        )}
         {filas.map((r, i) => (
           <polyline
             key={r.symbol}
