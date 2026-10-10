@@ -5141,6 +5141,111 @@ html:not(.dark) .pglobe-land {
 .screener-spark { width: 150px; }
 .sparkline-vacio { color: var(--meta); }
 
+.screener-comparador {
+  margin-top: 28px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.screener-comparador-cabecera {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.screener-grafica-titulo { font-weight: 700; }
+.screener-rangos { display: flex; gap: 6px; flex-wrap: wrap; }
+.screener-rango-btn,
+.screener-indicador-btn {
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.screener-rango-btn.activo,
+.screener-indicador-btn.activo {
+  background: var(--accent, #4f8cff);
+  border-color: var(--accent, #4f8cff);
+  color: #fff;
+}
+.screener-indicador-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.screener-comparador-cuerpo {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 20px;
+  align-items: start;
+}
+@media (max-width: 760px) {
+  .screener-comparador-cuerpo { grid-template-columns: 1fr; }
+}
+.screener-grafica-svg { display: block; }
+.screener-grafica-leyenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+}
+.screener-grafica-leyenda-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.screener-grafica-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  display: inline-block;
+}
+.screener-indicadores-titulo {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.screener-indicadores-botones {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.screener-indicador-pendiente { font-size: 0.72rem; opacity: 0.8; }
+.screener-indicador-panel {
+  padding-top: 12px;
+  border-top: 1px solid var(--line-soft);
+  font-size: 0.85rem;
+}
+.screener-indicador-formula {
+  display: block;
+  color: var(--meta);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  margin: 4px 0 10px;
+}
+.screener-indicador-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.screener-indicador-lista li {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+}
+
 .screener-nota {
   font-size: 0.8rem;
   color: var(--meta);

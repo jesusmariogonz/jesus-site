@@ -28,7 +28,7 @@ Wall Street cerró la semana pasada con un repunte marcado el viernes —el Nasd
 | Miércoles 7-oct | [Minutas de la reunión de la Fed del 15-16 de septiembre](/blog/minutas-fed-credito-consumidor-inpc-sin-confirmar-7-octubre) | Estados Unidos | Alta | Detalle sobre el grado de división interna de la Fed respecto al ritmo de alzas |
 | Miércoles 7-oct | [Crédito al consumidor (G.19, datos de agosto)](/blog/minutas-fed-credito-consumidor-inpc-sin-confirmar-7-octubre) | Estados Unidos | Media | Lectura del apetito de endeudamiento de los hogares |
 | Miércoles 7-oct | [INPC de septiembre (inflación general y subyacente)](/blog/minutas-fed-credito-consumidor-inpc-sin-confirmar-7-octubre) | México | Alta | Insumo clave para la decisión de Banxico de noviembre |
-| Jueves 8-oct | [Solicitudes iniciales de desempleo](/blog/solicitudes-desempleo-8-octubre-sin-confirmar) | Estados Unidos | Media | Confirma o contradice la señal de debilidad laboral del viernes pasado |
+| Jueves 8-oct | Solicitudes iniciales de desempleo | Estados Unidos | Media | Confirma o contradice la señal de debilidad laboral del viernes pasado |
 
 No localizamos con confianza una fecha específica para el reporte de empleo formal del IMSS de septiembre dentro de esta ventana; tampoco localizamos eventos del Banco Central Europeo, el Banco de Inglaterra o datos relevantes de China confirmados para esta semana específica.
 
