@@ -318,7 +318,7 @@ def generar(datos_nota, salida):
 
     alto_final = y + 30
     img = img.crop((0, 0, ANCHO, alto_final))
-    img.save(salida, quality=92)
+    img.save(salida, quality=85, optimize=True)
     print(f"OK: {salida} ({alto_final}px alto)")
 
 

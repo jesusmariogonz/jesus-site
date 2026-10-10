@@ -24,8 +24,8 @@ import path from "node:path";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 
-const ANCHO = 1600;
-const ALTO = 900;
+const ANCHO = 1200; // antes 1600 — ver nota de tamaño en scripts/portada_titulo.py
+const ALTO = 675;
 
 let fuentesRegistradas = false;
 function registrarFuentes() {
@@ -155,7 +155,7 @@ export async function generarPortada(entrada, salida, titulo, categoria) {
   ctx.fillStyle = "#0a0c12";
   ctx.fillText(marca, placaX0 + padX, placaY0 + padY);
 
-  const buf = canvas.toBuffer("image/jpeg", 0.9);
+  const buf = canvas.toBuffer("image/jpeg", 0.8);
   writeFileSync(salida, buf);
   return { lineas: lineas.length, tamFuente };
 }

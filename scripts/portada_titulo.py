@@ -17,7 +17,11 @@ import sys
 import textwrap
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
-ANCHO, ALTO = 1600, 900  # relación 16:9, consistente para todas las portadas
+ANCHO, ALTO = 1200, 675  # relación 16:9 — suficiente para cualquier card del sitio;
+# antes era 1600x900 a calidad 90, lo que generaba archivos de ~250-900KB cada uno
+# y disparó el uso de Deployment Storage de Vercel (425 portadas × ese peso, en
+# cada deployment retenido). 1200x675 a calidad 80 se ve igual de nítido en
+# pantalla y pesa una fracción.
 
 FUENTE_TITULO = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 FUENTE_TAG = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
@@ -128,7 +132,7 @@ def generar(entrada, salida, titulo, categoria):
     marca_y = placa_y0 + pad_y
     draw.text((marca_x, marca_y), marca, font=fuente_marca, fill=(10, 12, 18, 255))
 
-    base.convert("RGB").save(salida, quality=90)
+    base.convert("RGB").save(salida, quality=80, optimize=True)
     print(f"OK: {salida} ({len(lineas)} líneas, fuente {tam_fuente}px)")
 
 
