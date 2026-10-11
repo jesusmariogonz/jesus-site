@@ -4228,7 +4228,26 @@ html:not(.dark) .pglobe-land {
 .pulsodash-horizon .prose {
   font-size: 0.92rem;
 }
-.pulsodash-snapshot table { font-size: 0.88rem; }
+.snapshot-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+.snapshot-tabla th {
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line);
+  color: var(--meta);
+  font-weight: 600;
+}
+.snapshot-tabla td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line-soft);
+}
+.snapshot-tabla tr:last-child td { border-bottom: none; }
+.snapshot-tabla td a { color: var(--accent, #4f8cff); }
+.snapshot-cambio-positivo { color: #22c39a; font-weight: 600; }
+.snapshot-cambio-negativo { color: #ef476f; font-weight: 600; }
 
 /* Calendario económico (macro): la columna "Evento" trae texto largo —
    que envuelva en vez de forzar una sola línea (nowrap), si no se corta

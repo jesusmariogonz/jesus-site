@@ -7,13 +7,12 @@ import {
   getPulsoMercado,
   seccion,
   formatFecha,
-  enlazarActivosEnTabla,
-  tablaAMarkdown,
 } from "@/lib/posts";
 import { fetchMarketSnapshotReal } from "@/lib/mercados/snapshot";
 import PulsoMercado from "@/components/PulsoMercado";
 import TickerTape from "@/components/TickerTape";
 import MercadosScreener from "@/components/MercadosScreener";
+import MarketSnapshotTabla from "@/components/MarketSnapshotTabla";
 import { absUrl } from "@/lib/site";
 
 // Dinámico (no estático) para que "Próxima corrida" en cada tarjeta
@@ -202,7 +201,7 @@ function Seccion({ titulo, subtitulo, markdown, vacio, claseExtra, conScorecard 
    búsqueda de IA salga bien. Si Yahoo no responde para algún símbolo,
    esa fila cae de vuelta a lo que ya traía (dato de hoy o respaldo). */
 async function construirSnapshotFinal(snapshotTabla) {
-  if (!snapshotTabla) return { markdown: null, fecha: null };
+  if (!snapshotTabla) return { filas: null, fecha: null };
 
   const real = await fetchMarketSnapshotReal();
   let fechaMasReciente = null;
@@ -217,14 +216,14 @@ async function construirSnapshotFinal(snapshotTabla) {
   });
 
   const fecha = fechaMasReciente ? formatFecha(fechaMasReciente) : formatFecha(snapshotTabla.fechaActualizacion);
-  return { markdown: tablaAMarkdown({ ...snapshotTabla, filas }), fecha };
+  return { filas, fecha };
 }
 
 export default async function PulsoMercadoDashboard() {
   const { pulso, snapshotTabla, regimen, importoHoy, swing, position, longTerm } =
     getPulsoDashboard();
   const { daily, weeklyOutlook } = pulso;
-  const { markdown: snapshot, fecha: snapshotFecha } = await construirSnapshotFinal(snapshotTabla);
+  const { filas: snapshotFilas, fecha: snapshotFecha } = await construirSnapshotFinal(snapshotTabla);
 
   const calendarioSemana = seccion(weeklyOutlook, "macro calendar");
   const calendarioResultados = seccion(weeklyOutlook, "earnings calendar");
@@ -253,17 +252,15 @@ export default async function PulsoMercadoDashboard() {
           </nav>
         </header>
 
-        {snapshot && (
-          <div className="pulsodash-panel pulsodash-snapshot prose">
+        {snapshotFilas?.length > 0 && (
+          <div className="pulsodash-panel pulsodash-snapshot">
             <div className="pulsodash-panel-head">
               <span className="pulsodash-panel-title">Market Snapshot</span>
               {snapshotFecha && (
                 <span className="pulsodash-panel-sub">Última actualización: {snapshotFecha}</span>
               )}
             </div>
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>
-              {enlazarActivosEnTabla(snapshot)}
-            </ReactMarkdown>
+            <MarketSnapshotTabla filas={snapshotFilas} />
           </div>
         )}
 
