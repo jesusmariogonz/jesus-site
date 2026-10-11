@@ -36,8 +36,8 @@ No localizamos con confianza una fecha específica para el reporte de empleo for
 
 | Empresa | Ticker | Fecha | Momento | Sector | Por qué importa |
 |---|---|---|---|---|---|
-| PepsiCo | PEP | Jueves 8-oct | Antes de la apertura | Consumo / bebidas y alimentos | Primer gran nombre de consumo masivo en reportar en el trimestre, termómetro de poder adquisitivo del consumidor |
-| Delta Air Lines | DAL | Viernes 9-oct | Antes de la apertura | Aerolíneas / consumo discrecional | Marca el arranque informal de la temporada de reportes del tercer trimestre en el sector de viajes |
+| [PepsiCo](/blog/pepsico-resultados-tercer-trimestre-2026-guidance-recortada) | PEP | Jueves 8-oct | Antes de la apertura | Consumo / bebidas y alimentos | Primer gran nombre de consumo masivo en reportar en el trimestre, termómetro de poder adquisitivo del consumidor |
+| [Delta Air Lines](/blog/delta-air-lines-resultados-tercer-trimestre-2026-guidance-sostenida) | DAL | Viernes 9-oct | Antes de la apertura | Aerolíneas / consumo discrecional | Marca el arranque informal de la temporada de reportes del tercer trimestre en el sector de viajes |
 
 Los grandes bancos —JPMorgan, Wells Fargo, Citigroup, Goldman Sachs, Bank of America y Morgan Stanley— reportan hasta la semana del 13 de octubre, fuera de esta ventana.
 
