@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Sparkline from "@/components/Sparkline";
+import { retornoEntreFechas, REGISTRO } from "@/lib/mercados/indicadores";
 
 const COLORES = ["#4f8cff", "#22c39a", "#a78bfa", "#f2b84a", "#f2814a", "#5fd0f2", "#e05fd8", "#d64545", "#ffd166", "#06d6a0"];
 const MAX_COMPARAR = 5;
@@ -17,101 +18,108 @@ const RANGOS = [
   { id: "5A", etiqueta: "5A", ruedas: 1260 },
 ];
 
-/** Ruedas transcurridas en lo que va del año, contando hacia atrás desde el
- *  final del historial (que siempre termina en la rueda más reciente). */
-function ruedasYTD(historial) {
-  if (!historial?.length) return 252;
-  const anioActual = historial[historial.length - 1][0].slice(0, 4);
-  let i = historial.length - 1;
-  while (i >= 0 && historial[i][0].slice(0, 4) === anioActual) i--;
-  return historial.length - 1 - i;
-}
+// Horizontes del selector principal de la tabla — controlan SOLO los
+// indicadores sensibles al horizonte (retorno, fuerza relativa). Los
+// parámetros técnicos de precio (SMA50/200, ATR14, volumen relativo 20d)
+// NO cambian con este selector: tienen su propio significado fijo, tal
+// como pide el diseño ("una SMA de 200 no cambia de periodo porque el
+// usuario esté viendo retorno a 3 o 6 meses").
+const HORIZONTES = [
+  { id: "h1m", etiqueta: "1 mes" },
+  { id: "h3m", etiqueta: "3 meses" },
+  { id: "h6m", etiqueta: "6 meses" },
+  { id: "h12m", etiqueta: "12 meses" },
+  { id: "personalizado", etiqueta: "Personalizado" },
+];
 
-// Indicadores del comparador — todos calculados con datos reales de
-// precio/volumen (Yahoo Finance + Finnhub), sin ninguna cifra inventada.
-const INDICADORES = [
+// Los dos modos de análisis de esta fase (position y swing trading — el
+// modo de inversión de largo plazo queda pendiente: depende de
+// fundamentales -ingresos, EPS, ROIC, P/E- que esta fuente gratuita no
+// provee de forma confiable todavía). Cada modo no es una puntuación
+// oculta: solo cambia qué columnas se muestran por default y qué filtros
+// vienen preseleccionados, pero el usuario puede ver/filtrar por
+// cualquier indicador sin importar el modo activo.
+const MODOS = [
   {
-    id: "retorno12m",
-    etiqueta: "Rendimiento 12 meses",
-    formula: "(Pₜ / Pₜ₋₂₅₂ − 1) × 100",
-    uso: "Identifica activos con buen desempeño de largo plazo.",
-    modo: "precio",
-    ejeTitulo: "Precio normalizado (inicio de la ventana = 100)",
-    formato: (v) => (v == null ? "—" : `${v >= 0 ? "+" : ""}${v.toFixed(1)}%`),
+    id: "position",
+    etiqueta: "Position trading",
+    descripcion: "Candidatos para operaciones de semanas a meses: tendencia, SMA50/200 y distancia a máximos/mínimos de 52 semanas.",
+    horizontePorDefecto: "h3m",
+    columnasExtra: ["distanciaSMA50", "distanciaSMA200", "pendienteSMA200", "distanciaMaximo52s"],
   },
   {
-    id: "fuerzaRelativa",
-    etiqueta: "Fuerza relativa vs. mercado",
-    formula: "Rendimiento del activo − rendimiento del S&P 500",
-    uso: "Detecta activos que superan al mercado.",
-    modo: "precio",
-    ejeTitulo: "Precio normalizado (inicio de la ventana = 100)",
-    formato: (v) => (v == null ? "—" : `${v >= 0 ? "+" : ""}${v.toFixed(1)} pp`),
-  },
-  {
-    id: "tendenciaAlcista",
-    etiqueta: "Tendencia de largo plazo",
-    formula: "Precio > SMA 200 días",
-    uso: "Filtra activos cuya tendencia principal es alcista.",
-    modo: "tendencia",
-    ejeTitulo: "Precio vs. SMA 200 (100 = sobre la media)",
-    formato: (v) => (v == null ? "—" : v ? "Alcista" : "Bajista"),
-  },
-  {
-    id: "sma200Pendiente",
-    etiqueta: "Pendiente de SMA 200",
-    formula: "SMA 200 actual vs. SMA 200 de hace 20 días",
-    uso: "Confirma si la tendencia está mejorando.",
-    modo: "tendencia",
-    ejeTitulo: "Precio vs. SMA 200 (100 = sobre la media)",
-    formato: (v) => (v == null ? "—" : v >= 0 ? "Mejorando" : "Empeorando"),
-  },
-  {
-    id: "volatilidadAnualizada",
-    etiqueta: "Volatilidad anualizada",
-    formula: "Desv. estándar de retornos diarios × √252",
-    uso: "Compara el riesgo histórico de los activos.",
-    modo: "volatilidad",
-    ejeTitulo: "Volatilidad anualizada móvil (ventana de 20 ruedas)",
-    formato: (v) => (v == null ? "—" : `${(v * 100).toFixed(1)}%`),
-  },
-  {
-    id: "liquidezPromedio",
-    etiqueta: "Liquidez promedio",
-    formula: "Precio × volumen promedio de 20 días",
-    uso: "Evita activos difíciles o costosos de operar.",
-    modo: "liquidez",
-    ejeTitulo: "Precio × volumen, promedio móvil de 20 ruedas",
-    formato: (v) =>
-      v == null
-        ? "—"
-        : `$${(v / 1e6).toLocaleString("es-MX", { maximumFractionDigits: 1 })}M`,
+    id: "swing",
+    etiqueta: "Swing trading",
+    descripcion: "Candidatos para operaciones de días a semanas: momentum reciente, volatilidad (ATR) y volumen relativo.",
+    horizontePorDefecto: "h1m",
+    columnasExtra: ["atrPct", "volumenRelativo", "estructuraTendencia", "distanciaMinimo52s"],
   },
 ];
 
-function fmtPct(v) {
+function fmtPct(v, decimales = 1) {
   if (v == null) return "—";
-  return `${v >= 0 ? "+" : ""}${(v * 100).toFixed(1)}%`;
+  return `${v >= 0 ? "+" : ""}${v.toFixed(decimales)}%`;
 }
 
-function ThConExplicacion({ titulo, explicacion }) {
+function valorIndicador(fila, id, horizonte) {
+  const ind = fila.indicadores;
+  if (!ind) return null;
+  if (id === "retorno") return horizonte === "personalizado" ? fila._retornoPersonalizado ?? null : ind.retorno?.[horizonte] ?? null;
+  if (id === "fuerzaRelativa") return horizonte === "personalizado" ? null : ind.fuerzaRelativa?.[horizonte] ?? null;
+  return ind[id] ?? null;
+}
+
+function formatoIndicador(id, v) {
+  if (v == null) return "—";
+  switch (id) {
+    case "retorno":
+      return fmtPct(v);
+    case "fuerzaRelativa":
+      return `${fmtPct(v, 1).replace("%", "")} pp`;
+    case "distanciaSMA50":
+    case "distanciaSMA200":
+    case "pendienteSMA200":
+    case "distanciaMaximo52s":
+    case "distanciaMinimo52s":
+    case "atrPct":
+      return fmtPct(v);
+    case "volatilidadAnualizada":
+      return `${(v * 100).toFixed(1)}%`;
+    case "volumenRelativo":
+      return `${v.toFixed(2)}×`;
+    case "liquidezPromedio":
+      return `$${(v / 1e6).toLocaleString("es-MX", { maximumFractionDigits: 1 })}M`;
+    case "estructuraTendencia":
+      return v === "alcista" ? "Alcista" : v === "bajista" ? "Bajista" : "Mixta";
+    default:
+      return String(v);
+  }
+}
+
+function ThIndicador({ id, titulo }) {
+  const meta = REGISTRO[id];
+  if (!meta) return <th>{titulo}</th>;
   return (
     <th>
       <details className="screener-th-info">
         <summary>{titulo}</summary>
-        <div className="screener-th-tooltip">{explicacion}</div>
+        <div className="screener-th-tooltip">
+          <strong>{meta.nombre}</strong>
+          <p>{meta.pregunta}</p>
+          <span className="screener-th-formula">{meta.formula}</span>
+          <span className="screener-th-limite">{meta.limitaciones}</span>
+        </div>
       </details>
     </th>
   );
 }
 
-const EXPLICACIONES = {
-  retorno:
-    "Retorno anualizado: el promedio de los retornos diarios (en log) de los últimos ~180 días, proyectado a un año (×252 días de trading). Es cuánto hubiera rendido el activo en un año si mantuviera ese mismo ritmo — no una predicción, un promedio histórico.",
-  volatilidad:
-    "Volatilidad anualizada: qué tanto se mueve el precio día a día, medido como la desviación estándar de los retornos diarios y proyectado a un año. Más alta = oscilaciones más bruscas (mayor riesgo), no necesariamente peor desempeño.",
-  sharpe:
-    "Sharpe: retorno anualizado menos una tasa libre de riesgo (~4.5%, aprox. de un bono del Tesoro), dividido entre la volatilidad anualizada. Mide cuánto retorno dio el activo por cada unidad de riesgo tomado — más alto es mejor; negativo significa que ni siquiera superó la tasa libre de riesgo.",
+const FILTROS_INICIALES = {
+  tendencia: "todas", // todas | sobreSMA50 | sobreSMA200 | sma50SobreSma200
+  retornoMin: "",
+  retornoMax: "",
+  volumenRelMin: "",
+  atrMax: "",
 };
 
 export default function MercadosScreener() {
@@ -120,6 +128,12 @@ export default function MercadosScreener() {
   const [seleccion, setSeleccion] = useState([]);
   const [rango, setRango] = useState("6M");
   const [indicador, setIndicador] = useState("retorno12m");
+  const [modo, setModo] = useState("position");
+  const [horizonte, setHorizonte] = useState("h3m");
+  const [fechaInicio, setFechaInicio] = useState("");
+  const [fechaFin, setFechaFin] = useState("");
+  const [filtros, setFiltros] = useState(FILTROS_INICIALES);
+  const [filtrosAbiertos, setFiltrosAbiertos] = useState(false);
 
   useEffect(() => {
     fetch("/api/mercados/screener")
@@ -128,15 +142,41 @@ export default function MercadosScreener() {
       .catch(() => setData({ rows: [] }));
   }, []);
 
+  function cambiarModo(id) {
+    setModo(id);
+    const def = MODOS.find((m) => m.id === id);
+    if (def) setHorizonte(def.horizontePorDefecto);
+  }
+
+  const modoActivo = MODOS.find((m) => m.id === modo) || MODOS[0];
+
   const filas = useMemo(() => {
     if (!data?.rows) return [];
-    return data.rows.filter((r) => {
-      if (!r.disponible) return false;
-      if (!busqueda.trim()) return true;
-      const q = busqueda.toLowerCase();
-      return r.symbol.toLowerCase().includes(q) || r.name.toLowerCase().includes(q);
-    });
-  }, [data, busqueda]);
+    return data.rows
+      .filter((r) => r.disponible)
+      .map((r) => {
+        if (horizonte !== "personalizado" || !fechaInicio || !fechaFin || !r.historial) return r;
+        const fechas = r.historial.map((h) => h[0]);
+        const cierres = r.historial.map((h) => h[4]);
+        return { ...r, _retornoPersonalizado: retornoEntreFechas(cierres, fechas, fechaInicio, fechaFin) };
+      })
+      .filter((r) => {
+        if (busqueda.trim()) {
+          const q = busqueda.toLowerCase();
+          if (!r.symbol.toLowerCase().includes(q) && !r.name.toLowerCase().includes(q)) return false;
+        }
+        const ind = r.indicadores || {};
+        if (filtros.tendencia === "sobreSMA50" && !(ind.distanciaSMA50 > 0)) return false;
+        if (filtros.tendencia === "sobreSMA200" && !(ind.distanciaSMA200 > 0)) return false;
+        if (filtros.tendencia === "sma50SobreSma200" && !(ind.distanciaSMA50 != null && ind.distanciaSMA200 != null && ind.distanciaSMA50 > ind.distanciaSMA200)) return false;
+        const retorno = valorIndicador(r, "retorno", horizonte);
+        if (filtros.retornoMin !== "" && (retorno == null || retorno < Number(filtros.retornoMin))) return false;
+        if (filtros.retornoMax !== "" && (retorno == null || retorno > Number(filtros.retornoMax))) return false;
+        if (filtros.volumenRelMin !== "" && (ind.volumenRelativo == null || ind.volumenRelativo < Number(filtros.volumenRelMin))) return false;
+        if (filtros.atrMax !== "" && (ind.atrPct == null || ind.atrPct > Number(filtros.atrMax))) return false;
+        return true;
+      });
+  }, [data, busqueda, filtros, horizonte, fechaInicio, fechaFin]);
 
   function toggle(symbol) {
     setSeleccion((prev) => {
@@ -153,9 +193,26 @@ export default function MercadosScreener() {
   const seleccionadas = (data.rows || []).filter(
     (r) => seleccion.includes(r.symbol) && r.historial?.length > 1
   );
+  const horizonteActivo = HORIZONTES.find((h) => h.id === horizonte) || HORIZONTES[1];
+  const filtrosActivos = Object.entries(filtros).filter(([k, v]) => v !== FILTROS_INICIALES[k]).length;
 
   return (
     <div className="mercados-screener">
+      <div className="screener-modos">
+        {MODOS.map((m) => (
+          <button
+            key={m.id}
+            type="button"
+            title={m.descripcion}
+            className={m.id === modo ? "screener-modo-btn activo" : "screener-modo-btn"}
+            onClick={() => cambiarModo(m.id)}
+          >
+            {m.etiqueta}
+          </button>
+        ))}
+        <span className="screener-modo-descripcion">{modoActivo.descripcion}</span>
+      </div>
+
       <div className="screener-controles">
         <input
           type="text"
@@ -163,8 +220,94 @@ export default function MercadosScreener() {
           value={busqueda}
           onChange={(e) => setBusqueda(e.target.value)}
         />
+        <div className="screener-horizonte">
+          <span>Horizonte:</span>
+          {HORIZONTES.map((h) => (
+            <button
+              key={h.id}
+              type="button"
+              className={h.id === horizonte ? "screener-rango-btn activo" : "screener-rango-btn"}
+              onClick={() => setHorizonte(h.id)}
+            >
+              {h.etiqueta}
+            </button>
+          ))}
+        </div>
         <span className="screener-conteo">{filas.length} activos</span>
       </div>
+
+      {horizonte === "personalizado" && (
+        <div className="screener-horizonte-personalizado">
+          <label>
+            Desde
+            <input type="date" value={fechaInicio} onChange={(e) => setFechaInicio(e.target.value)} />
+          </label>
+          <label>
+            Hasta
+            <input type="date" value={fechaFin} onChange={(e) => setFechaFin(e.target.value)} />
+          </label>
+          {!fechaInicio || !fechaFin ? (
+            <span className="screener-horizonte-aviso">Elige ambas fechas para calcular el retorno del periodo.</span>
+          ) : null}
+        </div>
+      )}
+
+      <details className="screener-filtros" open={filtrosAbiertos} onToggle={(e) => setFiltrosAbiertos(e.target.open)}>
+        <summary>
+          Filtros{filtrosActivos > 0 ? ` (${filtrosActivos} activos)` : ""}
+        </summary>
+        <div className="screener-filtros-grupos">
+          <div className="screener-filtro-grupo">
+            <span className="screener-filtro-grupo-titulo">Tendencia</span>
+            <select value={filtros.tendencia} onChange={(e) => setFiltros((f) => ({ ...f, tendencia: e.target.value }))}>
+              <option value="todas">Cualquiera</option>
+              <option value="sobreSMA50">Precio por encima de SMA 50</option>
+              <option value="sobreSMA200">Precio por encima de SMA 200</option>
+              <option value="sma50SobreSma200">SMA 50 por encima de SMA 200</option>
+            </select>
+          </div>
+          <div className="screener-filtro-grupo">
+            <span className="screener-filtro-grupo-titulo">Rendimiento ({horizonteActivo.etiqueta})</span>
+            <div className="screener-filtro-rango">
+              <input
+                type="number"
+                placeholder="mín. %"
+                value={filtros.retornoMin}
+                onChange={(e) => setFiltros((f) => ({ ...f, retornoMin: e.target.value }))}
+              />
+              <input
+                type="number"
+                placeholder="máx. %"
+                value={filtros.retornoMax}
+                onChange={(e) => setFiltros((f) => ({ ...f, retornoMax: e.target.value }))}
+              />
+            </div>
+          </div>
+          <div className="screener-filtro-grupo">
+            <span className="screener-filtro-grupo-titulo">Volumen relativo mínimo</span>
+            <input
+              type="number"
+              step="0.1"
+              placeholder="ej. 1.5"
+              value={filtros.volumenRelMin}
+              onChange={(e) => setFiltros((f) => ({ ...f, volumenRelMin: e.target.value }))}
+            />
+          </div>
+          <div className="screener-filtro-grupo">
+            <span className="screener-filtro-grupo-titulo">ATR máximo (% del precio)</span>
+            <input
+              type="number"
+              step="0.1"
+              placeholder="ej. 5"
+              value={filtros.atrMax}
+              onChange={(e) => setFiltros((f) => ({ ...f, atrMax: e.target.value }))}
+            />
+          </div>
+          <button type="button" className="screener-filtro-limpiar" onClick={() => setFiltros(FILTROS_INICIALES)}>
+            Limpiar filtros
+          </button>
+        </div>
+      </details>
 
       <div className="screener-tabla-wrap">
         <table className="screener-tabla">
@@ -174,9 +317,11 @@ export default function MercadosScreener() {
               <th>Activo</th>
               <th>Precio</th>
               <th>Tendencia</th>
-              <ThConExplicacion titulo="Retorno anual." explicacion={EXPLICACIONES.retorno} />
-              <ThConExplicacion titulo="Volatilidad" explicacion={EXPLICACIONES.volatilidad} />
-              <ThConExplicacion titulo="Sharpe" explicacion={EXPLICACIONES.sharpe} />
+              <ThIndicador id="retorno" titulo={`Retorno (${horizonteActivo.etiqueta})`} />
+              <ThIndicador id="fuerzaRelativa" titulo="Fuerza relativa" />
+              {modoActivo.columnasExtra.map((id) => (
+                <ThIndicador key={id} id={id} titulo={REGISTRO[id]?.nombre || id} />
+              ))}
             </tr>
           </thead>
           <tbody>
@@ -210,9 +355,11 @@ export default function MercadosScreener() {
                 <td className="screener-spark">
                   <Sparkline values={r.sparkline} />
                 </td>
-                <td>{fmtPct(r.retornoAnualizado)}</td>
-                <td>{r.volatilidadAnualizada != null ? `${(r.volatilidadAnualizada * 100).toFixed(1)}%` : "—"}</td>
-                <td>{r.sharpe != null ? r.sharpe.toFixed(2) : "—"}</td>
+                <td>{formatoIndicador("retorno", valorIndicador(r, "retorno", horizonte))}</td>
+                <td>{formatoIndicador("fuerzaRelativa", valorIndicador(r, "fuerzaRelativa", horizonte))}</td>
+                {modoActivo.columnasExtra.map((id) => (
+                  <td key={id}>{formatoIndicador(id, r.indicadores?.[id])}</td>
+                ))}
               </tr>
             ))}
           </tbody>
@@ -221,8 +368,8 @@ export default function MercadosScreener() {
 
       <p className="screener-nota">
         Precio en vivo vía Finnhub; velas diarias reales vía Yahoo Finance. Pasa el cursor (o toca en celular)
-        sobre "Retorno anual.", "Volatilidad" o "Sharpe" para ver cómo se calcula cada uno. Marca hasta{" "}
-        {MAX_COMPARAR} activos en la columna de la izquierda para compararlos abajo.
+        sobre el nombre de cualquier columna para ver qué mide y cómo se calcula. Marca hasta {MAX_COMPARAR} activos
+        en la columna de la izquierda para compararlos abajo.
       </p>
 
       {seleccionadas.length > 0 && (
@@ -238,19 +385,82 @@ export default function MercadosScreener() {
   );
 }
 
+// Indicadores del panel comparador (gráfica + ranking lateral) — fijos a
+// horizonte de 12 meses para mantener el comparador simple; el selector de
+// horizonte de arriba controla la tabla principal, no este panel.
+const INDICADORES_COMPARADOR = [
+  {
+    id: "retorno12m",
+    etiqueta: "Rendimiento 12 meses",
+    formula: REGISTRO.retorno.formula,
+    uso: REGISTRO.retorno.pregunta,
+    modo: "precio",
+    ejeTitulo: "Precio normalizado (inicio de la ventana = 100)",
+    valor: (r) => r.indicadores?.retorno?.h12m,
+    formato: (v) => (v == null ? "—" : fmtPct(v)),
+  },
+  {
+    id: "fuerzaRelativa12m",
+    etiqueta: "Fuerza relativa vs. mercado",
+    formula: REGISTRO.fuerzaRelativa.formula,
+    uso: REGISTRO.fuerzaRelativa.pregunta,
+    modo: "precio",
+    ejeTitulo: "Precio normalizado (inicio de la ventana = 100)",
+    valor: (r) => r.indicadores?.fuerzaRelativa?.h12m,
+    formato: (v) => (v == null ? "—" : `${fmtPct(v).replace("%", "")} pp`),
+  },
+  {
+    id: "tendenciaAlcista",
+    etiqueta: "Tendencia de largo plazo",
+    formula: "Precio > SMA 200 días",
+    uso: "Filtra activos cuya tendencia principal es alcista.",
+    modo: "tendencia",
+    ejeTitulo: "Precio vs. SMA 200 (100 = sobre la media)",
+    valor: (r) => r.indicadores?.tendenciaAlcista,
+    formato: (v) => (v == null ? "—" : v ? "Alcista" : "Bajista"),
+  },
+  {
+    id: "pendienteSMA200",
+    etiqueta: "Pendiente de SMA 200",
+    formula: REGISTRO.pendienteSMA200.formula,
+    uso: REGISTRO.pendienteSMA200.pregunta,
+    modo: "tendencia",
+    ejeTitulo: "Precio vs. SMA 200 (100 = sobre la media)",
+    valor: (r) => r.indicadores?.pendienteSMA200,
+    formato: (v) => (v == null ? "—" : v >= 0 ? "Mejorando" : "Empeorando"),
+  },
+  {
+    id: "volatilidadAnualizada",
+    etiqueta: "Volatilidad anualizada",
+    formula: REGISTRO.volatilidadAnualizada.formula,
+    uso: REGISTRO.volatilidadAnualizada.pregunta,
+    modo: "volatilidad",
+    ejeTitulo: "Volatilidad anualizada móvil (ventana de 20 ruedas)",
+    valor: (r) => r.indicadores?.volatilidadAnualizada,
+    formato: (v) => (v == null ? "—" : `${(v * 100).toFixed(1)}%`),
+  },
+  {
+    id: "liquidezPromedio",
+    etiqueta: "Liquidez promedio",
+    formula: REGISTRO.liquidezPromedio.formula,
+    uso: REGISTRO.liquidezPromedio.pregunta,
+    modo: "liquidez",
+    ejeTitulo: "Precio × volumen, promedio móvil de 20 ruedas",
+    valor: (r) => r.indicadores?.liquidezPromedio,
+    formato: (v) => (v == null ? "—" : `$${(v / 1e6).toLocaleString("es-MX", { maximumFractionDigits: 1 })}M`),
+  },
+];
+
 function Comparador({ seleccionadas, rango, setRango, indicador, setIndicador }) {
   const rangoDef = RANGOS.find((r) => r.id === rango) || RANGOS[3];
   const ruedasRango = rangoDef.ytd ? ruedasYTD(seleccionadas[0]?.historial) : rangoDef.ruedas;
   const rangoActivo = { ...rangoDef, ruedas: ruedasRango };
-  const indicadorActivo = INDICADORES.find((i) => i.id === indicador) || INDICADORES[0];
+  const indicadorActivo = INDICADORES_COMPARADOR.find((i) => i.id === indicador) || INDICADORES_COMPARADOR[0];
   const esModoPrecio = indicadorActivo.modo === "precio";
 
   const [tipoGrafica, setTipoGrafica] = useState("lineas");
   const [simboloVelas, setSimboloVelas] = useState(seleccionadas[0]?.symbol);
 
-  // Velas solo tiene sentido para indicadores de precio (no para volatilidad/
-  // liquidez/tendencia, que ya grafican otra cosa). Si el indicador cambia a
-  // uno que no es de precio, regresa a líneas automáticamente.
   const modoVelasActivo = tipoGrafica === "velas" && esModoPrecio;
   const simboloActivoVelas =
     seleccionadas.find((r) => r.symbol === simboloVelas) || seleccionadas[0];
@@ -321,7 +531,7 @@ function Comparador({ seleccionadas, rango, setRango, indicador, setIndicador })
         <div className="screener-indicadores">
           <span className="screener-indicadores-titulo">Indicadores</span>
           <div className="screener-indicadores-botones">
-            {INDICADORES.map((ind) => (
+            {INDICADORES_COMPARADOR.map((ind) => (
               <button
                 key={ind.id}
                 type="button"
@@ -340,8 +550,8 @@ function Comparador({ seleccionadas, rango, setRango, indicador, setIndicador })
             <ul className="screener-indicador-lista">
               {[...seleccionadas]
                 .sort((a, b) => {
-                  const va = a.indicadores?.[indicadorActivo.id];
-                  const vb = b.indicadores?.[indicadorActivo.id];
+                  const va = indicadorActivo.valor(a);
+                  const vb = indicadorActivo.valor(b);
                   if (va == null) return 1;
                   if (vb == null) return -1;
                   if (typeof va === "boolean") return Number(vb) - Number(va);
@@ -350,7 +560,7 @@ function Comparador({ seleccionadas, rango, setRango, indicador, setIndicador })
                 .map((r) => (
                   <li key={r.symbol}>
                     <span>{r.symbol}</span>
-                    <span>{indicadorActivo.formato(r.indicadores?.[indicadorActivo.id])}</span>
+                    <span>{indicadorActivo.formato(indicadorActivo.valor(r))}</span>
                   </li>
                 ))}
             </ul>
@@ -361,6 +571,16 @@ function Comparador({ seleccionadas, rango, setRango, indicador, setIndicador })
       {simboloActivoVelas && <FichaActivo symbol={simboloActivoVelas.symbol} name={simboloActivoVelas.name} />}
     </div>
   );
+}
+
+/** Ruedas transcurridas en lo que va del año, contando hacia atrás desde el
+ *  final del historial (que siempre termina en la rueda más reciente). */
+function ruedasYTD(historial) {
+  if (!historial?.length) return 252;
+  const anioActual = historial[historial.length - 1][0].slice(0, 4);
+  let i = historial.length - 1;
+  while (i >= 0 && historial[i][0].slice(0, 4) === anioActual) i--;
+  return historial.length - 1 - i;
 }
 
 /** Panel de estadísticas clave + noticias reales del activo enfocado,
@@ -461,13 +681,6 @@ function smaEn(cierres, periodo, i) {
   return suma / periodo;
 }
 
-/** Serie completa de un activo según el modo del indicador activo, ya
- *  recortada a los últimos `ruedas` puntos. Cada modo cambia qué se grafica:
- *  - "precio": precio normalizado a 100 al inicio de la ventana.
- *  - "tendencia": precio ÷ SMA200 × 100 (100 = exactamente sobre la media).
- *  - "volatilidad": volatilidad anualizada móvil (ventana de 20 ruedas), en %.
- *  - "liquidez": precio × volumen, promedio móvil de 20 ruedas.
- */
 /** Formatea un punto individual de la serie para el tooltip, según el modo
  *  de la gráfica activa (distinto del formato del indicador agregado). */
 function formatoPuntoSerie(modo, v) {
@@ -477,8 +690,15 @@ function formatoPuntoSerie(modo, v) {
   return `índice ${v.toFixed(1)}`; // modo "precio"
 }
 
+/** Serie completa de un activo según el modo del indicador activo, ya
+ *  recortada a los últimos `ruedas` puntos. Cada modo cambia qué se grafica:
+ *  - "precio": precio normalizado a 100 al inicio de la ventana.
+ *  - "tendencia": precio ÷ SMA200 × 100 (100 = exactamente sobre la media).
+ *  - "volatilidad": volatilidad anualizada móvil (ventana de 20 ruedas), en %.
+ *  - "liquidez": precio × volumen, promedio móvil de 20 ruedas.
+ */
 function serieParaModo(fila, modo, ruedas) {
-  const historial = fila.historial; // [[date, open, high, low, close, volume], ...] con colchón de 200 ruedas extra
+  const historial = fila.historial; // [[date, open, high, low, close, volume], ...] con colchón de ruedas extra
   const cierres = historial.map((h) => h[4]);
   const volumenes = historial.map((h) => h[5]);
   const n = cierres.length;

@@ -1,29 +1,39 @@
 import { NextResponse } from "next/server";
 import { UNIVERSO } from "@/lib/mercados/universo";
+import { fetchQuote, fetchDailyCandlesRange } from "@/lib/mercados/finnhub";
 import {
-  fetchQuote,
-  fetchDailyCandlesRange,
-  calcularRetornoYVolatilidad,
-  calcularSMA,
-} from "@/lib/mercados/finnhub";
+  retornoPeriodo,
+  retornoYVolatilidad,
+  distanciaSMA,
+  pendienteSMA,
+  atrPct,
+  volumenRelativo,
+  liquidezPromedio,
+  distanciaMaximoReciente,
+  distanciaMinimoReciente,
+  estructuraTendencia,
+} from "@/lib/mercados/indicadores";
 
 export const revalidate = 300; // 5 min — no consumir el límite de Finnhub de más
 
 const DIAS_5A = 1260; // ~252 ruedas/año × 5
-
-function retornoDesde(cierres, diasAtras) {
-  if (!cierres || cierres.length <= diasAtras) return null;
-  const actual = cierres[cierres.length - 1];
-  const pasado = cierres[cierres.length - 1 - diasAtras];
-  if (!actual || !pasado) return null;
-  return (actual / pasado - 1) * 100;
-}
+// Horizontes fijos que se calculan siempre en el servidor — el selector de
+// horizonte del cliente solo elige cuál de estos mostrar/ordenar (más
+// "Personalizado", que se calcula en el cliente a partir del historial
+// completo que ya se manda, sin pedir otra vez al servidor).
+const HORIZONTES = { h1m: 21, h3m: 63, h6m: 126, h12m: 252 };
 
 export async function GET() {
-  // Benchmark (S&P 500 vía SPY) para "fuerza relativa vs. mercado".
+  // Benchmark (S&P 500 vía SPY) para "fuerza relativa vs. mercado", en los
+  // mismos horizontes que se calculan para cada activo.
   const velasSpy = await fetchDailyCandlesRange("SPY", "10y");
   const cierresSpy = velasSpy?.map((v) => v.close) || null;
-  const retornoSpy12m = cierresSpy ? retornoDesde(cierresSpy, 252) : null;
+  const retornoSpyPorHorizonte = Object.fromEntries(
+    Object.entries(HORIZONTES).map(([clave, dias]) => [
+      clave,
+      cierresSpy ? retornoPeriodo(cierresSpy, dias) : null,
+    ])
+  );
 
   const rows = await Promise.all(
     UNIVERSO.map(async (a) => {
@@ -33,40 +43,28 @@ export async function GET() {
       ]);
 
       const cierres = velas?.map((v) => v.close) || null;
+      const maximos = velas?.map((v) => v.high) || null;
+      const minimos = velas?.map((v) => v.low) || null;
       const volumenes = velas?.map((v) => v.volume) || null;
-      const stats = cierres ? calcularRetornoYVolatilidad(cierres.slice(-180)) : null;
+      const stats = cierres ? retornoYVolatilidad(cierres.slice(-180)) : null;
       const sharpe =
         stats && stats.volatilidadAnualizada > 0
           ? (stats.retornoAnualizado - 0.045) / stats.volatilidadAnualizada // 4.5% tasa libre de riesgo (Cetes 28d aprox.), fija y documentada en UI
           : null;
 
-      // Indicadores adicionales del comparador — todos calculados a partir
-      // de precio/volumen reales (Yahoo Finance).
-      const n = cierres?.length ?? 0;
-      const sma200Hoy = cierres ? calcularSMA(cierres, 200) : null;
-      const sma200Hace20 = cierres && n > 20 ? calcularSMA(cierres, 200, n - 1 - 20) : null;
-      const precioActual = cierres ? cierres[n - 1] : null;
-      const retorno12m = cierres ? retornoDesde(cierres, 252) : null;
-      const fuerzaRelativa =
-        retorno12m != null && retornoSpy12m != null ? retorno12m - retornoSpy12m : null;
-      const tendenciaAlcista =
-        precioActual != null && sma200Hoy != null ? precioActual > sma200Hoy : null;
-      const sma200Pendiente =
-        sma200Hoy != null && sma200Hace20 != null ? sma200Hoy - sma200Hace20 : null;
-      const liquidezPromedio =
-        volumenes && cierres && n >= 20
-          ? (() => {
-              let suma = 0;
-              let dias = 0;
-              for (let i = n - 20; i < n; i++) {
-                if (typeof volumenes[i] === "number" && typeof cierres[i] === "number") {
-                  suma += volumenes[i] * cierres[i];
-                  dias++;
-                }
-              }
-              return dias > 0 ? suma / dias : null;
-            })()
-          : null;
+      const retornoPorHorizonte = Object.fromEntries(
+        Object.entries(HORIZONTES).map(([clave, dias]) => [
+          clave,
+          cierres ? retornoPeriodo(cierres, dias) : null,
+        ])
+      );
+      const fuerzaRelativaPorHorizonte = Object.fromEntries(
+        Object.entries(HORIZONTES).map(([clave]) => {
+          const ret = retornoPorHorizonte[clave];
+          const retSpy = retornoSpyPorHorizonte[clave];
+          return [clave, ret != null && retSpy != null ? ret - retSpy : null];
+        })
+      );
 
       return {
         symbol: a.symbol,
@@ -90,16 +88,34 @@ export async function GET() {
               .map((v) => [v.date, v.open, v.high, v.low, v.close, v.volume])
           : null,
         indicadores: {
-          retorno12m,
-          fuerzaRelativa,
-          tendenciaAlcista,
-          sma200Pendiente,
+          // Por horizonte (el selector de horizonte del cliente elige cuál mostrar):
+          retorno: retornoPorHorizonte,
+          fuerzaRelativa: fuerzaRelativaPorHorizonte,
+          // Técnicos, de parámetro fijo (no cambian con el horizonte):
+          distanciaSMA50: cierres ? distanciaSMA(cierres, 50) : null,
+          distanciaSMA200: cierres ? distanciaSMA(cierres, 200) : null,
+          pendienteSMA200: cierres ? pendienteSMA(cierres, 200, 20) : null,
           volatilidadAnualizada: stats?.volatilidadAnualizada ?? null,
-          liquidezPromedio,
+          atrPct: cierres && maximos && minimos ? atrPct(maximos, minimos, cierres, 14) : null,
+          volumenRelativo: volumenes ? volumenRelativo(volumenes, 20) : null,
+          liquidezPromedio: cierres && volumenes ? liquidezPromedio(cierres, volumenes, 20) : null,
+          distanciaMaximo52s: cierres && maximos ? distanciaMaximoReciente(cierres, maximos, 252) : null,
+          distanciaMinimo52s: cierres && minimos ? distanciaMinimoReciente(cierres, minimos, 252) : null,
+          estructuraTendencia: maximos && minimos ? estructuraTendencia(maximos, minimos, 40) : null,
+          // Compatibilidad con el comparador existente (mismo signo que
+          // distanciaSMA200):
+          tendenciaAlcista: (() => {
+            const d = cierres ? distanciaSMA(cierres, 200) : null;
+            return d == null ? null : d > 0;
+          })(),
         },
       };
     })
   );
 
-  return NextResponse.json({ rows, actualizado: new Date().toISOString() });
+  return NextResponse.json({
+    rows,
+    horizontesDisponibles: Object.keys(HORIZONTES),
+    actualizado: new Date().toISOString(),
+  });
 }
