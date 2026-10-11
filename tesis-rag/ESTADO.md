@@ -5,7 +5,7 @@ de escribir cualquier entrega, la rutina/sesión debe leer este archivo y
 confirmar contra `content/blog/` (slugs con `tesis-rag-semana-NN`) — nunca
 inferir la semana solo contando fechas transcurridas.
 
-**Próxima semana pendiente: 4** (Resultados parte 1 — tasa de fuga del Experimento 1 sin mitigación, con prueba de hipótesis)
+**Próxima semana pendiente: 5** (Resultados parte 2 — efecto de la mitigación en Condición B, prueba de McNemar completa y costo en calidad de respuesta)
 
 ## Historial
 
@@ -14,6 +14,7 @@ inferir la semana solo contando fechas transcurridas.
 | 1 | 2026-09-27 | `tesis-rag-semana-01-introduccion-planteamiento` | Introducción al problema de persistencia no gobernada en RAG y planteamiento formal de H1/H2. |
 | 2 | 2026-09-27 | `tesis-rag-semana-02-marco-teorico-metodologia` | Marco teórico (gobernanza como propiedad estructural) y metodología unificada: diseño pareado, McNemar, IC 95% Wilson, criterio de falsabilidad popperiano. |
 | 3 | 2026-10-04 | `tesis-rag-semana-03-diseno-experimento-1-fuga-confidencialidad` | Diseño completo del Experimento 1 (corpus de 18 docs EIA Corp, 3 roles, 62 trials pareados) — **y ejecución real ya completada** contra la API de Anthropic; datos crudos y análisis en `tesis-rag/experimento-1/`. |
+| 4 | 2026-10-11 | `tesis-rag-semana-04-resultados-fuga-sin-mitigacion` | Resultados parte 1: tasa de fuga en Condición A (baseline) = 70.5% [IC95% 55.8-81.8%], con ejemplo real documentado (becario obteniendo compensación de un Director) y desglose de fuga por documento (3 de 8 documentos con fuga del 100%). |
 
 ## Recordatorios operativos para la siguiente sesión
 
