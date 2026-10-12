@@ -1,63 +1,63 @@
 {
-  "semana_texto": "SEMANA DEL 29 DE SEPTIEMBRE AL 5 DE OCTUBRE DE 2026",
+  "semana_texto": "SEMANA DEL 5 AL 11 DE OCTUBRE DE 2026",
   "edicion_texto": "EDICIÓN SEMANAL · TOP 13",
-  "intro": "Una semana que cruzó la cuarta ampliación de LEGO en Nuevo León, el 58 aniversario de Tlatelolco, el ataque armado en una secundaria de Torreón y un reporte de empleo en Estados Unidos que rompió la narrativa de resiliencia económica. Abajo, las 13 notas más leídas de la semana.",
+  "intro": "Una semana en la que la subasta de AHMSA quedó en suspenso por falta de garantía, México se quedó sin el organismo que auditaba su pensión más grande, y Brasil confirmó que su elección se decide en balotaje. Entre negocios, TSMC superó su propia guía y 16,326 bases de datos abiertas revelaron qué tan frágil puede ser la seguridad por defecto. Abajo, las 13 notas más leídas de la semana.",
   "flash": [
-    {"kicker": "MÉXICO Y LATAM", "fecha": "01 OCT", "titulo": "El partido que se detuvo en el minuto 89:59",
-     "desc": "Konyaspor-Palestina y el estado real de la guerra, en medio de un alto el fuego frágil que todavía no se traduce en paz."},
-    {"kicker": "NOTAS DE CAMPO", "fecha": "04 OCT", "titulo": "El logo de los Steelers no se diseñó para ellos",
-     "desc": "Es el logo de la industria del acero de EU, adoptado en 1962 — y por eso solo va de un lado del casco."},
-    {"kicker": "SERIE SEMANAL", "fecha": "05 OCT", "titulo": "Lo que se espera esta semana",
-     "desc": "El miércoles concentra el mayor riesgo: minutas de la Fed e inflación de septiembre en México, el mismo día."}
+    {"kicker": "MERCADOS Y CAPITAL", "fecha": "11 OCT", "titulo": "Delta Air Lines reportó caída de utilidad GAAP de más de 40%, pero sostuvo su guía",
+     "desc": "La aparente contradicción entre una utilidad GAAP débil y una ajustada sólida se explica por el propósito mismo de las cifras ajustadas: aislar partidas no recurrentes de la operación real."},
+    {"kicker": "IDEAS Y ENSAYOS", "fecha": "06 OCT", "titulo": "Las empresas están aplanando su jerarquía para que la IA coordine",
+     "desc": "El error no es cortar gerentes, es asumir que traducir estrategia en instrucciones ejecutables es lo mismo que la coordinación mecánica que la IA sí puede hacer bien."},
+    {"kicker": "MÉXICO Y LATAM", "fecha": "08 OCT", "titulo": "México desapareció al organismo que evaluaba sus programas sociales",
+     "desc": "CONEVAL dejó de ser autónomo justo cuando la Pensión para el Bienestar, de la que dependen 4.7 millones de adultos mayores, se volvió el gasto social más grande del país."}
   ],
   "main": {
-    "kicker": "LO MÁS LEÍDO DE LA SEMANA · MÉXICO Y LATAM", "fecha": "25 SEP",
-    "titulo": "LEGO no está descubriendo México: está pagando el costo de no poder irse",
-    "dek": "LEGO anunció 400 millones de dólares más para su planta en Ciénega de Flores, Nuevo León —la más grande del mundo—, con arranque de obra el 30 de septiembre.",
-    "cuerpo": "Es la cuarta ampliación de la planta desde que abrió en 2008, no el primer boleto de un nuevo inversionista descubriendo el nearshoring mexicano. La diferencia importa: una empresa que ya construyó, operó y volvió a ampliar su planta más grande del mundo en el mismo punto geográfico durante casi dos décadas no está \"apostando\" por México en el sentido especulativo que domina buena parte de la narrativa del nearshoring — está describiendo una dependencia operativa que ya no tiene una alternativa barata de deshacer. Esa lectura cambia la pregunta que vale la pena hacerse sobre cada nuevo anuncio de inversión extranjera: no es solo cuánto dinero llega, sino qué tan reversible es la decisión que ese dinero representa.",
-    "foto": "public/blog/portadas/lego-inversion-400-millones-nuevo-leon-2026.jpg"
+    "kicker": "LO MÁS LEÍDO DE LA SEMANA · MÉXICO Y LATAM", "fecha": "10 OCT",
+    "titulo": "A CIESA le niegan la prórroga: tiene hasta el 13 de octubre para garantizar la compra de AHMSA o se cae la subasta",
+    "dek": "CIESA pidió 90 días más para acreditar la garantía de 56.3 millones de dólares que debía depositar tras ganar la subasta de AHMSA el 25 de septiembre. Una jueza le negó esa prórroga el 8 de octubre.",
+    "cuerpo": "El titular de \"CIESA ganó la subasta de AHMSA\" que circuló hace dos semanas describía un hecho menos consumado de lo que sonaba: el comprador todavía no demuestra tener el dinero ni siquiera para el 4% de garantía de seriedad, pidió tres meses más para reunirlo, y la jueza Ruth Haggi Huerta García —que ya había extendido el proceso una vez— le negó esa segunda oportunidad. Caterpillar, uno de los acreedores, ya pidió invalidar la participación de CIESA si no cumple el nuevo plazo del 13 de octubre. La \"venta\" de AHMSA sigue, en los hechos, sin decidirse.",
+    "foto": "public/blog/portadas/ahmsa-ciesa-prorroga-rechazada-13-octubre.jpg"
   },
   "secundaria_larga": {
-    "kicker": "MÉXICO Y LATAM · 2ª MÁS LEÍDA", "fecha": "30 SEP",
-    "titulo": "Lo que se pierde sin tauromaquia",
-    "desc": "El Senado avanza la primera Ley General de Bienestar Animal de México, pero deja la tauromaquia en manos de los estados — seis ya la prohibieron y el Estado de México la blindó. Detrás del debate hay una raza entera, el toro de lidia, cuya supervivencia depende de un modelo económico que la prohibición desarma pieza por pieza, y un precedente incómodo: lo que realmente pasó con los animales cuando se prohibieron en los circos.",
+    "kicker": "DATOS COMO NEGOCIO · 2ª MÁS LEÍDA", "fecha": "06 OCT",
+    "titulo": "Encontraron 16,326 bases de datos abiertas al público. El error no fue un hackeo",
+    "desc": "UpGuard escaneó cerca de 300,000 dominios construidos sobre Supabase, la plataforma de backend más popular entre desarrolladores que usan IA para programar, y encontró 16,326 bases de datos con tablas públicamente legibles por cualquiera —más de la mitad con indicios de información personal expuesta. No fue una vulnerabilidad sofisticada: fue una casilla de seguridad que nadie activó. El hallazgo describe algo más amplio que un error puntual de Supabase: la velocidad con la que la IA permite construir aplicaciones completas bajó tanto el costo de crear infraestructura de datos que buena parte de esa infraestructura se despliega sin que nadie revise los controles de acceso más básicos.",
     "foto": null
   },
   "secundaria_corta": {
-    "kicker": "MÉXICO Y LATAM · 3ª MÁS LEÍDA", "fecha": "02 OCT",
-    "titulo": "2 de octubre no se olvida",
-    "desc": "58 años después de Tlatelolco, nadie sabe cuántos murieron esa noche, y nadie ha sido condenado por ello.",
-    "foto": "public/blog/portadas/2-de-octubre-no-se-olvida-tlatelolco-1968.jpg"
+    "kicker": "TECNOLOGÍA Y NEGOCIO · 3ª MÁS LEÍDA", "fecha": "09 OCT",
+    "titulo": "TSMC acaba de vender más chips de los que ella misma proyectó hace dos meses",
+    "desc": "Ventas de septiembre de 511,860 millones de dólares taiwaneses (+54.6% anual); el trimestre completo ya superó el techo de la propia guía de julio, por segundo trimestre consecutivo.",
+    "foto": "public/blog/portadas/tsmc-record-ventas-guia-conservadora-monopolio-chips.jpg"
   },
   "datos": [
-    {"valor": "$400M", "etiqueta": "Cuarta ampliación de LEGO en Nuevo León"},
-    {"valor": "58 años", "etiqueta": "Desde Tlatelolco, sin cifra oficial de muertos"},
-    {"valor": "29,000", "etiqueta": "Empleos creados en EU en septiembre, vs. ~90,000 esperados"},
-    {"valor": "11 de 15", "etiqueta": "Víctimas mortales de ataques armados escolares en México que han sido mujeres"}
+    {"valor": "$56.3M", "etiqueta": "Garantía de seriedad que CIESA aún no acredita para quedarse con AHMSA"},
+    {"valor": "4.7 millones", "etiqueta": "Adultos mayores que dependen de la Pensión para el Bienestar, hoy sin organismo que la audite"},
+    {"valor": "47.03% vs. 45.16%", "etiqueta": "Resultado de primera vuelta entre Flávio Bolsonaro y Lula en Brasil"},
+    {"valor": "16,326", "etiqueta": "Bases de datos de Supabase encontradas abiertas al público por UpGuard"}
   ],
   "media": [
-    {"kicker": "DATOS COMO NEGOCIO", "fecha": "29 SEP", "titulo": "Por qué ningún cerebro humano puede sostener una estrategia entre áreas",
-     "desc": "La tesis de Harvard Business Review, con investigación de campo en Walmart, Amazon, Ericsson, Ramp y Medtronic: las ejecuciones cross-funcionales fallan porque ningún cerebro humano puede sostener toda la información relevante de una decisión, y la orquestación de agentes de IA —no la automatización de tareas sueltas— es la respuesta real.",
-     "foto": "public/blog/portadas/negocios-reunion-9.jpg"},
-    {"kicker": "MÉXICO Y LATAM", "fecha": "01 OCT", "titulo": "Los gemelos de Torreón no atacaron por venganza escolar",
-     "desc": "La fiscalía de Coahuila encontró, entre las pertenencias de los dos hermanos detenidos, fotografías de atacantes extranjeros que aparentemente idolatraban — un giro hacia la hipótesis de radicalización por contenido consumido en línea.",
+    {"kicker": "GEOPOLITICS", "fecha": "05 OCT", "titulo": "Brasil tendrá segunda vuelta: Flávio Bolsonaro supera a Lula en la primera ronda",
+     "desc": "Con 99.99% de las urnas escrutadas, ningún candidato alcanzó el 50% necesario: Bolsonaro 47.03%, Lula 45.16%. El balotaje será el 25 de octubre.",
+     "foto": "public/blog/portadas/brasil-2026-bolsonaro-lula-segunda-vuelta.jpg"},
+    {"kicker": "MERCADOS Y CAPITAL", "fecha": "08 OCT", "titulo": "Tres datos que el calendario económico esperaba para el 7 de octubre siguen sin resultado confirmado",
+     "desc": "Actualización: las minutas de la Fed y el INPC de México ya se confirmaron —minutas con tono hawkish, inflación mexicana acelerando a 3.45% anual por segundo mes consecutivo—, pero el reporte de crédito al consumidor de EU sigue sin aparecer en ninguna fuente confiable.",
      "foto": null},
-    {"kicker": "NOTAS DE CAMPO", "fecha": "30 SEP", "titulo": "\"Dad brain\": la neurociencia real detrás de un padre primerizo",
-     "desc": "El cerebro de un hombre pierde volumen de materia gris en las primeras semanas tras el nacimiento de su hijo — no es deterioro, es la misma poda neuronal ya documentada en madres, aunque con un costo real en sueño y ansiedad.",
-     "foto": "public/blog/portadas/negocios-reunion-14.jpg"}
+    {"kicker": "MERCADOS Y CAPITAL", "fecha": "09 OCT", "titulo": "Una startup sin ingresos públicos cuadruplicó su valuación a 10,000 millones de dólares en 30 días",
+     "desc": "Instinct cerró una Series C de 1,000 millones a una valuación cuatro veces mayor que un mes antes. Los mismos tres fondos —Sequoia, Benchmark, Coatue— participaron en ambas rondas.",
+     "foto": "public/blog/portadas/instinct-valuacion-10000-millones-30-dias-venture-capital.jpg"}
   ],
   "abajo": [
-    {"kicker": "NOTAS DE CAMPO", "fecha": "03 OCT", "titulo": "\"Creo en el Dios de Spinoza\"",
-     "desc": "La respuesta de Einstein, en 1929, a la pregunta que todos le hacían — y cómo convirtió a un filósofo excomulgado 273 años antes en el nombre que la ciencia moderna sigue usando para hablar de lo divino.",
-     "foto": "public/blog/portadas/el-dios-de-spinoza-y-la-pregunta-a-einstein.jpg"},
-    {"kicker": "TESIS · SEMANA 3", "fecha": "04 OCT", "titulo": "Diseño y ejecución del Experimento 1: fuga de confidencialidad en RAG",
-     "desc": "El experimento ya se corrió contra la API real de Anthropic, sobre un corpus de 18 documentos ficticios y 62 pruebas pareadas — los resultados estadísticos completos llegan en las próximas entregas.",
+    {"kicker": "NOTAS DE CAMPO", "fecha": "06 OCT", "titulo": "China construyó dos torres solares gemelas que parecen sacadas de ciencia ficción",
+     "desc": "Una planta híbrida de 1 GW en Hami, Xinjiang, con 260,000 espejos por torre calentando sal fundida a 550°C —la más grande del mundo en su tipo, y casi nadie más la está copiando.",
+     "foto": "public/blog/portadas/china-torres-solares-gemelas-hami.jpg"},
+    {"kicker": "NOTAS DE CAMPO", "fecha": "07 OCT", "titulo": "Messi se despidió con 85,000 personas y un gol de penal. Ronaldo se despidió sin que nadie organizara nada",
+     "desc": "El 6 de octubre, Messi jugó su último partido con Argentina bajo sus propios términos. Ronaldo cerró su carrera con Portugal sin ceremonia, eliminado en octavos del Mundial 2026 —una asimetría en el cierre que dice tanto como cualquier estadística de las dos carreras más grandes del fútbol.",
      "foto": null},
-    {"kicker": "TECNOLOGÍA Y NEGOCIO", "fecha": "29 SEP", "titulo": "CrowdStrike vale más caro que casi toda la bolsa de Nueva York",
-     "desc": "Un canasto de acciones de ciberseguridad se ha más que duplicado desde abril, cuando Anthropic restringió el acceso a Mythos por temor a que su capacidad ofensiva superara la defensiva — CrowdStrike cotiza hoy a más de 170 veces utilidades.",
-     "foto": "public/blog/portadas/ciberseguridad-valuaciones-burbuja-mythos-crowdstrike.jpg"},
-    {"kicker": "MERCADOS Y CAPITAL", "fecha": "02 OCT", "titulo": "El agosto en que el mundo dejó de prestarle barato a sus gobiernos",
-     "desc": "El bono a 30 años de EU llegó a su nivel más alto desde 2007, el JGB japonés a 10 años tocó un máximo de 30 años, y el bono francés subió a su nivel más caro desde 2008 — mismo mes, mismo motivo de fondo.",
+    {"kicker": "GEOPOLITICS", "fecha": "08 OCT", "titulo": "El órgano que iba a disciplinar a jueces corruptos acumula 248 casos",
+     "desc": "Entre los investigados por el Tribunal de Disciplina Judicial está la exjueza que en 2024 suspendió, vía amparo, la discusión de la reforma que terminó creando a ese mismo Tribunal.",
+     "foto": "public/blog/portadas/tribunal-disciplina-judicial-caceria-jueces-antirreforma.jpg"},
+    {"kicker": "IA Y LA NUEVA ECONOMÍA", "fecha": "08 OCT", "titulo": "¿Qué pasa cuando tu cliente más valioso deja de ser una persona y se convierte en un agente de IA que nunca duerme?",
+     "desc": "Bloomberg lanzó Enterprise MCP, una capa que permite a agentes de IA de sus clientes consultar directamente más de 100 millones de valores y 50,000 campos de datos licenciados, sin pasar por la terminal humana de 24,000 dólares al año que durante décadas fue el corazón del negocio.",
      "foto": null}
   ]
 }
