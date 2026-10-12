@@ -39,12 +39,19 @@ jobs:
         id: nota
         if: github.event_name == 'push'
         run: |
-          # Toma el .md nuevo/modificado en content/blog en este push (si hay
-          # varios, el primero). Fijar el slug evita que, si otro push a main
-          # llega casi al mismo tiempo y gana la carrera de despliegues en
-          # Vercel, el aviso termine tomando "la nota más reciente" equivocada
-          # de un deploy momentáneamente desactualizado.
-          archivo=$(git diff --name-only HEAD^ HEAD -- 'content/blog/*.md' | head -1)
+          # Toma el .md NUEVO (--diff-filter=A, nunca uno editado) en content/blog
+          # en este push. Un mismo commit a veces también edita notas viejas (ej.
+          # quitarles destacada:true al marcar una nueva como Editor's Pick) — si
+          # se tomara cualquier archivo tocado, el slug podía terminar siendo esa
+          # nota vieja en vez de la nueva, y como esa nota vieja ya se había
+          # avisado antes, el aviso completo (incl. Facebook/LinkedIn) se omitía
+          # por "duplicado" sin que nadie lo notara. Filtrar por archivos
+          # agregados evita ese caso. Si hay varios nuevos, el primero. Fijar el
+          # slug evita que, si otro push a main llega casi al mismo tiempo y gana
+          # la carrera de despliegues en Vercel, el aviso termine tomando "la
+          # nota más reciente" equivocada de un deploy momentáneamente
+          # desactualizado.
+          archivo=$(git diff --name-only --diff-filter=A HEAD^ HEAD -- 'content/blog/*.md' | head -1)
           slug=$(basename "$archivo" .md)
           echo "slug=$slug" >> "$GITHUB_OUTPUT"
           echo "Nota detectada: $slug"
