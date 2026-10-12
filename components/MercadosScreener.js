@@ -134,6 +134,11 @@ export default function MercadosScreener() {
   const [fechaFin, setFechaFin] = useState("");
   const [filtros, setFiltros] = useState(FILTROS_INICIALES);
   const [filtrosAbiertos, setFiltrosAbiertos] = useState(false);
+  // Histórico OHLCV completo, pedido bajo demanda solo para los activos que
+  // se marcan en el comparador (ver /api/mercados/historial) — con el
+  // universo ampliado no se puede mandar 5 años de velas de todos los
+  // activos en la carga inicial de la página.
+  const [historiales, setHistoriales] = useState({});
 
   useEffect(() => {
     fetch("/api/mercados/screener")
@@ -141,6 +146,19 @@ export default function MercadosScreener() {
       .then(setData)
       .catch(() => setData({ rows: [] }));
   }, []);
+
+  useEffect(() => {
+    const faltantes = seleccion.filter((s) => !historiales[s]);
+    if (!faltantes.length) return;
+    faltantes.forEach((symbol) => {
+      fetch(`/api/mercados/historial?symbol=${encodeURIComponent(symbol)}`)
+        .then((r) => r.json())
+        .then(({ historial }) => {
+          if (historial) setHistoriales((prev) => ({ ...prev, [symbol]: historial }));
+        })
+        .catch(() => {});
+    });
+  }, [seleccion, historiales]);
 
   function cambiarModo(id) {
     setModo(id);
@@ -155,9 +173,10 @@ export default function MercadosScreener() {
     return data.rows
       .filter((r) => r.disponible)
       .map((r) => {
-        if (horizonte !== "personalizado" || !fechaInicio || !fechaFin || !r.historial) return r;
-        const fechas = r.historial.map((h) => h[0]);
-        const cierres = r.historial.map((h) => h[4]);
+        const historial = historiales[r.symbol];
+        if (horizonte !== "personalizado" || !fechaInicio || !fechaFin || !historial) return r;
+        const fechas = historial.map((h) => h[0]);
+        const cierres = historial.map((h) => h[4]);
         return { ...r, _retornoPersonalizado: retornoEntreFechas(cierres, fechas, fechaInicio, fechaFin) };
       })
       .filter((r) => {
@@ -176,7 +195,7 @@ export default function MercadosScreener() {
         if (filtros.atrMax !== "" && (ind.atrPct == null || ind.atrPct > Number(filtros.atrMax))) return false;
         return true;
       });
-  }, [data, busqueda, filtros, horizonte, fechaInicio, fechaFin]);
+  }, [data, busqueda, filtros, horizonte, fechaInicio, fechaFin, historiales]);
 
   function toggle(symbol) {
     setSeleccion((prev) => {
@@ -190,9 +209,10 @@ export default function MercadosScreener() {
     return <p className="screener-cargando">Cargando precios en vivo…</p>;
   }
 
-  const seleccionadas = (data.rows || []).filter(
-    (r) => seleccion.includes(r.symbol) && r.historial?.length > 1
-  );
+  const seleccionadas = (data.rows || [])
+    .filter((r) => seleccion.includes(r.symbol) && historiales[r.symbol]?.length > 1)
+    .map((r) => ({ ...r, historial: historiales[r.symbol] }));
+  const cargandoComparador = seleccion.length > seleccionadas.length;
   const horizonteActivo = HORIZONTES.find((h) => h.id === horizonte) || HORIZONTES[1];
   const filtrosActivos = Object.entries(filtros).filter(([k, v]) => v !== FILTROS_INICIALES[k]).length;
 
@@ -248,7 +268,12 @@ export default function MercadosScreener() {
           </label>
           {!fechaInicio || !fechaFin ? (
             <span className="screener-horizonte-aviso">Elige ambas fechas para calcular el retorno del periodo.</span>
-          ) : null}
+          ) : (
+            <span className="screener-horizonte-aviso">
+              Solo se calcula para los activos marcados en el comparador de abajo (pedir 5 años de histórico de
+              los ~94 activos del screener de golpe sería demasiado peso) — el resto muestra "—" hasta que los marques.
+            </span>
+          )}
         </div>
       )}
 
@@ -371,6 +396,8 @@ export default function MercadosScreener() {
         sobre el nombre de cualquier columna para ver qué mide y cómo se calcula. Marca hasta {MAX_COMPARAR} activos
         en la columna de la izquierda para compararlos abajo.
       </p>
+
+      {cargandoComparador && <p className="screener-cargando">Cargando histórico de los activos marcados…</p>}
 
       {seleccionadas.length > 0 && (
         <Comparador
