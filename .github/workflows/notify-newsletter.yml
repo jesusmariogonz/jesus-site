@@ -86,6 +86,20 @@ jobs:
             respuesta=$(curl -sf "$url")
             echo "$respuesta"
             if echo "$respuesta" | grep -q '"enviado":"'; then
+              # Red flag de que esto volvió a pasar (por ESTA u OTRA causa):
+              # en un push automático (nota recién creada), "canales_enviados"
+              # vacío significa que TODO se omitió por "ya avisado antes" — eso
+              # solo tiene sentido si el slug detectado es, de hecho, una nota
+              # vieja (el bug que pasó con Rodeo Saltillo), nunca con una nota
+              # genuinamente nueva. En vez de salir en silencio con éxito, se
+              # marca como fallo del job para que aparezca en rojo en Actions
+              # y dispare el correo de notificación de fallo de GitHub — así
+              # no depende de que alguien note manualmente que faltó el post
+              # en Facebook/LinkedIn.
+              if [ "${{ github.event_name }}" = "push" ] && echo "$respuesta" | grep -q '"canales_enviados":\[\]'; then
+                echo "::error::Slug '$slug' detectado como nota nueva, pero el endpoint dice que TODOS los canales ya se habían avisado antes (duplicado). Esto normalmente significa que se detectó el slug equivocado (revisa el paso 'Detectar la nota de este push') — la nota real probablemente NO se publicó en Facebook/LinkedIn. Corrige la causa y vuelve a disparar este workflow a mano (workflow_dispatch) con el slug correcto y force=true."
+                exit 1
+              fi
               exit 0
             fi
             echo "Todavía no está desplegada (intento $intento/8), reintentando en 30s..."
