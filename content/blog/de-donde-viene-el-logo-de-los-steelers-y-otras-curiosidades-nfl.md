@@ -3,7 +3,7 @@ titulo: 'El logo de los Steelers no se diseñó para ellos, y solo lo traen de u
 fecha: 2026-10-04
 categoria: opinion
 mundo: notas-de-campo
-destacada: true
+destacada: false
 tags:
   - nfl
   - steelers

@@ -3,7 +3,7 @@ titulo: 'El trenazo de Saltillo: la peor tragedia ferroviaria de México, 54 añ
 fecha: 2026-10-05
 categoria: opinion
 mundo: notas-de-campo
-destacada: true
+destacada: false
 oculta: true
 tags:
   - trenazo de saltillo

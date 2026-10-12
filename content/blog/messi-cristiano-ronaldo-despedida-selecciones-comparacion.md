@@ -3,7 +3,7 @@ titulo: 'Messi se despidió con 85,000 personas y un gol de penal. Ronaldo se de
 fecha: 2026-10-07
 categoria: opinion
 mundo: notas-de-campo
-destacada: true
+destacada: false
 tags:
   - lionel messi
   - cristiano ronaldo
