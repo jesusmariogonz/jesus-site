@@ -10,7 +10,7 @@ tags:
   - CPI
   - Treasuries
   - Russell 2000
-resumen: 'Wall Street cerró el viernes con su tercer récord de la semana en el S&P 500 (7,811.54, +0.6%), sin que la cobertura disponible identifique un catalizador específico más allá de continuidad del rebote tecnológico. El Russell 2000 subió en el día pero cerró la semana completa en rojo. El huracán Simón se acercaba a Jalisco/Colima el fin de semana sin confirmación todavía de su landfall real.'
+resumen: 'Wall Street cerró el lunes con una rotación hacia valor: el Dow Jones subió 0.38% mientras el S&P 500 y el Nasdaq cedieron ligeramente, lastrados por una caída de 3.9% en Micron. El petróleo subió por tensión en Medio Oriente, impulsando al sector energético. El huracán Simón, de categoría 4, dejó inundaciones y daños severos en Jalisco y Colima durante el fin de semana, aunque persiste divergencia entre fuentes sobre si llegó a tocar tierra formalmente.'
 imagen: /blog/portadas/mercados-hoy-fija.jpg
 socialImagen: /blog/social/pulso-mercado-daily-2026-10-12.jpg
 ---
@@ -19,29 +19,31 @@ socialImagen: /blog/social/pulso-mercado-daily-2026-10-12.jpg
 
 | Activo | Nivel | Cambio |
 |---|---|---|
-| S&P 500 | 7,811.54 | +0.60% (+46.18 pts) |
-| Nasdaq Composite | 27,366.17 | +0.63% (+172.83 pts) |
-| Russell 2000 | 2,806.98 | +0.46% en el día; -0.9% en la semana |
-| Dow Jones | 51,654.95 | +0.82% (+423.31 pts) |
-| VIX | — | No localizamos con confianza el cierre del viernes 9 de octubre |
-| S&P/BMV IPC | — | No localizamos con confianza el cierre del viernes 9 de octubre |
-| USD/MXN | — | No localizamos con confianza el cierre/fix del viernes 9 de octubre |
-| US 10Y | 5.24% | Según AP/La Nación; una fuente distinta ubicó el 10Y en 5.31% para el lunes 5 de octubre, fecha distinta — discrepancia sin resolver |
-| WTI | — | No localizamos con confianza el cierre del viernes 9 de octubre |
+| S&P 500 | 7,807.24 | -0.06% |
+| Nasdaq Composite | 27,245.90 | -0.44% |
+| Russell 2000 | — | No localizamos con confianza el cierre de hoy |
+| Dow Jones | 51,850.55 | +0.38% (+195.60 pts) |
+| VIX | — | No localizamos con confianza el cierre de hoy ni del viernes 9 de octubre |
+| S&P/BMV IPC | — | No localizamos con confianza el cierre de hoy ni del viernes 9 de octubre |
+| USD/MXN | — | No localizamos con confianza el cierre de hoy; el dato del viernes (18.4380) proviene de una fuente etiquetada como generada por IA, no se usa |
+| US 10Y | — | El mercado de bonos de EU permaneció cerrado hoy por el feriado de Columbus Day; no hubo sesión |
+| WTI | ≈$106 | Referencia de mediodía por tensión en Medio Oriente; no confirmamos el nivel exacto de cierre |
 
 ## Market Regime
 
-Wall Street cerró la semana pasada con su tercer récord de cierre en pocos días: el S&P 500 subió 0.60% hasta 7,811.54 puntos el viernes, el Nasdaq Composite 0.63% y el Dow Jones 0.82%, mientras el Russell 2000 avanzó 0.46% en el día pero terminó la semana completa con una caída de 0.9%. La cobertura disponible describe el viernes como una continuación del rebote tecnológico que ya se había visto el jueves, sin que ninguna fuente consultada identifique un catalizador de noticia específico y nuevo para esa sesión puntual —es relevante decirlo así de explícito, en vez de inventar una narrativa causal donde la evidencia solo muestra continuidad de tendencia.
+Wall Street cerró el lunes con una rotación hacia valor: el Dow Jones subió 0.38% hasta 51,850.55 puntos, su tercera sesión positiva consecutiva, mientras el S&P 500 cedió 0.06% a 7,807.24 y el Nasdaq Composite cayó 0.44% a 27,245.90, lastrado por una caída de 3.9% en Micron Technology. Nueve de los once sectores del S&P 500 cerraron en verde, con energía a la cabeza tras un repunte del petróleo vinculado a tensión geopolítica en Medio Oriente; tecnología fue el sector más débil del día. El mercado de bonos de Estados Unidos permaneció cerrado por el feriado de Columbus Day, lo que también redujo liquidez en FX y futuros según una fuente. De fondo, la atención ya se concentraba en el arranque de la temporada de reportes bancarios, con JPMorgan, Wells Fargo y, según cobertura de calendarios de terceros sin confirmación directa de cada empresa, Goldman Sachs y Citigroup reportando mañana martes.
 
-Scorecard: Trend ↑ (tercer récord de cierre de la semana en el S&P 500) · Breadth → (Russell 2000 positivo en el día pero negativo en la semana, señal mixta de participación) · Momentum ↑ · Volatility — (sin dato confiable del VIX) · Rates → (10Y en 5.24%, con discrepancia de fuente sin resolver) · USD — (sin dato confiable)
+Scorecard: Trend → (Dow al alza, S&P/Nasdaq marginalmente a la baja, señal mixta entre índices) · Breadth ↑ (9 de 11 sectores del S&P 500 en verde) · Momentum ↓ (en tecnología, por Micron) · Volatility — (sin dato confiable del VIX) · Rates — (mercado de bonos cerrado por feriado) · USD — (sin dato confiable)
 
 ## Qué importó hoy
 
-**El S&P 500 marcó su tercer récord de cierre reciente, pero sin un catalizador de noticia identificable para la sesión específica del viernes.** La cobertura disponible enmarca el movimiento como continuidad del rebote que ya se había visto el jueves tras la corrección en semiconductores de IA, no como respuesta a un evento nuevo. Vale la pena ser honestos sobre esa ausencia de causa puntual en vez de forzar una explicación que las fuentes no respaldan. Horizonte: Swing.
+**El mercado roto hacia valor: el Dow subió mientras el S&P 500 y el Nasdaq cedieron ligeramente, en su tercera sesión consecutiva de ganancias para el industrial.** La debilidad en tecnología estuvo concentrada en un nombre específico —Micron Technology cayó 3.9%— más que en una reevaluación generalizada del sector, en un patrón similar al que ya se había visto la semana pasada con Nvidia y AMD. Horizonte: Swing.
 
-**El Russell 2000 mostró una señal mixta: subió en el día pero cerró la semana completa en terreno negativo (-0.9%).** Esa divergencia entre el desempeño diario y el semanal del índice de capitalización pequeña es un dato que vale la pena vigilar como termómetro de participación de mercado más amplia, más allá del titular de récords en los tres índices grandes. Horizonte: Position.
+**El petróleo subió por tensión geopolítica en Medio Oriente, con el crudo cerca de 106 dólares por barril según una referencia de mediodía, impulsando a la energía como el sector de mejor desempeño del día.** Nueve de los once sectores del S&P 500 cerraron en verde, lo que sugiere una sesión de participación amplia a pesar de que los tres índices grandes mostraron señales mixtas entre sí. Horizonte: Position.
 
-**El huracán Simón se acercaba a las costas de Jalisco y Colima durante el fin de semana, con pronósticos que lo ubicaban entre categoría 2 y 4 al momento del landfall, sin que hasta el momento de cerrar esta edición exista confirmación del impacto real, su categoría final ni cifras de daños.** Jalisco había suspendido clases en 22 municipios costeros de forma preventiva. No se identificó, en las fuentes consultadas, un efecto de mercado directo y verificable de este evento todavía. Horizonte: Position.
+**El huracán Simón, de categoría 4, dejó inundaciones y daños severos confirmados en Jalisco y Colima durante el fin de semana —desbordamiento de la laguna de Cuyutlán, cientos de evacuados, carreteras bloqueadas—, aunque las fuentes consultadas divergen sobre si el sistema llegó a tocar tierra formalmente o se mantuvo costa afuera.** En Guerrero, afectado de forma indirecta, se reportó una persona muerta y 112 viviendas dañadas. No identificamos, en las fuentes consultadas, un efecto de mercado directo y verificable de este evento todavía. Horizonte: Position.
+
+**El mercado de bonos de Estados Unidos permaneció cerrado hoy por el feriado de Columbus Day, sin sesión de Treasuries.** La actividad bursátil (NYSE/Nasdaq) operó con normalidad, pero la ausencia de referencia de tasas durante el día redujo la liquidez en FX y futuros según una fuente consultada. Horizonte: Position.
 
 ## Macro
 
@@ -49,15 +51,15 @@ No hay publicaciones macroeconómicas de Estados Unidos agendadas para hoy lunes
 
 ## Tasas y bonos
 
-El Treasury a 10 años cerró el viernes en 5.24%, según AP/La Nación —aunque una fuente distinta (FXStreet) había citado 5.31% para el lunes 5 de octubre, una fecha distinta dentro de la misma semana, lo que deja una discrepancia entre fuentes sin resolver sobre la trayectoria exacta del rendimiento durante esos días. No localizamos con confianza los niveles de cierre de los Treasuries a 2 y 30 años para el viernes. El mercado de bonos de EU permanece cerrado hoy por el feriado de Columbus Day.
+El mercado de bonos de Estados Unidos permaneció cerrado hoy por el feriado de Columbus Day —no hubo sesión de Treasuries, por lo que no existe un "nivel de cierre" que reportar para el 10, 2 o 30 años. El cierre del viernes 9 de octubre sigue sin confirmarse para los plazos de 2 y 30 años; el 10Y de esa fecha (5.24%, AP/La Nación) mantiene una discrepancia sin resolver contra una cifra de 5.31% citada por otra fuente para el lunes 5 de octubre, una fecha distinta.
 
 ## FX y commodities
 
-No localizamos con confianza el cierre del viernes para USD/MXN, el S&P/BMV IPC, WTI, Brent, oro ni cobre. El dato más reciente disponible para el IPC es del 7 de octubre (~64,653 puntos, -1.01%, con una cifra provisional ligeramente distinta de 64,461 según otra fuente), y para USD/MXN del mismo día (~17.98 pesos por dólar) —ambos ya desactualizados respecto al cierre del viernes que esta edición busca reportar.
+No localizamos con confianza el cierre de hoy para USD/MXN, el S&P/BMV IPC, WTI, Brent, oro ni cobre. Para el viernes 9 de octubre, el dato de USD/MXN que circuló (18.4380, -1.4% en el día) proviene de una fuente etiquetada explícitamente como "contenido generado por IA" y no se usa aquí sin verificación independiente; el dato oficial más reciente de Banxico es el FIX del jueves 8 de octubre, 18.1128 pesos por dólar. El petróleo subió hoy por tensión geopolítica en Medio Oriente, con una referencia de mediodía cerca de 106 dólares por barril, sin confirmación del nivel exacto de cierre.
 
 ## Sectores
 
-No localizamos con confianza un desglose sectorial específico para la sesión del viernes 9 de octubre más allá de la descripción general de "rebote tecnológico" que domina la cobertura disponible.
+Nueve de los once sectores del S&P 500 cerraron en verde hoy, con energía a la cabeza por el repunte del petróleo y tecnología como el más débil, lastrado por la caída de 3.9% en Micron Technology. La cobertura disponible describe esto como una rotación hacia valor, consistente con el Dow Jones superando a los índices más cargados de tecnología.
 
 ## Swing
 
@@ -76,33 +78,38 @@ No localizamos con confianza evidencia de un cambio estructural nuevo para esta 
 | Empresa | Ticker | Fecha | Qué observar |
 |---|---|---|---|
 | JPMorgan Chase | JPM | Martes 13-oct | Primer gran banco en reportar el trimestre, referencia para el resto del sector financiero |
-| Goldman Sachs / Wells Fargo / Citigroup | GS / WFC / C | — | No localizamos con confianza fechas específicas confirmadas directamente por cada empresa; cobertura de terceros las ubica también en la semana del 13 de octubre |
+| Wells Fargo | WFC | Martes 13-oct, ~7:00am ET | Confirmado; llamada con analistas a las 10:00am ET |
+| Goldman Sachs / Citigroup | GS / C | Martes 13-oct (probable) | Ubicadas por calendarios de eventos de terceros en la misma fecha que JPMorgan y Wells Fargo, sin confirmación directa de relaciones con inversionistas de cada empresa |
 
 ## Riesgos
 
-El riesgo principal de esta edición sigue siendo informativo en varios activos: no pudimos verificar VIX, S&P/BMV IPC, USD/MXN, WTI, Brent, oro ni cobre para el cierre del viernes, pese a confirmar con razonable solidez los tres índices accionarios principales y el Russell 2000. En el fondo del mercado, el riesgo real a vigilar es la ausencia de un catalizador identificable para el rally del viernes —un mercado que sigue subiendo sin una razón clara puede ser señal de salud (demanda amplia) o de exceso de confianza (nadie está cuestionando la tendencia), y esta edición no tiene evidencia suficiente para distinguir entre ambas lecturas todavía.
+El riesgo principal de esta edición sigue siendo informativo en varios activos: no pudimos verificar Russell 2000, VIX, S&P/BMV IPC ni USD/MXN para el cierre de hoy, y varios pendientes del viernes (VIX, Treasuries de 2 y 30 años, Brent, oro, cobre) siguen sin resolverse. En el fondo del mercado, el riesgo real a vigilar es la divergencia entre fuentes sobre el huracán Simón —si de verdad tocó tierra o se mantuvo costa afuera— y si la rotación hacia valor de hoy (Dow arriba, Nasdaq abajo por un solo nombre) es el inicio de un patrón más amplio o solo ruido de una sesión con bonos cerrados por feriado.
 
 ## Qué vigilar mañana
 
-- Earnings de JPMorgan el martes 13 de octubre, antes de la apertura.
-- Confirmación del impacto real del huracán Simón en Jalisco y Colima, incluyendo categoría de landfall y cualquier cifra de daños.
-- Confirmación de los niveles de cierre del viernes para VIX, IPC, USD/MXN, WTI y Treasuries de corto y largo plazo.
-- Si la divergencia entre el Russell 2000 y los índices de gran capitalización se profundiza o se revierte.
-- Reacción del mercado de bonos al reabrir tras el feriado de Columbus Day.
+- Earnings de JPMorgan y Wells Fargo el martes 13 de octubre, antes de la apertura, con Goldman Sachs y Citigroup probablemente el mismo día.
+- Reapertura del mercado de bonos de EU tras el feriado de Columbus Day, y si el 10Y retoma la tendencia previa o la rompe.
+- Clarificación sobre el huracán Simón: si finalmente se confirma o descarta el landfall formal en Jalisco/Colima, y cifras consolidadas de daños.
+- Si Micron y el resto de semiconductores extienden la debilidad de hoy o la sesión fue un evento aislado.
+- Confirmación de los niveles de cierre de hoy para Russell 2000, VIX, IPC y USD/MXN.
 
 ## Pendientes de esta edición
 
-- VIX: no localizamos con confianza el cierre del viernes 9 de octubre.
-- S&P/BMV IPC: no localizamos con confianza el cierre del viernes 9 de octubre; el dato más reciente disponible es del 7 de octubre.
-- USD/MXN: no localizamos con confianza el cierre/fix del viernes 9 de octubre; el dato más reciente disponible es del 7 de octubre.
-- US Treasury a 2 y 30 años: no localizamos con confianza el cierre del viernes 9 de octubre. El 10Y en 5.24% (AP/La Nación) tiene una discrepancia sin resolver contra una cifra de 5.31% citada por otra fuente para una fecha distinta de la misma semana.
-- WTI, Brent, oro y cobre: no localizamos con confianza cierres del viernes 9 de octubre.
-- Huracán Simón: pronóstico de landfall entre categoría 2 y 4 cerca de Jalisco/Colima durante el fin de semana, sin confirmación todavía de si tocó tierra, en qué categoría, ni de cifras de daños.
-- Fechas de earnings de Goldman Sachs, Wells Fargo y Citigroup: ubicadas por cobertura de terceros en la semana del 13 de octubre, sin confirmación directa de cada empresa.
+- Russell 2000: no localizamos con confianza el cierre de hoy.
+- VIX: no localizamos con confianza el cierre de hoy ni del viernes 9 de octubre.
+- S&P/BMV IPC: no localizamos con confianza el cierre de hoy ni del viernes 9 de octubre.
+- USD/MXN: no localizamos con confianza el cierre de hoy. El dato del viernes (18.4380) proviene de una fuente etiquetada como contenido generado por IA y no se usa; el dato oficial más reciente es el FIX de Banxico del jueves 8 de octubre (18.1128).
+- US Treasury a 2 y 30 años: no localizamos con confianza el cierre del viernes 9 de octubre. El 10Y del viernes (5.24%, AP/La Nación) mantiene una discrepancia sin resolver contra 5.31% citado por otra fuente para el lunes 5 de octubre.
+- WTI: nivel de cierre exacto de hoy sin confirmar; solo una referencia de mediodía (~$106) por tensión en Medio Oriente.
+- Brent, oro y cobre: no localizamos con confianza cierres del viernes 9 de octubre.
+- Huracán Simón: categoría 4 confirmada y daños severos en Jalisco, Colima y, de forma indirecta, Guerrero, pero las fuentes divergen sobre si el sistema llegó a tocar tierra formalmente.
+- Fecha de earnings de Goldman Sachs y Citigroup: ubicada por calendarios de terceros en la misma fecha que JPMorgan y Wells Fargo, sin confirmación directa de cada empresa.
 
 ## Fuentes
 
 - Reporte "How major US stock indexes fared Friday" (Associated Press), replicado en [La Nación](https://www.lanacion.com.ar/usa/how-major-us-stock-indexes-fared-friday-1092026-nid09102026/) — cierre del S&P 500, Dow Jones, Nasdaq Composite y Russell 2000 del 9 de octubre, y Treasury a 10 años en 5.24%
-- Cobertura de calendario económico "week ahead" (agregadores financieros) para CPI, PPI, ventas minoristas y earnings bancarios de la semana del 12 de octubre
-- Cobertura sobre el huracán Simón en medios mexicanos (El Imparcial, SMN) del 8-9 de octubre, sin confirmación posterior disponible al cierre de esta edición
-- Rio Times — cierre del S&P/BMV IPC del 7 de octubre (cifra provisional)
+- Cobertura de mercado del lunes 12 de octubre (Yahoo Finance, Fool.com vía agregación) — cierre de S&P 500, Nasdaq Composite y Dow Jones, caída de Micron Technology, rotación sectorial y referencia de WTI cerca de $106
+- Cobertura sobre el cierre del mercado de bonos de EU por el feriado de Columbus Day
+- Cobertura cruzada sobre el huracán Simón (Telemundo, La Jornada, Meteored, El Congresista) — categoría 4, daños en Jalisco, Colima y Guerrero, divergencia sobre el landfall formal
+- Banco de México — tipo de cambio FIX del 8 de octubre (18.1128 pesos por dólar)
+- Calendarios de earnings de terceros (akrostec.com, Hudson Labs) para Wells Fargo, Goldman Sachs y Citigroup
