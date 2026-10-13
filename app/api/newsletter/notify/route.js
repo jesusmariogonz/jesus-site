@@ -145,6 +145,13 @@ export async function GET(request) {
   if (canales.includes("kindle")) {
     if (await puedeEnviar("kindle")) {
       try {
+        // `nota=am|pm` distingue las dos ediciones diarias de Pulso de
+        // Mercado Daily (mismo slug, mismo titulo) cuando ambas se mandan al
+        // Kindle el mismo día — ver sendKindleCopy (lib/resend.js) para el
+        // porqué. Para cualquier otra nota, este parámetro no aplica.
+        const notaParam = (searchParams.get("nota") || "").toLowerCase();
+        const etiqueta =
+          notaParam === "am" ? "Edición de la mañana" : notaParam === "pm" ? "Edición de cierre" : null;
         // Falla independiente del newsletter: si el Kindle rechaza el
         // remitente o no está configurado, no debe tumbar el aviso ya enviado.
         await sendKindleCopy({
@@ -156,6 +163,7 @@ export async function GET(request) {
           categoriaNombre: CATEGORIAS[ultima.categoria] || ultima.categoria,
           fecha: formatFecha(ultima.fecha),
           minutos: calcularMinutos(ultima.content || ""),
+          etiqueta,
         });
         enviados.push("kindle");
       } catch (kindleErr) {

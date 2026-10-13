@@ -64,24 +64,46 @@ jobs:
           echo "slug=$slug" >> "$GITHUB_OUTPUT"
           echo "Nota detectada: $slug"
 
-      - name: Detectar actualización de Pulso de Mercado Daily (para Kindle)
-        id: pulso_kindle
+      - name: Detectar nota nueva de Pulso de Mercado Daily (edición AM, para Kindle)
+        id: pulso_kindle_am
         if: github.event_name == 'push'
         run: |
-          # La corrida PM de Pulso de Mercado Daily EDITA (no agrega) la nota
-          # del día con el cierre real de mercado — ese es el contenido final
-          # que vale la pena mandar al Kindle, no la versión matutina a medio
-          # confirmar. Por eso usa --diff-filter=M (editado), a diferencia del
-          # paso de arriba que usa --diff-filter=A (agregado).
+          # La corrida AM crea (--diff-filter=A) la nota del día. El usuario
+          # quiere las DOS ediciones en su Kindle, distinguibles entre sí —
+          # ver el parámetro `nota=am` abajo y `etiqueta` en lib/resend.js.
+          archivo=$(git diff --name-only --diff-filter=A HEAD^ HEAD -- 'content/blog/pulso-mercado-daily-*.md' | head -1)
+          slug=$(basename "$archivo" .md)
+          echo "slug=$slug" >> "$GITHUB_OUTPUT"
+          [ -n "$slug" ] && echo "Nota nueva de Pulso de Mercado Daily detectada para Kindle (AM): $slug"
+
+      - name: Avisar a Kindle la edición AM de Pulso de Mercado Daily
+        if: github.event_name == 'push' && steps.pulso_kindle_am.outputs.slug != ''
+        run: |
+          url="https://jgonzalez.app/api/newsletter/notify?secret=${{ secrets.NEWSLETTER_NOTIFY_SECRET }}&slug=${{ steps.pulso_kindle_am.outputs.slug }}&canal=kindle&nota=am&force=true"
+          respuesta=$(curl -sf "$url")
+          echo "$respuesta"
+
+      - name: Detectar actualización de Pulso de Mercado Daily (edición PM, para Kindle)
+        id: pulso_kindle_pm
+        if: github.event_name == 'push'
+        run: |
+          # La corrida PM EDITA (--diff-filter=M) la nota del día con el
+          # cierre real de mercado — contenido distinto al de la edición AM
+          # de más arriba, por eso se manda como una segunda copia aparte.
           archivo=$(git diff --name-only --diff-filter=M HEAD^ HEAD -- 'content/blog/pulso-mercado-daily-*.md' | head -1)
           slug=$(basename "$archivo" .md)
           echo "slug=$slug" >> "$GITHUB_OUTPUT"
-          [ -n "$slug" ] && echo "Actualización de Pulso de Mercado Daily detectada para Kindle: $slug"
+          [ -n "$slug" ] && echo "Actualización de Pulso de Mercado Daily detectada para Kindle (PM): $slug"
 
-      - name: Avisar a Kindle la actualización de Pulso de Mercado Daily
-        if: github.event_name == 'push' && steps.pulso_kindle.outputs.slug != ''
+      - name: Avisar a Kindle la edición PM (cierre) de Pulso de Mercado Daily
+        if: github.event_name == 'push' && steps.pulso_kindle_pm.outputs.slug != ''
         run: |
-          url="https://jgonzalez.app/api/newsletter/notify?secret=${{ secrets.NEWSLETTER_NOTIFY_SECRET }}&slug=${{ steps.pulso_kindle.outputs.slug }}&canal=kindle"
+          # force=true: el AM y el PM mandan el MISMO slug al MISMO canal
+          # "kindle" el mismo día — sin esto, la deduplicación por
+          # (slug, canal) de app/api/newsletter/notify/route.js bloquearía
+          # la segunda copia (PM) pensando que es un reenvío del mismo
+          # aviso, cuando en realidad el usuario quiere ambas ediciones.
+          url="https://jgonzalez.app/api/newsletter/notify?secret=${{ secrets.NEWSLETTER_NOTIFY_SECRET }}&slug=${{ steps.pulso_kindle_pm.outputs.slug }}&canal=kindle&nota=pm&force=true"
           respuesta=$(curl -sf "$url")
           echo "$respuesta"
 
