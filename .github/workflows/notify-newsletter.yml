@@ -75,6 +75,7 @@ jobs:
           slug=$(basename "$archivo" .md)
           echo "slug=$slug" >> "$GITHUB_OUTPUT"
           [ -n "$slug" ] && echo "Nota nueva de Pulso de Mercado Daily detectada para Kindle (AM): $slug"
+          true
 
       - name: Avisar a Kindle la edición AM de Pulso de Mercado Daily
         if: github.event_name == 'push' && steps.pulso_kindle_am.outputs.slug != ''
@@ -94,6 +95,7 @@ jobs:
           slug=$(basename "$archivo" .md)
           echo "slug=$slug" >> "$GITHUB_OUTPUT"
           [ -n "$slug" ] && echo "Actualización de Pulso de Mercado Daily detectada para Kindle (PM): $slug"
+          true
 
       - name: Avisar a Kindle la edición PM (cierre) de Pulso de Mercado Daily
         if: github.event_name == 'push' && steps.pulso_kindle_pm.outputs.slug != ''
