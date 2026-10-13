@@ -10,7 +10,7 @@ tags:
   - Earnings bancarios
   - Huracán Simón
   - CPI
-resumen: 'JPMorgan y Goldman Sachs abrieron la temporada de resultados bancarios del tercer trimestre esta mañana; Goldman superó el consenso de analistas con un EPS de $17.01. Wells Fargo y Citigroup también reportaron, aunque sus cifras exactas de utilidad por acción no están confirmadas todavía. El lunes cerró con una rotación hacia valor, con el Dow al alza y el Nasdaq a la baja por Micron.'
+resumen: 'La temporada de resultados bancarios del tercer trimestre dejó un panorama mixto: Goldman Sachs ($17.01), Wells Fargo ($1.87) y Citigroup ($2.85) superaron el consenso de analistas, mientras JPMorgan tuvo un raro tropiezo con un EPS de $5.57 frente a un consenso de $5.90. La reacción bursátil a estos reportes y el cierre de mercado de hoy todavía no se pudieron confirmar con una fuente en tiempo real.'
 imagen: /blog/portadas/mercados-hoy-fija.jpg
 socialImagen: /blog/social/pulso-mercado-daily-2026-10-13.jpg
 ---
@@ -31,19 +31,19 @@ socialImagen: /blog/social/pulso-mercado-daily-2026-10-13.jpg
 
 ## Market Regime
 
-La sesión del lunes cerró con una rotación hacia valor —el Dow Jones subió 0.38% en su tercera sesión consecutiva al alza, mientras el S&P 500 y el Nasdaq cedieron ligeramente, este último lastrado por una caída de 3.9% en Micron Technology—. Hoy el mercado abre con la atención puesta en el arranque formal de la temporada de resultados bancarios: JPMorgan y Goldman Sachs ya reportaron antes de la apertura, con Wells Fargo y Citigroup también publicando sus cifras del tercer trimestre, aunque la reacción bursátil a ninguno de los cuatro reportes está confirmada todavía con una fuente de mercado en tiempo real.
+La temporada de resultados bancarios del tercer trimestre abrió hoy con un panorama mixto, no el barrido positivo que el reporte de Goldman Sachs sugería esta mañana: Goldman ($17.01), Wells Fargo ($1.87) y Citigroup ($2.85) superaron su consenso de analistas respectivo, mientras JPMorgan tuvo un tropiezo poco frecuente, con un EPS de $5.57 frente a un consenso de $5.90. No pudimos confirmar todavía, con una fuente de mercado en tiempo real, cómo reaccionaron las acciones de los cuatro bancos ni el cierre de los índices principales de hoy —la cobertura disponible al momento de escribir esta edición sigue centrada en el contenido de los reportes, no en la reacción bursátil del día.
 
-Scorecard: Trend → (cierre mixto del lunes, día de earnings bancarios en curso) · Breadth — (sin dato de hoy) · Momentum — (sin dato de hoy) · Volatility — (sin dato confiable del VIX) · Rates — (mercado de bonos reabre hoy tras el feriado) · USD — (sin dato confiable)
+Scorecard: Trend — (sin dato de cierre de hoy) · Breadth — (sin dato de hoy) · Momentum — (sin dato de hoy) · Volatility — (sin dato confiable del VIX) · Rates — (mercado de bonos reabrió hoy tras el feriado, sin nivel de cierre confirmado) · USD — (sin dato confiable)
 
 ## Qué importó hoy
 
-**Goldman Sachs superó el consenso de analistas con un EPS de $17.01, utilidad neta de $5,294 millones e ingresos netos de $18,679 millones, con un ROE anualizado de 18.7%.** El consenso previo citado por analistas rondaba entre $14.06 y $15.39 de EPS, lo que coloca el resultado de Goldman claramente por encima de lo esperado, aunque la reacción de la acción en el mercado no está confirmada todavía. Horizonte: Swing.
+**JPMorgan tuvo un tropiezo poco frecuente: reportó un EPS diluido de $5.57, por debajo del consenso de $5.90 citado por LSEG, pese a ingresos netos de $50,172 millones (+8% interanual) y utilidad neta de $15,305 millones (+6% interanual).** Excluyendo pérdidas en valores de aproximadamente $658 millones, el EPS ajustado habría sido de $5.75 —todavía por debajo del consenso—. Es el primer resultado de los cuatro grandes bancos que decepciona frente a expectativas en esta temporada. Horizonte: Swing.
 
-**JPMorgan reportó ingresos netos totales de $50,172 millones (+8% interanual) y utilidad neta de $15,305 millones (+6% interanual), aunque la cifra exacta de utilidad por acción no se pudo confirmar en el texto disponible del reporte.** El consenso previo rondaba entre $5.90 y $5.93 de EPS; sin ese dato específico confirmado, no se puede afirmar todavía si JPMorgan superó o no esa expectativa puntual. Horizonte: Swing.
+**Goldman Sachs, Wells Fargo y Citigroup, en cambio, superaron su consenso respectivo.** Wells Fargo reportó EPS diluido de $1.87 (utilidad neta de $5,951 millones, frente a $1.66 por acción en el mismo trimestre del año pasado), confirmado directamente contra su 8-K ante la SEC. Citigroup reportó EPS diluido de $2.85 frente a un consenso de $2.67, con ingresos de $23,800 millones que la propia CEO Jane Fraser describió como el mejor tercer trimestre de la empresa en una década. Horizonte: Swing.
 
-**Wells Fargo y Citigroup también publicaron sus reportes del tercer trimestre esta mañana, con Citigroup describiendo, según su propia comunicación, "el mejor ingreso de tercer trimestre en una década".** No logramos confirmar las cifras exactas de utilidad por acción de ninguno de los dos bancos frente a su consenso respectivo con una fuente que nos diera suficiente certeza. Horizonte: Position.
+**La reacción bursátil a estos cuatro reportes, y el cierre de los índices principales de hoy, siguen sin confirmación de una fuente de mercado en tiempo real al momento de cerrar esta edición.** Dado el patrón mixto —tres sorpresas positivas y una negativa entre los bancos más grandes del país—, la lectura real de cómo el mercado interpretó la temporada de resultados de hoy queda pendiente para la próxima edición. Horizonte: Position.
 
-**El huracán Simón sigue sin una confirmación clara de impacto en tierra firme.** Las fuentes consultadas describen una trayectoria cambiante —degradación a categoría 2 cerca de Cabo Corrientes la madrugada del lunes, con un posible impacto adicional hoy martes cerca de Mazatlán, Sinaloa—, sin cifras de daños consolidadas más allá de lo ya reportado en Guerrero (inundaciones, cortes de luz, sin víctimas mortales confirmadas). Horizonte: Position.
+**El huracán Simón sigue sin una confirmación clara de impacto en tierra firme.** Los pronósticos más recientes ubicaban su degradación a tormenta tropical con posible impacto cerca de Mazatlán, Sinaloa, alrededor del mediodía de hoy, sin que hayamos encontrado todavía un reporte posterior que confirme la categoría final del impacto ni cifras consolidadas de daños. Horizonte: Position.
 
 ## Macro
 
@@ -77,15 +77,15 @@ No localizamos con confianza evidencia de un cambio estructural nuevo para esta 
 
 | Empresa | Ticker | Fecha | Qué observar |
 |---|---|---|---|
+| JPMorgan Chase | JPM | Martes 13-oct (ya reportó) | EPS de $5.57 vs. consenso de $5.90 — raro tropiezo; reacción de la acción sin confirmar |
 | Goldman Sachs | GS | Martes 13-oct (ya reportó) | EPS de $17.01 confirmado, por encima de consenso; reacción de la acción sin confirmar |
-| JPMorgan Chase | JPM | Martes 13-oct (ya reportó) | Ingresos $50,172M y utilidad neta $15,305M confirmados; EPS exacto sin confirmar |
-| Wells Fargo | WFC | Martes 13-oct (ya reportó) | Ingresos +12% interanual confirmados; EPS y utilidad neta exactos sin confirmar |
-| Citigroup | C | Martes 13-oct (ya reportó) | CEO reporta "mejor ingreso de tercer trimestre en una década"; cifras exactas sin confirmar |
+| Wells Fargo | WFC | Martes 13-oct (ya reportó) | EPS de $1.87 (vs. $1.66 hace un año), confirmado contra su 8-K; reacción sin confirmar |
+| Citigroup | C | Martes 13-oct (ya reportó) | EPS de $2.85 vs. consenso de $2.67; mejor ingreso trimestral en una década según su CEO |
 | Morgan Stanley | MS | Miércoles 14-oct (estimado) | Complementa la lectura de Goldman sobre banca de inversión |
 
 ## Riesgos
 
-El riesgo principal de esta edición es informativo: no pudimos confirmar el EPS exacto de JPMorgan, Wells Fargo ni Citigroup, ni la reacción bursátil de ninguno de los cuatro bancos que ya reportaron hoy, pese a tener cifras duras de ingresos y utilidad neta para JPMorgan y un reporte completo para Goldman Sachs. En el fondo del mercado, el riesgo real a vigilar es si la fortaleza de Goldman es representativa del sector o una excepción, algo que solo se puede confirmar con los reportes todavía pendientes de reacción de mercado.
+El riesgo principal de esta edición sigue siendo informativo: no pudimos confirmar el cierre de mercado de hoy para ningún índice o activo, ni la reacción bursátil de los cuatro bancos que reportaron, pese a tener ya las cifras exactas de EPS de los cuatro. En el fondo del mercado, el riesgo real a vigilar es la divergencia dentro del propio sector bancario —JPMorgan decepcionando mientras Goldman, Wells Fargo y Citigroup superan expectativas— y si esa divergencia se extiende o se revierte cuando Morgan Stanley reporte mañana.
 
 ## Qué vigilar mañana
 
@@ -97,16 +97,18 @@ El riesgo principal de esta edición es informativo: no pudimos confirmar el EPS
 
 ## Pendientes de esta edición
 
-- Russell 2000, VIX, S&P/BMV IPC y USD/MXN: no localizamos con confianza el cierre del lunes 12 de octubre.
-- WTI: no localizamos con confianza el cierre exacto del lunes 12 de octubre, solo una referencia de mediodía (~$106).
-- US Treasury a 10 años: sin dato de apertura/cierre de hoy tras el feriado de Columbus Day del lunes.
-- EPS exacto de JPMorgan, Wells Fargo y Citigroup del tercer trimestre de 2026, y reacción bursátil de los cuatro bancos que reportaron hoy (JPMorgan, Goldman Sachs, Wells Fargo, Citigroup): sin confirmar con una fuente de mercado en tiempo real.
-- Huracán Simón: sin confirmación de impacto en tierra firme ni cifras de daños consolidadas más allá de lo ya reportado en Guerrero.
+- Cierre de mercado de hoy martes 13 de octubre: no localizamos con confianza niveles para S&P 500, Nasdaq Composite, Dow Jones, Russell 2000, VIX, S&P/BMV IPC, USD/MXN ni Treasury a 10 años —la cobertura indexada disponible al momento de escribir todavía no reflejaba el cierre de la sesión de hoy.
+- Russell 2000, VIX, S&P/BMV IPC, USD/MXN y WTI (cierre exacto) del lunes 12 de octubre: siguen sin confirmarse.
+- Reacción bursátil de JPMorgan, Goldman Sachs, Wells Fargo y Citigroup tras sus reportes de hoy: sin confirmar con una fuente de mercado en tiempo real.
+- EPS de JPMorgan ($5.57) y de Citigroup ($2.85): confirmados por cobertura de prensa financiera secundaria consistente entre fuentes, pero no pudimos verificarlos directamente contra el exhibit del 8-K en SEC EDGAR por una restricción de acceso a ese dominio en este entorno de trabajo.
+- Huracán Simón: sin confirmación de impacto en tierra firme en Sinaloa ni cifras de daños consolidadas más allá de lo ya reportado en Guerrero.
 
 ## Fuentes
 
 - SEC EDGAR — [8-K de Goldman Sachs, 13 de octubre de 2026](https://www.sec.gov/Archives/edgar/data/0000886982/000088698226000529/a3q26gsearningsresults.htm) — EPS, utilidad neta, ingresos y ROE del tercer trimestre
+- SEC EDGAR — [8-K de Wells Fargo, 13 de octubre de 2026](https://www.sec.gov/Archives/edgar/data/0000072971/000007297126000318/wfc3qer10-13x26ex991xrelea.htm) — EPS diluido de $1.87, utilidad neta de $5,951 millones
 - SEC EDGAR — [8-K de JPMorgan Chase, 13 de octubre de 2026](https://www.sec.gov/Archives/edgar/data/0000019617/000162828026065582/a3q26erfex992supplement.htm) — ingresos y utilidad neta del tercer trimestre
-- SEC EDGAR — 8-K de Wells Fargo y Citigroup, 13 de octubre de 2026 (ingresos confirmados, EPS exacto no aislado del texto disponible)
+- CNBC — cobertura en vivo de resultados bancarios, 13 de octubre de 2026, y Pulse2 — EPS de JPMorgan ($5.57) frente a consenso de LSEG ($5.90)
+- GuruFocus e Investing.com — EPS de Citigroup ($2.85) frente a consenso de $2.67, e ingresos de $23,800 millones
 - Nowcast de inflación de la Fed de Cleveland, 7 de octubre de 2026, para el CPI de septiembre
 - Cobertura de mercado del lunes 12 de octubre (Yahoo Finance, Fool.com vía agregación) ya citada en la edición anterior
