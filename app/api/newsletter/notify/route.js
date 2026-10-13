@@ -62,14 +62,21 @@ export async function GET(request) {
   const slugParam = searchParams.get("slug");
   const listado = getPostsListado();
   // Excluye notas de Pulso de Mercado y ocultas: no queremos mandar un
-  // correo cada vez que se publica un briefing diario de mercados.
-  // Excepción: si viene un slug explícito, también se busca entre las
-  // notas ocultas (pero nunca entre las de Pulso de Mercado) — permite
-  // mandar un envío privado (ej. solo a Kindle) de una nota que a propósito
-  // no se quiere publicar ni anunciar en el sitio.
+  // correo (ni Facebook/LinkedIn/Instagram) cada vez que se publica un
+  // briefing diario de mercados. Excepción: si viene un slug explícito,
+  // también se busca entre las notas ocultas (pero nunca entre las de Pulso
+  // de Mercado salvo el caso de abajo) — permite mandar un envío privado
+  // (ej. solo a Kindle) de una nota que a propósito no se quiere publicar ni
+  // anunciar en el sitio.
+  // Segunda excepción, más angosta: si el slug es explícito Y el único canal
+  // pedido es "kindle", sí se permite encontrar una nota de Pulso de Mercado
+  // — es el envío diario del resumen de Pulso de Mercado al Kindle del
+  // usuario (nunca se dispara solo, siempre con slug+canal=kindle explícitos
+  // desde el GitHub Action), que es independiente del aviso general.
+  const permitePulsoPorKindle = canales.length === 1 && canales[0] === "kindle";
   const ultima = slugParam
     ? listado.find((p) => p.slug === slugParam) ||
-      getPosts().find((p) => p.slug === slugParam && !p.pulsoTipo)
+      getPosts().find((p) => p.slug === slugParam && (!p.pulsoTipo || permitePulsoPorKindle))
     : listado[0];
   if (!ultima) {
     // Si vino un slug explícito (ej. desde el GitHub Action) y no aparece

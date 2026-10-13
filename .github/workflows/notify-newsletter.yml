@@ -51,12 +51,42 @@ jobs:
           # la carrera de despliegues en Vercel, el aviso termine tomando "la
           # nota más reciente" equivocada de un deploy momentáneamente
           # desactualizado.
-          archivo=$(git diff --name-only --diff-filter=A HEAD^ HEAD -- 'content/blog/*.md' | head -1)
+          #
+          # Excluye notas de Pulso de Mercado (pulso-mercado-*) de este aviso
+          # general: nunca se avisan por newsletter/Facebook/LinkedIn/Instagram
+          # (ver app/api/newsletter/notify/route.js) y, antes de este filtro,
+          # el push que las crea detectaba su slug pero el endpoint lo
+          # rechazaba por diseño — el workflow entonces reintentaba 5.5 min y
+          # fallaba en rojo todos los días sin que hubiera ningún problema
+          # real. El aviso a Kindle de estas notas se maneja aparte, abajo.
+          archivo=$(git diff --name-only --diff-filter=A HEAD^ HEAD -- 'content/blog/*.md' | grep -v '/pulso-mercado-' | head -1)
           slug=$(basename "$archivo" .md)
           echo "slug=$slug" >> "$GITHUB_OUTPUT"
           echo "Nota detectada: $slug"
 
+      - name: Detectar actualización de Pulso de Mercado Daily (para Kindle)
+        id: pulso_kindle
+        if: github.event_name == 'push'
+        run: |
+          # La corrida PM de Pulso de Mercado Daily EDITA (no agrega) la nota
+          # del día con el cierre real de mercado — ese es el contenido final
+          # que vale la pena mandar al Kindle, no la versión matutina a medio
+          # confirmar. Por eso usa --diff-filter=M (editado), a diferencia del
+          # paso de arriba que usa --diff-filter=A (agregado).
+          archivo=$(git diff --name-only --diff-filter=M HEAD^ HEAD -- 'content/blog/pulso-mercado-daily-*.md' | head -1)
+          slug=$(basename "$archivo" .md)
+          echo "slug=$slug" >> "$GITHUB_OUTPUT"
+          [ -n "$slug" ] && echo "Actualización de Pulso de Mercado Daily detectada para Kindle: $slug"
+
+      - name: Avisar a Kindle la actualización de Pulso de Mercado Daily
+        if: github.event_name == 'push' && steps.pulso_kindle.outputs.slug != ''
+        run: |
+          url="https://jgonzalez.app/api/newsletter/notify?secret=${{ secrets.NEWSLETTER_NOTIFY_SECRET }}&slug=${{ steps.pulso_kindle.outputs.slug }}&canal=kindle"
+          respuesta=$(curl -sf "$url")
+          echo "$respuesta"
+
       - name: Esperar a que Vercel termine de desplegar y disparar el aviso
+        if: github.event_name != 'push' || steps.nota.outputs.slug != ''
         run: |
           # El build de Vercel (con Tina CMS) a veces tarda bastante más de
           # 90s, sobre todo si hay varios pushes casi al mismo tiempo. En vez
