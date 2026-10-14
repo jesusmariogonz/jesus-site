@@ -11,7 +11,7 @@ tags:
   - CPI
   - Huracán Simón
   - Peso mexicano
-resumen: 'El S&P 500 y el Nasdaq cerraron prácticamente planos el martes mientras el mercado digería un día de resultados bancarios mixto: Goldman Sachs subió con fuerza tras superar expectativas, mientras Citigroup habría tenido su peor sesión en más de un año pese a un reporte sólido. El peso se debilitó ligeramente aun con un IPC en máximos de dos meses y medio.'
+resumen: 'El mercado cerró el miércoles sin que pudiéramos confirmar todavía, ni el cierre real de los índices ni la cifra del CPI de septiembre publicada esta misma mañana por el BLS. Lo que sí quedó más claro es la dispersión del martes bancario: Goldman Sachs subió con fuerza, mientras Citigroup habría caído 5.6% pese a un reporte sólido, una reacción que una segunda fuente corrobora parcialmente.'
 imagen: /blog/portadas/mercados-hoy-fija.jpg
 socialImagen: /blog/social/pulso-mercado-daily-2026-10-14.jpg
 ---
@@ -32,9 +32,9 @@ socialImagen: /blog/social/pulso-mercado-daily-2026-10-14.jpg
 
 ## Market Regime
 
-El mercado cerró el martes prácticamente sin cambios en los índices principales, pero esa calma agregada escondió una dispersión real dentro del propio día de resultados bancarios: Goldman Sachs subió con fuerza tras superar ampliamente el consenso, mientras al menos una fuente reportó que Citigroup tuvo su peor sesión en más de un año pese a un reporte de utilidad por encima de expectativas —una combinación que, de confirmarse, sugeriría que el mercado está premiando la calidad específica del negocio de cada banco más que el titular de "superó o no superó" consenso. En México, el IPC extendió a cuatro sesiones consecutivas al alza y tocó su nivel más alto desde el 30 de julio, incluso con el peso debilitándose ligeramente frente al dólar.
+Llegamos al cierre del miércoles sin poder confirmar, con una fuente de mercado en tiempo real, los niveles reales de cierre de hoy para ninguno de los índices principales ni para el CPI de septiembre que el BLS publicó esta misma mañana —una brecha informativa notable, dado que se trata del dato macro central de la semana y de la sesión que el propio mercado ya cerró hace varias horas al momento de escribir esta actualización. Lo que sí pudimos precisar, con una segunda fuente que corrobora parcialmente la primera, es que Citigroup efectivamente cayó con fuerza el martes —alrededor de 5.6%, en volumen más de dos veces superior al promedio— pese a un reporte de utilidad por encima de consenso; retiramos de esta edición la caracterización de "su peor sesión en más de un año", que solo tuvo una fuente y no pudimos corroborar de forma independiente. Goldman Sachs, en cambio, subió con fuerza tras superar ampliamente el consenso. En México, el IPC había extendido a cuatro sesiones consecutivas al alza hasta el cierre del martes, tocando su nivel más alto desde el 30 de julio, aunque no pudimos confirmar todavía si esa racha continuó en la sesión de hoy.
 
-Scorecard: Trend → (índices en rango angosto, sin cambio de tendencia) · Breadth → (mixta, con dispersión notable dentro del sector bancario) · Momentum → (sin señal clara) · Volatility → (VIX en zona baja, sin confirmación exacta) · Rates → (10 años en ~5.22%, sin movimiento grande) · USD → (dólar ligeramente más fuerte frente al peso)
+Scorecard: Trend → (sin cierre confirmado de hoy; índices en rango angosto hasta el martes) · Breadth → (mixta, con dispersión notable dentro del sector bancario del martes) · Momentum → (sin señal clara) · Volatility → (sin cierre confirmado del VIX de hoy) · Rates → (10 años en ~5.22% hasta el martes, sin cierre de hoy confirmado) · USD → (sin cierre confirmado de hoy)
 
 ## Qué importó hoy
 
@@ -42,15 +42,15 @@ Scorecard: Trend → (índices en rango angosto, sin cambio de tendencia) · Bre
 
 **JPMorgan tuvo un tropiezo poco frecuente —EPS de $5.57 frente a un consenso de $5.90— pero su acción se movió relativamente poco, cerrando cerca de 0.9% a la baja pese a un crecimiento de 6% en utilidad neta.** La reacción contenida sugiere que el mercado no interpretó el resultado como una señal de alarma estructural, más bien como un bache puntual ligado en parte a pérdidas en valores de inversión que el propio banco reportó. Horizonte: Position.
 
-**Al menos una fuente reportó que Citigroup cayó 5.6% el martes, su peor sesión desde abril de 2025, pese a un EPS de $2.85 que superó el consenso de $2.67.** Esta cifra de caída no la pudimos corroborar todavía con una segunda fuente independiente, así que la presentamos con esa reserva explícita; de confirmarse, sería la divergencia más llamativa del día entre un resultado contable positivo y una reacción bursátil claramente negativa. Horizonte: Swing.
+**Citigroup cayó aproximadamente 5.6% el martes, en volumen más de dos veces superior al promedio, pese a un EPS de $2.85 que superó el consenso de $2.67.** Una segunda fuente corrobora la magnitud de la caída y el volumen elevado, aunque no pudimos confirmar de forma independiente la caracterización de "peor sesión en más de un año" que circuló en la cobertura inicial, así que la retiramos de esta edición. Sigue siendo la divergencia más llamativa del día entre un resultado contable positivo y una reacción bursátil claramente negativa. Horizonte: Swing.
 
 **El S&P/BMV IPC extendió a cuatro sesiones consecutivas de ganancias y cerró en 66,965.15 puntos (+0.33%), su nivel más alto desde el 30 de julio, incluso con el peso debilitándose frente al dólar a 18.3771 por dólar.** La combinación de un índice mexicano en máximos de dos meses y medio con una moneda local ligeramente más débil es una divergencia que vale la pena vigilar en las próximas sesiones, en vez de asumir que ambos activos deberían moverse siempre en la misma dirección. Horizonte: Position.
 
-**El CPI de septiembre en Estados Unidos, el dato macro central de la semana, estaba programado para esta misma mañana miércoles a las 8:30am hora del este, pero no logramos confirmar todavía la cifra real publicada por el BLS al momento de cerrar esta edición.** El consenso previo a la publicación apuntaba a una aceleración hacia 3.6%-3.7% anual, impulsada por precios de gasolina de septiembre, frente a 3.4% del mes anterior. Horizonte: Macro.
+**El CPI de septiembre en Estados Unidos se publicó esta misma mañana a las 8:30am hora del este, pero no logramos confirmar su cifra real ni siquiera varias horas después del cierre de mercado, pese a buscarla explícitamente en esta actualización de cierre de sesión.** Es una brecha informativa notable para el evento macro central de la semana. El consenso previo a la publicación apuntaba a una aceleración hacia 3.6%-3.7% anual, impulsada por precios de gasolina de septiembre, frente a 3.4% del mes anterior. Horizonte: Macro.
 
 ## Macro
 
-El dato central de hoy es el CPI de septiembre, cuya cifra real no pudimos confirmar todavía con el BLS ni con cobertura de prensa que reportara el número ya publicado —la ventana de búsqueda disponible al momento de escribir esta edición seguía mostrando únicamente previsiones previas a la publicación. El nowcast de la Fed de Cleveland del 7 de octubre ubicaba la expectativa en 3.60% general y 2.39% subyacente; el mes anterior (agosto) cerró en 3.4% general y 2.4% subyacente. Mañana jueves siguen en calendario las ventas minoristas de septiembre, el PPI y el Philly Fed Index.
+El dato central de hoy es el CPI de septiembre, publicado esta mañana por el BLS, cuya cifra real seguimos sin poder confirmar incluso en esta actualización de cierre de sesión —la cobertura disponible al momento de escribir seguía mostrando únicamente previsiones previas a la publicación, sin un artículo que reportara ya el número oficial. El nowcast de la Fed de Cleveland del 7 de octubre ubicaba la expectativa en 3.60% general y 2.39% subyacente; el mes anterior (agosto) cerró en 3.4% general y 2.4% subyacente. Mañana jueves siguen en calendario las ventas minoristas de septiembre, el PPI y el Philly Fed Index.
 
 ## Tasas y bonos
 
@@ -85,30 +85,31 @@ No localizamos con confianza evidencia de un cambio estructural nuevo para esta 
 
 ## Riesgos
 
-El riesgo principal de esta edición sigue siendo informativo: no pudimos confirmar todavía la cifra real del CPI de hoy, pese a ser el evento macro central de la semana, ni corroborar con una segunda fuente el reporte de una caída fuerte en Citigroup. En el fondo del mercado, el riesgo real a vigilar es si la dispersión dentro del sector bancario —fuerte en Goldman, contenida en JPMorgan, posiblemente negativa en Citigroup— es ruido de un solo día o el inicio de una diferenciación más duradera entre los grandes bancos conforme avance la temporada de resultados.
+El riesgo principal de esta edición sigue siendo informativo, y se agravó respecto a la edición de la mañana: ni siquiera varias horas después del cierre de mercado pudimos confirmar la cifra real del CPI de hoy, el evento macro central de la semana, ni los niveles de cierre de ningún índice o activo de la sesión de hoy. En el fondo del mercado, el riesgo real a vigilar es si la dispersión dentro del sector bancario del martes —fuerte en Goldman, contenida en JPMorgan, negativa en Citigroup— es ruido de un solo día o el inicio de una diferenciación más duradera entre los grandes bancos conforme avance la temporada de resultados.
 
 ## Qué vigilar mañana
 
-- Confirmación de la cifra real del CPI de septiembre, publicada hoy por la mañana.
+- Confirmación de la cifra real del CPI de septiembre, publicada ayer por la mañana y todavía sin localizar al cierre de esta edición.
+- Confirmación de los niveles de cierre de hoy miércoles para todos los activos del Market Snapshot.
 - Reporte estimado de Morgan Stanley y, de confirmarse, de Bank of America.
-- Segunda fuente que confirme o descarte la caída reportada de 5.6% en Citigroup el martes.
 - Ventas minoristas de septiembre y PPI, además del Philly Fed Index, el jueves.
-- Actualización sobre el huracán Simón y su posible impacto en la costa de Sinaloa.
+- Actualización sobre el huracán Simón y si ya hizo landfall en la costa de Sinaloa.
 
 ## Pendientes de esta edición
 
-- CPI de septiembre: no localizamos todavía la cifra real publicada por el BLS esta mañana, pese a ser el evento macro central de la semana.
-- Cierre exacto del VIX, del Treasury a 2 y 30 años, de Brent, oro y cobre para la sesión del martes 13 de octubre.
-- Cierre exacto del WTI: fuentes consultadas citan cifras entre $93.74 y $95.70 por barril sin que pudiéramos confirmar un valor único y confiable.
-- Reacción bursátil del martes de Wells Fargo: una fuente reporta una caída de aproximadamente 3%, pero no la corroboramos con una segunda fuente independiente.
-- Caída reportada de 5.6% en Citigroup el martes: proviene de una sola fuente consultada; no pudimos confirmarla con una segunda fuente independiente pese a buscarla explícitamente.
-- Huracán Simón: no logramos confirmar si ya hizo landfall en la costa de Sinaloa al momento de escribir esta edición; el reporte más reciente disponible (12 de octubre) lo ubicaba como categoría 2 con pronósticos de impacto entre el miércoles y el jueves, y con un segundo fallecimiento reportado en Ensenada, Baja California, además del ya confirmado en Chilpancingo, Guerrero.
+- CPI de septiembre: pese a buscarlo explícitamente varias horas después de su publicación matutina y del cierre de mercado, seguimos sin localizar la cifra real publicada por el BLS. Es el pendiente más relevante de esta edición.
+- Cierre real de hoy miércoles 14 de octubre para S&P 500, Nasdaq Composite, Russell 2000, Dow Jones, VIX, S&P/BMV IPC, USD/MXN, Treasury a 10 años, WTI, Brent, oro y cobre: no localizamos con confianza ninguno de estos niveles pese a que la sesión ya cerró.
+- Cierre exacto del VIX, del Treasury a 2 y 30 años, de Brent, oro y cobre para la sesión del martes 13 de octubre: siguen sin confirmarse.
+- Reacción bursátil del martes de Wells Fargo: no pudimos confirmar ninguna cifra de movimiento de la acción con una fuente que reportara el resultado real (solo encontramos previsiones previas al reporte).
+- "Peor sesión en más de un año" de Citigroup: la magnitud de la caída (~5.6%) y el volumen elevado sí quedaron corroborados por una segunda fuente, pero esa caracterización específica solo tuvo una fuente y la retiramos de esta edición.
+- Huracán Simón: no logramos confirmar si ya hizo landfall en la costa de Sinaloa al cierre de esta edición. Los reportes más recientes disponibles (12 de octubre) son además inconsistentes entre sí sobre su categoría (2 según una fuente, 3 según otra) y su ventana de impacto (miércoles noche o jueves). Retiramos de esta edición el segundo fallecimiento en Ensenada, Baja California, que no pudimos corroborar; el único fallecimiento confirmado sigue siendo el de Chilpancingo, Guerrero.
 
 ## Fuentes
 
 - [CNBC — cobertura en vivo de resultados bancarios, 13 de octubre de 2026](https://www.cnbc.com/2026/10/13/bank-earnings-live-updates.html) — EPS de los cuatro bancos y reacción bursátil inicial
 - [TheStreet — resumen de mercado, 13 de octubre de 2026](https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-13-2026) — cierres de S&P 500, Nasdaq y Dow Jones
 - [24/7 Wall St. — reacción de acciones bancarias tras resultados](https://247wallst.com/investing/2026/10/13/goldman-sachs-rises-on-equities-led-earnings-beat-jpmorgan-chase-treads-water-wells-fargo-declines-3/) — Goldman Sachs al alza, JPMorgan plano, Wells Fargo a la baja
+- [QuiverQuant — Citigroup cae pese a resultados, presión de yields en bancos](https://www.quiverquant.com/news/Citigroup+Shares+Fall+as+Rising+Treasury+Yields+Weigh+on+Bank+Stocks) — segunda fuente que corrobora la magnitud de la caída de Citigroup y el volumen elevado
 - [Rio Times — cierre de mercados en México, 13 de octubre de 2026](https://www.riotimesonline.com/mexico-markets-ipc-peso-tuesday-october-13-2026) — cierre del S&P/BMV IPC
 - [El Financiero — tipo de cambio peso-dólar, 13 de octubre de 2026](https://www.elfinanciero.com.mx/mercados/2026/10/13/peso-dolar-tipo-de-cambio-hoy-13-de-octubre-de-2026/) — cierre de USD/MXN de Banxico
 - Nowcast de inflación de la Fed de Cleveland, 7 de octubre de 2026, para el CPI de septiembre

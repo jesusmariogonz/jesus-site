@@ -21,7 +21,7 @@ datosClave:
     etiqueta: 'reducción de tiempo reportada en tareas específicas automatizadas con IA generativa, según estudios de adopción empresarial de 2025-2026'
   - valor: '0%'
     etiqueta: 'reducción correspondiente en la jornada laboral promedio reportada en esas mismas organizaciones'
-imagen: /blog/portadas/negocios-reunion-5.jpg
+imagen: /blog/portadas/paradoja-tiempo-liberado-ia-parkinson-trabajo-conocimiento.jpg
 gancho: 'La IA le ahorró tres horas a un analista esta semana. Esas tres horas no se fueron a su casa con él. Se las llenó una junta que antes no existía.'
 socialImagen: /blog/social/paradoja-tiempo-liberado-ia-parkinson-trabajo-conocimiento.jpg
 postura:
