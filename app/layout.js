@@ -10,6 +10,7 @@ import {
   SITE_DESCRIPTION,
   AUTHOR,
   GOOGLE_SITE_VERIFICATION,
+  GOOGLE_ADSENSE_CLIENT,
 } from "@/lib/site";
 
 export const metadata = {
@@ -131,6 +132,13 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&display=swap"
           rel="stylesheet"
         />
+        {GOOGLE_ADSENSE_CLIENT && (
+          <script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${GOOGLE_ADSENSE_CLIENT}`}
+            crossOrigin="anonymous"
+          />
+        )}
       </head>
       <body className="dot-grid">
         <script
