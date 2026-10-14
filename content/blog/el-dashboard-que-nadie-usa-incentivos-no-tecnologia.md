@@ -21,7 +21,7 @@ datosClave:
     etiqueta: 'métrica suele bastar para que un proyecto completo de datos quede archivado si contradice a quien lo patrocinó'
   - valor: '3-6 meses'
     etiqueta: 'tiempo típico entre el lanzamiento de un dashboard ejecutivo y el momento en que deja de abrirse'
-imagen: /blog/portadas/negocios-reunion-3.jpg
+imagen: /blog/portadas/el-dashboard-que-nadie-usa-incentivos-no-tecnologia.jpg
 gancho: 'El dashboard no estaba mal hecho. Medía exactamente lo que debía medir. Por eso nadie lo volvió a abrir después del tercer mes.'
 socialImagen: /blog/social/el-dashboard-que-nadie-usa-incentivos-no-tecnologia.jpg
 postura:
