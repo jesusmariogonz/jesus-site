@@ -155,7 +155,7 @@ export async function generarPortada(entrada, salida, titulo, categoria) {
   ctx.fillStyle = "#0a0c12";
   ctx.fillText(marca, placaX0 + padX, placaY0 + padY);
 
-  const buf = canvas.toBuffer("image/jpeg", 0.8);
+  const buf = canvas.toBuffer("image/jpeg", 80);
   writeFileSync(salida, buf);
   return { lineas: lineas.length, tamFuente };
 }
