@@ -13,6 +13,14 @@
   --accent: #1c48c9;
   --accent-2: #0f2f9e;
   --accent-soft: #e8edfb;
+  /* Fondo del botón sólido (.btn): deliberadamente distinto de --accent/
+     --accent-2 — esas variables también se usan como color de TEXTO (ej.
+     los botones "ghost" de Compartir) y en modo oscuro se vuelven azul
+     claro para ser legibles sobre fondo oscuro, lo cual las vuelve un mal
+     fondo para texto blanco encima. --btn-grad-1/2 siempre se mantienen
+     lo bastante oscuros para que el texto blanco del botón tenga contraste. */
+  --btn-grad-1: var(--accent);
+  --btn-grad-2: var(--accent-2);
   --code-bg: #0f1626;
   --code-ink: #d8e0ee;
   --radius: 12px;
@@ -44,6 +52,10 @@ html.dark {
   --accent: #6ba5ff;
   --accent-2: #9dc2ff;
   --accent-soft: #16233d;
+  /* Más oscuras que --accent/--accent-2 a propósito — ver comentario en
+     :root. Texto blanco sobre estas sí tiene contraste suficiente. */
+  --btn-grad-1: #2a63e0;
+  --btn-grad-2: #1540a8;
   --code-bg: #0a1120;
   --code-ink: #d8e0ee;
 
@@ -658,7 +670,7 @@ html:not(.dark) .prose li {
    ============================================ */
 .btn {
   display: inline-block;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  background: linear-gradient(135deg, var(--btn-grad-1), var(--btn-grad-2));
   color: #fff;
   font-weight: 600;
   font-size: 0.95rem;
