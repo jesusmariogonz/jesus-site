@@ -171,6 +171,35 @@ export default async function Post({ params }) {
             )}
           </header>
 
+          {(post.tesis || post.datosClave?.length > 0) && (
+            <div className="article-highlights article-highlights--top">
+              {post.datosClave?.length > 0 && (
+                <>
+                  <span className="article-highlights-titulo">En una mirada</span>
+                  <div className="highlights-grid">
+                    {post.datosClave.slice(0, 4).map((d, i) => (
+                      <div className="highlight-item" key={i}>
+                        <span className="highlight-valor">{d.valor}</span>
+                        <span className="highlight-etiqueta">{d.etiqueta}</span>
+                        {(d.fuente || d.periodo) && (
+                          <span className="highlight-meta">
+                            {[d.periodo, d.fuente].filter(Boolean).join(" · ")}
+                          </span>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
+              {post.tesis && (
+                <blockquote className="article-tesis">
+                  <span className="article-tesis-label">La tesis del artículo</span>
+                  <p>{post.tesis}</p>
+                </blockquote>
+              )}
+            </div>
+          )}
+
           <div className="article-layout">
             <div className="article-main">
               <div className="prose">
@@ -197,30 +226,6 @@ export default async function Post({ params }) {
             </div>
 
             <aside className="article-aside">
-              {(post.tesis || post.datosClave?.length > 0) && (
-                <div className="article-highlights">
-                  {post.datosClave?.length > 0 && (
-                    <>
-                      <span className="article-highlights-titulo">En una mirada</span>
-                      <div className="highlights-grid">
-                        {post.datosClave.map((d, i) => (
-                          <div className="highlight-item" key={i}>
-                            <span className="highlight-valor">{d.valor}</span>
-                            <span className="highlight-etiqueta">{d.etiqueta}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </>
-                  )}
-                  {post.tesis && (
-                    <blockquote className="article-tesis">
-                      <span className="article-tesis-label">Mi tesis</span>
-                      <p>{post.tesis}</p>
-                    </blockquote>
-                  )}
-                </div>
-              )}
-
               <ArticleToc />
 
               <ToolkitBanner className="tk-banner-aside" />

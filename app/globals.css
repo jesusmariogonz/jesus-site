@@ -546,15 +546,38 @@ html:not(.dark) .prose li {
 }
 
 /* ============================================
-   Highlights del artículo ("En una mirada" + "Mi tesis")
-   Vive en el sidebar (.article-aside), por eso es angosto:
-   valores apilados en una sola columna, no en grid ancho.
+   Highlights del artículo ("En una mirada" + "La tesis del artículo")
+   Antes vivía en el sidebar angosto (.article-aside); ahora es un bloque
+   de ancho completo entre el encabezado y el cuerpo (.article-highlights--top),
+   con los datos en una cuadrícula adaptable en vez de una lista vertical.
    ============================================ */
 .article-highlights {
   padding: 20px;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
+}
+.article-highlights--top {
+  max-width: 780px;
+  margin: 28px auto 0;
+  padding: 24px 28px;
+}
+.article-highlights--top .highlights-grid {
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  column-gap: 28px;
+}
+.article-highlights--top .highlight-item {
+  padding-bottom: 0;
+  border-bottom: none;
+  gap: 6px;
+}
+.article-highlights--top .highlight-valor {
+  /* Más chico que en el sidebar angosto (1.7rem): ahí el valor era casi
+     siempre un número corto en una sola línea; aquí, en 4 columnas, un
+     valor de texto largo ("399 establecimientos / 46,000 productos")
+     envolvía 3 líneas y se encimaba con la etiqueta de abajo. */
+  font-size: 1.3rem;
+  line-height: 1.25;
 }
 .article-highlights-titulo {
   display: block;
@@ -590,6 +613,12 @@ html:not(.dark) .prose li {
 .highlight-etiqueta {
   font-size: 0.82rem;
   color: var(--meta);
+}
+.highlight-meta {
+  font-size: 0.72rem;
+  color: var(--meta);
+  opacity: 0.8;
+  margin-top: 2px;
 }
 .article-tesis {
   margin: 18px 0 0;

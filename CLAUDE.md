@@ -1,5 +1,40 @@
 # Instrucciones para Claude en este repo (jgonzalez.app)
 
+## "En una mirada" (datosClave) y "La tesis del artículo" (tesis)
+
+Estos dos bloques se renderizan juntos, en un contenedor de ancho
+completo entre el encabezado y el cuerpo de la nota (`app/blog/[slug]/page.js`,
+clase `.article-highlights--top`) — no en el sidebar angosto como antes.
+Aplica solo a notas nuevas: las notas viejas sin estos campos siguen
+funcionando igual, el bloque completo simplemente no se renderiza si
+faltan ambos (`post.tesis` y `post.datosClave`).
+
+`datosClave` (máximo 4 indicadores, los más relevantes para el
+argumento central — no cifras llamativas sin relación con la tesis):
+
+```yaml
+datosClave:
+  - valor: 'Cifra destacada'
+    etiqueta: 'Qué es, en una frase corta'
+    periodo: 'Opcional — ej. "2025", "T3 2026"'
+    fuente: 'Opcional — ej. "Profeco", "INEGI" (nombre corto, no la URL completa)'
+```
+
+`periodo` y `fuente` son opcionales y nuevos — si una nota vieja no los
+trae, simplemente no se muestra esa línea secundaria, sin romper nada.
+Nunca inventar una cifra para llenar los 4 espacios: mejor 2-3 datos
+reales que 4 con uno forzado. No mezclar métricas no comparables (ventas
+vs. derrama vs. utilidad vs. reclamaciones) como si fueran equivalentes.
+
+`tesis` (el campo ya existente, se sigue llamando igual en el
+frontmatter — solo cambió la etiqueta visible de "Mi tesis" a "La tesis
+del artículo"): una sola idea central, 40-80 palabras, que interprete la
+evidencia de la nota en vez de repetir el resumen/bajada tal cual.
+Distinguir explícitamente hecho documentado vs. interpretación propia;
+nunca inventar intenciones, consecuencias o relaciones causales que la
+evidencia no sostenga. Es opcional — una nota puramente informativa
+(ej. seguimiento de un dato económico puntual) puede omitirlo.
+
 ## Toda nota nueva debe incluir un bloque "Postura"
 
 Desde que se agregó la función de voto + comentarios (ver
