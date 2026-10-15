@@ -45,7 +45,9 @@ OPENAI_IMAGES_URL = "https://api.openai.com/v1/images/generations"
 # que soporta gpt-image-1 — se recorta al centro a la relación exacta dentro
 # de tratar_imagen() (recortar_cubrir), igual que con las fotos del banco.
 TAMANO_GENERACION = "1536x1024"
-CALIDAD = "medium"  # "low" se ve notoriamente borroso en portadas grandes; "high" cuesta ~4x más
+CALIDAD = "low"  # ~4x más barato que "medium" (~$0.016 vs ~$0.065/imagen) — decisión explícita
+# del usuario de priorizar costo sobre nitidez; "medium" se ve mejor en detalle fino si el
+# presupuesto lo permite más adelante.
 
 
 def generar_imagen_openai(prompt):
