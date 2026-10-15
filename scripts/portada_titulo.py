@@ -26,6 +26,49 @@ ANCHO, ALTO = 1200, 675  # relación 16:9 — suficiente para cualquier card del
 FUENTE_TITULO = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 FUENTE_TAG = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 
+# Paleta de colores de acento — antes todas las portadas usaban el mismo
+# ámbar fijo para la etiqueta de categoría y la marca "jgonzalez.app". Ahora
+# el color varía según la categoría (mismo color siempre para la misma
+# categoría, así se mantiene cierta identidad visual por tema sin que
+# TODO el sitio se vea amarillo).
+PALETA_ACENTO = [
+    (111, 168, 255),  # azul
+    (90, 209, 200),  # teal
+    (126, 217, 87),  # verde
+    (255, 111, 97),  # coral
+    (184, 156, 255),  # morado
+    (255, 143, 177),  # rosa
+    (255, 200, 90),  # ámbar (el original — ya no es el único)
+]
+COLOR_POR_CATEGORIA = {
+    "ia & genai": PALETA_ACENTO[0],
+    "ia": PALETA_ACENTO[0],
+    "cloud": PALETA_ACENTO[0],
+    "data architecture": PALETA_ACENTO[0],
+    "data model": PALETA_ACENTO[0],
+    "data engineering": PALETA_ACENTO[0],
+    "snowflake": PALETA_ACENTO[0],
+    "business": PALETA_ACENTO[1],
+    "business analytics": PALETA_ACENTO[1],
+    "fintech": PALETA_ACENTO[2],
+    "geopolitics": PALETA_ACENTO[3],
+    "opinión": PALETA_ACENTO[4],
+    "opinion": PALETA_ACENTO[4],
+    "leadership": PALETA_ACENTO[5],
+}
+
+
+def color_categoria(categoria):
+    """Color de acento para una categoría — fijo para las conocidas (ver
+    COLOR_POR_CATEGORIA), determinístico por hash para cualquier otra (ej.
+    "TESIS · SEMANA 4", "Pulso de Mercado") para que varíe entre portadas
+    pero nunca cambie para la misma categoría entre una corrida y otra."""
+    clave = categoria.strip().lower()
+    if clave in COLOR_POR_CATEGORIA:
+        return COLOR_POR_CATEGORIA[clave]
+    indice = sum(ord(c) for c in clave) % len(PALETA_ACENTO)
+    return PALETA_ACENTO[indice]
+
 
 def recortar_cubrir(img, ancho, alto):
     """Recorta la imagen al centro para llenar ancho x alto sin deformarla."""
@@ -109,36 +152,49 @@ def tratar_imagen(base, salida, titulo, categoria):
     bloque_titulo = alto_linea * len(lineas)
     y_titulo = ALTO - 80 - bloque_titulo
 
+    acento = color_categoria(categoria)
+
     # Etiqueta de categoría, siempre arriba del bloque de título con margen fijo.
     fuente_tag = ImageFont.truetype(FUENTE_TAG, 30)
     tag_y = y_titulo - 56
-    draw.text((margen, tag_y), categoria.upper(), font=fuente_tag, fill=(255, 200, 90, 255))
+    draw.text((margen, tag_y), categoria.upper(), font=fuente_tag, fill=(*acento, 255))
 
     y = y_titulo
     for linea in lineas:
         draw.text((margen, y), linea, font=fuente_titulo, fill=(255, 255, 255, 255))
         y += alto_linea
 
-    # Marca "jgonzalez.app" en la esquina superior derecha, con una placa
-    # oscura semi-opaca detrás para que sea legible incluso sobre fotos
-    # claras o con mucho detalle (antes era casi invisible).
-    fuente_marca = ImageFont.truetype(FUENTE_TAG, 44)
+    # Marca "jgonzalez.app" en la esquina superior derecha. Antes era una
+    # placa sólida color ámbar — se veía como un botón pegado encima de la
+    # foto. Ahora: fondo oscuro translúcido (solo para legibilidad, no un
+    # bloque de color) + una línea vertical de acento (el mismo color que
+    # la etiqueta de categoría) al lado del texto, en vez de encerrarlo.
+    fuente_marca = ImageFont.truetype(FUENTE_TAG, 36)
     marca = "jgonzalez.app"
     ancho_marca = draw.textlength(marca, font=fuente_marca)
-    pad_x, pad_y = 24, 16
+    pad_x, pad_y = 22, 14
+    linea_ancho, linea_gap = 4, 16
+
     placa_x1 = ANCHO - 40
     placa_y1 = 40
-    placa_x0 = placa_x1 - ancho_marca - pad_x * 2
+    placa_alto = 36 + pad_y * 2
+    placa_ancho = linea_ancho + linea_gap + ancho_marca + pad_x * 2
+    placa_x0 = placa_x1 - placa_ancho
     placa_y0 = placa_y1
-    placa_alto = 44 + pad_y * 2
+
     draw.rounded_rectangle(
         (placa_x0, placa_y0, placa_x1, placa_y0 + placa_alto),
-        radius=12,
-        fill=(255, 200, 90, 235),
+        radius=10,
+        fill=(10, 12, 18, 150),
     )
-    marca_x = placa_x0 + pad_x
+    linea_x0 = placa_x0 + pad_x
+    draw.rectangle(
+        (linea_x0, placa_y0 + 10, linea_x0 + linea_ancho, placa_y0 + placa_alto - 10),
+        fill=(*acento, 255),
+    )
+    marca_x = linea_x0 + linea_ancho + linea_gap
     marca_y = placa_y0 + pad_y
-    draw.text((marca_x, marca_y), marca, font=fuente_marca, fill=(10, 12, 18, 255))
+    draw.text((marca_x, marca_y), marca, font=fuente_marca, fill=(255, 255, 255, 255))
 
     base.convert("RGB").save(salida, quality=80, optimize=True)
     print(f"OK: {salida} ({len(lineas)} líneas, fuente {tam_fuente}px)")
