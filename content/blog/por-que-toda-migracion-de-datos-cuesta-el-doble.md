@@ -21,7 +21,7 @@ datosClave:
     etiqueta: 'sobrecosto típico reportado en estudios de grandes proyectos de TI frente a su presupuesto original'
   - valor: '1'
     etiqueta: 'variable que la mayoría de los planes de migración de datos nunca incluye explícitamente: cuántos sistemas dependientes no documentados existen'
-imagen: /blog/portadas/negocios-reunion-8.jpg
+imagen: /blog/portadas/por-que-toda-migracion-de-datos-cuesta-el-doble.jpg
 gancho: 'El plan decía 4 meses. Tomó 11. Nadie en el equipo mintió en la estimación original — y esa es justo la parte que debería preocuparnos más.'
 socialImagen: /blog/social/por-que-toda-migracion-de-datos-cuesta-el-doble.jpg
 postura:
