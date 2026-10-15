@@ -17,10 +17,14 @@ Uso:
   sobrepone después con PIL, igual que con las fotos del banco. Evita
   también pedir logos, marcas o personas reales identificables.
 
-Requiere la variable de entorno OPENAI_API_KEY (ya configurada en Vercel).
-Si la API falla o no hay API key, termina con código de salida 1 y no
-escribe ningún archivo — quien llame a este script debe tener un plan de
-respaldo (ej. caer al banco de fotos) en vez de bloquear la publicación.
+No lee ninguna API key del entorno: este sandbox tiene configurado un
+"Network secret" que inyecta el header Authorization automáticamente en
+cualquier petición saliente a api.openai.com (configurado a mano en el
+menú del entorno de Claude Code, no en este repo). Si ese secreto no
+está configurado, la petición falla con 401 y el script termina con
+código de salida 1 sin escribir ningún archivo — quien llame a este
+script debe tener un plan de respaldo (ej. caer al banco de fotos) en
+vez de bloquear la publicación.
 """
 import base64
 import io
@@ -45,10 +49,6 @@ CALIDAD = "medium"  # "low" se ve notoriamente borroso en portadas grandes; "hig
 
 
 def generar_imagen_openai(prompt):
-    api_key = os.environ.get("OPENAI_API_KEY")
-    if not api_key:
-        raise RuntimeError("Falta la variable de entorno OPENAI_API_KEY.")
-
     payload = json.dumps(
         {
             "model": "gpt-image-1",
@@ -59,13 +59,12 @@ def generar_imagen_openai(prompt):
         }
     ).encode("utf-8")
 
+    # Sin header Authorization explícito a propósito: lo agrega el proxy
+    # de red del sandbox para peticiones a api.openai.com (ver docstring).
     req = urllib.request.Request(
         OPENAI_IMAGES_URL,
         data=payload,
-        headers={
-            "Authorization": f"Bearer {api_key}",
-            "Content-Type": "application/json",
-        },
+        headers={"Content-Type": "application/json"},
         method="POST",
     )
     try:
