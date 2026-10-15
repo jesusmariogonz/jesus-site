@@ -62,6 +62,14 @@ def envolver_titulo(draw, texto, fuente, ancho_max):
 
 def generar(entrada, salida, titulo, categoria):
     base = Image.open(entrada).convert("RGB")
+    tratar_imagen(base, salida, titulo, categoria)
+
+
+def tratar_imagen(base, salida, titulo, categoria):
+    """Igual que generar(), pero recibe una imagen PIL ya abierta en vez de
+    una ruta — la usa también scripts/portada_ia.py sobre la imagen que
+    acaba de generar OpenAI, sin tener que guardarla y reabrirla primero."""
+    base = base.convert("RGB")
     base = recortar_cubrir(base, ANCHO, ALTO)
 
     # Degradado oscuro de abajo hacia arriba, para que el texto blanco
