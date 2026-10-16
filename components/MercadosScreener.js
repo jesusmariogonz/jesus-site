@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Sparkline from "@/components/Sparkline";
 import { retornoEntreFechas, REGISTRO } from "@/lib/mercados/indicadores";
 
@@ -717,6 +717,14 @@ function formatoPuntoSerie(modo, v) {
   return `índice ${v.toFixed(1)}`; // modo "precio"
 }
 
+/** Versión corta del valor para las etiquetas de las líneas de referencia
+ *  del eje Y — sin el texto descriptivo (ese ya está en ejeTitulo), para
+ *  que quepa en el margen angosto sin cortarse. */
+function formatoTickEjeY(modo, v) {
+  if (modo === "volatilidad" || modo === "liquidez") return formatoPuntoSerie(modo, v);
+  return v.toFixed(modo === "tendencia" ? 0 : 1);
+}
+
 /** Serie completa de un activo según el modo del indicador activo, ya
  *  recortada a los últimos `ruedas` puntos. Cada modo cambia qué se grafica:
  *  - "precio": precio normalizado a 100 al inicio de la ventana.
@@ -774,12 +782,39 @@ function serieParaModo(fila, modo, ruedas) {
   return ventana.map((c) => (base ? (c / base) * 100 : 100));
 }
 
-/** Gráfica de líneas que cambia según el indicador activo (ver serieParaModo). */
+const TICKS_EJE_Y = 4;
+
+/** Valores "bonitos" para las líneas de referencia del eje Y — evita
+ *  decimales raros cuando el rango lo permite, sin perder el extremo real
+ *  de la serie (siempre incluye min y max exactos). */
+function ticksEjeY(min, max) {
+  const paso = (max - min) / TICKS_EJE_Y;
+  const valores = [];
+  for (let k = 0; k <= TICKS_EJE_Y; k++) valores.push(min + paso * k);
+  return valores;
+}
+
+/** Índice de la serie más cercano a una posición X en coordenadas del SVG. */
+function indiceMasCercano(xSvg, padding, width, nPuntos) {
+  const t = (xSvg - padding) / (width - padding * 2);
+  return Math.min(nPuntos - 1, Math.max(0, Math.round(t * (nPuntos - 1))));
+}
+
+/** Gráfica de líneas que cambia según el indicador activo (ver serieParaModo).
+ *  Incluye líneas de referencia en ambos ejes (valores del eje Y, fechas del
+ *  eje X) y un tooltip con crosshair que sigue al cursor mostrando el valor
+ *  exacto de cada activo en ese punto de la serie. */
 function GraficaComparativa({ filas, ruedas, indicador }) {
   const width = 760;
   const height = 320;
   const padding = 36;
+  const padIzq = 56; // más margen a la izquierda para las etiquetas del eje Y
   const modo = indicador?.modo || "precio";
+
+  const svgRef = useRef(null);
+  const wrapperRef = useRef(null);
+  const [hoverIdx, setHoverIdx] = useState(null);
+  const [hoverPos, setHoverPos] = useState(null); // {left, top} en px, relativo al wrapper
 
   const series = filas.map((r) => serieParaModo(r, modo, ruedas));
   const fechas = filas.map((r) => r.historial.slice(-ruedas).map((h) => h[0]));
@@ -789,13 +824,16 @@ function GraficaComparativa({ filas, ruedas, indicador }) {
   const max = todos.length ? Math.max(...todos) : 1;
   const range = max - min || 1;
   const nPuntos = Math.max(...series.map((s) => s.length), 2);
-  // Marcadores con tooltip nativo, muestreados para no saturar el SVG en ventanas largas (5A).
-  const pasoMarcador = Math.max(1, Math.floor(nPuntos / 80));
+  const anchoUtil = width - padIzq - padding;
 
   function coord(i, v) {
-    const x = padding + (i / (nPuntos - 1)) * (width - padding * 2);
+    const x = padIzq + (i / (nPuntos - 1)) * anchoUtil;
     const y = height - padding - ((v - min) / range) * (height - padding * 2);
     return [x, y];
+  }
+
+  function coordY(v) {
+    return height - padding - ((v - min) / range) * (height - padding * 2);
   }
 
   function puntos(serie) {
@@ -806,22 +844,107 @@ function GraficaComparativa({ filas, ruedas, indicador }) {
       .join(" ");
   }
 
+  // Fechas del eje X: unas 6 etiquetas repartidas, sin amontonarse.
+  const pasoFechaEje = Math.max(1, Math.floor(nPuntos / 6));
+  const fechasEje = fechas[0] || [];
+
+  function actualizarHover(clientX, clientY) {
+    const svg = svgRef.current;
+    const wrapper = wrapperRef.current;
+    if (!svg || !wrapper) return;
+    const rectSvg = svg.getBoundingClientRect();
+    const rectWrap = wrapper.getBoundingClientRect();
+    const escalaX = width / rectSvg.width;
+    const xSvg = (clientX - rectSvg.left) * escalaX;
+    const idx = indiceMasCercano(xSvg, padIzq, width, nPuntos);
+    setHoverIdx(idx);
+    setHoverPos({
+      left: clientX - rectWrap.left,
+      top: clientY - rectWrap.top,
+    });
+  }
+
+  function onMouseMove(e) {
+    actualizarHover(e.clientX, e.clientY);
+  }
+  function onTouchMove(e) {
+    const t = e.touches[0];
+    if (t) actualizarHover(t.clientX, t.clientY);
+  }
+  function salirHover() {
+    setHoverIdx(null);
+    setHoverPos(null);
+  }
+
+  const hoverX = hoverIdx != null ? coord(hoverIdx, 0)[0] : null;
+  const hoverFilas = hoverIdx != null
+    ? filas
+        .map((r, i) => ({ symbol: r.symbol, v: series[i][hoverIdx], color: COLORES[i % COLORES.length] }))
+        .filter((f) => f.v != null)
+    : [];
+
   return (
-    <div className="screener-grafica">
+    <div className="screener-grafica" style={{ position: "relative" }} ref={wrapperRef}>
       {indicador?.ejeTitulo && <span className="screener-grafica-eje">{indicador.ejeTitulo}</span>}
-      <svg width="100%" viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="xMidYMid meet" className="screener-grafica-svg">
-        <line x1={padding} y1={height - padding} x2={width - padding} y2={height - padding} stroke="var(--line)" strokeWidth="1" />
+      <svg
+        ref={svgRef}
+        width="100%"
+        viewBox={`0 0 ${width} ${height}`}
+        preserveAspectRatio="xMidYMid meet"
+        className="screener-grafica-svg"
+        onMouseMove={onMouseMove}
+        onMouseLeave={salirHover}
+        onTouchMove={onTouchMove}
+        onTouchEnd={salirHover}
+      >
+        {/* Líneas de referencia del eje Y, con su valor a la izquierda */}
+        {ticksEjeY(min, max).map((v, k) => (
+          <g key={k}>
+            <line
+              x1={padIzq}
+              x2={width - padding}
+              y1={coordY(v)}
+              y2={coordY(v)}
+              stroke="var(--line)"
+              strokeWidth="1"
+              opacity={k === 0 ? 1 : 0.5}
+            />
+            <text x={padIzq - 8} y={coordY(v) + 3} textAnchor="end" fontSize="10" fill="var(--meta)">
+              {formatoTickEjeY(modo, v)}
+            </text>
+          </g>
+        ))}
+
         {modo === "tendencia" && min < 100 && max > 100 && (
           <line
-            x1={padding}
+            x1={padIzq}
             x2={width - padding}
-            y1={height - padding - ((100 - min) / range) * (height - padding * 2)}
-            y2={height - padding - ((100 - min) / range) * (height - padding * 2)}
+            y1={coordY(100)}
+            y2={coordY(100)}
             stroke="var(--line)"
             strokeDasharray="4 4"
             strokeWidth="1"
           />
         )}
+
+        {/* Fechas de referencia del eje X */}
+        {fechasEje.map((f, i) => {
+          if (i % pasoFechaEje !== 0 && i !== fechasEje.length - 1) return null;
+          const [x] = coord(i, min);
+          return (
+            <text
+              key={f}
+              x={x}
+              y={height - padding + 16}
+              textAnchor={i === fechasEje.length - 1 ? "end" : "middle"}
+              fontSize="9.5"
+              fill="var(--meta)"
+            >
+              {f.slice(5)}
+            </text>
+          );
+        })}
+
         {filas.map((r, i) => (
           <polyline
             key={r.symbol}
@@ -833,20 +956,40 @@ function GraficaComparativa({ filas, ruedas, indicador }) {
             strokeLinejoin="round"
           />
         ))}
-        {filas.map((r, i) =>
-          series[i].map((v, j) => {
-            if (v == null || j % pasoMarcador !== 0) return null;
-            const [x, y] = coord(j, v);
-            return (
-              <circle key={`${r.symbol}-${j}`} cx={x} cy={y} r="7" fill="transparent" stroke="none">
-                <title>
-                  {r.symbol} · {fechas[i][j]} · {formatoPuntoSerie(modo, v)}
-                </title>
-              </circle>
-            );
-          })
+
+        {/* Crosshair + marcadores en el punto exacto bajo el cursor */}
+        {hoverX != null && (
+          <>
+            <line x1={hoverX} x2={hoverX} y1={padding / 2} y2={height - padding} stroke="var(--line)" strokeWidth="1" strokeDasharray="3 3" />
+            {hoverFilas.map((f) => {
+              const [, y] = coord(hoverIdx, f.v);
+              return <circle key={f.symbol} cx={hoverX} cy={y} r="4" fill={f.color} stroke="var(--surface)" strokeWidth="1.5" />;
+            })}
+          </>
         )}
       </svg>
+
+      {hoverIdx != null && hoverFilas.length > 0 && (
+        <div
+          className="screener-grafica-tooltip"
+          style={{
+            left: Math.min(Math.max(hoverPos.left, 70), (wrapperRef.current?.getBoundingClientRect().width || width) - 70),
+            top: Math.max(hoverPos.top - 10, 0),
+          }}
+        >
+          <strong>{fechasEje[hoverIdx]}</strong>
+          <ul>
+            {hoverFilas.map((f) => (
+              <li key={f.symbol}>
+                <span className="screener-grafica-dot" style={{ background: f.color }} />
+                {f.symbol}
+                <span className="screener-grafica-tooltip-valor">{formatoPuntoSerie(modo, f.v)}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
       <div className="screener-grafica-leyenda">
         {filas.map((r, i) => (
           <span key={r.symbol} className="screener-grafica-leyenda-item">
@@ -915,3 +1058,4 @@ function GraficaVelas({ fila, ruedas }) {
     </div>
   );
 }
+

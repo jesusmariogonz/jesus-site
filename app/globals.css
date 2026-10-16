@@ -5460,7 +5460,46 @@ html:not(.dark) .pglobe-land {
 @media (max-width: 760px) {
   .screener-comparador-cuerpo { grid-template-columns: 1fr; }
 }
-.screener-grafica-svg { display: block; }
+.screener-grafica-svg { display: block; cursor: crosshair; }
+.screener-grafica-tooltip {
+  position: absolute;
+  pointer-events: none;
+  transform: translate(-50%, -100%);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  z-index: 5;
+  white-space: nowrap;
+}
+.screener-grafica-tooltip strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.72rem;
+  color: var(--meta);
+  font-weight: 600;
+}
+.screener-grafica-tooltip ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.screener-grafica-tooltip li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+}
+.screener-grafica-tooltip-valor {
+  margin-left: auto;
+  padding-left: 10px;
+  font-variant-numeric: tabular-nums;
+}
 .screener-grafica-leyenda {
   display: flex;
   flex-wrap: wrap;
