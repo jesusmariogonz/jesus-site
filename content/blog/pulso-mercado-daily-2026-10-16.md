@@ -11,7 +11,7 @@ tags:
   - Treasury
   - producción industrial
   - peso mexicano
-resumen: 'Wall Street cerró con avances el jueves pese a un PPI de septiembre muy por encima de lo esperado, mientras los rendimientos del Treasury cayeron con fuerza y el sector de semiconductores de IA perdió más de un billón de dólares en valor en la semana por temores de financiamiento. La producción industrial de septiembre sorprendió al alza esta mañana.'
+resumen: 'Wall Street cerró el viernes con su peor sesión en meses: el Nasdaq cayó 2.14% y el sector tecnológico más de 3%, en la cuarta sesión consecutiva de liquidación en semiconductores e infraestructura de IA por temores de financiamiento. En la semana se perdió más de un billón de dólares en valor entre los principales nombres del sector, con CoreWeave como epicentro tras ver sus bonos rendir arriba de 15%.'
 imagen: /blog/portadas/mercados-hoy-fija.jpg
 socialImagen: /blog/social/pulso-mercado-daily-2026-10-16.jpg
 ---
@@ -20,51 +20,51 @@ socialImagen: /blog/social/pulso-mercado-daily-2026-10-16.jpg
 
 | Activo | Nivel | Cambio |
 |---|---|---|
-| S&P 500 | 7,744.06 | +0.33% |
-| Nasdaq Composite | 26,713.03 | +0.08% |
-| Russell 2000 | — | +1.38% |
-| Dow Jones | 52,177.69 | +1.08% |
-| VIX | — | Tocó un máximo de dos semanas en la mañana, cerró bien por debajo de ese nivel |
-| S&P/BMV IPC | — | No localizamos con confianza el cierre del jueves |
-| USD/MXN | 18.4250 (FIX Banxico) | — |
-| US 10Y | ≈5.089% | -10 a -12 pb |
-| WTI | — | No localizamos con confianza el cierre del jueves |
+| S&P 500 | 7,659.44 | -1.09% |
+| Nasdaq Composite | 26,140.03 | -2.14% |
+| Russell 2000 | — | No localizamos con confianza el cierre del viernes |
+| Dow Jones | 52,002.41 | -0.34% |
+| VIX | ≈20.15 | +21% a 22% en el día |
+| S&P/BMV IPC | — | No localizamos con confianza el cierre del viernes |
+| USD/MXN | 18.4250 (FIX Banxico, jueves) | No localizamos con confianza el FIX de hoy |
+| US 10Y | ≈5.10%-5.13% | Subió desde el mínimo de la mañana (≈5.07%) conforme la liquidación tecnológica se profundizó |
+| WTI | — | No localizamos con confianza el cierre del viernes |
 
 ## Market Regime
 
-El jueves fue un día de divergencia marcada entre el mercado en su conjunto y el sector de semiconductores de IA en particular. Los tres índices principales de EU cerraron al alza —el Dow lideró con +1.08%—, en una recuperación desde mínimos intradía provocados por el reporte de PPI de septiembre, el más caliente en cuatro años en su medida núcleo. Esa misma sorpresa inflacionaria empujó a los inversionistas hacia bonos del Tesoro, lo que hizo caer los rendimientos con fuerza —el de 10 años bajó más de 10 puntos base—, y hacia los sectores defensivos: consumo básico y salud subieron cerca de 4% cada uno. Mientras tanto, el sector de semiconductores y nombres vinculados a infraestructura de IA continuó su peor semana en meses, con más de un billón de dólares en valor de mercado perdido entre los principales nombres globales del sector desde el inicio de la semana.
+El viernes cerró la peor semana para el sector de semiconductores e infraestructura de IA en meses, con una cuarta sesión consecutiva de liquidación que esta vez arrastró también a los índices generales: el Nasdaq Composite cayó 2.14% a 26,140.03, su peor sesión desde principios de junio, con el sector tecnológico del S&P 500 cayendo más de 3% y el índice de semiconductores registrando su racha de ocho sesiones más débil desde abril de 2025. El S&P 500 cedió 1.09% y el Dow, más resistente por su menor peso tecnológico, bajó solo 0.34%. CoreWeave volvió a ser el epicentro: sus acciones cayeron cerca de 10% adicional mientras sus bonos con vencimiento en 2032 se mantuvieron por encima de 15% de rendimiento. El rendimiento del Treasury a 10 años, que había caído con fuerza el jueves hacia 5.07%-5.09% por búsqueda de refugio, revirtió parte de esa caída durante la tarde del viernes conforme la liquidación tecnológica se profundizó, subiendo de vuelta hacia la zona de 5.10%-5.13%. En la semana completa, el Nasdaq acumuló una caída de 4.5%, su peor semana desde finales de junio.
 
-Scorecard: Trend → ↓ (semiconductores de IA) / ↑ (índices generales) · Breadth → ↑ (rotación hacia defensivos) · Momentum → ↓ (tecnología) · Volatility → ↑ (VIX tocó máximo de dos semanas intradía) · Rates → ↓ (caída fuerte en rendimientos) · USD → →
+Scorecard: Trend → ↓ (semiconductores e índices generales) · Breadth → ↓ (la liquidación ya no se limitó a tecnología) · Momentum → ↓ (cuarta sesión consecutiva de caída en IA) · Volatility → ↑ (VIX subió 21-22% en el día) · Rates → ↑ (revirtió parte de la caída del jueves) · USD → →
 
 ## Qué importó hoy
 
-**El Índice de Precios al Productor (PPI) de septiembre subió 1.3% mensual, más del doble del 0.6% esperado, con el núcleo subyacente en su mayor alza mensual en cuatro años.** El dato llegó un día después de un CPI que también sorprendió al alza (3.7% anual frente a 3.6% esperado), reforzando la narrativa de presión de precios persistente de cara a la decisión de la Fed del 28 de octubre. Horizonte: Macro.
+**El sector de semiconductores e infraestructura de IA tuvo su cuarta sesión consecutiva de pérdidas, y por primera vez en la semana arrastró también a los índices generales a terreno negativo.** El Nasdaq cayó 2.14% y el sector tecnológico del S&P 500 más de 3%, mientras el índice de semiconductores acumuló su peor racha de ocho sesiones desde abril de 2025. CoreWeave volvió a caer cerca de 10%, con sus bonos sosteniéndose por encima de 15% de rendimiento, consolidando la pérdida de más de un billón de dólares en valor de mercado del sector a nivel global durante la semana. Horizonte: Swing.
 
-**Más de un billón de dólares en valor de mercado se borraron esta semana entre los principales nombres globales de semiconductores e infraestructura de IA, con Nvidia, AMD, Micron y CoreWeave entre los más golpeados el jueves.** El detonante inicial, hace una semana, fue un reporte de Financial Times sobre una presentación a inversionistas de OpenAI que puso en duda la capacidad de los grandes clientes de IA para pagar el cómputo que han comprometido; esta semana se sumaron temores sobre el costo de financiamiento de esa expansión, con los rendimientos de deuda de CoreWeave y Oracle alcanzando máximos históricos el miércoles. Horizonte: Swing.
+**El Índice de Precios al Productor (PPI) de septiembre, publicado el jueves, subió 1.3% mensual, más del doble del 0.6% esperado, con el núcleo subyacente en su mayor alza mensual en cuatro años.** El dato llegó un día después de un CPI que también sorprendió al alza (3.7% anual frente a 3.6% esperado), reforzando la narrativa de presión de precios persistente de cara a la decisión de la Fed del 28 de octubre. Horizonte: Macro.
 
-**La producción industrial de Estados Unidos de septiembre, publicada esta mañana por la Reserva Federal, subió 0.7% mensual, muy por encima del 0.4% esperado por consenso.** La utilización de capacidad subió a 76.9%, desde 76.4% en agosto. El dato, si se sostiene, complica aún más la lectura de una economía que se desacelera de forma generalizada, en el mismo sentido que el PPI y el CPI de esta semana. Horizonte: Position.
+**La producción industrial de Estados Unidos de septiembre, publicada el viernes por la Reserva Federal, subió 0.7% mensual, muy por encima del 0.4% esperado por consenso.** La utilización de capacidad subió a 76.9%, desde 76.4% en agosto. El dato, sumado al PPI y al CPI de esta semana, complica aún más la lectura de una economía que se desacelera de forma generalizada. Horizonte: Position.
 
-**El peso mexicano cotizó en 18.4250 pesos por dólar según el FIX de Banxico determinado para hoy, prácticamente sin cambio frente al cierre previo.** No encontramos con una fuente confiable el nivel de cierre del S&P/BMV IPC ni del WTI para la sesión del jueves. Horizonte: Position.
+**El rendimiento del Treasury a 10 años revirtió parte de la caída del jueves conforme la liquidación tecnológica se profundizó durante la tarde del viernes, subiendo de nuevo hacia 5.10%-5.13% desde un mínimo matutino cercano a 5.07%.** Es un patrón distinto al del jueves, cuando el mismo activo había caído con fuerza por búsqueda de refugio; el movimiento de hoy sugiere que, conforme avanzó el día, el mercado volvió a sopesar la narrativa de inflación persistente por encima del refugio en bonos. Horizonte: Macro.
 
 ## Macro
 
-El dato macro central de la semana sigue siendo la combinación de CPI (miércoles) y PPI (jueves) de septiembre, ambos por encima de lo esperado, sumados ahora a una producción industrial de septiembre que también sorprendió al alza esta mañana. El patrón conjunto —inflación al consumidor, inflación al productor y actividad industrial, los tres por encima de consenso en la misma semana— complica la narrativa de que la Fed tiene un camino despejado para continuar su ciclo de recortes sin matices adicionales en su reunión del 28 de octubre.
+El dato macro central de la semana fue la combinación de CPI (miércoles), PPI (jueves) y producción industrial (viernes) de septiembre, los tres por encima de lo esperado. Ese patrón conjunto —inflación al consumidor, inflación al productor y actividad industrial, todos por encima de consenso en la misma semana— complica la narrativa de que la Fed tiene un camino despejado para continuar su ciclo de recortes sin matices adicionales en su reunión del 28 de octubre.
 
 ## Tasas y bonos
 
-El rendimiento del Treasury a 10 años cayó a aproximadamente 5.089%, una baja de más de 10 puntos base, mientras el de 30 años bajó cerca de 9 puntos base a 5.428% y el de 2 años cedió más de 4 puntos base a 4.757%. La caída es notable porque ocurrió el mismo día que un PPI mucho más caliente de lo esperado —normalmente un dato inflacionario fuerte presiona los rendimientos al alza, no a la baja—, lo cual sugiere que el movimiento respondió más a una búsqueda de refugio ante la liquidación en acciones tecnológicas que a una relectura de las perspectivas de inflación de largo plazo.
+El rendimiento del Treasury a 10 años tuvo un comportamiento de dos caras esta semana: cayó con fuerza el jueves (a 5.089%, más de 10 puntos base) por búsqueda de refugio ante el PPI caliente y la liquidación tecnológica, pero revirtió parte de esa caída el viernes conforme la liquidación en semiconductores se profundizó, subiendo de vuelta hacia la zona de 5.10%-5.13%. Ese vaivén —refugio un día, repreciación de inflación persistente al siguiente— es consistente con un mercado de bonos que todavía no decide si el riesgo dominante de las próximas semanas es la desaceleración tecnológica o la inflación persistente.
 
 ## FX y commodities
 
-El FIX de Banxico para hoy se ubicó en 18.4250 pesos por dólar, prácticamente sin cambio frente al 18.4888 del miércoles. No localizamos con confianza el cierre del jueves para el WTI, el Brent, el oro ni el cobre.
+El FIX de Banxico más reciente que pudimos confirmar se ubicó en 18.4250 pesos por dólar (jueves), sin un dato confiable para el FIX determinado específicamente para hoy viernes. No localizamos con confianza el cierre del viernes para el WTI, el Brent, el oro ni el cobre; el nivel más reciente confirmado para el WTI es de 93.74 dólares por barril, correspondiente al lunes 12 de octubre.
 
 ## Sectores
 
-La divergencia sectorial de la semana es el dato más relevante: consumo básico y salud subieron cerca de 4% el jueves en una clara rotación defensiva, mientras semiconductores y nombres de infraestructura de IA (Nvidia -1.8%, Micron -4.4%, AMD -3.5% solo el jueves) acumulan su peor semana en meses, con más de un billón de dólares en valor perdido entre los principales nombres del sector a nivel global.
+El viernes marcó un cambio de patrón frente al resto de la semana: hasta el jueves, la liquidación en semiconductores e IA había convivido con índices generales en positivo gracias a una rotación hacia sectores defensivos (consumo básico y salud, +4% el jueves). El viernes, en cambio, el sector tecnológico (-3%+) arrastró también a los índices generales a terreno negativo, con el índice de semiconductores acumulando su peor racha de ocho sesiones desde abril de 2025 y CoreWeave cayendo un 10% adicional.
 
 ## Swing
 
-La liquidación en semiconductores e infraestructura de IA es, por ahora, el movimiento de mayor relevancia de corto plazo: el mercado está reevaluando en tiempo real si el ritmo de gasto en cómputo de IA es sostenible frente al costo de financiamiento que empresas como CoreWeave y Oracle están asumiendo para construirlo. Hasta que esa pregunta se resuelva con más claridad —ya sea con nuevos reportes de resultados o con señales de los propios proveedores de capital— es probable que la volatilidad en este sector específico se mantenga elevada, incluso en sesiones donde los índices generales suban.
+La liquidación en semiconductores e infraestructura de IA, que ya lleva cuatro sesiones consecutivas, es el movimiento de mayor relevancia de corto plazo, y el viernes mostró una escalada: por primera vez en la semana, arrastró también a los índices generales a terreno negativo, no solo a los nombres específicos del sector. El mercado está reevaluando en tiempo real si el ritmo de gasto en cómputo de IA es sostenible frente al costo de financiamiento que empresas como CoreWeave están asumiendo para construirlo. Hasta que esa pregunta se resuelva con más claridad es probable que la volatilidad se mantenga elevada.
 
 ## Position
 
@@ -83,28 +83,30 @@ No localizamos con confianza evidencia de un cambio estructural nuevo para esta 
 
 ## Riesgos
 
-El riesgo principal a vigilar sigue siendo la sostenibilidad del financiamiento de la expansión de infraestructura de IA: los rendimientos de deuda de empresas como CoreWeave y Oracle alcanzaron máximos históricos esta semana, una señal de que el mercado de crédito está empezando a cuestionar, con un costo de capital más alto, un ritmo de gasto que hasta hace poco se daba por garantizado. El segundo riesgo es la combinación de datos de inflación y actividad económica de esta semana (CPI, PPI, producción industrial), que complica la lectura de que la Fed recortará tasas el 28 de octubre sin matices adicionales en su comunicación.
+El riesgo principal a vigilar es la sostenibilidad del financiamiento de la expansión de infraestructura de IA: la liquidación ya lleva cuatro sesiones consecutivas y el viernes, por primera vez, arrastró también a los índices generales, con CoreWeave como epicentro (acciones -10%, bonos rindiendo arriba de 15%). El segundo riesgo es la combinación de datos de inflación y actividad económica de esta semana (CPI, PPI, producción industrial), que complica la lectura de que la Fed recortará tasas el 28 de octubre sin matices adicionales en su comunicación — y el propio comportamiento errático del Treasury a 10 años el viernes (cayendo en la mañana, subiendo en la tarde) refleja esa misma tensión no resuelta entre ambos riesgos.
 
-## Qué vigilar mañana
+## Qué vigilar la próxima semana
 
-- Si el sector de semiconductores e infraestructura de IA logra estabilizarse o si la liquidación se extiende a una tercera semana.
-- Confirmación del cierre del S&P/BMV IPC y del WTI de esta semana, pendientes desde ediciones anteriores.
-- Cualquier comentario adicional de proveedores de capital (CoreWeave, Oracle) sobre el costo de su deuda.
+- Si el sector de semiconductores e infraestructura de IA logra estabilizarse tras cuatro sesiones consecutivas de pérdidas, o si la liquidación se extiende y sigue arrastrando a los índices generales.
+- Confirmación del cierre del S&P/BMV IPC, el Russell 2000, el WTI y el FIX de Banxico del viernes, pendientes de esta edición.
+- Cualquier comentario adicional de CoreWeave u otros proveedores de capital de infraestructura de IA sobre el costo de su deuda.
 - Reacción del mercado de bonos si la narrativa de inflación persistente (CPI + PPI + producción industrial) se consolida de cara al 28 de octubre.
 - Arranque de la temporada de reportes de la semana del 19 de octubre, con Netflix como primer nombre relevante.
 
 ## Pendientes de esta edición
 
-- Nivel exacto de cierre del VIX del jueves: solo confirmamos que tocó un máximo de dos semanas intradía y cerró "bien por debajo" de ese nivel, sin una cifra puntual confiable.
-- Cierre del S&P/BMV IPC y del Russell 2000 en nivel de puntos (solo confirmamos el cambio porcentual del Russell, no su nivel) para la sesión del jueves.
-- Cierre del WTI, Brent, oro y cobre del jueves.
+- Nivel de cierre del S&P/BMV IPC del viernes.
+- Nivel de cierre en puntos del Russell 2000 del viernes (no localizamos ni el nivel ni el cambio porcentual confiable para esta sesión específica).
+- FIX de Banxico determinado específicamente para hoy viernes (el último confirmado es el de ayer jueves, 18.4250).
+- Cierre del WTI, Brent, oro y cobre del viernes (el nivel más reciente confirmado del WTI es del lunes 12-oct).
 - Fecha exacta del reporte de Netflix (19 o 20 de octubre, las fuentes disponibles se dividen).
 
 ## Fuentes
 
-- [Market Review: October 15, 2026](https://investrade.com/market-review-october-15-2026/) — Investrade
+- [Stock Market Today (Oct. 16, 2026): Nasdaq, Russell 2000 sink as tech sinks, oil leaps](https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-16-2026) — TheStreet
+- [S&P 500 at Midday: Tech Selloff Drags the Index Down](https://247wallst.com/cards/money-is-rotating-out-of-tech-by-the-hour-the-nasdaq-is-dow-gspc-market-bell-01m52q70z2tpqzk66kqegmh40z) — 247 Wall St.
+- [U.S. markets weighed down by extended sell-off in the tech sector](https://www.bnnbloomberg.ca/markets/dow-jones/2026/10/16/us-markets-weighed-down-by-extended-sell-off-in-the-tech-sector/) — BNN Bloomberg
+- [Live updates: Crypto gives up more ground as AI selloff picks up steam](https://www.coindesk.com/markets/2026/10/16/live-updates-bitcoin-back-above-usd82-000-zec-jumps-11-as-etf-outflows-continue) — CoinDesk
 - [Treasury yields slide as investors flee to safety of bonds amid tech rout](https://www.cnbc.com/2026/10/15/us-treasury-yields-investors-economic-data-.html) — CNBC
-- [Nvidia, AMD, Dell sink in global tech rout on AI funding worries](https://www.cnbc.com/2026/10/15/sk-hynix-samsung-softbank-stocks-asia-tech-rout-ai-funding-worries.html) — CNBC
-- [Tech Stocks Drop For Second Day Amid AI Debt Fears, Hotter-Than-Expected Inflation Data](https://www.forbes.com/sites/fionariley/2026/10/15/tech-selloff-extends-on-hot-inflation-data-ai-spending-woes/) — Forbes
 - [U.S. Industrial Production Rose 0.7% in September, Topping Forecasts](https://247wallst.com/cards/xpost-01m52ekb8gpvryg95dzchh1scd) — 247 Wall St.
 - [Banco de México — serie histórica del tipo de cambio FIX](https://www.banxico.org.mx/SieInternet/consultarDirectorioInternetAction.do?sector=6&accion=consultarCuadro&idCuadro=CF373&locale=es) — Banxico
