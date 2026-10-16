@@ -39,6 +39,25 @@ function formatFechaCorta(fecha) {
   });
 }
 
+/* Tarjeta compacta (miniatura pequeña + título + fecha/min de lectura) —
+   para la vista "Todas las notas", pensada para escanear rápido cuál es
+   la más reciente, igual al patrón ya usado en las listas de IdeasMundos. */
+function NotaCompacta({ nota }) {
+  return (
+    <li className="blog-lista-compacta-item">
+      <Link href={`/blog/${nota.slug}`} className="blog-lista-compacta-link">
+        <NotaCover categoria={nota.categoria} imagen={nota.imagen} size="sm" />
+        <span className="blog-lista-compacta-texto">
+          {nota.titulo}
+          <span className="blog-lista-compacta-meta">
+            {formatFechaCorta(nota.fecha)} · {nota.minutos} min
+          </span>
+        </span>
+      </Link>
+    </li>
+  );
+}
+
 function NotaCard({ nota }) {
   return (
     <li className="post-card post-card-editorial">
@@ -125,6 +144,10 @@ export default function BlogExplorer({ notas: notasProp = [], pickSlug, mundos =
   const [q, setQ] = useState("");
   const [mundo, setMundo] = useState("todos");
   const [pagina, setPagina] = useState(1);
+  // Antes de cualquier interacción se muestra el "Editor's Pick" grande;
+  // en cuanto se usa el buscador o se toca cualquier chip (incluyendo
+  // "Todas") se cambia a la lista completa, ordenada por fecha.
+  const [modoLista, setModoLista] = useState(false);
 
   // Siempre de la más nueva a la más antigua, sin depender del orden recibido.
   const notas = useMemo(
@@ -139,7 +162,7 @@ export default function BlogExplorer({ notas: notasProp = [], pickSlug, mundos =
   }, [notas, mundos]);
 
   const query = sinAcentos(q.trim());
-  const buscando = query.length > 0 || mundo !== "todos";
+  const buscando = modoLista || query.length > 0 || mundo !== "todos";
 
   const resultados = useMemo(() => {
     return notas.filter((n) => {
@@ -175,7 +198,14 @@ export default function BlogExplorer({ notas: notasProp = [], pickSlug, mundos =
   function onFiltrar(slug) {
     setMundo(slug);
     setPagina(1);
+    setModoLista(true);
   }
+
+  // Vista compacta (miniatura chica + fecha, ordenada por lo más reciente)
+  // solo cuando se pidió explícitamente "Todas" sin búsqueda ni filtro de
+  // mundo activo — con un filtro de mundo o una búsqueda de por medio se
+  // mantiene la tarjeta grande (con resumen) para ese resultado puntual.
+  const mostrarCompacta = modoLista && query === "" && mundo === "todos";
 
   return (
     <>
@@ -243,12 +273,25 @@ export default function BlogExplorer({ notas: notasProp = [], pickSlug, mundos =
                 className="btn ghost btn-sm"
                 onClick={() => {
                   onBuscar("");
-                  onFiltrar("todas");
+                  onFiltrar("todos");
                 }}
               >
                 Ver todas las notas
               </button>
             </div>
+          ) : mostrarCompacta ? (
+            <>
+              <ul className="blog-lista-compacta">
+                {listaPagina.map((nota) => (
+                  <NotaCompacta key={nota.slug} nota={nota} />
+                ))}
+              </ul>
+              <Paginacion
+                pagina={paginaActual}
+                totalPaginas={totalPaginas}
+                onCambiar={cambiarPagina}
+              />
+            </>
           ) : (
             <>
               <ul className="post-list post-list-editorial">

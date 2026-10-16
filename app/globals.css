@@ -1604,6 +1604,46 @@ html:not(.dark) .pglobe-land {
   white-space: nowrap;
   text-decoration: none;
 }
+
+/* Lista compacta de "Todas las notas" en /blog — miniatura chica + título +
+   fecha/min de lectura, pensada para escanear rápido cuáles son las últimas
+   (la lista ya viene ordenada de más nueva a más vieja). */
+.blog-lista-compacta {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+  border-top: 1px solid var(--line-soft);
+}
+.blog-lista-compacta-item {
+  border-bottom: 1px solid var(--line-soft);
+}
+.blog-lista-compacta-link,
+.blog-lista-compacta-link:visited {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 4px;
+  color: var(--ink);
+  text-decoration: none;
+}
+.blog-lista-compacta-link .jx-cover { flex-shrink: 0; }
+.blog-lista-compacta-texto {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  min-width: 0;
+}
+.blog-lista-compacta-link:hover .blog-lista-compacta-texto {
+  color: var(--accent);
+  text-decoration: underline;
+}
+.blog-lista-compacta-meta {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--meta);
+  text-decoration: none;
+}
 .ideas-mundo-cta {
   margin-top: auto;
   margin-bottom: 20px;

@@ -70,6 +70,12 @@ export const metadata = {
 };
 
 export const viewport = {
+  // Le dice al navegador que el sitio ya maneja ambos temas por su cuenta
+  // (toggle manual vía .dark) — sin esto, algunos navegadores (el "forzar
+  // modo oscuro" de Chrome Android, por ejemplo) reinterpretan colores por
+  // su cuenta y pueden romper combinaciones texto/fondo que se ven bien en
+  // escritorio (ej. un botón cuyo texto queda invisible sobre su fondo).
+  colorScheme: "light dark",
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#f6f7f5" },
     { media: "(prefers-color-scheme: dark)", color: "#0b1220" },
