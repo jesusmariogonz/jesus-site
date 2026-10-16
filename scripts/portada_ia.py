@@ -86,7 +86,8 @@ def generar(salida, titulo, categoria, prompt_imagen):
     # Nunca pide texto/letras: eso se sobrepone después con PIL.
     prompt_completo = (
         "Editorial photojournalism-style cover image for a business/tech/economics "
-        "news website, cinematic lighting, realistic, high detail, no text, no logos, "
+        "news website, bright and well-lit, natural daylight or clean bright studio "
+        "lighting, airy, realistic, high detail, no text, no logos, "
         "no watermarks, no captions, 16:9 composition. "
         f"Scene: {prompt_imagen}"
     )

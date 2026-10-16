@@ -116,12 +116,13 @@ def tratar_imagen(base, salida, titulo, categoria):
     base = recortar_cubrir(base, ANCHO, ALTO)
 
     # Degradado oscuro de abajo hacia arriba, para que el texto blanco
-    # siempre sea legible sin importar qué tan clara sea la foto.
+    # siempre sea legible sin importar qué tan clara sea la foto. Acotado
+    # al cuarto inferior (antes cubría el 65% de la imagen hasta casi
+    # negro, lo que hacía ver las portadas muy oscuras en general).
     degradado = Image.new("L", (1, ALTO), color=0)
     for y in range(ALTO):
-        # Oscurece con fuerza en el tercio inferior, transparente arriba.
-        t = max(0, (y - ALTO * 0.35) / (ALTO * 0.65))
-        degradado.putpixel((0, y), int(235 * (t ** 0.8)))
+        t = max(0, (y - ALTO * 0.55) / (ALTO * 0.45))
+        degradado.putpixel((0, y), int(190 * (t ** 1.1)))
     degradado = degradado.resize((ANCHO, ALTO))
     overlay = Image.new("RGBA", (ANCHO, ALTO), (10, 12, 18, 0))
     overlay.putalpha(degradado)
