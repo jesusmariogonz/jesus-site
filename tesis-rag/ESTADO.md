@@ -5,7 +5,7 @@ de escribir cualquier entrega, la rutina/sesión debe leer este archivo y
 confirmar contra `content/blog/` (slugs con `tesis-rag-semana-NN`) — nunca
 inferir la semana solo contando fechas transcurridas.
 
-**Próxima semana pendiente: 5** (Resultados parte 2 — efecto de la mitigación en Condición B, prueba de McNemar completa y costo en calidad de respuesta)
+**Próxima semana pendiente: 6** (Metodología parte 3 — diseño del Experimento 2, sección 5)
 
 ## Historial
 
@@ -15,6 +15,7 @@ inferir la semana solo contando fechas transcurridas.
 | 2 | 2026-09-27 | `tesis-rag-semana-02-marco-teorico-metodologia` | Marco teórico (gobernanza como propiedad estructural) y metodología unificada: diseño pareado, McNemar, IC 95% Wilson, criterio de falsabilidad popperiano. |
 | 3 | 2026-10-04 | `tesis-rag-semana-03-diseno-experimento-1-fuga-confidencialidad` | Diseño completo del Experimento 1 (corpus de 18 docs EIA Corp, 3 roles, 62 trials pareados) — **y ejecución real ya completada** contra la API de Anthropic; datos crudos y análisis en `tesis-rag/experimento-1/`. |
 | 4 | 2026-10-11 | `tesis-rag-semana-04-resultados-fuga-sin-mitigacion` | Resultados parte 1: tasa de fuga en Condición A (baseline) = 70.5% [IC95% 55.8-81.8%], con ejemplo real documentado (becario obteniendo compensación de un Director) y desglose de fuga por documento (3 de 8 documentos con fuga del 100%). |
+| 5 | 2026-10-18 | `tesis-rag-semana-05-resultados-mitigacion-costo-calidad` | Resultados parte 2: tasa de fuga en Condición B = 9.1% [IC95% 3.6-21.2%], McNemar exacto p=1.12e-07 sobre la tabla pareada completa (3/28/1/12), reducción absoluta de 61.4 pp. Calidad en acceso legítimo: 16/18 vs. 14/18 — sin costo de calidad observado en esta corrida (los 2 fallos son preexistentes en ambas condiciones, de causa no relacionada con el filtro). |
 
 ## Recordatorios operativos para la siguiente sesión
 
@@ -28,13 +29,9 @@ inferir la semana solo contando fechas transcurridas.
   B (mitigación) = 4/44 = 9.1% [IC95% 3.6–21.2%]; McNemar exacto p<0.00001.
   Calidad en acceso legítimo (tipo a, n=18): A=14/18 correctas, B=16/18
   correctas (el filtro no empeoró la calidad en esta corrida).
-- Semana 4: Resultados parte 1 — reportar la tasa de fuga SIN mitigación
-  (Condición A) con su IC 95% Wilson, y adelantar la tabla pareada de
-  McNemar como evidencia de diseño (el p-value completo puede ir en la
-  discusión de la Semana 4 o reservarse para la Semana 5, a criterio
-  editorial de esa entrega).
-- Semana 5: Resultados parte 2 — efecto de la mitigación (Condición B) y
-  su costo en calidad de respuesta (preguntas tipo a).
+- Semanas 4 y 5 YA se publicaron con los resultados completos del
+  Experimento 1 (fuga con y sin mitigación, McNemar exacto, costo de
+  calidad). No hay que volver a redactarlas.
 - Semana 6 (Metodología parte 3): diseñar el Experimento 2 (sección 5).
 - Semana 7 no puede escribirse sin datos reales en
   `tesis-rag/experimento-2/`.
