@@ -709,6 +709,12 @@ html:not(.dark) .prose li {
   cursor: pointer;
   box-shadow: var(--shadow-sm);
   transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+  /* Algunos navegadores/accesorios de accesibilidad (modo de alto
+     contraste de Windows, inversión de color de algunos Android/iOS)
+     reemplazan colores de fondo y texto con pares del sistema que no
+     siempre combinan bien con un degradado — esto le pide al navegador
+     que respete los colores tal cual los definimos en vez de sustituirlos. */
+  forced-color-adjust: none;
 }
 .btn:hover {
   text-decoration: none;
