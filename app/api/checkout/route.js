@@ -45,6 +45,11 @@ export async function GET(request) {
       cancel_url: `${base}${cancelTo}`,
       customer_creation: "if_required",
       metadata: { toolkit_type: type, toolkit_id: id },
+      // Permite capturar un código de promoción en la propia pantalla de
+      // Stripe (ej. un cupón 100% de descuento restringido a un producto
+      // específico) — el webhook existente ya entrega el archivo igual
+      // cuando amount_total queda en 0, no requiere lógica extra aquí.
+      allow_promotion_codes: true,
     });
   } catch (err) {
     console.error("checkout: error creando la sesión de Stripe:", err.message);

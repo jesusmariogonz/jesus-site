@@ -81,6 +81,24 @@ const VARIANTES = {
       </g>
     ),
   },
+  stack: {
+    claseGradiente: "lc-stack",
+    motivo: (
+      <g fill="none" strokeLinecap="round">
+        {/* Capas apiladas (el "AI Architecture Stack" del libro), de más
+            ancha/transparente abajo a más angosta/sólida arriba — todo
+            debajo de la franja de eyebrow/título para no encimarse. */}
+        <polygon points="30,255 170,255 150,272 50,272" stroke="rgba(255,255,255,0.22)" strokeWidth="1.5" />
+        <polygon points="38,230 162,230 146,247 54,247" stroke="rgba(255,255,255,0.28)" strokeWidth="1.5" />
+        <polygon points="46,205 154,205 141,222 59,222" stroke="rgba(255,255,255,0.36)" strokeWidth="1.5" />
+        <polygon points="54,180 146,180 136,197 64,197" stroke="rgba(255,255,255,0.46)" strokeWidth="1.5" />
+        <polygon points="62,157 138,157 131,172 69,172" stroke="rgba(255,255,255,0.58)" strokeWidth="1.5" />
+        <polygon points="72,135 128,135 123,150 77,150" fill="rgba(255,255,255,0.14)" stroke="rgba(255,255,255,0.75)" strokeWidth="1.5" />
+        <line x1="100" y1="135" x2="100" y2="105" stroke="rgba(255,255,255,0.45)" strokeWidth="1.5" />
+        <circle cx="100" cy="99" r="5" fill="rgba(255,255,255,0.85)" />
+      </g>
+    ),
+  },
 };
 
 export default function LibroCover({
