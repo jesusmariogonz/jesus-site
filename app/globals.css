@@ -699,8 +699,12 @@ html:not(.dark) .prose li {
    ============================================ */
 .btn {
   display: inline-block;
-  background: linear-gradient(135deg, var(--btn-grad-1), var(--btn-grad-2));
-  color: #fff;
+  /* background-color de respaldo sólido, por si el degradado no se
+     pinta en algún navegador — nunca queda transparente/sin fondo. */
+  background-color: var(--btn-grad-1);
+  background-image: linear-gradient(135deg, var(--btn-grad-1), var(--btn-grad-2));
+  color: #fff !important;
+  -webkit-text-fill-color: #fff;
   font-weight: 600;
   font-size: 0.95rem;
   padding: 11px 22px;
