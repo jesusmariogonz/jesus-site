@@ -3665,6 +3665,153 @@ html:not(.dark) .pglobe-land {
   padding-top: 24px;
   border-top: 1px solid var(--line-soft);
 }
+
+/* ── /recursos: catálogo editorial (BibliotecaExplorer) ─────── */
+.biblio-filtros {
+  margin-bottom: 36px;
+}
+.biblio-seccion {
+  margin-bottom: 48px;
+}
+.biblio-seccion-titulo {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 6px;
+}
+.biblio-seccion-sub {
+  font-size: 0.85rem;
+  color: var(--meta);
+  margin: 0 0 20px;
+}
+.biblio-vacio {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+.biblio-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+/* Destacado: portada + info lado a lado en escritorio, apilado en móvil */
+.biblio-destacado {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+}
+.biblio-destacado-kicker {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--meta);
+  margin-bottom: 20px;
+}
+.biblio-destacado-cuerpo {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 32px;
+  align-items: center;
+}
+.biblio-destacado-cover {
+  display: block;
+  max-width: 180px;
+}
+.biblio-destacado-titulo {
+  margin: 0 0 8px;
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.biblio-destacado-titulo a {
+  color: inherit;
+}
+.biblio-destacado-subtitulo {
+  margin: 0 0 20px;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.biblio-destacado-footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.biblio-destacado-precio {
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: var(--ink);
+}
+@media (max-width: 640px) {
+  .biblio-destacado-cuerpo {
+    grid-template-columns: 1fr;
+  }
+  .biblio-destacado-cover {
+    max-width: 150px;
+    margin: 0 auto;
+  }
+  .biblio-destacado-info {
+    text-align: center;
+  }
+  .biblio-destacado-footer {
+    justify-content: center;
+  }
+}
+
+/* Cuadrícula compacta: 2 columnas en móvil, 3 en escritorio */
+.biblio-grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+@media (min-width: 720px) {
+  .biblio-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+.biblio-card .lib-card-cover {
+  padding: 18px 14px 22px;
+}
+.biblio-card .lib-card-body {
+  padding: 14px 14px 16px;
+}
+.biblio-card .lib-card-title {
+  font-size: 0.92rem;
+}
+.biblio-card .lib-card-subtitulo {
+  font-size: 0.76rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.biblio-card .lib-card-precio {
+  font-size: 1rem;
+}
+.biblio-card .lib-card-footer {
+  flex-wrap: wrap;
+  row-gap: 8px;
+}
+.biblio-card .lib-card-footer .btn-sm {
+  padding: 6px 10px !important;
+  font-size: 0.8rem !important;
+}
+
+.biblio-cta-toolkit {
+  margin-top: 8px;
+}
 .lib-cta-final p {
   color: var(--ink-soft);
   margin: 0 0 16px;
