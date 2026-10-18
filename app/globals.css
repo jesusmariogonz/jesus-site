@@ -3944,6 +3944,14 @@ html:not(.dark) .pglobe-land {
   inset: 0;
   z-index: 1;
 }
+.lc-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
 .lc-eyebrow {
   font-family: var(--font-mono);
   font-size: 9.5px;

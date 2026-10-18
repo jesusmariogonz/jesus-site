@@ -71,6 +71,7 @@ export default function LibroDetalle({ params }) {
                 paginas={libro.paginas}
                 precio={libro.precio}
                 gratis={!libro.precio}
+                imagen={libro.imagenPortada}
                 size="hero"
               />
             </div>

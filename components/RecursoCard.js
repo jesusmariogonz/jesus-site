@@ -37,6 +37,7 @@ export default function RecursoCard({ libro }) {
           paginas={libro.paginas}
           precio={libro.precio}
           gratis={gratis}
+          imagen={libro.imagenPortada}
         />
       </Link>
       <div className="lib-card-body">

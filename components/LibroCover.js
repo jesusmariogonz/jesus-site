@@ -108,8 +108,26 @@ export default function LibroCover({
   paginas,
   precio,
   gratis,
+  imagen,
   size = "card",
 }) {
+  // Portada real (foto/ilustración generada, con título ya compuesto en
+  // la imagen) — ya no necesita el gradiente/motivo/texto SVG de abajo,
+  // solo la insignia de precio encima.
+  if (imagen) {
+    return (
+      <div className={`lc lc-${size} lc-foto`}>
+        {gratis ? (
+          <span className="lc-price lc-price-gratis">Gratis</span>
+        ) : precio != null ? (
+          <span className="lc-price">${precio}</span>
+        ) : null}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={imagen} alt={titulo} className="lc-img" />
+      </div>
+    );
+  }
+
   const v = VARIANTES[variante] || VARIANTES.framing;
 
   return (
