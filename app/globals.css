@@ -1162,6 +1162,45 @@ html.dark .editors-pick-badge {
   text-align: justify;
 }
 
+/* ============================================
+   Proyecto propio "Pricing Científico" (/proyectos/pricing-cientifico)
+   ============================================ */
+.pc-page {
+  max-width: 760px;
+  margin: 0 auto;
+}
+.pc-page .prose-container {
+  max-width: 100%;
+}
+.pc-chart-wrap {
+  margin: 24px 0 8px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+}
+.pc-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.pc-arquitectura {
+  margin: 16px 0;
+}
+.pc-advertencia {
+  margin: 20px 0;
+  padding: 16px 18px;
+  border: 1px solid #eb6834;
+  border-left-width: 4px;
+  border-radius: 8px;
+  background: rgba(235, 104, 52, 0.08);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+.pc-advertencia strong {
+  color: #eb6834;
+}
+
 /* Chips de etiquetas debajo del título de la nota */
 .post-tags {
   display: flex;

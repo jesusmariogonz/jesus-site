@@ -30,6 +30,27 @@ export default function Proyectos() {
         <h2 style={{ marginTop: 8 }}>¿Dónde?</h2>
         <ProjectsMap />
 
+        <h2 style={{ marginTop: 48 }}>Proyectos propios</h2>
+        <p className="pmap-intro">
+          Los proyectos de arriba son de clientes reales, y por confidencialidad
+          no puedo entrar en el detalle técnico. Por eso empecé a construir
+          proyectos propios desde cero — con datos, cálculos y código abiertos
+          — para mostrar cómo trabajo cuando sí puedo compartir todo.
+        </p>
+        <div className="lib-cta-final" style={{ marginTop: 16, marginBottom: 48 }}>
+          <p>
+            <strong>Pricing Científico</strong> — estimación de elasticidad
+            precio-demanda y optimización de precio con el Índice de Lerner,
+            con código Python, regresión con errores robustos y diagramas de
+            arquitectura.
+          </p>
+          <div className="lib-cta-botones">
+            <Link href="/proyectos/pricing-cientifico" className="btn-gold">
+              Ver el proyecto →
+            </Link>
+          </div>
+        </div>
+
         <div className="lib-cta-final">
           <p>¿Quieres conocer mi trayectoria completa, leer cómo pienso estos problemas, o llevarte plantillas listas para usar?</p>
           <div className="lib-cta-botones">

@@ -1,0 +1,13 @@
+{
+  "costo_marginal_mxn": 11.2,
+  "precio_lista_actual_mxn": 18.5,
+  "cantidad_base_semanal": 897.6,
+  "elasticidad_usada": -1.769,
+  "precio_optimo_formula_lerner_mxn": 25.76,
+  "precio_optimo_grid_search_mxn": 25.76,
+  "diferencia_metodos_mxn": 0.0,
+  "utilidad_semanal_en_precio_actual_mxn": 6552.0,
+  "utilidad_semanal_en_precio_optimo_mxn": 7276.0,
+  "mejora_utilidad_semanal_pct": 11.05,
+  "cambio_precio_vs_lista_pct": 39.26
+}

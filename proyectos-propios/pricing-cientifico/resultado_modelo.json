@@ -1,0 +1,10 @@
+{
+  "elasticidad_estimada": -1.769,
+  "ic_95_inferior": -1.957,
+  "ic_95_superior": -1.581,
+  "p_value": 4.207387266346292e-76,
+  "r2": 0.686,
+  "n_observaciones": 2080,
+  "elasticidad_verdadera": -1.8,
+  "error_vs_verdadera_pct": 1.73
+}
