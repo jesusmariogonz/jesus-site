@@ -27,7 +27,7 @@ La semana que arranca el lunes 12 de octubre tiene dos ejes claros: el dato de i
 | Miércoles 14-oct | [CPI de septiembre (8:30am ET)](/blog/cpi-septiembre-2026-inflacion-37-porciento-sorpresa-alcista) | Estados Unidos | Alta | Referencia de inflación más reciente antes de la decisión de la Fed del 28 de octubre |
 | Jueves 15-oct | [Ventas minoristas de septiembre y PPI (8:30am ET)](/blog/ppi-ventas-minoristas-septiembre-2026-sorpresa-inflacionaria) | Estados Unidos | Alta | Termómetro de consumo e inflación mayorista de cara a la temporada de compras de fin de año |
 | Jueves 15-oct | [Philly Fed Index](/blog/ppi-ventas-minoristas-septiembre-2026-sorpresa-inflacionaria) | Estados Unidos | Media | Lectura regional de actividad manufacturera |
-| Viernes 16-oct | Producción industrial de septiembre (9:15am ET) | Estados Unidos | Media | Termómetro del sector manufacturero e industrial |
+| Viernes 16-oct | [Producción industrial de septiembre (9:15am ET)](/blog/produccion-industrial-septiembre-2026-sorpresa-alcista) | Estados Unidos | Media | Termómetro del sector manufacturero e industrial |
 
 No localizamos con confianza una agenda de discursos de miembros de la Fed confirmada específicamente para esta semana, ni un dato de ISM dentro de esta ventana. No hay reunión de política monetaria de Banxico programada esta semana —la siguiente sería el 5 de noviembre— y el INPC de septiembre ya se publicó el 8 de octubre (inflación anual de 3.45%), por lo que no hay dato nuevo de inflación mexicana esta semana.
 
