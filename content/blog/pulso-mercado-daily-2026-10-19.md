@@ -12,7 +12,7 @@ tags:
   - semiconductores
   - Fed
   - peso mexicano
-resumen: 'El mercado entra a la semana todavía digiriendo la peor sesión del viernes en meses para semiconductores e infraestructura de IA (Nasdaq -2.14%), con Meta y Tesla reportando el miércoles como la prueba más directa de si esa liquidación se estabiliza o se profundiza. La Fed entra en blackout antes de su decisión del 28 de octubre.'
+resumen: 'Wall Street cortó este lunes la racha de cinco sesiones de pérdidas en tecnología: el Nasdaq subió 1.11% y el S&P 500 0.41%, con el Dow prácticamente plano, en un rebote liderado por acciones de IA de cara a los resultados de Netflix (martes) y Meta y Tesla (miércoles). La Fed entra en blackout antes de su decisión del 28 de octubre.'
 imagen: /blog/portadas/mercados-hoy-fija.jpg
 socialImagen: /blog/social/pulso-mercado-daily-2026-10-19.jpg
 ---
@@ -21,25 +21,25 @@ socialImagen: /blog/social/pulso-mercado-daily-2026-10-19.jpg
 
 | Activo | Nivel | Cambio |
 |---|---|---|
-| S&P 500 | 7,659.44 | -1.09% (cierre del viernes) |
-| Nasdaq Composite | 26,140.03 | -2.14% (cierre del viernes) |
-| Russell 2000 | — | No localizamos con confianza el cierre del viernes ni de hoy |
-| Dow Jones | 52,002.41 | -0.34% (cierre del viernes) |
-| VIX | ≈20.15 | +21% a 22% el viernes |
-| S&P/BMV IPC | — | No localizamos con confianza el cierre del viernes ni de hoy |
-| USD/MXN | 18.4250 (FIX Banxico, jueves 15-oct) | No localizamos con confianza el FIX de hoy lunes |
-| US 10Y | ≈5.10%-5.13% | Nivel de cierre del viernes |
-| WTI | — | No localizamos con confianza el cierre del viernes ni de hoy |
+| S&P 500 | 7,690.73 | +0.41% |
+| Nasdaq Composite | 26,430.89 | +1.11% |
+| Russell 2000 | — | No localizamos con confianza el cierre de hoy |
+| Dow Jones | 51,966.03 | -0.07% |
+| VIX | — | No localizamos con confianza el cierre de hoy |
+| S&P/BMV IPC | — | No localizamos con confianza el cierre de hoy |
+| USD/MXN | 18.4250 (FIX Banxico, jueves 15-oct) | No localizamos con confianza el FIX de hoy |
+| US 10Y | — | No localizamos con confianza el nivel de hoy |
+| WTI | — | No localizamos con confianza el cierre de hoy |
 
 ## Market Regime
 
-El mercado abre la semana todavía con el régimen que dejó el viernes: la peor sesión en meses para semiconductores e infraestructura de IA, en la cuarta liquidación consecutiva del sector, que el viernes arrastró también a los índices generales (Nasdaq -2.14%, S&P 500 -1.09%, Dow más resistente con -0.34% por su menor peso tecnológico). No localizamos con confianza datos de futuros ni de la sesión de hoy lunes al momento de esta edición, por lo que este Market Regime describe el punto de partida de la semana, no un movimiento confirmado de hoy. El evento que define el régimen de las próximas sesiones es la ronda de resultados trimestrales de Netflix (martes), y Meta y Tesla (miércoles), que el mercado trata como la prueba más directa de si la narrativa de infraestructura de IA se estabiliza o se profundiza tras el estrés de deuda de CoreWeave de la semana pasada.
+Wall Street cortó hoy la racha de liquidación en semiconductores e infraestructura de IA que había dominado la semana pasada: el Nasdaq Composite subió 1.11% a 26,430.89 y el S&P 500 avanzó 0.41% a 7,690.73, en un rebote liderado por acciones tecnológicas y de IA, mientras el Dow Jones cedió apenas 0.07% a 51,966.03 tras su mejor desempeño relativo de la semana pasada. El rebote llega el mismo día en que arranca la semana de prueba más esperada para la narrativa de infraestructura de IA: Netflix y SpaceX reportan mañana martes, y Meta y Tesla el miércoles, en resultados que el mercado tratará como la referencia más directa de si la inversión en cómputo de IA sigue siendo rentable tras el estrés de deuda de CoreWeave de la semana pasada. No localizamos con confianza niveles de cierre de hoy para el VIX, el Treasury a 10 años, el WTI ni el peso mexicano, por lo que no podemos confirmar si el apetito por riesgo se tradujo también en una caída de la volatilidad o en un nuevo nivel de tasas.
 
-Scorecard: Trend → ↓ (semiconductores e IA, arrastrando parcialmente a los índices generales desde el viernes) · Breadth → ↓ (la liquidación del viernes dejó de estar acotada a tecnología) · Momentum → ↓ (cuarta sesión consecutiva de caída en IA al cierre de la semana pasada) · Volatility → ↑ (VIX cerró el viernes cerca de 20 puntos) · Rates → → (US 10Y cerró el viernes en la zona de 5.10%-5.13%, sin dato confirmado de hoy) · USD → — (sin FIX confirmado de hoy)
+Scorecard: Trend → ↑ (Nasdaq y S&P 500 cortaron la racha de pérdidas de la semana pasada) · Breadth → → (el rebote se concentró en tecnología; Dow prácticamente plano) · Momentum → ↑ (primera sesión positiva para el Nasdaq tras cuatro consecutivas a la baja) · Volatility → — (sin dato confirmado de VIX de hoy) · Rates → — (sin dato confirmado del Treasury a 10 años de hoy) · USD → — (sin FIX confirmado de hoy)
 
 ## Qué importó hoy
 
-**El mercado entra a la semana de resultados de Meta y Tesla todavía sin digerir completamente la liquidación de semiconductores e infraestructura de IA de la semana pasada.** El viernes cerró con el Nasdaq cayendo 2.14% y el sector tecnológico del S&P 500 más de 3%, la cuarta sesión consecutiva de pérdidas para el grupo, con CoreWeave como epicentro de un episodio de estrés en su deuda que llevó el rendimiento de sus bonos con vencimiento en 2032 por encima de 15%. Horizonte: Swing.
+**Wall Street cortó hoy la racha de cuatro sesiones consecutivas de pérdidas en semiconductores e infraestructura de IA, con un rebote liderado por tecnología que llevó al Nasdaq a su mejor sesión en semanas.** El Nasdaq Composite subió 1.11% a 26,430.89 y el S&P 500 avanzó 0.41% a 7,690.73, mientras el Dow Jones, que había sido el índice más resistente durante la liquidación de la semana pasada, cedió apenas 0.07% a 51,966.03. El rebote llega justo antes de la ronda de resultados que el mercado trata como la prueba más directa de la narrativa de infraestructura de IA esta semana. Horizonte: Swing.
 
 **Netflix, SpaceX, Coca-Cola, Lockheed Martin, Halliburton y GE Aerospace reportan resultados mañana martes, antes de que Meta y Tesla cierren la semana de prueba el miércoles después del cierre.** Analistas citados por Reuters esperan un crecimiento conjunto de utilidades superior a 30% para las empresas del S&P 500 este trimestre, según LSEG IBES, lo que eleva la exigencia sobre cualquier reporte que no acompañe ese crecimiento con una guía de gasto de capital que convenza al mercado de que la inversión en cómputo de IA sigue siendo rentable. Horizonte: Swing.
 
@@ -47,23 +47,23 @@ Scorecard: Trend → ↓ (semiconductores e IA, arrastrando parcialmente a los �
 
 ## Macro
 
-No hay publicaciones de datos macro confirmadas para hoy lunes en Estados Unidos ni en México. El dato más próximo en el calendario es el INPC de la primera quincena de octubre en México, programado para el jueves 22, y las solicitudes semanales de desempleo en Estados Unidos ese mismo día. El Índice NAHB del mercado de vivienda de octubre está programado para publicarse hoy, pero no localizamos con confianza su resultado al momento de esta edición.
+No hay publicaciones de datos macro confirmadas para hoy en Estados Unidos ni en México. El dato más próximo en el calendario es el INPC de la primera quincena de octubre en México, programado para el jueves 22, y las solicitudes semanales de desempleo en Estados Unidos ese mismo día. El Índice NAHB del mercado de vivienda de octubre estaba programado para publicarse hoy, pero no localizamos con confianza su resultado al momento de esta edición.
 
 ## Tasas y bonos
 
-El rendimiento del Treasury a 10 años cerró el viernes en la zona de 5.10%-5.13%, después de revertir parte de una caída más pronunciada del jueves hacia 5.07%-5.09% que había respondido a una búsqueda de refugio ante el PPI caliente y la liquidación tecnológica. No localizamos con confianza un nivel actualizado para la sesión de hoy lunes.
+No localizamos con confianza el nivel de cierre de hoy para el rendimiento del Treasury a 10 años. El último dato confirmado sigue siendo el cierre del viernes, en la zona de 5.10%-5.13%, después de revertir parte de una caída más pronunciada del jueves hacia 5.07%-5.09% que había respondido a una búsqueda de refugio ante el PPI caliente y la liquidación tecnológica de la semana pasada.
 
 ## FX y commodities
 
-El FIX de Banxico más reciente que pudimos confirmar sigue siendo el del jueves 15 de octubre, en 18.4250 pesos por dólar; no localizamos con confianza el FIX de hoy lunes. Tampoco localizamos con confianza niveles actualizados para WTI, Brent, oro o cobre; el nivel más reciente confirmado para el WTI sigue siendo 93.74 dólares por barril, del lunes 12 de octubre.
+El FIX de Banxico más reciente que pudimos confirmar sigue siendo el del jueves 15 de octubre, en 18.4250 pesos por dólar; no localizamos con confianza el FIX de hoy. Tampoco localizamos con confianza niveles actualizados para WTI, Brent, oro o cobre; el nivel más reciente confirmado para el WTI sigue siendo 93.74 dólares por barril, del lunes 12 de octubre.
 
 ## Sectores
 
-El sector más relevante para la semana sigue siendo semiconductores e infraestructura de IA, que acumuló su peor racha de ocho sesiones desde abril de 2025 y más de un billón de dólares en pérdidas de valor de mercado a nivel global durante la semana pasada. El resto de los sectores no mostró movimientos relevantes confirmados para esta edición.
+El sector más relevante de la sesión fue semiconductores e infraestructura de IA, que lideró el rebote de hoy después de acumular su peor racha de ocho sesiones desde abril de 2025 y más de un billón de dólares en pérdidas de valor de mercado a nivel global durante la semana pasada. El resto de los sectores no mostró movimientos relevantes confirmados para esta edición.
 
 ## Swing
 
-El evento de mayor peso para el horizonte de días es la ronda de resultados de Netflix y SpaceX mañana martes, seguida por Meta y Tesla el miércoles. El mercado vigilará específicamente si la guía de gasto de capital de Meta logra estabilizar el sentimiento del grupo de semiconductores e infraestructura de IA, o si una decepción adicional extiende la liquidación a una quinta semana.
+El rebote de hoy en semiconductores e infraestructura de IA sugiere que el mercado entra a la semana de resultados con algo de apetito por riesgo recuperado, pero el evento de mayor peso para el horizonte de días sigue siendo la ronda de resultados de Netflix y SpaceX mañana martes, seguida por Meta y Tesla el miércoles. El mercado vigilará específicamente si la guía de gasto de capital de Meta logra sostener el rebote de hoy, o si una decepción revierte la ganancia y extiende la liquidación de la semana pasada.
 
 ## Position
 
@@ -90,24 +90,26 @@ El riesgo central de la semana es que la guía de gasto de capital de Meta, o lo
 
 - Resultados de Netflix y SpaceX después del cierre.
 - Resultados de Coca-Cola, Lockheed Martin, Halliburton y GE Aerospace antes de la apertura.
-- Si la liquidación en semiconductores e infraestructura de IA se extiende a una quinta sesión o se estabiliza.
-- Comportamiento del rendimiento del Treasury a 10 años, que cerró el viernes revirtiendo parte de la caída del jueves.
+- Si el rebote de hoy en semiconductores e infraestructura de IA se sostiene o se revierte.
+- Confirmación del nivel del Treasury a 10 años y del VIX, que no localizamos con confianza para la sesión de hoy.
 - Cualquier desarrollo adicional sobre la deuda de CoreWeave antes de que Meta y Tesla reporten el miércoles.
 
 ## Pendientes de esta edición
 
-- Russell 2000: no localizamos con confianza el cierre del viernes ni de hoy.
-- S&P/BMV IPC: no localizamos con confianza el cierre del viernes ni de hoy.
-- USD/MXN: no localizamos con confianza el FIX de Banxico de hoy lunes.
-- WTI, Brent, oro y cobre: no localizamos con confianza niveles actualizados para hoy.
+- Russell 2000: no localizamos con confianza el cierre de hoy.
+- VIX: no localizamos con confianza el cierre de hoy.
+- S&P/BMV IPC: no localizamos con confianza el cierre de hoy.
+- USD/MXN: no localizamos con confianza el FIX de Banxico de hoy.
+- US 10Y, WTI, Brent, oro y cobre: no localizamos con confianza niveles actualizados para hoy.
 - Índice NAHB del mercado de vivienda de octubre: no localizamos con confianza su resultado, programado para publicarse hoy.
 
 ## Fuentes
 
+- [Stock market today: Dow slips, S&P 500, Nasdaq rise as tech stocks rebound](https://finance.yahoo.com/markets/live/stock-market-today-dow-sp-500-nasdaq-futures-mixed-amid-volatile-week-112734828.html) — Yahoo Finance
+- [Stock market news for Oct. 19, 2026](https://www.cnbc.com/2026/10/18/stock-market-today-live-updates.html) — CNBC
 - [As AI rally wobbles, stock market's spotlight turns to earnings](https://za.investing.com/news/stock-market-news/as-ai-rally-wobbles-stock-markets-spotlight-turns-to-earnings-4510332) — Reuters vía Investing.com
 - [The Week Ahead: Meta, Tesla and Chip Earnings Put AI Trade to the Test](https://www.fxempire.com/forecasts/article/the-week-ahead-meta-tesla-and-chip-earnings-put-ai-trade-to-the-test-1638768) — FXEmpire
 - [CoreWeave shares tumble as leverage fears return to haunt AI darling](https://www.roic.ai/news/coreweave-shares-tumble-69-as-leverage-fears-return-to-haunt-ai-darling-10-16-2026) — ROIC.ai
-- [CoreWeave Stock Falls 13% as Bond Yields Hit 15%](https://www.kucoin.com/news/flash/coreweave-stock-falls-13-as-bond-yields-hit-15) — KuCoin News
 - [Earnings Calendar for the Week of October 19, 2026](https://www.stocktitan.net/articles/earnings-calendar-week-of-october-19-2026) — StockTitan
 </content>
 </invoke>
