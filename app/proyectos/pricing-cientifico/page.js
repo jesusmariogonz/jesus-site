@@ -227,6 +227,52 @@ python3 proyectos-propios/pricing-cientifico/modelo_elasticidad.py
 python3 proyectos-propios/pricing-cientifico/optimizar_precio.py`}</code>
           </pre>
 
+          <h3>Cómo se calcula cada concepto, paso a paso</h3>
+
+          <p><strong>¿Por qué logaritmos (log-log)?</strong> Tomar el logaritmo de precio y de
+          cantidad antes de la regresión no es un capricho: convierte la pregunta "¿cuántas
+          unidades menos se venden si el precio sube $1?" (que depende del nivel de precio) en
+          "¿qué % cambia la cantidad si el precio sube 1%?" — una relación mucho más estable entre
+          productos y rangos de precio distintos. El coeficiente de <code>ln(precio)</code> en esa
+          regresión <em>es</em>, por construcción, la elasticidad-precio.</p>
+
+          <p><strong>El estimador <em>within</em> (demeaning):</strong> cada tienda tiene un nivel
+          base de ventas distinto (tamaño, ubicación, tráfico) que nada tiene que ver con el precio
+          — si no se controla, ese efecto de tienda contamina el coeficiente. En vez de agregar una
+          columna binaria por tienda (40 columnas extra), el estimador <em>within</em> resta a cada
+          variable el promedio histórico de su propia tienda:</p>
+          <pre>
+            <code>{`ln_p_demeaned_it = ln_p_it - promedio_tienda_i(ln_p)
+ln_q_demeaned_it = ln_q_it - promedio_tienda_i(ln_q)
+# la regresión sobre las variables "demeaned" ya no necesita
+# una columna por tienda: el efecto fijo desaparece algebraicamente.`}</code>
+          </pre>
+          <p>Es matemáticamente equivalente a la regresión con 40 variables dummy, pero mucho más
+          barato de calcular y sin el riesgo de multicolinealidad de tener tantas columnas.</p>
+
+          <p><strong>Errores estándar agrupados (clustered) por tienda:</strong> las observaciones
+          de una misma tienda en semanas consecutivas no son independientes entre sí (si una tienda
+          tiene una mala semana, es probable que la siguiente también lo sea) — ignorar esa
+          correlación serial hace que el modelo reporte una confianza mayor a la que realmente
+          tiene. Agrupar ("cluster") los errores estándar por tienda corrige ese exceso de
+          confianza: el intervalo [{modelo.ic_95_inferior}, {modelo.ic_95_superior}] ya lo incorpora.</p>
+
+          <p><strong>R² (coeficiente de determinación):</strong> mide qué proporción de la
+          variación en <code>ln(cantidad)</code> explica el modelo — {modelo.r2} significa que
+          cerca del {Math.round(modelo.r2 * 100)}% de esa variación se explica por precio,
+          estacionalidad y el efecto fijo de tienda; el resto es ruido u otros factores no
+          modelados. Es una medida de ajuste a estos datos, no de qué tan bien predeciría datos
+          futuros (ver la advertencia más abajo).</p>
+
+          <p><strong>Intervalo de confianza del 95%:</strong> el rango [{modelo.ic_95_inferior},
+          {" "}{modelo.ic_95_superior}] es el conjunto de valores de elasticidad consistentes con
+          los datos observados, con 95% de confianza estadística — no significa que la elasticidad
+          verdadera tenga 95% de probabilidad de estar ahí (una distinción técnica real entre la
+          estadística frecuentista clásica y la bayesiana), significa que si se repitiera este
+          mismo experimento muchas veces, el 95% de los intervalos construidos así contendrían el
+          valor verdadero. Aquí sabemos que sí lo contiene ({modelo.elasticidad_verdadera}) porque
+          generamos los datos nosotros mismos — la validación que motiva todo este proyecto.</p>
+
           <h2 id="resultados">05 · Resultados y tablero</h2>
           <p>
             El resultado: elasticidad estimada de <strong>{modelo.elasticidad_estimada}</strong>,
@@ -259,21 +305,36 @@ python3 proyectos-propios/pricing-cientifico/optimizar_precio.py`}</code>
           <p>
             Con la elasticidad estimada y el costo marginal conocido, el precio que maximiza la
             utilidad de un producto con poder de mercado local tiene una fórmula cerrada clásica
-            de teoría de precios (el Índice de Lerner):
+            de teoría de precios (el Índice de Lerner). De dónde sale: la utilidad semanal es
+            margen por unidad × cantidad vendida, <code>U(P) = (P - costo) × Q(P)</code>, y con la
+            curva de demanda log-log estimada, <code>Q(P) = Q_base × (P/P_base)^elasticidad</code>.
+            Derivando <code>U(P)</code> respecto a <code>P</code> e igualando a cero (la condición
+            de primer orden de un máximo) se llega, tras simplificar, a la fórmula del Índice de
+            Lerner:
           </p>
           <pre>
-            <code>{`(P* - costo) / P* = -1 / elasticidad
+            <code>{`(P* - costo) / P* = -1 / elasticidad   # el "margen de Lerner" óptimo
 P* = costo / (1 + 1/elasticidad)
 
 # con elasticidad = -1.769 y costo = $11.20:
 P* = 11.20 / (1 + 1/-1.769) = $25.76`}</code>
           </pre>
           <p>
+            La fórmula solo tiene un máximo interior válido cuando la demanda es elástica
+            (|elasticidad| &gt; 1, como aquí: {Math.abs(modelo.elasticidad_estimada)}); con
+            demanda inelástica no existe un precio óptimo finito bajo este modelo — subir el
+            precio siempre mejoraría la utilidad, una señal de que el modelo dejó de ser realista
+            en ese rango.
+          </p>
+          <p>
             Para confirmar que la fórmula se aplicó bien, el proyecto también calcula la utilidad
-            esperada en una grilla fina de 4,000 precios distintos (fuerza bruta) y busca el
-            máximo por separado. Los dos métodos coinciden exactamente en $
+            esperada por un camino completamente distinto: evalúa <code>U(P)</code> en una grilla
+            fina de 4,000 precios entre el costo y 1.6× el precio de lista, y busca el máximo por
+            fuerza bruta — sin usar cálculo diferencial, solo evaluar la función muchas veces y
+            comparar. Los dos métodos coinciden exactamente en $
             {optimizacion.precio_optimo_grid_search_mxn} MXN — si no coincidieran, habría un
-            error de álgebra o de código en alguno de los dos caminos.
+            error de álgebra o de código en alguno de los dos caminos; que coincidan es la prueba
+            de que ambos están bien implementados.
           </p>
         </div>
 
