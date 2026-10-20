@@ -15,11 +15,13 @@ export default function Proyectos() {
     <section className="section">
       <div className="container">
         <header>
-          <span className="sql-meta">proyectos · 8 · 7 países</span>
+          <span className="sql-meta">proyectos · 9 · 7 países</span>
           <h1>Proyectos en el mundo</h1>
           <p className="pmap-intro">
-            Iniciativas de datos, analítica e inteligencia artificial en las
-            que he participado, desde México y Latinoamérica hasta Europa.
+            Ocho casos de experiencia profesional anonimizada, en México,
+            Latinoamérica y Europa, y un proyecto independiente y reproducible
+            donde sí puedo mostrar el detalle técnico completo sin
+            restricciones de confidencialidad.
           </p>
         </header>
 
@@ -29,27 +31,6 @@ export default function Proyectos() {
 
         <h2 style={{ marginTop: 8 }}>¿Dónde?</h2>
         <ProjectsMap />
-
-        <h2 style={{ marginTop: 48 }}>Proyectos propios</h2>
-        <p className="pmap-intro">
-          Los proyectos de arriba son de clientes reales, y por confidencialidad
-          no puedo entrar en el detalle técnico. Por eso empecé a construir
-          proyectos propios desde cero — con datos, cálculos y código abiertos
-          — para mostrar cómo trabajo cuando sí puedo compartir todo.
-        </p>
-        <div className="lib-cta-final" style={{ marginTop: 16, marginBottom: 48 }}>
-          <p>
-            <strong>Pricing Científico</strong> — estimación de elasticidad
-            precio-demanda y optimización de precio con el Índice de Lerner,
-            con código Python, regresión con errores robustos y diagramas de
-            arquitectura.
-          </p>
-          <div className="lib-cta-botones">
-            <Link href="/proyectos/pricing-cientifico" className="btn-gold">
-              Ver el proyecto →
-            </Link>
-          </div>
-        </div>
 
         <div className="lib-cta-final">
           <p>¿Quieres conocer mi trayectoria completa, leer cómo pienso estos problemas, o llevarte plantillas listas para usar?</p>

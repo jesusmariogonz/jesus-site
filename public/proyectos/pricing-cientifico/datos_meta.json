@@ -1,0 +1,13 @@
+{
+  "n_tiendas": 40,
+  "n_semanas": 52,
+  "n_observaciones": 2080,
+  "precio_base_mxn": 18.5,
+  "costo_marginal_mxn": 11.2,
+  "elasticidad_verdadera": -1.8,
+  "precio_promedio_observado": 18.01,
+  "precio_min_observado": 14.1,
+  "precio_max_observado": 19.54,
+  "cantidad_promedio_semanal": 897.6,
+  "pct_semanas_con_promo": 18.9
+}

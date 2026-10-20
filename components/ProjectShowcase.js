@@ -20,6 +20,11 @@ const PALETA = {
   genai: ["#e05fd8", "#2a1030"],
 };
 
+const ETIQUETA_TIPO = {
+  experiencia: "Experiencia profesional anonimizada",
+  independiente: "Proyecto independiente reproducible",
+};
+
 export default function ProjectShowcase() {
   const [abierto, setAbierto] = useState(null);
 
@@ -57,6 +62,10 @@ export default function ProjectShowcase() {
             </button>
 
             <div className="pshow-body">
+              <span className={`pshow-tipo pshow-tipo--${p.tipo}`}>
+                {ETIQUETA_TIPO[p.tipo]}
+              </span>
+
               <div className="pshow-chips">
                 {p.chips.slice(0, 3).map((c) => (
                   <span key={c}>{c}</span>
@@ -120,9 +129,15 @@ export default function ProjectShowcase() {
                       )}
                     </dl>
 
-                    <Link href="/contacto" className="pshow-cta">
-                      Hablemos sobre este tipo de proyecto →
-                    </Link>
+                    {p.detalleUrl ? (
+                      <Link href={p.detalleUrl} className="pshow-cta">
+                        Ver expediente completo →
+                      </Link>
+                    ) : (
+                      <Link href="/contacto" className="pshow-cta">
+                        Hablemos sobre este tipo de proyecto →
+                      </Link>
+                    )}
                   </motion.div>
                 )}
               </AnimatePresence>

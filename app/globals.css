@@ -1200,6 +1200,22 @@ html.dark .editors-pick-badge {
 .pc-advertencia strong {
   color: #eb6834;
 }
+.pc-indice {
+  columns: 2;
+  gap: 24px;
+}
+.pc-indice li {
+  margin-bottom: 4px;
+}
+.pc-descargas a {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+}
+@media (max-width: 640px) {
+  .pc-indice {
+    columns: 1;
+  }
+}
 
 /* Chips de etiquetas debajo del título de la nota */
 .post-tags {
@@ -3177,6 +3193,26 @@ html:not(.dark) .pglobe-land {
   font-weight: 700;
   color: var(--ink);
   line-height: 1.3;
+}
+.pshow-tipo {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  margin-bottom: 10px;
+}
+.pshow-tipo--experiencia {
+  color: var(--meta);
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+.pshow-tipo--independiente {
+  color: #eb6834;
+  border: 1px solid #eb6834;
+  background: rgba(235, 104, 52, 0.08);
 }
 .pshow-chips {
   display: flex;
