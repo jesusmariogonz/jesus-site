@@ -193,9 +193,140 @@ export default function PricingCientifico() {
 
           <h2 id="implementacion">04 · Implementación reproducible</h2>
           <p>
+            Esta sección no resume el código — lo incluye completo, los tres scripts tal como
+            están en el repositorio, en el mismo orden en que se ejecutan. Cada uno lee los
+            archivos que produjo el anterior y escribe su propia salida en JSON/CSV; no hay
+            estado oculto ni pasos manuales entre medio. Para reproducirlo de punta a punta
+            (requiere Python 3 con <code>numpy</code>, <code>pandas</code> y{" "}
+            <code>statsmodels</code>):
+          </p>
+          <pre>
+            <code>{`pip install numpy pandas statsmodels
+
+python3 proyectos-propios/pricing-cientifico/generar_datos.py
+python3 proyectos-propios/pricing-cientifico/modelo_elasticidad.py
+python3 proyectos-propios/pricing-cientifico/optimizar_precio.py`}</code>
+          </pre>
+
+          <h3>Paso 1 · <code>generar_datos.py</code> — genera el panel sintético</h3>
+          <p>
+            Construye {meta.n_tiendas} tiendas × {meta.n_semanas} semanas de datos, cada una con
+            un efecto fijo de tienda distinto (<code>efecto_tienda</code>, log-normal), una
+            estacionalidad senoidal de 52 semanas, una promoción exógena pseudo-aleatoria que
+            mueve el precio, y una demanda generada exactamente con la fórmula log-log que el
+            Paso 2 intentará recuperar — con una elasticidad verdadera fijada a mano (
+            <code>ELASTICIDAD_VERDADERA = {meta.elasticidad_verdadera}</code>) precisamente para
+            poder comprobar después si el método funciona:
+          </p>
+          <pre>
+            <code>{`"""
+Genera un panel sintético de ventas semanales por tienda para un SKU
+único (ej. "refresco de cola 600 ml"), con una elasticidad-precio de la
+demanda VERDADERA conocida de antemano (ELASTICIDAD_VERDADERA). Esto es
+lo que permite validar el método: el modelo de la Semana 2 (log-log)
+debe recuperar un valor cercano a esta elasticidad real para considerarse
+correcto.
+
+Esto es un dataset SIMULADO para fines demostrativos — no son datos de
+ningún cliente ni empresa real. La variación de precio se genera de forma
+exógena (independiente del error de demanda no observado) a propósito,
+para que la regresión log-log sea un estimador consistente de la
+elasticidad bajo los supuestos declarados en la metodología. En datos
+reales de retail el precio casi nunca es exógeno (la cadena sube precio
+quincenas de baja demanda, lo baja en promociones ya anticipadas) — ese
+problema de endogeneidad se discute explícitamente en la metodología del
+proyecto, junto con las dos soluciones estándar (variables instrumentales
+o experimentos controlados A/B de precio).
+"""
+import json
+import numpy as np
+import pandas as pd
+
+np.random.seed(42)
+
+N_TIENDAS = 40
+N_SEMANAS = 52
+PRECIO_BASE = 18.50  # MXN, precio de lista del SKU
+COSTO_MARGINAL = 11.20  # MXN, costo variable unitario (producción + distribución)
+ELASTICIDAD_VERDADERA = -1.8  # elasticidad-precio real usada para generar los datos
+
+semanas = np.arange(1, N_SEMANAS + 1)
+tiendas = np.arange(1, N_TIENDAS + 1)
+
+filas = []
+for tienda in tiendas:
+    # Efecto fijo de tienda: algunas venden sistemáticamente más (ubicación,
+    # tráfico peatonal, tamaño) — en log, para que entre linealmente al modelo.
+    efecto_tienda = np.random.normal(0, 0.25)
+    demanda_base_tienda = 850 * np.exp(efecto_tienda)
+
+    for semana in semanas:
+        # Estacionalidad: más demanda en semanas "de calor" (mitad del año),
+        # modelada con una onda senoidal simple sobre las 52 semanas.
+        estacionalidad = 0.18 * np.sin(2 * np.pi * (semana - 13) / 52)
+
+        # Variación de precio EXÓGENA: la cadena corre descuentos puntuales
+        # (promo) en semanas pseudo-aleatorias, independientes del shock de
+        # demanda de esa semana — esta independencia es el supuesto de
+        # identificación de la Semana 2.
+        promo = 1 if np.random.random() < 0.18 else 0
+        descuento_promo = np.random.uniform(0.08, 0.20) if promo else 0.0
+        ruido_precio = np.random.normal(0, 0.02)
+        precio = PRECIO_BASE * (1 - descuento_promo) * (1 + ruido_precio)
+        precio = max(precio, COSTO_MARGINAL * 1.02)  # nunca vender bajo costo
+
+        # Demanda log-log: ln(Q) = ln(base) + estacionalidad + ELASTICIDAD*ln(P/PRECIO_BASE) + ruido
+        ruido_demanda = np.random.normal(0, 0.12)
+        log_cantidad = (
+            np.log(demanda_base_tienda)
+            + estacionalidad
+            + ELASTICIDAD_VERDADERA * np.log(precio / PRECIO_BASE)
+            + ruido_demanda
+        )
+        cantidad = max(1, round(np.exp(log_cantidad)))
+
+        filas.append(
+            {
+                "tienda": int(tienda),
+                "semana": int(semana),
+                "precio": round(float(precio), 2),
+                "promo": promo,
+                "cantidad": int(cantidad),
+            }
+        )
+
+df = pd.DataFrame(filas)
+df.to_csv("proyectos-propios/pricing-cientifico/datos_panel.csv", index=False)
+
+meta = {
+    "n_tiendas": N_TIENDAS,
+    "n_semanas": N_SEMANAS,
+    "n_observaciones": len(df),
+    "precio_base_mxn": PRECIO_BASE,
+    "costo_marginal_mxn": COSTO_MARGINAL,
+    "elasticidad_verdadera": ELASTICIDAD_VERDADERA,
+    "precio_promedio_observado": round(float(df["precio"].mean()), 2),
+    "precio_min_observado": round(float(df["precio"].min()), 2),
+    "precio_max_observado": round(float(df["precio"].max()), 2),
+    "cantidad_promedio_semanal": round(float(df["cantidad"].mean()), 1),
+    "pct_semanas_con_promo": round(float(df["promo"].mean()) * 100, 1),
+}
+with open("proyectos-propios/pricing-cientifico/datos_meta.json", "w") as f:
+    json.dump(meta, f, indent=2, ensure_ascii=False)
+
+print(json.dumps(meta, indent=2, ensure_ascii=False))`}</code>
+          </pre>
+          <p>
+            Salida real de esta corrida (<code>datos_meta.json</code>): precio promedio $
+            {meta.precio_promedio_observado} MXN, rango ${meta.precio_min_observado}–$
+            {meta.precio_max_observado}, {meta.pct_semanas_con_promo}% de semanas con promoción.
+          </p>
+
+          <h3>Paso 2 · <code>modelo_elasticidad.py</code> — estima la elasticidad</h3>
+          <p>
             La elasticidad-precio se estima con una regresión log-log sobre panel data, con
-            efectos fijos por tienda (vía el estimador <em>within</em>, restando el promedio de
-            cada tienda a cada variable) y controles de estacionalidad:
+            efectos fijos por tienda (vía el estimador <em>within</em>) y controles de
+            estacionalidad:
           </p>
           <pre>
             <code>{`ln(Q_it) = alpha_i + beta * ln(P_it) + gamma1*sin(2*pi*s/52)
@@ -204,74 +335,131 @@ export default function PricingCientifico() {
 # beta es la elasticidad-precio: % de cambio en cantidad
 # ante un 1% de cambio en precio.`}</code>
           </pre>
-          <p>El código real (statsmodels, errores estándar agrupados por tienda):</p>
           <pre>
-            <code>{`X = sm.add_constant(df_demeaned[["ln_p", "sin_s", "cos_s", "promo"]])
+            <code>{`"""
+Estima la elasticidad-precio de la demanda con una regresión log-log de
+efectos fijos por tienda:
+
+    ln(Q_it) = alpha_i + beta * ln(P_it) + gamma1*sin(2*pi*s/52)
+               + gamma2*cos(2*pi*s/52) + delta*Promo_it + e_it
+
+beta es la elasticidad-precio estimada. Los efectos fijos de tienda
+(alpha_i) se implementan "demeaning" cada variable por tienda (equivalente
+a dummies de tienda, pero sin inflar la matriz de diseño) — esto es el
+estimador "within" estándar de panel data.
+"""
+import json
+import numpy as np
+import pandas as pd
+import statsmodels.api as sm
+
+df = pd.read_csv("proyectos-propios/pricing-cientifico/datos_panel.csv")
+
+df["ln_q"] = np.log(df["cantidad"])
+df["ln_p"] = np.log(df["precio"])
+df["sin_s"] = np.sin(2 * np.pi * df["semana"] / 52)
+df["cos_s"] = np.cos(2 * np.pi * df["semana"] / 52)
+
+# Estimador "within": resta el promedio por tienda a cada variable, así el
+# efecto fijo de tienda (alpha_i) desaparece de la ecuación sin necesidad
+# de 40 variables dummy.
+vars_modelo = ["ln_q", "ln_p", "sin_s", "cos_s", "promo"]
+df_demeaned = df.copy()
+for v in vars_modelo:
+    df_demeaned[v] = df[v] - df.groupby("tienda")[v].transform("mean")
+
+X = sm.add_constant(df_demeaned[["ln_p", "sin_s", "cos_s", "promo"]])
 y = df_demeaned["ln_q"]
 
-modelo = sm.OLS(y, X).fit(
-    cov_type="cluster",
-    cov_kwds={"groups": df_demeaned["tienda"]},
-)
-beta = modelo.params["ln_p"]  # -1.769`}</code>
-          </pre>
-          <p>
-            Los tres scripts (<code>generar_datos.py</code>, <code>modelo_elasticidad.py</code>,{" "}
-            <code>optimizar_precio.py</code>) se ejecutan en secuencia, sin dependencias ocultas
-            ni estado manual — cada uno lee los archivos que produjo el anterior y escribe su
-            propia salida en JSON/CSV. Reproducirlo de punta a punta:
-          </p>
-          <pre>
-            <code>{`python3 proyectos-propios/pricing-cientifico/generar_datos.py
-python3 proyectos-propios/pricing-cientifico/modelo_elasticidad.py
-python3 proyectos-propios/pricing-cientifico/optimizar_precio.py`}</code>
-          </pre>
+# Errores estándar agrupados (clustered) por tienda: las observaciones de
+# una misma tienda a lo largo de 52 semanas no son independientes entre sí,
+# así que los errores estándar "normales" subestimarían la incertidumbre.
+modelo = sm.OLS(y, X).fit(cov_type="cluster", cov_kwds={"groups": df_demeaned["tienda"]})
 
-          <h3>Cómo se calcula cada concepto, paso a paso</h3>
+beta = modelo.params["ln_p"]
+ic_95 = modelo.conf_int(alpha=0.05).loc["ln_p"].tolist()
+p_value = modelo.pvalues["ln_p"]
+r2 = modelo.rsquared
+
+with open("proyectos-propios/pricing-cientifico/datos_meta.json") as f:
+    meta = json.load(f)
+
+resultado = {
+    "elasticidad_estimada": round(float(beta), 3),
+    "ic_95_inferior": round(float(ic_95[0]), 3),
+    "ic_95_superior": round(float(ic_95[1]), 3),
+    "p_value": float(p_value),
+    "r2": round(float(r2), 3),
+    "n_observaciones": int(modelo.nobs),
+    "elasticidad_verdadera": meta["elasticidad_verdadera"],
+    "error_vs_verdadera_pct": round(
+        abs(beta - meta["elasticidad_verdadera"]) / abs(meta["elasticidad_verdadera"]) * 100, 2
+    ),
+}
+
+with open("proyectos-propios/pricing-cientifico/resultado_modelo.json", "w") as f:
+    json.dump(resultado, f, indent=2, ensure_ascii=False)
+
+print(modelo.summary())
+print()
+print(json.dumps(resultado, indent=2, ensure_ascii=False))`}</code>
+          </pre>
 
           <p><strong>¿Por qué logaritmos (log-log)?</strong> Tomar el logaritmo de precio y de
-          cantidad antes de la regresión no es un capricho: convierte la pregunta "¿cuántas
-          unidades menos se venden si el precio sube $1?" (que depende del nivel de precio) en
-          "¿qué % cambia la cantidad si el precio sube 1%?" — una relación mucho más estable entre
-          productos y rangos de precio distintos. El coeficiente de <code>ln(precio)</code> en esa
-          regresión <em>es</em>, por construcción, la elasticidad-precio.</p>
+          cantidad antes de la regresión convierte la pregunta "¿cuántas unidades menos se venden
+          si el precio sube $1?" (que depende del nivel de precio) en "¿qué % cambia la cantidad
+          si el precio sube 1%?" — una relación mucho más estable entre productos y rangos de
+          precio distintos. El coeficiente de <code>ln_p</code> en esa regresión <em>es</em>, por
+          construcción, la elasticidad-precio.</p>
 
-          <p><strong>El estimador <em>within</em> (demeaning):</strong> cada tienda tiene un nivel
-          base de ventas distinto (tamaño, ubicación, tráfico) que nada tiene que ver con el precio
-          — si no se controla, ese efecto de tienda contamina el coeficiente. En vez de agregar una
-          columna binaria por tienda (40 columnas extra), el estimador <em>within</em> resta a cada
-          variable el promedio histórico de su propia tienda:</p>
+          <p><strong>El estimador <em>within</em> (demeaning), línea por línea:</strong> cada
+          tienda tiene un nivel base de ventas distinto (tamaño, ubicación, tráfico) que nada
+          tiene que ver con el precio — si no se controla, ese efecto de tienda contamina el
+          coeficiente. El bloque{" "}
+          <code>df_demeaned[v] = df[v] - df.groupby("tienda")[v].transform("mean")</code> resta a
+          cada variable (precio, cantidad, estación, promo) el promedio histórico de esa misma
+          tienda:</p>
           <pre>
             <code>{`ln_p_demeaned_it = ln_p_it - promedio_tienda_i(ln_p)
 ln_q_demeaned_it = ln_q_it - promedio_tienda_i(ln_q)
 # la regresión sobre las variables "demeaned" ya no necesita
 # una columna por tienda: el efecto fijo desaparece algebraicamente.`}</code>
           </pre>
-          <p>Es matemáticamente equivalente a la regresión con 40 variables dummy, pero mucho más
-          barato de calcular y sin el riesgo de multicolinealidad de tener tantas columnas.</p>
+          <p>Es matemáticamente equivalente a agregar 40 variables dummy (una por tienda) a la
+          regresión, pero mucho más barato de calcular y sin el riesgo de multicolinealidad de
+          tener tantas columnas.</p>
 
           <p><strong>Errores estándar agrupados (clustered) por tienda:</strong> las observaciones
           de una misma tienda en semanas consecutivas no son independientes entre sí (si una tienda
           tiene una mala semana, es probable que la siguiente también lo sea) — ignorar esa
           correlación serial hace que el modelo reporte una confianza mayor a la que realmente
-          tiene. Agrupar ("cluster") los errores estándar por tienda corrige ese exceso de
-          confianza: el intervalo [{modelo.ic_95_inferior}, {modelo.ic_95_superior}] ya lo incorpora.</p>
+          tiene. El parámetro <code>cov_type="cluster", cov_kwds={"{"}"groups": df_demeaned["tienda"]{"}"}</code>{" "}
+          le dice a <code>statsmodels</code> que agrupe los errores por tienda al calcular el
+          intervalo de confianza: el rango [{modelo.ic_95_inferior}, {modelo.ic_95_superior}] ya
+          lo incorpora.</p>
 
-          <p><strong>R² (coeficiente de determinación):</strong> mide qué proporción de la
-          variación en <code>ln(cantidad)</code> explica el modelo — {modelo.r2} significa que
-          cerca del {Math.round(modelo.r2 * 100)}% de esa variación se explica por precio,
-          estacionalidad y el efecto fijo de tienda; el resto es ruido u otros factores no
+          <p><strong>R² (coeficiente de determinación):</strong> <code>modelo.rsquared</code> mide
+          qué proporción de la variación en <code>ln_q</code> explica el modelo — {modelo.r2}{" "}
+          significa que cerca del {Math.round(modelo.r2 * 100)}% de esa variación se explica por
+          precio, estacionalidad y el efecto fijo de tienda; el resto es ruido u otros factores no
           modelados. Es una medida de ajuste a estos datos, no de qué tan bien predeciría datos
-          futuros (ver la advertencia más abajo).</p>
+          futuros (ver la advertencia de la sección 05).</p>
 
-          <p><strong>Intervalo de confianza del 95%:</strong> el rango [{modelo.ic_95_inferior},
-          {" "}{modelo.ic_95_superior}] es el conjunto de valores de elasticidad consistentes con
-          los datos observados, con 95% de confianza estadística — no significa que la elasticidad
-          verdadera tenga 95% de probabilidad de estar ahí (una distinción técnica real entre la
-          estadística frecuentista clásica y la bayesiana), significa que si se repitiera este
-          mismo experimento muchas veces, el 95% de los intervalos construidos así contendrían el
-          valor verdadero. Aquí sabemos que sí lo contiene ({modelo.elasticidad_verdadera}) porque
-          generamos los datos nosotros mismos — la validación que motiva todo este proyecto.</p>
+          <p><strong>Intervalo de confianza del 95%:</strong> <code>modelo.conf_int(alpha=0.05)</code>{" "}
+          devuelve el rango [{modelo.ic_95_inferior}, {modelo.ic_95_superior}] — el conjunto de
+          valores de elasticidad consistentes con los datos observados, con 95% de confianza
+          estadística. Esto no significa que la elasticidad verdadera tenga 95% de probabilidad
+          de estar ahí (una distinción técnica real entre la estadística frecuentista clásica y
+          la bayesiana); significa que si se repitiera este mismo experimento muchas veces, el
+          95% de los intervalos construidos así contendrían el valor verdadero. Aquí sabemos que
+          sí lo contiene ({modelo.elasticidad_verdadera}) porque generamos los datos nosotros
+          mismos — la validación que motiva todo este proyecto.</p>
+
+          <p>
+            Salida real de esta corrida (<code>resultado_modelo.json</code>): elasticidad{" "}
+            {modelo.elasticidad_estimada}, IC 95% [{modelo.ic_95_inferior}, {modelo.ic_95_superior}
+            ], p-value {modelo.p_value}, R² {modelo.r2}, n = {modelo.n_observaciones}.
+          </p>
 
           <h2 id="resultados">05 · Resultados y tablero</h2>
           <p>
@@ -302,6 +490,7 @@ ln_q_demeaned_it = ln_q_it - promedio_tienda_i(ln_q)
             de datos). Aquí se presentan como extensiones pendientes, no como algo ya demostrado.
           </div>
 
+          <h3>Paso 3 · <code>optimizar_precio.py</code> — calcula el precio óptimo</h3>
           <p>
             Con la elasticidad estimada y el costo marginal conocido, el precio que maximiza la
             utilidad de un producto con poder de mercado local tiene una fórmula cerrada clásica
@@ -316,25 +505,117 @@ ln_q_demeaned_it = ln_q_it - promedio_tienda_i(ln_q)
             <code>{`(P* - costo) / P* = -1 / elasticidad   # el "margen de Lerner" óptimo
 P* = costo / (1 + 1/elasticidad)
 
-# con elasticidad = -1.769 y costo = $11.20:
-P* = 11.20 / (1 + 1/-1.769) = $25.76`}</code>
+# con elasticidad = ${modelo.elasticidad_estimada} y costo = $${meta.costo_marginal_mxn}:
+P* = ${meta.costo_marginal_mxn} / (1 + 1/${modelo.elasticidad_estimada}) = $${optimizacion.precio_optimo_formula_lerner_mxn}`}</code>
           </pre>
           <p>
             La fórmula solo tiene un máximo interior válido cuando la demanda es elástica
             (|elasticidad| &gt; 1, como aquí: {Math.abs(modelo.elasticidad_estimada)}); con
             demanda inelástica no existe un precio óptimo finito bajo este modelo — subir el
             precio siempre mejoraría la utilidad, una señal de que el modelo dejó de ser realista
-            en ese rango.
+            en ese rango. El script completo, que calcula esa fórmula y además la valida por
+            fuerza bruta:
           </p>
+          <pre>
+            <code>{`"""
+Con la elasticidad estimada (Semana 2) y el costo marginal conocido,
+calcula el precio que maximiza la utilidad semanal esperada, por dos
+caminos independientes que deben coincidir si el álgebra es correcta:
+
+1. Fórmula cerrada (Índice de Lerner): para un monopolista/tomador de
+   precio con poder de mercado local, el markup óptimo sobre costo
+   cumple (P* - c) / P* = -1/elasticidad, es decir:
+
+       P* = c / (1 + 1/elasticidad)
+
+2. Barrido numérico (grid search): calcula la utilidad esperada en una
+   grilla fina de precios, usando la curva de demanda estimada
+   Q(P) = Q_base * (P/P_base)^elasticidad, y toma el máximo.
+
+Si ambos métodos coinciden (dentro de la resolución de la grilla), eso
+valida que la fórmula cerrada se aplicó correctamente.
+"""
+import json
+import numpy as np
+import pandas as pd
+
+with open("proyectos-propios/pricing-cientifico/datos_meta.json") as f:
+    meta = json.load(f)
+with open("proyectos-propios/pricing-cientifico/resultado_modelo.json") as f:
+    resultado = json.load(f)
+
+costo = meta["costo_marginal_mxn"]
+precio_base = meta["precio_base_mxn"]
+cantidad_base = meta["cantidad_promedio_semanal"]
+elasticidad = resultado["elasticidad_estimada"]
+
+# 1. Fórmula cerrada (Índice de Lerner) — solo válida si |elasticidad| > 1
+#    (demanda elástica); si no, no existe un precio óptimo interior.
+precio_optimo_formula = costo / (1 + 1 / elasticidad)
+
+# 2. Barrido numérico sobre la curva de demanda estimada
+grid_precios = np.linspace(costo * 1.02, precio_base * 1.6, 4000)
+cantidad_estimada = cantidad_base * (grid_precios / precio_base) ** elasticidad
+utilidad = (grid_precios - costo) * cantidad_estimada
+
+idx_optimo = np.argmax(utilidad)
+precio_optimo_grid = float(grid_precios[idx_optimo])
+utilidad_en_optimo = float(utilidad[idx_optimo])
+
+# Utilidad al precio de lista actual, para cuantificar la oportunidad
+cantidad_en_base = cantidad_base  # por definición, Q(precio_base) = cantidad_base
+utilidad_en_base = (precio_base - costo) * cantidad_en_base
+
+curva = pd.DataFrame(
+    {
+        "precio": grid_precios,
+        "cantidad_esperada": cantidad_estimada,
+        "utilidad_esperada": utilidad,
+    }
+)
+# Reduce a ~80 puntos para graficar en el sitio sin mandar 4000 filas.
+curva_reducida = curva.iloc[:: max(1, len(curva) // 80)].copy()
+curva_reducida.to_csv("proyectos-propios/pricing-cientifico/curva_utilidad.csv", index=False)
+
+salida = {
+    "costo_marginal_mxn": costo,
+    "precio_lista_actual_mxn": precio_base,
+    "cantidad_base_semanal": cantidad_base,
+    "elasticidad_usada": elasticidad,
+    "precio_optimo_formula_lerner_mxn": round(float(precio_optimo_formula), 2),
+    "precio_optimo_grid_search_mxn": round(precio_optimo_grid, 2),
+    "diferencia_metodos_mxn": round(abs(precio_optimo_formula - precio_optimo_grid), 3),
+    "utilidad_semanal_en_precio_actual_mxn": round(float(utilidad_en_base), 0),
+    "utilidad_semanal_en_precio_optimo_mxn": round(utilidad_en_optimo, 0),
+    "mejora_utilidad_semanal_pct": round(
+        (utilidad_en_optimo / utilidad_en_base - 1) * 100, 2
+    ),
+    "cambio_precio_vs_lista_pct": round(
+        (precio_optimo_grid / precio_base - 1) * 100, 2
+    ),
+}
+
+with open("proyectos-propios/pricing-cientifico/resultado_optimizacion.json", "w") as f:
+    json.dump(salida, f, indent=2, ensure_ascii=False)
+
+print(json.dumps(salida, indent=2, ensure_ascii=False))`}</code>
+          </pre>
           <p>
-            Para confirmar que la fórmula se aplicó bien, el proyecto también calcula la utilidad
-            esperada por un camino completamente distinto: evalúa <code>U(P)</code> en una grilla
-            fina de 4,000 precios entre el costo y 1.6× el precio de lista, y busca el máximo por
-            fuerza bruta — sin usar cálculo diferencial, solo evaluar la función muchas veces y
-            comparar. Los dos métodos coinciden exactamente en $
-            {optimizacion.precio_optimo_grid_search_mxn} MXN — si no coincidieran, habría un
+            <strong>Por qué el grid search es una validación real, no un adorno:</strong> la línea{" "}
+            <code>grid_precios = np.linspace(costo * 1.02, precio_base * 1.6, 4000)</code> evalúa
+            la utilidad en 4,000 precios distintos entre un poco arriba del costo y 1.6× el precio
+            de lista, y <code>np.argmax(utilidad)</code> busca el máximo por fuerza bruta — sin
+            usar cálculo diferencial, solo evaluar la función muchas veces y comparar. Los dos
+            métodos coinciden exactamente en ${optimizacion.precio_optimo_grid_search_mxn} MXN (
+            diferencia: ${optimizacion.diferencia_metodos_mxn}) — si no coincidieran, habría un
             error de álgebra o de código en alguno de los dos caminos; que coincidan es la prueba
             de que ambos están bien implementados.
+          </p>
+          <p>
+            Salida real de esta corrida (<code>resultado_optimizacion.json</code>): precio óptimo
+            ${optimizacion.precio_optimo_grid_search_mxn} MXN, utilidad semanal en el precio actual
+            ${optimizacion.utilidad_semanal_en_precio_actual_mxn} MXN vs. $
+            {optimizacion.utilidad_semanal_en_precio_optimo_mxn} MXN en el óptimo.
           </p>
         </div>
 
