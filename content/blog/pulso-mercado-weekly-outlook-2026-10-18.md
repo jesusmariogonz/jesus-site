@@ -25,7 +25,7 @@ La semana que arranca el lunes 19 de octubre llega con el mercado todavía digir
 
 | Fecha | Evento | País | Importancia | Qué puede afectar |
 |---|---|---|---|---|
-| Lunes 19-oct | Índice NAHB del mercado de vivienda (octubre) | Estados Unidos | Media | Termómetro de confianza de constructores de vivienda |
+| Lunes 19-oct | [Índice NAHB del mercado de vivienda (octubre)](/blog/nahb-indice-vivienda-minimo-14-anos-octubre-2026) | Estados Unidos | Media | Termómetro de confianza de constructores de vivienda |
 | Jueves 22-oct | Solicitudes semanales de desempleo (8:30am ET) | Estados Unidos | Media | Lectura de salud del mercado laboral de cara a la decisión de la Fed del 28-oct |
 | Jueves 22-oct | INPC primera quincena de octubre | México | Alta | Primera lectura de inflación mexicana desde el dato completo de septiembre |
 | Viernes 23-oct | PMIs preliminares de octubre (manufactura y servicios) | Estados Unidos, Eurozona, Alemania, Reino Unido | Media | Primera señal de actividad económica de octubre antes de que cierre el mes |
