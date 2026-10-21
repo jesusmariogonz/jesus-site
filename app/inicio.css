@@ -475,6 +475,47 @@ html:not(.dark) .jx-pill-opinion    { color: #6d28d9; }
   margin-top: 1.8rem;
 }
 
+/* ── Hero dividido: texto a la izquierda + ilustración a la derecha ── */
+.jx-hero2--split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+  align-items: center;
+  gap: 2.5rem;
+}
+.jx-hero-eyebrow--izq,
+.jx-hero-nombre--izq,
+.jx-hero-tagline--izq,
+.jx-hero-desc--izq {
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+.jx-hero2-ilustracion {
+  display: flex;
+  justify-content: center;
+}
+.jx-hero2-ilustracion-img {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  display: block;
+}
+@media (max-width: 860px) {
+  .jx-hero2--split {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .jx-hero2-ilustracion { order: -1; }
+  .jx-hero2-ilustracion-img { max-width: 260px; margin: 0 auto; }
+  .jx-hero-eyebrow--izq,
+  .jx-hero-nombre--izq,
+  .jx-hero-tagline--izq,
+  .jx-hero-desc--izq {
+    text-align: center;
+  }
+  .jx-hero2-cta { justify-content: center; }
+}
+
 /* ── Portadas de notas (NotaCover) ─────────────────────────── */
 .jx-cover {
   position: relative;
