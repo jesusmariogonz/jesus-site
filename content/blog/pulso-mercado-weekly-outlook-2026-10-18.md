@@ -36,12 +36,12 @@ No localizamos con confianza una fecha específica para datos de vivienda adicio
 
 | Empresa | Ticker | Fecha | Momento | Sector | Por qué importa |
 |---|---|---|---|---|---|
-| Netflix | NFLX | Martes 20-oct | Después del cierre | Streaming / medios | Primer gran nombre de consumo digital en reportar, referencia de gasto discrecional |
+| [Netflix](/blog/netflix-ge-aerospace-halliburton-resultados-20-octubre) | NFLX | Martes 20-oct | Después del cierre | Streaming / medios | Primer gran nombre de consumo digital en reportar, referencia de gasto discrecional |
 | SpaceX | — | Martes 20-oct | Después del cierre (EU) | Aeroespacial / tecnología | Resultados del tercer trimestre de una de las compañías privadas más valiosas ligadas a infraestructura espacial y de cómputo |
-| Coca-Cola | KO | Martes 20-oct | Antes de la apertura | Consumo | Termómetro de demanda de consumo global y poder de fijación de precios |
-| Lockheed Martin | LMT | Martes 20-oct | Antes de la apertura | Defensa | Lectura de gasto militar y de contratos gubernamentales |
-| Halliburton | HAL | Martes 20-oct | Antes de la apertura | Energía | Termómetro de actividad de perforación y servicios petroleros |
-| GE Aerospace | GE | Martes 20-oct | Antes de la apertura | Aeroespacial | Lectura de demanda de motores y servicios de aviación comercial |
+| Coca-Cola | KO | Martes 20-oct (reprogramado: 27-oct confirmado) | Antes de la apertura | Consumo | Termómetro de demanda de consumo global y poder de fijación de precios |
+| Lockheed Martin | LMT | Martes 20-oct (reprogramado: 22-oct confirmado) | Antes de la apertura | Defensa | Lectura de gasto militar y de contratos gubernamentales |
+| [Halliburton](/blog/netflix-ge-aerospace-halliburton-resultados-20-octubre) | HAL | Martes 20-oct | Antes de la apertura | Energía | Termómetro de actividad de perforación y servicios petroleros |
+| [GE Aerospace](/blog/netflix-ge-aerospace-halliburton-resultados-20-octubre) | GE | Martes 20-oct | Antes de la apertura | Aeroespacial | Lectura de demanda de motores y servicios de aviación comercial |
 | Meta Platforms | META | Miércoles 21-oct | Después del cierre | Tecnología / IA | El reporte más vigilado de la semana: el mercado se enfocará en la guía de gasto de capital para IA, no solo en el resultado del trimestre |
 | Tesla | TSLA | Miércoles 21-oct | Después del cierre | Automotriz / tecnología | Lectura de demanda de vehículos eléctricos y de la narrativa de IA/robótica de la empresa |
 | IBM | IBM | Miércoles 21-oct (fecha con menor confirmación entre fuentes) | Después del cierre | Tecnología empresarial | Termómetro de gasto corporativo en nube e IA empresarial |
