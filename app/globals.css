@@ -731,7 +731,13 @@ html:not(.dark) .prose li {
 }
 .btn.ghost {
   background: transparent;
-  color: var(--accent);
+  /* !important porque .btn de arriba fuerza color:#fff !important — sin
+     esto, el !important de .btn siempre gana sobre este color aunque
+     .btn.ghost sea más específico, y el texto queda blanco sobre fondo
+     transparente (invisible en modo claro). Mismo problema con
+     -webkit-text-fill-color en Safari/iOS. */
+  color: var(--accent) !important;
+  -webkit-text-fill-color: var(--accent);
   border: 1px solid var(--accent);
   box-shadow: none;
 }
