@@ -3202,7 +3202,7 @@ html:not(.dark) .pglobe-land {
 }
 /* ── Foto/tarjeta de marca en /sobre-mi (antes vivía en el home) ── */
 .sobre-mi-foto-wrap {
-  max-width: 420px;
+  max-width: 620px;
   margin: 0 auto 32px;
 }
 .sobre-mi-foto {
