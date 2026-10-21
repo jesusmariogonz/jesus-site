@@ -3212,6 +3212,58 @@ html:not(.dark) .pglobe-land {
   border-radius: 20px;
 }
 
+/* ── Toolkit mini (home) — tarjeta visual, reemplaza el párrafo suelto ── */
+.toolkit-mini { margin: 48px auto; }
+.toolkit-mini-card {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 24px;
+  align-items: stretch;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  background: var(--surface);
+  overflow: hidden;
+}
+.toolkit-mini-img {
+  background-size: cover;
+  background-position: center;
+  min-height: 160px;
+}
+.toolkit-mini-body {
+  padding: 22px 24px 22px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.toolkit-mini-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.toolkit-mini-body h2 {
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+}
+.toolkit-mini-body p {
+  margin: 0 0 16px;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.toolkit-mini-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+@media (max-width: 680px) {
+  .toolkit-mini-card { grid-template-columns: 1fr; }
+  .toolkit-mini-img { min-height: 140px; }
+  .toolkit-mini-body { padding: 18px; }
+}
+
 /* ── Biblioteca mini (home) — mismo patrón visual que featured-projects ── */
 .biblioteca-mini { margin: 48px auto; }
 .biblioteca-mini-head {
@@ -4971,6 +5023,31 @@ html:not(.dark) .pglobe-land {
   line-height: 1.55;
   color: var(--ink-soft);
   flex: 1;
+}
+.featured-project-pse {
+  margin: 0 0 14px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.featured-project-pse dt {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--meta);
+  margin-bottom: 2px;
+}
+.featured-project-pse dd {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .featured-project-region {
   font-size: 0.78rem;

@@ -25,7 +25,7 @@ export default function NotasDestacadas({ notas }) {
     <section className="jx-wrap jx-notas">
       <Reveal>
         <div className="jx-notas-head">
-          <h2>Últimas notas</h2>
+          <h2>Ideas que merecen tu atención</h2>
           <Link href="/blog">Ver todas →</Link>
         </div>
       </Reveal>
