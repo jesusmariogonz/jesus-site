@@ -3200,6 +3200,69 @@ html:not(.dark) .pglobe-land {
   color: var(--ink);
   line-height: 1.3;
 }
+/* ── Foto/tarjeta de marca en /sobre-mi (antes vivía en el home) ── */
+.sobre-mi-foto-wrap {
+  max-width: 420px;
+  margin: 0 auto 32px;
+}
+.sobre-mi-foto {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+}
+
+/* ── Biblioteca mini (home) — mismo patrón visual que featured-projects ── */
+.biblioteca-mini { margin: 48px auto; }
+.biblioteca-mini-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+.biblioteca-mini-head h2 { margin: 0; font-size: 1.3rem; }
+.biblioteca-mini-head a {
+  font-size: 0.85rem;
+  color: var(--accent);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.biblioteca-mini-head a:hover { text-decoration: underline; }
+.biblioteca-mini-texto {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  max-width: 48ch;
+  margin: 0 0 24px;
+}
+.biblioteca-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.biblioteca-mini-card {
+  display: block;
+  text-decoration: none;
+  color: var(--ink);
+}
+.biblioteca-mini-card .lc {
+  margin-bottom: 10px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.biblioteca-mini-card:hover .lc {
+  transform: translateY(-4px);
+}
+.biblioteca-mini-card h3 {
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.biblioteca-mini-card:hover h3 { color: var(--accent); }
+@media (max-width: 760px) {
+  .biblioteca-mini-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .biblioteca-mini-card h3 { font-size: 0.78rem; }
+}
+
 .pshow-tipo {
   display: inline-block;
   font-family: var(--font-mono);

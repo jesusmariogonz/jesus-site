@@ -2,9 +2,11 @@ import { getPostsListado } from "@/lib/posts";
 import { calcularMinutos } from "@/lib/lectura";
 
 import Hero from "@/components/Hero";
+import StatsStrip from "@/components/StatsStrip";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import PulsoMercadoMini from "@/components/PulsoMercadoMini";
 import NotasDestacadas from "@/components/NotasDestacadas";
+import BibliotecaMini from "@/components/BibliotecaMini";
 import CtaContacto from "@/components/CtaContacto";
 import NewsletterForm from "@/components/NewsletterForm";
 import Reveal from "@/components/Reveal";
@@ -32,6 +34,9 @@ export default function Inicio() {
   return (
     <>
       <Hero />
+      <Reveal delay={0.04}>
+        <StatsStrip />
+      </Reveal>
       <Reveal delay={0.05}>
         <FeaturedProjects />
       </Reveal>
@@ -44,6 +49,9 @@ export default function Inicio() {
             <Link href="/the-toolkit">Ver Toolkit →</Link>
           </p>
         </section>
+      </Reveal>
+      <Reveal>
+        <BibliotecaMini />
       </Reveal>
       <NotasDestacadas notas={ultimos} />
       <PulsoMercadoMini />

@@ -41,8 +41,18 @@ export default function SobreMi() {
   return (
     <article className="article">
       <div className="container">
+        <div className="sobre-mi-foto-wrap">
+          <Image
+            src="/jesus-hero-card.jpg"
+            alt="Jesús González — Data, AI & Business. Más de 13 años convirtiendo datos en decisiones que generan valor."
+            width={1254}
+            height={1254}
+            priority
+            className="sobre-mi-foto"
+          />
+        </div>
         <header>
-          <span className="sql-meta">-- sobre mí</span>
+          <span className="sql-meta">sobre mí</span>
           <h1>Hola, soy Jesús González.</h1>
         </header>
         <div className="prose">

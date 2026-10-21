@@ -6,7 +6,8 @@ import ThemeToggle from "@/components/ThemeToggle";
 import { trackEvent } from "@/components/PostHogProvider";
 
 const links = [
-  { href: "/proyectos", label: "Trabajo" },
+  { href: "/proyectos", label: "Proyectos" },
+  { href: "/sobre-mi", label: "Sobre el Autor" },
   { href: "/blog", label: "Ideas" },
   { href: "/pulso-mercado", label: "Pulso de Mercado" },
   { href: "/recursos", label: "Biblioteca" },

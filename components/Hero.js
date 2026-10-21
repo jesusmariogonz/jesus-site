@@ -1,11 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 
-/* Hero: la tarjeta de marca se usa tal cual (imagen completa, ya
-   diseñada), solo se agregan los CTAs debajo. */
+/* Hero: portada editorial — la fotografía/tarjeta de marca que antes
+   vivía aquí se movió a /sobre-mi (ver app/sobre-mi/page.js). El
+   inicio ahora abre con una propuesta de valor, no con un retrato. */
 
 const fadeUp = (reduce, delay) =>
   reduce
@@ -21,27 +21,27 @@ export default function Hero() {
 
   return (
     <section className="jx-wrap jx-hero2">
-      <motion.h1 className="jx-hero-nombre" {...fadeUp(reduce, 0)}>
+      <motion.span className="jx-hero-eyebrow" {...fadeUp(reduce, 0)}>
+        Data · IA · Negocio
+      </motion.span>
+      <motion.h1 className="jx-hero-nombre" {...fadeUp(reduce, 0.04)}>
         Jesús González
       </motion.h1>
+      <motion.p className="jx-hero-tagline" {...fadeUp(reduce, 0.08)}>
+        La tecnología importa. El valor que genera, más.
+      </motion.p>
+      <motion.p className="jx-hero-desc" {...fadeUp(reduce, 0.12)}>
+        Convierto datos complejos en soluciones analíticas, productos
+        digitales y decisiones de negocio. Aquí comparto proyectos, ideas y
+        herramientas sobre datos, inteligencia artificial y mercados.
+      </motion.p>
 
-      <motion.div className="jx-hero-card-img" {...fadeUp(reduce, 0.06)}>
-        <Image
-          src="/jesus-hero-card.jpg"
-          alt="Jesús González — Data, AI & Business. Más de 13 años convirtiendo datos en decisiones que generan valor."
-          width={1254}
-          height={1254}
-          priority
-          className="jx-hero-card-img-el"
-        />
-      </motion.div>
-
-      <motion.div className="jx-hero2-cta" {...fadeUp(reduce, 0.12)}>
+      <motion.div className="jx-hero2-cta jx-hero2-cta--centrado" {...fadeUp(reduce, 0.16)}>
         <Link href="/proyectos" className="btn">
           Ver proyectos →
         </Link>
         <Link href="/blog" className="btn ghost">
-          Leer el blog
+          Leer las últimas ideas →
         </Link>
       </motion.div>
     </section>

@@ -407,6 +407,38 @@ html:not(.dark) .jx-pill-opinion    { color: #6d28d9; }
   color: var(--ink);
 }
 
+/* ── Eyebrow, tagline y descripción del hero editorial (sin foto) ── */
+.jx-hero-eyebrow {
+  display: block;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.jx-hero-tagline {
+  text-align: center;
+  font-size: clamp(1.15rem, 2.8vw, 1.55rem);
+  font-weight: 700;
+  color: var(--ink);
+  max-width: 42rem;
+  margin: 0 auto 14px;
+  line-height: 1.35;
+}
+.jx-hero-desc {
+  text-align: center;
+  max-width: 42rem;
+  margin: 0 auto;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  font-size: 1rem;
+}
+.jx-hero2-cta--centrado {
+  justify-content: center;
+}
+
 /* ── Tarjeta de marca: imagen ya diseñada, usada tal cual ── */
 .jx-hero-card-img {
   display: flex;
