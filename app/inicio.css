@@ -56,7 +56,15 @@ html:not(.dark) .dot-grid {
 /* ── Utilidades comunes ─────────────────────────────────────── */
 .jx-wrap {
   max-width: 1200px;
-  margin: 0 auto;
+  /* margin-left/right (no el shorthand "margin") a propósito: el
+     shorthand fija también margin-top/bottom en 0, y como este archivo
+     se carga después de globals.css, esa regla le ganaba en cascada al
+     margen vertical de cada sección (featured-projects, toolkit-mini,
+     biblioteca-mini, pulso-mini...), dejándolas todas pegadas entre sí
+     sin espacio. Con longhand, cada sección controla su propio margen
+     vertical sin que jx-wrap lo resetee. */
+  margin-left: auto;
+  margin-right: auto;
   padding: 0 1.5rem;
 }
 .cursor-blink {
