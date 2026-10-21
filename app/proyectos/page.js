@@ -15,13 +15,13 @@ export default function Proyectos() {
     <section className="section">
       <div className="container">
         <header>
-          <span className="sql-meta">proyectos · 9 · 7 países</span>
+          <span className="sql-meta">proyectos · 10 · 7 países</span>
           <h1>Proyectos en el mundo</h1>
           <p className="pmap-intro">
             Ocho casos de experiencia profesional anonimizada, en México,
-            Latinoamérica y Europa, y un proyecto independiente y reproducible
-            donde sí puedo mostrar el detalle técnico completo sin
-            restricciones de confidencialidad.
+            Latinoamérica y Europa, y dos proyectos independientes y
+            reproducibles donde sí puedo mostrar el detalle técnico completo
+            sin restricciones de confidencialidad.
           </p>
         </header>
 

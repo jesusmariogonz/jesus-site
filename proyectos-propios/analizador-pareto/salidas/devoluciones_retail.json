@@ -1,0 +1,58 @@
+{
+  "titulo": "Causas de devolución — tienda retail",
+  "etiqueta_valor": "devoluciones",
+  "total": 690.0,
+  "n_categorias": 10,
+  "umbral_pct": 80.0,
+  "n_categorias_corte": 3,
+  "pct_categorias_corte": 30.0,
+  "pct_valor_cubierto_en_corte": 83.9,
+  "categorias": [
+    "Producto dañado",
+    "Talla o modelo equivocado",
+    "No cumplió expectativas",
+    "Cambio de opinión",
+    "Error de precio o cobro",
+    "Empaque dañado",
+    "Producto incompleto",
+    "Demora en la entrega",
+    "Color o variante distinta",
+    "Otras causas"
+  ],
+  "valores": [
+    312.0,
+    229.0,
+    38.0,
+    27.0,
+    21.0,
+    19.0,
+    14.0,
+    12.0,
+    11.0,
+    7.0
+  ],
+  "pct": [
+    45.22,
+    33.19,
+    5.51,
+    3.91,
+    3.04,
+    2.75,
+    2.03,
+    1.74,
+    1.59,
+    1.01
+  ],
+  "acumulado": [
+    45.22,
+    78.41,
+    83.91,
+    87.83,
+    90.87,
+    93.62,
+    95.65,
+    97.39,
+    98.99,
+    100.0
+  ]
+}
