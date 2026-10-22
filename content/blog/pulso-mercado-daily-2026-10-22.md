@@ -11,7 +11,7 @@ tags:
   - earnings
   - semiconductores
   - inflación
-resumen: 'Wall Street cerró ayer su tercera sesión consecutiva de ganancias antes de conocer los resultados de Meta, Tesla e IBM después del cierre. Las tres superaron el consenso de utilidad por acción, pero Tesla cotizaba a la baja en operaciones previas a la apertura por el recorte en su guía de gasto de capital para el año.'
+resumen: 'Wall Street cerró a la baja hoy jueves, con el Nasdaq cayendo 2.60% y el S&P 500 1.21%, mientras el Dow se mantuvo prácticamente plano. Meta cayó cerca de 7% pese a superar expectativas de utilidad, arrastrada por renovadas dudas sobre el gasto de capital en infraestructura de IA; el Treasury a 10 años cayó por debajo de 5% por primera vez en casi un mes.'
 imagen: /blog/portadas/mercados-hoy-fija.jpg
 socialImagen: /blog/social/pulso-mercado-daily-2026-10-22.jpg
 ---
@@ -20,59 +20,61 @@ socialImagen: /blog/social/pulso-mercado-daily-2026-10-22.jpg
 
 | Activo | Nivel | Cambio |
 |---|---|---|
-| S&P 500 | 7,757.17 | +0.58% (cierre de ayer, miércoles) |
-| Nasdaq Composite | 26,702.86 | +1.05% (cierre de ayer, miércoles) |
-| Russell 2000 | — | No localizamos con confianza el cierre de ayer |
-| Dow Jones | 52,856.09 | +0.69% (cierre de ayer, miércoles) |
-| VIX | — | No localizamos con confianza el cierre de ayer |
-| S&P/BMV IPC | — | No localizamos con confianza el cierre de ayer |
+| S&P 500 | 7,663.43 | -1.21% |
+| Nasdaq Composite | 26,008.86 | -2.60% |
+| Russell 2000 | — | No localizamos con confianza el cierre de hoy |
+| Dow Jones | 52,867.98 | +0.02% |
+| VIX | — | Fuentes contradictorias (entre 18.25 y 20.22); no localizamos un nivel de cierre confiable |
+| S&P/BMV IPC | — | No localizamos con confianza el cierre de hoy |
 | USD/MXN | 18.4930 (FIX Banxico, viernes 16-oct) | No localizamos con confianza el FIX de esta semana |
-| US 10Y | ≈5.19% | Último dato confirmado, del 15-oct |
-| WTI | ≈$101.91 | Último dato confirmado, del 15-oct |
+| US 10Y | ≈4.945% | Cayó por debajo de 5% por primera vez desde el 23-sep |
+| WTI | — | Fuentes contradictorias (entre $97.14 y $100.09); no localizamos un nivel confiable |
 
 ## Market Regime
 
-Wall Street cerró ayer miércoles su tercera sesión consecutiva de ganancias —el Dow Jones subió 0.69% a 52,856.09, el S&P 500 avanzó 0.58% a 7,757.17 y el Nasdaq Composite lideró con un alza de 1.05% a 26,702.86— antes de que Meta, Tesla e IBM reportaran resultados del tercer trimestre después del cierre. Las tres empresas superaron el consenso de utilidad por acción, pero la reacción del mercado a sus reportes fue dispareja: Tesla cotizaba a la baja en operaciones previas a la apertura de hoy, con caídas reportadas de hasta 4% según CNBC, después de que la compañía recortara su guía de gasto de capital para el año completo de 25,000 a 20,000 millones de dólares, pese a superar expectativas de utilidad por acción y entregas de vehículos. El reporte de Meta, con ingresos de 64,601 millones de dólares (+26% anual), quedó parcialmente oscurecido por un cargo legal extraordinario de casi 10,000 millones que redujo su margen operativo de 40% a 20%. No localizamos con confianza niveles de cierre de ayer para el VIX, el Russell 2000, el S&P/BMV IPC ni el peso mexicano; seguimos usando como referencia los últimos datos confirmados del Treasury a 10 años y el WTI, del 15 de octubre.
+Wall Street cerró hoy jueves a la baja, en un día dominado por renovadas dudas sobre el gasto de capital en infraestructura de inteligencia artificial. El S&P 500 cayó 1.21% a 7,663.43 y el Nasdaq Composite se desplomó 2.60% a 26,008.86 —su peor sesión en semanas—, mientras el Dow Jones, con menor peso tecnológico, se mantuvo prácticamente plano, subiendo apenas 0.02% a 52,867.98. El detonante fue la reacción a los resultados de Meta, Tesla e IBM, reportados anoche después del cierre: las tres superaron el consenso de utilidad por acción, pero el mercado las castigó a las tres. Meta cayó cerca de 7% pese a su beat de EPS, arrastrada por dudas renovadas sobre el retorno de su inversión en IA —a las que se sumó el anuncio de un split accionario 2-por-1—; Tesla cerró alrededor de 3% abajo pese a superar expectativas, por el recorte de su guía de capex anual; e IBM, que había caído hasta 5.7% en premarket pese a superar estimados, recortó esa caída a lo largo del día. El flujo hacia activos refugio empujó el rendimiento del Treasury a 10 años por debajo de 5% por primera vez desde el 23 de septiembre, mientras el oro cayó pese a ese mismo apetito por refugio, en una señal de que el mercado está rotando específicamente hacia bonos, no hacia todo lo considerado seguro. No localizamos con confianza niveles de cierre para el VIX, el Russell 2000, el S&P/BMV IPC, el peso mexicano ni el WTI; las fuentes consultadas para VIX y WTI se contradicen entre sí.
 
-Scorecard: Trend → ↑ (tercera sesión consecutiva de ganancias al cierre de ayer) · Breadth → → (reacción mixta a los reportes de anoche, sin dirección clara para la apertura de hoy) · Momentum → → (pendiente de confirmar con la apertura de hoy) · Volatility → — (sin dato confirmado de VIX) · Rates → — (sin dato confirmado del Treasury a 10 años de hoy; último dato ≈5.19%) · USD → → (FIX de Banxico sin actualización confirmada esta semana)
+Scorecard: Trend → ↓ (primera sesión de pérdidas tras tres días de ganancias) · Breadth → ↓ (tecnología y semiconductores lideraron la caída, con el Dow como única excepción relevante) · Momentum → ↓ (el Nasdaq tuvo su peor caída diaria en semanas) · Volatility → ↑ (reportes consistentes de un salto en el VIX, aunque sin nivel exacto confirmado) · Rates → ↓ (Treasury a 10 años por debajo de 5% por primera vez desde el 23-sep) · USD → → (FIX de Banxico sin actualización confirmada esta semana)
 
 ## Qué importó hoy
 
-**Meta, Tesla e IBM reportaron resultados del tercer trimestre anoche después del cierre, los tres superando el consenso de utilidad por acción.** Meta reportó ingresos de 64,601 millones de dólares, un alza de 26% anual, con EPS diluido de 3.83 dólares frente a un consenso de 3.57 dólares, aunque su margen operativo cayó de 40% a 20% por un cargo legal extraordinario de casi 10,000 millones de dólares. Tesla reportó EPS ajustado de 0.48 dólares frente a un consenso cercano a 0.44, con ingresos de 28,050 millones de dólares y 486,532 vehículos entregados, pero recortó su guía de gasto de capital anual de 25,000 a 20,000 millones de dólares. IBM reportó el trimestre más limpio de los tres: EPS no-GAAP de 2.95 dólares frente a un consenso de entre 2.86 y 2.89, con ingresos de 17,100 millones de dólares (+5% anual) y una guía de flujo de caja libre elevada para el año completo. Horizonte: Swing.
+**Meta cayó cerca de 7% hoy pese a superar el consenso de utilidad por acción, arrastrando al resto del sector de infraestructura de IA.** La compañía reportó ingresos de 64,601 millones de dólares (+26% anual) y EPS diluido de 3.83 dólares frente a un consenso de 3.57, pero el mercado se enfocó en las dudas renovadas sobre el retorno de su gasto de capital en IA, además de la noticia de un split accionario 2-por-1 anunciado junto con los resultados. Nvidia y otros nombres de semiconductores, incluido Micron, cayeron en la misma sesión por el mismo motivo. Horizonte: Swing.
 
-**Tesla cotizaba a la baja en operaciones previas a la apertura de hoy, con caídas reportadas de hasta 4% según CNBC, pese a haber superado expectativas de utilidad.** El mercado parece estar interpretando el recorte de capex como una señal de cautela sobre el ritmo de la narrativa de inteligencia artificial y robótica de la empresa, más que como disciplina financiera bienvenida; otras fuentes reportan una reacción menos negativa o incluso positiva en el after-hours inmediato, por lo que la dirección real de la acción en la apertura de hoy sigue sin confirmarse con certeza. Horizonte: Swing.
+**Tesla cerró la sesión cerca de 3% abajo pese a superar expectativas de utilidad por acción y de entregas de vehículos.** La compañía reportó EPS ajustado de 0.48 dólares frente a un consenso cercano a 0.44, con 486,532 vehículos entregados, pero el mercado interpretó el recorte en su guía de capex anual —de 25,000 a 20,000 millones de dólares— como una señal de cautela sobre el ritmo de su narrativa de inteligencia artificial y robótica, no como disciplina financiera bienvenida. Horizonte: Swing.
 
-**Honeywell Technologies reportó esta mañana antes de la apertura, superando el consenso de utilidad por acción.** La compañía —que reporta de forma independiente desde la escisión de su negocio aeroespacial el 29 de junio— registró ventas de 5,000 millones de dólares, un alza de 1% en términos reportados y 7% de forma orgánica, con una utilidad por acción ajustada de 2.27 dólares, 34% más que el año anterior y por encima de un consenso cercano a 2.16-2.18 dólares. Horizonte: Swing.
+**IBM llegó a caer 5.7% en operaciones previas a la apertura pese a superar expectativas de utilidad e ingresos, aunque esa caída se moderó durante la sesión regular según reportes intradía.** La compañía mantuvo su guía de ingresos para el año completo sin cambios, lo que algunos inversionistas interpretaron como falta de una señal más optimista pese al beat del trimestre. Horizonte: Swing.
 
-**El mercado encadenó ayer su tercera sesión consecutiva de ganancias antes de conocerse estos resultados, con el Nasdaq liderando el avance.** Ese impulso había estado apoyado principalmente en un salto de casi 8% en las acciones de SpaceX el miércoles y un repunte de Tesla de cara a su propio reporte; la pregunta para la sesión de hoy es si los resultados de anoche, con reacciones dispares entre las tres empresas, logran sostener ese impulso o si lo interrumpen. Horizonte: Position.
+**El rendimiento del Treasury a 10 años cayó por debajo de 5% por primera vez desde el 23 de septiembre, mientras los inversionistas rotaron hacia bonos en medio de la liquidación tecnológica.** Es la contraparte directa de la caída en renta variable: el mismo nerviosismo sobre el gasto de capital en IA que golpeó a las acciones tecnológicas impulsó la demanda de refugio en deuda soberana estadounidense. Horizonte: Position.
+
+**Honeywell Technologies reportó esta mañana antes de la apertura, superando el consenso de utilidad por acción, en un día donde ese tipo de resultado sólido quedó opacado por la narrativa de IA.** La compañía —que reporta de forma independiente desde la escisión de su negocio aeroespacial el 29 de junio— registró ventas de 5,000 millones de dólares (+1% reportado, +7% orgánico) y EPS ajustado de 2.27 dólares, 34% más que el año anterior y por encima de un consenso cercano a 2.16-2.18. Horizonte: Swing.
 
 ## Macro
 
-El dato más relevante del calendario de hoy es el INPC de la primera quincena de octubre en México, que el INEGI tenía programado publicar hoy jueves, junto con las solicitudes semanales de desempleo en Estados Unidos (semana que terminó el 17 de octubre, con un consenso cercano a 200,000 solicitudes). No localizamos con confianza los resultados reales de ninguno de los dos al momento de esta edición.
+El dato más relevante del calendario de hoy era el INPC de la primera quincena de octubre en México, que el INEGI tenía programado publicar hoy jueves, junto con las solicitudes semanales de desempleo en Estados Unidos (semana que terminó el 17 de octubre, con un consenso cercano a 200,000 solicitudes). No localizamos con confianza los resultados reales de ninguno de los dos al cierre de esta edición.
 
 ## Tasas y bonos
 
-No localizamos con confianza el nivel de cierre de ayer para el rendimiento del Treasury a 10 años. El último dato confirmado sigue siendo el del 15 de octubre, en la zona de 5.19%.
+El rendimiento del Treasury a 10 años cayó por debajo de 5% hoy, hasta un nivel cercano a 4.945%, su primer cierre bajo ese umbral desde el 23 de septiembre, en una rotación clara hacia deuda soberana en medio de la liquidación de acciones tecnológicas.
 
 ## FX y commodities
 
-El FIX de Banxico más reciente que pudimos confirmar sigue siendo el del viernes 16 de octubre, en 18.4930 pesos por dólar. No localizamos con confianza niveles actualizados para WTI, Brent, oro o cobre de hoy; el nivel más reciente confirmado para el WTI es de 101.91 dólares por barril, del 15 de octubre.
+El FIX de Banxico más reciente que pudimos confirmar sigue siendo el del viernes 16 de octubre, en 18.4930 pesos por dólar. Para el WTI, las fuentes consultadas hoy se contradicen entre sí (reportes entre 97.14 y 100.09 dólares por barril), por lo que no reportamos un nivel específico con confianza; el oro cayó pese al apetito por refugio del día, con reportes situándolo cerca de 4,047-4,085 dólares la onza tras tocar un mínimo de diez semanas.
 
 ## Sectores
 
-Tecnología y automotriz concentran la atención de hoy por los reportes de Meta y Tesla de anoche, con reacciones de mercado en direcciones distintas según la fuente consultada. El sector de infraestructura de IA sigue siendo el que concentra mayor incertidumbre: el cargo legal de Meta y el recorte de capex de Tesla son, ambos, datos que el mercado puede interpretar como señales de que las grandes tecnológicas están ajustando el ritmo o la forma de su inversión en IA, sin que ninguno de los dos, por separado, confirme una tendencia clara todavía.
+Tecnología y semiconductores lideraron la caída de hoy, arrastrados por Meta y por nombres de memoria como Micron, en una sesión donde el Dow Jones —con menor peso tecnológico— logró mantenerse prácticamente plano gracias a una composición sectorial distinta. El sector de infraestructura de IA concentra hoy la mayor parte de la incertidumbre: tres reportes que superaron expectativas de utilidad (Meta, Tesla, IBM) terminaron, los tres, con reacciones negativas o mixtas, lo que sugiere que el mercado está escrutinando la guía de gasto futuro con más atención que el resultado del trimestre ya reportado.
 
 ## Swing
 
-El evento de mayor peso para el horizonte de días es cómo abre hoy el mercado tras los resultados dispares de Meta, Tesla e IBM, particularmente si la caída premarket reportada en Tesla se sostiene durante la sesión regular o si, como sugieren otras fuentes, la reacción termina siendo más moderada de lo que el premarket sugiere.
+El evento de mayor peso para el horizonte de días es si la liquidación tecnológica de hoy se extiende a la sesión de mañana viernes o si el mercado estabiliza tras digerir los tres reportes de anoche; los PMIs preliminares de octubre, programados para mañana, serán la siguiente referencia de datos duros disponible.
 
 ## Position
 
-El resultado de esta semana de reportes —Netflix, GE Aerospace y Halliburton el martes, Meta, Tesla e IBM el miércoles— es el dato de mayor peso para el horizonte de semanas: determinará si la temporada de resultados del tercer trimestre, con un consenso de utilidades del S&P 500 por encima de 30% según LSEG IBES, logra sostener el impulso de las últimas sesiones o si las señales mixtas sobre el gasto de capital en infraestructura de IA —el cargo legal de Meta, el recorte de Tesla— reabren la cautela que ya afectó al sector hace dos semanas.
+El resultado de esta semana de reportes —Netflix, GE Aerospace y Halliburton el martes, Meta, Tesla e IBM el miércoles— es el dato de mayor peso para el horizonte de semanas: la reacción negativa de hoy a tres reportes que superaron expectativas de utilidad confirma que el mercado está tratando la guía de gasto de capital en infraestructura de IA, no el resultado del trimestre en sí, como la variable que realmente mueve el sentimiento, reabriendo la cautela que ya había afectado al sector hace dos semanas.
 
 ## Long Term
 
-No localizamos con confianza evidencia de un cambio estructural nuevo hoy, más allá de lo ya documentado: si el ciclo de gasto en infraestructura de IA, financiado en buena medida con deuda de costo creciente, es sostenible en su escala actual. El recorte de capex de Tesla es el primer dato concreto de esta semana que apunta hacia una posible moderación de ese ritmo de inversión, aunque una sola empresa no permite todavía extrapolar una tendencia sectorial.
+La caída de hoy, tras un trimestre de resultados que en términos de utilidad por acción fue sólido para las tres empresas que reportaron anoche, es el ejemplo más claro hasta ahora de que el mercado está evaluando el ciclo de inversión en infraestructura de IA por su gasto futuro y su retorno esperado, no por las utilidades ya reportadas. El recorte de capex de Tesla y las dudas sobre el retorno de la inversión de Meta son, juntos, el primer par de señales concretas de esta semana que apuntan hacia una posible moderación de ese ciclo de gasto, aunque dos empresas no permiten todavía extrapolar una tendencia sectorial completa.
 
 ## Earnings y calendario
 
@@ -83,26 +85,25 @@ No localizamos con confianza evidencia de un cambio estructural nuevo hoy, más 
 
 ## Riesgos
 
-El riesgo central de hoy es que la reacción negativa reportada en Tesla se extienda al resto del sector de infraestructura de IA durante la sesión regular, revirtiendo el impulso de las últimas tres sesiones; un riesgo adicional es que el INPC de México, de resultar por encima de lo esperado, presione al peso justo en una semana sin FIX de Banxico confirmado como referencia reciente.
+El riesgo central hacia mañana es que la liquidación tecnológica de hoy se extienda en lugar de estabilizarse, especialmente si los PMIs preliminares de octubre, programados para mañana, entregan señales adicionales de debilidad; un riesgo adicional es que el INPC de México, aún sin confirmar, resulte por encima de lo esperado y presione al peso en una semana sin FIX de Banxico actualizado como referencia reciente.
 
 ## Qué vigilar mañana
 
-- Confirmación de cómo cerró hoy la reacción del mercado a los reportes de Meta, Tesla e IBM.
+- Si la liquidación tecnológica de hoy se extiende o se estabiliza en la sesión de mañana viernes.
 - Resultado real del INPC de la primera quincena de octubre en México.
 - Resultado real de las solicitudes semanales de desempleo en Estados Unidos.
 - PMIs preliminares de octubre en Estados Unidos, Eurozona, Alemania y Reino Unido, programados para mañana viernes.
-- Confirmación del nivel del VIX y del Treasury a 10 años, que no localizamos con confianza para la sesión de ayer.
+- Confirmación de niveles exactos de cierre para el VIX, el WTI y el Russell 2000, donde las fuentes de hoy se contradicen entre sí.
 
 ## Pendientes de esta edición
 
-- Russell 2000: no localizamos con confianza el cierre de ayer.
-- VIX: no localizamos con confianza el cierre de ayer.
-- S&P/BMV IPC: no localizamos con confianza el cierre de ayer.
+- Russell 2000: no localizamos con confianza el cierre de hoy.
+- VIX: fuentes contradictorias (entre 18.25 y 20.22); no localizamos un nivel de cierre confiable.
+- S&P/BMV IPC: no localizamos con confianza el cierre de hoy.
 - USD/MXN: no localizamos con confianza un FIX más reciente que el del 16 de octubre.
-- US 10Y, WTI, Brent, oro y cobre: no localizamos con confianza niveles de ayer; se usó el último dato confirmado (15-oct).
+- WTI: fuentes contradictorias (entre $97.14 y $100.09); no localizamos un nivel de cierre confiable.
 - INPC primera quincena de octubre (México): no localizamos con confianza el resultado publicado hoy.
 - Solicitudes semanales de desempleo (Estados Unidos): no localizamos con confianza el resultado publicado hoy.
-- Reacción real de Tesla, Meta e IBM en la apertura de hoy: las fuentes consultadas antes de la apertura no coinciden sobre la magnitud ni dirección exacta del movimiento premarket.
 
 ## Fuentes
 
@@ -111,3 +112,7 @@ El riesgo central de hoy es que la reacción negativa reportada en Tesla se exti
 - [Tesla Q3 2026 earnings: What analysts are saying](https://www.cnbc.com/2026/10/22/tesla-q3-2026-earnings-analysts.html) — CNBC
 - [Meta Reports Third Quarter 2026 Results](https://www.prnewswire.com/news-releases/meta-reports-third-quarter-2026-results-302915964.html) — PR Newswire / Meta
 - [IBM RELEASES THIRD-QUARTER RESULTS](https://newsroom.ibm.com/2026-10-21-IBM-RELEASES-THIRD-QUARTER-RESULTS) — IBM Newsroom
+- [Stock market today: S&P 500, Nasdaq tanks as tech stocks sink amid AI trade worries, Meta shares plummet](https://finance.yahoo.com/markets/live/stock-market-today-thursday-october-22-dow-sp-500-nasdaq-tesla-meta-112217857.html) — Yahoo Finance
+- [Meta Sinks 6%, 10-Year Yield Falls Below 5%: Stock Market Today](https://www.benzinga.com/markets/equities/26/10/62539017/meta-ai-spending-10-year-yield-below-5-stock-market-today) — Benzinga
+- [10-year Treasury yield tumbles below 5% to lowest level in nearly a month](https://cnbc.com/2026/10/22/treasurys-bonds-ai-yields.html) — CNBC
+- [Premarket movers: Tesla, IBM slide; Meta earnings fail to lift sentiment](https://www.investing.com/news/stock-market-news/premarket-movers-tesla-ibm-slide-meta-earnings-fail-to-lift-sentiment-4965382) — Investing.com
