@@ -42,9 +42,9 @@ No localizamos con confianza una fecha específica para datos de vivienda adicio
 | Lockheed Martin | LMT | Martes 20-oct (reprogramado: 22-oct confirmado) | Antes de la apertura | Defensa | Lectura de gasto militar y de contratos gubernamentales |
 | [Halliburton](/blog/netflix-ge-aerospace-halliburton-resultados-20-octubre) | HAL | Martes 20-oct | Antes de la apertura | Energía | Termómetro de actividad de perforación y servicios petroleros |
 | [GE Aerospace](/blog/netflix-ge-aerospace-halliburton-resultados-20-octubre) | GE | Martes 20-oct | Antes de la apertura | Aeroespacial | Lectura de demanda de motores y servicios de aviación comercial |
-| Meta Platforms | META | Miércoles 21-oct | Después del cierre | Tecnología / IA | El reporte más vigilado de la semana: el mercado se enfocará en la guía de gasto de capital para IA, no solo en el resultado del trimestre |
-| Tesla | TSLA | Miércoles 21-oct | Después del cierre | Automotriz / tecnología | Lectura de demanda de vehículos eléctricos y de la narrativa de IA/robótica de la empresa |
-| IBM | IBM | Miércoles 21-oct (fecha con menor confirmación entre fuentes) | Después del cierre | Tecnología empresarial | Termómetro de gasto corporativo en nube e IA empresarial |
+| [Meta Platforms](/blog/meta-tesla-ibm-resultados-21-octubre-2026) | META | Miércoles 21-oct | Después del cierre | Tecnología / IA | El reporte más vigilado de la semana: el mercado se enfocará en la guía de gasto de capital para IA, no solo en el resultado del trimestre |
+| [Tesla](/blog/meta-tesla-ibm-resultados-21-octubre-2026) | TSLA | Miércoles 21-oct | Después del cierre | Automotriz / tecnología | Lectura de demanda de vehículos eléctricos y de la narrativa de IA/robótica de la empresa |
+| [IBM](/blog/meta-tesla-ibm-resultados-21-octubre-2026) | IBM | Miércoles 21-oct (fecha con menor confirmación entre fuentes) | Después del cierre | Tecnología empresarial | Termómetro de gasto corporativo en nube e IA empresarial |
 
 Varias fuentes mencionan alrededor de 70 compañías reportando resultados en esta ventana; no incluimos en esta tabla a las que no logramos confirmar con una fecha específica y consistente entre al menos dos fuentes. No localizamos con confianza la fecha de reporte de Boeing dentro de esta semana.
 
