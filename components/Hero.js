@@ -5,9 +5,8 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 
 /* Hero: portada editorial, dos columnas — texto alineado a la
-   izquierda + ilustración abstracta (generada con IA, fondo
-   transparente) a la derecha. La fotografía/tarjeta de marca que
-   antes vivía aquí se movió a /sobre-mi. */
+   izquierda + foto real (recortada sin fondo con rembg) a la derecha.
+   La tarjeta de marca que antes vivía aquí se movió a /sobre-mi. */
 
 const fadeUp = (reduce, delay) =>
   reduce
@@ -50,7 +49,7 @@ export default function Hero() {
       </div>
 
       <motion.div
-        className="jx-hero2-ilustracion"
+        className="jx-hero2-foto"
         {...(reduce
           ? {}
           : {
@@ -60,12 +59,12 @@ export default function Hero() {
             })}
       >
         <Image
-          src="/hero-ilustracion.png"
-          alt=""
-          width={1024}
-          height={1024}
+          src="/jesus-hero-foto.png"
+          alt="Jesús González"
+          width={1044}
+          height={1448}
           priority
-          className="jx-hero2-ilustracion-img"
+          className="jx-hero2-foto-img"
         />
       </motion.div>
     </section>

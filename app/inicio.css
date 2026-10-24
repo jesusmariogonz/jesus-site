@@ -490,14 +490,16 @@ html:not(.dark) .jx-pill-opinion    { color: #6d28d9; }
   margin-left: 0;
   margin-right: 0;
 }
-.jx-hero2-ilustracion {
+.jx-hero2-foto {
   display: flex;
   justify-content: center;
 }
-.jx-hero2-ilustracion-img {
+.jx-hero2-foto-img {
   width: 100%;
-  max-width: 420px;
+  max-width: 320px;
   height: auto;
+  max-height: 440px;
+  object-fit: contain;
   display: block;
 }
 @media (max-width: 860px) {
@@ -505,8 +507,8 @@ html:not(.dark) .jx-pill-opinion    { color: #6d28d9; }
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  .jx-hero2-ilustracion { order: -1; }
-  .jx-hero2-ilustracion-img { max-width: 260px; margin: 0 auto; }
+  .jx-hero2-foto { order: -1; }
+  .jx-hero2-foto-img { max-width: 220px; max-height: 300px; margin: 0 auto; }
   .jx-hero-eyebrow--izq,
   .jx-hero-nombre--izq,
   .jx-hero-tagline--izq,
