@@ -1,0 +1,29 @@
+{
+  "n_trials_tipo_b": 12,
+  "resurreccion_condicion_a": {
+    "tasa": 0.9166666666666666,
+    "ic95": [
+      0.646120088858883,
+      0.9851349055950828
+    ],
+    "n_exitos": 11
+  },
+  "resurreccion_condicion_b": {
+    "tasa": 0.0,
+    "ic95": [
+      2.1025014877572554e-17,
+      0.24249400665524087
+    ],
+    "n_exitos": 0
+  },
+  "mcnemar_exacto": {
+    "discordantes_b": 11,
+    "discordantes_c": 0,
+    "p_valor": 0.0009765625
+  },
+  "calidad_hecho_seguro_condicion_b": {
+    "n": 4,
+    "correctas": 2,
+    "sobre": 4
+  }
+}
