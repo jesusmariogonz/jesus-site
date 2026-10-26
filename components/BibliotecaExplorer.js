@@ -27,7 +27,7 @@ function TemaTag({ tema }) {
     Datos: "DATOS Y ANALÍTICA",
     Negocio: "NEGOCIO Y DECISIONES",
     Productividad: "PRODUCTIVIDAD",
-    Finanzas: "MERCADOS Y FINANZAS",
+    Finanzas: "LIBROS DE MERCADO",
   };
   return <span className="biblio-tag">{etiquetas[tema] || tema.toUpperCase()}</span>;
 }
@@ -156,7 +156,13 @@ export default function BibliotecaExplorer({ libros }) {
 
   // El destacado es siempre el libro de pago más reciente del catálogo
   // (el último agregado a lib/recursos.js) — hoy, AI Solution Architect.
-  const destacado = useMemo(() => [...libros].reverse().find((l) => l.precio) || libros[0], [libros]);
+  // Los libros de la colección "Cómo leer el mercado" (tema Finanzas)
+  // nunca aparecen como destacado: tienen su propia página de colección
+  // (/recursos/como-leer-el-mercado) y se ven mejor en la grilla normal.
+  const destacado = useMemo(
+    () => [...libros].reverse().find((l) => l.precio && l.tema !== "Finanzas") || libros[0],
+    [libros]
+  );
 
   const visibles = useMemo(
     () => libros.filter((l) => (tema === "todos" || l.tema === tema) && l.id !== destacado.id),
