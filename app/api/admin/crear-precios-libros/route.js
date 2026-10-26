@@ -10,7 +10,7 @@ import { LIBROS } from "@/lib/recursos";
 
 function autorizado(request) {
   const secret = request.headers.get("x-admin-secret");
-  const expected = process.env.ADMIN_MODERATION_SECRET;
+  const expected = process.env.TEMP_ADMIN_UPLOAD_SECRET;
   return Boolean(expected) && secret === expected;
 }
 
