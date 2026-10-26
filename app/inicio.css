@@ -136,31 +136,46 @@ html:not(.dark) .dot-grid {
   line-height: 1.6;
 }
 
-/* ── Propuesta 3: STATS ─────────────────────────────────────── */
+/* ── Propuesta 3: STATS (solo /proyectos desde 26-oct-2026 — se quitó
+   del home para no duplicar con esta misma franja) ──────────────── */
 .jx-stats {
   margin-top: 4rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem 1.5rem;
-  border-top: 1px solid var(--jx-border);
-  border-bottom: 1px solid var(--jx-border);
-  padding: 2rem 0;
+  gap: 1.1rem;
 }
 @media (min-width: 640px) {
   .jx-stats { grid-template-columns: repeat(3, 1fr); }
 }
-.jx-stat { text-align: center; }
+.jx-stat {
+  text-align: center;
+  padding: 1.6rem 1rem;
+  border-radius: var(--radius, 14px);
+  border: 1px solid var(--jx-border);
+  background:
+    radial-gradient(120% 140% at 50% -10%, rgba(107, 165, 255, 0.10), transparent 60%),
+    var(--jx-surface, var(--surface));
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.jx-stat:hover {
+  transform: translateY(-3px);
+  border-color: var(--jx-accent, var(--accent));
+  box-shadow: var(--shadow-md, 0 12px 24px rgba(0, 0, 0, 0.08));
+}
 .jx-stat b {
   display: block;
-  font-size: 1.9rem;
+  font-size: 2.3rem;
   font-weight: 800;
-  letter-spacing: -0.02em;
-  color: var(--jx-text);
+  letter-spacing: -0.03em;
+  background: linear-gradient(92deg, var(--jx-accent, var(--accent)), #34d399 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 .jx-stat small {
   display: block;
-  margin-top: 0.25rem;
-  font-size: 0.72rem;
+  margin-top: 0.3rem;
+  font-size: 0.75rem;
   color: var(--jx-faint);
   line-height: 1.4;
 }

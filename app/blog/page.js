@@ -5,6 +5,7 @@ import NotasCarrusel from "@/components/NotasCarrusel";
 import IdeasMundos from "@/components/IdeasMundos";
 import BlogExplorer from "@/components/BlogExplorer";
 import TesisRagBanner from "@/components/TesisRagBanner";
+import ToolkitBanner from "@/components/ToolkitBanner";
 import NewsletterForm from "@/components/NewsletterForm";
 import { SITE_NAME, absUrl } from "@/lib/site";
 
@@ -82,6 +83,10 @@ export default function Blog() {
 
             <Reveal delay={0.04}>
               <TesisRagBanner publicadas={getPostsBySerie("tesis-rag").length} />
+            </Reveal>
+
+            <Reveal delay={0.045}>
+              <ToolkitBanner />
             </Reveal>
 
             <Reveal delay={0.05}>

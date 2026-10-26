@@ -1767,7 +1767,11 @@ html:not(.dark) .pglobe-land {
   flex-shrink: 0;
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--bg);
+  /* !important: sin esto, la regla global `a { color: var(--accent) }`
+     puede ganar en algunos contextos y el texto queda del mismo color
+     que el fondo del botón (invisible) — mismo bug ya visto en .btn.ghost. */
+  color: var(--bg) !important;
+  -webkit-text-fill-color: var(--bg);
   background: var(--accent);
   border-radius: 999px;
   padding: 10px 20px;
