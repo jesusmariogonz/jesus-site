@@ -19,7 +19,7 @@ import { trackDescarga, descargarProtegido } from "@/lib/track";
    de organización visual de /recursos.
    ============================================================ */
 
-const ORDEN_TEMAS = ["IA", "Datos", "Negocio", "Productividad"];
+const ORDEN_TEMAS = ["IA", "Datos", "Negocio", "Productividad", "Finanzas"];
 
 function TemaTag({ tema }) {
   const etiquetas = {
@@ -27,6 +27,7 @@ function TemaTag({ tema }) {
     Datos: "DATOS Y ANALÍTICA",
     Negocio: "NEGOCIO Y DECISIONES",
     Productividad: "PRODUCTIVIDAD",
+    Finanzas: "MERCADOS Y FINANZAS",
   };
   return <span className="biblio-tag">{etiquetas[tema] || tema.toUpperCase()}</span>;
 }
