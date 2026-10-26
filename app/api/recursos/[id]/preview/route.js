@@ -5,19 +5,21 @@ import { PDFDocument } from "pdf-lib";
 import { get } from "@vercel/blob";
 import { LIBROS } from "@/lib/recursos";
 
-/* Vista previa: primeras 10 páginas de un libro, para enganchar la
-   venta antes de pedir compra/descarga. El PDF completo de los
-   libros de pago vive en el store PRIVADO de Vercel Blob — aquí lo
-   leemos con el SDK (nunca se expone la URL del archivo completo) y
-   devolvemos solo un recorte de las primeras páginas. */
+/* Vista previa: primeras páginas de un libro (10 por default, o lo
+   que diga `previewPaginas` en su entrada de lib/recursos.js), para
+   enganchar la venta antes de pedir compra/descarga. El PDF completo
+   de los libros de pago vive en el store PRIVADO de Vercel Blob —
+   aquí lo leemos con el SDK (nunca se expone la URL del archivo
+   completo) y devolvemos solo un recorte de las primeras páginas. */
 
-const PAGINAS_PREVIEW = 10;
+const PAGINAS_PREVIEW_DEFAULT = 10;
 
 export async function GET(_request, { params }) {
   const libro = LIBROS.find((l) => l.id === params.id);
   if (!libro) {
     return NextResponse.json({ error: "Recurso no encontrado" }, { status: 404 });
   }
+  const paginasPreview = libro.previewPaginas || PAGINAS_PREVIEW_DEFAULT;
 
   let bytes;
   try {
@@ -39,7 +41,7 @@ export async function GET(_request, { params }) {
   let previewBytes;
   try {
     const fuente = await PDFDocument.load(bytes);
-    const n = Math.min(PAGINAS_PREVIEW, fuente.getPageCount());
+    const n = Math.min(paginasPreview, fuente.getPageCount());
     const preview = await PDFDocument.create();
     const paginas = await preview.copyPages(fuente, Array.from({ length: n }, (_, i) => i));
     paginas.forEach((p) => preview.addPage(p));

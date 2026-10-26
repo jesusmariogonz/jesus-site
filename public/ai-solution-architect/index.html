@@ -247,6 +247,33 @@
   .section-head p { color: var(--muted); font-size: 1.05rem; margin-top: 14px; }
 
   ::selection { background: var(--violet-soft); color: var(--ink); }
+
+  /* ---------- Vista previa (primeras páginas) ---------- */
+  .preview-frame {
+    position: relative;
+    max-width: 520px;
+    margin: 44px auto 0;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+    background: #f8fafc;
+    box-shadow: 0 30px 60px -30px rgba(15, 23, 42, 0.25);
+  }
+  .preview-frame canvas { width: 100%; height: auto; display: block; opacity: 0; transition: opacity 0.3s ease; }
+  .preview-frame canvas.on { opacity: 1; }
+  .preview-msg { padding: 60px 20px; text-align: center; color: var(--muted); font-size: 0.92rem; }
+  .preview-nav {
+    display: flex; align-items: center; justify-content: center; gap: 18px;
+    margin-top: 18px; font-size: 0.9rem; color: var(--ink-soft);
+  }
+  .preview-nav-btn {
+    background: none; border: 1.5px solid var(--line); border-radius: 8px;
+    padding: 8px 16px; font-weight: 600; font-size: 0.88rem; color: var(--ink);
+    cursor: pointer; transition: border-color 0.15s ease, color 0.15s ease;
+  }
+  .preview-nav-btn:hover:not(:disabled) { border-color: var(--violet); color: var(--violet); }
+  .preview-nav-btn:disabled { opacity: 0.4; cursor: default; }
+  .preview-nota { text-align: center; color: var(--muted); font-size: 0.9rem; margin-top: 22px; }
 </style>
 </head>
 <body>
@@ -294,6 +321,33 @@
         El equipo técnico sabe usar las herramientas, pero <b>nadie tiene un marco</b> para decidir cuándo usar cada una.
       </div>
     </div>
+  </div>
+</section>
+
+<!-- =================== VISTA PREVIA =================== -->
+<section id="preview">
+  <div class="wrap-narrow" style="text-align:center;">
+    <div class="section-head fade-up" style="margin:0 auto;">
+      <span class="kicker">ANTES DE COMPRAR</span>
+      <h2 style="margin-top:14px;">Lee las primeras 15 páginas</h2>
+      <p>Sin registro, sin correo — el capítulo de apertura completo, tal cual viene en el libro.</p>
+    </div>
+
+    <div class="preview-frame fade-up">
+      <p class="preview-msg" id="preview-msg">Cargando vista previa…</p>
+      <canvas id="preview-canvas"></canvas>
+    </div>
+
+    <div class="preview-nav" id="preview-nav" style="display:none;">
+      <button type="button" class="preview-nav-btn" id="preview-prev">← Anterior</button>
+      <span id="preview-pagina" class="mono">Página 1 de 15</span>
+      <button type="button" class="preview-nav-btn" id="preview-next">Siguiente →</button>
+    </div>
+
+    <p class="preview-nota fade-up">
+      Primeras 15 páginas gratis. Sigue leyendo el libro completo al comprarlo —
+      <a href="#oferta" class="link-scroll">$208 MXN</a>.
+    </p>
   </div>
 </section>
 
@@ -578,6 +632,63 @@
       { threshold: 0 }
     );
     obs.observe(hero);
+  })();
+
+  // Vista previa (primeras 15 páginas), vía pdf.js + la misma ruta
+  // /api/recursos/<id>/preview que usa el resto del sitio.
+  (function () {
+    var canvas = document.getElementById("preview-canvas");
+    var msg = document.getElementById("preview-msg");
+    var nav = document.getElementById("preview-nav");
+    var paginaLabel = document.getElementById("preview-pagina");
+    var btnPrev = document.getElementById("preview-prev");
+    var btnNext = document.getElementById("preview-next");
+    var pdfDoc = null;
+    var pagina = 1;
+    var totalPaginas = 0;
+
+    function renderPagina(n) {
+      pdfDoc.getPage(n).then(function (page) {
+        var escalaBase = page.getViewport({ scale: 1 });
+        var contenedor = canvas.parentElement;
+        var escala = (contenedor.clientWidth || escalaBase.width) / escalaBase.width;
+        var viewport = page.getViewport({ scale: escala });
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+        var ctx = canvas.getContext("2d");
+        page.render({ canvasContext: ctx, viewport: viewport }).promise.then(function () {
+          canvas.classList.add("on");
+        });
+      });
+      paginaLabel.textContent = "Página " + n + " de " + totalPaginas;
+      btnPrev.disabled = n <= 1;
+      btnNext.disabled = n >= totalPaginas;
+    }
+
+    import("https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.7.76/pdf.min.mjs")
+      .then(function (pdfjsLib) {
+        pdfjsLib.GlobalWorkerOptions.workerSrc =
+          "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.7.76/pdf.worker.min.mjs";
+        return pdfjsLib.getDocument({ url: "/api/recursos/ai-solution-architect/preview" }).promise;
+      })
+      .then(function (doc) {
+        pdfDoc = doc;
+        totalPaginas = doc.numPages;
+        msg.style.display = "none";
+        nav.style.display = "flex";
+        renderPagina(1);
+      })
+      .catch(function (err) {
+        console.error("Vista previa: error cargando el PDF:", err);
+        msg.textContent = "No pudimos cargar la vista previa.";
+      });
+
+    btnPrev.addEventListener("click", function () {
+      if (pagina > 1) { pagina -= 1; renderPagina(pagina); }
+    });
+    btnNext.addEventListener("click", function () {
+      if (pagina < totalPaginas) { pagina += 1; renderPagina(pagina); }
+    });
   })();
 
   (function () {
