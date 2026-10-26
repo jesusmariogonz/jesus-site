@@ -1,14 +1,15 @@
 import { NextResponse } from "next/server";
-import { generateClientTokenFromReadWriteToken } from "@vercel/blob/client";
+import { handleUpload } from "@vercel/blob/client";
 
-/* Ruta temporal de un solo uso — mintea un token de cliente para subir
-   UN archivo grande directo a Vercel Blob desde fuera de una función
-   serverless (evita el límite de ~4.5MB de body en rutas de Next.js).
-   Se borra después de usarla para subir los libros de "Cómo leer el
-   mercado". Protegida con el mismo secreto admin que ya usa el sitio. */
+/* Ruta temporal de un solo uso — implementa el protocolo oficial de
+   subida de cliente de Vercel Blob (handleUpload) para subir archivos
+   grandes directo a Blob, evitando el límite de ~4.5MB de body de las
+   funciones serverless de Next.js. Protegida con TEMP_ADMIN_UPLOAD_SECRET,
+   se borra después de usarla para subir los libros de "Cómo leer el
+   mercado". */
 
 function autorizado(request) {
-  const secret = request.headers.get("x-admin-secret");
+  const secret = new URL(request.url).searchParams.get("secret");
   const expected = process.env.TEMP_ADMIN_UPLOAD_SECRET;
   return Boolean(expected) && secret === expected;
 }
@@ -17,19 +18,19 @@ export async function POST(request) {
   if (!autorizado(request)) {
     return NextResponse.json({ error: "No autorizado." }, { status: 401 });
   }
-  const { pathname } = await request.json();
-  if (!pathname) {
-    return NextResponse.json({ error: "Falta pathname." }, { status: 400 });
-  }
 
-  const clientToken = await generateClientTokenFromReadWriteToken({
-    token: process.env.BLOB_READ_WRITE_TOKEN,
-    pathname,
-    allowedContentTypes: ["application/pdf"],
-    addRandomSuffix: false,
-    access: "private",
-    validUntil: Date.now() + 10 * 60 * 1000,
+  const body = await request.json();
+
+  const jsonResponse = await handleUpload({
+    body,
+    request,
+    onBeforeGenerateToken: async (pathname) => ({
+      allowedContentTypes: ["application/pdf"],
+      addRandomSuffix: false,
+      access: "private",
+    }),
+    onUploadCompleted: async () => {},
   });
 
-  return NextResponse.json({ clientToken });
+  return NextResponse.json(jsonResponse);
 }
