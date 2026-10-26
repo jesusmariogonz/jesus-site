@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 Genera la portada de una nota nueva con la API de Imágenes de OpenAI
-(modelo gpt-image-1) y le aplica el mismo tratamiento de título +
+(modelo gpt-image-2 — gpt-image-1 se retiró el 23 de octubre de 2026,
+ver shutdown_date en /v1/models/gpt-image-1) y le aplica el mismo tratamiento de título +
 etiqueta de categoría + marca que usa scripts/portada_titulo.py —
 reemplaza el uso del banco de fotos de lib/portadas.js.
 
@@ -42,7 +43,7 @@ from portada_titulo import tratar_imagen, ANCHO, ALTO  # noqa: E402
 OPENAI_IMAGES_URL = "https://api.openai.com/v1/images/generations"
 
 # 1536x1024 es el tamaño "apaisado" más cercano a la relación 16:9 (1200x675)
-# que soporta gpt-image-1 — se recorta al centro a la relación exacta dentro
+# que soporta gpt-image-2 — se recorta al centro a la relación exacta dentro
 # de tratar_imagen() (recortar_cubrir), igual que con las fotos del banco.
 TAMANO_GENERACION = "1536x1024"
 CALIDAD = "low"  # ~4x más barato que "medium" (~$0.016 vs ~$0.065/imagen) — decisión explícita
@@ -53,7 +54,7 @@ CALIDAD = "low"  # ~4x más barato que "medium" (~$0.016 vs ~$0.065/imagen) — 
 def generar_imagen_openai(prompt):
     payload = json.dumps(
         {
-            "model": "gpt-image-1",
+            "model": "gpt-image-2",
             "prompt": prompt,
             "size": TAMANO_GENERACION,
             "quality": CALIDAD,
