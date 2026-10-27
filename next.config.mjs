@@ -16,6 +16,20 @@ if (process.env.NODE_ENV === "production") {
   }
 }
 
+// Libros con landing page a medida en /public/<id>/index.html — la
+// plantilla genérica en /recursos/<id> sigue existiendo (Next no borra
+// rutas dinámicas), así que redirige la URL vieja a la nueva para que
+// nadie llegue a la versión sin terminar por un link guardado o viejo.
+const LIBROS_CON_LANDING_PROPIA = [
+  "el-cerebro-organizacional",
+  "ai-solution-architect",
+  "control-cognitivo-empresarial",
+  "la-analitica-avanzada",
+  "gestion-del-tiempo-con-datos",
+  "los-primeros-5-minutos-revelan-tu-seniority",
+  "el-problema-del-framing",
+];
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // El endpoint /api/newsletter/notify lee content/blog en runtime (no en
@@ -23,6 +37,13 @@ const nextConfig = {
   // archivos en el paquete de la función serverless.
   outputFileTracingIncludes: {
     "/api/newsletter/notify": ["./content/blog/**/*"],
+  },
+  async redirects() {
+    return LIBROS_CON_LANDING_PROPIA.map((id) => ({
+      source: `/recursos/${id}`,
+      destination: `/${id}`,
+      permanent: true,
+    }));
   },
 };
 export default withBotId(nextConfig);
