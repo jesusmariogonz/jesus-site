@@ -11,7 +11,7 @@ tags:
   - Amazon
   - Treasury
   - VIX
-resumen: 'Wall Street llega al martes con el impulso de la recuperación del lunes todavía fresco: el S&P 500 cerró en 7,676.77 (+0.70%), el Nasdaq en 26,169.38 (+0.82%) y el VIX cayó casi 5% a 18.49. La atención de la semana sigue puesta en la decisión de la Fed del miércoles y los reportes de Microsoft, Alphabet y Amazon.'
+resumen: 'Wall Street encadenó su segunda sesión consecutiva de ganancias: el Nasdaq cerró en 26,477.81 (+1.18%), el S&P 500 en 7,722.60 (+0.60%) y el VIX cayó otro 3.97% a 17.66, impulsados por un paquete de financiamiento de hasta 63,000 millones de dólares para los chips de IA de Broadcom que arrendaría Anthropic. La atención ahora se centra en la decisión de la Fed de mañana y los reportes de Microsoft, Alphabet y Amazon.'
 imagen: /blog/portadas/mercados-hoy-fija.jpg
 socialImagen: /blog/social/pulso-mercado-daily-2026-10-27.jpg
 ---
@@ -20,27 +20,27 @@ socialImagen: /blog/social/pulso-mercado-daily-2026-10-27.jpg
 
 | Activo | Nivel | Cambio |
 |---|---|---|
-| S&P 500 | 7,676.77 (cierre lunes 26-oct) | +0.70% |
-| Nasdaq Composite | 26,169.38 (cierre lunes 26-oct) | +0.82% |
-| Russell 2000 | 2,786.42 (cierre lunes 26-oct) | +0.38% |
-| Dow Jones | 52,361.58 (cierre lunes 26-oct) | +0.28% |
-| VIX | 18.49 (cierre lunes 26-oct) | -4.94% |
-| S&P/BMV IPC | 69,510.35 (cierre lunes 26-oct) | -0.53% |
-| USD/MXN | 18.5798 (FIX Banxico, lunes 26-oct) | — |
-| US 10Y | 4.986% (lunes 26-oct) | -0.04 pts |
-| WTI | $101.55 (lunes 26-oct) | -1.67% |
+| S&P 500 | 7,722.60 | +0.60% |
+| Nasdaq Composite | 26,477.81 | +1.18% |
+| Russell 2000 | 2,818.87 | +1.16% |
+| Dow Jones | 52,377.57 | +0.03% |
+| VIX | 17.66 | -3.97% |
+| S&P/BMV IPC | ≈69,721.67 | +0.36% |
+| USD/MXN | 18.6525 (FIX Banxico, hoy 27-oct) | — |
+| US 10Y | 4.993% | +0.14% |
+| WTI | ≈$100.07 | -1.66% |
 
 ## Market Regime
 
-Wall Street cerró el lunes con una recuperación amplia tras la segunda caída consecutiva del viernes anterior: los cuatro índices principales terminaron en verde, con el VIX cayendo casi 5% y el petróleo retrocediendo 1.67%, en un patrón consistente con una reducción general de la aversión al riesgo de cara a la semana más cargada del calendario. No localizamos con una fuente primaria un catalizador específico que explique por sí solo ese movimiento del lunes. Esta mañana, antes de la apertura, no encontramos con fuentes confiables noticias de madrugada que hayan movido el sentimiento de forma significativa; el mercado llega al martes a la espera de la decisión de la Fed del miércoles y de los reportes de Microsoft y Alphabet, también el miércoles, seguidos por Amazon el jueves.
+Wall Street encadenó su segunda sesión consecutiva de ganancias hoy martes, con el Nasdaq liderando el avance: cerró en 26,477.81 (+1.18%), seguido por el Russell 2000 (+1.16%, su mejor sesión reciente) y el S&P 500 (+0.60%, a 7,722.60), mientras el Dow se mantuvo prácticamente plano (+0.03%). El VIX cayó otro 3.97% a 17.66, extendiendo la caída de casi 5% del lunes, en una señal consistente de que la aversión al riesgo sigue retrocediendo de cara a la decisión de la Fed de mañana. El impulso del día estuvo encabezado por semiconductores e infraestructura de IA, después de que se conociera un paquete de financiamiento por deuda de entre 60,000 y 63,000 millones de dólares, liderado por Bank of America, Citigroup, Morgan Stanley y Blackstone, para los chips de IA que Anthropic arrendaría a Broadcom. El rendimiento del Treasury a 10 años subió ligeramente a 4.993%, todavía por debajo del umbral de 5%.
 
-Scorecard: Trend → ↑ (recuperación amplia en la última sesión confirmada) · Breadth → ↑ (los cuatro índices principales cerraron en verde el lunes) · Momentum → → (sin sesión nueva confirmada hoy) · Volatility → ↓ (VIX cayó casi 5% el lunes) · Rates → → (Treasury a 10 años prácticamente plano, en 4.986%) · USD → → (FIX de Banxico en 18.5798, sin actualización más reciente confirmada)
+Scorecard: Trend → ↑ (segunda sesión consecutiva de ganancias) · Breadth → ↑ (semiconductores y small caps lideraron, con el Russell 2000 subiendo 1.16%) · Momentum → ↑ (el Nasdaq tuvo su mejor sesión reciente) · Volatility → ↓ (VIX cayó otro 3.97%, segunda caída consecutiva) · Rates → → (Treasury a 10 años subió ligeramente a 4.993%, sin cambio de régimen) · USD → → (FIX de Banxico en 18.6525, ligero incremento frente al cierre anterior)
 
 ## Qué importó hoy
 
-A diferencia de la madrugada, la premarket de hoy martes sí trajo catalizadores identificables, encabezados por semiconductores e IA. Broadcom subía más de 2% antes de la apertura después de que Bank of America, Citigroup, Morgan Stanley y Blackstone lanzaran un paquete de financiamiento por deuda reportado en un rango de 60,000 a 63,000 millones de dólares para los chips de IA que Anthropic arrendaría a Broadcom bajo un esquema de leasing, no de compra directa —la estructura reportada incluye un tramo senior de 42,000 millones de dólares colocado por los tres bancos y un tramo junior de 18,000 millones liderado por Blackstone, que comprometería 9,000 millones de capital propio—. Conviene tratar la cifra exacta con cautela: distintas fuentes la ubican entre 60,000 y 80,000 millones de dólares, y los bancos involucrados no confirmaron los detalles a la prensa. Nvidia, Micron y AMD subían junto con Broadcom en el mismo sector.
+**El mercado de semiconductores e infraestructura de IA volvió a ser el tema dominante del día, encabezado por un paquete de financiamiento histórico para Broadcom.** Bank of America, Citigroup, Morgan Stanley y Blackstone estructuraron un paquete de deuda reportado entre 60,000 y 63,000 millones de dólares para los chips de IA que Anthropic arrendaría a Broadcom bajo un esquema de leasing, no de compra directa —con un tramo senior de 42,000 millones colocado por los tres bancos y un tramo junior de 18,000 millones liderado por Blackstone, que comprometería 9,000 millones de capital propio—. Ninguno de los bancos involucrados confirmó los detalles exactos a la prensa, y distintas fuentes ubican la cifra total entre 60,000 y 80,000 millones de dólares. Broadcom, Nvidia, Micron y AMD subieron de forma conjunta durante toda la sesión, y el Nasdaq cerró con su mejor avance reciente (+1.18%). Horizonte: Swing.
 
-El otro catalizador de la mañana fue de resultados: SoFi Technologies reportó en premarket una ganancia de 1.2 millones de nuevos miembros y elevó su guía de ingresos de 2026 a 5,040 millones de dólares, con la acción subiendo cerca de 5% antes de la apertura. En sentido contrario, HSBC caía alrededor de 7% en premarket tras un reporte trimestral mixto. Ninguno de estos movimientos cambia el evento central de la semana —la decisión de la Fed de mañana y los reportes de Microsoft, Alphabet y Amazon—, pero sí confirma que el apetito por infraestructura de IA sigue siendo el tema dominante del mercado incluso antes de que empiece la ronda de resultados de las grandes tecnológicas. Horizonte: Swing.
+**SoFi Technologies y HSBC marcaron los extremos opuestos de la temporada de resultados del día.** SoFi reportó una ganancia de 1.2 millones de nuevos miembros y elevó su guía de ingresos de 2026 a 5,040 millones de dólares, con la acción sosteniendo las ganancias que había mostrado desde el premarket. HSBC, en cambio, cayó con fuerza tras un reporte trimestral mixto. Ninguno de los dos resultados cambia el evento central de la semana —la decisión de la Fed de mañana y los reportes de Microsoft, Alphabet y Amazon—, pero ambos confirman que la temporada de resultados sigue moviendo nombres individuales con fuerza incluso antes de que lleguen los reportes de las grandes tecnológicas. Horizonte: Swing.
 
 ## Macro
 
@@ -48,15 +48,15 @@ Sin publicaciones económicas confirmadas para el día de hoy, martes 27 de octu
 
 ## Tasas y bonos
 
-La última lectura confirmada del rendimiento del Treasury a 10 años es la del lunes, en 4.986%, prácticamente plana (-0.04 puntos) y todavía cerca del umbral de 5% que cruzó a la baja la semana pasada. El mercado de bonos parece estar a la espera de la decisión de la Fed de mañana antes de tomar una dirección más definida.
+El rendimiento del Treasury a 10 años cerró hoy en 4.993%, con un ligero aumento de 0.14% frente al cierre del lunes, todavía por debajo del umbral psicológico de 5%. El mercado de bonos se mantuvo prácticamente estable a la espera de la decisión de la Fed de mañana.
 
 ## FX y commodities
 
-El FIX de Banxico más reciente que pudimos confirmar sigue siendo el del lunes 26 de octubre, en 18.5798 pesos por dólar; la página oficial de Banxico todavía no tiene publicado el FIX de hoy martes al momento de esta edición. El WTI cerró el lunes en $101.55 por barril (-1.67%), revirtiendo parte del alza de la semana pasada por tensiones en Medio Oriente; no localizamos con confianza niveles de hoy para el Brent, el oro ni el cobre.
+El FIX de Banxico publicado hoy quedó en 18.6525 pesos por dólar, un ligero incremento frente al nivel del lunes (18.5798). El WTI cotizaba alrededor de $100.07 por barril (-1.66%), extendiendo la caída del lunes, aunque no pudimos confirmar con total certeza que ese nivel corresponda al cierre oficial de la sesión de futuros, no solo a una cotización tardía; no localizamos con confianza niveles de hoy para el Brent, el oro ni el cobre.
 
 ## Sectores
 
-Sin un desglose sectorial confirmado con fuentes primarias para la sesión de hoy. El patrón más reciente confirmado, del lunes, fue una recuperación amplia sin un sector específico identificado como el principal impulsor; la semana pasada había mostrado una liquidación generalizada en tecnología y semiconductores con cierta diferenciación interna —Micron y AMD con rebotes parciales—, mientras defensa se sostenía como uno de los sectores con mejor narrativa relativa gracias al backlog récord de Lockheed Martin.
+Semiconductores e infraestructura de IA lideraron con claridad la sesión de hoy, impulsados por el paquete de financiamiento de Broadcom-Anthropic: Broadcom, Nvidia, Micron y AMD subieron de forma conjunta. El Russell 2000 (+1.16%) tuvo una de sus mejores sesiones recientes, sugiriendo que el apetito por riesgo se amplió más allá de las grandes tecnológicas. Financiero mostró una sesión mixta, con SoFi al alza tras su reporte y HSBC a la baja tras el suyo.
 
 ## Swing
 
@@ -86,15 +86,15 @@ El riesgo central de la semana es que la guía de capex de Microsoft, Alphabet y
 
 - Decisión de tasas de la Fed, con el mercado descontando mayoritariamente un hold en 3.75%-4.00%.
 - Reportes de Microsoft y Alphabet después del cierre, con el mercado enfocado en la guía de capex de IA.
-- Si la recuperación del lunes se sostiene hasta el anuncio de la Fed o pierde impulso antes.
+- Si la racha de dos sesiones consecutivas al alza se sostiene hasta el anuncio de la Fed.
+- Más detalles sobre el paquete de financiamiento Broadcom-Anthropic, cuyos términos exactos los bancos involucrados no han confirmado.
 - Cualquier adelanto o filtración sobre resultados antes de los reportes formales del miércoles.
-- Actualización del FIX de Banxico y de los niveles de petróleo, pendientes de confirmar para hoy.
 
 ## Pendientes de esta edición
 
-- No localizamos con fuentes confiables los niveles de cierre de la sesión de hoy martes, que sigue en curso al momento de esta edición; los datos de la tabla corresponden al cierre confirmado del lunes. Sí se confirmaron movimientos de premarket (ver "Qué importó hoy"), pero no niveles de cierre.
-- No localizamos con confianza el FIX de Banxico de hoy martes, ni niveles de Brent, oro o cobre de hoy.
-- No localizamos con una fuente primaria un catalizador específico para la recuperación del lunes.
+- No pudimos confirmar con total certeza que el nivel de WTI reportado ($100.07) corresponda al cierre oficial de la sesión de futuros, en lugar de una cotización tardía.
+- No localizamos con confianza niveles de hoy para el Brent, el oro ni el cobre.
+- Los montos exactos del paquete de financiamiento Broadcom-Anthropic varían entre fuentes (de 60,000 a 80,000 millones de dólares); ningún banco involucrado confirmó la cifra exacta.
 
 ## Fuentes
 
