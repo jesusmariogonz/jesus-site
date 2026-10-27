@@ -38,7 +38,9 @@ Scorecard: Trend → ↑ (recuperación amplia en la última sesión confirmada)
 
 ## Qué importó hoy
 
-No localizamos con fuentes confiables noticias Tier 1 o Tier 2 de la madrugada que hayan movido el sentimiento antes de la apertura de hoy martes. Lo más relevante para el resto de la semana sigue siendo lo que ya se documentó el lunes: una recuperación amplia en los cuatro índices principales, con el VIX y el petróleo cayendo de forma simultánea, sin que pudiéramos confirmar un catalizador específico con una fuente primaria. Horizonte: Swing.
+A diferencia de la madrugada, la premarket de hoy martes sí trajo catalizadores identificables, encabezados por semiconductores e IA. Broadcom subía más de 2% antes de la apertura después de que Bank of America, Citigroup, Morgan Stanley y Blackstone lanzaran un paquete de financiamiento por deuda reportado en un rango de 60,000 a 63,000 millones de dólares para los chips de IA que Anthropic arrendaría a Broadcom bajo un esquema de leasing, no de compra directa —la estructura reportada incluye un tramo senior de 42,000 millones de dólares colocado por los tres bancos y un tramo junior de 18,000 millones liderado por Blackstone, que comprometería 9,000 millones de capital propio—. Conviene tratar la cifra exacta con cautela: distintas fuentes la ubican entre 60,000 y 80,000 millones de dólares, y los bancos involucrados no confirmaron los detalles a la prensa. Nvidia, Micron y AMD subían junto con Broadcom en el mismo sector.
+
+El otro catalizador de la mañana fue de resultados: SoFi Technologies reportó en premarket una ganancia de 1.2 millones de nuevos miembros y elevó su guía de ingresos de 2026 a 5,040 millones de dólares, con la acción subiendo cerca de 5% antes de la apertura. En sentido contrario, HSBC caía alrededor de 7% en premarket tras un reporte trimestral mixto. Ninguno de estos movimientos cambia el evento central de la semana —la decisión de la Fed de mañana y los reportes de Microsoft, Alphabet y Amazon—, pero sí confirma que el apetito por infraestructura de IA sigue siendo el tema dominante del mercado incluso antes de que empiece la ronda de resultados de las grandes tecnológicas. Horizonte: Swing.
 
 ## Macro
 
@@ -90,7 +92,7 @@ El riesgo central de la semana es que la guía de capex de Microsoft, Alphabet y
 
 ## Pendientes de esta edición
 
-- No localizamos con fuentes confiables niveles ni noticias de la sesión de hoy martes, que sigue en curso al momento de esta edición; los datos de la tabla corresponden al cierre confirmado del lunes.
+- No localizamos con fuentes confiables los niveles de cierre de la sesión de hoy martes, que sigue en curso al momento de esta edición; los datos de la tabla corresponden al cierre confirmado del lunes. Sí se confirmaron movimientos de premarket (ver "Qué importó hoy"), pero no niveles de cierre.
 - No localizamos con confianza el FIX de Banxico de hoy martes, ni niveles de Brent, oro o cobre de hoy.
 - No localizamos con una fuente primaria un catalizador específico para la recuperación del lunes.
 
@@ -99,3 +101,7 @@ El riesgo central de la semana es que la guía de capex de Microsoft, Alphabet y
 - [Pulso de Mercado — Daily · 26/10/2026](/blog/pulso-mercado-daily-2026-10-26) — jgonzalez.app
 - [Pulso de Mercado — Weekly Outlook · semana del 26/10](/blog/pulso-mercado-weekly-outlook-2026-10-25) — jgonzalez.app
 - [Banco de México — Tipo de cambio FIX](https://www.banxico.org.mx/tipcamb/tipCamMIAction.do?idioma=sp) — Banxico
+- [Nasdaq, S&P 500 Futures Gain Premarket While Oil Rebounds: CLS, NVDA, SK Hynix, CRWV, SOFI In Focus](https://stocktwits.com/news-articles/markets/equity/nasdaq-futures-gain-premarket-while-oil-rebounds-cls-nvda-skhy-crwv-sofi-in-focus/cZUe5Q4RBz6) — Stocktwits
+- [Wall Street Futures Climb as Broadcom, Nvidia Lead Chip Stock Gains](https://www.analyticsinsight.net/stocks/wall-street-futures-climb-as-broadcom-nvidia-lead-chip-stock-gains) — Analytics Insight
+- [Wall Street banks launch record $60 billion chip financing package for Anthropic](https://cryptobriefing.com/wall-street-60-billion-anthropic-broadcom-deal/) — Crypto Briefing
+- [Broadcom seeks more than $60bn in debt to fund AI chips for Anthropic](https://thenextweb.com/news/broadcom-60bn-ai-chip-debt-anthropic) — The Next Web
