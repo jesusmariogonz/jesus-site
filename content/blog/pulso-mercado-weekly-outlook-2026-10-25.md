@@ -25,7 +25,7 @@ Wall Street cierra la semana que entra con tres eventos que concentran casi todo
 
 | Fecha | Evento | País | Importancia | Qué puede afectar |
 |---|---|---|---|---|
-| Miércoles 28 de octubre | Decisión de tasas de la Fed (FOMC), 2:00pm ET | Estados Unidos | Alta | El mercado descuenta mayoritariamente que la Fed mantendrá su rango de 3.75%-4.00% sin cambios (hold), según probabilidades de CME FedWatch reportadas hacia el 20 de octubre; cualquier sorpresa en el comunicado sobre el ritmo futuro de recortes movería tasas y el dólar |
+| Miércoles 28 de octubre | [Decisión de tasas de la Fed (FOMC), 2:00pm ET](/blog/fed-mantuvo-tasas-warsh-disidencia-hawkish-10-2) | Estados Unidos | Alta | El mercado descuenta mayoritariamente que la Fed mantendrá su rango de 3.75%-4.00% sin cambios (hold), según probabilidades de CME FedWatch reportadas hacia el 20 de octubre; cualquier sorpresa en el comunicado sobre el ritmo futuro de recortes movería tasas y el dólar |
 | Jueves 29 de octubre | PIB preliminar del tercer trimestre de 2026, 8:30am ET | Estados Unidos | Alta | Primera lectura oficial de crecimiento del trimestre; relevante para el tono de la conferencia de la Fed del día anterior |
 | Jueves 29 de octubre | Índice de precios PCE de septiembre (medida de inflación preferida de la Fed), 8:30am ET | Estados Unidos | Alta | Referencia clave para las expectativas de recortes de tasas hacia diciembre |
 | Jueves 29 de octubre | Solicitudes semanales de desempleo | Estados Unidos | Media | Seguimiento rutinario de la fortaleza del mercado laboral |
@@ -36,8 +36,8 @@ No localizamos con confianza una decisión de Banxico programada para esta seman
 
 | Empresa | Ticker | Fecha | Momento | Sector | Por qué importa |
 |---|---|---|---|---|---|
-| Microsoft | MSFT | Miércoles 28 de octubre | Después del cierre | Tecnología / Cloud | Primer reporte fiscal (Q1 FY2027) desde que el mercado empezó a cuestionar el ritmo de gasto de capital en infraestructura de IA de las grandes tecnológicas; Azure es el indicador más vigilado |
-| Alphabet | GOOGL | Miércoles 28 de octubre | Después del cierre | Tecnología / Publicidad digital | Reporta el mismo día que Microsoft; el mercado vigilará tanto el negocio de búsqueda como el gasto de capital de Google Cloud en IA |
+| [Microsoft](/blog/microsoft-alphabet-resultados-28-octubre-nube-opuestos) | MSFT | Miércoles 28 de octubre | Después del cierre | Tecnología / Cloud | Primer reporte fiscal (Q1 FY2027) desde que el mercado empezó a cuestionar el ritmo de gasto de capital en infraestructura de IA de las grandes tecnológicas; Azure es el indicador más vigilado |
+| [Alphabet](/blog/microsoft-alphabet-resultados-28-octubre-nube-opuestos) | GOOGL | Miércoles 28 de octubre | Después del cierre | Tecnología / Publicidad digital | Reporta el mismo día que Microsoft; el mercado vigilará tanto el negocio de búsqueda como el gasto de capital de Google Cloud en IA |
 | Amazon | AMZN | Jueves 29 de octubre | Después del cierre | Comercio electrónico / Cloud | AWS es, junto con Azure y Google Cloud, uno de los tres pilares de la narrativa de capex en IA que el mercado castigó la semana pasada en Meta y Tesla; su guía de inversión será tan vigilada como el resultado del trimestre |
 
 No localizamos con fecha confirmada, dentro de esta ventana, reportes de otras empresas del Dow Jones que históricamente reportan en esta temporada (ej. Caterpillar, Visa, Mastercard, ExxonMobil, Chevron, Eli Lilly); si reportan esta semana, no pudimos verificar el día exacto con una fuente confiable. Apple reporta su cuarto trimestre fiscal el lunes 2 de noviembre, ya fuera de esta ventana pero inmediatamente después.
