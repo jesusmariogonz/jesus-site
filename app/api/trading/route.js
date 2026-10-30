@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import snapshot from "@/lib/trading-snapshot.json";
+import paperTrading from "@/lib/paper-trading-snapshot.json";
 
 /* Igual que /api/admin/comentarios: clave simple en TRADING_DASHBOARD_SECRET,
    no es un sistema de usuarios — solo evita que cualquiera vea el panel.
@@ -24,6 +25,7 @@ export async function GET(request) {
 
   return NextResponse.json({
     ...snapshot,
+    paperTrading,
     live: false,
   });
 }
