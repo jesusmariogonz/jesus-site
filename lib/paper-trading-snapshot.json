@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T21:00:52.641887+00:00",
+  "generated_at": "2026-10-30T21:33:51.079531+00:00",
   "source": "algo_trading_platform paper trading engine (simulado, sin dinero real)",
   "buckets": {
     "largo_plazo": {
@@ -68,6 +68,25 @@
           "date": "2026-10-29",
           "equity": 200.0,
           "cash": 200.0,
+          "unrealized_pnl": 0.0,
+          "open_count": 0,
+          "closed_today": 0,
+          "realized_pnl_today": 0,
+          "cumulative_return_pct": 0.0,
+          "closed_today_detail": []
+        }
+      ]
+    },
+    "muy_alta_volatilidad": {
+      "starting_capital": 100.0,
+      "start_date": "2026-10-30",
+      "open_positions": [],
+      "closed_positions": [],
+      "daily_history": [
+        {
+          "date": "2026-10-30",
+          "equity": 100.0,
+          "cash": 100.0,
           "unrealized_pnl": 0.0,
           "open_count": 0,
           "closed_today": 0,
