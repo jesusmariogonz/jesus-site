@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T21:55:08.645804+00:00",
+  "generated_at": "2026-10-31T22:42:31.828095+00:00",
   "source": "algo_trading_platform paper trading engine (simulado, sin dinero real)",
   "buckets": {
     "largo_plazo": {
@@ -13,6 +13,14 @@
           "entry_price": 103.37,
           "stop_price": 100.42,
           "shares": 1
+        },
+        {
+          "symbol": "IJH",
+          "strategy": "time_series_momentum",
+          "entry_date": "2026-10-30",
+          "entry_price": 73.33,
+          "stop_price": 70.43,
+          "shares": 1
         }
       ],
       "closed_positions": [],
@@ -20,9 +28,9 @@
         {
           "date": "2026-10-30",
           "equity": 433.33,
-          "cash": 329.96,
+          "cash": 256.63,
           "unrealized_pnl": 0.0,
-          "open_count": 1,
+          "open_count": 2,
           "closed_today": 0,
           "realized_pnl_today": 0,
           "cumulative_return_pct": 0.0,
@@ -50,6 +58,14 @@
           "entry_price": 56.51,
           "stop_price": 54.63142817361014,
           "shares": 1
+        },
+        {
+          "symbol": "PFE",
+          "strategy": "trend_following",
+          "entry_date": "2026-10-30",
+          "entry_price": 30.52,
+          "stop_price": 29.01,
+          "shares": 2
         }
       ],
       "closed_positions": [],
@@ -57,9 +73,9 @@
         {
           "date": "2026-10-30",
           "equity": 333.33,
-          "cash": 276.82,
+          "cash": 215.78,
           "unrealized_pnl": -0.0,
-          "open_count": 1,
+          "open_count": 2,
           "closed_today": 0,
           "realized_pnl_today": 0,
           "cumulative_return_pct": 0.0,
