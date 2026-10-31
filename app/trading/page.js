@@ -18,6 +18,7 @@
    app/api/trading/route.js — esta página no se toca.
    ============================================================ */
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const CLAVE_STORAGE = "jx_trading_secret";
@@ -388,6 +389,9 @@ export default function TradingDashboard() {
     <div className="container" style={{ paddingTop: 40, paddingBottom: 60 }}>
       <span className="sql-meta">-- trading · algo_trading_platform</span>
       <h1>Panel de investigación cuantitativa</h1>
+      <p style={{ marginBottom: 24 }}>
+        <Link href="/trading/portafolios">→ Ver los 3 Quant Portfolios (Conservative Alpha / Balanced Growth / Aggressive Momentum)</Link>
+      </p>
 
       {!data && !error && <p>Cargando…</p>}
       {error && <p className="postura-aviso error">{error}</p>}

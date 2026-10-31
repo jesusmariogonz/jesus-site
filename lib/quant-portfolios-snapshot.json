@@ -1,0 +1,208 @@
+{
+  "generated_at": "2026-10-31T15:29:53.531639+00:00",
+  "source": "algo_trading_platform quant portfolios engine (simulado, sin dinero real)",
+  "portfolios": {
+    "conservative_alpha": {
+      "name": "Conservative Alpha",
+      "tagline": "Preservar capital, crecimiento moderado y menor volatilidad.",
+      "weights": {
+        "SGOV": 0.3,
+        "VOO": 0.25,
+        "BND": 0.2,
+        "VXUS": 0.15,
+        "GLDM": 0.1
+      },
+      "benchmark": "VOO",
+      "design_volatility_target_pct": [
+        6.0,
+        9.0
+      ],
+      "risk_per_trade_pct": 0.0025,
+      "daily_loss_limit_pct": 0.01,
+      "drawdown_review_pct": 0.06,
+      "rebalance_frequency": "monthly",
+      "starting_capital": 333.33,
+      "start_date": "2026-10-31",
+      "suspended": false,
+      "suspended_reason": null,
+      "suspended_since": null,
+      "holdings": {
+        "SGOV": 0.992743,
+        "VOO": 0.119936,
+        "BND": 0.465805,
+        "VXUS": 0.303506,
+        "GLDM": 0.216927
+      },
+      "cash": 74.99924999999998,
+      "daily_history": [
+        {
+          "date": "2026-10-30",
+          "equity": 333.33,
+          "cash": 75.0,
+          "holdings": {
+            "SGOV": 0.992743,
+            "VOO": 0.119936,
+            "BND": 0.465805,
+            "VXUS": 0.303506,
+            "GLDM": 0.216927
+          },
+          "daily_loss_pct": 0.0,
+          "drawdown_pct": 0.0,
+          "daily_loss_breaker_tripped": false,
+          "suspended": false,
+          "suspended_reason": null,
+          "newly_suspended_today": false,
+          "rebalanced_today": true,
+          "cumulative_return_pct": 0.0,
+          "trend_status": {
+            "SGOV": true,
+            "VOO": true,
+            "BND": false,
+            "VXUS": false,
+            "GLDM": false
+          }
+        }
+      ]
+    },
+    "balanced_growth": {
+      "name": "Balanced Growth",
+      "tagline": "Crecimiento diversificado con exposición a tendencias.",
+      "weights": {
+        "VOO": 0.3,
+        "QQQM": 0.15,
+        "VXUS": 0.15,
+        "BND": 0.15,
+        "SGOV": 0.1,
+        "GLDM": 0.1,
+        "IWM": 0.05
+      },
+      "benchmark": "VOO",
+      "design_volatility_target_pct": [
+        10.0,
+        13.0
+      ],
+      "risk_per_trade_pct": 0.004,
+      "daily_loss_limit_pct": 0.015,
+      "drawdown_review_pct": 0.1,
+      "rebalance_frequency": "monthly",
+      "starting_capital": 333.33,
+      "start_date": "2026-10-31",
+      "suspended": false,
+      "suspended_reason": null,
+      "suspended_since": null,
+      "holdings": {
+        "VOO": 0.143923,
+        "QQQM": 0.175844,
+        "VXUS": 0.607011,
+        "BND": 0.279483,
+        "SGOV": 0.330914,
+        "GLDM": 0.173542,
+        "IWM": 0.058683
+      },
+      "cash": 49.9995,
+      "daily_history": [
+        {
+          "date": "2026-10-30",
+          "equity": 333.33,
+          "cash": 50.0,
+          "holdings": {
+            "VOO": 0.143923,
+            "QQQM": 0.175844,
+            "VXUS": 0.607011,
+            "BND": 0.279483,
+            "SGOV": 0.330914,
+            "GLDM": 0.173542,
+            "IWM": 0.058683
+          },
+          "daily_loss_pct": 0.0,
+          "drawdown_pct": 0.0,
+          "daily_loss_breaker_tripped": false,
+          "suspended": false,
+          "suspended_reason": null,
+          "newly_suspended_today": false,
+          "rebalanced_today": true,
+          "cumulative_return_pct": 0.0,
+          "trend_status": {
+            "VOO": true,
+            "QQQM": true,
+            "VXUS": true,
+            "BND": false,
+            "SGOV": true,
+            "GLDM": false,
+            "IWM": true
+          }
+        }
+      ]
+    },
+    "aggressive_momentum": {
+      "name": "Aggressive Momentum",
+      "tagline": "Maximizar participación en tendencias de crecimiento, tecnología, small-caps y cripto.",
+      "weights": {
+        "VOO": 0.25,
+        "QQQM": 0.25,
+        "IWM": 0.15,
+        "SMH": 0.1,
+        "VXUS": 0.1,
+        "BTC": 0.1,
+        "SGOV": 0.05
+      },
+      "benchmark": "QQQM",
+      "design_volatility_target_pct": [
+        16.0,
+        22.0
+      ],
+      "risk_per_trade_pct": 0.006,
+      "daily_loss_limit_pct": 0.02,
+      "drawdown_review_pct": 0.15,
+      "rebalance_frequency": "daily",
+      "starting_capital": 333.33,
+      "start_date": "2026-10-31",
+      "suspended": false,
+      "suspended_reason": null,
+      "suspended_since": null,
+      "holdings": {
+        "VOO": 0.023987,
+        "QQQM": 0.058615,
+        "IWM": 0.03521,
+        "SMH": 0.012759,
+        "VXUS": 0.080935,
+        "BTC": 8.7e-05,
+        "SGOV": 0.165457
+      },
+      "cash": 253.33079999999995,
+      "daily_history": [
+        {
+          "date": "2026-10-30",
+          "equity": 333.34,
+          "cash": 253.33,
+          "holdings": {
+            "VOO": 0.023987,
+            "QQQM": 0.058615,
+            "IWM": 0.03521,
+            "SMH": 0.012759,
+            "VXUS": 0.080935,
+            "BTC": 8.7e-05,
+            "SGOV": 0.165457
+          },
+          "daily_loss_pct": 0.0,
+          "drawdown_pct": 0.0,
+          "daily_loss_breaker_tripped": false,
+          "suspended": false,
+          "suspended_reason": null,
+          "newly_suspended_today": false,
+          "rebalanced_today": true,
+          "cumulative_return_pct": 0.0,
+          "trend_status": {
+            "VOO": false,
+            "QQQM": false,
+            "IWM": false,
+            "SMH": false,
+            "VXUS": false,
+            "BTC": false,
+            "SGOV": true
+          }
+        }
+      ]
+    }
+  }
+}
