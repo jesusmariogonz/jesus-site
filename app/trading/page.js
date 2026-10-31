@@ -112,10 +112,9 @@ function TablaWalkForward({ walkForward }) {
 }
 
 const BUCKET_LABELS = {
-  largo_plazo: "Largo Plazo (40%)",
-  mediano_plazo: "Mediano Plazo (30%)",
-  riesgo_alto: "Riesgo Alto (20%)",
-  muy_alta_volatilidad: "Muy Alta Volatilidad (10%)",
+  largo_plazo: "Largo Plazo (43.3%)",
+  mediano_plazo: "Mediano Plazo (33.3%)",
+  riesgo_alto: "Riesgo Alto (23.3%)",
 };
 
 function EquityChart({ history, startingCapital }) {

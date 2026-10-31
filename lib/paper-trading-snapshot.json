@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-10-30T22:45:27.130912+00:00",
+  "generated_at": "2026-10-31T20:54:17.733908+00:00",
   "source": "algo_trading_platform paper trading engine (simulado, sin dinero real)",
   "buckets": {
     "largo_plazo": {
-      "starting_capital": 400.0,
-      "start_date": "2026-10-30",
+      "starting_capital": 433.33,
+      "start_date": "2026-10-31",
       "open_positions": [
         {
           "symbol": "EFA",
           "strategy": "time_series_momentum",
-          "entry_date": "2026-10-29",
-          "entry_price": 104.35,
-          "stop_price": 101.66,
+          "entry_date": "2026-10-30",
+          "entry_price": 103.37,
+          "stop_price": 100.42,
           "shares": 1
         }
       ],
       "closed_positions": [],
       "daily_history": [
         {
-          "date": "2026-10-29",
-          "equity": 400.0,
-          "cash": 295.65,
-          "unrealized_pnl": -0.0,
+          "date": "2026-10-30",
+          "equity": 433.33,
+          "cash": 329.96,
+          "unrealized_pnl": 0.0,
           "open_count": 1,
           "closed_today": 0,
           "realized_pnl_today": 0,
@@ -31,24 +31,24 @@
       ]
     },
     "mediano_plazo": {
-      "starting_capital": 300.0,
-      "start_date": "2026-10-30",
+      "starting_capital": 333.33,
+      "start_date": "2026-10-31",
       "open_positions": [
         {
           "symbol": "XLF",
           "strategy": "trend_following",
-          "entry_date": "2026-10-29",
-          "entry_price": 56.94,
-          "stop_price": 55.14,
+          "entry_date": "2026-10-30",
+          "entry_price": 56.51,
+          "stop_price": 54.63,
           "shares": 1
         }
       ],
       "closed_positions": [],
       "daily_history": [
         {
-          "date": "2026-10-29",
-          "equity": 300.0,
-          "cash": 243.06,
+          "date": "2026-10-30",
+          "equity": 333.33,
+          "cash": 276.82,
           "unrealized_pnl": -0.0,
           "open_count": 1,
           "closed_today": 0,
@@ -59,34 +59,15 @@
       ]
     },
     "riesgo_alto": {
-      "starting_capital": 200.0,
-      "start_date": "2026-10-30",
-      "open_positions": [],
-      "closed_positions": [],
-      "daily_history": [
-        {
-          "date": "2026-10-29",
-          "equity": 200.0,
-          "cash": 200.0,
-          "unrealized_pnl": 0.0,
-          "open_count": 0,
-          "closed_today": 0,
-          "realized_pnl_today": 0,
-          "cumulative_return_pct": 0.0,
-          "closed_today_detail": []
-        }
-      ]
-    },
-    "muy_alta_volatilidad": {
-      "starting_capital": 100.0,
-      "start_date": "2026-10-30",
+      "starting_capital": 233.33,
+      "start_date": "2026-10-31",
       "open_positions": [],
       "closed_positions": [],
       "daily_history": [
         {
           "date": "2026-10-30",
-          "equity": 100.0,
-          "cash": 100.0,
+          "equity": 233.33,
+          "cash": 233.33,
           "unrealized_pnl": 0.0,
           "open_count": 0,
           "closed_today": 0,
