@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T20:54:17.733908+00:00",
+  "generated_at": "2026-10-31T21:55:08.645804+00:00",
   "source": "algo_trading_platform paper trading engine (simulado, sin dinero real)",
   "buckets": {
     "largo_plazo": {
@@ -26,9 +26,18 @@
           "closed_today": 0,
           "realized_pnl_today": 0,
           "cumulative_return_pct": 0.0,
-          "closed_today_detail": []
+          "closed_today_detail": [],
+          "daily_loss_pct": 0.0,
+          "drawdown_pct": 0.0,
+          "daily_loss_breaker_tripped": false,
+          "suspended": false,
+          "suspended_reason": null,
+          "newly_suspended_today": false
         }
-      ]
+      ],
+      "suspended": false,
+      "suspended_reason": null,
+      "suspended_since": null
     },
     "mediano_plazo": {
       "starting_capital": 333.33,
@@ -39,7 +48,7 @@
           "strategy": "trend_following",
           "entry_date": "2026-10-30",
           "entry_price": 56.51,
-          "stop_price": 54.63,
+          "stop_price": 54.63142817361014,
           "shares": 1
         }
       ],
@@ -54,9 +63,18 @@
           "closed_today": 0,
           "realized_pnl_today": 0,
           "cumulative_return_pct": 0.0,
-          "closed_today_detail": []
+          "closed_today_detail": [],
+          "daily_loss_pct": 0.0,
+          "drawdown_pct": 0.0,
+          "daily_loss_breaker_tripped": false,
+          "suspended": false,
+          "suspended_reason": null,
+          "newly_suspended_today": false
         }
-      ]
+      ],
+      "suspended": false,
+      "suspended_reason": null,
+      "suspended_since": null
     },
     "riesgo_alto": {
       "starting_capital": 233.33,
@@ -73,9 +91,18 @@
           "closed_today": 0,
           "realized_pnl_today": 0,
           "cumulative_return_pct": 0.0,
-          "closed_today_detail": []
+          "closed_today_detail": [],
+          "daily_loss_pct": -0.0,
+          "drawdown_pct": 0.0,
+          "daily_loss_breaker_tripped": false,
+          "suspended": false,
+          "suspended_reason": null,
+          "newly_suspended_today": false
         }
-      ]
+      ],
+      "suspended": false,
+      "suspended_reason": null,
+      "suspended_since": null
     }
   }
 }

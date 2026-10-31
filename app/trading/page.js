@@ -18,7 +18,6 @@
    app/api/trading/route.js — esta página no se toca.
    ============================================================ */
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const CLAVE_STORAGE = "jx_trading_secret";
@@ -267,6 +266,20 @@ function PaperTradingBucketCard({ bucketKey, bucket }) {
     <div className="article-highlights" style={{ marginBottom: 32 }}>
       <span className="article-highlights-titulo">{label}</span>
 
+      {bucket.suspended && (
+        <div className="postura-aviso error" style={{ marginBottom: 16, marginTop: 8, padding: 16, borderRadius: 8 }}>
+          <strong>🛑 Bucket suspendido</strong> desde {bucket.suspended_since}: {bucket.suspended_reason}
+          <br />
+          No se liquidó nada — las posiciones actuales se mantienen. Solo se bloquearon nuevas
+          compras hasta reautorizar manualmente (<code>python -m src.paper_trading.reauthorize {bucketKey}</code>).
+        </div>
+      )}
+      {!bucket.suspended && ultimo?.daily_loss_breaker_tripped && (
+        <div className="postura-aviso error" style={{ marginBottom: 16, marginTop: 8, padding: 16, borderRadius: 8 }}>
+          <strong>⚠ Límite de pérdida diaria alcanzado hoy</strong> — sin nuevas compras hasta mañana.
+        </div>
+      )}
+
       <div className="highlights-grid" style={{ marginBottom: 20 }}>
         <MetricaDestacada etiqueta="equity" valor={`$${ultimo.equity}`} />
         <MetricaDestacada
@@ -388,9 +401,6 @@ export default function TradingDashboard() {
     <div className="container" style={{ paddingTop: 40, paddingBottom: 60 }}>
       <span className="sql-meta">-- trading · algo_trading_platform</span>
       <h1>Panel de investigación cuantitativa</h1>
-      <p style={{ marginBottom: 24 }}>
-        <Link href="/trading/portafolios">→ Ver los 3 Quant Portfolios (Conservative Alpha / Balanced Growth / Aggressive Momentum)</Link>
-      </p>
 
       {!data && !error && <p>Cargando…</p>}
       {error && <p className="postura-aviso error">{error}</p>}
