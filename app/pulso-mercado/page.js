@@ -14,6 +14,7 @@ import TickerTape from "@/components/TickerTape";
 import MercadosScreener from "@/components/MercadosScreener";
 import MarketSnapshotTabla from "@/components/MarketSnapshotTabla";
 import LibrosMercadoBanner from "@/components/LibrosMercadoBanner";
+import TradingAlgoritmicoBanner from "@/components/TradingAlgoritmicoBanner";
 import { absUrl } from "@/lib/site";
 
 // Dinámico (no estático) para que "Próxima corrida" en cada tarjeta
@@ -250,7 +251,6 @@ export default async function PulsoMercadoDashboard() {
             <Link href="/position">Position</Link>
             <Link href="/long-term">Long Term</Link>
             <Link href="/pulso-mercado/screener">Screener →</Link>
-            <Link href="/pulso-mercado/trading">Trading Algorítmico →</Link>
           </nav>
         </header>
 
@@ -265,7 +265,10 @@ export default async function PulsoMercadoDashboard() {
               </div>
               <MarketSnapshotTabla filas={snapshotFilas} />
             </div>
-            <LibrosMercadoBanner />
+            <div className="pulsodash-banners-col">
+              <LibrosMercadoBanner />
+              <TradingAlgoritmicoBanner />
+            </div>
           </div>
         )}
 
