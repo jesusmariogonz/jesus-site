@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T23:50:18.787248+00:00",
+  "generated_at": "2026-11-01T04:07:43.433827+00:00",
   "source": "algo_trading_platform paper trading engine (simulado, sin dinero real)",
   "buckets": {
     "largo_plazo": {
@@ -21,19 +21,27 @@
           "entry_price": 73.33,
           "stop_price": 70.43286296299526,
           "shares": 1
+        },
+        {
+          "symbol": "IJR",
+          "strategy": "time_series_momentum",
+          "entry_date": "2026-10-30",
+          "entry_price": 140.43,
+          "stop_price": 134.61,
+          "shares": 1
         }
       ],
       "closed_positions": [],
       "daily_history": [
         {
           "date": "2026-10-30",
-          "equity": 433.33,
-          "cash": 256.63,
-          "unrealized_pnl": 0.0,
-          "open_count": 2,
+          "equity": 433.19,
+          "cash": 116.2,
+          "unrealized_pnl": -0.14,
+          "open_count": 3,
           "closed_today": 0,
           "realized_pnl_today": 0,
-          "cumulative_return_pct": 0.0,
+          "cumulative_return_pct": -0.03,
           "closed_today_detail": [],
           "daily_loss_pct": 0.0,
           "drawdown_pct": 0.0,
@@ -66,19 +74,35 @@
           "entry_price": 30.52,
           "stop_price": 29.011071750095912,
           "shares": 2
+        },
+        {
+          "symbol": "KO",
+          "strategy": "trend_following",
+          "entry_date": "2026-10-30",
+          "entry_price": 94.17,
+          "stop_price": 89.68,
+          "shares": 1
+        },
+        {
+          "symbol": "XLE",
+          "strategy": "trend_following",
+          "entry_date": "2026-10-30",
+          "entry_price": 70.09,
+          "stop_price": 66.46,
+          "shares": 1
         }
       ],
       "closed_positions": [],
       "daily_history": [
         {
           "date": "2026-10-30",
-          "equity": 333.33,
-          "cash": 215.78,
-          "unrealized_pnl": -0.0,
-          "open_count": 2,
+          "equity": 333.17,
+          "cash": 51.52,
+          "unrealized_pnl": -0.16,
+          "open_count": 4,
           "closed_today": 0,
           "realized_pnl_today": 0,
-          "cumulative_return_pct": 0.0,
+          "cumulative_return_pct": -0.05,
           "closed_today_detail": [],
           "daily_loss_pct": 0.0,
           "drawdown_pct": 0.0,
