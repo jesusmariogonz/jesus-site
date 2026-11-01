@@ -4544,6 +4544,43 @@ html:not(.dark) .pglobe-land {
   background: var(--surface);
   padding: 22px 24px;
 }
+.trading-disclaimer {
+  max-width: 760px;
+  margin: 0 auto 32px;
+  padding: 14px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface-soft, var(--surface));
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  line-height: 1.5;
+  text-align: center;
+}
+.trading-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 4px;
+}
+.trading-tab {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.trading-tab:hover { border-color: var(--accent); color: var(--ink); }
+.trading-tab.activo {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
 .pulsodash-snapshot { margin-bottom: 0; overflow-x: auto; }
 .pulsodash-snapshot-row {
   display: flex;

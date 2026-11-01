@@ -250,6 +250,7 @@ export default async function PulsoMercadoDashboard() {
             <Link href="/position">Position</Link>
             <Link href="/long-term">Long Term</Link>
             <Link href="/pulso-mercado/screener">Screener →</Link>
+            <Link href="/pulso-mercado/trading">Trading Algorítmico →</Link>
           </nav>
         </header>
 
