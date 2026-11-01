@@ -4642,18 +4642,23 @@ html:not(.dark) .pglobe-land {
 .trading-intro { margin: 8px 0 32px; }
 .trading-intro-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 16px;
+  width: 100%;
 }
 @media (min-width: 820px) {
-  .trading-intro-grid { grid-template-columns: 1fr 1fr; }
+  .trading-intro-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
 }
 .trading-intro-card {
+  min-width: 0;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
   padding: 22px 24px;
+  box-sizing: border-box;
 }
+.trading-intro-card .prose { min-width: 0; max-width: 100%; }
+.trading-intro-card table { font-size: 0.82rem; }
 .trading-intro-kicker {
   display: block;
   font-family: var(--font-mono);
