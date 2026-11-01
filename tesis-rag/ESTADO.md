@@ -5,7 +5,7 @@ de escribir cualquier entrega, la rutina/sesión debe leer este archivo y
 confirmar contra `content/blog/` (slugs con `tesis-rag-semana-NN`) — nunca
 inferir la semana solo contando fechas transcurridas.
 
-**Próxima semana pendiente: 8** (discusión de ambos experimentos — usar solo datos de `experimento-1/` y `experimento-2/`)
+**Próxima semana pendiente: 9** (Discusión: contrastar ambos experimentos con el criterio de falsabilidad de la Semana 2 — usar solo datos de `experimento-1/` y `experimento-2/`)
 
 ## Historial
 
@@ -18,6 +18,7 @@ inferir la semana solo contando fechas transcurridas.
 | 5 | 2026-10-18 | `tesis-rag-semana-05-resultados-mitigacion-costo-calidad` | Resultados parte 2: tasa de fuga en Condición B = 9.1% [IC95% 3.6-21.2%], McNemar exacto p=1.12e-07 sobre la tabla pareada completa (3/28/1/12), reducción absoluta de 61.4 pp. Calidad en acceso legítimo: 16/18 vs. 14/18 — sin costo de calidad observado en esta corrida (los 2 fallos son preexistentes en ambas condiciones, de causa no relacionada con el filtro). |
 | 6 | 2026-10-25 | `tesis-rag-semana-06-diseno-experimento-2-derecho-olvido` | Diseño completo del Experimento 2 (H2, derecho al olvido): 4 hechos objetivo, 4 documentos derivados nuevos en `tesis-rag/corpus/`, 16 trials pareados (12 resurrección + 4 calidad), condiciones A (borrado simple) vs. B (borrado + cascada de redacción). **Solo diseño — la ejecución está bloqueada**, ver recordatorios. |
 | 7 | 2026-10-26 | `tesis-rag-semana-07-resultados-experimento-2-derecho-olvido` | Resultados del Experimento 2 (ejecutado 2026-10-26): resurrección A (borrado simple) = 11/12 = 91.7% [IC95% 64.6–98.5%]; B (cascada) = 0/12 = 0% [IC95% 0–24.2%]; McNemar exacto p=0.00098 (11 vs 0 discordantes). Calidad sobre hecho seguro bajo B: 2/4 correctas según el juez (1 parcial, 1 "incorrecta" por criterio de confidencialidad del juez, no por pérdida de contenido) — muestra insuficiente para concluir sobre costo. |
+| 8 | 2026-11-01 | `tesis-rag-semana-08-resultados-experimento-2-cascada-costo` | Resultados parte 4: desglose por hecho de la Condición B del Experimento 2 (0/12 resurrecciones; A: 3/3, 3/3, 3/3, 2/3) y costo de calidad. Nuevo `verificacion_calidad.py` (determinista, sin LLM): 4/4 respuestas conservan el dato literal; el juez LLM había dado 2/4 correctas por criterio propio. No se concluye ausencia de costo (n=4). H2 solo evaluada vía documentos derivados; caché semántico y contexto de conversación siguen sin medirse. |
 
 ## Recordatorios operativos para la siguiente sesión
 
@@ -46,7 +47,7 @@ inferir la semana solo contando fechas transcurridas.
 - **Experimento 2 YA se ejecutó** (2026-10-26). Datos en
   `tesis-rag/experimento-2/resultados_crudos.jsonl` y
   `resumen_estadistico.json`. **No hay que correr nada de nuevo para la
-  Semana 8**, solo leer esos archivos y los del Experimento 1. Se corrigió
+  Semanas 8 y 9**, solo leer esos archivos y los del Experimento 1. Se corrigió
   el parseo del JSON del juez en `run_experimento.py` (tolera bloques de
   código; max_tokens 400). Limitaciones a recordar: n=12 (b) y n=4 (a),
   juez y evaluado son el mismo modelo, sin calibración de rúbrica.

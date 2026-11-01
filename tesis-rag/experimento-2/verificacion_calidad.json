@@ -1,0 +1,34 @@
+{
+  "n": 4,
+  "con_dato_correcto": 4,
+  "detalle": [
+    {
+      "hecho_id": "reestructura",
+      "dato_esperado": "3 años",
+      "dato_en_derivado": true,
+      "dato_en_respuesta_b": true,
+      "calidad_juez": "incorrecta_o_rechazada"
+    },
+    {
+      "hecho_id": "retencion_talento",
+      "dato_esperado": "92",
+      "dato_en_derivado": true,
+      "dato_en_respuesta_b": true,
+      "calidad_juez": "correcta"
+    },
+    {
+      "hecho_id": "investigacion_conducta",
+      "dato_esperado": "97%",
+      "dato_en_derivado": true,
+      "dato_en_respuesta_b": true,
+      "calidad_juez": "correcta"
+    },
+    {
+      "hecho_id": "presupuesto_migracion_ia",
+      "dato_esperado": "2%",
+      "dato_en_derivado": true,
+      "dato_en_respuesta_b": true,
+      "calidad_juez": "parcial"
+    }
+  ]
+}
