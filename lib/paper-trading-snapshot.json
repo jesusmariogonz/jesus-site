@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T04:07:43.433827+00:00",
+  "generated_at": "2026-11-01T05:05:07.807587+00:00",
   "source": "algo_trading_platform paper trading engine (simulado, sin dinero real)",
   "buckets": {
     "largo_plazo": {
@@ -43,8 +43,8 @@
           "realized_pnl_today": 0,
           "cumulative_return_pct": -0.03,
           "closed_today_detail": [],
-          "daily_loss_pct": 0.0,
-          "drawdown_pct": 0.0,
+          "daily_loss_pct": 0.03,
+          "drawdown_pct": 0.03,
           "daily_loss_breaker_tripped": false,
           "suspended": false,
           "suspended_reason": null,
@@ -80,7 +80,7 @@
           "strategy": "trend_following",
           "entry_date": "2026-10-30",
           "entry_price": 94.17,
-          "stop_price": 89.68,
+          "stop_price": 89.6835754939488,
           "shares": 1
         },
         {
@@ -104,8 +104,8 @@
           "realized_pnl_today": 0,
           "cumulative_return_pct": -0.05,
           "closed_today_detail": [],
-          "daily_loss_pct": 0.0,
-          "drawdown_pct": 0.0,
+          "daily_loss_pct": 0.05,
+          "drawdown_pct": 0.05,
           "daily_loss_breaker_tripped": false,
           "suspended": false,
           "suspended_reason": null,
