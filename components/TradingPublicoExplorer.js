@@ -9,6 +9,15 @@
    publicar tal cual. */
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
+
+function LinkSimbolo({ symbol }) {
+  return (
+    <Link href={`/pulso-mercado/trading/simbolo/${symbol}`} className="trading-symbol-link">
+      {symbol}
+    </Link>
+  );
+}
 
 function formatFecha(iso) {
   if (!iso) return "—";
@@ -160,44 +169,6 @@ function ModuloDashboard({ data }) {
         </div>
       </div>
 
-      <div className="pulsodash-panel" style={{ marginBottom: 24 }}>
-        <div className="pulsodash-panel-head">
-          <span className="pulsodash-panel-title">Investigación · Backtesting (histórico, no es paper trading)</span>
-        </div>
-        <p className="pulsodash-vacio" style={{ marginBottom: 12, marginTop: 12 }}>
-          Resultados de simulación histórica por estrategia, calculados sobre precios pasados con
-          comisión y slippage incluidos. Nunca se combinan con la curva de paper trading de arriba.
-        </p>
-        <div className="prose" style={{ overflowX: "auto" }}>
-          <table>
-            <thead>
-              <tr>
-                <th>Estrategia</th>
-                <th>Universo</th>
-                <th>Mejor símbolo (backtest)</th>
-                <th>Retorno promedio</th>
-                <th>Comisión + slippage</th>
-              </tr>
-            </thead>
-            <tbody>
-              {data.estrategiasBacktest.map((e) => (
-                <tr key={e.id}>
-                  <td>{e.nombre} · v{e.version}</td>
-                  <td>{e.universeSize ?? "—"}</td>
-                  <td>{e.mejorSimbolo ? `${e.mejorSimbolo} (${e.mejorRetornoPct}%)` : "—"}</td>
-                  <td>{e.retornoPromedioPct !== null ? `${e.retornoPromedioPct}%` : "—"}</td>
-                  <td>
-                    {e.fees !== null && e.slippage !== null
-                      ? `${(e.fees * 100).toFixed(2)}% + ${(e.slippage * 100).toFixed(2)}%`
-                      : "—"}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-
       {data.pendientesDelMotor?.length > 0 && (
         <div className="pulsodash-panel">
           <div className="pulsodash-panel-head">
@@ -234,7 +205,7 @@ function TablaAbiertasBucket({ posiciones }) {
         <tbody>
           {posiciones.map((p, i) => (
             <tr key={`${p.symbol}-${p.entry_date}-${i}`}>
-              <td>{p.symbol}</td>
+              <td><LinkSimbolo symbol={p.symbol} /></td>
               <td>{p.strategy}</td>
               <td>{p.entry_date}</td>
               <td>${p.entry_price}</td>
@@ -442,7 +413,7 @@ function ModuloOperaciones({ data }) {
                       {p.estado === "abierta" ? "Abierta" : "Cerrada"}
                     </span>
                   </td>
-                  <td>{p.symbol}</td>
+                  <td><LinkSimbolo symbol={p.symbol} /></td>
                   <td>{p.bucketEtiqueta}</td>
                   <td>{p.entry_date}</td>
                   <td>{p.estado === "cerrada" ? p.exit_date || "—" : "—"}</td>

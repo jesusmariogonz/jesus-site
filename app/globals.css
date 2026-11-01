@@ -4754,6 +4754,15 @@ html:not(.dark) .pglobe-land {
 .trading-badge-abierta { background: rgba(19, 72, 214, 0.12); color: #1348d6; }
 .trading-badge-cerrada { background: rgba(100, 116, 139, 0.15); color: var(--ink-soft); }
 
+.trading-symbol-link {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--accent);
+}
+.trading-symbol-link:hover { border-bottom-style: solid; }
+
 /* ── Banner de "Cómo leer el mercado" junto al Market Snapshot ── */
 .libros-mercado-banner {
   display: flex;
