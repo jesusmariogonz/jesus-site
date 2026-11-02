@@ -418,11 +418,19 @@ function ModuloOperaciones({ data }) {
                   <td>{p.bucketEtiqueta}</td>
                   <td>{p.entry_date}</td>
                   <td>{p.estado === "cerrada" ? p.exit_date || "—" : "—"}</td>
-                  <td style={{ color: p.estado === "cerrada" ? toneColor(tonoDe(p.pnl)) : "var(--ink-soft)" }}>
-                    {p.estado === "cerrada" ? `$${p.pnl}` : "— (precio en vivo pendiente)"}
+                  <td style={{ color: toneColor(tonoDe(p.estado === "cerrada" ? p.pnl : p.unrealized_pnl)) }}>
+                    {p.estado === "cerrada"
+                      ? `$${p.pnl}`
+                      : p.unrealized_pnl != null
+                        ? `$${p.unrealized_pnl} (no realizado)`
+                        : "— (precio en vivo pendiente)"}
                   </td>
-                  <td style={{ color: p.estado === "cerrada" ? toneColor(tonoDe(p.pnl_pct)) : "var(--ink-soft)" }}>
-                    {p.estado === "cerrada" ? `${p.pnl_pct}%` : "—"}
+                  <td style={{ color: toneColor(tonoDe(p.estado === "cerrada" ? p.pnl_pct : p.unrealized_pnl_pct)) }}>
+                    {p.estado === "cerrada"
+                      ? `${p.pnl_pct}%`
+                      : p.unrealized_pnl_pct != null
+                        ? `${p.unrealized_pnl_pct}%`
+                        : "—"}
                   </td>
                   <td>{p.estado === "cerrada" ? (p.reason === "stop_hit" ? "Stop" : "Señal") : "—"}</td>
                 </tr>
@@ -434,7 +442,8 @@ function ModuloOperaciones({ data }) {
       <p className="pulsodash-vacio" style={{ marginTop: 16 }}>
         El historial conserva todas las operaciones, abiertas y cerradas, ganadoras y perdedoras —
         nunca se ocultan las pérdidas ni se recalculan resultados ya cerrados. El P&amp;L de las
-        posiciones abiertas no se muestra porque el snapshot todavía no exporta precio en vivo.
+        posiciones abiertas es no realizado (marcado al precio del último cierre procesado, no en
+        tiempo real intradía) — se confirma solo cuando la posición cierra.
       </p>
     </div>
   );
