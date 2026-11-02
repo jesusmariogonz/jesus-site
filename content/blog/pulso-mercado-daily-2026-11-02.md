@@ -11,7 +11,7 @@ tags:
   - Palantir
   - ISM Manufacturero
   - Banxico
-resumen: 'Los futuros de Wall Street suben esta mañana mientras el petróleo cae más de 4% por esperanzas de diplomacia con Irán antes de las elecciones intermedias del martes. El mercado intenta estabilizarse tras la peor semana de octubre para el Nasdaq, con Apple y Palantir reportando resultados después del cierre.'
+resumen: 'El Dow cerró al alza pero el Nasdaq cayó más de 1% por una nueva rotación fuera de tecnología, mientras el petróleo se desplomó cerca de 8% por esperanzas de diplomacia con Irán antes de las elecciones intermedias del martes. El ISM Manufacturero de octubre sorprendió al alza (55.5 contra 54.6 esperado). Apple y Palantir reportan después del cierre.'
 imagen: /blog/portadas/mercados-hoy-fija.jpg
 socialImagen: /blog/social/pulso-mercado-daily-2026-11-02.jpg
 ---
@@ -20,53 +20,53 @@ socialImagen: /blog/social/pulso-mercado-daily-2026-11-02.jpg
 
 | Activo | Nivel | Cambio |
 |---|---|---|
-| S&P 500 | 7,580.28 (cierre viernes) | ≈+0.5% en futuros |
-| Nasdaq Composite | 25,437.00 (cierre viernes) | ≈+0.8% en futuros (Nasdaq 100) |
-| Russell 2000 | 2,801.93 (cierre viernes) | — |
-| Dow Jones | 51,763.41 (cierre viernes) | ≈+0.55% en futuros |
-| VIX | 21.04 (cierre viernes) | — |
-| S&P/BMV IPC | ≈69,721.67 (cierre octubre) | — |
+| S&P 500 | 7,541.40 | -0.51% |
+| Nasdaq Composite | 25,164.32 | -1.07% |
+| Russell 2000 | 2,805.84 | -0.21% |
+| Dow Jones | 51,983.98 | +0.41% |
+| VIX | 21.44 | +10.42% |
+| S&P/BMV IPC | — | — |
 | USD/MXN | 18.8148 (FIX Banxico, viernes) | — |
-| US 10Y | 4.921% (cierre viernes) | — |
-| WTI | ≈$99.8 | -4% a -4.2% |
+| US 10Y | 4.894% | -0.71% |
+| WTI | $95.85 (futuro Dic-26) | -7.94% |
 
 ## Market Regime
 
-Wall Street abre la semana en modo de estabilización tras el peor tramo de octubre: los futuros de los tres índices grandes suben esta mañana, con el Nasdaq 100 liderando (≈+0.8%), mientras el mercado intenta recuperar aire después de que la semana pasada dejara la peor sesión de Alphabet como empresa pública y el peor día de Intel en cuatro décadas. El movimiento más fuerte de la madrugada no está en acciones, sino en petróleo: el WTI cae más de 4% por esperanzas de que la administración estadounidense dé más tiempo a la diplomacia con Irán antes de una posible reanudación de ataques, que according a reportes se evaluaría después de las elecciones intermedias del martes. Las cifras de petróleo varían entre 4% y 6% según la fuente consultada —se trata, en cualquier caso, de la caída más marcada del commodity en varias semanas.
+Wall Street cerró la sesión dividida: el Dow Jones subió 0.41% a 51,983.98 puntos, apoyado en una rotación hacia consumo cíclico, financieras y consumo defensivo, mientras el Nasdaq Composite cayó 1.07% a 25,164.32 y el S&P 500 retrocedió 0.51% a 7,541.40, arrastrados por una nueva liquidación en semiconductores —el sector tecnológico cerró cerca de 2.4% abajo en la tarde—. El VIX saltó 10.42% a 21.44, la señal de estrés más clara del día. El movimiento más fuerte de la sesión estuvo en petróleo: el WTI se desplomó 7.94% a $95.85 por barril (contrato de diciembre), por esperanzas de que la administración estadounidense dé más tiempo a la diplomacia con Irán antes de evaluar una posible reanudación de ataques, en un escenario que se definiría después de las elecciones intermedias del martes. El ISM Manufacturero de octubre sorprendió al alza, subiendo a 55.5% desde 54.5% en septiembre, por encima del 54.6% esperado por el consenso —una señal de actividad fabril más fuerte de lo anticipado, en contraste con la cautela que dominó el resto de la sesión.
 
-Scorecard: Trend → ↑ (futuros al alza tras una semana negativa) · Breadth → → (sin datos de amplitud confirmados para la apertura) · Momentum → ↑ (recuperación tras el peor mes del Nasdaq desde marzo de 2025) · Volatility → — (sin cifra de VIX premarket confirmada) · Rates → — (sin nivel premarket del Treasury a 10 años) · USD → — (sin FIX de Banxico actualizado para hoy)
+Scorecard: Trend → ↓ (Nasdaq y S&P 500 en rojo, Dow como excepción) · Breadth → ↓ (tecnología y semiconductores lideraron las pérdidas, cerca de 2.4% abajo) · Momentum → ↓ (segunda liquidación tecnológica en pocos días) · Volatility → ↑ (VIX saltó más de 10%) · Rates → ↓ (Treasury a 10 años cayó a 4.894%, -0.71%) · USD → — (sin FIX de Banxico actualizado para hoy)
 
 ## Qué importó hoy
 
-**El petróleo cae con fuerza ante la posibilidad de que Estados Unidos dé más margen a la diplomacia con Irán.** Varias fuentes reportan caídas del WTI de entre 4% y 6% esta madrugada, con el crudo cotizando cerca de $99-100 por barril —rompiendo el umbral de $100 por primera vez en semanas—. El detonante es un reporte según el cual la administración estadounidense preferiría esperar el resultado de las elecciones intermedias del martes antes de decidir si reanuda ataques contra Irán, según cobertura citada por CNBC. Horizonte: Swing.
+**El petróleo se desplomó casi 8% ante la posibilidad de que Estados Unidos dé más margen a la diplomacia con Irán.** El WTI cerró en $95.85 por barril (contrato de diciembre), una caída de 7.94% —su peor sesión en semanas—, por un reporte según el cual la administración estadounidense preferiría esperar el resultado de las elecciones intermedias del martes antes de decidir si reanuda ataques contra Irán. Horizonte: Swing.
 
-**Los futuros de Wall Street suben mientras el mercado intenta estabilizarse tras la liquidación tecnológica de octubre.** El S&P 500, el Nasdaq 100 y el Dow cotizan al alza en premarket, con estimaciones que van de +0.5% a +0.84% según la fuente. La narrativa dominante es que el "AI trade" está "tomando aire" después de una semana que incluyó la peor sesión de Alphabet en su historia como empresa pública y la peor caída de Intel en cuatro décadas. Horizonte: Position.
+**Wall Street volvió a rotar fuera de tecnología, con el Nasdaq cayendo más de 1% y el sector tecnológico retrocediendo cerca de 2.4%.** El Dow fue la excepción, subiendo 0.41% gracias a su menor exposición a semiconductores, mientras el dinero se movió hacia consumo cíclico, financieras y consumo defensivo. El VIX saltó más de 10%, la señal de aversión al riesgo más clara de la sesión. Horizonte: Position.
+
+**El ISM Manufacturero de octubre sorprendió al alza: 55.5%, frente a 54.5% en septiembre y un consenso de 54.6%.** Es una señal de actividad fabril más resiliente de lo que el mercado anticipaba, aunque no bastó para evitar la liquidación tecnológica de la tarde. Horizonte: Swing.
 
 **Las elecciones intermedias de Estados Unidos, el martes, concentran la atención de analistas sobre sectores específicos.** Cobertura de CNBC señala que defensa, salud, criptomonedas e inteligencia artificial son los sectores que el mercado vigila más de cerca de cara al resultado, en un escenario donde los demócratas son mayoritariamente favorecidos para recuperar el control de la Cámara de Representantes, mientras el Senado permanece incierto. El resultado no cambia la composición del Congreso hasta enero de 2027, pero el mercado ya empieza a descontar implicaciones sectoriales. Horizonte: Position.
 
-**El ISM Manufacturero de octubre se publica hoy a las 10:00am hora del este, con el consenso dividido entre 54.5% (sin cambio respecto a septiembre) y 54.7% según la fuente.** No localizamos con confianza el resultado real al momento de esta edición. Horizonte: Swing.
-
-**Apple y Palantir reportan resultados después del cierre de hoy, los dos primeros nombres grandes de una semana de earnings especialmente densa.** El mercado vigilará en Apple la guía de la temporada navideña y cualquier mención a capex de IA, y en Palantir si su racha de varios trimestres consecutivos superando expectativas se sostiene en el entorno actual de escrutinio sobre valuaciones de IA. Horizonte: Swing.
+**Apple y Palantir reportan resultados después del cierre de hoy, los dos primeros nombres grandes de una semana de earnings especialmente densa.** No localizamos con confianza los resultados reales al momento de esta edición —ambos reportan después del cierre del mercado—. El mercado vigilará en Apple la guía de la temporada navideña y cualquier mención a capex de IA, y en Palantir si su racha de varios trimestres consecutivos superando expectativas se sostiene en el entorno actual de escrutinio sobre valuaciones de IA. Horizonte: Swing.
 
 ## Macro
 
-El dato más relevante del día es el ISM Manufacturero de octubre, programado para las 10:00am hora del este —sin resultado confirmado todavía al momento de escribir esta edición—. Las elecciones intermedias de Estados Unidos son el evento macro-político central de la semana, programadas para el martes 3 de noviembre, con la Cámara de Representantes como la pieza más disputada.
+El ISM Manufacturero de octubre sorprendió al alza: 55.5%, frente a 54.5% en septiembre y un consenso de 54.6%, según el reporte oficial del día. Las elecciones intermedias de Estados Unidos son el evento macro-político central de la semana, programadas para el martes 3 de noviembre, con la Cámara de Representantes como la pieza más disputada.
 
 ## Tasas y bonos
 
-No localizamos con confianza un nivel premarket para el Treasury a 10 años esta mañana; el cierre más reciente confirmado sigue siendo el de 4.921% del viernes.
+El Treasury a 10 años cerró en 4.894%, una caída de 0.71% en el día, consistente con la demanda de refugio que acompañó a la liquidación tecnológica de la tarde.
 
 ## FX y commodities
 
-El movimiento dominante del día es el petróleo: el WTI cae entre 4% y 6% según la fuente, por debajo de $100 por barril, ante expectativas de que Estados Unidos prefiera esperar al resultado electoral del martes antes de evaluar una posible reanudación de ataques contra Irán. No localizamos con confianza un FIX de Banxico actualizado para hoy; el más reciente confirmado es el de 18.8148 del viernes.
+El movimiento dominante del día fue el petróleo: el WTI cerró en $95.85 por barril (contrato de diciembre), una caída de 7.94%, ante expectativas de que Estados Unidos prefiera esperar al resultado electoral del martes antes de evaluar una posible reanudación de ataques contra Irán. No localizamos con confianza un FIX de Banxico actualizado para hoy; el más reciente confirmado sigue siendo el de 18.8148 del viernes.
 
 ## Sectores
 
-La cobertura de la mañana señala a defensa, salud, criptomonedas e inteligencia artificial como los sectores más sensibles al resultado de las elecciones intermedias del martes. Energía probablemente abre con sesgo negativo por la caída del petróleo, mientras los sectores de tecnología y semiconductores —los más golpeados la semana pasada— lideran la recuperación en futuros esta mañana.
+Tecnología y semiconductores lideraron las pérdidas del día, con el sector tecnológico cerrando cerca de 2.4% abajo, mientras el dinero rotó hacia consumo cíclico, financieras y consumo defensivo —el patrón que explica por qué el Dow, con menor exposición tecnológica, cerró en verde mientras el Nasdaq cayó con fuerza—. La cobertura del día también señala a defensa, salud, criptomonedas e inteligencia artificial como los sectores más sensibles al resultado de las elecciones intermedias del martes.
 
 ## Swing
 
-El evento de mayor peso para los próximos días es si el petróleo sostiene esta caída o la revierte conforme se acerque la decisión sobre Irán, y si los reportes de Apple y Palantir de esta noche confirman o rompen el patrón de la semana pasada, cuando superar expectativas de utilidad dejó de garantizar una reacción positiva del precio para las grandes tecnológicas.
+El evento de mayor peso para los próximos días es si el petróleo sostiene esta caída de casi 8% o la revierte conforme se acerque la decisión sobre Irán, y si los reportes de Apple y Palantir de esta noche confirman o rompen el patrón de la semana pasada, cuando superar expectativas de utilidad dejó de garantizar una reacción positiva del precio para las grandes tecnológicas.
 
 ## Position
 
@@ -91,27 +91,22 @@ El riesgo central de la semana es que la incertidumbre de las elecciones interme
 ## Qué vigilar mañana
 
 - Resultado de las elecciones intermedias de Estados Unidos.
-- Reporte de resultados de AMD después del cierre.
-- Resultado del ISM Manufacturero de octubre (de no confirmarse hoy).
-- Evolución del precio del petróleo conforme se acerque una decisión sobre Irán.
 - Reacción del mercado a los reportes de Apple y Palantir de esta noche.
+- Reporte de resultados de AMD después del cierre de mañana.
+- Si el petróleo sostiene la caída de casi 8% de hoy o la revierte conforme se acerque una decisión sobre Irán.
+- Si la rotación fuera de tecnología de hoy se extiende a una segunda sesión.
 
 ## Pendientes de esta edición
 
-- VIX: no localizamos con confianza un nivel premarket para hoy.
-- Russell 2000: no localizamos con confianza un nivel ni cambio premarket para hoy.
-- US Treasury a 10 años: no localizamos con confianza un nivel premarket para hoy.
-- USD/MXN: no localizamos con confianza un FIX de Banxico actualizado para hoy; se usa el del viernes como referencia.
-- S&P/BMV IPC: no localizamos con confianza un nivel premarket para hoy.
-- ISM Manufacturero de octubre: no localizamos con confianza el resultado real al momento de esta edición; el consenso varía entre 54.5% y 54.7% según la fuente.
-- WTI: la magnitud exacta de la caída varía entre 4% y 6% según la fuente consultada.
+- USD/MXN: no localizamos con confianza un FIX de Banxico actualizado para hoy; se usa el del viernes (18.8148) como referencia.
+- S&P/BMV IPC: no localizamos con confianza un nivel de cierre para hoy.
+- Resultados de Apple y Palantir: ambos reportan después del cierre del mercado; no localizamos con confianza sus cifras reales al momento de esta edición.
 
 ## Fuentes
 
+- [Stock market today: S&P 500 and Nasdaq extend tech sell-off, Dow gains as oil prices plunge](https://finance.yahoo.com/markets/live/stock-market-today-monday-november-2-dow-sp-500-nasdaq-091835095.html) — Yahoo Finance
 - [Stock futures jump as oil prices tumble before midterms, tech shares rebound: Live updates](https://www.cnbc.com/2026/11/01/stock-market-today-live-updates.html) — CNBC
-- [Stock Market Today, Nov. 2: Futures Rise Ahead of Earnings and Midterm Elections; Oil Prices Fall](https://www.tipranks.com/news/stock-market-today-nov-2-futures-rise-ahead-of-earnings-and-midterm-elections-oil-prices-fall) — TipRanks
 - [Stock market next week: Outlook for Nov. 2-6, 2026](https://www.cnbc.com/2026/10/30/stock-market-next-week-outlook-for-nov-2-6-2026.html) — CNBC
 - [Defense, healthcare, crypto and AI: How the midterm election could affect stocks](https://www.cnbc.com) — CNBC
-- [Stock futures move higher as oil prices fall](https://www.world-today-news.com/stock-futures-move-higher-as-oil-prices-fall/) — World Today News
 - [Pulso de Mercado — Daily · 30/10/2026](/blog/pulso-mercado-daily-2026-10-30) — jgonzalez.app
 - [Nvidia podría garantizar la deuda que financia su propia demanda](/blog/nvidia-garantia-credito-nscale-anthropic-financiamiento-circular) — jgonzalez.app
