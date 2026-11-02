@@ -101,6 +101,7 @@ const BUCKET_COLORS = {
   largo_plazo: "#1348d6",
   mediano_plazo: "#0f766e",
   riesgo_alto: "#c2410c",
+  mean_reversion: "#7c3aed",
 };
 
 function DonutAsignacion({ asignacionReal }) {

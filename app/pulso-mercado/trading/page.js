@@ -58,20 +58,30 @@ function BloqueExplicativo() {
               el umbral de drawdown que hoy bloquean o suspenden cada bucket (ver tabla de abajo).
             </li>
             <li>
-              <strong>Universo ampliado + fricción real</strong> — de 32 a 146 símbolos en dos
+              <strong>Universo ampliado + fricción real</strong> — de 32 a 159 símbolos en varias
               rondas, y comisión + slippage reales incluidas en el motor (antes solo las tenía el
               backtest formal, no el paper trading). Un trailing stop más ancho y un filtro de
               régimen de mercado se probaron y se <strong>descartaron</strong> — ambos empeoraron
               el resultado, y se reportan aquí igual que los cambios que sí funcionaron.
+            </li>
+            <li>
+              <strong>Mean Reversion RSI(2), un 4to portafolio</strong> — todas las estrategias
+              anteriores comparten la misma lógica (comprar fortaleza, seguir la tendencia). Se
+              probaron también Donchian Breakout y una re-ponderación por volatilidad inversa
+              (Risk Parity): ambos empeoraron el resultado y se descartaron. Mean Reversion RSI(2)
+              (comprar debilidad temporal dentro de una tendencia alcista confirmada) sí mostró una
+              correlación baja (0.14) con el resto del sistema — suficiente evidencia de
+              diversificación real para agregarlo como un 4to portafolio independiente, con 35% del
+              capital.
             </li>
           </ul>
         </div>
 
         <div className="trading-intro-card">
           <span className="trading-intro-kicker">Cómo está construido hoy</span>
-          <h2>Tres portafolios, cada uno con sus propias reglas</h2>
+          <h2>Cuatro portafolios, cada uno con sus propias reglas</h2>
           <p>
-            El capital de referencia (USD 1,000) se divide en tres "buckets" independientes, cada
+            El capital de referencia (USD 1,000) se divide en cuatro "buckets" independientes, cada
             uno con su propia estrategia, universo y límites de riesgo:
           </p>
           <div className="prose" style={{ overflowX: "auto", marginTop: 12 }}>
@@ -90,29 +100,38 @@ function BloqueExplicativo() {
               <tbody>
                 <tr>
                   <td>Largo Plazo</td>
-                  <td>43.33%</td>
-                  <td>13 ETFs</td>
+                  <td>28.17%</td>
+                  <td>26 ETFs</td>
                   <td>Time-Series Momentum</td>
-                  <td>1%</td>
+                  <td>2%</td>
                   <td>1%</td>
                   <td>6%</td>
                 </tr>
                 <tr>
                   <td>Mediano Plazo</td>
-                  <td>33.33%</td>
+                  <td>21.67%</td>
                   <td>74 símbolos</td>
                   <td>Trend Following + Momentum/Breakout</td>
-                  <td>1%</td>
+                  <td>2%</td>
                   <td>1.5%</td>
                   <td>10%</td>
                 </tr>
                 <tr>
                   <td>Riesgo Alto</td>
-                  <td>23.33%</td>
+                  <td>15.17%</td>
                   <td>45 símbolos</td>
                   <td>Trend Following + Momentum/Breakout</td>
+                  <td>3%</td>
                   <td>2%</td>
+                  <td>15%</td>
+                </tr>
+                <tr>
+                  <td>Mean Reversion</td>
+                  <td>35.00%</td>
+                  <td>119 símbolos</td>
+                  <td>RSI(2) sobrevendido en tendencia alcista</td>
                   <td>2%</td>
+                  <td>1.5%</td>
                   <td>15%</td>
                 </tr>
               </tbody>
@@ -124,22 +143,26 @@ function BloqueExplicativo() {
           <span className="trading-intro-kicker">Resultado de las pruebas</span>
           <h2>Lo último que se midió, con fricción real incluida</h2>
           <p>
-            Último backtest completo sobre los 146 símbolos actuales, enero 2024 – octubre 2026,
-            con 0.05% de comisión + 0.05% de slippage por lado (costos reales de operar, no un
-            escenario optimista) y el split de producción 43.33/33.33/23.33:
+            Último backtest completo con los 4 buckets actuales, sobre 36 meses de datos reales
+            congelados, con 0.05% de comisión + 0.05% de slippage por lado (costos reales de
+            operar, no un escenario optimista) y el split de producción 28.17/21.67/15.17/35.00:
           </p>
           <ul>
-            <li><strong>+32.76%</strong> de retorno neto acumulado en el período.</li>
-            <li><strong>336</strong> operaciones cerradas en total.</li>
+            <li><strong>+43.61%</strong> de retorno neto acumulado en el período.</li>
+            <li><strong>11.75%</strong> de drawdown máximo — mejor que el 12.91% de la
+              configuración anterior sin Mean Reversion, no un trade-off de más riesgo por más
+              retorno.</li>
             <li>
-              Riesgo Alto fue el bucket con más margen relativo: <strong>+47.59%</strong> en ese
-              mismo período, tras ampliar su universo de 30 a 45 símbolos.
+              Mean Reversion RSI(2) fue el candidato que se quedó de una ronda de pruebas con
+              varios modelos adicionales (Donchian Breakout, Risk Parity): los otros dos
+              empeoraron el resultado y se descartaron.
             </li>
           </ul>
           <p style={{ marginTop: 10 }}>
             Esto es backtesting — una simulación sobre precios ya conocidos, no el resultado del
             paper trading diario de abajo. Las dos mediciones nunca se combinan en un mismo
-            gráfico en esta página.
+            gráfico en esta página. El 4to bucket se agregó a producción apenas el 1-nov-2026 —
+            el paper trading diario con los 4 buckets reales todavía tiene muy poco historial.
           </p>
         </div>
 
