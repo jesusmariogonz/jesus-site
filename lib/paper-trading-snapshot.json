@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T13:55:57.768159+00:00",
+  "generated_at": "2026-11-02T14:21:57.257702+00:00",
   "source": "algo_trading_platform paper trading engine (simulado, sin dinero real)",
   "buckets": {
     "largo_plazo": {
@@ -193,5 +193,7 @@
       "suspended_reason": null,
       "suspended_since": null
     }
-  }
+  },
+  "usd_mxn_rate": 18.8052,
+  "usd_mxn_rate_fecha": "2026-11-02"
 }

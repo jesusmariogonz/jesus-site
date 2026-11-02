@@ -19,8 +19,48 @@
    ============================================================ */
 
 import { useEffect, useState } from "react";
+import { pesosDeUsd, usaPesos } from "@/lib/trading/currency";
 
 const CLAVE_STORAGE = "jx_trading_secret";
+
+/* Convierte a pesos solo los campos en dólares absolutos de un
+   snapshot de paper trading (equity, capital inicial, precios de
+   entrada/salida/stop, P&L) — nunca los porcentajes (cumulative_return_pct,
+   pnl_pct), que no cambian con el tipo de cambio. El motor sigue
+   operando y guardando todo en USD; esto es solo para mostrar el panel
+   en pesos, igual que en la página pública (ver lib/trading/currency.js
+   y lib/trading/public-snapshot.js). */
+function convertirPaperTradingAMxn(paperTrading) {
+  if (!paperTrading) return paperTrading;
+  const rate = paperTrading.usd_mxn_rate ?? null;
+  if (!usaPesos(rate)) return paperTrading;
+
+  const convertirPosicion = (p) => ({
+    ...p,
+    entry_price: pesosDeUsd(p.entry_price, rate),
+    stop_price: pesosDeUsd(p.stop_price, rate),
+    exit_price: pesosDeUsd(p.exit_price, rate),
+    current_price: pesosDeUsd(p.current_price, rate),
+    pnl: pesosDeUsd(p.pnl, rate),
+    unrealized_pnl: pesosDeUsd(p.unrealized_pnl, rate),
+  });
+
+  const buckets = {};
+  for (const [key, bucket] of Object.entries(paperTrading.buckets || {})) {
+    buckets[key] = {
+      ...bucket,
+      starting_capital: pesosDeUsd(bucket.starting_capital, rate),
+      open_positions: (bucket.open_positions || []).map(convertirPosicion),
+      closed_positions: (bucket.closed_positions || []).map(convertirPosicion),
+      daily_history: (bucket.daily_history || []).map((h) => ({
+        ...h,
+        equity: pesosDeUsd(h.equity, rate),
+        realized_pnl_today: pesosDeUsd(h.realized_pnl_today, rate),
+      })),
+    };
+  }
+  return { ...paperTrading, buckets };
+}
 
 function formatFecha(iso) {
   if (!iso) return "—";
@@ -367,7 +407,8 @@ export default function TradingDashboard() {
         setSecretGuardado(false);
         return;
       }
-      setData(await res.json());
+      const json = await res.json();
+      setData({ ...json, paperTrading: convertirPaperTradingAMxn(json.paperTrading) });
     } catch {
       setError("No se pudo cargar el panel.");
     }
@@ -425,6 +466,11 @@ export default function TradingDashboard() {
               {data.paperTrading?.generated_at && (
                 <> Última actualización: {formatFecha(data.paperTrading.generated_at)}.</>
               )}
+            </p>
+            <p style={{ color: "var(--ink-soft)", maxWidth: "70ch", marginBottom: 24, fontSize: "0.85rem" }}>
+              {usaPesos(data.paperTrading?.usd_mxn_rate)
+                ? `Cifras en pesos mexicanos (MXN), convertidas de USD al tipo de cambio del ${data.paperTrading.usd_mxn_rate_fecha}: $${data.paperTrading.usd_mxn_rate} MXN por USD.`
+                : "No se pudo obtener el tipo de cambio de hoy — las cifras se muestran en USD (dólares), no en pesos."}
             </p>
             {Object.keys(BUCKET_LABELS).map((bucketKey) => (
               <PaperTradingBucketCard

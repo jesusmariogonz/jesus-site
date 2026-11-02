@@ -58,6 +58,12 @@ export default async function SimboloPage({ params }) {
           <Link href="/pulso-mercado/trading">Trading Algorítmico</Link>.
         </p>
 
+        <p className="pulsodash-vacio" style={{ marginBottom: 16 }}>
+          {resumen.monedaUSD
+            ? "No se pudo obtener el tipo de cambio de hoy — las cifras se muestran en USD (dólares), no en pesos."
+            : `Cifras en pesos mexicanos (MXN), convertidas de USD al tipo de cambio del ${resumen.usdMxnRateFecha || "día"}: $${resumen.usdMxnRate} MXN por USD.`}
+        </p>
+
         <div className="activo-bloque">
           <h2>Resumen en este sistema</h2>
           <div className="highlights-grid">

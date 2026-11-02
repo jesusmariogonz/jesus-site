@@ -15,7 +15,10 @@ export const metadata = {
   },
 };
 
-function BloqueExplicativo() {
+function BloqueExplicativo({ resumen }) {
+  const capitalTexto = resumen.monedaUSD
+    ? "USD 1,000"
+    : `$${resumen.capitalInicialTotal.toLocaleString("es-MX", { minimumFractionDigits: 2 })} MXN (equivalente a USD 1,000 al tipo de cambio del ${resumen.usdMxnRateFecha})`;
   return (
     <div className="trading-intro">
       <div className="trading-intro-grid">
@@ -81,7 +84,7 @@ function BloqueExplicativo() {
           <span className="trading-intro-kicker">Cómo está construido hoy</span>
           <h2>Cuatro portafolios, cada uno con sus propias reglas</h2>
           <p>
-            El capital de referencia (USD 1,000) se divide en cuatro "buckets" independientes, cada
+            El capital de referencia ({capitalTexto}) se divide en cuatro "buckets" independientes, cada
             uno con su propia estrategia, universo y límites de riesgo:
           </p>
           <div className="prose" style={{ overflowX: "auto", marginTop: 12 }}>
@@ -198,7 +201,7 @@ export default function TradingPublicoPage() {
           </p>
         </header>
 
-        <BloqueExplicativo />
+        <BloqueExplicativo resumen={data.resumen} />
 
         <div className="trading-disclaimer">{TRADING_DISCLAIMER}</div>
 

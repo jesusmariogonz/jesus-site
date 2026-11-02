@@ -138,10 +138,28 @@ function DonutAsignacion({ asignacionReal }) {
   );
 }
 
+function AvisoMoneda({ resumen }) {
+  if (resumen.monedaUSD) {
+    return (
+      <p className="pulsodash-vacio" style={{ marginBottom: 16 }}>
+        No se pudo obtener el tipo de cambio de hoy — las cifras se muestran en USD (dólares),
+        no en pesos.
+      </p>
+    );
+  }
+  return (
+    <p className="pulsodash-vacio" style={{ marginBottom: 16 }}>
+      Cifras en pesos mexicanos (MXN), convertidas de USD al tipo de cambio del{" "}
+      {resumen.usdMxnRateFecha || "día"}: ${resumen.usdMxnRate} MXN por USD.
+    </p>
+  );
+}
+
 function ModuloDashboard({ data }) {
   const { resumen } = data;
   return (
     <div>
+      <AvisoMoneda resumen={resumen} />
       <div className="trading-stat-grid">
         <StatCard etiqueta="Equity actual" valor={`$${resumen.equityActualTotal}`} sub={`de $${resumen.capitalInicialTotal} iniciales`} />
         <StatCard etiqueta="Retorno acumulado" valor={pct(resumen.retornoTotalPct)} tono={tonoDe(resumen.retornoTotalPct)} />
