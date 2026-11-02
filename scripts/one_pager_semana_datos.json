@@ -1,63 +1,63 @@
 {
-  "semana_texto": "SEMANA DEL 5 AL 11 DE OCTUBRE DE 2026",
+  "semana_texto": "SEMANA DEL 26 DE OCTUBRE AL 1 DE NOVIEMBRE DE 2026",
   "edicion_texto": "EDICIÓN SEMANAL · TOP 13",
-  "intro": "Una semana en la que la subasta de AHMSA quedó en suspenso por falta de garantía, México se quedó sin el organismo que auditaba su pensión más grande, y Brasil confirmó que su elección se decide en balotaje. Entre negocios, TSMC superó su propia guía y 16,326 bases de datos abiertas revelaron qué tan frágil puede ser la seguridad por defecto. Abajo, las 13 notas más leídas de la semana.",
+  "intro": "Una semana en la que murió Cuauhtémoc Cárdenas, la ASF denunció penalmente al gobierno de Nuevo León por una triangulación de 7,200 millones de pesos, y Wall Street vivió su peor tramo de octubre con la Fed dividida y las grandes tecnológicas de nube reportando resultados casi opuestos el mismo día. Abajo, las 13 notas más relevantes de la semana.",
   "flash": [
-    {"kicker": "MERCADOS Y CAPITAL", "fecha": "11 OCT", "titulo": "Delta Air Lines reportó caída de utilidad GAAP de más de 40%, pero sostuvo su guía",
-     "desc": "La aparente contradicción entre una utilidad GAAP débil y una ajustada sólida se explica por el propósito mismo de las cifras ajustadas: aislar partidas no recurrentes de la operación real."},
-    {"kicker": "IDEAS Y ENSAYOS", "fecha": "06 OCT", "titulo": "Las empresas están aplanando su jerarquía para que la IA coordine",
-     "desc": "El error no es cortar gerentes, es asumir que traducir estrategia en instrucciones ejecutables es lo mismo que la coordinación mecánica que la IA sí puede hacer bien."},
-    {"kicker": "MÉXICO Y LATAM", "fecha": "08 OCT", "titulo": "México desapareció al organismo que evaluaba sus programas sociales",
-     "desc": "CONEVAL dejó de ser autónomo justo cuando la Pensión para el Bienestar, de la que dependen 4.7 millones de adultos mayores, se volvió el gasto social más grande del país."}
+    {"kicker": "BUSINESS", "fecha": "29 OCT", "titulo": "La utilidad de FEMSA creció 81% este trimestre. Buena parte de ese salto no vino de vender más, sino de no repetir una pérdida del año pasado",
+     "desc": "Oxxo México creció 10.3% en ingresos, pero buena parte de ese avance vino del aumento del IEPS a cigarros y refrescos, no de un consumidor más fuerte."},
+    {"kicker": "FINTECH", "fecha": "29 OCT", "titulo": "La Fed mantuvo su tasa, pero dos de sus propios funcionarios votaron por subirla",
+     "desc": "La votación 10 a 2 marcó la primera disidencia hawkish bajo la presidencia de Kevin Warsh, y el mercado sigue asignando una probabilidad alta a un alza en diciembre."},
+    {"kicker": "MÉXICO Y LATAM", "fecha": "27 OCT", "titulo": "La renuncia de Taddei al INE destapó contratos por 395 millones de pesos",
+     "desc": "Dos empresas aparecieron en el padrón de proveedores del INE semanas después de que Taddei llegó a la presidencia, con antecedentes de investigación por la UIF y la Cofece."}
   ],
   "main": {
-    "kicker": "LO MÁS LEÍDO DE LA SEMANA · MÉXICO Y LATAM", "fecha": "10 OCT",
-    "titulo": "A CIESA le niegan la prórroga: tiene hasta el 13 de octubre para garantizar la compra de AHMSA o se cae la subasta",
-    "dek": "CIESA pidió 90 días más para acreditar la garantía de 56.3 millones de dólares que debía depositar tras ganar la subasta de AHMSA el 25 de septiembre. Una jueza le negó esa prórroga el 8 de octubre.",
-    "cuerpo": "El titular de \"CIESA ganó la subasta de AHMSA\" que circuló hace dos semanas describía un hecho menos consumado de lo que sonaba: el comprador todavía no demuestra tener el dinero ni siquiera para el 4% de garantía de seriedad, pidió tres meses más para reunirlo, y la jueza Ruth Haggi Huerta García —que ya había extendido el proceso una vez— le negó esa segunda oportunidad. Caterpillar, uno de los acreedores, ya pidió invalidar la participación de CIESA si no cumple el nuevo plazo del 13 de octubre. La \"venta\" de AHMSA sigue, en los hechos, sin decidirse.",
-    "foto": "public/blog/portadas/ahmsa-ciesa-prorroga-rechazada-13-octubre.jpg"
+    "kicker": "LO MÁS RELEVANTE DE LA SEMANA · MÉXICO Y LATAM", "fecha": "29 OCT",
+    "titulo": "Adiós, ingeniero: muere Cuauhtémoc Cárdenas a los 92 años",
+    "dek": "Cuauhtémoc Cárdenas Solórzano, fundador del PRD, tres veces candidato presidencial y primer jefe de gobierno electo por voto popular de la Ciudad de México, murió el miércoles 28 de octubre a los 92 años.",
+    "cuerpo": "Su nombre quedó ligado para siempre a la elección de 1988, cuando el sistema de cómputo \"se cayó\" en la noche en que, según la evidencia histórica disponible, los resultados preliminares lo favorecían. Que Cárdenas haya sido el candidato cuya elección terminó forzando la creación de instituciones electorales independientes —el IFE llegaría apenas cuatro años después— es un hecho documentado en la historia institucional mexicana; leer ese episodio como la prueba definitiva de que él personalmente ganó esa elección es, en cambio, una interpretación que la evidencia histórica disponible hace más probable que no, pero que ningún conteo oficial llegó a confirmar. Compitió por la presidencia en 1988, 1994 y 2000, sin ganar ninguna de forma oficial, y en 1997 se convirtió en el primer Jefe de Gobierno del entonces Distrito Federal elegido por voto popular directo.",
+    "foto": "public/blog/portadas/adios-cuauhtemoc-cardenas-muere-92-anos.jpg"
   },
   "secundaria_larga": {
-    "kicker": "DATOS COMO NEGOCIO · 2ª MÁS LEÍDA", "fecha": "06 OCT",
-    "titulo": "Encontraron 16,326 bases de datos abiertas al público. El error no fue un hackeo",
-    "desc": "UpGuard escaneó cerca de 300,000 dominios construidos sobre Supabase, la plataforma de backend más popular entre desarrolladores que usan IA para programar, y encontró 16,326 bases de datos con tablas públicamente legibles por cualquiera —más de la mitad con indicios de información personal expuesta. No fue una vulnerabilidad sofisticada: fue una casilla de seguridad que nadie activó. El hallazgo describe algo más amplio que un error puntual de Supabase: la velocidad con la que la IA permite construir aplicaciones completas bajó tanto el costo de crear infraestructura de datos que buena parte de esa infraestructura se despliega sin que nadie revise los controles de acceso más básicos.",
+    "kicker": "MÉXICO Y LATAM · 2ª MÁS RELEVANTE", "fecha": "31 OCT",
+    "titulo": "La ASF denuncia penalmente al gobierno de Nuevo León por una triangulación de 7,200 millones de pesos",
+    "desc": "La Auditoría Superior de la Federación presentó el 16 de octubre una denuncia penal —registrada como la 1231, dentro de la auditoría 1492 de la Cuenta Pública 2025— contra el gobierno de Nuevo León, por un presunto esquema de triangulación de recursos públicos hacia constructoras, prestadoras de servicios, comercializadoras de alimentos y un despacho jurídico ligados a familiares de funcionarios. Es ya el cuarto señalamiento de este tipo contra la administración de Samuel García en 2026, pero el primero que viene de un órgano técnico de fiscalización y no de un partido político con interés directo en el resultado.",
     "foto": null
   },
   "secundaria_corta": {
-    "kicker": "TECNOLOGÍA Y NEGOCIO · 3ª MÁS LEÍDA", "fecha": "09 OCT",
-    "titulo": "TSMC acaba de vender más chips de los que ella misma proyectó hace dos meses",
-    "desc": "Ventas de septiembre de 511,860 millones de dólares taiwaneses (+54.6% anual); el trimestre completo ya superó el techo de la propia guía de julio, por segundo trimestre consecutivo.",
-    "foto": "public/blog/portadas/tsmc-record-ventas-guia-conservadora-monopolio-chips.jpg"
+    "kicker": "MÉXICO Y LATAM · 3ª MÁS RELEVANTE", "fecha": "01 NOV",
+    "titulo": "Fondos para chalecos antibalas y radios en Nuevo León habrían terminado en el despacho de la familia de Samuel García",
+    "desc": "TXAT Latam recibió 440 millones de pesos en contratos de seguridad y habría enviado 60.4 millones al despacho del gobernador, vía empresas factureras.",
+    "foto": "public/blog/portadas/txat-latam-chalecos-antibalas-despacho-samuel-garcia.jpg"
   },
   "datos": [
-    {"valor": "$56.3M", "etiqueta": "Garantía de seriedad que CIESA aún no acredita para quedarse con AHMSA"},
-    {"valor": "4.7 millones", "etiqueta": "Adultos mayores que dependen de la Pensión para el Bienestar, hoy sin organismo que la audite"},
-    {"valor": "47.03% vs. 45.16%", "etiqueta": "Resultado de primera vuelta entre Flávio Bolsonaro y Lula en Brasil"},
-    {"valor": "16,326", "etiqueta": "Bases de datos de Supabase encontradas abiertas al público por UpGuard"}
+    {"valor": "92 años", "etiqueta": "Edad de Cuauhtémoc Cárdenas al momento de su muerte, el 28 de octubre"},
+    {"valor": "$7,212 millones", "etiqueta": "Triangulación de recursos en Nuevo León que la ASF denunció penalmente ante la FGR"},
+    {"valor": "81%", "etiqueta": "Alza en la utilidad neta de FEMSA, impulsada en parte por no repetir una pérdida del año pasado"},
+    {"valor": "10 a 2", "etiqueta": "Votación de la Fed en octubre, la primera disidencia hawkish bajo Kevin Warsh"}
   ],
   "media": [
-    {"kicker": "GEOPOLITICS", "fecha": "05 OCT", "titulo": "Brasil tendrá segunda vuelta: Flávio Bolsonaro supera a Lula en la primera ronda",
-     "desc": "Con 99.99% de las urnas escrutadas, ningún candidato alcanzó el 50% necesario: Bolsonaro 47.03%, Lula 45.16%. El balotaje será el 25 de octubre.",
-     "foto": "public/blog/portadas/brasil-2026-bolsonaro-lula-segunda-vuelta.jpg"},
-    {"kicker": "MERCADOS Y CAPITAL", "fecha": "08 OCT", "titulo": "Tres datos que el calendario económico esperaba para el 7 de octubre siguen sin resultado confirmado",
-     "desc": "Actualización: las minutas de la Fed y el INPC de México ya se confirmaron —minutas con tono hawkish, inflación mexicana acelerando a 3.45% anual por segundo mes consecutivo—, pero el reporte de crédito al consumidor de EU sigue sin aparecer en ninguna fuente confiable.",
+    {"kicker": "FINTECH", "fecha": "29 OCT", "titulo": "Microsoft e Alphabet reportaron el mismo día, con la nube como protagonista en ambos casos — y el mercado los premió de forma exactamente opuesta",
+     "desc": "Microsoft superó expectativas y subió 4% tras el cierre; Alphabet creció 103% en nube pero falló en utilidad consolidada y cayó más de 9%.",
+     "foto": "public/blog/portadas/microsoft-alphabet-resultados-28-octubre-nube-opuestos.jpg"},
+    {"kicker": "FINTECH", "fecha": "30 OCT", "titulo": "AWS creció al ritmo más rápido en casi cinco años. La acción de Amazon cayó igual: la tercera reacción negativa de la semana a un reporte de nube",
+     "desc": "Amazon reportó ingresos de 201,900 millones de dólares (+12%) y un fallo en utilidad por acción, pese a que AWS creció 39.3% —su ritmo más rápido en casi cinco años—. La acción cayó entre 6% y 9% tras el cierre, repitiendo el patrón que ya había castigado a Alphabet un día antes: el mercado dejó de premiar el crecimiento de ingresos de nube por sí solo.",
      "foto": null},
-    {"kicker": "MERCADOS Y CAPITAL", "fecha": "09 OCT", "titulo": "Una startup sin ingresos públicos cuadruplicó su valuación a 10,000 millones de dólares en 30 días",
-     "desc": "Instinct cerró una Series C de 1,000 millones a una valuación cuatro veces mayor que un mes antes. Los mismos tres fondos —Sequoia, Benchmark, Coatue— participaron en ambas rondas.",
-     "foto": "public/blog/portadas/instinct-valuacion-10000-millones-30-dias-venture-capital.jpg"}
+    {"kicker": "MÉXICO Y LATAM", "fecha": "29 OCT", "titulo": "Sheinbaum quiere que el Estado imprima las boletas que antes imprimían los mismos contratistas señalados en el escándalo de Taddei",
+     "desc": "La propuesta busca convertir a Talleres Gráficos de México en una empresa estatal que concentre la producción de material electoral, reduciendo la dependencia de Cajas Graf y Corporativo Zeg.",
+     "foto": "public/blog/portadas/sheinbaum-talleres-graficos-material-electoral-autonomia-ine.jpg"}
   ],
   "abajo": [
-    {"kicker": "NOTAS DE CAMPO", "fecha": "06 OCT", "titulo": "China construyó dos torres solares gemelas que parecen sacadas de ciencia ficción",
-     "desc": "Una planta híbrida de 1 GW en Hami, Xinjiang, con 260,000 espejos por torre calentando sal fundida a 550°C —la más grande del mundo en su tipo, y casi nadie más la está copiando.",
-     "foto": "public/blog/portadas/china-torres-solares-gemelas-hami.jpg"},
-    {"kicker": "NOTAS DE CAMPO", "fecha": "07 OCT", "titulo": "Messi se despidió con 85,000 personas y un gol de penal. Ronaldo se despidió sin que nadie organizara nada",
-     "desc": "El 6 de octubre, Messi jugó su último partido con Argentina bajo sus propios términos. Ronaldo cerró su carrera con Portugal sin ceremonia, eliminado en octavos del Mundial 2026 —una asimetría en el cierre que dice tanto como cualquier estadística de las dos carreras más grandes del fútbol.",
+    {"kicker": "GEOPOLITICS", "fecha": "30 OCT", "titulo": "Texas declara suyas 9 islas del Río Bravo: la disputa que pone a prueba el tratado fronterizo de 1970",
+     "desc": "La Comisión General de Tierras de Texas declaró el jueves que nueve islas del Río Bravo son propiedad del estado, revivendo una disputa que ya enfrentó a Texas con su propio gobierno federal en 2023.",
+     "foto": "public/blog/portadas/texas-islas-rio-bravo-disputa-territorial.jpg"},
+    {"kicker": "TECNOLOGÍA Y NEGOCIO", "fecha": "30 OCT", "titulo": "Mistral liberó un modelo de un billón de parámetros para ciberseguridad y lo llamó \"soberanía\"",
+     "desc": "La startup francesa liberó los pesos de Mistral Large 4, diseñado para tareas de ciberseguridad, con el argumento de que los equipos de defensa necesitan el mismo nivel de capacidad que los atacantes. Un ejecutivo de la propia empresa reconoció que, al ser pesos abiertos, \"el acceso no se puede cortar\" una vez liberado el modelo —la tensión central de toda la narrativa de soberanía tecnológica basada en modelos abiertos.",
      "foto": null},
-    {"kicker": "GEOPOLITICS", "fecha": "08 OCT", "titulo": "El órgano que iba a disciplinar a jueces corruptos acumula 248 casos",
-     "desc": "Entre los investigados por el Tribunal de Disciplina Judicial está la exjueza que en 2024 suspendió, vía amparo, la discusión de la reforma que terminó creando a ese mismo Tribunal.",
-     "foto": "public/blog/portadas/tribunal-disciplina-judicial-caceria-jueces-antirreforma.jpg"},
-    {"kicker": "IA Y LA NUEVA ECONOMÍA", "fecha": "08 OCT", "titulo": "¿Qué pasa cuando tu cliente más valioso deja de ser una persona y se convierte en un agente de IA que nunca duerme?",
-     "desc": "Bloomberg lanzó Enterprise MCP, una capa que permite a agentes de IA de sus clientes consultar directamente más de 100 millones de valores y 50,000 campos de datos licenciados, sin pasar por la terminal humana de 24,000 dólares al año que durante décadas fue el corazón del negocio.",
+    {"kicker": "MERCADOS Y CAPITAL", "fecha": "28 OCT", "titulo": "Anthropic busca la IPO más grande de la historia: $100,000 millones de dólares",
+     "desc": "Su \"pérdida\" de $80,700 millones del semestre es, en un 90%, un número contable que nunca salió de la caja —un cargo no monetario por el aumento de su propia valuación.",
+     "foto": "public/blog/portadas/anthropic-ipo-perdida-contable-desaceleracion-crecimiento.jpg"},
+    {"kicker": "IA Y LA NUEVA ECONOMÍA", "fecha": "29 OCT", "titulo": "Los bancos y hospitales ya pagan más que las tecnológicas por ingenieros de software",
+     "desc": "Un estudio de Randstad encontró que bancos y empresas de salud ya pagan hasta 17% más que las tecnológicas por ingenieros de software, impulsados por una demanda de habilidades de IA que se quintuplicó en un año —ocurre en paralelo a que la propia industria tecnológica despidió a cientos de miles de personas citando la IA como motivo.",
      "foto": null}
   ]
 }
