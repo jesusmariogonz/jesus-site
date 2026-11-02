@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getTradingSymbols, getTradingSymbolDetail } from "@/lib/trading/public-snapshot";
+import { SYMBOL_NAMES } from "@/lib/trading/symbol-names";
 import { absUrl } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -34,6 +35,7 @@ export default async function SimboloPage({ params }) {
   if (!detalle) notFound();
 
   const { resumen, operaciones, buckets } = detalle;
+  const nombreCompleto = SYMBOL_NAMES[symbol] || null;
 
   return (
     <section className="section">
@@ -42,14 +44,17 @@ export default async function SimboloPage({ params }) {
           <Link href="/pulso-mercado/trading">Trading Algorítmico</Link> · Símbolo
         </span>
         <h1>{symbol}</h1>
+        {nombreCompleto && <p className="activo-mercado">{nombreCompleto}</p>}
         <p className="activo-mercado">
           Operado en: {buckets.map((b) => b.etiqueta).join(" · ")}
         </p>
         <p className="activo-descripcion">
-          Esta página no describe la empresa o el fondo detrás del símbolo — no es información
-          verificada por esta página. Muestra únicamente el historial real de cómo el sistema de
-          trading algorítmico operó {symbol}: cuándo entró, cuándo salió, con qué resultado y bajo
-          qué estrategia, directamente del mismo snapshot que alimenta el dashboard de{" "}
+          {nombreCompleto
+            ? `El nombre mostrado es únicamente el nombre legal/comercial del instrumento — esta página no describe el negocio detrás de él (qué hace, su industria, sus fundamentales), solo el `
+            : `Esta página no describe la empresa o el fondo detrás del símbolo — no es información verificada por esta página. Muestra únicamente el `}
+          historial real de cómo el sistema de trading algorítmico operó {symbol}: cuándo entró,
+          cuándo salió, con qué resultado y bajo qué estrategia, directamente del mismo snapshot
+          que alimenta el dashboard de{" "}
           <Link href="/pulso-mercado/trading">Trading Algorítmico</Link>.
         </p>
 
@@ -114,8 +119,12 @@ export default async function SimboloPage({ params }) {
                     <td>{o.entry_date}</td>
                     <td>${o.entry_price}</td>
                     <td>{o.estado === "cerrada" ? o.exit_date || "—" : "—"}</td>
-                    <td style={{ color: o.estado === "cerrada" ? toneColor(o.pnl) : "var(--ink-soft)" }}>
-                      {o.estado === "cerrada" ? `$${o.pnl} (${o.pnl_pct}%)` : "— (precio en vivo pendiente)"}
+                    <td style={{ color: toneColor(o.estado === "cerrada" ? o.pnl : o.unrealized_pnl) }}>
+                      {o.estado === "cerrada"
+                        ? `$${o.pnl} (${o.pnl_pct}%)`
+                        : o.unrealized_pnl != null
+                          ? `$${o.unrealized_pnl} (${o.unrealized_pnl_pct}%, no realizado)`
+                          : "— (precio en vivo pendiente)"}
                     </td>
                     <td>{o.estado === "cerrada" ? (o.reason === "stop_hit" ? "Stop" : "Señal") : "—"}</td>
                   </tr>
