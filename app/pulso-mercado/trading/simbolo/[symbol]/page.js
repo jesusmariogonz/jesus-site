@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getTradingSymbols, getTradingSymbolDetail } from "@/lib/trading/public-snapshot";
-import { SYMBOL_NAMES } from "@/lib/trading/symbol-names";
+import { getSimboloInfo } from "@/lib/trading/simbolos-info";
 import { absUrl } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -35,7 +35,7 @@ export default async function SimboloPage({ params }) {
   if (!detalle) notFound();
 
   const { resumen, operaciones, buckets } = detalle;
-  const nombreCompleto = SYMBOL_NAMES[symbol] || null;
+  const info = getSimboloInfo(symbol);
 
   return (
     <section className="section">
@@ -44,24 +44,9 @@ export default async function SimboloPage({ params }) {
           <Link href="/pulso-mercado/trading">Trading Algorítmico</Link> · Símbolo
         </span>
         <h1>{symbol}</h1>
-        {nombreCompleto && <p className="activo-mercado">{nombreCompleto}</p>}
+        {info && <p className="activo-mercado">{info.nombre} · {info.tipo}{info.sector ? ` · ${info.sector}` : ""}</p>}
         <p className="activo-mercado">
           Operado en: {buckets.map((b) => b.etiqueta).join(" · ")}
-        </p>
-        <p className="activo-descripcion">
-          {nombreCompleto
-            ? `El nombre mostrado es únicamente el nombre legal/comercial del instrumento — esta página no describe el negocio detrás de él (qué hace, su industria, sus fundamentales), solo el `
-            : `Esta página no describe la empresa o el fondo detrás del símbolo — no es información verificada por esta página. Muestra únicamente el `}
-          historial real de cómo el sistema de trading algorítmico operó {symbol}: cuándo entró,
-          cuándo salió, con qué resultado y bajo qué estrategia, directamente del mismo snapshot
-          que alimenta el dashboard de{" "}
-          <Link href="/pulso-mercado/trading">Trading Algorítmico</Link>.
-        </p>
-
-        <p className="pulsodash-vacio" style={{ marginBottom: 16 }}>
-          {resumen.monedaUSD
-            ? "No se pudo obtener el tipo de cambio de hoy — las cifras se muestran en USD (dólares), no en pesos."
-            : `Cifras en pesos mexicanos (MXN), convertidas de USD al tipo de cambio del ${resumen.usdMxnRateFecha || "día"}: $${resumen.usdMxnRate} MXN por USD.`}
         </p>
 
         <div className="activo-bloque">
@@ -94,6 +79,22 @@ export default async function SimboloPage({ params }) {
               </div>
             )}
           </div>
+          <p className="pulsodash-vacio" style={{ marginTop: 12 }}>
+            {resumen.monedaUSD
+              ? "No se pudo obtener el tipo de cambio de hoy — las cifras se muestran en USD (dólares), no en pesos."
+              : `Cifras en pesos mexicanos (MXN), convertidas de USD al tipo de cambio del ${resumen.usdMxnRateFecha || "día"}: $${resumen.usdMxnRate} MXN por USD.`}
+          </p>
+        </div>
+
+        <div className="activo-bloque">
+          <h2>Qué es {symbol}</h2>
+          {info ? (
+            <p>{info.descripcion}</p>
+          ) : (
+            <p className="pulsodash-vacio">
+              Todavía no hay descripción disponible para este símbolo en esta página.
+            </p>
+          )}
         </div>
 
         <div className="activo-bloque">

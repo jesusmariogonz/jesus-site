@@ -11,7 +11,7 @@ tags:
   - AMD
   - Nasdaq
   - corrección
-resumen: 'El Nasdaq 100 cerró el lunes más de 10% abajo de su máximo histórico, entrando en terreno de corrección, mientras Apple y Palantir caen en premarket este martes —Apple por una advertencia de márgenes por costos de memoria, Palantir a pesar de superar expectativas—. Los futuros están mixtos mientras Estados Unidos vota en sus elecciones intermedias.'
+resumen: 'Wall Street cerró mixta el martes: el Nasdaq subió 0.83% y el S&P 500 0.36%, pero el Dow cayó 0.38%, mientras Apple y Palantir cerraron a la baja a pesar de resultados sólidos. Estados Unidos votó en sus elecciones intermedias, con las encuestas de salida dando ventaja a los demócratas. AMD y Super Micro reportan después del cierre.'
 imagen: /blog/portadas/mercados-hoy-fija.jpg
 socialImagen: /blog/social/pulso-mercado-daily-2026-11-03.jpg
 ---
@@ -20,33 +20,33 @@ socialImagen: /blog/social/pulso-mercado-daily-2026-11-03.jpg
 
 | Activo | Nivel | Cambio |
 |---|---|---|
-| S&P 500 | 7,541.40 (cierre lunes) | -0.51% |
-| Nasdaq Composite | 25,164.32 (cierre lunes) | -1.07% |
-| Russell 2000 | 2,805.84 (cierre lunes) | -0.21% |
-| Dow Jones | 51,983.98 (cierre lunes) | +0.41% |
-| VIX | 21.44 (cierre lunes) | +10.42% |
+| S&P 500 | 7,568.92 | +0.36% |
+| Nasdaq Composite | 25,372.01 | +0.83% |
+| Russell 2000 | 2,812.48 | +0.24% |
+| Dow Jones | 51,786.72 | -0.38% |
+| VIX | 20.83 | -1.51% |
 | S&P/BMV IPC | — | — |
 | USD/MXN | 18.8148 (FIX Banxico, viernes 30-oct) | — |
-| US 10Y | 4.894% (cierre lunes) | -0.71% |
-| WTI | $95.85 (cierre lunes, futuro Dic-26) | -7.94% |
+| US 10Y | 4.952% | +1.19% |
+| WTI | $96.73 (futuro Dic-26) | +0.28% |
 
 ## Market Regime
 
-Wall Street cerró el lunes dividida —Dow al alza, Nasdaq y S&P 500 a la baja por una nueva rotación fuera de tecnología— y esa misma tensión continúa esta mañana de martes, día de elecciones intermedias en Estados Unidos. El Nasdaq 100 cerró el lunes más de 10% por debajo de su máximo histórico, entrando formalmente en territorio de corrección, mientras los futuros de hoy están mixtos: el Dow Jones cae entre 0.55% y 0.7% en futuros, y el Nasdaq 100 sube cerca de 0.3%, una divergencia que refleja cómo el mercado sigue tratando de forma distinta a las grandes tecnológicas de nube frente al resto del índice. El detonante más inmediato de la mañana son los reportes de Apple y Palantir: ambas acciones caen en operaciones previas a la apertura, Apple cerca de 3.9% por una advertencia sobre márgenes ligada al aumento en el costo de memoria, y Palantir cerca de 3% pese a haber superado el consenso de ingresos y utilidad del tercer trimestre.
+Wall Street cerró el martes con una recuperación parcial y desigual: el Nasdaq Composite subió 0.83% a 25,372.01 y el S&P 500 0.36% a 7,568.92, revirtiendo buena parte de la caída del lunes, mientras el Dow Jones fue la excepción y cerró 0.38% abajo, en 51,786.72 —la rotación inversa a la que dominó la sesión anterior—. El VIX cedió 1.51% a 20.83, señal de que la aversión al riesgo se moderó frente al salto del lunes, aunque se mantiene por encima de los niveles de hace dos semanas. Pese a la recuperación general del mercado, Apple y Palantir cerraron ambas a la baja, arrastradas por sus propios reportes de resultados más que por el ánimo general del día: Apple cayó pese a superar expectativas de ingresos y ventas de iPhone, lastrada por ingresos de China por debajo de lo esperado, y Palantir cerró en rojo a pesar de superar el consenso y elevar su guía anual. Estados Unidos votó hoy en sus elecciones intermedias; los mercados de predicción daban a los demócratas una probabilidad de 76% de ganar ambas cámaras del Congreso hacia la mañana, aunque algunos resultados podrían no confirmarse sino hasta la madrugada o más tarde.
 
-Scorecard: Trend → ↓ (Nasdaq 100 en corrección tras el cierre del lunes) · Breadth → → (futuros mixtos, Dow a la baja y Nasdaq al alza) · Momentum → ↓ (segunda sesión consecutiva de caída en tecnología) · Volatility → ↑ (VIX cerró el lunes en 21.44, +10.42%) · Rates → ↓ (Treasury a 10 años en 4.894%, a la baja) · USD → — (sin FIX de Banxico actualizado para hoy)
+Scorecard: Trend → ↑ (Nasdaq y S&P 500 recuperaron terreno tras la caída del lunes) · Breadth → → (Dow como excepción negativa, el resto de índices en verde) · Momentum → → (recuperación parcial, no una reversión completa de la liquidación reciente) · Volatility → ↓ (VIX cedió 1.51% tras el salto del lunes) · Rates → ↑ (Treasury a 10 años subió a 4.952%) · USD → — (sin FIX de Banxico actualizado para hoy)
 
 ## Qué importó hoy
 
-**El Nasdaq 100 cerró el lunes en territorio de corrección, más de 10% por debajo de su máximo histórico.** Es la confirmación formal de la liquidación tecnológica que esta serie ha documentado desde finales de octubre, con el sector tecnológico cayendo cerca de 2.4% el lunes y el VIX saltando más de 10%. Horizonte: Position.
+**Apple y Palantir cerraron a la baja a pesar de reportes sólidos, mientras el resto del mercado se recuperaba.** Apple superó expectativas de ingresos y ventas de iPhone, pero las ventas en China quedaron por debajo de lo esperado, lo que pesó más que los récords reportados el lunes. Palantir cerró en rojo pese a superar el consenso de ingresos y utilidad del tercer trimestre y elevar su guía anual —el mismo patrón que esta serie documentó la semana pasada con Alphabet y Amazon: un beat ya no garantiza una reacción positiva cuando la valuación previa exige más. Horizonte: Swing.
 
-**Apple cae en premarket por una advertencia sobre márgenes ligada al costo de memoria, a pesar de haber reportado récords de ingresos el lunes.** La acción retrocede cerca de 3.9% esta mañana. Es la misma presión de costos de componentes que ya había mencionado la propia empresa en su reporte del cuarto trimestre fiscal. Horizonte: Swing.
+**Estados Unidos votó hoy en sus elecciones intermedias, con los mercados de predicción dando a los demócratas una probabilidad de 76% de ganar el control de ambas cámaras del Congreso.** Algunos resultados podrían no confirmarse hasta la madrugada. El resultado no cambia la composición del Congreso hasta enero de 2027, pero el mercado ya vigila implicaciones sectoriales en farmacéuticas, vivienda y centros de datos de IA. Horizonte: Position.
 
-**Palantir cae en premarket pese a superar el consenso de ingresos y utilidad del tercer trimestre y elevar su guía anual.** La acción retrocede cerca de 3%, repitiendo el patrón que esta serie ya documentó la semana pasada con Alphabet y Amazon: un beat ya no garantiza una reacción positiva cuando la valuación previa exige más que "superar expectativas". Horizonte: Swing.
+**El Nasdaq y el S&P 500 recuperaron parte de la caída del lunes, mientras el Dow fue la única excepción negativa del día.** Es un patrón inverso al de la sesión anterior, cuando el Dow subió y el Nasdaq cayó por una rotación fuera de tecnología —hoy el dinero regresó parcialmente a las mismas acciones que se vendieron ayer. Horizonte: Swing.
 
-**Estados Unidos vota hoy en sus elecciones intermedias, con los demócratas favorecidos según encuestas y mercados de predicción para recuperar el control de ambas cámaras del Congreso.** Los mercados de predicción muestran menos certeza sobre el Senado que sobre la Cámara de Representantes. El resultado no cambia la composición del Congreso hasta enero de 2027, pero el mercado ya vigila implicaciones sectoriales en defensa, salud, cripto e inteligencia artificial. Horizonte: Position.
+**El Treasury a 10 años subió a 4.952%, revirtiendo la caída del lunes.** Es consistente con una sesión de menor aversión al riesgo en general, aunque el VIX todavía cierra por encima de 20 puntos. Horizonte: Position.
 
-**AMD y Super Micro Computer reportan resultados después del cierre de hoy.** Llegan en un entorno donde el mercado ya diferenció, a lo largo de la semana pasada, entre proveedores de hardware de IA y las grandes tecnológicas de nube. Horizonte: Swing.
+**AMD y Super Micro Computer reportan resultados después del cierre de hoy; no localizamos con confianza sus cifras al momento de esta edición.** Llegan en un entorno donde el mercado ya diferenció, a lo largo de la semana pasada, entre proveedores de hardware de IA y las grandes tecnológicas de nube. Horizonte: Swing.
 
 ## Macro
 
@@ -54,15 +54,15 @@ Sin datos macroeconómicos de peso confirmados para hoy en Estados Unidos; el IS
 
 ## Tasas y bonos
 
-El Treasury a 10 años cerró el lunes en 4.894%, una caída de 0.71% consistente con la demanda de refugio de ese día; no localizamos con confianza un nivel intradía para la sesión de hoy al momento de esta edición.
+El Treasury a 10 años cerró el martes en 4.952%, un alza de 1.19% que revierte la caída del lunes, consistente con una sesión de menor demanda de refugio en general.
 
 ## FX y commodities
 
-No localizamos con confianza un FIX de Banxico actualizado para hoy ni para el cierre del lunes; el más reciente confirmado sigue siendo el de 18.8148 del viernes 30 de octubre. El Brent cotiza esta mañana cerca de $105.08 por barril, +0.30%, tras el desplome de casi 8% del WTI el lunes por esperanzas de diplomacia con Irán.
+No localizamos con confianza un FIX de Banxico actualizado para hoy; el más reciente confirmado sigue siendo el de 18.8148 del viernes 30 de octubre. El WTI cerró cerca de $96.73 por barril (contrato de diciembre), +0.28%, estabilizándose después del desplome de casi 8% del lunes por esperanzas de diplomacia con Irán.
 
 ## Sectores
 
-Tecnología sigue siendo el sector bajo mayor presión, con Apple y Palantir cayendo en premarket pese a resultados que, en términos absolutos, fueron sólidos. La cobertura de la semana sigue señalando a defensa, salud, criptomonedas e inteligencia artificial como los sectores más sensibles al resultado electoral de hoy.
+Apple y Palantir fueron los nombres bajo mayor presión del día, cerrando a la baja pese a resultados sólidos en términos absolutos —una señal de que el mercado sigue escrutinando la calidad específica de cada reporte de tecnología, no solo el resultado general del sector—. La cobertura de la semana sigue señalando a farmacéuticas, vivienda y centros de datos de IA como las áreas más sensibles al resultado electoral de hoy.
 
 ## Swing
 
@@ -98,15 +98,13 @@ El riesgo central de hoy es que la incertidumbre electoral se combine con una te
 
 ## Pendientes de esta edición
 
-- S&P/BMV IPC: no localizamos con confianza un nivel de cierre del lunes ni de hoy.
+- S&P/BMV IPC: no localizamos con confianza un nivel de cierre para hoy.
 - USD/MXN: no localizamos con confianza un FIX de Banxico más reciente que el del 30 de octubre.
-- Nivel exacto de los futuros de EU al momento de esta edición: las fuentes consultadas reportan variaciones premarket (no niveles en puntos) y difieren levemente entre sí para el Dow (-0.55% a -0.7%).
+- Resultados de AMD y Super Micro Computer: ambos reportan después del cierre; no localizamos con confianza sus cifras reales al momento de esta edición.
 
 ## Fuentes
 
 - [Stock market today: Dow, S&P 500, Nasdaq futures waver ahead of midterm election results, AMD earnings](https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-3-dow-sp-500-nasdaq-midterms-amd-090846378.html) — Yahoo Finance
 - [Futures Trade Mixed with U.S. Midterm Elections in Focus; Apple and Palantir Stocks Fall on Earnings](https://www.tipranks.com/news/futures-trade-mixed-with-u-s-midterm-elections-in-focus-apple-and-palantir-stocks-fall-on-earnings) — TipRanks
-- [Dow Jones futures slip ahead of US midterm election](https://www.fxstreet.com/news/dow-jones-futures-slip-ahead-of-us-midterm-election-202611030839) — FXStreet
-- [Premarket movers: Apple, Palantir, Dynatrace slide premarket; Grab, Upwork jump](https://www.investing.com/news/stock-market-news/premarket-movers-apple-palantir-dynatrace-slide-premarket-grab-upwork-jump-4994859) — Investing.com
 - [Pulso de Mercado — Daily · 02/11/2026](/blog/pulso-mercado-daily-2026-11-02) — jgonzalez.app
 - [Apple y Palantir reportaron el mismo día. Uno rompió récords, el otro cayó pese a superar expectativas](/blog/apple-palantir-resultados-2-noviembre-mercado-castiga-beat) — jgonzalez.app
