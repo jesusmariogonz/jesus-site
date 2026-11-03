@@ -129,7 +129,7 @@ export default async function SimboloPage({ params }) {
                       {o.estado === "cerrada"
                         ? `$${o.pnl} (${o.pnl_pct}%)`
                         : o.unrealized_pnl != null
-                          ? `$${o.unrealized_pnl} (${o.unrealized_pnl_pct}%, no realizado)`
+                          ? `$${o.unrealized_pnl} (${o.unrealized_pnl_pct}%)`
                           : "— (precio en vivo pendiente)"}
                     </td>
                     <td>{o.estado === "cerrada" ? (o.reason === "stop_hit" ? "Stop" : "Señal") : "—"}</td>

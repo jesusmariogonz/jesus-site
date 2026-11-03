@@ -440,7 +440,7 @@ function ModuloOperaciones({ data }) {
                     {p.estado === "cerrada"
                       ? `$${p.pnl}`
                       : p.unrealized_pnl != null
-                        ? `$${p.unrealized_pnl} (no realizado)`
+                        ? `$${p.unrealized_pnl}`
                         : "— (precio en vivo pendiente)"}
                   </td>
                   <td style={{ color: toneColor(tonoDe(p.estado === "cerrada" ? p.pnl_pct : p.unrealized_pnl_pct)) }}>
