@@ -16,6 +16,7 @@
     "@vercel/analytics": "^1.4.1",
     "@vercel/blob": "^2.8.0",
     "botid": "^1.5.11",
+    "exceljs": "^4.4.0",
     "framer-motion": "^12.42.2",
     "fs-extra": "^11.2.0",
     "gray-matter": "^4.0.3",

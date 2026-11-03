@@ -4768,6 +4768,30 @@ html:not(.dark) .pglobe-land {
 }
 .trading-symbol-link:hover { border-bottom-style: solid; }
 
+.trading-export-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.trading-export-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: opacity 0.15s;
+}
+.trading-export-btn:hover { opacity: 0.85; }
+
 .trading-subnav {
   display: flex;
   gap: 20px;

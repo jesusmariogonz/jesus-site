@@ -381,6 +381,16 @@ function ModuloOperaciones({ data }) {
 
   return (
     <div>
+      <div className="trading-export-row">
+        <a href="/api/trading/exportar" className="trading-export-btn" download>
+          ⬇ Descargar historial completo (Excel)
+        </a>
+        <span className="pulsodash-vacio" style={{ marginTop: 0 }}>
+          Incluye historial diario por bucket, todas las operaciones cerradas y las posiciones
+          abiertas de hoy — cifras en USD, la moneda nativa del motor.
+        </span>
+      </div>
+
       <div className="trading-tabs" style={{ marginBottom: 16, flexWrap: "wrap" }}>
         <button type="button" className={`trading-tab${filtroEstado === "todas" ? " activo" : ""}`} onClick={() => setFiltroEstado("todas")}>
           Todas ({data.historialOperaciones.length})
