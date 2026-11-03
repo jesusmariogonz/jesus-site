@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getTradingSymbols, getTradingSymbolDetail } from "@/lib/trading/public-snapshot";
-import { SYMBOL_NAMES } from "@/lib/trading/symbol-names";
+import { getSimboloInfo } from "@/lib/trading/simbolos-info";
 import { absUrl } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -35,7 +35,7 @@ export default async function SimboloPage({ params }) {
   if (!detalle) notFound();
 
   const { resumen, operaciones, buckets } = detalle;
-  const nombreCompleto = SYMBOL_NAMES[symbol] || null;
+  const info = getSimboloInfo(symbol);
 
   return (
     <section className="section">
@@ -44,15 +44,19 @@ export default async function SimboloPage({ params }) {
           <Link href="/pulso-mercado/trading">Trading Algorítmico</Link> · Símbolo
         </span>
         <h1>{symbol}</h1>
-        {nombreCompleto && <p className="activo-mercado">{nombreCompleto}</p>}
+        {info && <p className="activo-mercado">{info.nombre} · {info.tipo}</p>}
         <p className="activo-mercado">
           Operado en: {buckets.map((b) => b.etiqueta).join(" · ")}
         </p>
+        {info ? (
+          <p className="activo-descripcion">{info.categoria}</p>
+        ) : (
+          <p className="activo-descripcion">
+            Instrumento operado por el sistema sin descripción todavía disponible en esta página.
+          </p>
+        )}
         <p className="activo-descripcion">
-          {nombreCompleto
-            ? `El nombre mostrado es únicamente el nombre legal/comercial del instrumento — esta página no describe el negocio detrás de él (qué hace, su industria, sus fundamentales), solo el `
-            : `Esta página no describe la empresa o el fondo detrás del símbolo — no es información verificada por esta página. Muestra únicamente el `}
-          historial real de cómo el sistema de trading algorítmico operó {symbol}: cuándo entró,
+          Historial real de cómo el sistema de trading algorítmico operó {symbol}: cuándo entró,
           cuándo salió, con qué resultado y bajo qué estrategia, directamente del mismo snapshot
           que alimenta el dashboard de{" "}
           <Link href="/pulso-mercado/trading">Trading Algorítmico</Link>.
