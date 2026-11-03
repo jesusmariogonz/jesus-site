@@ -25,7 +25,7 @@ La semana que entra concentra tres tipos de riesgo distintos que no suelen coinc
 
 | Fecha | Evento | País | Importancia | Qué puede afectar |
 |---|---|---|---|---|
-| Lunes 2 de noviembre | ISM Manufacturero de octubre | Estados Unidos | Media | Primera lectura del mes sobre actividad fabril; referencia para el tono de la semana antes de las elecciones |
+| Lunes 2 de noviembre | [ISM Manufacturero de octubre](/blog/ism-manufacturero-octubre-2026-55-5-decimo-mes-expansion) | Estados Unidos | Media | Primera lectura del mes sobre actividad fabril; referencia para el tono de la semana antes de las elecciones |
 | Martes 3 de noviembre | Elecciones intermedias de Estados Unidos | Estados Unidos | Alta | Resultado no cambia el control del Congreso hasta enero de 2027, pero la incertidumbre de corto plazo —y la composición de comités que podrían anticipar agenda fiscal y regulatoria— suele generar volatilidad el día de o inmediatamente después |
 | Miércoles 4 de noviembre | ISM Servicios de octubre | Estados Unidos | Media | Referencia habitual sobre el sector de servicios, que concentra la mayor parte del empleo estadounidense |
 | Jueves 5 de noviembre | [Decisión de tasas de Banxico](/blog/pulso-mercado-weekly-review-2026-10-30) | México | Alta | El consenso de analistas (Encuesta Citi, 25 de 37 especialistas según la lectura más reciente confirmada en ediciones anteriores de esta serie) espera mayoritariamente que la tasa se mantenga en 6.50%; cualquier sorpresa afectaría directamente al peso y a la curva de bonos mexicanos |
@@ -37,8 +37,8 @@ No localizamos con confianza una fecha exacta para el dato del Índice Nacional 
 
 | Empresa | Ticker | Fecha | Momento | Sector | Por qué importa |
 |---|---|---|---|---|---|
-| Apple | AAPL | Lunes 2 de noviembre | Después del cierre | Tecnología / Hardware | Reporte de su cuarto trimestre fiscal; el mercado vigilará la guía de la temporada navideña y cualquier mención a gasto de capital en infraestructura de IA |
-| Palantir | PLTR | Lunes 2 de noviembre | Después del cierre | Software / IA | Llega con una racha de varios trimestres consecutivos superando expectativas; el mercado vigilará si esa racha se sostiene en el entorno actual de escrutinio sobre valuaciones de IA |
+| [Apple](/blog/apple-palantir-resultados-2-noviembre-mercado-castiga-beat) | AAPL | Lunes 2 de noviembre | Después del cierre | Tecnología / Hardware | Reporte de su cuarto trimestre fiscal; el mercado vigilará la guía de la temporada navideña y cualquier mención a gasto de capital en infraestructura de IA |
+| [Palantir](/blog/apple-palantir-resultados-2-noviembre-mercado-castiga-beat) | PLTR | Lunes 2 de noviembre | Después del cierre | Software / IA | Llega con una racha de varios trimestres consecutivos superando expectativas; el mercado vigilará si esa racha se sostiene en el entorno actual de escrutinio sobre valuaciones de IA |
 | AMD | AMD | Martes 3 de noviembre | Después del cierre | Semiconductores | Reporta en medio de la diferenciación que el mercado empezó a hacer a fines de octubre entre proveedores de hardware de IA y las grandes tecnológicas de nube; su guía de demanda será tan vigilada como el resultado del trimestre |
 | Qualcomm | QCOM | Miércoles 4 de noviembre | Después del cierre | Semiconductores | Referencia adicional sobre demanda de chips fuera del centro de datos de IA (móviles, automotriz) |
 | McDonald's | MCD | Miércoles 4 de noviembre | Antes de la apertura | Consumo discrecional | Referencia sobre gasto del consumidor estadounidense de ingresos medios y bajos |

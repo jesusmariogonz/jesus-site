@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { getTradingPublicSnapshot, TRADING_DISCLAIMER } from "@/lib/trading/public-snapshot";
 import TradingPublicoExplorer from "@/components/TradingPublicoExplorer";
 import { absUrl } from "@/lib/site";
@@ -204,6 +205,11 @@ export default function TradingPublicoPage() {
         <BloqueExplicativo resumen={data.resumen} />
 
         <div className="trading-disclaimer">{TRADING_DISCLAIMER}</div>
+
+        <nav className="trading-subnav">
+          <Link href="/pulso-mercado/trading/investigacion">Investigación →</Link>
+          <Link href="/pulso-mercado/trading/bitacora">Bitácora de decisiones →</Link>
+        </nav>
 
         <TradingPublicoExplorer data={data} />
       </div>

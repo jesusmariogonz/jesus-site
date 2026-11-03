@@ -4768,6 +4768,53 @@ html:not(.dark) .pglobe-land {
 }
 .trading-symbol-link:hover { border-bottom-style: solid; }
 
+.trading-subnav {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: -12px 0 28px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+.trading-subnav a { color: var(--accent); text-decoration: none; }
+.trading-subnav a:hover { text-decoration: underline; }
+
+.trading-bitacora-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 24px;
+}
+.trading-bitacora-item {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 18px 22px;
+}
+.trading-bitacora-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+.trading-bitacora-id {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--meta);
+}
+.trading-bitacora-estado {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.trading-bitacora-item h2 { font-size: 1.02rem; margin: 0 0 8px; }
+.trading-bitacora-item p { color: var(--ink-soft); font-size: 0.9rem; line-height: 1.6; margin: 0; }
+
 /* ── Banner de "Cómo leer el mercado" junto al Market Snapshot ── */
 .libros-mercado-banner {
   display: flex;
