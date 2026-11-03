@@ -25,7 +25,7 @@ La semana que entra concentra tres tipos de riesgo distintos que no suelen coinc
 
 | Fecha | Evento | País | Importancia | Qué puede afectar |
 |---|---|---|---|---|
-| Lunes 2 de noviembre | ISM Manufacturero de octubre | Estados Unidos | Media | Primera lectura del mes sobre actividad fabril; referencia para el tono de la semana antes de las elecciones |
+| Lunes 2 de noviembre | [ISM Manufacturero de octubre](/blog/ism-manufacturero-octubre-2026-55-5-decimo-mes-expansion) | Estados Unidos | Media | Primera lectura del mes sobre actividad fabril; referencia para el tono de la semana antes de las elecciones |
 | Martes 3 de noviembre | Elecciones intermedias de Estados Unidos | Estados Unidos | Alta | Resultado no cambia el control del Congreso hasta enero de 2027, pero la incertidumbre de corto plazo —y la composición de comités que podrían anticipar agenda fiscal y regulatoria— suele generar volatilidad el día de o inmediatamente después |
 | Miércoles 4 de noviembre | ISM Servicios de octubre | Estados Unidos | Media | Referencia habitual sobre el sector de servicios, que concentra la mayor parte del empleo estadounidense |
 | Jueves 5 de noviembre | [Decisión de tasas de Banxico](/blog/pulso-mercado-weekly-review-2026-10-30) | México | Alta | El consenso de analistas (Encuesta Citi, 25 de 37 especialistas según la lectura más reciente confirmada en ediciones anteriores de esta serie) espera mayoritariamente que la tasa se mantenga en 6.50%; cualquier sorpresa afectaría directamente al peso y a la curva de bonos mexicanos |
