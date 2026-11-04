@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T21:46:00.270224+00:00",
+  "generated_at": "2026-11-04T22:31:10.213840+00:00",
   "source": "algo_trading_platform paper trading engine (simulado, sin dinero real)",
   "buckets": {
     "largo_plazo": {
@@ -11,33 +11,33 @@
           "strategy": "time_series_momentum",
           "entry_date": "2026-10-30",
           "entry_price": 103.37,
-          "stop_price": 100.69357027326312,
+          "stop_price": 102.37071936471122,
           "shares": 1,
-          "current_price": 103.08,
-          "unrealized_pnl": -0.29,
-          "unrealized_pnl_pct": -0.28
+          "current_price": 105.72,
+          "unrealized_pnl": 2.35,
+          "unrealized_pnl_pct": 2.27
         },
         {
           "symbol": "IJH",
           "strategy": "time_series_momentum",
           "entry_date": "2026-10-30",
           "entry_price": 73.33,
-          "stop_price": 71.21145139421735,
+          "stop_price": 71.62000111171177,
           "shares": 1,
-          "current_price": 74.13,
-          "unrealized_pnl": 0.8,
-          "unrealized_pnl_pct": 1.09
+          "current_price": 74.59,
+          "unrealized_pnl": 1.26,
+          "unrealized_pnl_pct": 1.72
         },
         {
           "symbol": "IJR",
           "strategy": "time_series_momentum",
           "entry_date": "2026-10-30",
           "entry_price": 140.43,
-          "stop_price": 135.53570556640625,
+          "stop_price": 137.00284903390067,
           "shares": 1,
-          "current_price": 141.05,
-          "unrealized_pnl": 0.62,
-          "unrealized_pnl_pct": 0.44
+          "current_price": 142.93,
+          "unrealized_pnl": 2.5,
+          "unrealized_pnl_pct": 1.78
         }
       ],
       "closed_positions": [],
@@ -92,6 +92,23 @@
           "suspended": false,
           "suspended_reason": null,
           "newly_suspended_today": false
+        },
+        {
+          "date": "2026-11-04",
+          "equity": 323.24,
+          "cash": 0.0,
+          "unrealized_pnl": 6.11,
+          "open_count": 3,
+          "closed_today": 0,
+          "realized_pnl_today": 0,
+          "cumulative_return_pct": 1.93,
+          "closed_today_detail": [],
+          "daily_loss_pct": -1.56,
+          "drawdown_pct": 0.0,
+          "daily_loss_breaker_tripped": false,
+          "suspended": false,
+          "suspended_reason": null,
+          "newly_suspended_today": false
         }
       ],
       "suspended": false,
@@ -107,34 +124,36 @@
           "strategy": "trend_following",
           "entry_date": "2026-10-30",
           "entry_price": 56.51,
-          "stop_price": 55.64928831372942,
+          "stop_price": 57.11875098092215,
           "shares": 1,
-          "current_price": 57.19,
-          "unrealized_pnl": 0.68,
-          "unrealized_pnl_pct": 1.2
+          "current_price": 59.2,
+          "unrealized_pnl": 2.69,
+          "unrealized_pnl_pct": 4.76
         },
         {
           "symbol": "PFE",
           "strategy": "trend_following",
           "entry_date": "2026-10-30",
           "entry_price": 30.52,
-          "stop_price": 29.096785885947092,
+          "stop_price": 29.16678660256522,
           "shares": 2,
-          "current_price": 30.0,
-          "unrealized_pnl": -1.04,
-          "unrealized_pnl_pct": -1.7
+          "current_price": 30.79,
+          "unrealized_pnl": 0.54,
+          "unrealized_pnl_pct": 0.88
         },
         {
           "symbol": "KO",
           "strategy": "trend_following",
           "entry_date": "2026-10-30",
           "entry_price": 94.17,
-          "stop_price": 91.20321818760463,
+          "stop_price": 91.23393304007394,
           "shares": 1,
-          "current_price": 94.8,
-          "unrealized_pnl": 0.63,
-          "unrealized_pnl_pct": 0.67
-        },
+          "current_price": 95.8,
+          "unrealized_pnl": 1.63,
+          "unrealized_pnl_pct": 1.73
+        }
+      ],
+      "closed_positions": [
         {
           "symbol": "XLE",
           "strategy": "trend_following",
@@ -142,12 +161,13 @@
           "entry_price": 70.09,
           "stop_price": 66.46,
           "shares": 1,
-          "current_price": 66.68,
-          "unrealized_pnl": -3.41,
-          "unrealized_pnl_pct": -4.87
+          "exit_date": "2026-11-04",
+          "exit_price": 66.46,
+          "pnl": -3.7,
+          "pnl_pct": -5.27,
+          "reason": "stop_hit"
         }
       ],
-      "closed_positions": [],
       "daily_history": [
         {
           "date": "2026-10-30",
@@ -195,6 +215,37 @@
           "closed_today_detail": [],
           "daily_loss_pct": 1.17,
           "drawdown_pct": 1.17,
+          "daily_loss_breaker_tripped": false,
+          "suspended": false,
+          "suspended_reason": null,
+          "newly_suspended_today": false
+        },
+        {
+          "date": "2026-11-04",
+          "equity": 282.97,
+          "cash": 66.39,
+          "unrealized_pnl": 4.86,
+          "open_count": 3,
+          "closed_today": 1,
+          "realized_pnl_today": -3.7,
+          "cumulative_return_pct": 0.41,
+          "closed_today_detail": [
+            {
+              "symbol": "XLE",
+              "strategy": "trend_following",
+              "entry_date": "2026-10-30",
+              "entry_price": 70.09,
+              "stop_price": 66.46,
+              "shares": 1,
+              "exit_date": "2026-11-04",
+              "exit_price": 66.46,
+              "pnl": -3.7,
+              "pnl_pct": -5.27,
+              "reason": "stop_hit"
+            }
+          ],
+          "daily_loss_pct": -1.54,
+          "drawdown_pct": 0.0,
           "daily_loss_breaker_tripped": false,
           "suspended": false,
           "suspended_reason": null,
@@ -261,6 +312,23 @@
           "suspended": false,
           "suspended_reason": null,
           "newly_suspended_today": false
+        },
+        {
+          "date": "2026-11-04",
+          "equity": 115.64,
+          "cash": 115.64,
+          "unrealized_pnl": 0.0,
+          "open_count": 0,
+          "closed_today": 0,
+          "realized_pnl_today": 0,
+          "cumulative_return_pct": -23.75,
+          "closed_today_detail": [],
+          "daily_loss_pct": -2.67,
+          "drawdown_pct": 0.0,
+          "daily_loss_breaker_tripped": false,
+          "suspended": false,
+          "suspended_reason": null,
+          "newly_suspended_today": false
         }
       ],
       "suspended": false,
@@ -323,6 +391,23 @@
           "suspended": false,
           "suspended_reason": null,
           "newly_suspended_today": false
+        },
+        {
+          "date": "2026-11-04",
+          "equity": 190.15,
+          "cash": 190.15,
+          "unrealized_pnl": 0.0,
+          "open_count": 0,
+          "closed_today": 0,
+          "realized_pnl_today": 0,
+          "cumulative_return_pct": -23.75,
+          "closed_today_detail": [],
+          "daily_loss_pct": -2.67,
+          "drawdown_pct": 0.0,
+          "daily_loss_breaker_tripped": false,
+          "suspended": false,
+          "suspended_reason": null,
+          "newly_suspended_today": false
         }
       ],
       "suspended": false,
@@ -330,6 +415,6 @@
       "suspended_since": null
     }
   },
-  "usd_mxn_rate": 18.614,
-  "usd_mxn_rate_fecha": "2026-11-03"
+  "usd_mxn_rate": 18.7374,
+  "usd_mxn_rate_fecha": "2026-11-04"
 }
