@@ -155,18 +155,123 @@ function AvisoMoneda({ resumen }) {
   );
 }
 
+const ESTADO_ICONO = { ok: "🟢", revision: "🟡", alerta: "🔴", falta: "🔴" };
+
+function EstadoSistemaChips({ resumen }) {
+  const chips = [
+    {
+      ok: resumen.datosAlDia,
+      textoOk: "Datos al día",
+      textoMal: "Datos desactualizados (>30h)",
+    },
+    {
+      ok: !resumen.algunBucketSuspendido,
+      textoOk: "Sin buckets suspendidos",
+      textoMal: "Al menos un bucket suspendido",
+    },
+    {
+      ok: !resumen.algunCircuitBreakerHoy,
+      textoOk: "Sin circuit breaker activo",
+      textoMal: "Circuit breaker activado hoy",
+    },
+  ];
+  return (
+    <div className="trading-estado-row">
+      {chips.map((c, i) => (
+        <span key={i} className={`trading-estado-chip ${c.ok ? "ok" : "mal"}`}>
+          {c.ok ? "🟢" : "🔴"} {c.ok ? c.textoOk : c.textoMal}
+        </span>
+      ))}
+    </div>
+  );
+}
+
+function ScorecardSistema({ scorecard }) {
+  return (
+    <div className="pulsodash-panel" style={{ marginBottom: 24 }}>
+      <div className="pulsodash-panel-head">
+        <span className="pulsodash-panel-title">Salud del sistema</span>
+      </div>
+      <div className="trading-scorecard" style={{ marginTop: 12 }}>
+        {scorecard.map((s) => (
+          <div key={s.dimension} className="trading-scorecard-row">
+            <span className="trading-scorecard-icono">{ESTADO_ICONO[s.estado]}</span>
+            <span className="trading-scorecard-dim">{s.dimension}</span>
+            <span className="trading-scorecard-detalle">{s.detalle}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ContribucionRetorno({ contribucionRetorno }) {
+  const max = Math.max(1, ...contribucionRetorno.map((c) => Math.abs(c.contribucionPct || 0)));
+  return (
+    <div className="pulsodash-panel" style={{ marginBottom: 24 }}>
+      <div className="pulsodash-panel-head">
+        <span className="pulsodash-panel-title">Contribución al retorno total por portafolio</span>
+      </div>
+      <p className="pulsodash-vacio" style={{ marginTop: 8, marginBottom: 16 }}>
+        Cuánto aportó (o restó) cada bucket al retorno TOTAL del portafolio — no es el retorno
+        individual de cada bucket, es su peso real dentro del resultado conjunto.
+      </p>
+      <div className="trading-contrib-list">
+        {contribucionRetorno.map((c) => {
+          const valor = c.contribucionPct ?? 0;
+          const ancho = Math.min(100, (Math.abs(valor) / max) * 100);
+          const positivo = valor >= 0;
+          return (
+            <div key={c.key} className="trading-contrib-row">
+              <span className="trading-contrib-label">{c.etiqueta}</span>
+              <div className="trading-contrib-bar-track">
+                <div
+                  className={`trading-contrib-bar ${positivo ? "pos" : "neg"}`}
+                  style={{ width: `${ancho}%` }}
+                />
+              </div>
+              <span className="trading-contrib-valor" style={{ color: toneColor(tonoDe(valor)) }}>
+                {pct(valor)}
+              </span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 function ModuloDashboard({ data }) {
   const { resumen } = data;
   return (
     <div>
       <AvisoMoneda resumen={resumen} />
-      <div className="trading-stat-grid">
-        <StatCard etiqueta="Equity actual" valor={`$${resumen.equityActualTotal}`} sub={`de $${resumen.capitalInicialTotal} iniciales`} />
-        <StatCard etiqueta="Retorno acumulado" valor={pct(resumen.retornoTotalPct)} tono={tonoDe(resumen.retornoTotalPct)} />
-        <StatCard etiqueta="Drawdown máximo" valor={pct(resumen.drawdownMaximoPct, { signo: false })} sub="peor bucket" />
-        <StatCard etiqueta="Win rate global" valor={resumen.winRateGlobalPct !== null ? `${resumen.winRateGlobalPct}%` : "—"} />
-        <StatCard etiqueta="Posiciones abiertas" valor={resumen.totalAbiertas} />
-        <StatCard etiqueta="Operaciones cerradas" valor={resumen.totalCerradas} />
+
+      <div className="trading-cockpit">
+        <div className="trading-cockpit-principal">
+          <span className="trading-cockpit-etiqueta">Equity actual · Paper Trading</span>
+          <span className="trading-cockpit-valor">${resumen.equityActualTotal}</span>
+          <span className="trading-cockpit-sub">de ${resumen.capitalInicialTotal} iniciales</span>
+        </div>
+        <div className="trading-cockpit-secundarios">
+          <StatCard etiqueta="Retorno acumulado" valor={pct(resumen.retornoTotalPct)} tono={tonoDe(resumen.retornoTotalPct)} />
+          <StatCard etiqueta="Posiciones abiertas" valor={resumen.totalAbiertas} />
+          <StatCard etiqueta="Operaciones cerradas" valor={resumen.totalCerradas} />
+        </div>
+      </div>
+      <EstadoSistemaChips resumen={resumen} />
+
+      <div className="trading-stat-grid" style={{ marginTop: 20 }}>
+        <StatCard
+          etiqueta="Drawdown máximo"
+          valor={pct(resumen.drawdownMaximoPct, { signo: false })}
+          sub={resumen.drawdownInconsistente ? "⚠ dato inconsistente, ver abajo" : "peor bucket"}
+        />
+        <StatCard
+          etiqueta="Win rate global"
+          valor={resumen.historialSuficienteWinRate ? `${resumen.winRateGlobalPct}%` : "—"}
+          sub={resumen.historialSuficienteWinRate ? undefined : "historial insuficiente"}
+        />
       </div>
 
       <div className="pulsodash-panel" style={{ marginTop: 24, marginBottom: 24 }}>
@@ -177,6 +282,11 @@ function ModuloDashboard({ data }) {
         <div style={{ marginTop: 12 }}>
           <EquityChart history={data.historialCombinado} startingCapital={resumen.capitalInicialTotal} />
         </div>
+        <p className="pulsodash-vacio" style={{ marginTop: 12 }}>
+          Comparación contra SPY (buy &amp; hold): pendiente — el motor todavía no exporta una
+          serie diaria de benchmark para el paper trading (sí existe a nivel de backtest, ver
+          Investigación).
+        </p>
       </div>
 
       <div className="pulsodash-panel" style={{ marginBottom: 24 }}>
@@ -185,6 +295,36 @@ function ModuloDashboard({ data }) {
         </div>
         <div style={{ marginTop: 16 }}>
           <DonutAsignacion asignacionReal={data.asignacionReal} />
+        </div>
+      </div>
+
+      <ContribucionRetorno contribucionRetorno={data.contribucionRetorno} />
+
+      <ScorecardSistema scorecard={data.scorecard} />
+
+      <div className="pulsodash-panel" style={{ marginBottom: 24 }}>
+        <div className="pulsodash-panel-head">
+          <span className="pulsodash-panel-title">¿Qué haría cambiar el sistema?</span>
+        </div>
+        <div className="trading-criterios" style={{ marginTop: 12 }}>
+          <div>
+            <span className="trading-criterios-titulo trading-criterios-no">El sistema NO cambia por</span>
+            <ul>
+              <li>una operación perdedora individual</li>
+              <li>un mal mes aislado</li>
+              <li>un desempeño peor al esperado en el corto plazo</li>
+            </ul>
+          </div>
+          <div>
+            <span className="trading-criterios-titulo trading-criterios-si">El sistema SÍ se reconsidera si</span>
+            <ul>
+              <li>el desempeño en vivo diverge de forma sostenida del backtest</li>
+              <li>los costos reales de operar superan lo asumido en el modelo</li>
+              <li>el drawdown supera la tolerancia histórica documentada</li>
+              <li>el comportamiento de las señales cambia de forma estructural</li>
+              <li>se detecta un problema de calidad de datos</li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -295,13 +435,15 @@ function ModuloPortafolios({ data }) {
             </div>
             <div className="highlight-item">
               <span className="highlight-valor">{pct(bucket.drawdownPct, { signo: false })}</span>
-              <span className="highlight-etiqueta">drawdown</span>
+              <span className="highlight-etiqueta">
+                drawdown{bucket.drawdownInconsistente ? " ⚠" : ""}
+              </span>
             </div>
             <div className="highlight-item">
               <span className="highlight-valor">{bucket.posicionesAbiertas.length} / {bucket.totalCerradas}</span>
               <span className="highlight-etiqueta">abiertas / cerradas</span>
             </div>
-            {bucket.winRatePct !== null && (
+            {bucket.totalCerradas >= 5 && bucket.winRatePct !== null && (
               <div className="highlight-item">
                 <span className="highlight-valor">{bucket.winRatePct}%</span>
                 <span className="highlight-etiqueta">win rate</span>
@@ -310,9 +452,16 @@ function ModuloPortafolios({ data }) {
           </div>
 
           {bucket.meta && (
-            <p className="pulsodash-vacio" style={{ marginBottom: 20 }}>
+            <p className="pulsodash-vacio" style={{ marginBottom: bucket.drawdownInconsistente ? 8 : 20 }}>
               Estrategia: {bucket.meta.estrategia} · riesgo por operación: {bucket.meta.riesgoPorOperacion} ·
               límite de pérdida diaria: {bucket.meta.limitePerdidaDiaria} · drawdown de revisión: {bucket.meta.drawdownRevision}.
+            </p>
+          )}
+          {bucket.drawdownInconsistente && (
+            <p className="pulsodash-vacio" style={{ marginBottom: 20, color: "#d97706" }}>
+              ⚠ El equity de este bucket está por debajo de su capital inicial, pero el motor
+              reportó 0% de drawdown — es una inconsistencia conocida en el cálculo del motor
+              (ver Investigación), no un error de esta página.
             </p>
           )}
 
@@ -349,10 +498,10 @@ function ModuloPortafolios({ data }) {
                   <td>{b.etiqueta}</td>
                   <td>${b.equityActual}</td>
                   <td style={{ color: toneColor(tonoDe(b.retornoAcumuladoPct)) }}>{pct(b.retornoAcumuladoPct)}</td>
-                  <td>{pct(b.drawdownPct, { signo: false })}</td>
+                  <td>{pct(b.drawdownPct, { signo: false })}{b.drawdownInconsistente ? " ⚠" : ""}</td>
                   <td>{b.posicionesAbiertas.length}</td>
                   <td>{b.totalCerradas}</td>
-                  <td>{b.winRatePct !== null ? `${b.winRatePct}%` : "—"}</td>
+                  <td>{b.totalCerradas >= 5 && b.winRatePct !== null ? `${b.winRatePct}%` : "—"}</td>
                 </tr>
               ))}
             </tbody>

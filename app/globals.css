@@ -4792,6 +4792,138 @@ html:not(.dark) .pglobe-land {
 }
 .trading-export-btn:hover { opacity: 0.85; }
 
+.trading-cockpit {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  border-radius: var(--radius);
+  background: linear-gradient(145deg, #0b1324, #111b2e);
+  border: 1px solid #1f2b45;
+  margin-bottom: 16px;
+}
+@media (min-width: 720px) {
+  .trading-cockpit { flex-direction: row; align-items: center; justify-content: space-between; }
+}
+.trading-cockpit-principal { display: flex; flex-direction: column; gap: 2px; }
+.trading-cockpit-etiqueta {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8291ab;
+}
+.trading-cockpit-valor { font-size: 2.1rem; font-weight: 800; color: #fff; font-variant-numeric: tabular-nums; }
+.trading-cockpit-sub { font-size: 0.8rem; color: #64748b; }
+.trading-cockpit-secundarios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.trading-cockpit-secundarios .trading-stat-card { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.1); }
+
+.trading-estado-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+.trading-estado-chip {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+.trading-estado-chip.mal { border-color: #dc2626; color: #dc2626; }
+
+.trading-scorecard { display: flex; flex-direction: column; gap: 10px; }
+.trading-scorecard-row {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 4px 10px;
+  align-items: baseline;
+  font-size: 0.88rem;
+}
+@media (min-width: 640px) {
+  .trading-scorecard-row { grid-template-columns: 24px 220px 1fr; }
+}
+.trading-scorecard-icono { font-size: 0.9rem; }
+.trading-scorecard-dim { font-weight: 600; }
+.trading-scorecard-detalle { color: var(--ink-soft); font-size: 0.85rem; grid-column: 2 / -1; }
+@media (min-width: 640px) {
+  .trading-scorecard-detalle { grid-column: auto; }
+}
+
+.trading-contrib-list { display: flex; flex-direction: column; gap: 10px; }
+.trading-contrib-row {
+  display: grid;
+  grid-template-columns: 110px 1fr 70px;
+  align-items: center;
+  gap: 10px;
+}
+.trading-contrib-label { font-size: 0.85rem; }
+.trading-contrib-bar-track {
+  height: 10px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+.trading-contrib-bar { height: 100%; border-radius: 999px; }
+.trading-contrib-bar.pos { background: #16a34a; }
+.trading-contrib-bar.neg { background: #dc2626; }
+.trading-contrib-valor { font-size: 0.85rem; font-variant-numeric: tabular-nums; text-align: right; }
+
+.trading-criterios {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 720px) {
+  .trading-criterios { grid-template-columns: 1fr 1fr; }
+}
+.trading-criterios-titulo { display: block; font-weight: 700; font-size: 0.9rem; margin-bottom: 8px; }
+.trading-criterios-no { color: #64748b; }
+.trading-criterios-si { color: #16a34a; }
+.trading-criterios ul { margin: 0; padding-left: 20px; color: var(--ink-soft); font-size: 0.88rem; line-height: 1.6; }
+.trading-criterios li { margin-bottom: 4px; }
+
+.trading-timeline {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0 0 0 28px;
+  border-left: 2px solid var(--line);
+}
+.trading-timeline-item {
+  position: relative;
+  padding-bottom: 16px;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+.trading-timeline-item:last-child { padding-bottom: 0; }
+.trading-timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -33px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--surface);
+}
+.trading-timeline-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-right: 8px;
+}
+
 .trading-subnav {
   display: flex;
   gap: 20px;

@@ -43,32 +43,37 @@ function BloqueExplicativo({ resumen }) {
             El diseño actual no salió completo desde el día uno — cada cambio se probó contra el
             motor completo antes de adoptarse, y se documenta aquí incluyendo lo que se descartó:
           </p>
-          <ul>
-            <li>
+          <ul className="trading-timeline">
+            <li className="trading-timeline-item">
+              <span className="trading-timeline-tag">v1</span>
               <strong>Versión original</strong> — el stop se fijaba en el precio de entrada y
               nunca se movía; el efectivo sin posición se quedaba parado, sin invertirse. En 6
               meses de datos reales (may–oct 2026) esto dio <strong>-0.08%</strong> mientras el
               índice S&amp;P 500 (comprar y mantener) dio <strong>+6.76%</strong> en el mismo
               período.
             </li>
-            <li>
+            <li className="trading-timeline-item">
+              <span className="trading-timeline-tag">v2</span>
               <strong>Trailing stop + cash invertido en SPY</strong> — el stop ahora sube cada día
               con el precio (nunca baja) y el efectivo ocioso se invierte en el índice en vez de
               quedarse parado. Fue el cambio de mayor impacto medido: en una ventana de 22 meses,
               el retorno pasó de <strong>+0.23% a +17.75%</strong>.
             </li>
-            <li>
+            <li className="trading-timeline-item">
+              <span className="trading-timeline-tag">v3</span>
               <strong>Circuit breakers reales</strong> — se agregó el límite de pérdida diaria y
               el umbral de drawdown que hoy bloquean o suspenden cada bucket (ver tabla de abajo).
             </li>
-            <li>
+            <li className="trading-timeline-item">
+              <span className="trading-timeline-tag">v4</span>
               <strong>Universo ampliado + fricción real</strong> — de 32 a 159 símbolos en varias
               rondas, y comisión + slippage reales incluidas en el motor (antes solo las tenía el
               backtest formal, no el paper trading). Un trailing stop más ancho y un filtro de
               régimen de mercado se probaron y se <strong>descartaron</strong> — ambos empeoraron
               el resultado, y se reportan aquí igual que los cambios que sí funcionaron.
             </li>
-            <li>
+            <li className="trading-timeline-item">
+              <span className="trading-timeline-tag">v5</span>
               <strong>Mean Reversion RSI(2), un 4to portafolio</strong> — todas las estrategias
               anteriores comparten la misma lógica (comprar fortaleza, seguir la tendencia). Se
               probaron también Donchian Breakout y una re-ponderación por volatilidad inversa
