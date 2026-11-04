@@ -109,6 +109,8 @@ export default async function SimboloPage({ params }) {
                   <th>Entrada</th>
                   <th>Precio entrada</th>
                   <th>Salida</th>
+                  <th>Precio salida</th>
+                  <th>Precio cierre hoy</th>
                   <th>P&amp;L</th>
                   <th>Motivo</th>
                 </tr>
@@ -126,6 +128,8 @@ export default async function SimboloPage({ params }) {
                     <td>{o.entry_date}</td>
                     <td>${o.entry_price}</td>
                     <td>{o.estado === "cerrada" ? o.exit_date || "—" : "—"}</td>
+                    <td>{o.estado === "cerrada" && o.exit_price != null ? `$${o.exit_price}` : "—"}</td>
+                    <td>{o.estado === "abierta" && o.current_price != null ? `$${o.current_price}` : "—"}</td>
                     <td style={{ color: toneColor(o.estado === "cerrada" ? o.pnl : o.unrealized_pnl) }}>
                       {o.estado === "cerrada"
                         ? `$${o.pnl} (${o.pnl_pct}%)`

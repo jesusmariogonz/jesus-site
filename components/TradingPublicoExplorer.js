@@ -217,6 +217,7 @@ function TablaAbiertasBucket({ posiciones }) {
             <th>Estrategia</th>
             <th>Entrada</th>
             <th>Precio entrada</th>
+            <th>Precio cierre hoy</th>
             <th>Stop</th>
             <th>Acciones</th>
           </tr>
@@ -228,6 +229,7 @@ function TablaAbiertasBucket({ posiciones }) {
               <td>{p.strategy}</td>
               <td>{p.entry_date}</td>
               <td>${p.entry_price}</td>
+              <td>{p.current_price != null ? `$${p.current_price}` : "—"}</td>
               <td>${typeof p.stop_price === "number" ? p.stop_price.toFixed(2) : p.stop_price}</td>
               <td>{p.shares}</td>
             </tr>
@@ -428,7 +430,10 @@ function ModuloOperaciones({ data }) {
                 <th>Símbolo</th>
                 <th>Bucket</th>
                 <th>Entrada</th>
+                <th>Precio entrada</th>
                 <th>Salida</th>
+                <th>Precio salida</th>
+                <th>Precio cierre hoy</th>
                 <th>P&amp;L</th>
                 <th>Rendimiento</th>
                 <th>Motivo</th>
@@ -445,7 +450,10 @@ function ModuloOperaciones({ data }) {
                   <td><LinkSimbolo symbol={p.symbol} /></td>
                   <td>{p.bucketEtiqueta}</td>
                   <td>{p.entry_date}</td>
+                  <td>{p.entry_price != null ? `$${p.entry_price}` : "—"}</td>
                   <td>{p.estado === "cerrada" ? p.exit_date || "—" : "—"}</td>
+                  <td>{p.estado === "cerrada" && p.exit_price != null ? `$${p.exit_price}` : "—"}</td>
+                  <td>{p.estado === "abierta" && p.current_price != null ? `$${p.current_price}` : "—"}</td>
                   <td style={{ color: toneColor(tonoDe(p.estado === "cerrada" ? p.pnl : p.unrealized_pnl)) }}>
                     {p.estado === "cerrada"
                       ? `$${p.pnl}`
