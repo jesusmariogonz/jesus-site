@@ -8,9 +8,10 @@ tags:
   - elecciones intermedias
   - AMD
   - Qualcomm
-  - futuros
-  - Nasdaq
-resumen: 'Los futuros de Wall Street cayeron con fuerza durante la madrugada tras confirmarse que los demócratas recuperaron el control de ambas cámaras del Congreso, pero se recuperaron por completo antes de la apertura. AMD cae tras resultados sólidos; Qualcomm reporta hoy después del cierre.'
+  - Apple
+  - Microsoft
+  - petróleo
+resumen: 'Wall Street cerró el miércoles con su mejor sesión desde abril: el Dow saltó 3.03% tras el susto inicial por el barrido demócrata en el Congreso. Apple y Microsoft tocaron máximos históricos, el petróleo se desplomó casi 8% y la VIX cayó a 16.71. Qualcomm reporta después del cierre.'
 imagen: /blog/portadas/mercados-hoy-fija.jpg
 socialImagen: /blog/social/pulso-mercado-daily-2026-11-04.jpg
 ---
@@ -19,93 +20,93 @@ socialImagen: /blog/social/pulso-mercado-daily-2026-11-04.jpg
 
 | Activo | Nivel | Cambio |
 |---|---|---|
-| S&P 500 | — | — |
-| Nasdaq Composite | — | — |
-| Russell 2000 | — | — |
-| Dow Jones | — | — |
-| VIX | — | — |
+| S&P 500 | 7,688.62 | +1.58% |
+| Nasdaq Composite | 25,736.51 | +1.44% |
+| Russell 2000 | 2,856.95 | +1.58% |
+| Dow Jones | 53,356.12 | +3.03% |
+| VIX | 16.71 | -19.78% |
 | S&P/BMV IPC | — | — |
 | USD/MXN | 18.8148 (FIX Banxico, viernes 30-oct) | — |
-| US 10Y | — | — |
-| WTI | — | — |
+| US 10Y | 4.894% | -1.17% |
+| WTI | $88.57 (futuro Dic-26) | -7.83% |
 
 ## Market Regime
 
-La madrugada del miércoles trajo el movimiento más brusco de la semana, y no vino de un dato económico sino de la confirmación electoral: cuando los primeros resultados mostraron que los demócratas recuperaban no solo la Cámara de Representantes sino también el Senado —un resultado más amplio que el que el mercado de predicción daba como más probable el martes—, los futuros del Nasdaq 100 cayeron hasta 2.4% y los del S&P 500 hasta 1.4%, reflejando la lectura tradicional de que un gobierno dividido suele preocupar menos a los mercados que un partido con control total de ambas cámaras. Esa caída se revirtió por completo en las horas siguientes: hacia la mañana, los futuros del Dow Jones subían entre 1.4% y 1.75%, los del S&P 500 alrededor de 1%, y los del Nasdaq Composite cerca de 0.54%, con AMD y Nvidia entre los nombres que impulsaron la recuperación en tecnología. El patrón —pánico inicial, reversión rápida— es consistente con la lectura de que la incertidumbre del resultado, más que el resultado mismo, fue lo que movió el precio durante la noche.
+Wall Street cerró el miércoles con su mejor sesión desde abril de 2025: el Dow Jones saltó 3.03% a 53,356.12, su mayor avance diario en puntos y en porcentaje en más de un año, mientras el S&P 500 subió 1.58% a 7,688.62 y el Nasdaq Composite 1.44% a 25,736.51. El camino hasta ahí no fue lineal. Durante la madrugada, al confirmarse que los demócratas recuperaban tanto la Cámara de Representantes como el Senado —un resultado más amplio que el de un gobierno dividido que el mercado consideraba más probable—, los futuros cayeron con fuerza; esa caída se revirtió por completo antes de la apertura y se convirtió en una sesión de alivio generalizado, con Apple y Microsoft alcanzando máximos históricos. El VIX se desplomó 19.78% a 16.71, la señal más clara de que el mercado terminó el día mucho más tranquilo de lo que empezó. El petróleo colapsó 7.83% a $88.57 por barril, impulsado por apuestas de los operadores a que el resultado electoral facilite el fin del conflicto con Irán y alivie la prima geopolítica que sostenía los precios desde octubre.
 
-Scorecard: Trend → → (recuperación total de la caída nocturna antes de la apertura) · Breadth → ↑ (AMD y Nvidia liderando el rebote en futuros de tecnología) · Momentum → → (reversión en V durante la madrugada, sin dirección neta clara hacia la apertura) · Volatility → ↑ (el salto y reversión de futuros durante la noche es, por definición, una sesión de alta volatilidad) · Rates → — (sin cifra confirmada de Treasury para esta edición) · USD → — (sin FIX de Banxico actualizado para hoy)
+Scorecard: Trend → ↑ (mejor sesión del Dow desde abril de 2025, con los tres índices principales en verde) · Breadth → ↑ (rotación de semiconductores como Nvidia y Micron hacia otros nombres de gran tecnología, con Apple y Microsoft en máximos históricos) · Momentum → ↑ (reversión completa de la caída nocturna hacia un rally generalizado) · Volatility → ↓ (VIX cayó casi 20%, a su nivel más bajo en semanas) · Rates → ↓ (Treasury a 10 años bajó a 4.894%) · USD → — (sin FIX de Banxico actualizado para hoy)
 
 ## Qué importó hoy
 
-**Los demócratas recuperaron el control de ambas cámaras del Congreso de Estados Unidos, y los futuros del mercado pasaron de una caída pronunciada a una recuperación completa en el curso de la madrugada.** Proyecciones de CBS, CNN y MS NOW confirmaron que, además de la Cámara de Representantes, los demócratas también tomaron el Senado —un resultado más amplio que el escenario de "Cámara demócrata, Senado republicano" que algunas lecturas previas a la elección consideraban más probable—. La reacción inicial de venta en los futuros, seguida de una recuperación completa, sugiere que el mercado terminó por descontar la ausencia de un cambio de poder dividido más que celebrar o castigar al partido ganador en sí. Horizonte: Position.
+**Wall Street vivió una sesión de alivio después de que los demócratas confirmaran el control de ambas cámaras del Congreso, revirtiendo por completo una caída inicial en los futuros.** El resultado, más amplio que el escenario de gobierno dividido que el mercado consideraba más probable, generó una venta inicial en la madrugada que se convirtió en la mejor sesión del Dow Jones desde abril de 2025 una vez que el mercado terminó de digerir que el cambio de poder legislativo no entra en vigor sino hasta enero de 2027. Horizonte: Position.
 
-**AMD cayó entre 7% y 8% en operaciones extendidas del martes, pese a reportar ingresos de $13,400 millones en su tercer trimestre, por encima de su propio rango guiado.** Es el cuarto nombre de hardware o tecnología en poco más de dos semanas —después de Alphabet, Amazon y Palantir— en el que un beat de resultados no evita una reacción negativa del precio, en este caso por una guía de ingresos para el cuarto trimestre que el mercado no consideró suficiente para sostener la narrativa de aceleración de IA ya incorporada en la acción. Horizonte: Swing.
+**Apple y Microsoft alcanzaron máximos históricos, en una sesión donde el dinero rotó de semiconductores como Nvidia y Micron hacia otras grandes tecnológicas.** Los analistas atribuyeron el movimiento a que Apple se percibe como una apuesta relativamente defensiva dentro de la tecnología, y a que podría beneficiarse de un enfriamiento en los precios de memoria si se modera el ritmo de construcción de centros de datos de IA. Horizonte: Swing.
 
-**Qualcomm reporta hoy, miércoles 4 de noviembre, después del cierre del mercado**, en la misma semana en que AMD ya mostró que ni un resultado sólido garantiza una reacción positiva del precio. A diferencia de AMD, el negocio de Qualcomm depende menos del cómputo de centro de datos de IA y más de chips móviles y automotrices, lo que la convierte en una referencia distinta sobre qué tan generalizado está el escrutinio actual del mercado hacia los semiconductores. Horizonte: Swing.
+**El petróleo se desplomó 7.83% a $88.57 por barril, su caída más pronunciada en semanas, ante apuestas de que el resultado electoral facilite el fin del conflicto con Irán.** Es la segunda caída abrupta del crudo en cuestión de días, después del desplome de casi 8% del lunes por las mismas esperanzas de diplomacia, lo que empieza a sugerir que el mercado está reduciendo de forma más sostenida la prima geopolítica que sostuvo los precios durante buena parte de octubre. Horizonte: Swing.
 
-**McDonald's y Uber reportan hoy antes de la apertura.** Ambos sirven como referencia sobre el gasto del consumidor estadounidense hacia el cierre de año, en un momento en que el mercado todavía digiere la reacción mixta de la temporada de resultados de consumo discrecional. No localizamos con confianza cifras reales de ninguno de los dos reportes al momento de esta edición, al tratarse de resultados programados para antes de la apertura de hoy mismo. Horizonte: Swing.
+**El ISM de Servicios de octubre bajó a 54.5 desde 54.9, y ADP reportó 86,000 empleos privados agregados en octubre.** Ambos datos siguen señalando expansión económica, aunque a un ritmo más moderado; ninguno de los dos alteró el ánimo de la sesión, dominada por la reacción electoral. Horizonte: Position.
+
+**McDonald's reportó una desaceleración en el crecimiento de ventas en mismas tiendas, mientras Uber subió a pesar de ofrecer un pronóstico de utilidad más débil de lo esperado.** Ambos reportes, programados antes de la apertura, matizan la narrativa reciente sobre el gasto del consumidor estadounidense: ni una señal de fortaleza inequívoca ni un deterioro generalizado. Horizonte: Swing.
+
+**Qualcomm reporta hoy después del cierre del mercado**, en una semana donde AMD ya mostró que ni un resultado sólido garantiza una reacción positiva del precio. El consenso de Wall Street esperaba una utilidad por acción ajustada de $2.16; no localizamos con confianza las cifras reales del reporte al momento de esta edición, al publicarse después del cierre de la sesión que cubre esta nota. Horizonte: Swing.
 
 ## Macro
 
-Sin datos macroeconómicos de peso programados para publicarse antes de la apertura de hoy en Estados Unidos; el evento central de la madrugada fue político, no macroeconómico. El ISM Servicios de octubre está programado para hoy miércoles, aunque no localizamos con confianza la hora exacta de publicación para esta edición.
+El ISM de Servicios de octubre bajó a 54.5 desde 54.9 el mes anterior, manteniéndose en terreno de expansión pero desacelerando frente a septiembre. ADP reportó 86,000 empleos privados agregados en octubre, un dato que el mercado no trató como el foco principal de la sesión, dominada por la reacción al resultado electoral.
 
 ## Tasas y bonos
 
-No localizamos con confianza un nivel actualizado del Treasury a 10 años para esta edición; el último dato confirmado por esta serie es el cierre del martes en 4.952%.
+El Treasury a 10 años cerró el miércoles en 4.894%, una baja de 1.17% frente al cierre del martes (4.952%), consistente con una sesión de mayor apetito por riesgo en renta variable que, pese a eso, no presionó al alza los rendimientos de bonos.
 
 ## FX y commodities
 
-No localizamos con confianza un FIX de Banxico más reciente que el del viernes 30 de octubre (18.8148), ni un nivel confirmado de WTI para esta mañana; el último cierre confirmado del WTI es de $96.73 por barril (contrato de diciembre), del martes.
+No localizamos con confianza un FIX de Banxico más reciente que el del viernes 30 de octubre (18.8148), ni un nivel de cierre confirmado para el S&P/BMV IPC de hoy. El WTI se desplomó 7.83% a $88.57 por barril (contrato de diciembre), su segunda caída abrupta en días, ante apuestas de que el resultado electoral facilite una desescalada del conflicto con Irán.
 
 ## Sectores
 
-Tecnología fue el sector bajo mayor atención de la madrugada, primero por la caída de futuros ligada a la incertidumbre electoral y después por el rebote liderado por AMD y Nvidia. La temporada de resultados sigue señalando una diferenciación dentro del propio sector: el mercado distingue cada vez con más detalle entre proveedores de hardware de IA, grandes tecnológicas de nube y el resto de semiconductores, en lugar de tratar al sector como un bloque uniforme.
+La gran tecnología fue, de nuevo, el centro de la sesión, pero con una rotación interna notable: el dinero salió de semiconductores de IA como Nvidia y Micron y entró en Apple y Microsoft, ambas en máximos históricos. Energía fue el sector más débil del día por el desplome del petróleo. Consumo discrecional ofreció señales mixtas, con McDonald's desacelerando y Uber subiendo a pesar de una guía de utilidad más débil.
 
 ## Swing
 
-Los eventos de mayor peso para los próximos días son la reacción del mercado al reporte de Qualcomm de esta noche —que podría confirmar si el escrutinio que afectó a AMD se extiende a nombres con menor exposición a IA de centro de datos—, y si McDonald's y Uber ofrecen alguna señal nueva sobre el gasto del consumidor estadounidense hacia el cierre de año.
+El evento de mayor peso para los próximos días es la reacción del mercado al reporte de Qualcomm de esta noche, que podría confirmar si el escrutinio que ya afectó a AMD se extiende a nombres con menor exposición directa al cómputo de centro de datos de IA. La sostenibilidad de la caída del petróleo, si las esperanzas de diplomacia con Irán no se confirman en los próximos días, es un segundo punto a vigilar.
 
 ## Position
 
-La composición final del Congreso de Estados Unidos, una vez certificados los resultados de las contiendas de Senado que seguían sin definirse esta mañana (Misisipi y Alaska), sigue siendo el evento de mayor peso del horizonte de semanas, aunque su efecto legislativo real no se materializa sino hasta enero de 2027.
+La composición final del Congreso de Estados Unidos, una vez certificados los resultados de las contiendas de Senado que seguían sin definirse esta mañana (Misisipi y Alaska), sigue siendo el evento de mayor peso del horizonte de semanas, aunque su efecto legislativo real no se materializa sino hasta enero de 2027. La posibilidad, señalada por analistas citados hoy, de que nuevos funcionarios electos —incluido un gobernador electo de Texas que prometió una moratoria— busquen restringir la construcción de centros de datos es un tema nuevo que esta serie seguirá de cerca.
 
 ## Long Term
 
-Sin temas estructurales nuevos que reportar con fuentes confirmadas para esta edición; la pregunta de fondo sobre la sostenibilidad del ciclo de inversión en infraestructura de IA, documentada por esta serie a lo largo de octubre, sigue sin resolverse y la reacción de la próxima semana de resultados —con Qualcomm hoy— seguirá siendo la referencia más cercana disponible.
+La pregunta de fondo sobre la sostenibilidad del ciclo de inversión en infraestructura de IA, documentada por esta serie a lo largo de octubre, sigue sin resolverse. La rotación de hoy —salida de semiconductores de IA, entrada a Apple y Microsoft— es consistente con la hipótesis de que el mercado empieza a diferenciar entre quién construye la infraestructura de IA y quién podría beneficiarse si el ritmo de ese gasto se modera, en lugar de tratar a todo el sector tecnológico como una sola apuesta direccional.
 
 ## Earnings y calendario
 
 | Empresa | Ticker | Fecha | Qué observar |
 |---|---|---|---|
 | Qualcomm | QCOM | Hoy, después del cierre | Demanda de chips fuera del centro de datos de IA (móviles, automotriz), tras la caída de AMD pese a resultados sólidos |
-| McDonald's | MCD | Hoy, antes de la apertura | Gasto del consumidor estadounidense de ingresos medios y bajos |
-| Uber | UBER | Hoy, antes de la apertura | Gasto discrecional en movilidad y entrega a domicilio |
 
 ## Riesgos
 
-El riesgo central de hoy es que la volatilidad nocturna ligada al resultado electoral se traslade a la sesión regular, especialmente si alguna de las dos contiendas de Senado todavía sin definir (Misisipi, Alaska) introduce nueva incertidumbre sobre el margen final de control demócrata. Un segundo riesgo es que el reporte de Qualcomm de esta noche confirme que el escrutinio que ya afectó a AMD y Palantir se extiende incluso a semiconductores con menor exposición directa a infraestructura de IA.
+El riesgo central hacia adelante es que la caída del petróleo se revierta si las esperanzas de diplomacia con Irán no se confirman, devolviendo presión inflacionaria a un mercado que hoy celebró precisamente lo contrario. Un segundo riesgo es que el reporte de Qualcomm de esta noche confirme que el escrutinio que ya afectó a AMD y Palantir se extiende incluso a semiconductores con menor exposición directa a infraestructura de IA.
 
 ## Qué vigilar mañana
 
 - Reacción del mercado al reporte de Qualcomm de esta noche.
-- Resultados de McDonald's y Uber antes de la apertura de hoy.
 - Resolución final de las contiendas de Senado en Misisipi y Alaska.
-- Publicación del ISM Servicios de octubre.
-- Si la volatilidad nocturna ligada a la elección se traslada a la sesión regular de hoy.
+- Si la caída del petróleo se sostiene o se revierte en los próximos días.
+- Evolución de la rotación de semiconductores de IA hacia otras grandes tecnológicas.
+- Reacción de CVS tras anunciar planes de dividirse en dos empresas.
 
 ## Pendientes de esta edición
 
-- S&P 500, Nasdaq Composite, Russell 2000, Dow Jones y VIX: no localizamos con confianza niveles de apertura o premarket para esta edición.
-- US 10Y: no localizamos con confianza un nivel actualizado; el último dato confirmado es el cierre del martes (4.952%).
-- WTI: no localizamos con confianza un nivel actualizado para esta mañana; el último cierre confirmado es el del martes ($96.73).
+- S&P/BMV IPC: no localizamos con confianza un nivel de cierre para hoy.
 - USD/MXN: no localizamos con confianza un FIX de Banxico más reciente que el del 30 de octubre.
-- Resultados de McDonald's y Uber: ambos reportan antes de la apertura de hoy; no localizamos con confianza sus cifras reales al momento de esta edición.
+- Resultados de Qualcomm: reporta después del cierre de la sesión que cubre esta nota; no localizamos con confianza sus cifras reales al momento de esta edición.
 
 ## Fuentes
 
-- [Dow futures surge 900 points after decisive win by Democrats in U.S. midterms: Live updates](https://www.cnbc.com/2026/11/03/stock-market-today-live-updates.html) — CNBC
-- [Wall Street Futures Plunged After Democrats Swept Congress. Then Investors Started Buying Again.](https://finance.yahoo.com/markets/stocks/articles/wall-street-futures-plunged-democrats-102707086.html) — Yahoo Finance
-- [US stock futures rise after midterms: why are Dow Jones futures up nearly 800 points despite a Democratic sweep?](https://www.inkl.com/news/us-stock-futures-rise-after-midterms-why-are-dow-jones-futures-up-nearly-800-points-despite-a-democratic-sweep-s-p-500-nasdaq-gain-as-amd-and-nvidia-stocks-climb) — Inkl
+- [Stock market today: Dow surges 1,500 points, S&P 500 and Nasdaq rally following historic midterm election](https://finance.yahoo.com/markets/live/stock-market-today-dow-sp-500-nasdaq-midterm-elections-earnings-140752043.html) — Yahoo Finance
+- [Stock Market Today: Dow Up 2.9%, Oil Sinks 7% After Midterms](https://www.benzinga.com/markets/equities/26/11/62877866/stock-market-today-dow-rallies-oil-sinks-midterms-democrats-sweep-congress) — Benzinga
+- [Stock Market Today (Nov. 4, 2026): Stocks rise, oil collapses after Dems sweep midterm elections](https://thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-04-2026) — TheStreet
 - [AMD reportó ingresos récord de $13,400 millones en el tercer trimestre, y la acción cayó igual](/blog/amd-resultados-tercer-trimestre-2026-cae-pese-record) — jgonzalez.app
 - [Los demócratas recuperaron el control del Congreso de Estados Unidos en las elecciones intermedias de 2026](/blog/elecciones-intermedias-2026-democratas-recuperan-congreso) — jgonzalez.app
 - [Pulso de Mercado — Daily · 03/11/2026](/blog/pulso-mercado-daily-2026-11-03) — jgonzalez.app
