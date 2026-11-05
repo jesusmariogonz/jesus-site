@@ -22,10 +22,11 @@ export default function InvestigacionPage() {
         </span>
         <h1>Investigación y metodología</h1>
         <p className="activo-descripcion">
-          Esta página documenta cómo se prueba cada cambio antes de llegar a producción, las
-          cuatro estrategias que componen el sistema hoy, y — con el mismo nivel de detalle — los
-          experimentos que se probaron y no funcionaron. El historial completo, decisión por
-          decisión, está en la <Link href="/pulso-mercado/trading/bitacora">Bitácora de decisiones</Link>.
+          Esta página documenta cómo se prueba cada cambio antes de llegar a producción, las tres
+          estrategias que componen el sistema hoy, y — con el mismo nivel de detalle — los
+          experimentos que se probaron y no funcionaron, incluyendo uno que llegó a operar con
+          capital real antes de revertirse. El historial completo, decisión por decisión, está en
+          la <Link href="/pulso-mercado/trading/bitacora">Bitácora de decisiones</Link>.
         </p>
 
         <div className="activo-bloque">
@@ -41,16 +42,25 @@ export default function InvestigacionPage() {
             sobre 36 meses de simulación (ver ADR 0012 en la Bitácora).
           </p>
           <p>
+            Desde ADR 0025, cualquier candidato nuevo también pasa por un <strong>walk-forward
+            rolling</strong> de 5 ventanas (12 meses de entrenamiento / 6 meses de prueba fuera de
+            muestra, paso de 4 meses) antes de considerarse para capital real — un backtest de
+            muestra completa, por bueno que se vea, dejó de ser evidencia suficiente por sí solo
+            después de que esa misma prueba expusiera que dos candidatos distintos (Bollinger %B y
+            Mean Reversion RSI(2), ver abajo) perdían dinero en 2 de cada 5 ventanas reales,
+            aunque sus números agregados de 36 meses se vieran bien.
+          </p>
+          <p>
             El número de referencia oficial del sistema —el que reemplaza a los reportados en
             ADRs anteriores, descartados por venir de corridas no comparables entre sí— es{" "}
-            <strong>+43.61% de retorno neto</strong> y <strong>11.75% de drawdown máximo</strong>{" "}
-            en 36 meses (noviembre 2023–octubre 2026), con la configuración de 4 buckets, universo
+            <strong>+34.00% de retorno neto</strong> y <strong>12.91% de drawdown máximo</strong>{" "}
+            en 36 meses (noviembre 2023–octubre 2026), con la configuración de 3 buckets, universo
             y fricción que opera hoy en producción.
           </p>
         </div>
 
         <div className="activo-bloque">
-          <h2>Las cuatro estrategias en producción</h2>
+          <h2>Las tres estrategias en producción</h2>
           <ul className="activo-lista">
             <li>
               <strong>Time-Series Momentum</strong> (bucket Largo Plazo, 26 ETFs) — compara el
@@ -65,19 +75,30 @@ export default function InvestigacionPage() {
               <strong>Momentum/Breakout</strong> (buckets Mediano Plazo y Riesgo Alto) — ruptura de
               máximos recientes con fuerza relativa mínima y contracción previa de volatilidad.
             </li>
-            <li>
-              <strong>Mean Reversion RSI(2)</strong> (bucket Mean Reversion, 35% del capital) —
-              compra debilidad temporal (RSI(2) menor a 10) dentro de una tendencia alcista
-              confirmada (precio sobre su SMA de 200 días), no fortaleza — lógica de entrada
-              opuesta a las otras tres, por eso diversifica de verdad (correlación de 0.14 con el
-              resto del sistema, ver ADR 0019).
-            </li>
           </ul>
           <p>
             Todas comparten el mismo mecanismo de salida de fondo: un trailing stop basado en ATR
             que solo sube (nunca baja) a medida que el precio avanza, y el efectivo que no está en
             ninguna posición se invierte en un blend 50% SPY / 50% oro en vez de quedarse parado
             — el cambio individual de mayor impacto medido en todo el proyecto.
+          </p>
+        </div>
+
+        <div className="activo-bloque">
+          <h2>Un experimento que llegó a producción y se revirtió</h2>
+          <p>
+            <strong>Mean Reversion RSI(2)</strong> (comprar debilidad temporal, RSI(2) &lt; 10,
+            dentro de una tendencia alcista confirmada) se aprobó como 4to bucket con 35% del
+            capital real tras un backtest de muestra completa (+47.90% aislado, correlación 0.14
+            con el resto del sistema). Cuando se le aplicó después la misma validación
+            walk-forward rolling que acababa de descartar a otro candidato (Bollinger %B, ver
+            abajo), el resultado fue peor: Sharpe fuera de muestra promedio de <strong>-0.032</strong>,
+            2 de 5 ventanas con pérdida, y ningún peso de asignación mejoraba el portafolio de
+            control — monotónicamente peor cuanto más peso se le daba. Una investigación de
+            seguimiento encontró además que el +47.90% original no era reproducible: con el mismo
+            código y universo, una corrida posterior dio +19.09%. Se eliminó el bucket y se
+            restauró la configuración original de 3 portafolios — el código de la estrategia se
+            conserva, sin borrar, por si aparece evidencia mejor en el futuro.
           </p>
         </div>
 
@@ -126,6 +147,14 @@ export default function InvestigacionPage() {
               <strong>Trailing stop más ancho en Riesgo Alto y filtro de régimen de mercado</strong>{" "}
               — ambos empeoraron el resultado en el período probado (predominantemente alcista).
             </li>
+            <li>
+              <strong>Bollinger %B</strong> — de un barrido de más de 11 estrategias candidatas,
+              fue la única que destacó en el backtest de muestra completa (+104.87%). Un
+              walk-forward rolling de 5 ventanas expuso que 2 de cada 5 perdían dinero fuera de
+              muestra (Sharpe OOS promedio 1.076, una ventana en -0.81) — se descartó por
+              inconsistencia temporal, no por el número agregado, que por sí solo parecía
+              excelente.
+            </li>
           </ul>
         </div>
 
@@ -133,20 +162,24 @@ export default function InvestigacionPage() {
           <h2>Limitaciones conocidas</h2>
           <ul className="activo-lista">
             <li>
-              El peso de 35% asignado a Mean Reversion es el mejor de 4 puntos espaciados probados
-              (15/25/35/50%), no un óptimo matemático verificado exhaustivamente — no se exploraron
-              puntos intermedios finos ni se corrió walk-forward sobre ese parámetro específico.
+              El paper trading real con la configuración actual de 3 buckets se restauró el 5 de
+              noviembre de 2026 (tras la reversión de Mean Reversion) — todavía tiene muy poco
+              historial propio; el número de referencia (+34.00%/12.91%) es de backtesting, no del
+              desempeño en vivo todavía.
             </li>
             <li>
-              El paper trading real con los 4 buckets actuales arrancó el 1 de noviembre de 2026 —
-              todavía tiene muy poco historial propio; el número de referencia (+43.61%/11.75%) es
-              de backtesting, no del desempeño en vivo todavía.
+              Varios bugs de software reales se encontraron y corrigieron durante el desarrollo
+              (una reinterpretación de unidades guardadas que desplomó equity -75% en un tick, un
+              bug de rebalanceo que infló un resultado a +103,254%, una revisión retroactiva de
+              datos que distorsionó un índice sintético ~25.6% en un día, y la discrepancia no
+              resuelta del todo entre +47.90% y +19.09% en el backtest de Mean Reversion) — todos
+              se documentan en la Bitácora en vez de omitirse, junto con las correcciones
+              aplicadas.
             </li>
             <li>
-              Dos bugs de software reales se encontraron y corrigieron durante el desarrollo (una
-              reinterpretación de unidades guardadas que desplomó equity -75% en un tick, y un
-              bug de rebalanceo que infló un resultado a +103,254%) — ambos se documentan en la
-              Bitácora en vez de omitirse, junto con las correcciones aplicadas.
+              La comparación directa del sistema contra comprar y mantener SPY todavía no existe
+              como serie diaria del paper trading — solo a nivel de backtest por estrategia (ver
+              Dashboard para el detalle completo de lo pendiente).
             </li>
           </ul>
         </div>
