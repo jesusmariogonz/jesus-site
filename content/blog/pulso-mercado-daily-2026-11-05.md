@@ -7,10 +7,10 @@ tags:
   - Wall Street
   - semiconductores
   - centros de datos
-  - solicitudes de desempleo
-  - Reserva Federal
-  - Banco de Inglaterra
-resumen: 'Wall Street abre mixta tras la mejor sesión del Dow en más de un año: los futuros de semiconductores caen ante el temor de que nuevos funcionarios electos busquen restringir la construcción de centros de datos. Solicitudes de desempleo y el Banco de Inglaterra son los datos del día antes del reporte de empleo de octubre, programado para mañana.'
+  - VIX
+  - Nasdaq
+  - corrección
+resumen: 'Wall Street vivió su peor sesión en meses: el Nasdaq entró en corrección (-5.52%), el Dow perdió más de 1,800 puntos (-3.44%) y el VIX saltó 66.79%, su mayor alza diaria en más de dos años. La liquidación se concentró en semiconductores e infraestructura de IA, revirtiendo por completo el rally post-electoral del miércoles.'
 imagen: /blog/portadas/mercados-hoy-fija.jpg
 socialImagen: /blog/social/pulso-mercado-daily-2026-11-05.jpg
 ---
@@ -19,59 +19,61 @@ socialImagen: /blog/social/pulso-mercado-daily-2026-11-05.jpg
 
 | Activo | Nivel | Cambio |
 |---|---|---|
-| S&P 500 | — | — |
-| Nasdaq Composite | — | — |
-| Russell 2000 | — | — |
-| Dow Jones | — | — |
-| VIX | — | — |
+| S&P 500 | 7,353.73 | -4.36% |
+| Nasdaq Composite | 24,315.00 | -5.52% |
+| Russell 2000 | 2,729.84 | -4.45% |
+| Dow Jones | 51,523.06 | -3.44% |
+| VIX | 27.87 | +66.79% |
 | S&P/BMV IPC | — | — |
 | USD/MXN | 18.8148 (FIX Banxico, viernes 30-oct) | — |
-| US 10Y | — | — |
-| WTI | — | — |
+| US 10Y | 4.837% | -1.16% |
+| WTI | $90.54 (futuro Dic-26) | +2.75% |
 
 ## Market Regime
 
-Wall Street abre el jueves con futuros mixtos, un día después de que el Dow Jones tuviera su mejor sesión en más de un año (+3.03%, a 53,356.12) por el alivio tras las elecciones intermedias y el desplome del petróleo. Esta madrugada, el ánimo se invirtió parcialmente en semiconductores: los futuros de Nasdaq cayeron ante el temor de que nuevos funcionarios electos —incluido un gobernador electo que prometió una moratoria a la construcción de centros de datos— busquen restringir la expansión de infraestructura de IA, mientras los futuros del Dow se mantuvieron en terreno positivo. Las solicitudes de desempleo de la semana, el Banco de Inglaterra y varios discursos de funcionarios de la Fed son los eventos del día antes del reporte de nóminas de octubre, programado para mañana viernes.
+Wall Street vivió el jueves su peor sesión en meses, revirtiendo por completo el rally post-electoral del miércoles: el Nasdaq Composite se desplomó 5.52% a 24,315.00, entrando en territorio de corrección al cotizar 10% por debajo de su máximo histórico del mes pasado, mientras el S&P 500 cayó 4.36% a 7,353.73 y el Dow Jones perdió más de 1,800 puntos (-3.44%) a 51,523.06. El VIX saltó 66.79% a 27.87, su mayor alza diaria en más de dos años —una señal de pánico que contrasta de forma abrupta con la euforia de apenas 24 horas antes—. La liquidación se concentró en semiconductores e infraestructura de IA: el Índice de Semiconductores de Filadelfia cayó cerca de 12%, con Lam Research y Applied Materials acumulando caídas de 36% y 30% en el último mes, respectivamente, y Micron, AMD y Nvidia cayendo entre 9% y 15% en el día. Varios analistas atribuyeron la venta principalmente a fondos de cobertura asegurando ganancias de 2026 antes de fin de año —lo que un estratega describió como "disparar a los generales"— más que a un deterioro fundamental súbito, aunque el temor regulatorio sobre la construcción de centros de datos que surgió tras las elecciones intermedias también pesó sobre el sector.
 
-Scorecard: Trend → → (rally del miércoles sin continuidad clara esta mañana) · Breadth → ↓ (semiconductores bajo presión, en contraste con la fortaleza del resto del mercado ayer) · Momentum → → (futuros mixtos, sin dirección definida hacia la apertura) · Volatility → — (sin cifra confirmada de VIX para esta edición) · Rates → — (sin cifra confirmada de Treasury para esta edición) · USD → — (sin FIX de Banxico actualizado para hoy)
+Scorecard: Trend → ↓ (reversión completa del rally del miércoles, la sesión más negativa en meses) · Breadth → ↓ (liquidación generalizada en semiconductores, software de IA y nombres vinculados a Musk) · Momentum → ↓ (el Nasdaq entró en corrección formal, 10% por debajo de su máximo) · Volatility → ↑ (VIX con su mayor salto diario en más de dos años) · Rates → ↓ (Treasury a 10 años bajó a 4.837%, señal de refugio en bonos) · USD → — (sin FIX de Banxico actualizado para hoy)
 
 ## Qué importó hoy
 
-**Los futuros de semiconductores cayeron esta madrugada ante el temor de que nuevos funcionarios electos busquen restringir la construcción de centros de datos de IA.** El resultado de las elecciones intermedias, que esta serie cubrió ayer, introdujo un riesgo regulatorio nuevo que el mercado empezó a descontar de inmediato: al menos un gobernador electo prometió en campaña una moratoria a la construcción de este tipo de infraestructura en su estado. Horizonte: Position.
+**El Nasdaq entró en corrección formal y el Dow perdió más de 1,800 puntos, en la sesión más negativa de Wall Street en meses.** La liquidación revirtió por completo el rally post-electoral del miércoles y se concentró en semiconductores e infraestructura de IA: Micron cayó cerca de 12%, AMD alrededor de 15% y Nvidia cerca de 9%, mientras Palantir y CrowdStrike cayeron más de 10% en sus mínimos del día. Analistas atribuyeron la venta principalmente a toma de utilidades de fondos de cobertura antes de fin de año, no a un deterioro fundamental súbito. Horizonte: Swing.
 
-**Qualcomm, McDonald's y Uber reportaron resultados el miércoles, los tres con utilidad por acción por encima del consenso, pero con historias de fondo distintas que esta serie documentó en una nota de seguimiento separada.** Qualcomm superó expectativas mientras su negocio de chips para celulares caía 26%; McDonald's superó utilidad pero no ingresos; Uber combinó crecimiento operativo fuerte con una utilidad contable golpeada por pérdidas de inversión. Horizonte: Swing.
+**El temor a que nuevos funcionarios electos restrinjan la construcción de centros de datos de IA, que esta serie documentó ayer como riesgo incipiente, se materializó hoy como un factor de presión real sobre el sector.** Compañías de infraestructura de nube y ciberseguridad como Cloudflare, Oracle y Palo Alto Networks también registraron pérdidas pronunciadas, señal de que el riesgo regulatorio ya no se limita a los fabricantes de chips. Horizonte: Position.
 
-**Las solicitudes iniciales de desempleo de la semana se publican hoy, con un consenso cercano a 196,000 frente a una lectura previa de 194,000.** El dato llega un día antes del reporte de nóminas de octubre, programado para mañana viernes, con una expectativa de consenso cercana a 65,000 empleos agregados y una tasa de desempleo de 4.2%. Horizonte: Position.
+**Las solicitudes iniciales de desempleo bajaron a 189,000, mejor de lo esperado y cerca de su nivel más bajo desde finales de los años sesenta; las solicitudes continuas subieron a 1.72 millones.** Es un dato que, en un día normal, el mercado habría leído como señal de fortaleza del mercado laboral, pero quedó completamente eclipsado por la liquidación en tecnología. Horizonte: Position.
 
-**El Banco de Inglaterra anuncia hoy su decisión de tasas, con el mercado esperando mayoritariamente un alza a 4%.** No es un evento que mueva directamente al mercado estadounidense, pero forma parte del mismo ciclo de decisiones de bancos centrales que esta semana también incluyó la ausencia de sorpresas mayores en la política de la Fed. Horizonte: Position.
+**El petróleo subió 2.75% a $90.54 por barril, revirtiendo parte del desplome de los dos días anteriores, ante incertidumbre sobre un posible acuerdo entre Estados Unidos e Irán.** El Brent cotizó cerca de $98. Es un movimiento que contrasta con la caída de casi 8% del miércoles, reforzando la volatilidad del petróleo como uno de los activos más erráticos de la semana. Horizonte: Swing.
+
+**El Banco de Inglaterra subió su tasa de referencia a 4%, su primera alza desde 2023.** Es un evento que no mueve directamente al mercado estadounidense, pero se suma a una semana ya cargada de decisiones de bancos centrales y resultado electoral. Horizonte: Position.
 
 ## Macro
 
-Las solicitudes iniciales de desempleo de la semana se publican hoy a las 8:30am ET, con un consenso cercano a 196,000. El reporte de nóminas no agrícolas de octubre, el dato de empleo más esperado de la semana, está programado para mañana viernes.
+Las solicitudes iniciales de desempleo bajaron a 189,000, por debajo del consenso de 196,000 y cerca de su nivel más bajo desde finales de los años sesenta. Las solicitudes continuas subieron 23,000 a 1.72 millones. El reporte de nóminas no agrícolas de octubre, el dato de empleo más esperado de la semana, está programado para mañana viernes.
 
 ## Tasas y bonos
 
-No localizamos con confianza un nivel actualizado del Treasury a 10 años para esta edición; el último dato confirmado por esta serie es el cierre del miércoles en 4.894%. Varios funcionarios de la Reserva Federal, incluidos Hammack y Barkin, tienen comparecencias programadas para hoy.
+El Treasury a 10 años cerró en 4.837%, una baja de 1.16% frente al cierre del miércoles, consistente con una demanda de refugio ante la liquidación en renta variable.
 
 ## FX y commodities
 
-No localizamos con confianza un FIX de Banxico más reciente que el del viernes 30 de octubre (18.8148), ni un nivel de apertura confirmado para el WTI esta mañana; el último cierre confirmado es el del miércoles ($88.57 por barril), tras el desplome de 7.83% del día anterior.
+No localizamos con confianza un FIX de Banxico más reciente que el del viernes 30 de octubre (18.8148), ni un nivel de cierre confirmado para el S&P/BMV IPC de hoy. El WTI cerró en $90.54 por barril (contrato de diciembre), +2.75%, revirtiendo parte del desplome de los dos días anteriores ante incertidumbre sobre un acuerdo entre Estados Unidos e Irán; el Brent cotizó cerca de $98.
 
 ## Sectores
 
-Semiconductores es el sector bajo mayor presión esta mañana, por el riesgo regulatorio que introdujo el resultado electoral sobre la construcción de centros de datos de IA. Es un riesgo distinto al que esta serie ha documentado en semanas anteriores sobre la rentabilidad del capex de IA: aquí la preocupación no es financiera, sino regulatoria.
+Semiconductores e infraestructura de IA fueron, por mucho, los sectores más golpeados del día, con el Índice de Semiconductores de Filadelfia cayendo cerca de 12%. La liquidación se extendió a software de ciberseguridad y nube (Cloudflare, Oracle, Palo Alto Networks, CrowdStrike) y a nombres vinculados a Elon Musk (SpaceX y Tesla, ambas con caídas superiores a 9%, por preocupaciones de fusión y regulación). AppLovin fue una excepción notable, subiendo cerca de 23% en premarket tras superar estimaciones del tercer trimestre y ofrecer una guía optimista.
 
 ## Swing
 
-El evento de mayor peso para los próximos días es si el temor regulatorio sobre centros de datos se traduce en propuestas legislativas concretas una vez que los nuevos funcionarios electos tomen posesión, o si se queda como una preocupación de mercado sin desarrollo inmediato, dado que el cambio de poder legislativo no ocurre hasta enero de 2027.
+El evento de mayor peso para los próximos días es si la liquidación de hoy fue, como sugieren varios analistas, un ajuste técnico de toma de utilidades antes de fin de año, o el inicio de una revalorización más profunda del riesgo en infraestructura de IA. La reacción del mercado al reporte de nóminas de mañana, en un entorno ya de alta volatilidad, es el segundo punto a vigilar de cerca.
 
 ## Position
 
-El reporte de nóminas no agrícolas de octubre, programado para mañana viernes, es el evento de mayor peso de la semana: será el primer dato de empleo completo desde el reporte débil de septiembre, y una referencia clave para la probabilidad de un alza de la Fed en su reunión de diciembre.
+El reporte de nóminas no agrícolas de octubre, programado para mañana viernes, es el evento de mayor peso de la semana: será el primer dato de empleo completo desde el reporte débil de septiembre, y una referencia clave para la probabilidad de un alza de la Fed en su reunión de diciembre, ahora en un contexto de mercado considerablemente más volátil que el de hace 24 horas.
 
 ## Long Term
 
-La posibilidad de que gobiernos estatales individuales impongan moratorias a la construcción de centros de datos de IA, señalada por primera vez esta semana tras el resultado electoral, es un tema estructural nuevo que esta serie seguirá de cerca: a diferencia del riesgo financiero del capex de IA ya documentado, este es un riesgo regulatorio con el potencial de limitar físicamente dónde se puede construir esa infraestructura, independientemente de si el financiamiento está disponible.
+La corrección del Nasdaq de hoy, apenas un día después de la mejor sesión del Dow en más de un año, es el ejemplo más claro hasta ahora de la volatilidad que esta serie ha documentado repetidamente en las últimas semanas sobre la narrativa de infraestructura de IA: el mercado oscila con fuerza entre el entusiasmo y el escrutinio, sin que ninguno de los dos extremos logre consolidarse por más de una sesión.
 
 ## Earnings y calendario
 
@@ -79,28 +81,26 @@ Sin reportes de resultados de peso programados para hoy en el calendario de esta
 
 ## Riesgos
 
-El riesgo central de hoy es que la preocupación regulatoria sobre centros de datos se extienda más allá de los nombres de semiconductores y afecte también a las grandes tecnológicas de nube con planes de expansión de infraestructura. Un segundo riesgo es que el reporte de solicitudes de desempleo de hoy, o el de nóminas de mañana, sorprenda al mercado en una semana que ya trae suficiente volatilidad propia.
+El riesgo central hacia adelante es que la liquidación de hoy, si no es solo un ajuste técnico de fin de año como sugieren algunos analistas, marque el inicio de una revalorización más amplia y sostenida del riesgo en infraestructura de IA. Un segundo riesgo es que la volatilidad actual (VIX en 27.87) amplifique la reacción del mercado al reporte de nóminas de mañana, en cualquier dirección que sorprenda al consenso.
 
 ## Qué vigilar mañana
 
-- Reporte de nóminas no agrícolas de octubre, el dato de empleo más esperado de la semana.
-- Si la presión sobre semiconductores por el riesgo regulatorio de centros de datos se sostiene o se revierte.
-- Decisión de tasas del Banco de Inglaterra.
-- Resultado de las solicitudes de desempleo de hoy frente al consenso de 196,000.
-- Comparecencias de funcionarios de la Fed (Hammack, Barkin).
+- Reporte de nóminas no agrícolas de octubre, el dato de empleo más esperado de la semana, en un entorno de volatilidad ya elevada.
+- Si la liquidación en semiconductores e infraestructura de IA se extiende o se estabiliza.
+- Evolución del VIX tras su mayor salto diario en más de dos años.
+- Si el petróleo sostiene el repunte de hoy o revierte hacia la caída de los días anteriores.
+- Reacción adicional a la decisión de tasas del Banco de Inglaterra.
 
 ## Pendientes de esta edición
 
-- S&P 500, Nasdaq Composite, Russell 2000, Dow Jones y VIX: no localizamos con confianza niveles de apertura o premarket para esta edición.
-- US 10Y: no localizamos con confianza un nivel actualizado; el último dato confirmado es el cierre del miércoles (4.894%).
-- WTI: no localizamos con confianza un nivel de apertura confirmado para esta mañana; el último cierre confirmado es el del miércoles ($88.57).
+- S&P/BMV IPC: no localizamos con confianza un nivel de cierre para hoy.
 - USD/MXN: no localizamos con confianza un FIX de Banxico más reciente que el del 30 de octubre.
 
 ## Fuentes
 
-- [NEXUS Technology Morning Note — Thursday, November 5, 2026](https://nexusresearchreports.substack.com/p/nexus-technology-morning-note-thursday) — NEXUS Research Reports
-- [What Drives the Market: Top Morning News (November 5, 2026)](https://xtb.com/en/market-analysis/what-drives-the-market-top-morning-news-november-5-2026) — XTB
-- [Morning Preview: November 05, 2026](https://investrade.com/morning-preview-november-05-2026/) — Investrade
-- [Morning Juice - US Session Prep (5th November)](https://features.financialjuice.com/2026/11/05/morning-juice-us-session-prep-5th-november-2/) — FinancialJuice
+- [Dow drops 1,800 points; Nasdaq tumbles into correction territory on AI tech wreck: Live updates](https://www.cnbc.com/2026/11/04/stock-market-today-live-updates.html) — CNBC
+- [Stock market today: Dow plunges 1,800 points, Nasdaq enters correction in AI trade meltdown](https://finance.yahoo.com/markets/live/stock-market-today-thursday-november-5-dow-sp-500-nasdaq-oil-rises-chip-stocks-141439950.html) — Yahoo Finance
+- [VIX Spikes 39% as AI Tech Rout Wipes Out $2.2 Trillion: Stock Market Today](https://www.tradingview.com/news/benzinga:5f58d23d6094b:0-vix-spikes-39-as-ai-tech-rout-wipes-out-2-2-trillion-stock-market-today/) — TradingView / Benzinga
+- [U.S. stocks lower at close of trade; Dow Jones Industrial Average down 3.45%](https://www.investing.com/news/stock-market-news/us-stocks-lower-at-close-of-trade-dow-jones-industrial-average-down-345-5005517) — Investing.com
 - [Qualcomm, McDonald's y Uber reportaron el mismo día: tres beats de utilidad, tres reacciones distintas](/blog/qualcomm-mcdonalds-uber-resultados-4-noviembre-2026) — jgonzalez.app
 - [Pulso de Mercado — Daily · 04/11/2026](/blog/pulso-mercado-daily-2026-11-04) — jgonzalez.app
