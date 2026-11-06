@@ -43,8 +43,8 @@ No localizamos con confianza una fecha exacta para el dato del Índice Nacional 
 | [Qualcomm](/blog/qualcomm-mcdonalds-uber-resultados-4-noviembre-2026) | QCOM | Miércoles 4 de noviembre | Después del cierre | Semiconductores | Referencia adicional sobre demanda de chips fuera del centro de datos de IA (móviles, automotriz) |
 | [McDonald's](/blog/qualcomm-mcdonalds-uber-resultados-4-noviembre-2026) | MCD | Miércoles 4 de noviembre | Antes de la apertura | Consumo discrecional | Referencia sobre gasto del consumidor estadounidense de ingresos medios y bajos |
 | [Uber](/blog/qualcomm-mcdonalds-uber-resultados-4-noviembre-2026) | UBER | Miércoles 4 de noviembre | Antes de la apertura | Tecnología / Movilidad | Referencia sobre gasto discrecional en movilidad y entrega a domicilio |
-| Airbnb | ABNB | Jueves 5 de noviembre | Después del cierre | Consumo discrecional / Viajes | Referencia sobre gasto en viajes hacia el cierre de año |
-| ConocoPhillips | COP | Jueves 5 de noviembre | Antes de la apertura | Energía | Reporta en una semana donde el petróleo sigue elevado por tensión geopolítica sostenida desde octubre |
+| [Airbnb](/blog/airbnb-conocophillips-resultados-5-noviembre-2026) | ABNB | Jueves 5 de noviembre | Después del cierre | Consumo discrecional / Viajes | Referencia sobre gasto en viajes hacia el cierre de año |
+| [ConocoPhillips](/blog/airbnb-conocophillips-resultados-5-noviembre-2026) | COP | Jueves 5 de noviembre | Antes de la apertura | Energía | Reporta en una semana donde el petróleo sigue elevado por tensión geopolítica sostenida desde octubre |
 
 La cifra exacta de empresas reportando cada día (cerca de 60 el lunes, más de 100 el martes, y por encima de 150 tanto el miércoles como el jueves, según un calendario de earnings consultado para esta edición) no la tomamos como confirmada con una segunda fuente independiente para cada ticker individual; los nombres listados arriba son los de mayor peso de mercado o relevancia editorial para esta serie.
 
