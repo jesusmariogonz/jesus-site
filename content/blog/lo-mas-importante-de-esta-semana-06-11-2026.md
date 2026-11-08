@@ -14,6 +14,10 @@ tags:
 resumen: 'Banxico sorprendió con un recorte de tasa a 6.25%, con el consejo dividido 3-2, justo cuando la inflación mexicana repuntaba y el peso ya se depreciaba. En Estados Unidos, el reporte de empleo de octubre llegó muy por encima de lo esperado, reduciendo el margen de la Fed para recortar en diciembre — dos bancos centrales moviéndose en direcciones contrarias en la misma semana.'
 imagen: /blog/portadas/lo-mas-importante-de-esta-semana-06-11-2026.jpg
 socialImagen: /blog/social/lo-mas-importante-de-esta-semana-06-11-2026.jpg
+postura:
+  pregunta: '¿Fue un error de Banxico recortar la tasa justo cuando la inflación repuntaba y el peso ya estaba bajo presión?'
+  aFavor: 'El consejo leyó correctamente que la economía necesitaba más liquidez ante señales de desaceleración, y un repunte inflacionario de 3.45% a 3.62% sigue dentro del rango manejable — mantener la tasa alta por una décima de más habría penalizado la actividad económica sin beneficio real de corto plazo.'
+  enContra: 'Recortar justo cuando la inflación sube y el peso ya se deprecia manda la señal de que Banxico prioriza el crecimiento sobre el control de precios, arriesgando más depreciación, inflación importada vía bienes más caros, y menos margen de maniobra si la inflación sigue subiendo en los próximos meses.'
 ---
 
 ¿Qué hace un banco central cuando la inflación acaba de repuntar y aun así decide recortar la tasa de interés? Eso es exactamente lo que hizo Banxico esta semana, y la respuesta no fue unánime ni dentro de su propio consejo. Mientras tanto, del otro lado de la frontera, la Reserva Federal recibió el argumento contrario: un mercado laboral mucho más fuerte de lo esperado, justo cuando el mercado ya daba por hecho que diciembre traería un recorte. Dos bancos centrales, la misma semana, moviéndose —o viéndose presionados a moverse— en direcciones opuestas.
