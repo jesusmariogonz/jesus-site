@@ -576,12 +576,15 @@ function ModuloOperaciones({ data }) {
               <tr>
                 <th>Estado</th>
                 <th>Símbolo</th>
+                <th>Tipo</th>
                 <th>Bucket</th>
                 <th>Entrada</th>
                 <th>Precio entrada</th>
+                <th>Stop inicial</th>
                 <th>Salida</th>
                 <th>Precio salida</th>
                 <th>Precio cierre hoy</th>
+                <th>Trailing stop actual</th>
                 <th>P&amp;L</th>
                 <th>Rendimiento</th>
                 <th>Motivo</th>
@@ -596,12 +599,15 @@ function ModuloOperaciones({ data }) {
                     </span>
                   </td>
                   <td><LinkSimbolo symbol={p.symbol} /></td>
+                  <td>{p.asset_type ?? "—"}</td>
                   <td>{p.bucketEtiqueta}</td>
                   <td>{p.entry_date}</td>
                   <td>{p.entry_price != null ? `$${p.entry_price}` : "—"}</td>
+                  <td>{p.initial_stop_price != null ? `$${p.initial_stop_price}` : "—"}</td>
                   <td>{p.estado === "cerrada" ? p.exit_date || "—" : "—"}</td>
                   <td>{p.estado === "cerrada" && p.exit_price != null ? `$${p.exit_price}` : "—"}</td>
                   <td>{p.estado === "abierta" && p.current_price != null ? `$${p.current_price}` : "—"}</td>
+                  <td>{p.stop_price != null ? `$${p.stop_price}` : "—"}</td>
                   <td style={{ color: toneColor(tonoDe(p.estado === "cerrada" ? p.pnl : p.unrealized_pnl)) }}>
                     {p.estado === "cerrada"
                       ? `$${p.pnl}`
