@@ -39,6 +39,7 @@ function convertirPaperTradingAMxn(paperTrading) {
     ...p,
     entry_price: pesosDeUsd(p.entry_price, rate),
     stop_price: pesosDeUsd(p.stop_price, rate),
+    initial_stop_price: pesosDeUsd(p.initial_stop_price, rate),
     exit_price: pesosDeUsd(p.exit_price, rate),
     current_price: pesosDeUsd(p.current_price, rate),
     pnl: pesosDeUsd(p.pnl, rate),
@@ -217,11 +218,14 @@ function TablaPosiciones({ posiciones, tipo }) {
         <thead>
           <tr>
             <th>Símbolo</th>
+            <th>Tipo</th>
             <th>Estrategia</th>
             <th>Entrada</th>
             <th>Precio entrada</th>
-            {tipo === "abiertas" ? <th>Stop</th> : <th>Salida</th>}
+            <th>Stop inicial</th>
+            {tipo === "abiertas" ? <th>Trailing stop actual</th> : <th>Stop al cierre</th>}
             {tipo === "abiertas" ? <th>Acciones</th> : <th>P&amp;L</th>}
+            {tipo === "cerradas" && <th>Salida</th>}
             {tipo === "cerradas" && <th>Razón</th>}
           </tr>
         </thead>
@@ -229,10 +233,12 @@ function TablaPosiciones({ posiciones, tipo }) {
           {posiciones.map((p, i) => (
             <tr key={`${p.symbol}-${p.entry_date}-${i}`}>
               <td>{p.symbol}</td>
+              <td>{p.asset_type ?? "—"}</td>
               <td>{p.strategy}</td>
               <td>{p.entry_date}</td>
               <td>${p.entry_price}</td>
-              {tipo === "abiertas" ? <td>${p.stop_price}</td> : <td>${p.exit_price}</td>}
+              <td>{p.initial_stop_price != null ? `$${p.initial_stop_price}` : "—"}</td>
+              <td>${p.stop_price}</td>
               {tipo === "abiertas" ? (
                 <td>{p.shares}</td>
               ) : (
@@ -240,6 +246,7 @@ function TablaPosiciones({ posiciones, tipo }) {
                   ${p.pnl} ({p.pnl_pct}%)
                 </td>
               )}
+              {tipo === "cerradas" && <td>${p.exit_price}</td>}
               {tipo === "cerradas" && <td>{p.reason === "stop_hit" ? "Stop" : "Señal"}</td>}
             </tr>
           ))}
