@@ -507,6 +507,33 @@ function ModuloPortafolios({ data }) {
           </table>
         </div>
       </div>
+
+      {data.blend && (
+        <div className="pulsodash-panel" style={{ marginTop: 24 }}>
+          <div className="pulsodash-panel-head">
+            <span className="pulsodash-panel-title">Cash ocioso — Blend SPY/GLD</span>
+          </div>
+          <p className="pulsodash-vacio" style={{ marginTop: 0 }}>
+            El cash que no está asignado a ninguna posición de los buckets de arriba se invierte
+            en un blend 50% SPY / 50% GLD en vez de quedarse parado. Su valor ya está incluido
+            dentro del equity de cada bucket — esto solo lo muestra por separado para que se vea
+            cuánto ha ganado o perdido específicamente.
+          </p>
+          <div className="trading-stat-grid" style={{ marginTop: 8 }}>
+            <StatCard etiqueta="Valor actual" valor={`$${data.blend.equityActual}`} />
+            <StatCard
+              etiqueta="Ganancia/Pérdida"
+              valor={`$${data.blend.gananciaPerdida}`}
+              tono={tonoDe(data.blend.retornoPct)}
+            />
+            <StatCard
+              etiqueta="Retorno"
+              valor={pct(data.blend.retornoPct)}
+              tono={tonoDe(data.blend.retornoPct)}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
