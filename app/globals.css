@@ -4609,6 +4609,112 @@ html:not(.dark) .pglobe-land {
   gap: 18px;
 }
 
+/* ---------- Pulso de Mercado: subnav de áreas (Mercado/Research/Trading) ---------- */
+
+.pulso-areas-subnav {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+.pulso-areas-subnav a {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: border-color 0.15s, color 0.15s;
+}
+.pulso-areas-subnav a:hover { border-color: var(--accent); color: var(--text); }
+.pulso-areas-subnav a.activo {
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ---------- Research Lab ---------- */
+
+.research-lab-banner {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 20px 22px;
+  border-radius: var(--radius);
+  background: linear-gradient(145deg, #0b1324, #111b2e);
+  border: 1px solid #1f2b45;
+  text-decoration: none;
+  transition: transform 0.15s, border-color 0.15s;
+}
+.research-lab-banner:hover { transform: translateY(-2px); border-color: #3b82f6; }
+.research-lab-banner-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #60a5fa;
+}
+.research-lab-banner-titulo { color: #fff; font-size: 1.15rem; font-weight: 700; margin: 0; }
+.research-lab-banner-desc { color: #a9b4c7; font-size: 0.88rem; line-height: 1.5; margin: 0; }
+.research-lab-banner-cta {
+  margin-top: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: #60a5fa;
+}
+
+.research-lab-counters {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+.research-lab-counter {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 14px 20px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  min-width: 150px;
+}
+.research-lab-counter-valor {
+  font-family: var(--font-mono);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+.research-lab-counter-etiqueta {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.research-domains-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+.research-domain-card {
+  padding: 18px 20px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+.research-domain-card h3 { margin: 0 0 8px; font-size: 1.02rem; }
+.research-domain-card p { margin: 0 0 12px; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; }
+.research-domain-metodos { display: flex; flex-wrap: wrap; gap: 6px; }
+.research-domain-metodo {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
 /* ---------- Trading Algorítmico ---------- */
 
 .trading-algo-banner {

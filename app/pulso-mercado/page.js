@@ -15,6 +15,8 @@ import MercadosScreener from "@/components/MercadosScreener";
 import MarketSnapshotTabla from "@/components/MarketSnapshotTabla";
 import LibrosMercadoBanner from "@/components/LibrosMercadoBanner";
 import TradingAlgoritmicoBanner from "@/components/TradingAlgoritmicoBanner";
+import ResearchLabBanner from "@/components/ResearchLabBanner";
+import PulsoMercadoSubnav from "@/components/PulsoMercadoSubnav";
 import { absUrl } from "@/lib/site";
 
 // Dinámico (no estático) para que "Próxima corrida" en cada tarjeta
@@ -235,6 +237,7 @@ export default async function PulsoMercadoDashboard() {
       <TickerTape />
       <section className="section">
       <div className="container pulsodash">
+        <PulsoMercadoSubnav activo="mercado" />
         <header className="pulsodash-hero">
           <span className="pulsodash-eyebrow">
             Market Pulse{daily ? ` · ${formatFecha(daily.fecha)}` : ""}
@@ -266,8 +269,9 @@ export default async function PulsoMercadoDashboard() {
               <MarketSnapshotTabla filas={snapshotFilas} />
             </div>
             <div className="pulsodash-banners-col">
-              <LibrosMercadoBanner />
+              <ResearchLabBanner />
               <TradingAlgoritmicoBanner />
+              <LibrosMercadoBanner />
             </div>
           </div>
         )}

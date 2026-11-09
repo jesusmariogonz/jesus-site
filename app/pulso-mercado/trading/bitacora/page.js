@@ -5,7 +5,7 @@ import { absUrl } from "@/lib/site";
 export const metadata = {
   title: "Bitácora de decisiones — Trading Algorítmico",
   description:
-    "Las 19 decisiones de diseño del sistema de trading algorítmico, incluyendo lo que se probó y se descartó, con la evidencia real detrás de cada una.",
+    "Las 27 decisiones de diseño del sistema de trading algorítmico, incluyendo lo que se probó y se descartó, con la evidencia real detrás de cada una.",
   alternates: { canonical: "/pulso-mercado/trading/bitacora" },
   openGraph: {
     type: "website",
@@ -28,6 +28,7 @@ export default function BitacoraPage() {
       <div className="container horizonte-page activo-page">
         <span className="pulsodash-eyebrow">
           <Link href="/pulso-mercado/trading">Trading Algorítmico</Link> · Bitácora de decisiones
+          · Engineering &amp; Decision Log
         </span>
         <h1>Bitácora de decisiones (ADR)</h1>
         <p className="activo-descripcion">

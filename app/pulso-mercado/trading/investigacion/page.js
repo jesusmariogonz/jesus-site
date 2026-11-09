@@ -18,7 +18,8 @@ export default function InvestigacionPage() {
     <section className="section">
       <div className="container horizonte-page activo-page">
         <span className="pulsodash-eyebrow">
-          <Link href="/pulso-mercado/trading">Trading Algorítmico</Link> · Investigación
+          <Link href="/pulso-mercado/trading">Trading Algorítmico</Link> · Investigación ·
+          Strategy Research &amp; Validation
         </span>
         <h1>Investigación y metodología</h1>
         <p className="activo-descripcion">
