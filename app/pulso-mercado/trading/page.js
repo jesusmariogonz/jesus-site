@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { getTradingPublicSnapshot, TRADING_DISCLAIMER } from "@/lib/trading/public-snapshot";
 import TradingPublicoExplorer from "@/components/TradingPublicoExplorer";
-import PulsoMercadoSubnav from "@/components/PulsoMercadoSubnav";
 import { absUrl } from "@/lib/site";
 
 export const metadata = {
@@ -202,7 +201,6 @@ export default function TradingPublicoPage() {
   return (
     <section className="section">
       <div className="container pulsodash">
-        <PulsoMercadoSubnav activo="trading" />
         <header className="pulsodash-hero">
           <span className="pulsodash-eyebrow">Pulso de Mercado · The Quantitative Experiment · Strategy Dashboard</span>
           <h1>Trading Algorítmico</h1>

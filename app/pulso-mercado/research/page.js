@@ -1,5 +1,4 @@
 import Link from "next/link";
-import PulsoMercadoSubnav from "@/components/PulsoMercadoSubnav";
 import { absUrl } from "@/lib/site";
 
 export const metadata = {
@@ -69,7 +68,6 @@ export default function ResearchLabPage() {
   return (
     <section className="section">
       <div className="container horizonte-page activo-page">
-        <PulsoMercadoSubnav activo="research" />
         <span className="pulsodash-eyebrow">
           <Link href="/pulso-mercado">Pulso de Mercado</Link> · Research Lab
         </span>

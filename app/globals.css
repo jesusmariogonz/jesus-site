@@ -4609,30 +4609,13 @@ html:not(.dark) .pglobe-land {
   gap: 18px;
 }
 
-/* ---------- Pulso de Mercado: subnav de áreas (Mercado/Research/Trading) ---------- */
+/* ---------- Pulso de Mercado: tarjetas de áreas arriba del dashboard ---------- */
 
-.pulso-areas-subnav {
-  display: flex;
-  gap: 6px;
-  margin-bottom: 18px;
-}
-.pulso-areas-subnav a {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: 6px 14px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  color: var(--text-secondary);
-  text-decoration: none;
-  transition: border-color 0.15s, color 0.15s;
-}
-.pulso-areas-subnav a:hover { border-color: var(--accent); color: var(--text); }
-.pulso-areas-subnav a.activo {
-  border-color: var(--accent);
-  color: var(--accent);
-  font-weight: 600;
+.pulso-areas-top {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
 }
 
 /* ---------- Research Lab ---------- */
