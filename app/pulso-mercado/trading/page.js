@@ -62,8 +62,8 @@ function BloqueExplicativo({ resumen }) {
               OOS 1.33→2.25, retorno 8.91%→19.14%, 0 de 5 ventanas con pérdida.
             </li>
           </ul>
-          <Link href="/pulso-mercado/trading/historia" className="trading-historia-link">
-            Ver la historia completa (37 decisiones, incluyendo el motor en vivo de IBKR) →
+          <Link href="/pulso-mercado/trading/bitacora" className="trading-historia-link">
+            Ver las 37 decisiones completas en la Bitácora →
           </Link>
         </div>
 
@@ -146,8 +146,9 @@ function BloqueExplicativo({ resumen }) {
             gráfico en esta página. Los 3 buckets actuales se restauraron el 5-nov-2026 tras
             revertir Mean Reversion — el paper trading diario con esta configuración todavía
             tiene muy poco historial propio. Este número tampoco incluye todavía el filtro de
-            cross-sectional momentum agregado a Largo Plazo el 6-nov-2026 (ver historia completa)
-            — no se ha vuelto a correr el backtest oficial de 36 meses con esa pieza incluida.
+            cross-sectional momentum agregado a Largo Plazo el 6-nov-2026 (ver{" "}
+            <Link href="/pulso-mercado/trading/bitacora">Bitácora</Link>, ADR 0034) — no se ha
+            vuelto a correr el backtest oficial de 36 meses con esa pieza incluida.
           </p>
         </div>
 

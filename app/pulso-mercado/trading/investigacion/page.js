@@ -71,7 +71,7 @@ export default function InvestigacionPage() {
               percentil ≥70 de retorno relativo dentro de su propio universo, el mismo día —
               descarta ~67.5% de las señales candidatas a cambio de un Sharpe fuera de muestra de
               2.25 frente a 1.33 sin el filtro (ver{" "}
-              <Link href="/pulso-mercado/trading/historia">historia completa</Link>).
+              <Link href="/pulso-mercado/trading/bitacora">Bitácora</Link>, ADR 0034).
             </li>
             <li>
               <strong>Trend Following</strong> (buckets Mediano Plazo y Riesgo Alto) — alineación
