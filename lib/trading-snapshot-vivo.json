@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-09T21:38:24.969311+00:00",
+  "generated_at": "2026-11-09T21:58:35.420203+00:00",
   "source": "algo_trading_platform motor EN VIVO (cuenta paper real de IBKR, ver ADR 0022/0023)",
   "buckets": {
     "largo_plazo": {
-      "starting_capital": 871.11,
+      "starting_capital": 521.81,
       "open_positions": [
         {
           "symbol": "DBC",
@@ -22,7 +22,7 @@
           "strategy": "time_series_momentum",
           "entry_date": "2026-11-08",
           "entry_price": 95.16,
-          "stop_price": 92.66296495710101,
+          "stop_price": 92.66,
           "shares": 3,
           "asset_type": "Equity ETF",
           "current_price": 97.3,
@@ -34,7 +34,7 @@
           "strategy": "time_series_momentum",
           "entry_date": "2026-11-08",
           "entry_price": 101.55,
-          "stop_price": 100.6303574698312,
+          "stop_price": 100.63,
           "shares": 4,
           "asset_type": "Equity ETF",
           "current_price": 104.96,
@@ -46,7 +46,7 @@
           "strategy": "time_series_momentum",
           "entry_date": "2026-11-08",
           "entry_price": 137.56,
-          "stop_price": 134.3164291381836,
+          "stop_price": 134.32,
           "shares": 2,
           "asset_type": "Equity ETF",
           "current_price": 141.72,
@@ -58,7 +58,7 @@
           "strategy": "time_series_momentum",
           "entry_date": "2026-11-08",
           "entry_price": 362.31,
-          "stop_price": 354.22318376813615,
+          "stop_price": 354.22,
           "shares": 1,
           "asset_type": "Equity ETF",
           "current_price": 370.9,
@@ -159,18 +159,18 @@
           "open_count": 5,
           "closed_today": 0,
           "realized_pnl_today": 0,
-          "cumulative_return_pct": -40.1,
+          "cumulative_return_pct": 0.0,
           "closed_today_detail": [],
           "ordenes_fallidas_hoy": [],
-          "daily_loss_pct": 40.1,
-          "drawdown_pct": 41.84,
-          "daily_loss_breaker_tripped": true,
-          "suspended": true,
-          "suspended_reason": "Drawdown 41.8% alcanzó el límite de revisión (6%)",
-          "newly_suspended_today": true
+          "daily_loss_pct": 0.0,
+          "drawdown_pct": 0.0,
+          "daily_loss_breaker_tripped": false,
+          "suspended": false,
+          "suspended_reason": null,
+          "newly_suspended_today": false
         }
       ],
-      "suspended": true
+      "suspended": false
     },
     "mediano_plazo": {
       "starting_capital": 689.2,

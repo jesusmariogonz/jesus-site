@@ -3,17 +3,17 @@
     "fecha": "2026-11-09",
     "bucket": "largo_plazo",
     "bucket_label": "Largo Plazo",
-    "capital_inicial": 871.11,
+    "capital_inicial": 521.81,
     "equity": 521.81,
-    "ganancia_perdida": -349.3,
-    "retorno_pct": -40.1,
-    "drawdown_pct": 41.84,
+    "ganancia_perdida": 0.0,
+    "retorno_pct": 0.0,
+    "drawdown_pct": 0.0,
     "abiertas": 5,
     "cerradas": 0,
     "ganadoras": 0,
     "win_rate_pct": null,
-    "suspended": true,
-    "actualizado": "2026-11-09T21:38:44.392330+00:00"
+    "suspended": false,
+    "actualizado": "2026-11-09T21:58:37.334108+00:00"
   },
   {
     "fecha": "2026-11-09",
@@ -29,7 +29,7 @@
     "ganadoras": 0,
     "win_rate_pct": null,
     "suspended": false,
-    "actualizado": "2026-11-09T21:38:44.392349+00:00"
+    "actualizado": "2026-11-09T21:58:37.334121+00:00"
   },
   {
     "fecha": "2026-11-09",
@@ -45,6 +45,6 @@
     "ganadoras": 0,
     "win_rate_pct": null,
     "suspended": false,
-    "actualizado": "2026-11-09T21:38:44.392356+00:00"
+    "actualizado": "2026-11-09T21:58:37.334126+00:00"
   }
 ]
