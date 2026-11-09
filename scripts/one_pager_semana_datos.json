@@ -1,63 +1,63 @@
 {
-  "semana_texto": "SEMANA DEL 26 DE OCTUBRE AL 1 DE NOVIEMBRE DE 2026",
+  "semana_texto": "SEMANA DEL 2 AL 8 DE NOVIEMBRE DE 2026",
   "edicion_texto": "EDICIÓN SEMANAL · TOP 13",
-  "intro": "Una semana en la que murió Cuauhtémoc Cárdenas, la ASF denunció penalmente al gobierno de Nuevo León por una triangulación de 7,200 millones de pesos, y Wall Street vivió su peor tramo de octubre con la Fed dividida y las grandes tecnológicas de nube reportando resultados casi opuestos el mismo día. Abajo, las 13 notas más relevantes de la semana.",
+  "intro": "Una semana en la que los demócratas recuperaron el Congreso de Estados Unidos, el caso Taddei en el INE escaló de renuncias a videos de sobornos por el contrato del comedor, y Banxico sorprendió con un recorte de tasa justo cuando la inflación repuntaba. Abajo, las 13 notas más relevantes de la semana.",
   "flash": [
-    {"kicker": "BUSINESS", "fecha": "29 OCT", "titulo": "La utilidad de FEMSA creció 81% este trimestre. Buena parte de ese salto no vino de vender más, sino de no repetir una pérdida del año pasado",
-     "desc": "Oxxo México creció 10.3% en ingresos, pero buena parte de ese avance vino del aumento del IEPS a cigarros y refrescos, no de un consumidor más fuerte."},
-    {"kicker": "FINTECH", "fecha": "29 OCT", "titulo": "La Fed mantuvo su tasa, pero dos de sus propios funcionarios votaron por subirla",
-     "desc": "La votación 10 a 2 marcó la primera disidencia hawkish bajo la presidencia de Kevin Warsh, y el mercado sigue asignando una probabilidad alta a un alza en diciembre."},
-    {"kicker": "MÉXICO Y LATAM", "fecha": "27 OCT", "titulo": "La renuncia de Taddei al INE destapó contratos por 395 millones de pesos",
-     "desc": "Dos empresas aparecieron en el padrón de proveedores del INE semanas después de que Taddei llegó a la presidencia, con antecedentes de investigación por la UIF y la Cofece."}
+    {"kicker": "FINTECH", "fecha": "05 NOV", "titulo": "Banxico sorprendió con un recorte a 6.25%, con el consejo dividido 3-2, mientras el peso ya venía debilitándose desde septiembre",
+     "desc": "El recorte de 25 puntos base, al nivel más bajo desde marzo de 2022, llegó justo cuando la inflación repuntó a 3.62% anual y dividió al consejo entre priorizar la holgura económica o el riesgo cambiario."},
+    {"kicker": "MERCADOS Y CAPITAL", "fecha": "05 NOV", "titulo": "Anthropic quiere salir a bolsa valuada en hasta $2 billones de dólares. Su propio S-1 dice que debe $498,000 millones en contratos que no puede cancelar",
+     "desc": "Una firma de análisis independiente usa esa misma cifra para justificar una valuación de apenas $150,000 millones — una fracción de lo que el mercado está dispuesto a pagar."},
+    {"kicker": "MÉXICO Y LATAM", "fecha": "08 NOV", "titulo": "El alcalde de Río Bravo fue secuestrado en una carretera y localizado con vida gracias a un operativo de cuatro estados — pero nadie coincide en dónde ocurrió",
+     "desc": "La localización, en un filtro de seguridad en Coahuila, rompe el patrón dominante de violencia contra alcaldes en México: terminó en rescate, no en homicidio."}
   ],
   "main": {
-    "kicker": "LO MÁS RELEVANTE DE LA SEMANA · MÉXICO Y LATAM", "fecha": "29 OCT",
-    "titulo": "Adiós, ingeniero: muere Cuauhtémoc Cárdenas a los 92 años",
-    "dek": "Cuauhtémoc Cárdenas Solórzano, fundador del PRD, tres veces candidato presidencial y primer jefe de gobierno electo por voto popular de la Ciudad de México, murió el miércoles 28 de octubre a los 92 años.",
-    "cuerpo": "Su nombre quedó ligado para siempre a la elección de 1988, cuando el sistema de cómputo \"se cayó\" en la noche en que, según la evidencia histórica disponible, los resultados preliminares lo favorecían. Que Cárdenas haya sido el candidato cuya elección terminó forzando la creación de instituciones electorales independientes —el IFE llegaría apenas cuatro años después— es un hecho documentado en la historia institucional mexicana; leer ese episodio como la prueba definitiva de que él personalmente ganó esa elección es, en cambio, una interpretación que la evidencia histórica disponible hace más probable que no, pero que ningún conteo oficial llegó a confirmar. Compitió por la presidencia en 1988, 1994 y 2000, sin ganar ninguna de forma oficial, y en 1997 se convirtió en el primer Jefe de Gobierno del entonces Distrito Federal elegido por voto popular directo.",
-    "foto": "public/blog/portadas/adios-cuauhtemoc-cardenas-muere-92-anos.jpg"
+    "kicker": "LO MÁS RELEVANTE DE LA SEMANA · FINTECH", "fecha": "04 NOV",
+    "titulo": "Los demócratas recuperaron el control del Congreso de Estados Unidos en las elecciones intermedias de 2026",
+    "dek": "Proyecciones preliminares de CBS, CNN y otros medios indican que el Partido Demócrata recuperó el control tanto de la Cámara de Representantes como del Senado en las elecciones intermedias del 3 de noviembre, revirtiendo la mayoría republicana en ambas cámaras.",
+    "cuerpo": "Las proyecciones ubicaban a los demócratas cerca de 250 escaños frente a 160 de los republicanos en la Cámara, y 54 contra 44 en el Senado, con Misisipi y Alaska todavía sin definirse la mañana del miércoles. Que distintos medios coincidan en ese resultado es un hecho verificable a partir de conteos preliminares, aunque todavía no certificados en su totalidad.\n\nLo que no se sostiene con la evidencia disponible es que ese cambio tenga un efecto legislativo o regulatorio inmediato: el nuevo Congreso no toma posesión sino hasta enero de 2027. Aun así, el mercado ya empezó a descontar el resultado el mismo miércoles, apostando a que la composición de comités clave para regulación tecnológica, energética y fiscal se empieza a definir desde la proyección misma, no desde la toma de posesión.",
+    "foto": "public/blog/portadas/elecciones-intermedias-2026-democratas-recuperan-congreso.jpg"
   },
   "secundaria_larga": {
-    "kicker": "MÉXICO Y LATAM · 2ª MÁS RELEVANTE", "fecha": "31 OCT",
-    "titulo": "La ASF denuncia penalmente al gobierno de Nuevo León por una triangulación de 7,200 millones de pesos",
-    "desc": "La Auditoría Superior de la Federación presentó el 16 de octubre una denuncia penal —registrada como la 1231, dentro de la auditoría 1492 de la Cuenta Pública 2025— contra el gobierno de Nuevo León, por un presunto esquema de triangulación de recursos públicos hacia constructoras, prestadoras de servicios, comercializadoras de alimentos y un despacho jurídico ligados a familiares de funcionarios. Es ya el cuarto señalamiento de este tipo contra la administración de Samuel García en 2026, pero el primero que viene de un órgano técnico de fiscalización y no de un partido político con interés directo en el resultado.",
+    "kicker": "MÉXICO Y LATAM · 2ª MÁS RELEVANTE", "fecha": "04 NOV",
+    "titulo": "El INE suma ya 15 renuncias y al menos 5 funcionarios imputados tras la salida de Guadalupe Taddei, mientras Sheinbaum pide auditar también a Lorenzo Córdova",
+    "desc": "Diez días después de que Guadalupe Taddei renunciara a la presidencia del INE en medio de señalamientos por contratos irregulares, el instituto electoral suma ya 15 renuncias de colaboradores cercanos a ella, al menos cinco funcionarios imputados en 18 expedientes —según reportó el propio contralor del instituto ante la Cámara de Diputados— y una denuncia penal del PAN por seis delitos federales que calcula un daño patrimonial de $1,600 millones de pesos. La presidenta Sheinbaum pidió además que la auditoría de la ASF se extienda a la gestión previa de Lorenzo Córdova, quien respondió que no le teme a una nueva revisión.",
     "foto": null
   },
   "secundaria_corta": {
-    "kicker": "MÉXICO Y LATAM · 3ª MÁS RELEVANTE", "fecha": "01 NOV",
-    "titulo": "Fondos para chalecos antibalas y radios en Nuevo León habrían terminado en el despacho de la familia de Samuel García",
-    "desc": "TXAT Latam recibió 440 millones de pesos en contratos de seguridad y habría enviado 60.4 millones al despacho del gobernador, vía empresas factureras.",
-    "foto": "public/blog/portadas/txat-latam-chalecos-antibalas-despacho-samuel-garcia.jpg"
+    "kicker": "MÉXICO Y LATAM · 3ª MÁS RELEVANTE", "fecha": "07 NOV",
+    "titulo": "Un video muestra a Taddei y a un contratista repartiéndose hasta $1.5 millones de pesos al mes por el contrato del comedor del INE",
+    "desc": "Nuevos videos de Carlos Loret de Mola muestran al contratista José Alfredo Hernández Casillas detallando pagos mensuales de hasta $1.5 millones de pesos por el contrato de comedores, con la UIF congelando ya cuentas vinculadas.",
+    "foto": "public/blog/portadas/taddei-video-moches-comedor-ine-cuentas-congeladas.jpg"
   },
   "datos": [
-    {"valor": "92 años", "etiqueta": "Edad de Cuauhtémoc Cárdenas al momento de su muerte, el 28 de octubre"},
-    {"valor": "$7,212 millones", "etiqueta": "Triangulación de recursos en Nuevo León que la ASF denunció penalmente ante la FGR"},
-    {"valor": "81%", "etiqueta": "Alza en la utilidad neta de FEMSA, impulsada en parte por no repetir una pérdida del año pasado"},
-    {"valor": "10 a 2", "etiqueta": "Votación de la Fed en octubre, la primera disidencia hawkish bajo Kevin Warsh"}
+    {"valor": "$498,000 millones", "etiqueta": "Obligaciones de cómputo no cancelables de Anthropic rumbo a su posible IPO"},
+    {"valor": "15 renuncias", "etiqueta": "Colaboradores cercanos a Taddei que han dejado el INE desde el estallido del caso"},
+    {"valor": "6.25%", "etiqueta": "Nueva tasa de referencia de Banxico, tras un recorte sorpresivo con el consejo dividido 3-2"},
+    {"valor": "4 estados", "etiqueta": "Coordinados en el operativo que localizó con vida al alcalde de Río Bravo, Tamaulipas"}
   ],
   "media": [
-    {"kicker": "FINTECH", "fecha": "29 OCT", "titulo": "Microsoft e Alphabet reportaron el mismo día, con la nube como protagonista en ambos casos — y el mercado los premió de forma exactamente opuesta",
-     "desc": "Microsoft superó expectativas y subió 4% tras el cierre; Alphabet creció 103% en nube pero falló en utilidad consolidada y cayó más de 9%.",
-     "foto": "public/blog/portadas/microsoft-alphabet-resultados-28-octubre-nube-opuestos.jpg"},
-    {"kicker": "FINTECH", "fecha": "30 OCT", "titulo": "AWS creció al ritmo más rápido en casi cinco años. La acción de Amazon cayó igual: la tercera reacción negativa de la semana a un reporte de nube",
-     "desc": "Amazon reportó ingresos de 201,900 millones de dólares (+12%) y un fallo en utilidad por acción, pese a que AWS creció 39.3% —su ritmo más rápido en casi cinco años—. La acción cayó entre 6% y 9% tras el cierre, repitiendo el patrón que ya había castigado a Alphabet un día antes: el mercado dejó de premiar el crecimiento de ingresos de nube por sí solo.",
+    {"kicker": "MERCADOS Y CAPITAL", "fecha": "02 NOV", "titulo": "Nvidia podría garantizar la deuda que financia su propia demanda",
+     "desc": "Nvidia está en conversaciones para garantizar miles de millones de dólares en deuda de construcción de Nscale, el proveedor que levanta el centro de datos que ancla el contrato de $45,000 millones de Anthropic —la versión más explícita hasta ahora de lo que analistas ya llaman financiamiento circular.",
+     "foto": "public/blog/portadas/nvidia-garantia-credito-nscale-anthropic-financiamiento-circular.jpg"},
+    {"kicker": "MÉXICO Y LATAM", "fecha": "02 NOV", "titulo": "Samuel García dice que no tiene nada que esconder. La ASF documentó transferencias que tardaron minutos en llegar al despacho de su familia",
+     "desc": "El gobernador de Nuevo León respondió a la denuncia penal de la ASF asegurando que cuatro autoridades ya determinaron que no hubo ilegalidad, sin especificar documentos ni fechas, mientras la propia ASF documentó rutas de transferencia que habrían canalizado $928.13 millones de pesos hacia el despacho jurídico de su familia —una de ellas completada en apenas diez minutos.",
      "foto": null},
-    {"kicker": "MÉXICO Y LATAM", "fecha": "29 OCT", "titulo": "Sheinbaum quiere que el Estado imprima las boletas que antes imprimían los mismos contratistas señalados en el escándalo de Taddei",
-     "desc": "La propuesta busca convertir a Talleres Gráficos de México en una empresa estatal que concentre la producción de material electoral, reduciendo la dependencia de Cajas Graf y Corporativo Zeg.",
-     "foto": "public/blog/portadas/sheinbaum-talleres-graficos-material-electoral-autonomia-ine.jpg"}
+    {"kicker": "FINTECH", "fecha": "03 NOV", "titulo": "Apple y Palantir reportaron el mismo día. Uno rompió récords, el otro cayó pese a superar expectativas",
+     "desc": "Apple reportó ingresos de $114,500 millones y récord de Services; Palantir superó el consenso con ingresos de $2,310 millones (+96% anual) y elevó su guía, pero su acción cayó entre 6% y 8%.",
+     "foto": "public/blog/portadas/apple-palantir-resultados-2-noviembre-mercado-castiga-beat.jpg"}
   ],
   "abajo": [
-    {"kicker": "GEOPOLITICS", "fecha": "30 OCT", "titulo": "Texas declara suyas 9 islas del Río Bravo: la disputa que pone a prueba el tratado fronterizo de 1970",
-     "desc": "La Comisión General de Tierras de Texas declaró el jueves que nueve islas del Río Bravo son propiedad del estado, revivendo una disputa que ya enfrentó a Texas con su propio gobierno federal en 2023.",
-     "foto": "public/blog/portadas/texas-islas-rio-bravo-disputa-territorial.jpg"},
-    {"kicker": "TECNOLOGÍA Y NEGOCIO", "fecha": "30 OCT", "titulo": "Mistral liberó un modelo de un billón de parámetros para ciberseguridad y lo llamó \"soberanía\"",
-     "desc": "La startup francesa liberó los pesos de Mistral Large 4, diseñado para tareas de ciberseguridad, con el argumento de que los equipos de defensa necesitan el mismo nivel de capacidad que los atacantes. Un ejecutivo de la propia empresa reconoció que, al ser pesos abiertos, \"el acceso no se puede cortar\" una vez liberado el modelo —la tensión central de toda la narrativa de soberanía tecnológica basada en modelos abiertos.",
+    {"kicker": "FINTECH", "fecha": "04 NOV", "titulo": "AMD reportó ingresos récord de $13,400 millones en el tercer trimestre, y la acción cayó igual",
+     "desc": "El cuarto caso en dos semanas del mismo patrón: un reporte que supera el rango guiado, castigado porque la guía hacia adelante no amplía la narrativa de aceleración de IA que el precio ya tenía incorporada.",
+     "foto": "public/blog/portadas/amd-resultados-tercer-trimestre-2026-cae-pese-record.jpg"},
+    {"kicker": "MÉXICO Y LATAM", "fecha": "03 NOV", "titulo": "Alcaldes de Nuevo León amenazan con frenar el presupuesto 2027 si Samuel García no paga mil millones de pesos a los municipios",
+     "desc": "Alcaldes metropolitanos de distintos partidos piden al Congreso local no aprobar el Presupuesto 2027 hasta que el gobierno estatal pague el adeudo en participaciones, en un estado que acumula más de $62,000 millones de superávit en el sexenio.",
      "foto": null},
-    {"kicker": "MERCADOS Y CAPITAL", "fecha": "28 OCT", "titulo": "Anthropic busca la IPO más grande de la historia: $100,000 millones de dólares",
-     "desc": "Su \"pérdida\" de $80,700 millones del semestre es, en un 90%, un número contable que nunca salió de la caja —un cargo no monetario por el aumento de su propia valuación.",
-     "foto": "public/blog/portadas/anthropic-ipo-perdida-contable-desaceleracion-crecimiento.jpg"},
-    {"kicker": "IA Y LA NUEVA ECONOMÍA", "fecha": "29 OCT", "titulo": "Los bancos y hospitales ya pagan más que las tecnológicas por ingenieros de software",
-     "desc": "Un estudio de Randstad encontró que bancos y empresas de salud ya pagan hasta 17% más que las tecnológicas por ingenieros de software, impulsados por una demanda de habilidades de IA que se quintuplicó en un año —ocurre en paralelo a que la propia industria tecnológica despidió a cientos de miles de personas citando la IA como motivo.",
-     "foto": null}
+    {"kicker": "FINTECH", "fecha": "06 NOV", "titulo": "Lo más importante de esta semana 06/11/2026",
+     "desc": "El resumen semanal de economía: Banxico recortando mientras la Fed recibía un dato de empleo mucho más fuerte de lo esperado, dos bancos centrales moviéndose en direcciones opuestas la misma semana.",
+     "foto": null},
+    {"kicker": "MÉXICO Y LATAM", "fecha": "06 NOV", "titulo": "El INE presentó su propia denuncia ante la FGR por el caso Taddei, y pidió investigar \"sin distinción de periodos de gestión\"",
+     "desc": "El instituto se denunció a sí mismo ante la FGR citando seis delitos, en una formulación que, sin nombrar a nadie, abre la puerta a alcanzar también administraciones previas, en medio de la amenaza de un paro nacional de trabajadores del INE.",
+     "foto": "public/blog/portadas/ine-denuncia-fgr-sin-distincion-periodos-paro-nacional.jpg"}
   ]
 }
