@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T19:11:44.231970+00:00",
+  "generated_at": "2026-11-09T20:50:40.035666+00:00",
   "source": "algo_trading_platform paper trading engine (simulado, sin dinero real)",
   "buckets": {
     "largo_plazo": {
@@ -509,25 +509,62 @@
       "suspended_since": null
     },
     "blend_spy_gld": {
-      "starting_capital": 394.13,
+      "starting_capital": 1007.66,
+      "start_date": "2026-10-31",
       "open_positions": [
         {
           "symbol": "BLEND_SPY_GLD",
-          "entry_date": "2026-11-09",
+          "entry_date": "2026-10-31",
           "entry_price": null,
           "stop_price": null,
-          "shares": 2.770207,
+          "shares": null,
           "current_price": null,
-          "unrealized_pnl": 0.0
+          "unrealized_pnl": null
         }
       ],
       "closed_positions": [],
       "daily_history": [
         {
-          "date": "2026-11-09",
-          "equity": 394.13,
+          "date": "2026-10-30",
+          "equity": 151.66,
           "cumulative_return_pct": 0.0,
           "drawdown_pct": 0.0
+        },
+        {
+          "date": "2026-11-02",
+          "equity": 152.55,
+          "cumulative_return_pct": 0.59,
+          "drawdown_pct": 0.0
+        },
+        {
+          "date": "2026-11-03",
+          "equity": 152.27,
+          "cumulative_return_pct": 0.4,
+          "drawdown_pct": 0.18
+        },
+        {
+          "date": "2026-11-04",
+          "equity": 389.17,
+          "cumulative_return_pct": 3.08,
+          "drawdown_pct": 0.0
+        },
+        {
+          "date": "2026-11-05",
+          "equity": 382.16,
+          "cumulative_return_pct": 1.22,
+          "drawdown_pct": 1.8
+        },
+        {
+          "date": "2026-11-06",
+          "equity": 385.17,
+          "cumulative_return_pct": 0.98,
+          "drawdown_pct": 2.04
+        },
+        {
+          "date": "2026-11-09",
+          "equity": 394.13,
+          "cumulative_return_pct": 2.66,
+          "drawdown_pct": 0.41
         }
       ],
       "suspended": false

@@ -51,17 +51,17 @@
     "fecha": "2026-11-09",
     "bucket": "blend_spy_gld",
     "bucket_label": "blend_spy_gld",
-    "capital_inicial": 394.13,
+    "capital_inicial": 1007.66,
     "equity": 394.13,
-    "ganancia_perdida": 0.0,
-    "retorno_pct": 0.0,
-    "drawdown_pct": 0.0,
+    "ganancia_perdida": -613.53,
+    "retorno_pct": 2.66,
+    "drawdown_pct": 0.41,
     "abiertas": 1,
     "cerradas": 0,
     "ganadoras": 0,
     "win_rate_pct": null,
     "suspended": false,
-    "actualizado": "2026-11-09T19:11:44.591313+00:00"
+    "actualizado": "2026-11-09T20:50:40.411442+00:00"
   },
   {
     "fecha": "2026-11-09",
@@ -77,7 +77,7 @@
     "ganadoras": 0,
     "win_rate_pct": 0.0,
     "suspended": false,
-    "actualizado": "2026-11-09T19:11:44.591289+00:00"
+    "actualizado": "2026-11-09T20:50:40.411417+00:00"
   },
   {
     "fecha": "2026-11-09",
@@ -93,7 +93,7 @@
     "ganadoras": 0,
     "win_rate_pct": 0.0,
     "suspended": false,
-    "actualizado": "2026-11-09T19:11:44.591303+00:00"
+    "actualizado": "2026-11-09T20:50:40.411431+00:00"
   },
   {
     "fecha": "2026-11-09",
@@ -109,6 +109,6 @@
     "ganadoras": 0,
     "win_rate_pct": null,
     "suspended": false,
-    "actualizado": "2026-11-09T19:11:44.591308+00:00"
+    "actualizado": "2026-11-09T20:50:40.411436+00:00"
   }
 ]

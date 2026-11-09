@@ -503,37 +503,32 @@ function ModuloPortafolios({ data }) {
                   <td>{b.totalCerradas >= 5 && b.winRatePct !== null ? `${b.winRatePct}%` : "—"}</td>
                 </tr>
               ))}
+              {data.blend && (
+                <tr key={data.blend.key} style={{ opacity: 0.85 }}>
+                  <td>{data.blend.etiqueta}</td>
+                  <td>${data.blend.equityActual}</td>
+                  <td style={{ color: toneColor(tonoDe(data.blend.retornoAcumuladoPct)) }}>
+                    {pct(data.blend.retornoAcumuladoPct)}
+                  </td>
+                  <td>{pct(data.blend.drawdownPct, { signo: false })}</td>
+                  <td>—</td>
+                  <td>—</td>
+                  <td>—</td>
+                </tr>
+              )}
             </tbody>
           </table>
         </div>
-      </div>
-
-      {data.blend && (
-        <div className="pulsodash-panel" style={{ marginTop: 24 }}>
-          <div className="pulsodash-panel-head">
-            <span className="pulsodash-panel-title">Cash ocioso — Blend SPY/GLD</span>
-          </div>
-          <p className="pulsodash-vacio" style={{ marginTop: 0 }}>
-            El cash que no está asignado a ninguna posición de los buckets de arriba se invierte
-            en un blend 50% SPY / 50% GLD en vez de quedarse parado. Su valor ya está incluido
-            dentro del equity de cada bucket — esto solo lo muestra por separado para que se vea
-            cuánto ha ganado o perdido específicamente.
+        {data.blend && (
+          <p className="pulsodash-vacio" style={{ marginTop: 8 }}>
+            "{data.blend.etiqueta}" no es un bucket de trading (no abre ni cierra posiciones) —
+            es el cash ocioso de los buckets de arriba, invertido en 50% SPY / 50% GLD en vez de
+            quedarse parado. Su equity ya está incluido dentro del de cada bucket real, así que no
+            se suma al total del portafolio arriba — solo se muestra para ver su desempeño por
+            separado.
           </p>
-          <div className="trading-stat-grid" style={{ marginTop: 8 }}>
-            <StatCard etiqueta="Valor actual" valor={`$${data.blend.equityActual}`} />
-            <StatCard
-              etiqueta="Ganancia/Pérdida"
-              valor={`$${data.blend.gananciaPerdida}`}
-              tono={tonoDe(data.blend.retornoPct)}
-            />
-            <StatCard
-              etiqueta="Retorno"
-              valor={pct(data.blend.retornoPct)}
-              tono={tonoDe(data.blend.retornoPct)}
-            />
-          </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }

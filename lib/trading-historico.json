@@ -15,7 +15,7 @@
     "pnl": -1.1,
     "pnl_pct": -1.07,
     "reason": "stop_hit",
-    "actualizado": "2026-11-09T19:11:44.590324+00:00"
+    "actualizado": "2026-11-09T20:50:40.410203+00:00"
   },
   {
     "bucket": "largo_plazo",
@@ -33,7 +33,7 @@
     "pnl": 1.15,
     "pnl_pct": 1.57,
     "reason": null,
-    "actualizado": "2026-11-09T19:11:44.590296+00:00"
+    "actualizado": "2026-11-09T20:50:40.410176+00:00"
   },
   {
     "bucket": "largo_plazo",
@@ -51,7 +51,7 @@
     "pnl": 1.33,
     "pnl_pct": 0.95,
     "reason": null,
-    "actualizado": "2026-11-09T19:11:44.590315+00:00"
+    "actualizado": "2026-11-09T20:50:40.410194+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -69,7 +69,7 @@
     "pnl": 1.62,
     "pnl_pct": 1.73,
     "reason": null,
-    "actualizado": "2026-11-09T19:11:44.590336+00:00"
+    "actualizado": "2026-11-09T20:50:40.410214+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -87,7 +87,7 @@
     "pnl": -2.02,
     "pnl_pct": -3.31,
     "reason": null,
-    "actualizado": "2026-11-09T19:11:44.590333+00:00"
+    "actualizado": "2026-11-09T20:50:40.410210+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -105,7 +105,7 @@
     "pnl": -3.7,
     "pnl_pct": -5.27,
     "reason": "stop_hit",
-    "actualizado": "2026-11-09T19:11:44.590346+00:00"
+    "actualizado": "2026-11-09T20:50:40.410224+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -123,7 +123,25 @@
     "pnl": 1.66,
     "pnl_pct": 2.94,
     "reason": null,
-    "actualizado": "2026-11-09T19:11:44.590329+00:00"
+    "actualizado": "2026-11-09T20:50:40.410207+00:00"
+  },
+  {
+    "bucket": "blend_spy_gld",
+    "bucket_label": "blend_spy_gld",
+    "symbol": "BLEND_SPY_GLD",
+    "asset_type": "Stock",
+    "estado": "Abierta",
+    "entry_date": "2026-10-31",
+    "entry_price": null,
+    "initial_stop_price": null,
+    "exit_date": null,
+    "exit_price": null,
+    "current_price": null,
+    "stop_price": null,
+    "pnl": null,
+    "pnl_pct": null,
+    "reason": null,
+    "actualizado": "2026-11-09T20:50:40.410232+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -141,7 +159,7 @@
     "pnl": -1.12,
     "pnl_pct": -1.22,
     "reason": null,
-    "actualizado": "2026-11-09T19:11:44.590341+00:00"
+    "actualizado": "2026-11-09T20:50:40.410219+00:00"
   },
   {
     "bucket": "largo_plazo",
@@ -159,7 +177,7 @@
     "pnl": 1.93,
     "pnl_pct": 2.02,
     "reason": null,
-    "actualizado": "2026-11-09T19:11:44.590319+00:00"
+    "actualizado": "2026-11-09T20:50:40.410199+00:00"
   },
   {
     "bucket": "blend_spy_gld",
