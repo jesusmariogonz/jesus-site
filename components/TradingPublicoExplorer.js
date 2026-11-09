@@ -380,13 +380,14 @@ function TablaAbiertasBucket({ posiciones }) {
 }
 
 function ModuloPortafolios({ data }) {
-  const [seleccion, setSeleccion] = useState(data.buckets[0]?.key || null);
-  const bucket = data.buckets.find((b) => b.key === seleccion) || data.buckets[0];
+  const opciones = data.bucketsConBlend || data.buckets;
+  const [seleccion, setSeleccion] = useState(opciones[0]?.key || null);
+  const bucket = opciones.find((b) => b.key === seleccion) || opciones[0];
 
   return (
     <div>
       <div className="trading-tabs" style={{ marginBottom: 24 }}>
-        {data.buckets.map((b) => (
+        {opciones.map((b) => (
           <button
             key={b.key}
             type="button"
@@ -438,10 +439,12 @@ function ModuloPortafolios({ data }) {
                 drawdown{bucket.drawdownInconsistente ? " ⚠" : ""}
               </span>
             </div>
-            <div className="highlight-item">
-              <span className="highlight-valor">{bucket.posicionesAbiertas.length} / {bucket.totalCerradas}</span>
-              <span className="highlight-etiqueta">abiertas / cerradas</span>
-            </div>
+            {!bucket.esInformativo && (
+              <div className="highlight-item">
+                <span className="highlight-valor">{bucket.posicionesAbiertas.length} / {bucket.totalCerradas}</span>
+                <span className="highlight-etiqueta">abiertas / cerradas</span>
+              </div>
+            )}
             {bucket.totalCerradas >= 5 && bucket.winRatePct !== null && (
               <div className="highlight-item">
                 <span className="highlight-valor">{bucket.winRatePct}%</span>
@@ -467,10 +470,21 @@ function ModuloPortafolios({ data }) {
           <h3 style={{ fontSize: "0.95rem", marginBottom: 8 }}>Curva de equity</h3>
           <EquityChart history={bucket.historialDiario} startingCapital={bucket.startingCapital} height={160} />
 
-          <h3 style={{ fontSize: "0.95rem", margin: "24px 0 8px" }}>
-            Posiciones abiertas en {bucket.etiqueta} ({bucket.posicionesAbiertas.length})
-          </h3>
-          <TablaAbiertasBucket posiciones={bucket.posicionesAbiertas} />
+          {bucket.esInformativo ? (
+            <p className="pulsodash-vacio" style={{ marginTop: 20 }}>
+              No se muestra un detalle de compras/ventas individuales aquí: a diferencia de los
+              buckets de arriba, el registro histórico de movimientos del blend en este motor
+              quedó incompleto, así que listar operaciones específicas sería fabricar datos. La
+              curva de equity de arriba sí es real, día por día, desde que arrancó.
+            </p>
+          ) : (
+            <>
+              <h3 style={{ fontSize: "0.95rem", margin: "24px 0 8px" }}>
+                Posiciones abiertas en {bucket.etiqueta} ({bucket.posicionesAbiertas.length})
+              </h3>
+              <TablaAbiertasBucket posiciones={bucket.posicionesAbiertas} />
+            </>
+          )}
         </div>
       )}
 
@@ -492,30 +506,17 @@ function ModuloPortafolios({ data }) {
               </tr>
             </thead>
             <tbody>
-              {data.buckets.map((b) => (
-                <tr key={b.key}>
+              {(data.bucketsConBlend || data.buckets).map((b) => (
+                <tr key={b.key} style={b.esInformativo ? { opacity: 0.85 } : undefined}>
                   <td>{b.etiqueta}</td>
                   <td>${b.equityActual}</td>
                   <td style={{ color: toneColor(tonoDe(b.retornoAcumuladoPct)) }}>{pct(b.retornoAcumuladoPct)}</td>
                   <td>{pct(b.drawdownPct, { signo: false })}{b.drawdownInconsistente ? " ⚠" : ""}</td>
                   <td>{b.posicionesAbiertas.length}</td>
-                  <td>{b.totalCerradas}</td>
-                  <td>{b.totalCerradas >= 5 && b.winRatePct !== null ? `${b.winRatePct}%` : "—"}</td>
+                  <td>{b.esInformativo ? "—" : b.totalCerradas}</td>
+                  <td>{!b.esInformativo && b.totalCerradas >= 5 && b.winRatePct !== null ? `${b.winRatePct}%` : "—"}</td>
                 </tr>
               ))}
-              {data.blend && (
-                <tr key={data.blend.key} style={{ opacity: 0.85 }}>
-                  <td>{data.blend.etiqueta}</td>
-                  <td>${data.blend.equityActual}</td>
-                  <td style={{ color: toneColor(tonoDe(data.blend.retornoAcumuladoPct)) }}>
-                    {pct(data.blend.retornoAcumuladoPct)}
-                  </td>
-                  <td>{pct(data.blend.drawdownPct, { signo: false })}</td>
-                  <td>—</td>
-                  <td>—</td>
-                  <td>—</td>
-                </tr>
-              )}
             </tbody>
           </table>
         </div>
