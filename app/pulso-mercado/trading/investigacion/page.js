@@ -66,7 +66,12 @@ export default function InvestigacionPage() {
             <li>
               <strong>Time-Series Momentum</strong> (bucket Largo Plazo, 26 ETFs) — compara el
               precio contra su propio historial de 12 y 6 meses; sigue tendencias de fondo, sin
-              comparar contra otros activos.
+              comparar contra otros activos. Desde el 6-nov-2026 (ADR 0034) se le exige además un
+              filtro de <strong>cross-sectional momentum</strong>: el símbolo debe estar en el
+              percentil ≥70 de retorno relativo dentro de su propio universo, el mismo día —
+              descarta ~67.5% de las señales candidatas a cambio de un Sharpe fuera de muestra de
+              2.25 frente a 1.33 sin el filtro (ver{" "}
+              <Link href="/pulso-mercado/trading/historia">historia completa</Link>).
             </li>
             <li>
               <strong>Trend Following</strong> (buckets Mediano Plazo y Riesgo Alto) — alineación

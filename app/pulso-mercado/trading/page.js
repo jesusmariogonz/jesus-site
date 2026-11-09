@@ -38,63 +38,33 @@ function BloqueExplicativo({ resumen }) {
 
         <div className="trading-intro-card">
           <span className="trading-intro-kicker">Cómo se construyó</span>
-          <h2>Seis rondas de pruebas antes de llegar a este diseño</h2>
+          <h2>37 decisiones de diseño, ninguna de un día para otro</h2>
           <p>
             El diseño actual no salió completo desde el día uno — cada cambio se probó contra el
-            motor completo antes de adoptarse, y se documenta aquí incluyendo lo que se descartó:
+            motor completo antes de adoptarse. Los hitos de mayor impacto:
           </p>
-          <ul className="trading-timeline">
-            <li className="trading-timeline-item">
-              <span className="trading-timeline-tag">v1</span>
-              <strong>Versión original</strong> — el stop se fijaba en el precio de entrada y
-              nunca se movía; el efectivo sin posición se quedaba parado, sin invertirse. En 6
-              meses de datos reales (may–oct 2026) esto dio <strong>-0.08%</strong> mientras el
-              índice S&amp;P 500 (comprar y mantener) dio <strong>+6.76%</strong> en el mismo
-              período.
-            </li>
+          <ul className="trading-timeline trading-timeline-resumen">
             <li className="trading-timeline-item">
               <span className="trading-timeline-tag">v2</span>
-              <strong>Trailing stop + cash invertido en SPY</strong> — el stop ahora sube cada día
-              con el precio (nunca baja) y el efectivo ocioso se invierte en el índice en vez de
-              quedarse parado. Fue el cambio de mayor impacto medido: en una ventana de 22 meses,
-              el retorno pasó de <strong>+0.23% a +17.75%</strong>.
+              <strong>Trailing stop + cash invertido en el índice</strong> — el cambio de mayor
+              impacto medido en todo el proyecto: el retorno pasó de +0.23% a +17.75% en 22 meses.
             </li>
             <li className="trading-timeline-item">
-              <span className="trading-timeline-tag">v3</span>
-              <strong>Circuit breakers reales</strong> — se agregó el límite de pérdida diaria y
-              el umbral de drawdown que hoy bloquean o suspenden cada bucket (ver tabla de abajo).
+              <span className="trading-timeline-tag">v5–v6</span>
+              <strong>Mean Reversion RSI(2) llegó a operar con capital real y se revirtió</strong>{" "}
+              — no sostuvo una validación walk-forward más rigurosa (Sharpe OOS -0.032); se
+              eliminó el bucket y se restauró el split original de 3 portafolios.
             </li>
             <li className="trading-timeline-item">
-              <span className="trading-timeline-tag">v4</span>
-              <strong>Universo ampliado + fricción real</strong> — de 32 a 159 símbolos en varias
-              rondas, y comisión + slippage reales incluidas en el motor (antes solo las tenía el
-              backtest formal, no el paper trading). Un trailing stop más ancho y un filtro de
-              régimen de mercado se probaron y se <strong>descartaron</strong> — ambos empeoraron
-              el resultado, y se reportan aquí igual que los cambios que sí funcionaron.
-            </li>
-            <li className="trading-timeline-item">
-              <span className="trading-timeline-tag">v5</span>
-              <strong>Mean Reversion RSI(2), un 4to portafolio</strong> — todas las estrategias
-              anteriores comparten la misma lógica (comprar fortaleza, seguir la tendencia). Se
-              probaron también Donchian Breakout y una re-ponderación por volatilidad inversa
-              (Risk Parity): ambos empeoraron el resultado y se descartaron. Mean Reversion RSI(2)
-              (comprar debilidad temporal dentro de una tendencia alcista confirmada) sí mostró una
-              correlación baja (0.14) con el resto del sistema en su backtest original — se
-              agregó como un 4to portafolio independiente, con 35% del capital.
-            </li>
-            <li className="trading-timeline-item">
-              <span className="trading-timeline-tag">v6</span>
-              <strong>Se revierte Mean Reversion — no sostuvo una auditoría más rigurosa</strong> —
-              una validación walk-forward (la misma que ya había descartado otro candidato,
-              Bollinger %B) encontró un Sharpe fuera de muestra promedio de -0.032 para Mean
-              Reversion, con 2 de 5 ventanas en pérdida. Una investigación de seguimiento encontró
-              además que el +47.90% del backtest original no era reproducible: con el mismo
-              código y universo, un backtest corrido después dio +19.09% — consistente con el
-              mismo problema de revisión retroactiva de datos ya documentado en v4. Se eliminó el
-              bucket y se restauró el split original de 3 portafolios (43.33/33.33/23.33), sin
-              borrar el código de la estrategia por si aparece evidencia mejor en el futuro.
+              <span className="trading-timeline-tag">v13</span>
+              <strong>Filtro de cross-sectional momentum en Largo Plazo</strong> — de 10 hipótesis
+              de investigación probadas con walk-forward, una se implementó en producción: Sharpe
+              OOS 1.33→2.25, retorno 8.91%→19.14%, 0 de 5 ventanas con pérdida.
             </li>
           </ul>
+          <Link href="/pulso-mercado/trading/historia" className="trading-historia-link">
+            Ver la historia completa (37 decisiones, incluyendo el motor en vivo de IBKR) →
+          </Link>
         </div>
 
         <div className="trading-intro-card">
@@ -122,7 +92,7 @@ function BloqueExplicativo({ resumen }) {
                   <td>Largo Plazo</td>
                   <td>43.33%</td>
                   <td>26 ETFs</td>
-                  <td>Time-Series Momentum</td>
+                  <td>Time-Series Momentum + filtro cross-sectional (percentil ≥70)</td>
                   <td>2%</td>
                   <td>1%</td>
                   <td>6%</td>
@@ -175,7 +145,9 @@ function BloqueExplicativo({ resumen }) {
             paper trading diario de abajo. Las dos mediciones nunca se combinan en un mismo
             gráfico en esta página. Los 3 buckets actuales se restauraron el 5-nov-2026 tras
             revertir Mean Reversion — el paper trading diario con esta configuración todavía
-            tiene muy poco historial propio.
+            tiene muy poco historial propio. Este número tampoco incluye todavía el filtro de
+            cross-sectional momentum agregado a Largo Plazo el 6-nov-2026 (ver historia completa)
+            — no se ha vuelto a correr el backtest oficial de 36 meses con esa pieza incluida.
           </p>
         </div>
 

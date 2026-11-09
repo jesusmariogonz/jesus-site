@@ -4728,6 +4728,33 @@ html:not(.dark) .pglobe-land {
   color: #4ade80;
 }
 
+.trading-historia-link {
+  display: inline-block;
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+.trading-historia-link:hover { text-decoration: underline; }
+
+.historia-motor-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 2px 9px;
+  border-radius: 999px;
+  margin-left: 8px;
+  border: 1px solid var(--border);
+}
+.historia-motor-simulado { color: #16a34a; border-color: #16a34a; }
+.historia-motor-vivo { color: #2563eb; border-color: #2563eb; }
+.historia-motor-ambos { color: #7c3aed; border-color: #7c3aed; }
+.historia-motor-investigacion { color: #d97706; border-color: #d97706; }
+.trading-timeline-historia .trading-timeline-item { padding-bottom: 20px; }
+
 .trading-intro { margin: 8px 0 32px; }
 .trading-intro-grid {
   display: grid;
