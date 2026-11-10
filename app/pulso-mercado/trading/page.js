@@ -111,7 +111,7 @@ function BloqueExplicativo({ resumen }) {
                   <td>23.33%</td>
                   <td>45 símbolos</td>
                   <td>Trend Following + Momentum/Breakout</td>
-                  <td>3%</td>
+                  <td>5%</td>
                   <td>2%</td>
                   <td>15%</td>
                 </tr>
