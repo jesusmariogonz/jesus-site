@@ -762,6 +762,9 @@ const RAZON_DESCARTE_LABEL = {
   stop_invalido: "dato de stop inconsistente ese día",
   capital_insuficiente: "señal real, pero el capital no alcanza para 1 acción con el riesgo máximo permitido",
   efectivo_insuficiente: "señal real, pero no había efectivo disponible para financiar la compra",
+  simbolo_reservado_blend: "SPY/GLD están reservados para el cash ocioso: el motor IBKR no los compra como estrategia",
+  mercado_cerrado: "la corrida fue fuera del horario de mercado: las entradas nuevas no se mandan",
+  entradas_bloqueadas_riesgo: "entradas bloqueadas por un control de riesgo (límite diario o suspensión)",
 };
 
 /* "¿Qué decidió hoy el motor?" — lo primero que se ve al abrir un motor.
@@ -810,7 +813,11 @@ function DecisionHoy({ data }) {
           <span>🟢 COMPRAR <strong>{compras}</strong></span>
           <span>🔴 VENDER <strong>{ventas}</strong></span>
           <span>🟡 MANTENER <strong>{mantiene}</strong></span>
-          {descartadosTotal !== null && <span>⚪ SEÑAL SIN ENTRADA <strong>{descartadosTotal}</strong></span>}
+          {descartadosTotal !== null ? (
+            <span>⚪ SEÑAL SIN ENTRADA <strong>{descartadosTotal}</strong></span>
+          ) : (
+            <span title="Este motor empezó a registrar las señales sin entrada después de esta corrida.">⚪ SEÑAL SIN ENTRADA <strong>aún no registrado</strong></span>
+          )}
         </div>
       </div>
       {filas.length === 0 ? (
