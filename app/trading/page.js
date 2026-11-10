@@ -291,6 +291,57 @@ function TablaHistorialDiario({ history }) {
   );
 }
 
+const RAZON_CIERRE_LABEL = {
+  stop_hit: "tocó stop",
+  signal_exit: "señal de salida",
+};
+
+/* Resumen de lo que el motor leyó/decidió en su corrida más reciente
+   (normalmente la de la mañana): qué abrió, qué cerró y por qué —
+   construido solo con datos que YA vienen en el export diario
+   (daily_history[-1].closed_today_detail + open_positions filtradas
+   por entry_date == fecha de hoy). No incluye los símbolos que el
+   motor evaluó y descartó sin señal — ese dato no se guarda hoy en
+   ningún lado (vive un instante en memoria dentro de run_bucket_tick
+   y se pierde); agregarlo requeriría loguear el screening diario del
+   motor, no solo el resultado final. */
+function ResumenManana({ bucket }) {
+  const ultimo = bucket.daily_history[bucket.daily_history.length - 1];
+  if (!ultimo) return null;
+
+  const abiertasHoy = bucket.open_positions.filter((p) => p.entry_date === ultimo.date);
+  const cerradasHoy = ultimo.closed_today_detail || [];
+  const sinMovimientos = abiertasHoy.length === 0 && cerradasHoy.length === 0;
+
+  return (
+    <>
+      <h3 style={{ fontSize: "0.95rem", margin: "20px 0 8px" }}>Resumen de la mañana ({ultimo.date})</h3>
+      {sinMovimientos ? (
+        <p style={{ color: "var(--ink-soft)", fontSize: "0.9rem" }}>
+          El motor corrió hoy y no encontró señal de entrada ni de salida en este bucket — sin movimientos.
+        </p>
+      ) : (
+        <ul style={{ margin: 0, paddingLeft: 20, fontSize: "0.9rem" }}>
+          {abiertasHoy.map((p) => (
+            <li key={`abierta-${p.symbol}-${p.entry_date}`}>
+              Compró <strong>{p.symbol}</strong>: {p.shares} acciones a ${p.entry_price} ({p.strategy})
+            </li>
+          ))}
+          {cerradasHoy.map((p) => (
+            <li
+              key={`cerrada-${p.symbol}-${p.exit_date}`}
+              style={{ color: p.pnl >= 0 ? "#16a34a" : "#dc2626" }}
+            >
+              Vendió <strong>{p.symbol}</strong> a ${p.exit_price} ({p.pnl_pct}%) —{" "}
+              {RAZON_CIERRE_LABEL[p.reason] || p.reason}
+            </li>
+          ))}
+        </ul>
+      )}
+    </>
+  );
+}
+
 function PaperTradingBucketCard({ bucketKey, bucket }) {
   const label = BUCKET_LABELS[bucketKey] || bucketKey;
 
@@ -341,6 +392,8 @@ function PaperTradingBucketCard({ bucketKey, bucket }) {
 
       <h3 style={{ fontSize: "0.95rem", marginBottom: 8 }}>Curva de equity (desde {bucket.start_date})</h3>
       <EquityChart history={bucket.daily_history} startingCapital={bucket.starting_capital} />
+
+      <ResumenManana bucket={bucket} />
 
       <h3 style={{ fontSize: "0.95rem", margin: "20px 0 8px" }}>Posiciones abiertas hoy</h3>
       <TablaPosiciones posiciones={bucket.open_positions} tipo="abiertas" />
