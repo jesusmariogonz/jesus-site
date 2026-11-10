@@ -320,6 +320,21 @@ function ModuloDashboard({ data }) {
         <div style={{ marginTop: 16 }}>
           <DonutAsignacion distribucion={data.distribucionCapital} asignacionReal={data.asignacionReal} />
         </div>
+        {data.avisosEfectivoNegativo?.length > 0 && (
+          <div className="motor-aviso">
+            <strong>⚠ Efectivo negativo en el motor IBKR.</strong> Estos portafolios tienen posiciones por más
+            de su capital, porque varias compras se financiaron con un cash ocioso que ya no existe tras la
+            reconciliación del 9-nov-2026. La gráfica muestra el capital neto (posiciones + efectivo):
+            <ul>
+              {data.avisosEfectivoNegativo.map((a) => (
+                <li key={a.key}>
+                  <strong>{a.etiqueta}</strong>: posiciones por ${a.valorPosiciones}, efectivo ${a.efectivo}, capital neto ${a.capital}
+                  {a.veces ? ` (posiciones ≈ ${a.veces}× su capital)` : ""}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
 
       <ContribucionRetorno contribucionRetorno={data.contribucionRetorno} />

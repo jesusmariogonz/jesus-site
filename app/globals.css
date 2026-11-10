@@ -6578,3 +6578,5 @@ html:not(.dark) .pglobe-land {
 .motor-decision-tabla th, .motor-decision-tabla td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--line); }
 .motor-decision-riesgo { display: flex; flex-wrap: wrap; gap: 6px 22px; margin-top: 14px; font-size: .85rem; color: var(--ink-soft); }
 @media (max-width: 640px) { .motor-switch { grid-template-columns: 1fr; } }
+.motor-aviso { margin-top: 14px; padding: 12px 14px; border: 1px solid #d97706; border-radius: 10px; background: color-mix(in srgb, #d97706 10%, var(--surface)); color: var(--ink); font-size: .85rem; }
+.motor-aviso ul { margin: 8px 0 0; padding-left: 20px; }
