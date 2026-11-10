@@ -46,5 +46,53 @@
     "win_rate_pct": null,
     "suspended": false,
     "actualizado": "2026-11-09T21:58:37.334126+00:00"
+  },
+  {
+    "fecha": "2026-11-10",
+    "bucket": "largo_plazo",
+    "bucket_label": "Largo Plazo",
+    "capital_inicial": 521.81,
+    "equity": 514.14,
+    "ganancia_perdida": -7.67,
+    "retorno_pct": -1.47,
+    "drawdown_pct": 1.47,
+    "abiertas": 5,
+    "cerradas": 0,
+    "ganadoras": 0,
+    "win_rate_pct": null,
+    "suspended": false,
+    "actualizado": "2026-11-10T22:28:43.753572+00:00"
+  },
+  {
+    "fecha": "2026-11-10",
+    "bucket": "mediano_plazo",
+    "bucket_label": "Mediano Plazo",
+    "capital_inicial": 689.2,
+    "equity": 696.29,
+    "ganancia_perdida": 7.09,
+    "retorno_pct": 1.03,
+    "drawdown_pct": 0.0,
+    "abiertas": 6,
+    "cerradas": 0,
+    "ganadoras": 0,
+    "win_rate_pct": null,
+    "suspended": false,
+    "actualizado": "2026-11-10T22:28:43.753579+00:00"
+  },
+  {
+    "fecha": "2026-11-10",
+    "bucket": "riesgo_alto",
+    "bucket_label": "Riesgo Alto",
+    "capital_inicial": 467.84,
+    "equity": 463.09,
+    "ganancia_perdida": -4.75,
+    "retorno_pct": -1.02,
+    "drawdown_pct": 1.23,
+    "abiertas": 3,
+    "cerradas": 0,
+    "ganadoras": 0,
+    "win_rate_pct": null,
+    "suspended": false,
+    "actualizado": "2026-11-10T22:28:43.753582+00:00"
   }
 ]

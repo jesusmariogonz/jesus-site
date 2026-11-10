@@ -169,7 +169,8 @@ function BloqueExplicativo({ resumen }) {
 }
 
 export default function TradingPublicoPage() {
-  const data = getTradingPublicSnapshot();
+  const data = getTradingPublicSnapshot("paper");
+  const dataIbkr = getTradingPublicSnapshot("ibkr");
 
   return (
     <section className="section">
@@ -193,7 +194,7 @@ export default function TradingPublicoPage() {
           <Link href="/pulso-mercado/trading/bitacora">Bitácora de decisiones →</Link>
         </nav>
 
-        <TradingPublicoExplorer data={data} />
+        <TradingPublicoExplorer data={data} dataIbkr={dataIbkr} />
       </div>
     </section>
   );

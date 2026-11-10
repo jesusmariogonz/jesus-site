@@ -24,6 +24,12 @@ function formatFecha(iso) {
   return new Date(iso).toLocaleString("es-MX", { dateStyle: "medium", timeStyle: "short" });
 }
 
+function formatSoloFecha(iso) {
+  if (!iso) return "—";
+  const [y, m, d] = iso.split("-").map(Number);
+  return new Date(y, m - 1, d).toLocaleDateString("es-MX", { day: "numeric", month: "long", year: "numeric" });
+}
+
 function pct(n, { signo = true } = {}) {
   if (n === null || n === undefined) return "—";
   const s = signo && n > 0 ? "+" : "";
@@ -267,7 +273,7 @@ function ModuloDashboard({ data }) {
 
       <div className="trading-cockpit">
         <div className="trading-cockpit-principal">
-          <span className="trading-cockpit-etiqueta">Equity actual · Paper Trading</span>
+          <span className="trading-cockpit-etiqueta">Equity actual · {data.fuente === "ibkr" ? "Motor IBKR" : "Paper Trading"}</span>
           <span className="trading-cockpit-valor">${resumen.equityActualTotal}</span>
           <span className="trading-cockpit-sub">de ${resumen.capitalInicialTotal} iniciales</span>
         </div>
@@ -294,7 +300,7 @@ function ModuloDashboard({ data }) {
 
       <div className="pulsodash-panel" style={{ marginTop: 24, marginBottom: 24 }}>
         <div className="pulsodash-panel-head">
-          <span className="pulsodash-panel-title">Curva de equity combinada · Paper Trading</span>
+          <span className="pulsodash-panel-title">Curva de equity combinada · {data.fuente === "ibkr" ? "Motor IBKR" : "Paper Trading"}</span>
           <span className="pulsodash-panel-sub">Última actualización: {formatFecha(data.generatedAt)}</span>
         </div>
         <div style={{ marginTop: 12 }}>
@@ -746,17 +752,172 @@ function TabsNav({ tab, setTab }) {
   );
 }
 
-export default function TradingPublicoExplorer({ data }) {
-  const [tab, setTab] = useState("dashboard");
+const RAZON_CIERRE_LABEL = {
+  stop_hit: "tocó el stop",
+  signal_exit: "señal de salida de la estrategia",
+};
+
+const RAZON_DESCARTE_LABEL = {
+  cross_sectional_filter: "no pasó el filtro de fuerza relativa",
+  stop_invalido: "dato de stop inconsistente ese día",
+  capital_insuficiente: "señal real, pero el capital no alcanza para 1 acción con el riesgo máximo permitido",
+  efectivo_insuficiente: "señal real, pero no había efectivo disponible para financiar la compra",
+};
+
+/* "¿Qué decidió hoy el motor?" — lo primero que se ve al abrir un motor.
+   Solo usa lo que el motor realmente exporta: compras (posiciones con
+   fecha de entrada de hoy), ventas (cierres del día) y lo que mantiene.
+   NO muestra "confianza" ni "score": el motor no los calcula y esta
+   capa no los inventa. Los candidatos con señal que no entraron solo
+   existen en el motor paper y desde el 10-nov-2026. */
+function DecisionHoy({ data }) {
+  const filas = [];
+  let mantiene = 0;
+  let descartadosTotal = null;
+  let ordenesFallidas = 0;
+  let breakers = 0;
+  let fecha = null;
+
+  data.buckets.forEach((b) => {
+    const d = b.decisionHoy;
+    if (!d) return;
+    fecha = fecha && fecha > d.fecha ? fecha : d.fecha;
+    mantiene += d.mantiene;
+    ordenesFallidas += (d.ordenesFallidas || []).length;
+    if (d.circuitBreaker) breakers += 1;
+    if (Array.isArray(d.descartados)) descartadosTotal = (descartadosTotal || 0) + d.descartados.length;
+    d.compras.forEach((p) =>
+      filas.push({ tipo: "COMPRAR", bucket: b.etiqueta, symbol: p.symbol, estrategia: p.strategy, precio: p.entry_price, detalle: `${p.shares} acc. · stop ${p.stop_price}` })
+    );
+    d.ventas.forEach((p) =>
+      filas.push({ tipo: "VENDER", bucket: b.etiqueta, symbol: p.symbol, estrategia: p.strategy, precio: p.exit_price, detalle: `${pct(p.pnl_pct)} · ${RAZON_CIERRE_LABEL[p.reason] || p.reason}` })
+    );
+    (d.descartados || []).forEach((c) =>
+      filas.push({ tipo: "SIN ENTRADA", bucket: b.etiqueta, symbol: c.symbol, estrategia: c.strategy, precio: null, detalle: RAZON_DESCARTE_LABEL[c.reason] || c.reason })
+    );
+  });
+
+  if (!fecha) return null;
+  const compras = filas.filter((f) => f.tipo === "COMPRAR").length;
+  const ventas = filas.filter((f) => f.tipo === "VENDER").length;
+  const icono = { COMPRAR: "🟢", VENDER: "🔴", "SIN ENTRADA": "⚪" };
 
   return (
-    <div>
+    <div className="motor-decision">
+      <div className="motor-decision-head">
+        <span className="motor-decision-kicker">Decisión del motor · {formatSoloFecha(fecha)}</span>
+        <div className="motor-decision-conteo">
+          <span>🟢 COMPRAR <strong>{compras}</strong></span>
+          <span>🔴 VENDER <strong>{ventas}</strong></span>
+          <span>🟡 MANTENER <strong>{mantiene}</strong></span>
+          {descartadosTotal !== null && <span>⚪ SEÑAL SIN ENTRADA <strong>{descartadosTotal}</strong></span>}
+        </div>
+      </div>
+      {filas.length === 0 ? (
+        <p className="motor-decision-vacio">
+          El motor corrió y no encontró señal de entrada ni de salida: sin movimientos. Mantiene {mantiene} posiciones abiertas.
+        </p>
+      ) : (
+        <div style={{ overflowX: "auto" }}>
+          <table className="motor-decision-tabla">
+            <thead>
+              <tr><th>Acción</th><th>Símbolo</th><th>Portafolio</th><th>Estrategia</th><th>Precio</th><th>Detalle</th></tr>
+            </thead>
+            <tbody>
+              {filas.map((f, i) => (
+                <tr key={`${f.tipo}-${f.symbol}-${i}`}>
+                  <td><strong>{icono[f.tipo]} {f.tipo}</strong></td>
+                  <td><LinkSimbolo symbol={f.symbol} /></td>
+                  <td>{f.bucket}</td>
+                  <td>{f.estrategia || "—"}</td>
+                  <td>{f.precio != null ? `$${f.precio}` : "—"}</td>
+                  <td>{f.detalle}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+      <div className="motor-decision-riesgo">
+        <span>{breakers > 0 ? "🔴" : "🟢"} Límite de pérdida diaria: {breakers > 0 ? `activado en ${breakers} portafolio(s)` : "sin activar"}</span>
+        <span>{data.resumen.algunBucketSuspendido ? "🔴 Hay portafolios suspendidos" : "🟢 Sin portafolios suspendidos"}</span>
+        {data.fuente === "ibkr" && (
+          <span>{ordenesFallidas > 0 ? `🔴 ${ordenesFallidas} orden(es) fallida(s)` : "🟢 Sin órdenes fallidas"}</span>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function PanelMotor({ data, nota }) {
+  const [tab, setTab] = useState("dashboard");
+  return (
+    <div className="motor-panel">
+      {nota && <p className="motor-nota">{nota}</p>}
+      <DecisionHoy data={data} />
       <TabsNav tab={tab} setTab={setTab} />
       <div style={{ marginTop: 24 }}>
         {tab === "dashboard" && <ModuloDashboard data={data} />}
         {tab === "portafolios" && <ModuloPortafolios data={data} />}
         {tab === "operaciones" && <ModuloOperaciones data={data} />}
       </div>
+    </div>
+  );
+}
+
+const MOTORES = [
+  {
+    id: "paper",
+    titulo: "Motor Paper",
+    sub: "Simulación diaria sobre precios de cierre",
+    nota: "Motor simulado: no coloca órdenes. Es el experimento original, con todo el historial.",
+  },
+  {
+    id: "ibkr",
+    titulo: "Motor IBKR",
+    sub: "Órdenes reales en una cuenta paper de Interactive Brokers",
+    nota:
+      "Mismas estrategias, pero ejecutadas con órdenes reales en una cuenta paper (simulada) de Interactive Brokers: " +
+      "los precios de llenado, el efectivo y las posiciones pueden diferir del motor paper. Empezó el 4-nov-2026, " +
+      "así que el historial todavía es muy corto.",
+  },
+];
+
+export default function TradingPublicoExplorer({ data, dataIbkr }) {
+  const [motor, setMotor] = useState("paper");
+  const datos = { paper: data, ibkr: dataIbkr };
+
+  return (
+    <div>
+      <div className="motor-switch" role="tablist" aria-label="Motor de trading">
+        {MOTORES.map((m) => {
+          const d = datos[m.id];
+          const activo = motor === m.id;
+          return (
+            <button
+              key={m.id}
+              type="button"
+              role="tab"
+              aria-selected={activo}
+              className={`motor-boton${activo ? " activo" : ""}`}
+              onClick={() => setMotor(activo ? null : m.id)}
+            >
+              <span className="motor-boton-titulo">{m.titulo}</span>
+              <span className="motor-boton-sub">{m.sub}</span>
+              {d && (
+                <span className="motor-boton-cifras">
+                  <strong>${d.resumen.equityActualTotal}</strong>
+                  <span className={`motor-boton-ret ${tonoDe(d.resumen.retornoTotalPct)}`}>{pct(d.resumen.retornoTotalPct)}</span>
+                </span>
+              )}
+              <span className="motor-boton-flecha">{activo ? "▲ Ocultar" : "▼ Ver dashboard"}</span>
+            </button>
+          );
+        })}
+      </div>
+      {motor && datos[motor] && (
+        <PanelMotor key={motor} data={datos[motor]} nota={MOTORES.find((m) => m.id === motor).nota} />
+      )}
     </div>
   );
 }

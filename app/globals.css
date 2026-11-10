@@ -6557,3 +6557,24 @@ html:not(.dark) .pglobe-land {
   line-height: 1.5;
 }
 
+
+/* Selector de motor (Paper / IBKR) en /pulso-mercado/trading */
+.motor-switch { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 8px 0 24px; }
+.motor-boton { display: flex; flex-direction: column; gap: 6px; text-align: left; padding: 22px 24px; border: 2px solid var(--line, #d8d8d8); border-radius: 14px; background: var(--paper, #fff); color: inherit; cursor: pointer; font: inherit; transition: border-color .15s, box-shadow .15s; }
+.motor-boton:hover { border-color: var(--accent, #0a5a8f); }
+.motor-boton.activo { border-color: var(--accent, #0a5a8f); box-shadow: 0 0 0 3px rgba(10, 90, 143, .15); }
+.motor-boton-titulo { font-size: 1.35rem; font-weight: 700; }
+.motor-boton-sub { font-size: .85rem; color: var(--ink-soft, #666); }
+.motor-boton-cifras { display: flex; align-items: baseline; gap: 10px; font-size: 1.15rem; margin-top: 4px; }
+.motor-boton-ret.up { color: #16a34a; }
+.motor-boton-ret.down { color: #dc2626; }
+.motor-boton-flecha { font-size: .8rem; color: var(--accent, #0a5a8f); margin-top: 4px; }
+.motor-nota { font-size: .85rem; color: var(--ink-soft, #666); margin: 0 0 16px; }
+.motor-decision { border: 1px solid var(--line, #d8d8d8); border-radius: 12px; padding: 18px 20px; margin-bottom: 24px; }
+.motor-decision-kicker { font-size: .8rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft, #666); }
+.motor-decision-conteo { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 8px; font-size: 1.05rem; }
+.motor-decision-vacio { margin: 14px 0 0; color: var(--ink-soft, #666); font-size: .92rem; }
+.motor-decision-tabla { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: .88rem; }
+.motor-decision-tabla th, .motor-decision-tabla td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--line, #e6e6e6); }
+.motor-decision-riesgo { display: flex; flex-wrap: wrap; gap: 6px 22px; margin-top: 14px; font-size: .85rem; color: var(--ink-soft, #666); }
+@media (max-width: 640px) { .motor-switch { grid-template-columns: 1fr; } }
