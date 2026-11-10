@@ -296,21 +296,28 @@ const RAZON_CIERRE_LABEL = {
   signal_exit: "señal de salida",
 };
 
+const RAZON_DESCARTE_LABEL = {
+  cross_sectional_filter: "no pasó el filtro de fuerza relativa",
+  stop_invalido: "dato de stop inconsistente ese día",
+  capital_insuficiente: "señal real, pero el capital no alcanza para 1 acción con el riesgo máximo permitido",
+  efectivo_insuficiente: "señal real, pero no había efectivo disponible para financiar la compra",
+};
+
 /* Resumen de lo que el motor leyó/decidió en su corrida más reciente
-   (normalmente la de la mañana): qué abrió, qué cerró y por qué —
-   construido solo con datos que YA vienen en el export diario
-   (daily_history[-1].closed_today_detail + open_positions filtradas
-   por entry_date == fecha de hoy). No incluye los símbolos que el
-   motor evaluó y descartó sin señal — ese dato no se guarda hoy en
-   ningún lado (vive un instante en memoria dentro de run_bucket_tick
-   y se pierde); agregarlo requeriría loguear el screening diario del
-   motor, no solo el resultado final. */
+   (normalmente la de la mañana): qué abrió, qué cerró, qué vio pero
+   descartó, y por qué — construido con datos que ya vienen en el
+   export diario (daily_history[-1].closed_today_detail +
+   .discarded_candidates_today, y open_positions filtradas por
+   entry_date == fecha de hoy). discarded_candidates_today solo existe
+   para corridas del motor a partir del 10-nov-2026 (antes no se
+   guardaba) — en historial viejo simplemente no aparece. */
 function ResumenManana({ bucket }) {
   const ultimo = bucket.daily_history[bucket.daily_history.length - 1];
   if (!ultimo) return null;
 
   const abiertasHoy = bucket.open_positions.filter((p) => p.entry_date === ultimo.date);
   const cerradasHoy = ultimo.closed_today_detail || [];
+  const descartadosHoy = ultimo.discarded_candidates_today || [];
   const sinMovimientos = abiertasHoy.length === 0 && cerradasHoy.length === 0;
 
   return (
@@ -337,6 +344,20 @@ function ResumenManana({ bucket }) {
             </li>
           ))}
         </ul>
+      )}
+      {descartadosHoy.length > 0 && (
+        <>
+          <p style={{ margin: "12px 0 4px", fontSize: "0.85rem", color: "var(--ink-soft)" }}>
+            Tuvo señal y no entró ({descartadosHoy.length}):
+          </p>
+          <ul style={{ margin: 0, paddingLeft: 20, fontSize: "0.85rem", color: "var(--ink-soft)" }}>
+            {descartadosHoy.map((c, i) => (
+              <li key={`descarte-${c.symbol}-${c.strategy}-${i}`}>
+                <strong>{c.symbol}</strong> ({c.strategy}) — {RAZON_DESCARTE_LABEL[c.reason] || c.reason}
+              </li>
+            ))}
+          </ul>
+        </>
       )}
     </>
   );
