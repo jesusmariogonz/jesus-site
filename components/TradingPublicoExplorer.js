@@ -101,12 +101,13 @@ const BUCKET_COLORS = {
   largo_plazo: "#1348d6",
   mediano_plazo: "#0f766e",
   riesgo_alto: "#c2410c",
+  blend_spy_gld: "#b8860b",
 };
 
-function DonutAsignacion({ asignacionReal }) {
-  const total = asignacionReal.reduce((acc, a) => acc + (a.pct || 0), 0) || 100;
+function DonutAsignacion({ distribucion, asignacionReal }) {
+  const total = distribucion.reduce((acc, a) => acc + (a.pct || 0), 0) || 100;
   let acumulado = 0;
-  const stops = asignacionReal.map((a) => {
+  const stops = distribucion.map((a) => {
     const inicio = (acumulado / total) * 360;
     acumulado += a.pct || 0;
     const fin = (acumulado / total) * 360;
@@ -114,13 +115,30 @@ function DonutAsignacion({ asignacionReal }) {
   });
 
   return (
-    <div className="trading-donut-row">
-      <div className="trading-donut" style={{ background: `conic-gradient(${stops.join(", ")})` }}>
-        <div className="trading-donut-centro">
-          <span>100%</span>
-          <span className="trading-donut-centro-label">capital</span>
+    <div>
+      <div className="trading-donut-row">
+        <div className="trading-donut" style={{ background: `conic-gradient(${stops.join(", ")})` }}>
+          <div className="trading-donut-centro">
+            <span>100%</span>
+            <span className="trading-donut-centro-label">capital</span>
+          </div>
         </div>
+        <ul className="trading-donut-legend">
+          {distribucion.map((a) => (
+            <li key={a.key}>
+              <span className="trading-donut-swatch" style={{ background: BUCKET_COLORS[a.key] || "#999" }} />
+              <span className="trading-donut-legend-label">{a.etiqueta}</span>
+              <span className="trading-donut-legend-valor">
+                ${a.monto}
+                <span className="trading-donut-legend-objetivo"> · {a.pct !== null ? `${a.pct}%` : "—"}</span>
+              </span>
+            </li>
+          ))}
+        </ul>
       </div>
+      <p className="pulsodash-vacio" style={{ marginTop: 16, marginBottom: 6 }}>
+        Por bucket (cada uno con su cash ocioso incluido) vs. objetivo:
+      </p>
       <ul className="trading-donut-legend">
         {asignacionReal.map((a) => (
           <li key={a.key}>
@@ -213,7 +231,8 @@ function ContribucionRetorno({ contribucionRetorno }) {
       </div>
       <p className="pulsodash-vacio" style={{ marginTop: 8, marginBottom: 16 }}>
         Cuánto aportó (o restó) cada bucket al retorno TOTAL del portafolio — no es el retorno
-        individual de cada bucket, es su peso real dentro del resultado conjunto.
+        individual de cada bucket, es su peso real dentro del resultado conjunto. Las posiciones de
+        cada bucket y el cash ocioso (blend SPY/GLD) se muestran por separado y suman el total.
       </p>
       <div className="trading-contrib-list">
         {contribucionRetorno.map((c) => {
@@ -293,7 +312,7 @@ function ModuloDashboard({ data }) {
           <span className="pulsodash-panel-title">Distribución de capital — objetivo vs. real</span>
         </div>
         <div style={{ marginTop: 16 }}>
-          <DonutAsignacion asignacionReal={data.asignacionReal} />
+          <DonutAsignacion distribucion={data.distribucionCapital} asignacionReal={data.asignacionReal} />
         </div>
       </div>
 
@@ -658,6 +677,47 @@ function ModuloOperaciones({ data }) {
         posiciones abiertas es no realizado (marcado al precio del último cierre procesado, no en
         tiempo real intradía) — se confirma solo cuando la posición cierra.
       </p>
+
+      {data.blendMovimientos?.length > 0 && (
+        <div className="pulsodash-panel" style={{ marginTop: 32 }}>
+          <div className="pulsodash-panel-head">
+            <span className="pulsodash-panel-title">Cash ocioso (blend SPY/GLD) — compras y ventas</span>
+          </div>
+          <p className="pulsodash-vacio" style={{ marginTop: 8 }}>
+            Cada vez que un bucket abre una posición, vende blend para financiarla; cuando la
+            cierra, compra blend con el producto. &quot;Registrado&quot; viene del libro de
+            movimientos del motor (existe desde el 6-nov-2026); &quot;reconstruido&quot; se deriva
+            de la entrada/salida de la posición correspondiente, con su mismo monto, para
+            completar lo anterior. No incluye la inversión inicial del capital.
+          </p>
+          <div className="prose" style={{ overflowX: "auto", marginTop: 12 }}>
+            <table>
+              <thead>
+                <tr>
+                  <th>Fecha</th>
+                  <th>Bucket</th>
+                  <th>Movimiento</th>
+                  <th>Monto</th>
+                  <th>Motivo</th>
+                  <th>Origen</th>
+                </tr>
+              </thead>
+              <tbody>
+                {data.blendMovimientos.map((m, i) => (
+                  <tr key={`${m.fecha}-${m.bucket}-${m.motivo}-${i}`}>
+                    <td>{m.fecha}</td>
+                    <td>{m.bucket}</td>
+                    <td>{m.tipo === "compra" ? "Compra de blend" : "Venta de blend"}</td>
+                    <td>${m.monto}</td>
+                    <td>{m.motivo}</td>
+                    <td>{m.origen}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

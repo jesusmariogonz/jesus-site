@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T22:06:30.338283+00:00",
+  "generated_at": "2026-11-10T02:57:48.034968+00:00",
   "source": "algo_trading_platform paper trading engine (simulado, sin dinero real)",
   "buckets": {
     "largo_plazo": {
@@ -583,6 +583,38 @@
       "suspended": false
     }
   },
-  "usd_mxn_rate": 18.6309,
-  "usd_mxn_rate_fecha": "2026-11-09"
+  "blend_movimientos": [
+    {
+      "bucket": "largo_plazo",
+      "fecha": "2026-11-06",
+      "tipo": "compra",
+      "simbolo": "BLEND_SPY_GLD",
+      "monto_usd": 102.27,
+      "precio": 140.4981,
+      "shares": 0.727898,
+      "motivo": "producto de cerrar EFA"
+    },
+    {
+      "bucket": "largo_plazo",
+      "fecha": "2026-11-06",
+      "tipo": "venta",
+      "simbolo": "BLEND_SPY_GLD",
+      "monto_usd": 95.83,
+      "precio": 140.4981,
+      "shares": 0.682043,
+      "motivo": "financia la compra de VNQ"
+    },
+    {
+      "bucket": "largo_plazo",
+      "fecha": "2026-11-09",
+      "tipo": "venta",
+      "simbolo": "BLEND_SPY_GLD",
+      "monto_usd": 105.06,
+      "precio": 142.8335,
+      "shares": 0.735577,
+      "motivo": "financia la compra de EFA"
+    }
+  ],
+  "usd_mxn_rate": 18.572,
+  "usd_mxn_rate_fecha": "2026-11-10"
 }

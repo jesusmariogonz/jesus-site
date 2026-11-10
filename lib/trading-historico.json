@@ -15,7 +15,7 @@
     "pnl": -1.1,
     "pnl_pct": -1.07,
     "reason": "stop_hit",
-    "actualizado": "2026-11-09T22:06:30.696358+00:00"
+    "actualizado": "2026-11-10T02:57:48.371677+00:00"
   },
   {
     "bucket": "largo_plazo",
@@ -33,7 +33,7 @@
     "pnl": 1.06,
     "pnl_pct": 1.45,
     "reason": null,
-    "actualizado": "2026-11-09T22:06:30.696328+00:00"
+    "actualizado": "2026-11-10T02:57:48.371644+00:00"
   },
   {
     "bucket": "largo_plazo",
@@ -51,7 +51,7 @@
     "pnl": 1.29,
     "pnl_pct": 0.92,
     "reason": null,
-    "actualizado": "2026-11-09T22:06:30.696346+00:00"
+    "actualizado": "2026-11-10T02:57:48.371665+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -69,7 +69,7 @@
     "pnl": 1.86,
     "pnl_pct": 1.98,
     "reason": null,
-    "actualizado": "2026-11-09T22:06:30.696370+00:00"
+    "actualizado": "2026-11-10T02:57:48.371690+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -87,7 +87,7 @@
     "pnl": -2.58,
     "pnl_pct": -4.23,
     "reason": null,
-    "actualizado": "2026-11-09T22:06:30.696366+00:00"
+    "actualizado": "2026-11-10T02:57:48.371685+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -105,7 +105,7 @@
     "pnl": -3.7,
     "pnl_pct": -5.27,
     "reason": "stop_hit",
-    "actualizado": "2026-11-09T22:06:30.696378+00:00"
+    "actualizado": "2026-11-10T02:57:48.371699+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -123,7 +123,7 @@
     "pnl": 1.48,
     "pnl_pct": 2.62,
     "reason": null,
-    "actualizado": "2026-11-09T22:06:30.696362+00:00"
+    "actualizado": "2026-11-10T02:57:48.371682+00:00"
   },
   {
     "bucket": "blend_spy_gld",
@@ -141,7 +141,7 @@
     "pnl": null,
     "pnl_pct": null,
     "reason": null,
-    "actualizado": "2026-11-09T22:06:30.696387+00:00"
+    "actualizado": "2026-11-10T02:57:48.371706+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -159,7 +159,7 @@
     "pnl": -1.14,
     "pnl_pct": -1.24,
     "reason": null,
-    "actualizado": "2026-11-09T22:06:30.696373+00:00"
+    "actualizado": "2026-11-10T02:57:48.371695+00:00"
   },
   {
     "bucket": "largo_plazo",
@@ -177,7 +177,7 @@
     "pnl": 1.47,
     "pnl_pct": 1.53,
     "reason": null,
-    "actualizado": "2026-11-09T22:06:30.696350+00:00"
+    "actualizado": "2026-11-10T02:57:48.371669+00:00"
   },
   {
     "bucket": "blend_spy_gld",
@@ -213,6 +213,6 @@
     "pnl": -0.1,
     "pnl_pct": -0.1,
     "reason": null,
-    "actualizado": "2026-11-09T22:06:30.696354+00:00"
+    "actualizado": "2026-11-10T02:57:48.371673+00:00"
   }
 ]
