@@ -1,6 +1,7 @@
 import resultados from "@/lib/research/exp001-results.json";
 import veredicto from "@/lib/research/exp001-verdict.json";
 import ap from "@/lib/research/exp001-appendix.json";
+import rb from "@/lib/research/exp001-robustness.json";
 import series from "@/lib/research/exp001-series.json";
 import { CurvaEquity, CurvaUnderwater, CurvaEventos, Leyenda } from "@/components/research/Curvas";
 
@@ -184,6 +185,16 @@ INCONCLUSIVE en cualquier otro caso (o si falta algún valor)`}</Eq>
           <li><strong>Primer año de prueba 2004</strong> (no 2003): TLT empieza en 2002-07 y se exigen ≥ 252 días de entrenamiento ({ap.meta.training_days_before_first_test_year} disponibles). Consecuencia: el episodio <em>dot-com</em> queda fuera de muestra y se evalúan {r.episodes.episodes.length} episodios, no 4.</li>
           <li>Rebalanceo diario del refugio hacia la exposición objetivo sin costo (limitación declarada).</li>
         </ol>
+        <h4>2.1 Trabajo relacionado</h4>
+        <p>
+          El diseño se apoya en literatura previa; se citan solo trabajos cuya referencia se verificó (el resto de la lista candidata está en el repositorio, marcada «por verificar»).
+        </p>
+        <ul className="exp-lista">
+          <li><strong>Reglas simples de tendencia.</strong> Faber (2007), <em>A Quantitative Approach to Tactical Asset Allocation</em>, <em>Journal of Wealth Management</em> (primavera de 2007), propone salir a efectivo cuando el precio mensual cae bajo su media móvil de 10 meses. La regla SMA200 que usamos como referencia es de la misma familia; por eso es el rival natural.</li>
+          <li><strong>Gestión de riesgo por volatilidad.</strong> Moreira y Muir (2017), «Volatility-Managed Portfolios», <em>Journal of Finance</em> 72(4), 1611–1644, reducen exposición tras picos de volatilidad. Trabajos posteriores discuten si estas estrategias sobreviven fuera de muestra y a los costos de transacción (DeMiguel, Martín-Utrera y Uppal, <em>Journal of Finance</em>, 2024, citan objeciones de Cederburg et al. y de Barroso y Detzel): es una razón para someter el modelo a la sensibilidad a costos de la sección 10.</li>
+          <li><strong>Acoplamiento de mercado como señal de estrés.</strong> Kritzman, Li, Page y Rigobon (2011), «Principal Components as a Measure of Systemic Risk», <em>Journal of Portfolio Management</em> 37(4), 112–127, proponen el <em>absorption ratio</em>: la fracción de varianza explicada por pocos componentes principales. Nuestra dimensión de correlación (correlación media de 9 sectores) es un indicador más simple de la misma idea, no una réplica.</li>
+          <li><strong>Inferencia.</strong> El Deflated Sharpe sigue a Bailey y López de Prado (2014), <em>Journal of Portfolio Management</em> 40(5), 94–107 (DOI 10.3905/jpm.2014.40.5.094). La prueba Reality Check es de White (2000), <em>Econometrica</em> 68(5), 1097–1126 (DOI 10.1111/1468-0262.00152). La comparación de Sharpe con bootstrap de series de tiempo es afín a Ledoit y Wolf (2008), <em>Journal of Empirical Finance</em> 15(5), 850–859; nuestro bootstrap de diferencias pareadas en bloques es una variante simple, no su método estudentizado.</li>
+        </ul>
       </Sec>
 
       {/* ---------------- 3 Datos ---------------- */}
@@ -561,6 +572,45 @@ DSR = Φ(z) = Φ(${ds.z_stat.toFixed(4)}) = ${ds.dsr.toFixed(5)}`}</Eq>
           <li><strong>Problema de borde de grilla:</strong> el mejor θ coincide con el valor más bajo probado (0.5). Cuando el óptimo está en el borde, la grilla no lo encierra, y no sabemos si valores menores (más sensibles aún) mejorarían o empeorarían. Esa pregunta requiere un nuevo experimento pre-registrado, no una reexploración sobre estos datos.</li>
           <li><strong>El refugio importa, pero menos:</strong> TLT mediana {num(s.destination.TLT.calmar_median, 3)}, MIX {num(s.destination.MIX.calmar_median, 3)}, CASH {num(s.destination.CASH.calmar_median, 3)}. Rendimiento anual de TLT: {pct(aa.TLT["2008"])} en 2008, {pct(aa.TLT["2009"])} en 2009, {pct(aa.TLT["2020"])} en 2020 y {pct(aa.TLT["2022"])} en 2022 (SPY: {pct(aa.SPY["2008"])}, {pct(aa.SPY["2009"])}, {pct(aa.SPY["2020"])}, {pct(aa.SPY["2022"])}; efectivo: {pct(aa.CASH["2008"])}, {pct(aa.CASH["2009"])}, {pct(aa.CASH["2020"])}, {pct(aa.CASH["2022"])}). TLT amortiguó 2008 y 2020, pero cayó junto con las acciones en 2022 y perdió en el rebote de 2009.</li>
         </ul>
+        <h4>10.1 Pruebas de robustez adicionales <Etiqueta tipo="exp" /></h4>
+        <p>
+          Cuatro pruebas post-hoc, calculadas con el módulo <code>robustness.py</code> (implementado por DeepSeek con ciclo TDD y revisado) sobre los mismos datos congelados. No cambian la etiqueta. Salvedades: al variar costos se mantiene la variante que el procedimiento walk-forward eligió con costo de 10 pb; y la prueba Reality Check compara medias de retorno, no el criterio Calmar usado para elegir.
+        </p>
+        <h4>a) Sensibilidad a costos de transacción (por lado, 0–50 pb)</h4>
+        <Tabla
+          densa
+          cab={["Costo", "Modelo: rend. anual", "Modelo: peor caída", "Modelo: Calmar", "SMA200: rend. anual", "SMA200: peor caída", "SMA200: Calmar"]}
+          filas={rb.meta.costs_bps.map((c) => [`${c} pb`, pct(rb.cost_sensitivity.model[c].cagr, 2), pct(rb.cost_sensitivity.model[c].max_drawdown, 1), num(rb.cost_sensitivity.model[c].calmar, 3), pct(rb.cost_sensitivity.sma200[c].cagr, 2), pct(rb.cost_sensitivity.sma200[c].max_drawdown, 1), num(rb.cost_sensitivity.sma200[c].calmar, 3)])}
+        />
+        <p>
+          El modelo se degrada con suavidad ({pct(rb.cost_sensitivity.model["0"].cagr, 1)} → {pct(rb.cost_sensitivity.model["50"].cagr, 1)} anual de 0 a 50 pb); la regla SMA200 se deteriora mucho más ({pct(rb.cost_sensitivity.sma200["0"].cagr, 1)} → {pct(rb.cost_sensitivity.sma200["50"].cagr, 1)} y peor caída de {pct(rb.cost_sensitivity.sma200["50"].max_drawdown, 0)}) porque rota más. Es un resultado a favor del modelo frente a SMA200, pero hay que leerlo con cuidado: refleja en parte lo ruidosa que es una regla SMA200 sin filtro de persistencia, no solo la calidad del modelo.
+        </p>
+        <h4>b) Por subperíodo y excluyendo la crisis de 2007–2009</h4>
+        <Tabla
+          densa
+          cab={["Ventana", "Modelo: rend. / caída / Sharpe", "Comprar y mantener", "SMA200"]}
+          filas={[
+            ...Object.keys(rb.subperiods.model).map((w) => [w, ...["model", "buy_hold", "sma200"].map((k) => { const x = rb.subperiods[k][w]; return `${pct(x.cagr, 1)} / ${pct(x.max_drawdown, 1)} / ${num(x.sharpe, 2)}`; })]),
+            [`Sin ${rb.meta.crisis_excluded[0]} a ${rb.meta.crisis_excluded[1]}`, ...["model", "buy_hold", "sma200"].map((k) => { const x = rb.excluding_crisis[k]; return `${pct(x.cagr, 1)} / ${pct(x.max_drawdown, 1)} / ${num(x.sharpe, 2)}`; })],
+          ]}
+        />
+        <p>
+          La ventaja de riesgo del modelo no depende solo de 2007–2009: sin esa crisis sigue con menor caída máxima ({pct(rb.excluding_crisis.model.max_drawdown, 1)} vs {pct(rb.excluding_crisis.buy_hold.max_drawdown, 1)}) y mayor Sharpe ({num(rb.excluding_crisis.model.sharpe, 2)} vs {num(rb.excluding_crisis.buy_hold.sharpe, 2)}), aunque con menor rendimiento anual ({pct(rb.excluding_crisis.model.cagr, 1)} vs {pct(rb.excluding_crisis.buy_hold.cagr, 1)}). Esto matiza la conclusión de la sección 8: el <em>beneficio en rendimiento</em> proviene de la crisis, pero la <em>reducción de caídas</em> se mantiene fuera de ella (a costa de rendir algo menos que comprar y mantener en 2010–2019 y en 2020–2026).
+        </p>
+        <h4>c) Reality Check de White sobre las 162 variantes</h4>
+        <Tabla
+          cab={["Referencia", "Estadístico", "p-valor (2 000 remuestreos, bloque 20)", "Mejor variante"]}
+          filas={[["Comprar y mantener", num(rb.reality_check.vs_buy_hold.statistic, 4), num(rb.reality_check.vs_buy_hold.p_value, 3), rb.reality_check.vs_buy_hold.best_variant], ["SMA200", num(rb.reality_check.vs_sma200.statistic, 4), num(rb.reality_check.vs_sma200.p_value, 3), rb.reality_check.vs_sma200.best_variant]]}
+        />
+        <p>
+          Controlando por haber probado 162 variantes, <strong>ninguna supera a comprar y mantener en retorno medio</strong> (p = {num(rb.reality_check.vs_buy_hold.p_value, 3)}), coherente con que el modelo reduce riesgo, no aumenta rendimiento. Frente a SMA200 sí hay evidencia a favor de la mejor variante (p = {num(rb.reality_check.vs_sma200.p_value, 3)}), pero con la advertencia de que SMA200 es una referencia débil en retorno ({pct(rb.cost_sensitivity.sma200["10"].cagr, 1)} anual a 10 pb).
+        </p>
+        <h4>d) Potencia: ¿cuántos años harían falta?</h4>
+        <p>
+          El exceso de rendimiento anual del modelo sobre SMA200 promedia {pp(rb.power.sma200.mean_excess_annual, 1)} con desviación {pct(rb.power.sma200.sd_excess_annual, 1)} en {rb.power.sma200.n_years} años (t = {num(rb.power.sma200.t_stat, 2)}).
+          Para detectar un efecto de ese tamaño con 80 % de potencia (prueba unilateral, α = 0.05) se requerirían ≈ <strong>{num(rb.power.sma200.years_needed_80pct_power, 0)} años</strong>, más de lo disponible: la muestra tiene potencia insuficiente para concluir. Frente a comprar y mantener, el exceso medio es {pp(rb.power.buy_hold.mean_excess_annual, 2)} (t = {num(rb.power.buy_hold.t_stat, 2)}): no hay efecto en rendimiento que detectar.
+          Este cálculo trata los años como independientes, supuesto discutible.
+        </p>
       </Sec>
 
       {/* ---------------- 10 Dimensiones ---------------- */}
