@@ -2,7 +2,7 @@ import resultados from "@/lib/research/exp001-results.json";
 import veredicto from "@/lib/research/exp001-verdict.json";
 import ap from "@/lib/research/exp001-appendix.json";
 import series from "@/lib/research/exp001-series.json";
-import { CurvaEquity, CurvaUnderwater, Leyenda } from "@/components/research/Curvas";
+import { CurvaEquity, CurvaUnderwater, CurvaEventos, Leyenda } from "@/components/research/Curvas";
 
 /* Reporte técnico de EXP-001. Toda cifra sale de results.json (pre-registrado) o del apéndice
    EXPLORATORIO (appendix.json); aquí solo se les da formato. Las fórmulas y parámetros que se
@@ -93,6 +93,14 @@ export default function Exp001Reporte() {
   const frec = Object.entries(ap.chosen_frequency).sort((a, c) => c[1] - a[1]);
   const sn = (ok) => (ok ? "Sí" : "No");
   const aa = ap.annual_assets;
+  const t = ap.trading;
+  const ds = ap.dsr_steps;
+  const tr = ds.trials;
+  const ps = t.periods_summary;
+  const mayor = [...t.periods].sort((a, c) => Math.abs(c.log_impact) - Math.abs(a.log_impact))[0];
+  const sinMayor = ps.sum_log_impact_total - mayor.log_impact;
+  const ct = (nom) => t.crisis_timing.find((c) => c.name === nom);
+  const dias = (v) => (v == null ? "—" : `${ent(v)} d`);
 
   return (
     <article className="exp-reporte">
@@ -101,10 +109,10 @@ export default function Exp001Reporte() {
         {[
           ["ficha", "Ficha técnica"], ["abstract", "1 · Resumen técnico"], ["diseno", "2 · Hipótesis y diseño"],
           ["datos", "3 · Datos"], ["indice", "4 · Construcción del índice"], ["simulacion", "5 · Simulación"],
-          ["validacion", "6 · Selección y validación"], ["resultados", "7 · Resultados"], ["inferencia", "8 · Inferencia estadística"],
-          ["sensibilidad", "9 · Sensibilidad y robustez"], ["dimensiones", "10 · Diagnóstico de dimensiones"],
-          ["lectura", "11 · Lectura crítica"], ["validez", "12 · Amenazas a la validez"], ["siguiente", "13 · Qué falta para validar"],
-          ["repro", "14 · Reproducibilidad"],
+          ["validacion", "6 · Selección y validación"], ["resultados", "7 · Resultados"], ["entradas", "8 · Entradas y salidas"], ["inferencia", "9 · Inferencia estadística"],
+          ["sensibilidad", "10 · Sensibilidad y robustez"], ["dimensiones", "11 · Diagnóstico de dimensiones"],
+          ["lectura", "12 · Lectura crítica"], ["validez", "13 · Amenazas a la validez"], ["siguiente", "14 · Qué falta para validar"],
+          ["repro", "15 · Reproducibilidad"],
         ].map(([id, t]) => <a key={id} href={`#${id}`}>{t}</a>)}
       </nav>
 
@@ -146,7 +154,7 @@ export default function Exp001Reporte() {
           contiene el cero, por lo que el criterio de significancia no se cumple y la etiqueta es <strong>{r.label}</strong>.
         </p>
         <p>
-          El análisis exploratorio posterior (secciones 8–10, marcado como post-hoc) añade: (i) la mejora frente a comprar y mantener es robusta a la
+          El análisis exploratorio posterior (secciones 8–11, marcado como post-hoc) añade: (i) la mejora frente a comprar y mantener es robusta a la
           selección de variante (las {s.all.n} variantes reducen la peor caída), (ii) la ventaja frente a SMA200 depende del umbral más sensible de la grilla
           (θ = 0.5, su borde inferior), (iii) la ganancia en peor caída se concentra en un único episodio (2008), y (iv) en 2022 el modelo rindió peor que comprar
           y mantener. Una prueba placebo por desplazamiento circular da p = {num(pl.p_value_calmar, 3)} para el Calmar.
@@ -335,9 +343,90 @@ equity_t = Π (1 + ret_s)      CAGR = equity_final^(1/años) − 1,   años = d�
         />
       </Sec>
 
-      {/* ---------------- 8 Inferencia ---------------- */}
-      <Sec id="inferencia" n="8" titulo="Inferencia estadística">
-        <h4>8.1 Block bootstrap pareado <Etiqueta tipo="pre" /> / <Etiqueta tipo="exp" /></h4>
+      {/* ---------------- 8 Entradas y salidas ---------------- */}
+      <Sec id="entradas" n="8" titulo="Puntos de entrada y salida del modelo">
+        <p>
+          <Etiqueta tipo="exp" /> Hasta aquí se evaluó el resultado agregado. Esta sección abre la caja: <em>cuándo</em> reduce y vuelve a aumentar exposición el modelo, y qué hizo el mercado después.
+          <strong> Definiciones.</strong> Un <em>evento</em> es un día en que cambia la exposición aplicada (la decisión se toma al cierre del día anterior). Una <em>salida</em> es una reducción de exposición; una <em>entrada</em>, un aumento.
+          Un <em>período defensivo</em> es una racha de días consecutivos con exposición accionaria aplicada &lt; 100 %. Los retornos posteriores son retornos simples de SPY desde el cierre de decisión a 20, 60 y 120 días hábiles.
+        </p>
+        <p>En {r.n_oos_days.toLocaleString("es-MX")} días hubo <strong>{t.n_events} cambios de exposición</strong> ({t.aggregate.reduce.n} reducciones y {t.aggregate.increase.n} aumentos) y <strong>{ps.n_periods} períodos defensivos</strong> que suman {ent(ps.total_days_defensive)} días ({pct(ps.total_days_defensive / r.n_oos_days, 1)} de la muestra).</p>
+        <CurvaEventos curvas={ap.curves} expo={ap.exposure_weekly} />
+        <p className="exp-nota">SPY (retorno total, escala logarítmica). Las franjas rojas marcan las semanas con exposición &lt; 100 %; la intensidad crece con la reducción. Abajo, la exposición semanal promedio del modelo.</p>
+
+        <h4>8.1 ¿Qué hace el mercado después de cada salida y entrada?</h4>
+        <Tabla
+          densa
+          cab={["Grupo", "n", "SPY vs. su máximo al decidir", "Ret. 20 d: media / mediana / % neg.", "Ret. 60 d", "Ret. 120 d"]}
+          filas={[
+            ...[["reduce", "Salidas (reducciones)"], ["increase", "Entradas (aumentos)"]].map(([k, nom]) => [
+              nom, t.aggregate[k].n, pct(t.aggregate[k].mean_spy_drawdown_at_decision, 1),
+              ...["20", "60", "120"].map((h) => { const q = t.aggregate[k][`fwd_${h}d`]; return `${pct(q.mean, 1)} / ${pct(q.median, 1)} / ${pct(q.share_negative, 0)}`; }),
+            ]),
+            ["Todos los días (línea base)", ent(t.baseline.fwd_20d.n), "—", ...["20", "60", "120"].map((h) => { const q = t.baseline[`fwd_${h}d`]; return `${pct(q.mean, 1)} / ${pct(q.median, 1)} / ${pct(q.share_negative, 0)}`; })],
+          ]}
+        />
+        <p>
+          <strong>Lectura.</strong> Si las salidas anticiparan caídas, el mercado debería rendir <em>menos que el promedio</em> después de ellas. Ocurre lo contrario: a 60 días el retorno medio posterior a una salida es {pct(t.aggregate.reduce.fwd_60d.mean, 1)}
+          (línea base {pct(t.baseline.fwd_60d.mean, 1)}), y solo {pct(t.aggregate.reduce.fwd_60d.share_negative, 0)} de las salidas fueron seguidas por un retorno negativo a 60 días (línea base {pct(t.baseline.fwd_60d.share_negative, 0)}).
+          A nivel de evento individual, <strong>no hay evidencia de que una salida típica preceda a una caída</strong>. Las salidas ocurren, en promedio, cuando SPY ya está {pct(Math.abs(t.aggregate.reduce.mean_spy_drawdown_at_decision), 1)} por debajo de su máximo histórico: el modelo reacciona a un mercado deteriorado, y
+          en los mercados deteriorados los rebotes son frecuentes. Las entradas, en cambio, ocurren con SPY {pct(Math.abs(t.aggregate.increase.mean_spy_drawdown_at_decision), 1)} bajo su máximo y son seguidas por rendimientos superiores a la línea base a 20 días (media {pct(t.aggregate.increase.fwd_20d.mean, 1)} vs {pct(t.baseline.fwd_20d.mean, 1)}).
+          Estos eventos están fuertemente agrupados (muchos cambios en las mismas semanas de estrés), así que no son observaciones independientes y no se hace inferencia formal sobre ellos.
+        </p>
+
+        <h4>8.2 Períodos defensivos: ¿cuánto valor aportó cada uno?</h4>
+        <p>
+          Para cada período se compara el retorno del modelo con el de SPY durante esas mismas fechas. «Impacto» = retorno del modelo − retorno de SPY; «impacto log» = ln(1 + modelo) − ln(1 + SPY), aditivo entre períodos.
+          Un período «acierta» si SPY cayó durante él. De {ps.n_periods} períodos, <strong>{ps.n_spy_fell} acertaron ({pct(ps.hit_rate, 1)})</strong> y {ps.n_spy_rose} ocurrieron con SPY al alza.
+          Duración media {num(ps.mean_days, 1)} días (mediana {num(ps.median_days, 0)}).
+        </p>
+        <Tabla
+          cab={["Resultado", "Períodos", "Suma de impacto log"]}
+          filas={[
+            ["SPY cayó durante el período (la defensa acertó)", ps.n_spy_fell, sg(ps.sum_log_impact_when_spy_fell, 3)],
+            ["SPY subió durante el período (la defensa costó)", ps.n_spy_rose, sg(ps.sum_log_impact_when_spy_rose, 3)],
+            ["Total", ps.n_periods, sg(ps.sum_log_impact_total, 3)],
+            [`Total sin el mayor período (${mayor.start} → ${mayor.end})`, ps.n_periods - 1, `${sg(sinMayor, 3)} (riqueza relativa acumulada ${pct(Math.exp(sinMayor) - 1, 1)})`],
+          ]}
+        />
+        <p>
+          <strong>Es una estrategia de pagos convexos con baja tasa de acierto:</strong> {pct(1 - ps.hit_rate, 0)} de los períodos defensivos costaron dinero (en conjunto {sg(ps.sum_log_impact_when_spy_rose, 3)} de impacto log) y el beneficio neto de {sg(ps.sum_log_impact_total, 3)} proviene casi por completo de un
+          solo período, {mayor.start} → {mayor.end} ({sg(mayor.log_impact, 3)}; SPY {pct(mayor.spy_return, 1)} contra el modelo {pct(mayor.model_return, 1)}). Sin ese período, el modelo habría acumulado una riqueza {pct(Math.abs(Math.exp(sinMayor) - 1), 1)} menor que comprar y mantener.
+          Es el patrón de un seguro: se paga una prima frecuente y pequeña a cambio de una indemnización rara y grande. Con una sola crisis grande en la muestra, no se puede distinguir si la indemnización de 2007–2009 es habilidad repetible o la suerte de haber tenido una crisis crediticia lenta y detectable.
+        </p>
+        <Tabla
+          densa
+          cab={["Inicio", "Fin", "Días", "Exposición mínima", "SPY", "Modelo", "Impacto", "Impacto log"]}
+          filas={t.periods.map((q) => [q.start, q.end, q.n_days, pct(q.min_exposure, 0), pct(q.spy_return, 1), pct(q.model_return, 1), pp(q.impact, 1), sg(q.log_impact, 3)])}
+        />
+
+        <h4>8.3 Momento de salida y de re-entrada en cada crisis</h4>
+        <p>
+          Para cada episodio de la sección 7: <em>salida</em> = primer día con exposición &lt; 100 % entre 90 días antes del pico y el mínimo; <em>re-entrada</em> = primer día, desde el mínimo, con exposición de nuevo al 100 %. «Rebote perdido» es lo que subió SPY entre el mínimo y esa re-entrada.
+        </p>
+        <Tabla
+          densa
+          cab={["Episodio", "Salida", "Días vs. pico", "SPY de la salida al mínimo", "Exposición en el mínimo", "Re-entrada (100 %)", "Días tras el mínimo", "Rebote perdido", "Pico → re-entrada: modelo vs SPY"]}
+          filas={t.crisis_timing.map((c) => [
+            c.name, c.exit_date, c.exit_days_vs_peak < 0 ? `${ent(Math.abs(c.exit_days_vs_peak))} antes` : `${ent(c.exit_days_vs_peak)} después`,
+            pct(c.spy_exit_to_trough, 1), pct(c.exposure_at_trough, 0), c.reentry_date, dias(c.reentry_days_after_trough), pct(c.spy_trough_to_reentry, 1),
+            `${pct(c.model_return_peak_to_reentry, 1)} vs ${pct(c.spy_return_peak_to_reentry, 1)}`,
+          ])}
+        />
+        <ul className="exp-lista">
+          <li><strong>{ct("crisis financiera").name}.</strong> Primera reducción el {ct("crisis financiera").exit_date}, {ent(Math.abs(ct("crisis financiera").exit_days_vs_peak))} días <em>antes</em> del máximo de SPY (la señal vino del crédito y la amplitud, no del precio), con exposición de {pct(ct("crisis financiera").exit_exposure, 0)}. Llegó a 0 % antes del mínimo, evitando gran parte de una caída de {pct(Math.abs(ct("crisis financiera").spy_peak_to_trough), 1)}. Pero volvió al 100 % {ent(ct("crisis financiera").reentry_days_after_trough)} días después del mínimo, cuando SPY ya había rebotado {pct(ct("crisis financiera").spy_trough_to_reentry, 1)} y seguía {pct(Math.abs(ct("crisis financiera").spy_vs_peak_at_reentry), 1)} bajo su máximo.</li>
+          <li><strong>{ct("COVID").name}.</strong> Salió {ent(ct("COVID").exit_days_vs_peak)} días después del pico, con SPY {pct(Math.abs(ct("COVID").spy_vs_peak_at_exit), 1)} abajo; desde ahí SPY aún cayó {pct(Math.abs(ct("COVID").spy_exit_to_trough), 1)} hasta el mínimo, y el modelo estaba en {pct(ct("COVID").exposure_at_trough, 0)} de exposición. Volvió al 100 % {ent(ct("COVID").reentry_days_after_trough)} días después del mínimo, tras un rebote de {pct(ct("COVID").spy_trough_to_reentry, 1)}: la recuperación fue tan rápida que la protección costó casi todo el rebote.</li>
+          <li><strong>{ct("2022").name}.</strong> Salió el {ct("2022").exit_date}, {ent(ct("2022").exit_days_vs_peak)} días después del pico y con SPY ya {pct(Math.abs(ct("2022").spy_vs_peak_at_exit), 1)} abajo; desde ahí SPY solo cayó {pct(Math.abs(ct("2022").spy_exit_to_trough), 1)} más. La exposición en el mínimo era {pct(ct("2022").exposure_at_trough, 0)}. Entre el pico y la re-entrada el modelo rindió {pct(ct("2022").model_return_peak_to_reentry, 1)} contra {pct(ct("2022").spy_return_peak_to_reentry, 1)} de SPY: salió tarde y el refugio (TLT) también cayó.</li>
+        </ul>
+        <p>
+          <strong>Síntesis.</strong> La calidad de las salidas es desigual: temprana y valiosa en 2007–2008, tardía en 2020 y 2022. Las re-entradas son lentas en los tres casos (de {dias(Math.min(...t.crisis_timing.map((c) => c.reentry_days_after_trough)))} a {dias(Math.max(...t.crisis_timing.map((c) => c.reentry_days_after_trough)))} después del mínimo), y ese retraso es el costo de la persistencia de 10–20 días para bajar nivel. El hallazgo clave es que el valor del modelo
+          no está en acertar cada señal, sino en una sola salida temprana y sostenida durante una crisis lenta.
+        </p>
+      </Sec>
+
+      {/* ---------------- 9 Inferencia ---------------- */}
+      <Sec id="inferencia" n="9" titulo="Inferencia estadística">
+        <h4>9.1 Block bootstrap pareado <Etiqueta tipo="pre" /> / <Etiqueta tipo="exp" /></h4>
         <p>
           Los retornos diarios están autocorrelacionados en volatilidad y los días de un mismo episodio no son independientes, por lo que se usa un <em>moving-block bootstrap</em> pareado:
           en cada réplica se concatenan ⌈<em>n</em>/20⌉ bloques de 20 días consecutivos (inicio uniforme), se recorta a <em>n</em> filas y se aplica <strong>la misma</strong> selección de filas
@@ -371,25 +460,65 @@ equity_t = Π (1 + ret_s)      CAGR = equity_final^(1/años) − 1,   años = d�
           [{pp(b.maxdd_model_minus_buyhold.ci_lo, 2)}, {pp(b.maxdd_model_minus_buyhold.ci_hi, 2)}] debe leerse con cautela: infraestima la incertidumbre en el eje en que el modelo luce mejor y no sustituye evidencia de más episodios.
         </p>
 
-        <h4>8.2 Deflated Sharpe Ratio (corrección por 162 intentos) <Etiqueta tipo="pre" /></h4>
-        <p>Se prueba la variante elegida contra el máximo Sharpe esperable por azar entre {d.n_trials} intentos (Bailey &amp; López de Prado). Con <em>n</em> retornos diarios, Sharpe diario SR, asimetría γ<sub>3</sub> y curtosis γ<sub>4</sub> (no exceso):</p>
-        <Eq>{`σ_SR = sqrt( (1 − γ3·SR + (γ4 − 1)/4 · SR²) / (n − 1) )
-SR0  = σ_SR · ( (1 − γ)·Φ⁻¹(1 − 1/N) + γ·Φ⁻¹(1 − 1/(N·e)) ),    γ = 0.5772156649,  N = ${d.n_trials}
-DSR  = Φ( (SR − SR0) / σ_SR )`}</Eq>
+        <h4>9.2 Deflated Sharpe Ratio: derivación paso a paso <Etiqueta tipo="pre" /> / <Etiqueta tipo="exp" /></h4>
+        <p>
+          El Sharpe observado de la variante ganadora está sesgado hacia arriba porque se eligió entre {ds.n_trials} candidatas. El <em>Deflated Sharpe Ratio</em> (Bailey &amp; López de Prado, 2014) responde: <em>¿cuál es la probabilidad de que el Sharpe verdadero supere al máximo que se esperaría obtener por azar al probar {ds.n_trials} estrategias sin habilidad?</em> Se calcula en cinco pasos con los retornos diarios fuera de muestra del modelo (<em>n</em> = {ent(ds.n)}).
+        </p>
+        <h4>Paso 1 — Sharpe diario</h4>
+        <Eq>{`media = ${ds.mean_daily.toFixed(8)}     desv.est.(ddof=1) = ${ds.std_daily.toFixed(8)}
+SR = media / desv.est. = ${ds.sr.toFixed(6)}      (anualizado: ${ds.sr.toFixed(6)} × √252 = ${(ds.sr * Math.sqrt(252)).toFixed(4)})`}</Eq>
+        <h4>Paso 2 — Momentos de la distribución (los retornos no son normales)</h4>
+        <Eq>{`asimetría γ3 = ${ds.skew.toFixed(5)}        curtosis γ4 (no exceso) = ${ds.kurtosis.toFixed(4)}      (normal: γ3 = 0, γ4 = 3)`}</Eq>
+        <p>Una curtosis de {ds.kurtosis.toFixed(1)} indica colas mucho más pesadas que la normal (días extremos de crisis). Eso infla la incertidumbre del Sharpe estimado, como se ve a continuación.</p>
+        <h4>Paso 3 — Varianza del estimador del Sharpe (Mertens, 2002)</h4>
+        <Eq>{`Var(SR̂) = ( 1 − γ3·SR + (γ4 − 1)/4 · SR² ) / (n − 1)
+         = ( ${ds.term_one.toFixed(6)} + ${ds.term_skew.toFixed(6)} + ${ds.term_kurt.toFixed(6)} ) / ${ent(ds.denominator)}
+         = ${ds.numerator.toFixed(6)} / ${ent(ds.denominator)}
+         = ${ds.variance_sr.toExponential(5)}
+σ_SR = √Var = ${ds.sr_std.toFixed(6)}`}</Eq>
+        <p>El numerador vale {ds.numerator.toFixed(5)}: bajo normalidad habría sido exactamente 1. Las colas pesadas y la asimetría añaden {pct(ds.numerator - 1, 2)} a la varianza (el término de curtosis domina: {ds.term_kurt.toFixed(5)} vs {ds.term_skew.toFixed(5)}). Con tantos días, el efecto es pequeño.</p>
+        <h4>Paso 4 — Sharpe máximo esperable por azar entre N = {ds.n_trials} intentos</h4>
+        <Eq>{`z1 = Φ⁻¹(1 − 1/N)       = Φ⁻¹(1 − 1/${ds.n_trials})        = ${ds.z1.toFixed(5)}
+z2 = Φ⁻¹(1 − 1/(N·e))   = Φ⁻¹(1 − 1/(${ds.n_trials}·e))    = ${ds.z2.toFixed(5)}
+máximo esperado (en σ) = (1 − γ)·z1 + γ·z2        con γ = 0.5772157 (Euler–Mascheroni)
+                       = ${(1 - ds.gamma).toFixed(6)} × ${ds.z1.toFixed(5)} + ${ds.gamma.toFixed(6)} × ${ds.z2.toFixed(5)}
+                       = ${ds.part1.toFixed(5)} + ${ds.part2.toFixed(5)} = ${ds.expected_max_z.toFixed(5)}
+SR0 = σ_SR × ${ds.expected_max_z.toFixed(5)} = ${ds.sr0.toFixed(6)}      (anualizado: ${(ds.sr0 * Math.sqrt(252)).toFixed(4)})`}</Eq>
+        <p>Es la aproximación del valor esperado del máximo de N variables normales estándar (teoría de valores extremos): con 162 intentos, el mejor «azar» llega a ≈ {ds.expected_max_z.toFixed(2)} desviaciones. SR0 es ese máximo convertido a unidades de Sharpe.</p>
+        <h4>Paso 5 — Estadístico y probabilidad</h4>
+        <Eq>{`z   = (SR − SR0) / σ_SR = (${ds.sr.toFixed(6)} − ${ds.sr0.toFixed(6)}) / ${ds.sr_std.toFixed(6)} = ${ds.diff.toFixed(6)} / ${ds.sr_std.toFixed(6)} = ${ds.z_stat.toFixed(4)}
+DSR = Φ(z) = Φ(${ds.z_stat.toFixed(4)}) = ${ds.dsr.toFixed(5)}`}</Eq>
+        <p>
+          <strong>Resultado: DSR = {ds.dsr.toFixed(4)}.</strong> Equivale a un p-valor unilateral de {(1 - ds.dsr).toFixed(3)} contra la hipótesis «el Sharpe verdadero es el que daría el mejor de {ds.n_trials} intentos sin habilidad». Por debajo del 0.95 usual, no se declara significativo. Para comparar: sin corregir por selección (N = 1), la probabilidad de que el Sharpe verdadero sea positivo sería {ds.sensitivity_n_trials[0].dsr.toFixed(5)}.
+        </p>
+        <h4>Sensibilidad al número de intentos N</h4>
         <Tabla
-          cab={["Componente", "Valor"]}
+          densa
+          cab={["N", "SR0 diario", "SR0 anualizado", "DSR"]}
+          filas={ds.sensitivity_n_trials.map((x) => [ent(x.n_trials) + (x.n_trials === ds.n_trials ? " (pre-registrado)" : ""), num(x.sr0_daily, 5), num(x.sr0_annualized, 3), num(x.dsr, 4)])}
+        />
+        <h4>¿Son realmente 162 pruebas independientes? Número efectivo de intentos <Etiqueta tipo="exp" /></h4>
+        <p>
+          Las {ds.n_trials} variantes comparten casi toda su exposición a SPY, por lo que sus retornos están muy correlacionados: la correlación promedio entre pares es <strong>{num(tr.mean_pairwise_corr, 3)}</strong> (mínima {num(tr.min_pairwise_corr, 3)}), y el primer autovalor de la matriz de correlaciones explica el {pct(tr.top_eigenvalue_share, 1)} de la varianza.
+          La razón de participación de autovalores, N<sub>eff</sub> = (Σλ)² / Σλ², da <strong>N<sub>eff</sub> = {num(tr.n_eff_participation, 2)}</strong> dimensiones independientes. Recalculando con ese N: SR0 = {num(tr.sr0_with_n_eff, 5)} y DSR = {num(tr.dsr_with_n_eff, 5)}.
+          Alternativamente, la formulación original usa la desviación estándar <em>entre</em> los Sharpe de las pruebas (aquí {num(tr.sr_trials_std_daily, 5)} diario; rango {num(tr.sr_trials_min_daily, 4)}–{num(tr.sr_trials_max_daily, 4)}) en lugar de σ_SR: con N = {ds.n_trials} da SR0 = {num(tr.sr0_cross_trial_n162, 5)} y DSR = {num(tr.dsr_cross_trial_sigma_n162, 4)}.
+        </p>
+        <Tabla
+          cab={["Variante del cálculo", "SR0 diario", "DSR"]}
           filas={[
-            ["n (días OOS)", ent(d.n)], ["SR diario / anualizado (×√252)", `${num(d.sr_daily, 5)} / ${num(d.sr_annualized, 3)}`],
-            ["Asimetría γ3 / curtosis γ4", `${num(d.skew, 3)} / ${num(d.kurtosis, 2)} (colas pesadas)`], ["σ_SR", num(d.sr_std, 5)],
-            ["SR0 diario / anualizado (máximo esperado por azar entre N)", `${num(d.sr0, 5)} / ${num(d.sr0_annualized, 3)}`],
-            ["PSR frente a SR = 0 (sin corregir por intentos)", num(d.psr_vs_zero, 5)], ["DSR (N = 162)", num(d.dsr, 4)],
+            ["Pre-registrada: σ_SR del estimador, N = 162", num(ds.sr0, 5), num(ds.dsr, 4)],
+            ["σ entre pruebas, N = 162", num(tr.sr0_cross_trial_n162, 5), num(tr.dsr_cross_trial_sigma_n162, 4)],
+            [`σ_SR, N efectivo = ${num(tr.n_eff_participation, 2)}`, num(tr.sr0_with_n_eff, 5), num(tr.dsr_with_n_eff, 5)],
+            [`σ entre pruebas, N efectivo = ${num(tr.n_eff_participation, 2)}`, num(tr.sr0_cross_trial_n_eff, 5), num(tr.dsr_cross_trial_sigma_n_eff, 5)],
           ]}
         />
         <p>
-          Tras corregir por los 162 intentos, la probabilidad de que el Sharpe verdadero supere al máximo esperable por azar es {pct(d.dsr, 1)}, por debajo del 95 % usual. Es una corrección conservadora: las 162 variantes no son independientes (están muy correlacionadas), así que el número efectivo de pruebas independientes es menor que 162.
+          <strong>Cómo leerlo, con dos salvedades importantes.</strong> (1) El número pre-registrado ({num(ds.dsr, 3)}) es la cota más conservadora: supone 162 intentos independientes, y las variantes en realidad son casi réplicas unas de otras (N<sub>eff</sub> ≈ {num(tr.n_eff_participation, 1)}), por lo que la penalización real por selección es mucho menor y el DSR corregido se acerca a 1.
+          Pero N<sub>eff</sub> ≈ 1 subestima la diversidad <em>de timing</em>: la correlación es alta sobre todo porque todas las variantes tienen la misma exposición base a SPY, no porque señalen en las mismas fechas. La verdad está entre ambos extremos.
+          (2) <strong>Un DSR cercano a 1 contra cero no prueba que el modelo supere a comprar y mantener.</strong> Cualquier cartera accionaria tiene Sharpe positivo en 22 años (el de comprar y mantener es {num(bh.sharpe, 3)}). La comparación relevante es la diferencia de Sharpe frente a la referencia, que está en la tabla 9.1: ΔSharpe vs comprar y mantener {sg(b.sharpe_model_minus_buyhold.point, 3)} con IC95 % [{sg(b.sharpe_model_minus_buyhold.ci_lo, 3)}, {sg(b.sharpe_model_minus_buyhold.ci_hi, 3)}], que incluye el cero.
         </p>
 
-        <h4>8.3 Prueba placebo por desplazamiento circular <Etiqueta tipo="exp" /></h4>
+        <h4>9.3 Prueba placebo por desplazamiento circular <Etiqueta tipo="exp" /></h4>
         <p>
           Pregunta: ¿importa <em>cuándo</em> el modelo reduce exposición, o bastaría estar defensivo la misma fracción del tiempo en fechas al azar? Se toma la serie de exposición decidida de la variante más elegida (<code>{pl.variant}</code>, {frec[0][1]} de {nAnios} años) y se desplaza circularmente
           {" "}{ent(pl.n_placebo)} veces por un desfase uniforme en [252, n − 252] días. Cada desplazamiento conserva exactamente la ocupación de niveles y la persistencia, pero rompe su alineación con el mercado; se vuelve a simular con los mismos precios y costos.
@@ -409,7 +538,7 @@ DSR  = Φ( (SR − SR0) / σ_SR )`}</Eq>
       </Sec>
 
       {/* ---------------- 9 Sensibilidad ---------------- */}
-      <Sec id="sensibilidad" n="9" titulo="Sensibilidad y robustez de las 162 variantes">
+      <Sec id="sensibilidad" n="10" titulo="Sensibilidad y robustez de las 162 variantes">
         <p>
           <Etiqueta tipo="exp" /> Se calcula el desempeño de <em>cada</em> variante sobre las mismas fechas fuera de muestra (descriptivo: aquí todas se ven sobre el mismo período, no es una validación). Referencias: Calmar de comprar y mantener {num(bh.calmar, 3)}, de SMA200 {num(sma.calmar, 3)}.
         </p>
@@ -435,7 +564,7 @@ DSR  = Φ( (SR − SR0) / σ_SR )`}</Eq>
       </Sec>
 
       {/* ---------------- 10 Dimensiones ---------------- */}
-      <Sec id="dimensiones" n="10" titulo="Diagnóstico de las dimensiones">
+      <Sec id="dimensiones" n="11" titulo="Diagnóstico de las dimensiones">
         <p><Etiqueta tipo="exp" /> Correlación de Pearson entre las seis dimensiones y el índice compuesto (pesos iguales) sobre las {ent(ap.dims.n_rows)} fechas fuera de muestra con las seis disponibles:</p>
         <Tabla
           densa
@@ -457,9 +586,9 @@ DSR  = Φ( (SR − SR0) / σ_SR )`}</Eq>
       </Sec>
 
       {/* ---------------- 11 Lectura crítica ---------------- */}
-      <Sec id="lectura" n="11" titulo="Lectura crítica de los resultados">
+      <Sec id="lectura" n="12" titulo="Lectura crítica de los resultados">
         <ol className="exp-lista">
-          <li><strong>Frente a comprar y mantener:</strong> la reducción de la peor caída (de {pct(Math.abs(bh.max_drawdown), 1)} a {pct(Math.abs(mod.max_drawdown), 1)}) con CAGR equivalente es robusta a la variante (sección 9). Pero su incertidumbre real es alta: casi todo el beneficio proviene de un episodio (2008) y el bootstrap por bloques no la captura bien.</li>
+          <li><strong>Frente a comprar y mantener:</strong> la reducción de la peor caída (de {pct(Math.abs(bh.max_drawdown), 1)} a {pct(Math.abs(mod.max_drawdown), 1)}) con CAGR equivalente es robusta a la variante (sección 10). Pero su incertidumbre real es alta: casi todo el beneficio proviene de un episodio (2008) y el bootstrap por bloques no la captura bien.</li>
           <li><strong>Frente a SMA200:</strong> la diferencia de Calmar ({sg(ic.value, 3)}) tiene un IC95 % de [{sg(ic.ci_lo, 3)}, {sg(ic.ci_hi, 3)}]. Con {r.episodes.episodes.length} episodios evaluables y una ventaja que solo aparece con θ = 0.5, no es posible distinguirla de cero. Por eso <strong>INCONCLUSIVE</strong> y no <em>VALIDATED</em>.</li>
           <li><strong>No es un rechazo:</strong> el modelo no es peor que SMA200 (Calmar mayor, CAGR {pp(b.cagr_model_minus_sma200.point, 1)} mayor con IC que excluye 0) y la prueba placebo sugiere que el momento de las señales aporta información. Rechazar exigiría evidencia en contra, y aquí no la hay.</li>
           <li><strong>Costo de la cautela:</strong> {pct(ex.share_fully_invested, 0)} de los días 100 % invertido, {pct(r.level_fractions["4"], 1)} en Crisis. En 2009 el modelo rindió {pp(a2009.model - a2009.buy_hold, 1)} menos que comprar y mantener por tardar en volver a exponerse.</li>
@@ -468,7 +597,7 @@ DSR  = Φ( (SR − SR0) / σ_SR )`}</Eq>
       </Sec>
 
       {/* ---------------- 12 Validez ---------------- */}
-      <Sec id="validez" n="12" titulo="Amenazas a la validez y limitaciones">
+      <Sec id="validez" n="13" titulo="Amenazas a la validez y limitaciones">
         <Tabla
           cab={["Amenaza", "Estado / mitigación"]}
           filas={[
@@ -489,7 +618,7 @@ DSR  = Φ( (SR − SR0) / σ_SR )`}</Eq>
       </Sec>
 
       {/* ---------------- 13 Siguiente ---------------- */}
-      <Sec id="siguiente" n="13" titulo="Qué haría falta para validar (o rechazar)">
+      <Sec id="siguiente" n="14" titulo="Qué haría falta para validar (o rechazar)">
         <ul className="exp-lista">
           <li><strong>EXP-002 (propuesta, requiere su propio pre-registro):</strong> grilla de θ que encierre el óptimo (p. ej. 0.25–1.0) y estricta separación entre elección de grilla y evaluación; el estudio de θ en el borde no puede hacerse sobre estos mismos datos sin invalidar la inferencia.</li>
           <li><strong>Más eventos independientes:</strong> mercados internacionales y otros activos de riesgo; períodos previos a 2002 con refugio en efectivo (la serie DTB3 llega a 1954); series con más crisis.</li>
@@ -499,7 +628,7 @@ DSR  = Φ( (SR − SR0) / σ_SR )`}</Eq>
       </Sec>
 
       {/* ---------------- 14 Repro ---------------- */}
-      <Sec id="repro" n="14" titulo="Reproducibilidad y transparencia">
+      <Sec id="repro" n="15" titulo="Reproducibilidad y transparencia">
         <Eq>{`git clone ${REPO}
 pip install -e ".[dev]"
 # 1. datos congelados (Release data-2026-11-11) y verificación de hashes

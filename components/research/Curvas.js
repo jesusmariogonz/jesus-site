@@ -99,3 +99,52 @@ export function Leyenda({ claves }) {
     </div>
   );
 }
+
+/* SPY (retorno total, escala log) con franjas rojas donde la exposición aplicada del modelo fue < 100 %.
+   Intensidad de la franja = 1 − exposición. Debajo, la exposición semanal promedio. */
+export function CurvaEventos({ curvas, expo }) {
+  const fechas = curvas.buy_hold.dates;
+  const x = escalaX(fechas);
+  const eq = curvas.buy_hold.equity;
+  const lo = Math.log(Math.min(...eq));
+  const hi = Math.log(Math.max(...eq));
+  const HP = 250; // alto del panel de precio
+  const HE = 70; // alto del panel de exposición
+  const yP = (v) => M.t + (1 - (Math.log(v) - lo) / (hi - lo)) * (HP - M.t);
+  const yE = (e) => HP + 22 + (1 - e) * HE;
+  const ancho = (W - M.l - M.r) / fechas.length + 0.6;
+  const ticks = [1, 2, 4, 8, 16].filter((v) => Math.log(v) >= lo - 1e-9 && Math.log(v) <= hi + 1e-9);
+  return (
+    <svg viewBox={`0 0 ${W} ${HP + HE + 56}`} className="exp-chart" role="img" aria-label="SPY con los períodos en que el modelo estuvo defensivo">
+      {ticks.map((v) => (
+        <g key={v}>
+          <line x1={M.l} x2={W - M.r} y1={yP(v)} y2={yP(v)} stroke="var(--line)" strokeWidth="1" />
+          <text x={M.l - 8} y={yP(v) + 4} textAnchor="end" fontSize="11" fill="var(--ink-soft)">{v}×</text>
+        </g>
+      ))}
+      {fechas.map((f, i) =>
+        expo.exposure[i] < 0.999 ? (
+          <rect key={f} x={x(f) - ancho / 2} y={M.t} width={ancho} height={HP - M.t} fill="#dc2626" opacity={Math.min(0.75, 0.15 + (1 - expo.exposure[i]) * 0.75)} />
+        ) : null
+      )}
+      <path d={trazo(fechas, eq, x, yP)} fill="none" stroke="var(--ink)" strokeWidth="1.6" />
+      <text x={M.l} y={HP + 14} fontSize="11" fill="var(--ink-soft)">Exposición accionaria aplicada del modelo (semanal)</text>
+      {[1, 0.5, 0].map((e) => (
+        <g key={e}>
+          <line x1={M.l} x2={W - M.r} y1={yE(e)} y2={yE(e)} stroke="var(--line)" strokeWidth="1" />
+          <text x={M.l - 8} y={yE(e) + 4} textAnchor="end" fontSize="11" fill="var(--ink-soft)">{e * 100}%</text>
+        </g>
+      ))}
+      <path d={trazo(fechas, expo.exposure, x, yE)} fill="none" stroke={COLORES.model} strokeWidth="1.8" />
+      {(() => {
+        const y0 = Number(fechas[0].slice(0, 4));
+        const y1 = Number(fechas[fechas.length - 1].slice(0, 4));
+        const marcas = [];
+        for (let y = Math.ceil(y0 / 4) * 4; y <= y1; y += 4) marcas.push(y);
+        return marcas.map((y) => (
+          <text key={y} x={x(`${y}-01-01`)} y={HP + HE + 48} textAnchor="middle" fontSize="11" fill="var(--ink-soft)">{y}</text>
+        ));
+      })()}
+    </svg>
+  );
+}
