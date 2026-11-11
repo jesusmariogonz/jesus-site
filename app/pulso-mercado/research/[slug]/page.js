@@ -3,15 +3,21 @@ import { notFound } from "next/navigation";
 import { absUrl } from "@/lib/site";
 import { EXPERIMENTOS, getExperimento } from "@/lib/research/experimentos";
 import Exp001Resultado from "@/components/Exp001Resultado";
+import Exp001Reporte from "@/components/research/Exp001Reporte";
 
 // Contenido de detalle de cada experimento, por slug. Un experimento nuevo
 // agrega aquí su componente de resultado.
 const DETALLES = {
   "exp-001-modelo-de-emergencia": () => (
     <>
+      <Exp001Reporte />
       <div className="activo-bloque">
-        <h2>Resultado publicado</h2>
-        <Exp001Resultado />
+        <details>
+          <summary><strong>Resumen corto para lectores generales</strong></summary>
+          <div style={{ marginTop: 12 }}>
+            <Exp001Resultado />
+          </div>
+        </details>
       </div>
       <div className="activo-bloque">
         <h2>El medidor que sale de este experimento</h2>

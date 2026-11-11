@@ -1,0 +1,178 @@
+[
+ {
+  "id": "SPY",
+  "source": "yahoo",
+  "symbol": "SPY",
+  "role": "equity_etf",
+  "filas": 8504,
+  "desde": "1993-01-29",
+  "hasta": "2026-11-10",
+  "sha256": "2668c2bd7cd292b41c1b30f99926b1104e3a38e8a5f2bdf88016d04a5badbad2",
+  "notas": "Desde 1993-01. Usar adj_close para retorno total."
+ },
+ {
+  "id": "VIX",
+  "source": "yahoo",
+  "symbol": "^VIX",
+  "role": "volatility",
+  "filas": 9285,
+  "desde": "1990-01-02",
+  "hasta": "2026-11-10",
+  "sha256": "970fb6647a64843bc4b83678f73af364348be53a8483c8fbded46bc1be378160",
+  "notas": "Desde 1990. Nivel de índice, sin ajustes."
+ },
+ {
+  "id": "BAA10Y",
+  "source": "fred",
+  "symbol": "BAA10Y",
+  "role": "credit_spread",
+  "filas": 10214,
+  "desde": "1986-01-02",
+  "hasta": "2026-11-09",
+  "sha256": "b7ed0aa4f1e5c893e58aa478195dd259ebc6c58714799db9ed386b2215092dfb",
+  "notas": "Moody's Baa menos Tesoro 10a. Desde 1986. Es la serie larga de crédito disponible: los OAS ICE BofA en FRED solo dan los últimos 3 años (licencia) y NO se usan."
+ },
+ {
+  "id": "RSP",
+  "source": "yahoo",
+  "symbol": "RSP",
+  "role": "breadth_proxy",
+  "filas": 5921,
+  "desde": "2003-05-01",
+  "hasta": "2026-11-10",
+  "sha256": "8e20ea4e97b6d7408eabeed570b082a7a3cb46df87b729236978b123926b9639",
+  "notas": "S&P 500 igual ponderado, desde 2003-05. RSP/SPY es un proxy de amplitud, NO amplitud real."
+ },
+ {
+  "id": "XLK",
+  "source": "yahoo",
+  "symbol": "XLK",
+  "role": "sector",
+  "filas": 7014,
+  "desde": "1998-12-22",
+  "hasta": "2026-11-10",
+  "sha256": "ff61f7cf66d7d0a125714eafb709272996054fba6070eb84103a39c9af895737",
+  "notas": "Desde 1998-12."
+ },
+ {
+  "id": "XLE",
+  "source": "yahoo",
+  "symbol": "XLE",
+  "role": "sector",
+  "filas": 7014,
+  "desde": "1998-12-22",
+  "hasta": "2026-11-10",
+  "sha256": "7c1127ce30f83ad2d7d0a8980df316a5fe472854eab127badc48b372b2c380e4",
+  "notas": "Desde 1998-12."
+ },
+ {
+  "id": "XLF",
+  "source": "yahoo",
+  "symbol": "XLF",
+  "role": "sector",
+  "filas": 7014,
+  "desde": "1998-12-22",
+  "hasta": "2026-11-10",
+  "sha256": "cf821a181a4730c6508a67ed1d729bfcad231261236d745e2d94d133db2044e9",
+  "notas": "Desde 1998-12."
+ },
+ {
+  "id": "XLV",
+  "source": "yahoo",
+  "symbol": "XLV",
+  "role": "sector",
+  "filas": 7014,
+  "desde": "1998-12-22",
+  "hasta": "2026-11-10",
+  "sha256": "223c80a0de6e360f1a91dc98ff0591fae3c95efc53e44348ad7470a728f6d55a",
+  "notas": "Desde 1998-12."
+ },
+ {
+  "id": "XLP",
+  "source": "yahoo",
+  "symbol": "XLP",
+  "role": "sector",
+  "filas": 7014,
+  "desde": "1998-12-22",
+  "hasta": "2026-11-10",
+  "sha256": "55edb302fe2df26f502cc20b902055e3bac62b70d6ee3b9976158325bad08436",
+  "notas": "Desde 1998-12."
+ },
+ {
+  "id": "XLU",
+  "source": "yahoo",
+  "symbol": "XLU",
+  "role": "sector",
+  "filas": 7014,
+  "desde": "1998-12-22",
+  "hasta": "2026-11-10",
+  "sha256": "655e8fae8019996f11142960fb25db702cc5ed6a9d75a49140c555b300a89a55",
+  "notas": "Desde 1998-12."
+ },
+ {
+  "id": "XLY",
+  "source": "yahoo",
+  "symbol": "XLY",
+  "role": "sector",
+  "filas": 7014,
+  "desde": "1998-12-22",
+  "hasta": "2026-11-10",
+  "sha256": "b50d10008e392d753cc9e88168f86a931b0aaf9eebca34b25e5d648e54c5963c",
+  "notas": "Desde 1998-12."
+ },
+ {
+  "id": "XLI",
+  "source": "yahoo",
+  "symbol": "XLI",
+  "role": "sector",
+  "filas": 7014,
+  "desde": "1998-12-22",
+  "hasta": "2026-11-10",
+  "sha256": "9b975709dbf9d370a3a67f4fb1618cc7a7e1e53a1e3ac2b364767e9097e9a9ef",
+  "notas": "Desde 1998-12."
+ },
+ {
+  "id": "XLB",
+  "source": "yahoo",
+  "symbol": "XLB",
+  "role": "sector",
+  "filas": 7014,
+  "desde": "1998-12-22",
+  "hasta": "2026-11-10",
+  "sha256": "381b84ec78cbe87a280a4cf800a8bba7c9f360beac6e6cf789faef90eac0f720",
+  "notas": "Desde 1998-12."
+ },
+ {
+  "id": "TLT",
+  "source": "yahoo",
+  "symbol": "TLT",
+  "role": "safe_haven_long",
+  "filas": 6111,
+  "desde": "2002-07-30",
+  "hasta": "2026-11-10",
+  "sha256": "3ec632230926d4b405d7411c1e5cd893b9c7d33cb5cd6c8027f91fc96964067d",
+  "notas": "Tesoro 20+ años, desde 2002-07."
+ },
+ {
+  "id": "BIL",
+  "source": "yahoo",
+  "symbol": "BIL",
+  "role": "cash_like",
+  "filas": 4895,
+  "desde": "2007-05-30",
+  "hasta": "2026-11-10",
+  "sha256": "a8e1d2c460da49e88bf072a3af5ef281e098d2dd6ca9baa3052f0e5fce0c48d0",
+  "notas": "T-Bills 1-3 meses, desde 2007-05. Antes: usar FRED DTB3 como retorno de efectivo."
+ },
+ {
+  "id": "DTB3",
+  "source": "fred",
+  "symbol": "DTB3",
+  "role": "cash_rate",
+  "filas": 18205,
+  "desde": "1954-01-04",
+  "hasta": "2026-11-09",
+  "sha256": "0b0189d6060c0d9e0c2d792102ba317c6b05dba4ab7a9e76eda17a20d8958aad",
+  "notas": "T-Bill 3m (tasa de efectivo para backtests antes de BIL). Desde 1954."
+ }
+]

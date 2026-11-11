@@ -6624,3 +6624,23 @@ html:not(.dark) .pglobe-land {
 .exp-estado--rejected { color: #dc2626; border: 1px solid #dc2626; }
 .exp-estado--inconclusive { color: #eab308; border: 1px solid #eab308; }
 .exp-ver-link { display: inline-block; margin-top: 10px; text-decoration: none; }
+
+/* Reporte técnico de experimentos */
+.exp-reporte { margin-top: 18px; }
+.exp-toc { display: flex; flex-wrap: wrap; gap: 6px 14px; padding: 12px 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); font-size: .82rem; margin-bottom: 22px; }
+.exp-toc strong { width: 100%; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); }
+.exp-sec { margin: 34px 0; scroll-margin-top: 80px; }
+.exp-sec h2 { font-size: 1.3rem; margin: 0 0 12px; }
+.exp-sec h4 { margin: 22px 0 8px; font-size: .98rem; }
+.exp-sec p, .exp-sec li { line-height: 1.6; }
+.exp-lista { padding-left: 22px; }
+.exp-lista li { margin-bottom: 8px; }
+.exp-eq { background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; font-size: .8rem; line-height: 1.55; overflow-x: auto; white-space: pre; }
+.exp-tabla-densa { font-size: .78rem; }
+.exp-tabla-densa th, .exp-tabla-densa td { padding: 5px 8px; vertical-align: top; }
+.exp-etq { display: inline-block; font-size: .62rem; font-weight: 700; letter-spacing: .07em; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); vertical-align: middle; }
+.exp-etq-pre { color: #15803d; border-color: #16a34a; }
+.exp-etq-exp { color: #b45309; border-color: #d97706; }
+.exp-chart { width: 100%; height: auto; display: block; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
+.exp-leyenda { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 8px 0 4px; font-size: .8rem; color: var(--ink-soft); }
+.exp-leyenda i { display: inline-block; width: 18px; height: 4px; border-radius: 2px; margin-right: 6px; vertical-align: middle; }
