@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { absUrl } from "@/lib/site";
 import EmergencyGauge from "@/components/EmergencyGauge";
+import Exp001Resultado from "@/components/Exp001Resultado";
 
 export const metadata = {
   title: "Research Lab — Pulso de Mercado",
@@ -95,12 +96,15 @@ export default function ResearchLabPage() {
             <span className="research-lab-counter-valor">0</span>
             <span className="research-lab-counter-etiqueta">Rejected hypotheses</span>
           </div>
+          <div className="research-lab-counter">
+            <span className="research-lab-counter-valor">1</span>
+            <span className="research-lab-counter-etiqueta">Inconclusive results</span>
+          </div>
         </div>
         <p className="activo-descripcion" style={{ marginTop: -8 }}>
-          Esta sección se acaba de abrir — todavía no hay experimentos publicados. Los contadores
-          de arriba son reales (cero), no un marcador de posición: se actualizarán a medida que se
-          publique investigación real, nunca con cifras de ejemplo.
-        </p>
+          Primer experimento publicado: EXP-001, con resultado INCONCLUSIVE (ver abajo). Los contadores son reales: un
+          resultado inconcluso no cuenta como validado ni como rechazado, y se actualizarán solo con investigación real publicada.
+          </p>
 
         <div className="activo-bloque">
           <h2>Indicador diario de estrés de mercado</h2>
@@ -113,6 +117,11 @@ export default function ResearchLabPage() {
             predicción ni una recomendación, y todavía no está validado.
           </p>
           <EmergencyGauge />
+        </div>
+
+        <div className="activo-bloque">
+          <h2>Resultados publicados</h2>
+          <Exp001Resultado />
         </div>
 
         <div className="activo-bloque">

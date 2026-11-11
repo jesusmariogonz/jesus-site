@@ -6598,3 +6598,17 @@ html:not(.dark) .pglobe-land {
 .gauge-dim-valor { text-align: right; color: var(--ink-soft); }
 .gauge-disclaimer { margin: 14px 0 0; font-size: .72rem; color: var(--ink-soft); }
 .gauge-aviso { text-align: center; color: var(--ink-soft); font-size: .9rem; }
+
+/* Tarjeta de resultado de experimento (Research Lab) */
+.exp-card { border: 1px solid var(--line); border-radius: 14px; background: var(--surface); color: var(--ink); padding: 22px 24px; }
+.exp-card h3 { margin: 6px 0 10px; }
+.exp-card h4 { margin: 22px 0 8px; font-size: .95rem; }
+.exp-card-cabecera { display: flex; align-items: center; gap: 10px; }
+.exp-card-id { font-size: .8rem; font-weight: 700; letter-spacing: .08em; color: var(--ink-soft); }
+.exp-badge { font-size: .72rem; font-weight: 700; letter-spacing: .08em; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--line); }
+.exp-badge-inconcluso { color: #b45309; border-color: #d97706; background: color-mix(in srgb, #d97706 12%, var(--surface)); }
+.exp-meta, .exp-nota { font-size: .82rem; color: var(--ink-soft); }
+.exp-criterios { padding-left: 18px; font-size: .88rem; }
+.exp-criterios li { margin-bottom: 6px; }
+.exp-ok { color: #16a34a; font-weight: 700; }
+.exp-no { color: #dc2626; font-weight: 700; }
