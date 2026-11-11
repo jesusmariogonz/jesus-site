@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { absUrl } from "@/lib/site";
+import EmergencyGauge from "@/components/EmergencyGauge";
 
 export const metadata = {
   title: "Research Lab — Pulso de Mercado",
@@ -100,6 +101,19 @@ export default function ResearchLabPage() {
           de arriba son reales (cero), no un marcador de posición: se actualizarán a medida que se
           publique investigación real, nunca con cifras de ejemplo.
         </p>
+
+        <div className="activo-bloque">
+          <h2>Indicador diario de estrés de mercado</h2>
+          <p className="activo-descripcion">
+            Un medidor sencillo del modelo del experimento{" "}
+            <a href="https://github.com/jesusmariogonz/pulso-research-lab/blob/main/experiments/EXP-001-emergency-model/PREREGISTRATION.md">EXP-001</a>
+            : combina tendencia, volatilidad, correlación entre sectores, crédito, amplitud y velocidad de la caída. Entre
+            más se acerca a rojo, más se parece el mercado de hoy a los episodios de estrés del pasado. Se calcula cada
+            día hábil con los datos públicos del repositorio; es <strong>informativo y experimental</strong>: no es una
+            predicción ni una recomendación, y todavía no está validado.
+          </p>
+          <EmergencyGauge />
+        </div>
 
         <div className="activo-bloque">
           <h2>Research domains</h2>

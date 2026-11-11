@@ -6580,3 +6580,21 @@ html:not(.dark) .pglobe-land {
 @media (max-width: 640px) { .motor-switch { grid-template-columns: 1fr; } }
 .motor-aviso { margin-top: 14px; padding: 12px 14px; border: 1px solid #d97706; border-radius: 10px; background: color-mix(in srgb, #d97706 10%, var(--surface)); color: var(--ink); font-size: .85rem; }
 .motor-aviso ul { margin: 8px 0 0; padding-left: 20px; }
+
+/* Medidor del Indicador de Estrés (EXP-001) */
+.gauge-card { max-width: 460px; margin: 8px auto 0; padding: 18px 20px 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); color: var(--ink); }
+.gauge-cabecera { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+.gauge-badge { font-size: .7rem; font-weight: 700; letter-spacing: .08em; padding: 3px 9px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink-soft); }
+.gauge-fecha { font-size: .78rem; color: var(--ink-soft); }
+.gauge-svg { width: 100%; height: auto; display: block; }
+.gauge-lectura { display: flex; flex-direction: column; align-items: center; margin-top: -6px; }
+.gauge-valor { font-size: 2.6rem; font-weight: 800; line-height: 1; }
+.gauge-nivel { font-size: .9rem; font-weight: 700; letter-spacing: .12em; margin-top: 4px; }
+.gauge-sub { font-size: .78rem; color: var(--ink-soft); text-align: center; margin: 10px 0 14px; }
+.gauge-dims { display: grid; gap: 7px; }
+.gauge-dim { display: grid; grid-template-columns: 1fr 1.2fr 28px; align-items: center; gap: 10px; font-size: .8rem; }
+.gauge-dim-barra { height: 8px; border-radius: 999px; background: var(--line); overflow: hidden; display: block; }
+.gauge-dim-relleno { display: block; height: 100%; border-radius: 999px; transition: width .6s ease; }
+.gauge-dim-valor { text-align: right; color: var(--ink-soft); }
+.gauge-disclaimer { margin: 14px 0 0; font-size: .72rem; color: var(--ink-soft); }
+.gauge-aviso { text-align: center; color: var(--ink-soft); font-size: .9rem; }
