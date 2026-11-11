@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { absUrl } from "@/lib/site";
-import EmergencyGauge from "@/components/EmergencyGauge";
-import Exp001Resultado from "@/components/Exp001Resultado";
+import ExperimentosShowcase from "@/components/ExperimentosShowcase";
+import { EXPERIMENTOS, contarPorEstado } from "@/lib/research/experimentos";
 
 export const metadata = {
   title: "Research Lab — Pulso de Mercado",
@@ -67,6 +67,7 @@ const DOMINIOS = [
 const ETIQUETAS_ESTADO = ["EXPERIMENTAL", "VALIDATED", "REJECTED", "INCONCLUSIVE"];
 
 export default function ResearchLabPage() {
+  const conteo = contarPorEstado();
   return (
     <section className="section">
       <div className="container horizonte-page activo-page">
@@ -85,19 +86,19 @@ export default function ResearchLabPage() {
 
         <div className="research-lab-counters">
           <div className="research-lab-counter">
-            <span className="research-lab-counter-valor">0</span>
+            <span className="research-lab-counter-valor">{conteo.EXPERIMENTAL}</span>
             <span className="research-lab-counter-etiqueta">Active experiments</span>
           </div>
           <div className="research-lab-counter">
-            <span className="research-lab-counter-valor">0</span>
+            <span className="research-lab-counter-valor">{conteo.VALIDATED}</span>
             <span className="research-lab-counter-etiqueta">Validated findings</span>
           </div>
           <div className="research-lab-counter">
-            <span className="research-lab-counter-valor">0</span>
+            <span className="research-lab-counter-valor">{conteo.REJECTED}</span>
             <span className="research-lab-counter-etiqueta">Rejected hypotheses</span>
           </div>
           <div className="research-lab-counter">
-            <span className="research-lab-counter-valor">1</span>
+            <span className="research-lab-counter-valor">{conteo.INCONCLUSIVE}</span>
             <span className="research-lab-counter-etiqueta">Inconclusive results</span>
           </div>
         </div>
@@ -107,21 +108,14 @@ export default function ResearchLabPage() {
           </p>
 
         <div className="activo-bloque">
-          <h2>Indicador diario de estrés de mercado</h2>
+          <h2>Experimentos</h2>
           <p className="activo-descripcion">
-            Un medidor sencillo del modelo del experimento{" "}
-            <a href="https://github.com/jesusmariogonz/pulso-research-lab/blob/main/experiments/EXP-001-emergency-model/PREREGISTRATION.md">EXP-001</a>
-            : combina tendencia, volatilidad, correlación entre sectores, crédito, amplitud y velocidad de la caída. Entre
-            más se acerca a rojo, más se parece el mercado de hoy a los episodios de estrés del pasado. Se calcula cada
-            día hábil con los datos públicos del repositorio; es <strong>informativo y experimental</strong>: no es una
-            predicción ni una recomendación, y todavía no está validado.
+            Cada experimento tiene su propia página con la pregunta, el método, los criterios
+            fijados antes de ver resultados y el veredicto. Pasa el mouse sobre una tarjeta para ver
+            más. El medidor diario de estrés que sale de EXP-001 vive ahora en la{" "}
+            <Link href="/pulso-mercado">página principal de Pulso de Mercado</Link>.
           </p>
-          <EmergencyGauge />
-        </div>
-
-        <div className="activo-bloque">
-          <h2>Resultados publicados</h2>
-          <Exp001Resultado />
+          <ExperimentosShowcase experimentos={EXPERIMENTOS} />
         </div>
 
         <div className="activo-bloque">
