@@ -25,7 +25,7 @@ La semana que entra concentra tres tipos de evento: un dato de inflación con fe
 | Fecha | Evento | País | Importancia | Qué puede afectar |
 |---|---|---|---|---|
 | Lunes 9 de noviembre | [INPC completo de octubre](/blog/inpc-octubre-2026-375-repunte-tercer-mes-electricidad) | México | Alta | Confirmará si el repunte de 3.62% de la primera quincena se sostuvo o se moderó en la segunda |
-| Martes 10 de noviembre, 8:30am ET | CPI de octubre | Estados Unidos | Alta | Referencia clave para la probabilidad de un recorte de la Fed en la reunión del 9 de diciembre, tras el dato de empleo fuerte de la semana pasada |
+| Martes 10 de noviembre, 8:30am ET | [CPI de octubre](/blog/cpi-octubre-2026-04-sorpresa-alza-sin-tasa-anual) | Estados Unidos | Alta | Referencia clave para la probabilidad de un recorte de la Fed en la reunión del 9 de diciembre, tras el dato de empleo fuerte de la semana pasada |
 | Miércoles 11 de noviembre | Día de los Veteranos (Veterans Day) | Estados Unidos | Media | El mercado de bonos y bancos cierran; la bolsa de valores permanece abierta |
 | Viernes 13 de noviembre | PPI de octubre | Estados Unidos | Media | Referencia complementaria al CPI sobre presiones de precios en la cadena de producción |
 | Toda la semana | Comparecencias de al menos diez funcionarios de la Fed (Goolsbee, Barkin, Waller, Logan, Schmid, Hammack, Daly, Williams, Jefferson, entre otros) | Estados Unidos | Alta | Tono esperado mayormente hawkish tras el reporte de empleo de octubre; cualquier señal sobre diciembre moverá al mercado |
