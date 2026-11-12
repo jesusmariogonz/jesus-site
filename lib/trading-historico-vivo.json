@@ -10,12 +10,12 @@
     "initial_stop_price": null,
     "exit_date": null,
     "exit_price": null,
-    "current_price": 30.67,
+    "current_price": 30.91,
     "stop_price": 29.84,
-    "pnl": -8.8,
-    "pnl_pct": -2.79,
+    "pnl": -6.4,
+    "pnl_pct": -2.03,
     "reason": null,
-    "actualizado": "2026-11-12T14:38:04.291999+00:00"
+    "actualizado": "2026-11-12T21:42:35.804016+00:00"
   },
   {
     "bucket": "largo_plazo",
@@ -28,12 +28,12 @@
     "initial_stop_price": null,
     "exit_date": null,
     "exit_price": null,
-    "current_price": 104.335,
+    "current_price": 104.01,
     "stop_price": 100.63,
-    "pnl": 11.14,
-    "pnl_pct": 2.74,
+    "pnl": 9.84,
+    "pnl_pct": 2.42,
     "reason": null,
-    "actualizado": "2026-11-12T14:38:04.292031+00:00"
+    "actualizado": "2026-11-12T21:42:35.804061+00:00"
   },
   {
     "bucket": "largo_plazo",
@@ -46,12 +46,12 @@
     "initial_stop_price": null,
     "exit_date": null,
     "exit_price": null,
-    "current_price": 141.9,
+    "current_price": 140.64,
     "stop_price": 134.89179120744978,
-    "pnl": 8.68,
-    "pnl_pct": 3.15,
+    "pnl": 6.16,
+    "pnl_pct": 2.24,
     "reason": null,
-    "actualizado": "2026-11-12T14:38:04.292035+00:00"
+    "actualizado": "2026-11-12T21:42:35.804064+00:00"
   },
   {
     "bucket": "largo_plazo",
@@ -64,12 +64,12 @@
     "initial_stop_price": null,
     "exit_date": null,
     "exit_price": null,
-    "current_price": 97.07,
+    "current_price": 96.44,
     "stop_price": 92.69000244140625,
-    "pnl": 5.73,
-    "pnl_pct": 2.01,
+    "pnl": 3.84,
+    "pnl_pct": 1.35,
     "reason": null,
-    "actualizado": "2026-11-12T14:38:04.292024+00:00"
+    "actualizado": "2026-11-12T21:42:35.804055+00:00"
   },
   {
     "bucket": "largo_plazo",
@@ -82,12 +82,12 @@
     "initial_stop_price": null,
     "exit_date": null,
     "exit_price": null,
-    "current_price": 372.55,
+    "current_price": 372.62,
     "stop_price": 357.2142660958426,
-    "pnl": 10.24,
-    "pnl_pct": 2.83,
+    "pnl": 10.31,
+    "pnl_pct": 2.85,
     "reason": null,
-    "actualizado": "2026-11-12T14:38:04.292038+00:00"
+    "actualizado": "2026-11-12T21:42:35.804067+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -100,12 +100,12 @@
     "initial_stop_price": null,
     "exit_date": null,
     "exit_price": null,
-    "current_price": 97.855,
+    "current_price": 97.44,
     "stop_price": 93.34786360604423,
-    "pnl": 6.97,
-    "pnl_pct": 3.69,
+    "pnl": 6.14,
+    "pnl_pct": 3.25,
     "reason": null,
-    "actualizado": "2026-11-12T14:38:04.292060+00:00"
+    "actualizado": "2026-11-12T21:42:35.804083+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -118,12 +118,12 @@
     "initial_stop_price": null,
     "exit_date": null,
     "exit_price": null,
-    "current_price": 147.85,
+    "current_price": 146.95,
     "stop_price": 136.84107862200057,
-    "pnl": 3.85,
-    "pnl_pct": 2.67,
+    "pnl": 2.95,
+    "pnl_pct": 2.05,
     "reason": null,
-    "actualizado": "2026-11-12T14:38:04.292044+00:00"
+    "actualizado": "2026-11-12T21:42:35.804070+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -136,12 +136,12 @@
     "initial_stop_price": null,
     "exit_date": null,
     "exit_price": null,
-    "current_price": 29.385,
+    "current_price": 28.83,
     "stop_price": 28.03,
-    "pnl": 3.19,
-    "pnl_pct": 1.57,
+    "pnl": -0.7,
+    "pnl_pct": -0.35,
     "reason": null,
-    "actualizado": "2026-11-12T14:38:04.292047+00:00"
+    "actualizado": "2026-11-12T21:42:35.804073+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -154,12 +154,12 @@
     "initial_stop_price": null,
     "exit_date": null,
     "exit_price": null,
-    "current_price": 58.73,
+    "current_price": 58.21,
     "stop_price": 56.29607146126883,
-    "pnl": 8.55,
-    "pnl_pct": 3.0,
+    "pnl": 5.95,
+    "pnl_pct": 2.09,
     "reason": null,
-    "actualizado": "2026-11-12T14:38:04.292058+00:00"
+    "actualizado": "2026-11-12T21:42:35.804081+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -172,12 +172,12 @@
     "initial_stop_price": null,
     "exit_date": null,
     "exit_price": null,
-    "current_price": 91.725,
+    "current_price": 91.06,
     "stop_price": 87.70803506033761,
-    "pnl": 7.27,
-    "pnl_pct": 2.72,
+    "pnl": 5.28,
+    "pnl_pct": 1.97,
     "reason": null,
-    "actualizado": "2026-11-12T14:38:04.292054+00:00"
+    "actualizado": "2026-11-12T21:42:35.804078+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -190,12 +190,12 @@
     "initial_stop_price": null,
     "exit_date": null,
     "exit_price": null,
-    "current_price": 188.87,
+    "current_price": 187.83,
     "stop_price": 179.68785531180245,
-    "pnl": 5.96,
-    "pnl_pct": 3.26,
+    "pnl": 4.92,
+    "pnl_pct": 2.69,
     "reason": null,
-    "actualizado": "2026-11-12T14:38:04.292051+00:00"
+    "actualizado": "2026-11-12T21:42:35.804075+00:00"
   },
   {
     "bucket": "riesgo_alto",
@@ -208,12 +208,12 @@
     "initial_stop_price": null,
     "exit_date": null,
     "exit_price": null,
-    "current_price": 79.125,
+    "current_price": 80.15,
     "stop_price": 73.02625056675502,
-    "pnl": 1.36,
-    "pnl_pct": 1.74,
+    "pnl": 2.38,
+    "pnl_pct": 3.06,
     "reason": null,
-    "actualizado": "2026-11-12T14:38:04.292075+00:00"
+    "actualizado": "2026-11-12T21:42:35.804094+00:00"
   },
   {
     "bucket": "riesgo_alto",
@@ -226,12 +226,12 @@
     "initial_stop_price": null,
     "exit_date": null,
     "exit_price": null,
-    "current_price": 88.125,
+    "current_price": 88.29,
     "stop_price": 80.22,
-    "pnl": -3.28,
-    "pnl_pct": -3.59,
+    "pnl": -3.12,
+    "pnl_pct": -3.41,
     "reason": null,
-    "actualizado": "2026-11-12T14:38:04.292071+00:00"
+    "actualizado": "2026-11-12T21:42:35.804091+00:00"
   },
   {
     "bucket": "riesgo_alto",
@@ -244,11 +244,11 @@
     "initial_stop_price": null,
     "exit_date": null,
     "exit_price": null,
-    "current_price": 84.1,
+    "current_price": 82.26,
     "stop_price": 79.94643320356097,
-    "pnl": -0.04,
-    "pnl_pct": -0.05,
+    "pnl": -1.88,
+    "pnl_pct": -2.23,
     "reason": null,
-    "actualizado": "2026-11-12T14:38:04.292065+00:00"
+    "actualizado": "2026-11-12T21:42:35.804086+00:00"
   }
 ]
