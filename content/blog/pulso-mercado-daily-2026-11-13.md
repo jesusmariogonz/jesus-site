@@ -11,7 +11,7 @@ tags:
   - Applied Materials
   - semiconductores
   - desempleo
-resumen: 'Wall Street cerró el jueves con una baja moderada —S&P 500 -0.4%, Dow -0.4%, Russell 2000 -1.6%— en la primera sesión completa tras la renuncia confirmada de Jensen Huang como CEO de Nvidia. Cisco reportó resultados muy por encima de lo esperado y elevó su guía anual apoyada en infraestructura de IA, mientras las solicitudes de desempleo subieron a 200,000 y las ventas de casas existentes cayeron a su nivel más bajo desde 2010.'
+resumen: 'Wall Street cerró el viernes mixto —S&P 500 -0.4%, Nasdaq -0.9%, Dow +0.1%— tras un PPI de octubre que subió a su ritmo anual más alto en cuatro años (6.5%) y una segunda sesión de ventas en el sector de semiconductores: Nvidia cayó más de 4% y cerró por debajo de $4 billones de capitalización, mientras AMD se desplomó casi 9% y HSBC recortó su precio objetivo para Nvidia de $365 a $170. Pese a la sesión negativa, los tres índices principales cerraron la semana en terreno positivo.'
 imagen: /blog/portadas/mercados-hoy-fija.jpg
 socialImagen: /blog/social/pulso-mercado-daily-2026-11-13.jpg
 ---
@@ -20,61 +20,63 @@ socialImagen: /blog/social/pulso-mercado-daily-2026-11-13.jpg
 
 | Activo | Nivel | Cambio |
 |---|---|---|
-| S&P 500 | 7,592 | -0.35% |
-| Nasdaq Composite | 25,366 | -0.32% |
-| Russell 2000 | — | -1.64% en IWM (ETF que replica el índice) |
-| Dow Jones | 52,297 | -0.38% |
-| VIX | — | — |
+| S&P 500 | 7,561.67 | -0.40% |
+| Nasdaq Composite | 25,136.27 | -0.91% |
+| Russell 2000 | 2,790.50 | -0.31% |
+| Dow Jones | 52,347.55 | +0.10% |
+| VIX | 19.03 | +1.77% |
 | S&P/BMV IPC | — | — |
 | USD/MXN | — | — |
-| US 10Y | — | — |
-| WTI | — | — |
+| US 10Y | 5.15% | +1.00% |
+| WTI | $89.11 | +0.42% |
 
 ## Market Regime
 
-El jueves fue la primera sesión completa de Wall Street después de la confirmación oficial, a las 8:48am hora del este, de que Jensen Huang renunció como CEO, presidente y director de Nvidia, con la CFO Colette Kress asumiendo como CEO interina. La acción de Nvidia, que había llegado a caer 8.48% antes del anuncio formal, cerró el día con una baja de 4.34%, hasta $166.19 —una recuperación parcial frente al pánico inicial, pero suficiente para arrastrar al resto del mercado—. El S&P 500 cerró en 7,592 puntos (-0.35%), el Nasdaq Composite en 25,366 (-0.32%) y el Dow Jones en 52,297 (-0.38%), mientras el Russell 2000 tuvo la caída más pronunciada del día, con su ETF de referencia (IWM) retrocediendo 1.64% —una señal de que la aversión al riesgo de la sesión no se limitó a los pesos pesados tecnológicos, sino que golpeó con más fuerza todavía a las empresas de menor capitalización—. El reporte de resultados de Cisco, publicado después del cierre, ofreció el contrapeso más claro a la narrativa negativa del día: ingresos de $18,500 millones (+24% anual), muy por encima del consenso de $18,100 millones, y una guía anual elevada apoyada explícitamente en infraestructura de IA.
+El PPI de octubre, publicado esta mañana, subió 0.3% mensual —por debajo del 0.4% esperado por el consenso— pero su ritmo anual, 6.5%, fue el más alto desde noviembre de 2022, con el componente subyacente llegando a 5% anual, un máximo desde enero de 2023. El mercado reaccionó primero con alivio por la cifra mensual más suave, pero esa ganancia inicial se revirtió conforme avanzó la sesión, en parte porque el Treasury a 10 años llegó a tocar 5.17% intradía, su nivel más alto desde octubre, antes de cerrar en 5.15%. El verdadero protagonista del día, sin embargo, volvió a ser Nvidia: la acción cayó más de 4% en una segunda sesión de ventas desde la renuncia de Jensen Huang, llevando su capitalización de mercado por debajo de $4 billones de dólares y acumulando una caída semanal de alrededor de 12%. HSBC recortó su calificación sobre la acción de "Comprar" a "Mantener" y su precio objetivo de $365 a $170, citando que la confianza de los inversionistas quedó "sacudida". El contagio hacia el resto del sector de semiconductores fue más fuerte que el día anterior: AMD cayó casi 9%, Broadcom cerca de 6% e Intel alrededor de 5%. El Dow Jones, menos expuesto a semiconductores, logró cerrar en terreno positivo (+0.10%), mientras el S&P 500 y el Nasdaq Composite cerraron en rojo (-0.40% y -0.91%, respectivamente). Pese a la sesión negativa, los tres índices principales cerraron la semana completa con ganancias: el Nasdaq avanzó 2.3% y el S&P 500 2.5% en la semana.
 
-No logramos confirmar con fuentes de cierre oficial el nivel del VIX, el Treasury a 10 años, el WTI, el FIX de Banxico ni el S&P/BMV IPC para la sesión de hoy. Los niveles de S&P 500, Nasdaq y Dow provienen de un cierre confirmado el día de ayer en esta misma serie, consistente con los cambios porcentuales reportados hoy para sus ETFs de referencia.
+No logramos confirmar con fuentes de cierre oficial el FIX de Banxico ni el nivel del S&P/BMV IPC para la sesión de hoy.
 
-Scorecard: Trend → ↓ (segunda sesión consecutiva en rojo, aunque con una caída moderada) · Breadth → ↓ (el Russell 2000 cayó más que los índices de gran capitalización, señal de una aversión al riesgo más amplia que solo Nvidia) · Momentum → → (el mercado está digiriendo la transición de liderazgo en Nvidia sin pánico adicional, pero tampoco con una recuperación clara) · Volatility → — (sin dato confirmado de VIX) · Rates → — (sin dato confirmado del Treasury a 10 años de hoy) · USD → — (sin FIX de Banxico confirmado)
+Scorecard: Trend → ↓ (tercera sesión consecutiva con el sector de semiconductores en retroceso) · Breadth → ↓ (la venta se amplió del propio Nvidia hacia AMD, Broadcom e Intel) · Momentum → ↓ (el optimismo inicial por el PPI mensual más suave se revirtió durante la sesión) · Volatility → ↑ (VIX subió a 19.03, +1.77%) · Rates → ↑ (Treasury a 10 años cerró en 5.15%, tras tocar 5.17% intradía, su nivel más alto desde octubre) · USD → — (sin FIX de Banxico confirmado)
 
 ## Qué importó hoy
 
-**Cisco reportó ingresos de $18,500 millones en su primer trimestre fiscal 2027, un alza de 24% anual, muy por encima del consenso de $18,100 millones, con una utilidad por acción no-GAAP de $1.40 frente a una expectativa de $1.32-$1.33.** La empresa elevó su guía de ingresos para todo el año fiscal a un rango de $74,800-$75,800 millones, y señaló que espera que sus ingresos de infraestructura de IA para hiperescaladores se dupliquen este año fiscal, hasta $9,000 millones. Es la confirmación más clara hasta ahora, fuera del sector de semiconductores puro, de que la demanda de infraestructura de IA sigue acelerando del lado de redes y networking. Horizonte: Position.
+**El PPI de octubre subió 6.5% anual, su ritmo más alto desde noviembre de 2022, con el componente subyacente en 5% anual, un máximo desde enero de 2023 —aunque la variación mensual (0.3%) quedó por debajo del 0.4% que esperaba el consenso.** El mercado de bonos leyó la cifra anual como la señal relevante: el Treasury a 10 años tocó 5.17% intradía antes de cerrar en 5.15%, reforzando las apuestas de que la Fed subirá tasas, no las mantendrá, en su reunión del 9 de diciembre. Horizonte: Position.
 
-**Las solicitudes iniciales de desempleo subieron a 200,000 en la semana que terminó el 7 de noviembre, un alza de 9,000 frente a la semana anterior.** Es un repunte moderado frente al mínimo de meses que se había registrado la semana previa, pero no suficiente, por sí solo, para cambiar la lectura general del mercado laboral estadounidense. Horizonte: Position.
+**Nvidia cayó más de 4% en su segunda sesión de ventas desde la renuncia de Jensen Huang, cerrando por debajo de $4 billones de capitalización de mercado y acumulando una baja semanal cercana a 12%.** HSBC recortó su calificación a "Mantener" y su precio objetivo de $365 a $170, en lo que describió como una señal de que la confianza de los inversionistas quedó sacudida por la crisis de liderazgo. La empresa reporta resultados del tercer trimestre fiscal 2027 el martes próximo, todavía sin un CEO permanente nombrado. Horizonte: Position.
 
-**Las ventas de casas existentes en Estados Unidos cayeron 5.5% en octubre frente a septiembre, hasta un ritmo anualizado de 3.75 millones de unidades —el nivel más bajo desde agosto de 2010—, según la Asociación Nacional de Realtors.** La propia economista en jefe de la asociación atribuyó la caída a que las tasas hipotecarias llegaron a sus niveles más altos desde el año 2000, salvo un mes puntual de 2023. Es una señal adicional de que el costo del crédito sigue pesando sobre un sector específico de la economía real, incluso mientras el mercado de acciones se concentra en la narrativa de infraestructura de IA. Horizonte: Long Term.
+**La venta en semiconductores se amplió más allá de Nvidia: AMD cayó casi 9%, Broadcom alrededor de 6% e Intel cerca de 5%.** Es un contagio sectorial más amplio que el de la sesión anterior, cuando Cisco, Cerebras y Applied Materials habían logrado contener la narrativa negativa con resultados sólidos. Horizonte: Swing.
 
-**Cerebras Systems reportó ingresos récord de $210.8 millones en el tercer trimestre y elevó su guía para todo el año, con la acción subiendo cerca de 18% en operaciones después del cierre.** Junto con el reporte de Applied Materials —ingresos récord de $10,410 millones en su cuarto trimestre fiscal—, es otra pieza de evidencia de que la demanda de infraestructura de cómputo para IA sigue fuerte en múltiples capas de la cadena de suministro, incluso en el mismo día en que el mercado digiere una crisis de liderazgo en la empresa más representativa del sector. Horizonte: Position.
+**Bitcoin cayó por debajo de $70,000 dólares por primera vez en casi tres meses, acumulando una baja de más de 10% en lo que va de noviembre.** Es una señal adicional, fuera del mercado de acciones, de que el apetito por activos de riesgo se enfrió esta semana más allá del sector de semiconductores. Horizonte: Swing.
+
+**Cisco reportó ingresos de $18,500 millones en su primer trimestre fiscal 2027, un alza de 24% anual, muy por encima del consenso de $18,100 millones, y elevó su guía anual a $74,800-$75,800 millones, con infraestructura de IA esperada en $9,000 millones este año fiscal.** Junto con resultados récord de Cerebras Systems y Applied Materials el jueves, sigue siendo la evidencia más clara de que la demanda de infraestructura de IA fuera de Nvidia se mantiene sólida, incluso en una semana dominada por noticias negativas del sector. Horizonte: Position.
 
 ## Macro
 
-Las solicitudes iniciales de desempleo subieron a 200,000 (semana del 7 de noviembre), un repunte de 9,000 frente a la semana anterior. Las ventas de casas existentes de octubre cayeron a su nivel más bajo desde 2010. El PPI de octubre, con consenso de analistas citado en +6.6% anual, está programado para el viernes.
+El PPI de octubre subió 0.3% mensual (por debajo del 0.4% esperado) y 6.5% anual, el ritmo más alto desde noviembre de 2022; el subyacente llegó a 5% anual, máximo desde enero de 2023. Las solicitudes iniciales de desempleo subieron a 200,000 (semana del 7 de noviembre), un repunte de 9,000 frente a la semana anterior. Las ventas de casas existentes de octubre cayeron a su nivel más bajo desde 2010.
 
 ## Tasas y bonos
 
-No logramos confirmar con una fuente de cierre oficial el nivel del Treasury a 10 años para la sesión de hoy. La última referencia confiable sigue siendo que superó 5% la semana pasada, tras el CPI de octubre más caliente de lo esperado.
+El Treasury a 10 años tocó 5.17% intradía, su nivel más alto desde octubre, antes de cerrar en 5.15% (+1.00%). El mercado de bonos leyó el PPI anual más caliente como refuerzo de la probabilidad, ya cercana a 90%, de un alza de la Fed en diciembre.
 
 ## FX y commodities
 
-No logramos confirmar con una fuente de cierre el FIX de Banxico, el nivel del WTI ni el del S&P/BMV IPC para hoy. La última referencia confiable del peso sigue siendo 19.29 por dólar, tras el anuncio de Banxico de la semana pasada.
+No logramos confirmar con una fuente de cierre el FIX de Banxico ni el nivel del S&P/BMV IPC para hoy. El WTI cerró en $89.11 por barril (+0.42%). Bitcoin cayó por debajo de $70,000 dólares por primera vez en casi tres meses.
 
 ## Sectores
 
-Infraestructura de IA mostró una sesión de señales mixtas pero, en conjunto, todavía positivas más allá de Nvidia: Cisco, Cerebras y Applied Materials reportaron resultados y guías sólidas apoyadas en demanda de cómputo e infraestructura de IA, mientras el propio Nvidia seguía digiriendo su crisis de liderazgo. Small caps (Russell 2000) fueron el segmento más débil del día, con una caída más del doble que la de los índices de gran capitalización.
+Semiconductores fue, por segundo día consecutivo, el sector más débil de la sesión, y el contagio se amplió más allá de Nvidia: AMD (-8.8%), Broadcom (-6%) e Intel (-5%) acompañaron la caída. Cisco, Cerebras y Applied Materials, con resultados sólidos reportados el jueves, no lograron contener la narrativa negativa del sector esta vez.
 
 ## Swing
 
-La sesión de hoy sugiere que el mercado está tratando la crisis de Nvidia como un evento específico de esa empresa, no como una señal sobre la demanda de infraestructura de IA en general —los reportes de Cisco, Cerebras y Applied Materials, todos positivos el mismo día, respaldan esa lectura—. El PPI de octubre de mañana es el siguiente catalizador macro a vigilar.
+La ampliación de la venta hacia AMD, Broadcom e Intel —más allá de Nvidia— es la señal más relevante para los próximos días: sugiere que el mercado empieza a tratar la crisis de liderazgo de Nvidia como un riesgo que sí puede contagiar al resto del sector de semiconductores, no solo a la empresa directamente afectada. El reporte de resultados de Nvidia del próximo martes, sin CEO permanente nombrado, es el catalizador inmediato a vigilar.
 
 ## Position
 
-La historia de fondo de la semana —demanda de infraestructura de IA sostenida, pese al escrutinio financiero y ahora de gobernanza corporativa sobre algunos de sus protagonistas— se sostuvo hoy con evidencia adicional de múltiples empresas distintas a Nvidia. Eso reduce, aunque no elimina, el riesgo de que la crisis de liderazgo en Nvidia se traduzca en un reajuste más amplio de las expectativas sobre todo el sector.
+La historia de fondo de la semana —demanda de infraestructura de IA sostenida, confirmada por Cisco, Cerebras y Applied Materials— convive, al cierre de la semana, con una lectura más cautelosa sobre semiconductores específicamente: HSBC recortó su precio objetivo para Nvidia en más de 50%, y el contagio hacia AMD, Broadcom e Intel sugiere que el mercado ya no trata la crisis de Nvidia como un evento aislado de gobernanza corporativa.
 
 ## Long Term
 
-La caída de las ventas de casas existentes a su nivel más bajo desde 2010 es un recordatorio de que el costo del crédito sigue imponiendo un freno real sobre sectores de la economía ajenos a la narrativa de infraestructura de IA que domina el mercado de acciones. Es un tema estructural que esta serie seguirá monitoreando conforme se acerque la decisión de la Fed del 9 de diciembre.
+El PPI de octubre en su nivel más alto en cuatro años, junto con el Treasury a 10 años sobre 5.15%, respalda la lectura de que ni la Fed ni el mercado de bonos esperan ya un alivio monetario en el corto plazo. La caída de las ventas de casas existentes a su nivel más bajo desde 2010 sigue siendo el recordatorio más concreto del costo real de ese ciclo de tasas altas sobre un sector específico de la economía.
 
 ## Earnings y calendario
 
@@ -86,27 +88,24 @@ La caída de las ventas de casas existentes a su nivel más bajo desde 2010 es u
 
 ## Riesgos
 
-El riesgo más inmediato sigue siendo que la transición de liderazgo en Nvidia produzca, en los próximos días, alguna señal de disrupción operativa que el mercado no ha incorporado todavía en el precio. Un segundo riesgo es que el PPI de octubre de mañana, si sorprende al alza como lo hizo el CPI la semana pasada, refuerce aún más la probabilidad ya elevada de un alza de la Fed en diciembre, presionando a la vez al mercado de bonos y a las valuaciones de las acciones de mayor crecimiento.
+El riesgo más inmediato es que la venta en semiconductores, ya ampliada a AMD, Broadcom e Intel, se profundice antes de que Nvidia reporte resultados el próximo martes sin un CEO permanente nombrado. Un segundo riesgo es que el Treasury a 10 años, ya sobre 5.15%, siga subiendo si las comparecencias de la Fed de la próxima semana refuerzan la probabilidad de un alza en diciembre, presionando aún más las valuaciones de las acciones de mayor crecimiento.
 
 ## Qué vigilar mañana
 
-- PPI de octubre en Estados Unidos (consenso citado en +6.6% anual).
-- Reacción sostenida de Nvidia y del resto del sector de semiconductores en una tercera sesión desde el anuncio de Huang.
-- Cualquier declaración adicional de clientes o socios de Nvidia sobre la transición de liderazgo.
-- Confirmación de niveles de cierre oficial pendientes (VIX, Treasury a 10 años, WTI, USD/MXN, S&P/BMV IPC).
+- Reporte de resultados de Nvidia el martes 17 de noviembre, el primero desde la salida de Jensen Huang.
+- Si la venta en semiconductores (AMD, Broadcom, Intel) se extiende o se estabiliza en la próxima sesión.
+- Comparecencias adicionales de funcionarios de la Fed de cara a la reunión del 9 de diciembre.
+- Confirmación de niveles de cierre pendientes (FIX de Banxico, S&P/BMV IPC).
 
 ## Pendientes de esta edición
 
-- VIX: no localizamos con confianza el cierre de hoy.
-- Russell 2000 (nivel del índice): solo confirmamos el cambio porcentual del ETF que lo replica (IWM, -1.64%), no el del índice ni su cierre oficial.
 - S&P/BMV IPC: no localizamos con confianza un nivel de cierre para hoy.
 - USD/MXN: no localizamos con confianza el FIX de Banxico de hoy.
-- US Treasury 10 años: no localizamos con confianza el cierre de hoy.
-- WTI: no localizamos con confianza un nivel de cierre para hoy.
 
 ## Fuentes
 
-- [Stock Market Today Live, November 12, 2026](https://www.stocktitan.net/articles/stock-market-today-live-november-12-2026) — StockTitan / CNBC
+- [Stock market today: Dow rises, S&P 500 and Nasdaq slip to cap volatile week, Nvidia stock plunge deepens](https://finance.yahoo.com/markets/live/stock-market-today-friday-november-13-dow-sp-500-nasdaq-nvidia-ppi-141451558.html) — Yahoo Finance
+- [Nasdaq Drops Friday on Nvidia Fallout But Ends the Week Up: Stock Market Today](https://www.kiplinger.com/investing/stocks/nasdaq-drops-friday-on-nvidia-fallout-but-ends-the-week-up-stock-market-today) — Kiplinger
+- [Producer Price Index News Release - 2026 M10 Results](https://www.bls.gov/news.release/archives/ppi_11132026.htm) — U.S. Bureau of Labor Statistics
 - [Cisco beats on earnings, says AI infrastructure revenue will double this fiscal year](https://www.cnbc.com/2026/11/12/cisco-csco-q1-2027-earnings.html) — CNBC
-- [Cisco Reports First Quarter Earnings](https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/cisco-reports-first-quarter-earnings.html) — Cisco Investor Relations
 - [Pulso de Mercado — Daily · 12/11/2026](/blog/pulso-mercado-daily-2026-11-12) — jgonzalez.app
