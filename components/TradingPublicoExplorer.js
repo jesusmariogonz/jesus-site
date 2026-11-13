@@ -36,6 +36,12 @@ function pct(n, { signo = true } = {}) {
   return `${s}${n}%`;
 }
 
+function dinero(n, { signo = true } = {}) {
+  if (n === null || n === undefined) return "—";
+  const s = signo && n > 0 ? "+" : "";
+  return `${s}$${n}`;
+}
+
 function tonoDe(n) {
   if (n === null || n === undefined) return undefined;
   return n > 0 ? "up" : n < 0 ? "down" : undefined;
@@ -265,6 +271,54 @@ function ContribucionRetorno({ contribucionRetorno }) {
   );
 }
 
+function TablaEfectivoYBlend({ efectivoYBlend, fuente }) {
+  if (!efectivoYBlend?.length) return null;
+  const esIbkr = fuente === "ibkr";
+  return (
+    <div className="pulsodash-panel" style={{ marginBottom: 24 }}>
+      <div className="pulsodash-panel-head">
+        <span className="pulsodash-panel-title">Efectivo y cash ocioso (blend SPY/GLD) por bucket</span>
+      </div>
+      <p className="pulsodash-vacio" style={{ marginTop: 8, marginBottom: 16 }}>
+        Mismos números que la dona de arriba, en tabla. &quot;En posiciones&quot; es lo que está
+        invertido en la estrategia del bucket (equity − blend{esIbkr ? " − efectivo" : ""}).
+        &quot;Blend SPY/GLD&quot; es el cash ocioso ya invertido 50/50 en oro y el índice.
+        {esIbkr
+          ? " \"Efectivo sin invertir\" es dinero contable de la cuenta que no se alcanzó a meter al blend (puede ser negativo, ver aviso arriba)."
+          : " El motor paper no tiene efectivo sin invertir aparte: todo el cash ocioso entra al blend porque admite acciones fraccionarias."}
+      </p>
+      <div className="prose" style={{ overflowX: "auto" }}>
+        <table>
+          <thead>
+            <tr>
+              <th>Bucket</th>
+              <th>Equity</th>
+              <th>En posiciones</th>
+              <th>Blend SPY/GLD</th>
+              {esIbkr && <th>Efectivo sin invertir</th>}
+            </tr>
+          </thead>
+          <tbody>
+            {efectivoYBlend.map((x) => (
+              <tr key={x.key}>
+                <td>{x.etiqueta}</td>
+                <td>${x.equity}</td>
+                <td>${x.posiciones}</td>
+                <td>${x.blend}</td>
+                {esIbkr && (
+                  <td style={{ color: x.efectivoIdle < 0 ? toneColor("down") : undefined }}>
+                    {x.efectivoIdle != null ? `$${x.efectivoIdle}` : "—"}
+                  </td>
+                )}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
 function ModuloDashboard({ data }) {
   const { resumen } = data;
   return (
@@ -295,6 +349,18 @@ function ModuloDashboard({ data }) {
           etiqueta="Win rate global"
           valor={resumen.historialSuficienteWinRate ? `${resumen.winRateGlobalPct}%` : "—"}
           sub={resumen.historialSuficienteWinRate ? undefined : "historial insuficiente"}
+        />
+        <StatCard
+          etiqueta="P&L realizado"
+          valor={dinero(resumen.pnlRealizadoTotalGlobal)}
+          tono={tonoDe(resumen.pnlRealizadoTotalGlobal)}
+          sub="solo operaciones ya cerradas"
+        />
+        <StatCard
+          etiqueta="P&L no realizado"
+          valor={dinero(resumen.unrealizedPnlTotalGlobal)}
+          tono={tonoDe(resumen.unrealizedPnlTotalGlobal)}
+          sub="posiciones abiertas, puede revertirse"
         />
       </div>
 
@@ -336,6 +402,8 @@ function ModuloDashboard({ data }) {
           </div>
         )}
       </div>
+
+      <TablaEfectivoYBlend efectivoYBlend={data.efectivoYBlend} fuente={data.fuente} />
 
       <ContribucionRetorno contribucionRetorno={data.contribucionRetorno} />
 
@@ -489,6 +557,22 @@ function ModuloPortafolios({ data }) {
               <div className="highlight-item">
                 <span className="highlight-valor">{bucket.winRatePct}%</span>
                 <span className="highlight-etiqueta">win rate</span>
+              </div>
+            )}
+            {!bucket.esInformativo && (
+              <div className="highlight-item">
+                <span className="highlight-valor" style={{ color: toneColor(tonoDe(bucket.pnlRealizadoTotal)) }}>
+                  {dinero(bucket.pnlRealizadoTotal)}
+                </span>
+                <span className="highlight-etiqueta">P&amp;L realizado</span>
+              </div>
+            )}
+            {!bucket.esInformativo && (
+              <div className="highlight-item">
+                <span className="highlight-valor" style={{ color: toneColor(tonoDe(bucket.unrealizedPnlTotal)) }}>
+                  {dinero(bucket.unrealizedPnlTotal)}
+                </span>
+                <span className="highlight-etiqueta">P&amp;L no realizado</span>
               </div>
             )}
           </div>
