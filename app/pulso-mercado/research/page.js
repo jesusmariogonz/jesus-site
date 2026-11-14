@@ -103,8 +103,8 @@ export default function ResearchLabPage() {
           </div>
         </div>
         <p className="activo-descripcion" style={{ marginTop: -8 }}>
-          Primer experimento publicado: EXP-001, con resultado INCONCLUSIVE (ver abajo). Los contadores son reales: un
-          resultado inconcluso no cuenta como validado ni como rechazado, y se actualizarán solo con investigación real publicada.
+          Experimentos publicados: EXP-001 (INCONCLUSIVE) y EXP-002 (REJECTED) — ver abajo. Los contadores son reales: un
+          resultado inconcluso o rechazado no cuenta como validado, y se actualizarán solo con investigación real publicada.
           </p>
 
         <div className="activo-bloque">

@@ -4,6 +4,7 @@ import { absUrl } from "@/lib/site";
 import { EXPERIMENTOS, getExperimento } from "@/lib/research/experimentos";
 import Exp001Resultado from "@/components/Exp001Resultado";
 import Exp001Reporte from "@/components/research/Exp001Reporte";
+import Exp002Resultado from "@/components/Exp002Resultado";
 
 // Contenido de detalle de cada experimento, por slug. Un experimento nuevo
 // agrega aquí su componente de resultado.
@@ -29,6 +30,7 @@ const DETALLES = {
       </div>
     </>
   ),
+  "exp-002-growth-max-global": () => <Exp002Resultado />,
 };
 
 export function generateStaticParams() {

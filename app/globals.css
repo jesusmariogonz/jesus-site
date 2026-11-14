@@ -6607,6 +6607,7 @@ html:not(.dark) .pglobe-land {
 .exp-card-id { font-size: .8rem; font-weight: 700; letter-spacing: .08em; color: var(--ink-soft); }
 .exp-badge { font-size: .72rem; font-weight: 700; letter-spacing: .08em; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--line); }
 .exp-badge-inconcluso { color: #b45309; border-color: #d97706; background: color-mix(in srgb, #d97706 12%, var(--surface)); }
+.exp-badge-rechazado { color: #dc2626; border-color: #dc2626; background: color-mix(in srgb, #dc2626 12%, var(--surface)); }
 .exp-meta, .exp-nota { font-size: .82rem; color: var(--ink-soft); }
 .exp-criterios { padding-left: 18px; font-size: .88rem; }
 .exp-criterios li { margin-bottom: 6px; }
