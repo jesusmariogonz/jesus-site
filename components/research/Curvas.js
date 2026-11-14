@@ -10,6 +10,12 @@ export const COLORES = {
   buy_hold: "#6b7280",
   sma200: "#16a34a",
   sixty_forty: "#d97706",
+  Conservative: "#16a34a",
+  Growth25: "#4f8cff",
+  Growth50: "#d97706",
+  Growth75: "#f97316",
+  Max: "#dc2626",
+  benchmark: "#6b7280",
 };
 
 export const NOMBRES = {
@@ -17,6 +23,12 @@ export const NOMBRES = {
   buy_hold: "Comprar y mantener SPY",
   sma200: "Regla SMA200",
   sixty_forty: "60/40",
+  Conservative: "Conservative",
+  Growth25: "Growth25",
+  Growth50: "Growth50",
+  Growth75: "Growth75",
+  Max: "Max",
+  benchmark: "Benchmark 60/40",
 };
 
 function escalaX(fechas) {
@@ -42,8 +54,8 @@ function trazo(fechas, valores, x, y) {
   return valores.map((v, i) => `${i === 0 ? "M" : "L"}${x(fechas[i]).toFixed(1)},${y(v).toFixed(1)}`).join("");
 }
 
-export function CurvaEquity({ curvas, claves }) {
-  const fechas = curvas.model.dates;
+export function CurvaEquity({ curvas, claves, base }) {
+  const fechas = curvas[base || "model"].dates;
   const x = escalaX(fechas);
   const todos = claves.flatMap((k) => curvas[k].equity);
   const lo = Math.log(Math.min(...todos));
@@ -66,8 +78,8 @@ export function CurvaEquity({ curvas, claves }) {
   );
 }
 
-export function CurvaUnderwater({ curvas, claves }) {
-  const fechas = curvas.model.dates;
+export function CurvaUnderwater({ curvas, claves, base }) {
+  const fechas = curvas[base || "model"].dates;
   const x = escalaX(fechas);
   const minimo = Math.min(...claves.flatMap((k) => curvas[k].underwater));
   const y = (v) => M.t + (v / minimo) * (H - M.t - M.b);

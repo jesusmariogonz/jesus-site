@@ -5,6 +5,7 @@ import { EXPERIMENTOS, getExperimento } from "@/lib/research/experimentos";
 import Exp001Resultado from "@/components/Exp001Resultado";
 import Exp001Reporte from "@/components/research/Exp001Reporte";
 import Exp002Resultado from "@/components/Exp002Resultado";
+import Exp002Reporte from "@/components/research/Exp002Reporte";
 
 // Contenido de detalle de cada experimento, por slug. Un experimento nuevo
 // agrega aquí su componente de resultado.
@@ -30,7 +31,19 @@ const DETALLES = {
       </div>
     </>
   ),
-  "exp-002-growth-max-global": () => <Exp002Resultado />,
+  "exp-002-growth-max-global": () => (
+    <>
+      <Exp002Reporte />
+      <div className="activo-bloque">
+        <details>
+          <summary><strong>Resumen corto para lectores generales</strong></summary>
+          <div style={{ marginTop: 12 }}>
+            <Exp002Resultado />
+          </div>
+        </details>
+      </div>
+    </>
+  ),
 };
 
 export function generateStaticParams() {
