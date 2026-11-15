@@ -28,7 +28,6 @@ postura:
   enContra: 'El problema no es que el Rodeo Saltillo exista como negocio privado, sino que el gobierno estatal lo adopte activamente como bandera de identidad —el propio gobernador lo presentó en la Ciudad de México como estrategia de estado—, lo cual sí convierte en una pregunta pública legítima por qué esa narrativa de "lo vaquero coahuilense" se construye sobre un formato texano en vez de la charrería, que es constitucionalmente el deporte nacional de México y tiene reconocimiento internacional que el rodeo comercial no tiene.'
 imagen: /blog/portadas/rodeo-saltillo-critica-costo-charreria-doble-rasero-animal.jpg
 socialImagen: /blog/social/rodeo-saltillo-critica-costo-charreria-doble-rasero-animal.jpg
-destacada: true
 ---
 
 Del 15 al 18 de octubre, Saltillo recibe la edición 2026 del Rodeo Saltillo, por primera vez en las instalaciones de Expo Coahuila. La cartelera —Pesado, Julión Álvarez, Banda El Recodo, Brett Young— y la promoción que el propio gobernador Manolo Jiménez hizo del evento en la Ciudad de México lo confirman como una de las apuestas más visibles del gobierno estatal para posicionar a Coahuila como destino de identidad vaquera. Vale la pena hacerle tres preguntas que la narrativa oficial del evento no contesta.
