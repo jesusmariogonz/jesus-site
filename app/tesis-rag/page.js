@@ -108,6 +108,16 @@ export default function TesisRag() {
           </ol>
         </Reveal>
 
+        {porSemana[TOTAL_SEMANAS] && (
+          <Reveal delay={0.06}>
+            <p className="tesis-rag-nota">
+              <a href="/tesis-rag/tesis-completa.md">
+                Lee la tesis completa (documento consolidado) →
+              </a>
+            </p>
+          </Reveal>
+        )}
+
         <Reveal delay={0.07}>
           <p className="tesis-rag-nota">
             Cada entrega enlaza con la anterior. Sigue la serie desde{" "}

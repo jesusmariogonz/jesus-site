@@ -5,7 +5,7 @@ de escribir cualquier entrega, la rutina/sesión debe leer este archivo y
 confirmar contra `content/blog/` (slugs con `tesis-rag-semana-NN`) — nunca
 inferir la semana solo contando fechas transcurridas.
 
-**Próxima semana pendiente: 10** (Conclusiones + Anexos + documento consolidado `tesis-rag/tesis-completa.md`; al publicarla, desactivar la rutina)
+**SERIE COMPLETA (10 de 10 entregas publicadas el 2026-11-15).** No queda semana pendiente; la rutina semanal se desactivó.
 
 ## Historial
 
@@ -20,6 +20,7 @@ inferir la semana solo contando fechas transcurridas.
 | 7 | 2026-10-26 | `tesis-rag-semana-07-resultados-experimento-2-derecho-olvido` | Resultados del Experimento 2 (ejecutado 2026-10-26): resurrección A (borrado simple) = 11/12 = 91.7% [IC95% 64.6–98.5%]; B (cascada) = 0/12 = 0% [IC95% 0–24.2%]; McNemar exacto p=0.00098 (11 vs 0 discordantes). Calidad sobre hecho seguro bajo B: 2/4 correctas según el juez (1 parcial, 1 "incorrecta" por criterio de confidencialidad del juez, no por pérdida de contenido) — muestra insuficiente para concluir sobre costo. |
 | 8 | 2026-11-01 | `tesis-rag-semana-08-resultados-experimento-2-cascada-costo` | Resultados parte 4: desglose por hecho de la Condición B del Experimento 2 (0/12 resurrecciones; A: 3/3, 3/3, 3/3, 2/3) y costo de calidad. Nuevo `verificacion_calidad.py` (determinista, sin LLM): 4/4 respuestas conservan el dato literal; el juez LLM había dado 2/4 correctas por criterio propio. No se concluye ausencia de costo (n=4). H2 solo evaluada vía documentos derivados; caché semántico y contexto de conversación siguen sin medirse. |
 | 9 | 2026-11-08 | `tesis-rag-semana-09-discusion-dos-experimentos-un-patron` | Discusión: contraste de ambos experimentos con el criterio de falsabilidad de la Semana 2. H1 no refutada; H2 no refutada solo en la vía de documentos derivados (caché semántico y contexto de conversación sin medir). Lectura común marcada como interpretación, no hallazgo; lista de limitaciones (corpus sintético, un modelo, juez=evaluado, n pequeño, sin costo de adopción, sin conclusión jurídica). |
+| 10 | 2026-11-15 | `tesis-rag-semana-10-conclusiones-tesis-completa` | Conclusiones y documento consolidado `tesis-rag/tesis-completa.md` (copia servida en `public/tesis-rag/tesis-completa.md`, enlazada desde /tesis-rag). Incluye nota de alcance efectivamente medido y Anexo D con correcciones: analogía de réplicas sin cita verificada, cita de Vickers (2005) retirada, referencias pendientes (Atlan/Tellius, ficha del libro, Google Spain). |
 
 ## Recordatorios operativos para la siguiente sesión
 
