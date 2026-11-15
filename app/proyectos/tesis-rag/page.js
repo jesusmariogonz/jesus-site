@@ -463,8 +463,7 @@ python tesis-rag/experimento-2/verificacion_calidad.py`}</Eq>
             </ul>
             <p>
               <strong>Uso de modelos de lenguaje.</strong> Las respuestas, los veredictos de los jueces y la verificación de calidad usan{" "}
-              <code>claude-haiku-4-5</code>. El código de los experimentos y el texto de la serie y de este reporte los redactó Claude con la
-              dirección del autor; cada cifra de esta página se lee de los archivos de resultados al compilar. El análisis estadístico (McNemar
+              <code>claude-haiku-4-5</code>. Cada cifra de esta página se lee de los archivos de resultados al compilar. El análisis estadístico (McNemar
               exacto, Wilson) es código determinístico y ningún LLM interviene en él. La corrida del Experimento 2 requirió corregir el parseo
               del JSON del juez (sección 14).
             </p>
