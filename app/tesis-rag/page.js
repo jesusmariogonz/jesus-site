@@ -113,7 +113,8 @@ export default function TesisRag() {
             <p className="tesis-rag-nota">
               <a href="/tesis-rag/tesis-completa.md">
                 Lee la tesis completa (documento consolidado) →
-              </a>
+              </a>{" · "}
+              <Link href="/proyectos/tesis-rag">Reporte técnico del proyecto →</Link>
             </p>
           </Reveal>
         )}

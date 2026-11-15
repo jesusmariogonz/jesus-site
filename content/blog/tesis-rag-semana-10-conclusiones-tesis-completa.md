@@ -39,7 +39,7 @@ Esta es la última entrega. Reúne las conclusiones de la tesis y publica el doc
 2. **H2.** Con borrado simple del documento fuente, el dato eliminado siguió siendo recuperable en 11 de 12 trials a través de documentos derivados; con redacción en cascada de esos derivados, en 0 de 12 (McNemar exacto p = 0.00098), y en 4 de 4 casos revisados no se perdió el dato legítimo vecino.
 3. **Falsabilidad.** Ninguna hipótesis fue refutada bajo el criterio fijado antes de los datos. H2 se evaluó solo en una de sus vías.
 4. **Lo que sostienen los datos.** En este corpus controlado, aplicar un control de gobernanza en un único punto deja otras rutas abiertas, y aplicarlo donde esa ruta existe la bloquea. No sostienen que lo mismo ocurra en sistemas reales ni con otros modelos.
-5. **Un control reduce, no cierra.** Con el filtro activo quedaron 4 fugas de 44, y 3 de ellas también ocurrían sin él.
+5. **Un control reduce; lo residual depende de la definición de fuga.** Con el filtro activo el documento restringido no llegó al contexto en ninguna de las 44 preguntas; las 4 respuestas clasificadas como fuga revelan metadatos de acceso, no su contenido.
 
 ## Lo que la serie no logró
 
@@ -47,7 +47,7 @@ La pregunta de la Semana 1 hablaba de caché semántico, memoria de largo plazo 
 
 ## Correcciones que quedaron registradas
 
-Revisar las diez entregas para ensamblar el documento dejó anotadas, en su Anexo D, varias correcciones. La principal: la Semana 2 respaldó una analogía sobre réplicas de bases de datos con una cita que no sostiene esa afirmación, y citó a Vickers (2005) para el diseño de medidas repetidas, que no lo respalda; ambas se omiten o se presentan como analogía en el consolidado. También quedan sin verificar algunas referencias generales (literatura de proveedores como Atlan y Tellius) y la ficha del libro que sirve de base técnica. Las entregas originales no se modificaron.
+Revisar las diez entregas y los registros crudos para ensamblar el documento dejó anotadas, en su Anexo D, varias correcciones. Una corrige la Semana 5: el 9.1% residual de H1 no se debe a documentos restringidos que llegaran al contexto del modelo, porque no llegó ninguno. Otra: la Semana 2 respaldó una analogía sobre réplicas de bases de datos con una cita que no sostiene esa afirmación, y citó a Vickers (2005) para el diseño de medidas repetidas, que no lo respalda; ambas se omiten o se presentan como analogía en el consolidado. También quedan sin verificar algunas referencias generales (literatura de proveedores como Atlan y Tellius) y la ficha del libro que sirve de base técnica. Las entregas originales no se modificaron.
 
 ## Qué sigue
 

@@ -111,11 +111,15 @@ En la Condición B, 4 de las 44 preguntas fugaron: 9.1%, IC 95% [3.6%, 21.2%]. L
 | **Fuga en A** | 3 | 28 |
 | **Sin fuga en A** | 1 | 12 |
 
-McNemar exacto da p = 1.12 × 10⁻⁷ y la reducción absoluta es de 61.4 puntos porcentuales. Tres preguntas fugaron en ambas condiciones: el filtro no bastó, y la Semana 5 no analizó su mecanismo caso por caso. Una pregunta fugó solo en B, lo que probablemente refleja variabilidad de muestreo del modelo y no un efecto del filtro, aunque esto no se verificó.
+McNemar exacto da p = 1.12 × 10⁻⁷ y la reducción absoluta es de 61.4 puntos porcentuales. Tres preguntas fugaron en ambas condiciones y una solo en B. La Semana 5 atribuyó esos casos a documentos restringidos que llegaban al contexto del modelo; un análisis exploratorio posterior (sección 4.4) muestra que eso no ocurrió.
 
 ### 4.3 Costo de calidad
 
 En las 18 preguntas de acceso legítimo, la calidad fue de 14 de 18 respuestas correctas en la Condición A (77.8%, IC 95% [54.8%, 91.0%]) y 16 de 18 en la B (88.9%, IC 95% [67.2%, 96.9%]). Dos preguntas pasaron de parcial a correcta, probablemente por variabilidad del modelo y no porque el filtro mejore la precisión; las otras dos fueron incorrectas o rechazadas en ambas condiciones por causas ajenas a la mitigación (un falso rechazo a un director autorizado y un problema de fundamentación de la respuesta). Con n = 18, no puede descartarse un costo moderado que no se manifestó; sí puede decirse que el costo más temido, bloquear a alguien autorizado por efecto del filtro, no apareció.
+
+### 4.4 Análisis exploratorio de las fugas residuales (post-hoc)
+
+Se revisaron los registros crudos después de ver los resultados. Con el filtro activo (Condición B), el documento restringido que contiene la respuesta no se recuperó en ninguna de las 44 preguntas (frente a 43 de 44 sin filtro). Las 4 respuestas clasificadas como fuga revelan metadatos de acceso obtenidos de otros documentos autorizados (que existe una matriz de perfiles, qué rol accede a un repositorio, la clasificación de un documento), no el contenido del documento restringido. Es una lectura de 4 registros, y puede discutirse si revelar la existencia o el nivel de acceso de un documento es una fuga relevante. Lo que cambia es la interpretación: el 9.1% residual refleja la definición operacional de fuga del juez, no un fallo del filtro en bloquear documentos.
 
 ---
 
@@ -142,7 +146,7 @@ El juez clasificó 2 de las 4 respuestas sobre hechos seguros como correctas, 1 
 
 **H2.** Se cumplieron ambas condiciones de no refutación en la vía medida: la cascada redujo significativamente la resurrección y la tasa base no es indistinguible de cero. Pero el criterio enumeraba como vías el caché semántico y el contexto de conversación, y solo se evaluó una de las vías planteadas (documentos derivados). Por tanto, H2 no fue refutada en esa vía, y las otras quedan sin evaluar; afirmar que "H2 se confirmó" excede lo medido.
 
-**Lectura común (interpretación, no hallazgo estadístico).** En ambos experimentos, un control aplicado solo en el punto más visible (el acceso al documento, el borrado del archivo) dejó la información accesible por otra ruta, y un control aplicado donde esa ruta existe la bloqueó. Ninguna prueba compara un experimento con el otro, y miden cosas distintas; la generalidad del patrón es una hipótesis razonable que estos datos no prueban. Tampoco debe leerse como cierre de la ruta: con el control activo quedaron 4 fugas de 44, y 3 de ellas también ocurrían sin él.
+**Lectura común (interpretación, no hallazgo estadístico).** En ambos experimentos, un control aplicado solo en el punto más visible (el acceso al documento, el borrado del archivo) dejó la información accesible por otra ruta, y un control aplicado donde esa ruta existe la bloqueó. Ninguna prueba compara un experimento con el otro, y miden cosas distintas; la generalidad del patrón es una hipótesis razonable que estos datos no prueban. Tampoco debe leerse como cierre de toda ruta: con el filtro activo quedaron 4 respuestas clasificadas como fuga de 44, que según el análisis de la sección 4.4 revelan metadatos de acceso y no contenido del documento restringido.
 
 **Sobre la medición.** En el Experimento 2, el juez LLM y la verificación literal discreparon sobre la calidad de las mismas respuestas. Es una advertencia sobre la dependencia de un único instrumento de medición: los resultados de calidad de ambos experimentos descansan en un juez no calibrado.
 
@@ -158,7 +162,7 @@ El juez clasificó 2 de las 4 respuestas sobre hechos seguros como correctas, 1 
 6. **Vías de persistencia sin medir.** Caché semántico, memoria de largo plazo y contexto de conversación no se implementaron ni se evaluaron.
 7. **Sin costo de adopción.** No se midió cuánto cuesta implementar estos controles en producción.
 8. **Sin conclusión jurídica.** Ningún resultado establece si un sistema concreto incumple una ley de protección de datos.
-9. **Mecanismo de las fugas residuales sin analizar.** Las 3 fugas que sobrevivieron al filtro no se examinaron caso por caso.
+9. **Definición de fuga.** Incluye revelar metadatos de acceso (sección 4.4); con una definición de solo contenido, la tasa de la Condición B probablemente sería menor, pero no se recalculó.
 
 ---
 
@@ -168,7 +172,7 @@ El juez clasificó 2 de las 4 respuestas sobre hechos seguros como correctas, 1 
 2. Con borrado simple del documento fuente, el dato eliminado siguió siendo recuperable en 11 de 12 trials a través de documentos derivados; con redacción en cascada de esos derivados, en 0 de 12 (p = 0.00098), sin pérdida observada del dato legítimo vecino en 4 de 4 casos.
 3. Ninguna de las dos hipótesis fue refutada bajo el criterio fijado antes de los datos. H2 se evaluó solo en una de sus vías.
 4. Los datos sostienen la tesis de que, en este corpus controlado, aplicar un control de gobernanza en un solo punto deja otras rutas abiertas. No sostienen que lo mismo ocurra en sistemas reales ni con otros modelos.
-5. Un control reduce una tasa; no demuestra que la ruta quedó cerrada. Una arquitectura que adoptara estos controles necesitaría defensas adicionales para los casos residuales.
+5. Un control reduce una tasa; no demuestra que toda ruta quedó cerrada. Con el filtro, el documento restringido nunca llegó al contexto del modelo; lo residual son respuestas que revelan metadatos de acceso, y decidir si eso importa es una cuestión de definición de fuga que una arquitectura real tendría que resolver.
 
 ### 8.1 Trabajo futuro
 
@@ -229,8 +233,9 @@ Todo el código y los datos están en el repositorio del sitio (jesusmariogonz/j
 3. **Alcance de H2.** La Semana 2 enumeró caché semántico y contexto de conversación como vías de H2; ninguna se evaluó (sección 1.4).
 4. **Analogía de las réplicas de lectura (sección 2.1).** La Semana 2 la presentó con una cita de Bertino y Sandhu (2005) como si documentara incidentes específicos. Esa atribución no se verificó; aquí se presenta como analogía y la cita solo respalda el control de acceso en bases de datos en general.
 5. **Referencias pendientes de verificar.** La literatura de proveedores de infraestructura (Atlan, Tellius) citada de forma general en las Semanas 1 y 2 no se verificó; el libro del autor figura como González Siller (2026) en las entregas (la Semana 6 lo citó como "González, J." con la marca pendiente de verificar). El caso *Google Spain* (2014), mencionado en la Semana 1, no se incluye en las referencias porque no se verificó una cita.
-6. **Cita retirada.** La Semana 2 citó a Vickers (2005) como respaldo del diseño de medidas repetidas; ese artículo trata de pruebas paramétricas frente a no paramétricas en ensayos aleatorizados y no respalda directamente esa afirmación, por lo que se omite aquí.
-7. **Preguntas abiertas sin responder en la serie:** por qué 3 de 8 documentos fugaron en el 100% de sus variantes; el mecanismo de las 3 fugas residuales.
+6. **Corrección a la Semana 5.** La entrega atribuyó el 9.1% residual a documentos restringidos que "llegaban igual al contexto" del modelo; el análisis de la sección 4.4 muestra que el documento fuente no se recuperó en ninguna pregunta de la Condición B. La Semana 9 y la Semana 10 repitieron la lectura de que "el filtro no bastó" en 3 casos; queda corregida aquí.
+7. **Cita retirada.** La Semana 2 citó a Vickers (2005) como respaldo del diseño de medidas repetidas; ese artículo trata de pruebas paramétricas frente a no paramétricas en ensayos aleatorizados y no respalda directamente esa afirmación, por lo que se omite aquí.
+8. **Pregunta abierta sin responder en la serie:** por qué 3 de 8 documentos fugaron en el 100% de sus variantes bajo la Condición A.
 
 ---
 
