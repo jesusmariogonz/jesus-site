@@ -1,63 +1,63 @@
 {
-  "semana_texto": "SEMANA DEL 2 AL 8 DE NOVIEMBRE DE 2026",
+  "semana_texto": "SEMANA DEL 9 AL 15 DE NOVIEMBRE DE 2026",
   "edicion_texto": "EDICIÓN SEMANAL · TOP 13",
-  "intro": "Una semana en la que los demócratas recuperaron el Congreso de Estados Unidos, el caso Taddei en el INE escaló de renuncias a videos de sobornos por el contrato del comedor, y Banxico sorprendió con un recorte de tasa justo cuando la inflación repuntaba. Abajo, las 13 notas más relevantes de la semana.",
+  "intro": "Una semana en la que CoreWeave confirmó que la demanda de cómputo de IA sigue acelerando mientras su deuda se triplicaba, el caso Taddei en el INE llegó hasta las cuentas personales de su propia familia, y la ASF documentó una nueva triangulación de recursos ligada a Samuel García. Abajo, las 13 notas más relevantes de la semana.",
   "flash": [
-    {"kicker": "FINTECH", "fecha": "05 NOV", "titulo": "Banxico sorprendió con un recorte a 6.25%, con el consejo dividido 3-2, mientras el peso ya venía debilitándose desde septiembre",
-     "desc": "El recorte de 25 puntos base, al nivel más bajo desde marzo de 2022, llegó justo cuando la inflación repuntó a 3.62% anual y dividió al consejo entre priorizar la holgura económica o el riesgo cambiario."},
-    {"kicker": "MERCADOS Y CAPITAL", "fecha": "05 NOV", "titulo": "Anthropic quiere salir a bolsa valuada en hasta $2 billones de dólares. Su propio S-1 dice que debe $498,000 millones en contratos que no puede cancelar",
-     "desc": "Una firma de análisis independiente usa esa misma cifra para justificar una valuación de apenas $150,000 millones — una fracción de lo que el mercado está dispuesto a pagar."},
-    {"kicker": "MÉXICO Y LATAM", "fecha": "08 NOV", "titulo": "El alcalde de Río Bravo fue secuestrado en una carretera y localizado con vida gracias a un operativo de cuatro estados — pero nadie coincide en dónde ocurrió",
-     "desc": "La localización, en un filtro de seguridad en Coahuila, rompe el patrón dominante de violencia contra alcaldes en México: terminó en rescate, no en homicidio."}
+    {"kicker": "MÉXICO Y LATAM", "fecha": "12 NOV", "titulo": "La UIF ya no solo congeló cuentas de contratistas del INE: ahora llegó a la propia familia Taddei, y su hijo renunció al gobierno de Sonora",
+     "desc": "La UIF incluyó a Luis Rogelio Piñeda Taddei, hijo de la expresidenta del INE, en su lista de cuentas bloqueadas; horas después renunció como secretario particular del gobernador de Sonora. La lista ya suma 40 personas y empresas."},
+    {"kicker": "MÉXICO Y LATAM", "fecha": "14 NOV", "titulo": "La Marina detuvo a \"Lucifer\", presunto jefe operativo del CJNG en Colima, ligado a los dos ataques armados contra la panadería \"El Pichón\" que dejaron ocho muertos",
+     "desc": "Giancarlo \"N\" fue detenido sin disparos en Tlaquepaque, Jalisco. Es la tercera detención de la misma célula en una semana, dentro de la estrategia \"Colima Seguro\"."},
+    {"kicker": "NEGOCIOS", "fecha": "10 NOV", "titulo": "México necesita 1,500 megawatts nuevos para centros de datos de IA antes de 2030. Construir las líneas de transmisión para dárselos puede tardar el doble de ese tiempo",
+     "desc": "Un estudio de la Secretaría de Energía estima la nueva demanda en apenas 3% del pico del sistema eléctrico nacional, pero una nueva línea de transmisión puede tardar entre cuatro y ocho años en construirse."}
   ],
   "main": {
-    "kicker": "LO MÁS RELEVANTE DE LA SEMANA · FINTECH", "fecha": "04 NOV",
-    "titulo": "Los demócratas recuperaron el control del Congreso de Estados Unidos en las elecciones intermedias de 2026",
-    "dek": "Proyecciones preliminares de CBS, CNN y otros medios indican que el Partido Demócrata recuperó el control tanto de la Cámara de Representantes como del Senado en las elecciones intermedias del 3 de noviembre, revirtiendo la mayoría republicana en ambas cámaras.",
-    "cuerpo": "Las proyecciones ubicaban a los demócratas cerca de 250 escaños frente a 160 de los republicanos en la Cámara, y 54 contra 44 en el Senado, con Misisipi y Alaska todavía sin definirse la mañana del miércoles. Que distintos medios coincidan en ese resultado es un hecho verificable a partir de conteos preliminares, aunque todavía no certificados en su totalidad.\n\nLo que no se sostiene con la evidencia disponible es que ese cambio tenga un efecto legislativo o regulatorio inmediato: el nuevo Congreso no toma posesión sino hasta enero de 2027. Aun así, el mercado ya empezó a descontar el resultado el mismo miércoles, apostando a que la composición de comités clave para regulación tecnológica, energética y fiscal se empieza a definir desde la proyección misma, no desde la toma de posesión.",
-    "foto": "public/blog/portadas/elecciones-intermedias-2026-democratas-recuperan-congreso.jpg"
+    "kicker": "LO MÁS RELEVANTE DE LA SEMANA · BUSINESS", "fecha": "11 NOV",
+    "titulo": "CoreWeave reporta ingresos que crecen 168% y un backlog de $132.5 mil millones. La pregunta ya no es si hay demanda de cómputo de IA, sino cuánto cuesta financiarla",
+    "dek": "CoreWeave reportó el martes por la noche ingresos de $3,661 millones en el tercer trimestre (+168% anual), superó las estimaciones, subió su guía de 2026 y elevó su backlog a $132.5 mil millones. Pero la pérdida neta se amplió a $709 millones, el gasto neto en intereses casi se triplicó y la deuda ronda los $47 mil millones.",
+    "cuerpo": "El reporte despejó, con la evidencia más dura disponible hasta ahora, la duda sobre si la demanda de infraestructura de cómputo de IA seguía acelerando después de la corrección que sacudió al sector semanas antes: el backlog de contratos ya firmados —$132.5 mil millones de dólares— es la cifra que mejor resume esa confirmación, porque describe compromisos ya asegurados, no proyecciones. La acción subió más de 25% tras el reporte.\n\nLo que el reporte no resuelve es la otra mitad de la historia: financiar esa misma infraestructura le está costando cada vez más a la empresa. La pérdida neta trimestral se amplió a $709 millones, el gasto neto en intereses casi se triplicó frente al año anterior, y la deuda total ronda ya los $47 mil millones. La demanda de cómputo de IA, en otras palabras, dejó de ser la pregunta abierta de esta semana. El costo real de construir la infraestructura para atenderla, no.",
+    "foto": "public/blog/portadas/coreweave-resultados-q3-2026-demanda-ia-costo-financiamiento.jpg"
   },
   "secundaria_larga": {
-    "kicker": "MÉXICO Y LATAM · 2ª MÁS RELEVANTE", "fecha": "04 NOV",
-    "titulo": "El INE suma ya 15 renuncias y al menos 5 funcionarios imputados tras la salida de Guadalupe Taddei, mientras Sheinbaum pide auditar también a Lorenzo Córdova",
-    "desc": "Diez días después de que Guadalupe Taddei renunciara a la presidencia del INE en medio de señalamientos por contratos irregulares, el instituto electoral suma ya 15 renuncias de colaboradores cercanos a ella, al menos cinco funcionarios imputados en 18 expedientes —según reportó el propio contralor del instituto ante la Cámara de Diputados— y una denuncia penal del PAN por seis delitos federales que calcula un daño patrimonial de $1,600 millones de pesos. La presidenta Sheinbaum pidió además que la auditoría de la ASF se extienda a la gestión previa de Lorenzo Córdova, quien respondió que no le teme a una nueva revisión.",
+    "kicker": "GEOPOLÍTICA · 2ª MÁS RELEVANTE", "fecha": "13 NOV",
+    "titulo": "Broxel: la empresa que reparte las tarjetas de los diputados de Morena es la misma que la Secretaría Anticorrupción investiga por sobrepagos y un conflicto de interés familiar en Hacienda",
+    "desc": "Un oficio de la Secretaría Anticorrupción y Buen Gobierno, fechado el 10 de noviembre, documenta sobrepagos de Servicios Broxel por $29.4 millones de pesos pendientes de reembolso a 39 dependencias federales, y un conflicto de interés: el representante legal de la empresa es hermano de un funcionario de la Unidad de Inversiones de Hacienda. La autoridad recomendó no autorizar un financiamiento de $4,200 millones que Broxel solicitó a Bancomext y Nafin. La misma empresa distribuyó tarjetas prepagadas de $10,000 pesos a los 254 diputados de Morena —un hecho que las fuentes tratan como expediente separado, aunque comparte protagonista.",
     "foto": null
   },
   "secundaria_corta": {
-    "kicker": "MÉXICO Y LATAM · 3ª MÁS RELEVANTE", "fecha": "07 NOV",
-    "titulo": "Un video muestra a Taddei y a un contratista repartiéndose hasta $1.5 millones de pesos al mes por el contrato del comedor del INE",
-    "desc": "Nuevos videos de Carlos Loret de Mola muestran al contratista José Alfredo Hernández Casillas detallando pagos mensuales de hasta $1.5 millones de pesos por el contrato de comedores, con la UIF congelando ya cuentas vinculadas.",
-    "foto": "public/blog/portadas/taddei-video-moches-comedor-ine-cuentas-congeladas.jpg"
+    "kicker": "GEOPOLÍTICA · 3ª MÁS RELEVANTE", "fecha": "11 NOV",
+    "titulo": "La ASF detectó una presunta triangulación de hasta 928 millones de pesos hacia un despacho ligado a la familia de Samuel García",
+    "desc": "La revisión de la Cuenta Pública 2025 de Nuevo León detectó presuntos esquemas de triangulación y simulación de operaciones; distintos medios reportan montos de 728.1 a 928.13 millones de pesos canalizados hacia el despacho jurídico de la familia del gobernador. Máynez (MC) exigió públicamente que García \"dé la cara\".",
+    "foto": "public/blog/portadas/asf-triangulacion-recursos-samuel-garcia-nuevo-leon.jpg"
   },
   "datos": [
-    {"valor": "$498,000 millones", "etiqueta": "Obligaciones de cómputo no cancelables de Anthropic rumbo a su posible IPO"},
-    {"valor": "15 renuncias", "etiqueta": "Colaboradores cercanos a Taddei que han dejado el INE desde el estallido del caso"},
-    {"valor": "6.25%", "etiqueta": "Nueva tasa de referencia de Banxico, tras un recorte sorpresivo con el consejo dividido 3-2"},
-    {"valor": "4 estados", "etiqueta": "Coordinados en el operativo que localizó con vida al alcalde de Río Bravo, Tamaulipas"}
+    {"valor": "$132,500 millones", "etiqueta": "Backlog de contratos ya firmados que reportó CoreWeave este trimestre"},
+    {"valor": "$29.4 millones", "etiqueta": "Sobrepagos de Broxel pendientes de reembolso a 39 dependencias federales"},
+    {"valor": "928.13 millones de pesos", "etiqueta": "Triangulación de recursos que la ASF ligó a un despacho de la familia de Samuel García"},
+    {"valor": "1,500 megawatts", "etiqueta": "Nueva demanda eléctrica que México necesitará para centros de datos de IA antes de 2030"}
   ],
   "media": [
-    {"kicker": "MERCADOS Y CAPITAL", "fecha": "02 NOV", "titulo": "Nvidia podría garantizar la deuda que financia su propia demanda",
-     "desc": "Nvidia está en conversaciones para garantizar miles de millones de dólares en deuda de construcción de Nscale, el proveedor que levanta el centro de datos que ancla el contrato de $45,000 millones de Anthropic —la versión más explícita hasta ahora de lo que analistas ya llaman financiamiento circular.",
-     "foto": "public/blog/portadas/nvidia-garantia-credito-nscale-anthropic-financiamiento-circular.jpg"},
-    {"kicker": "MÉXICO Y LATAM", "fecha": "02 NOV", "titulo": "Samuel García dice que no tiene nada que esconder. La ASF documentó transferencias que tardaron minutos en llegar al despacho de su familia",
-     "desc": "El gobernador de Nuevo León respondió a la denuncia penal de la ASF asegurando que cuatro autoridades ya determinaron que no hubo ilegalidad, sin especificar documentos ni fechas, mientras la propia ASF documentó rutas de transferencia que habrían canalizado $928.13 millones de pesos hacia el despacho jurídico de su familia —una de ellas completada en apenas diez minutos.",
+    {"kicker": "GEOPOLÍTICA", "fecha": "15 NOV", "titulo": "Un año después de la marcha que terminó en enfrentamientos, la Generación Z volvió al Zócalo —y reunió apenas a 120 personas",
+     "desc": "La marcha de este domingo, con el Movimiento del Sombrero y madres buscadoras, llegó al Zócalo con una fracción de la asistencia de la marcha original de 2025. Un año después, la Fiscalía de la CDMX sigue sin imputar a ningún autor intelectual de los enfrentamientos de entonces.",
+     "foto": "public/blog/portadas/marcha-generacion-z-aniversario-bajo-turnout-movimiento-sombrero.jpg"},
+    {"kicker": "NEGOCIOS", "fecha": "15 NOV", "titulo": "El Banco Mundial calcula que 17.3 millones de personas dejaron la pobreza en México entre 2018 y 2026. Es una proyección de ingreso, no un conteo de bienestar",
+     "desc": "El organismo estima que la pobreza monetaria bajó de 35.3% a 20% en el periodo, atribuyéndolo a mayores ingresos laborales reales y a programas sociales ampliados —pero 2026 es una proyección, no un dato ya medido.",
      "foto": null},
-    {"kicker": "FINTECH", "fecha": "03 NOV", "titulo": "Apple y Palantir reportaron el mismo día. Uno rompió récords, el otro cayó pese a superar expectativas",
-     "desc": "Apple reportó ingresos de $114,500 millones y récord de Services; Palantir superó el consenso con ingresos de $2,310 millones (+96% anual) y elevó su guía, pero su acción cayó entre 6% y 8%.",
-     "foto": "public/blog/portadas/apple-palantir-resultados-2-noviembre-mercado-castiga-beat.jpg"}
+    {"kicker": "GEOPOLÍTICA", "fecha": "13 NOV", "titulo": "El nearshoring ya no necesita más capital. Necesita más electricidad —y nadie en Fibra Uno o Fibra Next pretende que eso se resuelva rápido",
+     "desc": "En el Funo Day 2026, directivos de los fideicomisos industriales más grandes de México describieron el cuello de botella real de la siguiente fase del nearshoring: ya no es el financiamiento, sino la infraestructura de transmisión y distribución de la CFE.",
+     "foto": "public/blog/portadas/nearshoring-mexico-cuello-botella-energia-fibras-reit.jpg"}
   ],
   "abajo": [
-    {"kicker": "FINTECH", "fecha": "04 NOV", "titulo": "AMD reportó ingresos récord de $13,400 millones en el tercer trimestre, y la acción cayó igual",
-     "desc": "El cuarto caso en dos semanas del mismo patrón: un reporte que supera el rango guiado, castigado porque la guía hacia adelante no amplía la narrativa de aceleración de IA que el precio ya tenía incorporada.",
-     "foto": "public/blog/portadas/amd-resultados-tercer-trimestre-2026-cae-pese-record.jpg"},
-    {"kicker": "MÉXICO Y LATAM", "fecha": "03 NOV", "titulo": "Alcaldes de Nuevo León amenazan con frenar el presupuesto 2027 si Samuel García no paga mil millones de pesos a los municipios",
-     "desc": "Alcaldes metropolitanos de distintos partidos piden al Congreso local no aprobar el Presupuesto 2027 hasta que el gobierno estatal pague el adeudo en participaciones, en un estado que acumula más de $62,000 millones de superávit en el sexenio.",
+    {"kicker": "BUSINESS-ANALYTICS", "fecha": "11 NOV", "titulo": "Los despidos atribuidos a la IA en Estados Unidos cayeron a menos de 3% en octubre, después de haber llegado a 40% en mayo",
+     "desc": "El reporte de Challenger, Gray & Christmas muestra apenas 1,265 despidos atribuidos explícitamente a IA en octubre, su nivel más bajo del año. Las condiciones económicas generales, no la IA, ya acumulan más despidos en lo que va de 2026.",
+     "foto": "public/blog/portadas/challenger-despidos-ia-octubre-cayeron-3-por-ciento.jpg"},
+    {"kicker": "BUSINESS-ANALYTICS", "fecha": "11 NOV", "titulo": "Snowflake le acaba de dar a sus agentes de IA un diccionario de términos de negocio aprobados. El problema que no resuelve es quién decide qué significa \"cliente\"",
+     "desc": "La nueva \"Business Ontology\" de Snowflake resuelve un problema real de infraestructura, pero no el problema organizacional, mucho más viejo, de que ventas, finanzas y operaciones ya definían esos mismos términos de forma distinta.",
      "foto": null},
-    {"kicker": "FINTECH", "fecha": "06 NOV", "titulo": "Lo más importante de esta semana 06/11/2026",
-     "desc": "El resumen semanal de economía: Banxico recortando mientras la Fed recibía un dato de empleo mucho más fuerte de lo esperado, dos bancos centrales moviéndose en direcciones opuestas la misma semana.",
-     "foto": null},
-    {"kicker": "MÉXICO Y LATAM", "fecha": "06 NOV", "titulo": "El INE presentó su propia denuncia ante la FGR por el caso Taddei, y pidió investigar \"sin distinción de periodos de gestión\"",
-     "desc": "El instituto se denunció a sí mismo ante la FGR citando seis delitos, en una formulación que, sin nombrar a nadie, abre la puerta a alcanzar también administraciones previas, en medio de la amenaza de un paro nacional de trabajadores del INE.",
-     "foto": "public/blog/portadas/ine-denuncia-fgr-sin-distincion-periodos-paro-nacional.jpg"}
+    {"kicker": "FINTECH", "fecha": "10 NOV", "titulo": "Meta pagó 190 puntos base más de interés que hace un año para financiar su próximo tramo de centros de datos de IA",
+     "desc": "El paquete de financiamiento de Meta, que puede llegar a $97,500 millones combinando deuda y capital, llega justo cuando su flujo de caja libre se volvió negativo por primera vez debido al gasto en infraestructura de IA.",
+     "foto": "public/blog/portadas/meta-bono-750-cupon-flujo-caja-negativo-capex-ia.jpg"},
+    {"kicker": "BUSINESS", "fecha": "09 NOV", "titulo": "El PMI manufacturero de México volvió a caer por debajo de 50 en octubre. Los nuevos pedidos de exportación subieron el mismo mes",
+     "desc": "El PMI cayó a 49.5, con el empleo cayendo a su ritmo más rápido desde mayo —pero los nuevos pedidos de exportación crecieron el mismo mes, la fotografía más precisa de qué tan lejos está México de capturar la ola de nearshoring.",
+     "foto": null}
   ]
 }
