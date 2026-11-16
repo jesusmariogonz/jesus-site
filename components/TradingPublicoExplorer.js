@@ -653,6 +653,16 @@ function ModuloPortafolios({ data }) {
             separado.
           </p>
         )}
+        {data.benchmarkDiversificado && (
+          <p className="pulsodash-vacio" style={{ marginTop: 8 }}>
+            "{data.benchmarkDiversificado.etiqueta}" tampoco es un bucket de trading — es dinero
+            aparte, comprado una sola vez y nunca tocado, para responder "¿valió la pena operar
+            activamente, contra simplemente comprar y mantener la misma cantidad invertida de
+            otra forma?". Arrancó el {data.benchmarkDiversificado.startDate} con el mismo equity
+            que tenían ese día las 3 canastas del motor en vivo juntas — tampoco suma al total del
+            portafolio de arriba.
+          </p>
+        )}
       </div>
     </div>
   );
