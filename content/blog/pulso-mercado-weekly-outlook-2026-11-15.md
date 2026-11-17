@@ -25,8 +25,8 @@ La semana que entra concentra tres tipos de evento: el primer reporte de resulta
 | Fecha | Evento | País | Importancia | Qué puede afectar |
 |---|---|---|---|---|
 | Lunes 16 de noviembre | [Declaraciones del presidente de la Fed, Kevin Warsh, en el Fed de San Francisco (12:00pm ET)](/blog/warsh-tres-escenarios-ia-economia-fed-productividad-empleo) | Estados Unidos | Alta | Primera oportunidad pública de la semana para que el mercado calibre el tono de la Fed de cara a diciembre |
-| Lunes 16 de noviembre | John Williams (Fed de Nueva York) | Estados Unidos | Media | Comentarios adicionales sobre la trayectoria de tasas |
 | Martes 17 de noviembre, 8:30am ET | Ventas minoristas de octubre | Estados Unidos | Alta | Consenso citado cerca de plano a +0.3% mensual (subyacente +0.4%, desde +0.9% el mes previo); referencia directa sobre la fortaleza del consumidor antes de la temporada de fin de año |
+| Martes 17 de noviembre | [John Williams (Fed de Nueva York) en el evento de Axios: no ve necesaria una acción "dramática"](/blog/williams-fed-accion-dramatica-diciembre-25-o-50-puntos-base) | Estados Unidos | Media | Probablemente hará falta otra alza de tasas, pero sin movimiento brusco; contrasta con Waller, que abrió la puerta a medio punto en diciembre |
 | Martes 17 de noviembre | Alberto Musalem (Fed de San Luis) y Beth Hammack (Fed de Cleveland) | Estados Unidos | Media | Comentarios adicionales sobre la trayectoria de tasas |
 | Miércoles 18 de noviembre | Actas de la reunión de la Fed del 27-28 de octubre | Estados Unidos | Alta | Detalle sobre el razonamiento interno detrás de la decisión de octubre, clave para calibrar la probabilidad de un alza en diciembre |
 
