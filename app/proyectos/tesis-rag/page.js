@@ -165,8 +165,8 @@ export default function TesisRagProyecto() {
               ["datos", "3 · Datos y roles"], ["metodo", "4 · Pipeline y condiciones"], ["medicion", "5 · Medición"],
               ["res1", "6 · Resultados H1"], ["res2", "7 · Resultados H2"], ["inferencia", "8 · Inferencia estadística"],
               ["exploratorio", "9 · Análisis exploratorio"], ["lectura", "10 · Lectura crítica"],
-              ["validez", "11 · Amenazas a la validez"], ["siguiente", "12 · Qué falta"],
-              ["repro", "13 · Reproducibilidad"], ["correcciones", "14 · Correcciones registradas"],
+              ["conclusion", "11 · Conclusión"], ["validez", "12 · Amenazas a la validez"], ["siguiente", "13 · Qué falta"],
+              ["repro", "14 · Reproducibilidad"], ["correcciones", "15 · Correcciones registradas"],
             ].map(([id, tt]) => <a key={id} href={`#${id}`}>{tt}</a>)}
           </nav>
 
@@ -238,7 +238,7 @@ H2 refutada  si  la cascada no reduce la resurrección de forma significativa
              o  la tasa de resurrección en la Condición A es indistinguible de cero`}</Eq>
             <p>
               La serie se comprometió a reportar una refutación con el mismo detalle que una confirmación. Nótese que
-              el criterio de H2 nombraba tres vías y el experimento cubrió una: ver secciones 11 y 12.
+              el criterio de H2 nombraba tres vías y el experimento cubrió una: ver secciones 12 y 13.
             </p>
           </Sec>
 
@@ -420,8 +420,41 @@ H2 refutada  si  la cascada no reduce la resurrección de forma significativa
             </ol>
           </Sec>
 
-          {/* ---------- 11 Validez ---------- */}
-          <Sec id="validez" n="11" titulo="Amenazas a la validez y limitaciones">
+          {/* ---------- 11 Conclusión ---------- */}
+          <Sec id="conclusion" n="11" titulo="Conclusión">
+            <p>
+              <strong>En una frase:</strong> en este corpus controlado, poner el control donde la información realmente pasa funcionó, y poner
+              el control solo en el punto más visible dejó que la información saliera por otra ruta. Esto está medido para dos casos concretos;
+              no está demostrado para sistemas reales.
+            </p>
+            <Tabla cab={["Hipótesis", "Qué se midió", "Resultado", "Veredicto"]} filas={[
+              ["H1 · fuga de confidencialidad", "Fuga de información restringida a roles sin autorización, sin y con filtro por nivel de acceso", `${pct(e1.tasa_fuga_a)} → ${pct(e1.tasa_fuga_b)} · p = ${exp(e1.mcnemar_p_value)}`, "No refutada"],
+              ["H2 · derecho al olvido", "Resurrección de un dato eliminado vía documentos derivados, con borrado simple y con cascada de redacción", `${pct(e2.resurreccion_condicion_a.tasa)} → ${pct(e2.resurreccion_condicion_b.tasa)} · p = ${mc2.p_valor.toFixed(5)}`, "No refutada, en 1 de 3 vías"],
+            ]} />
+            <h4>Lo que sí se puede afirmar</h4>
+            <ul className="exp-lista">
+              <li>Sin filtro, el RAG de este experimento entregó información restringida en {pct(e1.tasa_fuga_a, 0)} de los intentos no autorizados; con filtro por nivel de acceso previo al ranking, el documento restringido <strong>no llegó al modelo en ninguna de las {e1.n_tipo_b} preguntas</strong>.</li>
+              <li>Borrar solo el documento fuente dejó el dato recuperable en {e2.resurreccion_condicion_a.n_exitos} de {e2.n_trials_tipo_b} trials porque los documentos derivados seguían citándolo; redactar esos derivados lo eliminó en los {e2.n_trials_tipo_b}.</li>
+              <li>En ningún caso revisado el control destruyó la información legítima vecina (4 de 4 con verificación literal, 18 preguntas de acceso legítimo sin falsos rechazos atribuibles al filtro).</li>
+            </ul>
+            <h4>Lo que no se puede afirmar</h4>
+            <ul className="exp-lista">
+              <li><strong>Que ocurra igual en un sistema real.</strong> El corpus es sintético, hay un solo modelo y un solo recuperador, y las muestras son pequeñas.</li>
+              <li><strong>Que los controles no tengan costo.</strong> Con 18 y 4 casos de calidad no hay potencia para descartar un costo moderado.</li>
+              <li><strong>Que H2 esté confirmada en general.</strong> Solo se evaluó una de las tres vías planteadas (documentos derivados); caché semántico y contexto de conversación quedan sin medir.</li>
+              <li><strong>Que un sistema cumpla o incumpla una ley.</strong> La tesis mide arquitectura, no cumplimiento normativo.</li>
+            </ul>
+            <h4>Qué decisión se desprende</h4>
+            <p>
+              Si se opera un RAG con documentos de distintos niveles de acceso, conviene verificar la autorización <em>antes</em> del retrieval y
+              no confiar en que el modelo se niegue a responder. Si se atiende una solicitud de eliminación, conviene rastrear los documentos
+              derivados que repiten el dato, no solo borrar el archivo original. Antes de adoptar estos controles a escala, lo prudente es
+              replicar el experimento sobre el propio sistema y corpus (sección 13).
+            </p>
+          </Sec>
+
+          {/* ---------- 12 Validez ---------- */}
+          <Sec id="validez" n="12" titulo="Amenazas a la validez y limitaciones">
             <Tabla cab={["Amenaza", "Estado / mitigación"]} filas={[
               ["Juez y modelo evaluado son el mismo modelo", "No mitigada. Sin validación manual de la precisión del juez; en H2, el juez y la verificación literal discreparon sobre la calidad."],
               ["Corpus sintético", "Documentos escritos para el experimento, con hechos limpios y derivados que los citan de forma directa. Un corpus real es más ruidoso. No mitigada."],
@@ -437,7 +470,7 @@ H2 refutada  si  la cascada no reduce la resurrección de forma significativa
           </Sec>
 
           {/* ---------- 12 Siguiente ---------- */}
-          <Sec id="siguiente" n="12" titulo="Qué falta para validar (o explorar distinto)">
+          <Sec id="siguiente" n="13" titulo="Qué falta para validar (o explorar distinto)">
             <ul className="exp-lista">
               <li><strong>Implementar y medir las vías no evaluadas:</strong> caché semántico, memoria de largo plazo y contexto de conversación, con su propio criterio de falsabilidad.</li>
               <li><strong>Validar el juez</strong> contra anotación manual y usar un modelo distinto al evaluado.</li>
@@ -449,7 +482,7 @@ H2 refutada  si  la cascada no reduce la resurrección de forma significativa
           </Sec>
 
           {/* ---------- 13 Repro ---------- */}
-          <Sec id="repro" n="13" titulo="Reproducibilidad y transparencia">
+          <Sec id="repro" n="14" titulo="Reproducibilidad y transparencia">
             <Eq>{`git clone ${REPO}
 pip install anthropic scikit-learn scipy python-frontmatter
 export ANTHROPIC_API_KEY=...            # el script falla con RuntimeError si no existe
@@ -465,13 +498,13 @@ python tesis-rag/experimento-2/verificacion_calidad.py`}</Eq>
               <strong>Uso de modelos de lenguaje.</strong> Las respuestas, los veredictos de los jueces y la verificación de calidad usan{" "}
               <code>claude-haiku-4-5</code>. Cada cifra de esta página se lee de los archivos de resultados al compilar. El análisis estadístico (McNemar
               exacto, Wilson) es código determinístico y ningún LLM interviene en él. La corrida del Experimento 2 requirió corregir el parseo
-              del JSON del juez (sección 14).
+              del JSON del juez (sección 15).
             </p>
             <p className="exp-nota">Material de investigación y educativo. Datos y empresa ficticios. No es asesoría legal ni de cumplimiento normativo.</p>
           </Sec>
 
           {/* ---------- 14 Correcciones ---------- */}
-          <Sec id="correcciones" n="14" titulo="Correcciones registradas durante la serie">
+          <Sec id="correcciones" n="15" titulo="Correcciones registradas durante la serie">
             <Tabla cab={["Cuándo", "Qué cambió"]} filas={[
               ["Semana 7", "El script del Experimento 2 no interpretaba el JSON del juez cuando venía en un bloque de código; se corrigió el parseo y se subió el límite de tokens del juez de 200 a 400. No se tocaron el diseño ni los trials."],
               ["Semana 8", "La lectura del costo de calidad (2 de 4 según el juez) se contrastó con una verificación determinista (4 de 4); ambas cifras se conservan."],
