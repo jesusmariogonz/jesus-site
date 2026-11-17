@@ -37,12 +37,26 @@ function bloquear(mensaje) {
   console.log(`[check-postura] BLOQUEADO — ${mensaje}`);
 }
 
+function agregadosContra(padre) {
+  const out = execSync(`git diff --name-only --diff-filter=A ${padre} HEAD -- 'content/blog/*.md'`, {
+    encoding: "utf8",
+  });
+  return out.split("\n").map((l) => l.trim()).filter(Boolean);
+}
+
 function archivosAgregados() {
   try {
-    const out = execSync("git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'content/blog/*.md'", {
-      encoding: "utf8",
-    });
-    return out.split("\n").map((l) => l.trim()).filter(Boolean);
+    const padres = execSync("git rev-list --parents -n 1 HEAD", { encoding: "utf8" })
+      .trim()
+      .split(" ")
+      .slice(1);
+    if (padres.length < 2) return agregadosContra("HEAD~1");
+    // Commit de MERGE: contra el primer padre solo, cualquier nota que ya
+    // estaba en la otra rama (ej. publicada antes y ya revisada en SU push)
+    // aparece como "nueva" y bloquea el deploy por error. Solo cuenta lo que
+    // es nuevo respecto a TODOS los padres (la intersección).
+    const porPadre = padres.map(agregadosContra);
+    return porPadre[0].filter((f) => porPadre.every((lista) => lista.includes(f)));
   } catch {
     return null; // no se pudo determinar con confianza
   }
@@ -67,6 +81,12 @@ function esExcepcion(lineas) {
   if (valorDeLinea(lineas, "pulsoTipo")) return "pulsoTipo definido";
   if (valorDeLinea(lineas, "oculta") === "true") return "oculta: true";
   if (valorDeLinea(lineas, "serie") === "tesis-rag") return "serie: tesis-rag";
+  // Notas de calendario/agenda ("Lo que se espera esta semana"): no son
+  // opinión, así que no tienen un debate natural que armar. Campo propio y
+  // NO pulsoTipo, porque pulsoTipo además las saca del listado del blog y
+  // del aviso por newsletter (lib/posts.js, notify/route.js); este solo lo
+  // lee el gate y no cambia cómo se muestra la nota.
+  if (valorDeLinea(lineas, "tipoNota") === "calendario") return "tipoNota: calendario";
   return null;
 }
 
@@ -108,7 +128,8 @@ async function avisar(archivosFaltantes) {
           <p>El sitio sigue mostrando el deploy anterior (nada se rompió para los
           visitantes). Para desbloquearlo: agrega el bloque <code>postura</code>
           a esas notas (o márcalas como excepción válida: <code>pulsoTipo</code>,
-          <code>oculta: true</code> o <code>serie: tesis-rag</code>) y vuelve a
+          <code>oculta: true</code>, <code>serie: tesis-rag</code> o, para notas
+          de calendario/agenda, <code>tipoNota: calendario</code>) y vuelve a
           hacer push.</p>
         `,
       }),

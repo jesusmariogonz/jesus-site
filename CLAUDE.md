@@ -64,8 +64,14 @@ Reglas para redactarlo bien (no un trámite genérico):
 
 Excepciones (no requieren `postura`): notas de Pulso de Mercado
 (`pulsoTipo` definido), notas ocultas de uso interno/Kindle
-(`oculta: true` sin intención de debate público), y series técnicas
-muy narrow como Tesis RAG donde no aplica un debate de opinión.
+(`oculta: true` sin intención de debate público), series técnicas
+muy narrow como Tesis RAG donde no aplica un debate de opinión, y
+**notas de calendario/agenda** (ej. "Lo que se espera esta semana")
+marcadas con `tipoNota: calendario`. Ese último campo es solo para el
+gate: a diferencia de `pulsoTipo`, NO saca la nota del listado del blog
+ni del aviso por newsletter/redes. Úsalo únicamente en notas que son
+agenda pura; una nota con interpretación u opinión sigue necesitando
+`postura`.
 
 Cuando se publique una nota sin este campo por alguna de esas
 excepciones, decirlo explícitamente en la respuesta al usuario (igual
@@ -93,11 +99,14 @@ pendiente.
 
 Si vas a publicar una nota de calendario/rutina que no sea opinión
 real (ej. "lo que se espera esta semana", resúmenes de agenda
-económica) y no quieres agregarle postura, **no hay excepción
-automática para ese caso todavía** — cuenta como nota normal para el
-gate. O le agregas un `postura` real, o le pones `pulsoTipo`/`oculta`
-si aplica, o le avisas al usuario que ese tipo de nota también
-necesita el campo.
+económica) y no quieres agregarle postura, ponle `tipoNota: calendario`
+en el frontmatter: es una excepción válida para el gate (se agregó el
+17-nov-2026 después de que estas notas bloquearan deploys). Si la nota
+sí trae una lectura propia, mejor agrégale un `postura` real.
+
+Nota técnica: en commits de merge, el gate solo revisa las notas que
+son nuevas respecto a **todos** los padres del merge, para no volver a
+marcar como "nueva" una nota que ya se revisó en su propio push.
 
 ## Toda nota nueva debe traer su portada "tratada", no una foto cruda del banco
 
