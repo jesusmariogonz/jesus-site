@@ -4623,8 +4623,9 @@ html:not(.dark) .pglobe-land {
 .research-lab-banner {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  padding: 20px 22px;
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
   border-radius: var(--radius);
   background: linear-gradient(145deg, #0b1324, #111b2e);
   border: 1px solid #1f2b45;
@@ -4703,8 +4704,9 @@ html:not(.dark) .pglobe-land {
 .trading-algo-banner {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  padding: 20px 22px;
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
   border-radius: var(--radius);
   background: linear-gradient(145deg, #0b1324, #111b2e);
   border: 1px solid #1f2b45;
@@ -6680,3 +6682,27 @@ html:not(.dark) .pglobe-land {
 .rm-pie { margin-top: 10px; border-top: 1px solid var(--line); padding-top: 8px; }
 @media (prefers-reduced-motion: reduce) { .rm-aguja { transition: none; } .rm-pulso, .rm-spark-linea { animation: none; } .rm-spark-linea { stroke-dashoffset: 0; } }
 @media (max-width: 819px) { .pulsodash-meter-col { justify-content: center; } }
+
+/* ── Portadas generadas con IA en los banners de áreas de Pulso de Mercado ── */
+.area-banner-img { position: relative; display: block; width: 100%; aspect-ratio: 16 / 6; background-size: cover; background-position: center; transition: transform .5s ease; }
+.area-banner-img-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11, 19, 36, 0) 40%, rgba(11, 19, 36, .85) 100%); }
+.research-lab-banner:hover .area-banner-img, .trading-algo-banner:hover .area-banner-img { transform: scale(1.04); }
+.research-lab-banner, .trading-algo-banner { position: relative; }
+.area-banner-body { display: flex; flex-direction: column; gap: 6px; padding: 14px 22px 20px; position: relative; background: inherit; }
+
+/* ── Banner de libros: portadas, qué incluye, precio y disponibilidad ── */
+.libros-mercado-banner { gap: 8px; max-width: 350px; padding: 18px 20px; }
+.lmb-libros { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 4px 0 2px; }
+.lmb-libro { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.lmb-libro img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 3px; box-shadow: 0 6px 14px -6px rgba(10, 25, 60, .5); transition: transform .25s ease; }
+.libros-mercado-banner:hover .lmb-libro:not(.lmb-libro--pronto) img { transform: translateY(-3px); }
+.lmb-libro--pronto img { filter: grayscale(.85) brightness(.9); opacity: .7; }
+.lmb-libro-etq { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .04em; text-transform: uppercase; color: var(--accent); }
+.lmb-libro--pronto .lmb-libro-etq { color: var(--ink-soft); }
+.lmb-lista { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 5px; }
+.lmb-lista li { position: relative; padding-left: 16px; font-size: .78rem; line-height: 1.4; color: var(--ink-soft); }
+.lmb-lista li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+.lmb-lista strong { color: var(--ink); font-weight: 600; }
+.lmb-resultado { margin: 0; padding: 9px 11px; font-size: .78rem; line-height: 1.45; color: var(--ink); background: rgba(107, 165, 255, .09); border-left: 3px solid var(--accent); border-radius: 4px; }
+.lmb-precio { margin: 0; font-size: .8rem; line-height: 1.45; color: var(--ink-soft); }
+.lmb-precio strong { color: var(--ink); }
