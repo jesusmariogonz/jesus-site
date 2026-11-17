@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { absUrl } from "@/lib/site";
 import { EXPERIMENTOS, getExperimento } from "@/lib/research/experimentos";
+import EmergencyGauge from "@/components/EmergencyGauge";
 import Exp001Resultado from "@/components/Exp001Resultado";
 import Exp001Reporte from "@/components/research/Exp001Reporte";
 import Exp002Resultado from "@/components/Exp002Resultado";
@@ -22,11 +23,21 @@ const DETALLES = {
         </details>
       </div>
       <div className="activo-bloque">
-        <h2>El medidor que sale de este experimento</h2>
+        <h2>El medidor de estrés de este experimento</h2>
         <p className="activo-descripcion">
-          El modelo alimenta un indicador diario de estrés de mercado, visible para todos en la{" "}
-          <Link href="/pulso-mercado">página principal de Pulso de Mercado</Link>. Sigue siendo
-          informativo y experimental: el resultado de este experimento es inconcluso, no validado.
+          Un medidor sencillo del modelo de este experimento: combina tendencia, volatilidad,
+          correlación entre sectores, crédito, amplitud y velocidad de la caída. Entre más se acerca a
+          rojo, más se parece el mercado de ese día a los episodios de estrés del pasado.{" "}
+          <strong>Ya no se actualiza</strong>: el 17 de noviembre de 2026 se retiró de la página
+          principal de Pulso de Mercado y se dejó de calcular a diario. Lo que ves abajo es su última
+          lectura, congelada. Sigue siendo informativo y experimental: el resultado del experimento es
+          inconcluso, no validado, y no es una predicción ni una recomendación.
+        </p>
+        <EmergencyGauge />
+        <p className="activo-descripcion" style={{ marginTop: 14 }}>
+          El indicador que sí se actualiza a diario es el{" "}
+          <Link href="/pulso-mercado">medidor de riesgo y volatilidad</Link> de la página principal
+          de Pulso de Mercado, que es otro modelo.
         </p>
       </div>
     </>

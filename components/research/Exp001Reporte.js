@@ -672,7 +672,7 @@ DSR = Φ(z) = Φ(${ds.z_stat.toFixed(4)}) = ${ds.dsr.toFixed(5)}`}</Eq>
         <ul className="exp-lista">
           <li><strong>EXP-002 (propuesta, requiere su propio pre-registro):</strong> grilla de θ que encierre el óptimo (p. ej. 0.25–1.0) y estricta separación entre elección de grilla y evaluación; el estudio de θ en el borde no puede hacerse sobre estos mismos datos sin invalidar la inferencia.</li>
           <li><strong>Más eventos independientes:</strong> mercados internacionales y otros activos de riesgo; períodos previos a 2002 con refugio en efectivo (la serie DTB3 llega a 1954); series con más crisis.</li>
-          <li><strong>Evidencia fuera de muestra verdadera:</strong> el medidor diario publicado en este sitio acumula, día a día, predicciones que no pudieron ajustarse con datos futuros. Es modo «sombra», sin influencia sobre ninguna operación.</li>
+          <li><strong>Evidencia fuera de muestra verdadera:</strong> el medidor diario publicado en este sitio acumulaba, día a día, predicciones que no pudieron ajustarse con datos futuros, en modo «sombra» y sin influencia sobre ninguna operación. <em>Actualización del 17 de noviembre de 2026:</em> el autor desactivó el cálculo diario y retiró el medidor de la página principal, así que esa acumulación de evidencia se detuvo; la última lectura quedó congelada en esta página.</li>
           <li><strong>Refugios alternativos para el escenario inflacionario</strong> (2022): evaluar la señal con distintos destinos por tipo de crisis, ya previsto en el pre-registro.</li>
         </ul>
       </Sec>

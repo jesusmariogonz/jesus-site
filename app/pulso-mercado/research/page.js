@@ -112,8 +112,8 @@ export default function ResearchLabPage() {
           <p className="activo-descripcion">
             Cada experimento tiene su propia página con la pregunta, el método, los criterios
             fijados antes de ver resultados y el veredicto. Pasa el mouse sobre una tarjeta para ver
-            más. El medidor diario de estrés que sale de EXP-001 vive ahora en la{" "}
-            <Link href="/pulso-mercado">página principal de Pulso de Mercado</Link>.
+            más. El medidor de estrés de EXP-001 ya no se actualiza: su última lectura quedó
+            congelada en la página del experimento.
           </p>
           <ExperimentosShowcase experimentos={EXPERIMENTOS} />
         </div>

@@ -1,14 +1,9 @@
-"use client";
-
-import { useEffect, useState } from "react";
+import latest from "@/lib/research/emergency-latest.json";
 
 /* Medidor tipo velocímetro del Indicador de Estrés (EXP-001, EXPERIMENTAL).
-   Lee el JSON público que publica el repo del laboratorio cada día hábil; no
-   se despliega el sitio para actualizarlo. Nunca inventa un valor: si no
-   puede leer el JSON, lo dice. */
-
-const URL_LATEST =
-  "https://raw.githubusercontent.com/jesusmariogonz/pulso-research-lab/main/public/emergency/latest.json";
+   DESACTIVADO desde el 17-nov-2026: ya no se actualiza. Muestra la última
+   lectura publicada por el laboratorio, guardada en lib/research/
+   emergency-latest.json, y lo dice explícitamente en pantalla. */
 
 const BANDAS = [
   { nombre: "Normal", color: "#16a34a" },
@@ -51,26 +46,9 @@ function colorDe(gauge) {
 }
 
 export default function EmergencyGauge() {
-  const [datos, setDatos] = useState(null);
-  const [error, setError] = useState(false);
-
-  useEffect(() => {
-    let vivo = true;
-    fetch(URL_LATEST, { cache: "no-store" })
-      .then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
-      .then((j) => vivo && setDatos(j))
-      .catch(() => vivo && setError(true));
-    return () => {
-      vivo = false;
-    };
-  }, []);
-
-  if (error) {
-    return <p className="gauge-aviso">El indicador no está disponible en este momento. Se publica cada día hábil después del cierre.</p>;
-  }
-  if (!datos) return <p className="gauge-aviso">Cargando indicador…</p>;
-  if (datos.status === "SIN_DATOS" || datos.gauge == null) {
-    return <p className="gauge-aviso">Todavía no hay suficiente historia para calcular el indicador.</p>;
+  const datos = latest;
+  if (!datos || datos.status === "SIN_DATOS" || datos.gauge == null) {
+    return <p className="gauge-aviso">No hay una lectura guardada del indicador.</p>;
   }
 
   const gauge = Math.min(100, Math.max(0, datos.gauge));
@@ -81,8 +59,8 @@ export default function EmergencyGauge() {
   return (
     <div className="gauge-card">
       <div className="gauge-cabecera">
-        <span className="gauge-badge">EXPERIMENTAL</span>
-        <span className="gauge-fecha">Datos al {datos.data_through}</span>
+        <span className="gauge-badge">EXPERIMENTAL · CONGELADO</span>
+        <span className="gauge-fecha">Última lectura: {datos.data_through}</span>
       </div>
 
       <svg viewBox="0 0 300 175" className="gauge-svg" role="img" aria-label={`Indicador de estrés: ${gauge.toFixed(0)} de 100, nivel ${nivel.nombre}`}>
@@ -109,8 +87,8 @@ export default function EmergencyGauge() {
         <span className="gauge-nivel" style={{ color }}>{nivel.nombre.toUpperCase()}</span>
       </div>
       <p className="gauge-sub">
-        La aguja marca el estrés de hoy (0–100). El nivel confirmado exige que la señal persista varios días, así que
-        puede ir un paso detrás de la aguja.
+        La aguja marca el estrés de la última lectura (0–100), congelada desde que dejó de calcularse. El nivel confirmado
+        exigía que la señal persistiera varios días, así que podía ir un paso detrás de la aguja.
       </p>
 
       <div className="gauge-dims">

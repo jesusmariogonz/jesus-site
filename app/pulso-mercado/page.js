@@ -14,9 +14,9 @@ import TickerTape from "@/components/TickerTape";
 import MercadosScreener from "@/components/MercadosScreener";
 import MarketSnapshotTabla from "@/components/MarketSnapshotTabla";
 import LibrosMercadoBanner from "@/components/LibrosMercadoBanner";
+import RiskMeter from "@/components/RiskMeter";
 import TradingAlgoritmicoBanner from "@/components/TradingAlgoritmicoBanner";
 import ResearchLabBanner from "@/components/ResearchLabBanner";
-import EmergencyGauge from "@/components/EmergencyGauge";
 import { absUrl } from "@/lib/site";
 
 // Dinámico (no estático) para que "Próxima corrida" en cada tarjeta
@@ -260,22 +260,6 @@ export default async function PulsoMercadoDashboard() {
           </nav>
         </header>
 
-        <div className="pulsodash-panel pulso-estres">
-          <div className="pulsodash-panel-head">
-            <span className="pulsodash-panel-title">Indicador diario de estrés de mercado</span>
-            <span className="pulsodash-panel-sub">Experimental · se actualiza cada día hábil</span>
-          </div>
-          <p className="pulso-estres-desc">
-            Un medidor sencillo del modelo del experimento{" "}
-            <Link href="/pulso-mercado/research/exp-001-modelo-de-emergencia">EXP-001</Link>: combina
-            tendencia, volatilidad, correlación entre sectores, crédito, amplitud y velocidad de la
-            caída. Entre más se acerca a rojo, más se parece el mercado de hoy a los episodios de
-            estrés del pasado. Es <strong>informativo y experimental</strong>: no es una predicción
-            ni una recomendación, y todavía no está validado.
-          </p>
-          <EmergencyGauge />
-        </div>
-
         {snapshotFilas?.length > 0 && (
           <div className="pulsodash-snapshot-row">
             <div className="pulsodash-panel pulsodash-snapshot">
@@ -287,9 +271,17 @@ export default async function PulsoMercadoDashboard() {
               </div>
               <MarketSnapshotTabla filas={snapshotFilas} />
             </div>
+            <div className="pulsodash-meter-col">
+              <RiskMeter />
+            </div>
             <div className="pulsodash-banners-col">
               <LibrosMercadoBanner />
             </div>
+          </div>
+        )}
+        {!(snapshotFilas?.length > 0) && (
+          <div className="pulsodash-meter-solo">
+            <RiskMeter />
           </div>
         )}
 
