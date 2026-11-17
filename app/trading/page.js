@@ -156,6 +156,11 @@ const BUCKET_LABELS = {
   mediano_plazo: "Mediano Plazo (21.7%)",
   riesgo_alto: "Riesgo Alto (15.2%)",
   mean_reversion: "Mean Reversion (35.0%)",
+  // Canasta "comprar y mantener" (ADR 0039) — no opera estrategia, existe
+  // solo para comparar contra los 3 buckets activos. No participa en
+  // ningún total agregado de esta página (aquí cada bucket se pinta
+  // aparte, no se suman entre sí).
+  benchmark_diversificado: "Benchmark Diversificado — comprar y mantener (40% SPY/30% AGG/20% GLD/10% VNQ)",
 };
 
 function EquityChart({ history, startingCapital }) {

@@ -46,7 +46,7 @@ export default async function SimboloPage({ params }) {
         <h1>{symbol}</h1>
         {info && <p className="activo-mercado">{info.nombre} · {info.tipo}{info.sector ? ` · ${info.sector}` : ""}</p>}
         <p className="activo-mercado">
-          Operado en: {buckets.map((b) => b.etiqueta).join(" · ")}
+          Operado en: {buckets.map((b) => `${b.etiqueta} (Motor ${b.motor === "ibkr" ? "IBKR" : "Paper"})`).join(" · ")}
         </p>
 
         <div className="activo-bloque">
@@ -104,6 +104,7 @@ export default async function SimboloPage({ params }) {
               <thead>
                 <tr>
                   <th>Estado</th>
+                  <th>Motor</th>
                   <th>Bucket</th>
                   <th>Estrategia</th>
                   <th>Entrada</th>
@@ -123,6 +124,7 @@ export default async function SimboloPage({ params }) {
                         {o.estado === "abierta" ? "Abierta" : "Cerrada"}
                       </span>
                     </td>
+                    <td>{o.motor === "ibkr" ? "IBKR" : "Paper"}</td>
                     <td>{o.bucketEtiqueta}</td>
                     <td>{o.strategy}</td>
                     <td>{o.entry_date}</td>
