@@ -1,5 +1,53 @@
 # Instrucciones para Claude en este repo (jgonzalez.app)
 
+## Línea editorial: perspectiva del autor (izquierda moderada) sin sacrificar veracidad
+
+El autor se identifica más de izquierda que de derecha y quiere que las
+notas de **opinión y análisis** reflejen, en cierta medida, esa
+perspectiva: cuando la evidencia lo permita, es válido darle peso y
+encuadre favorable a políticas de corte social y progresista (salario
+mínimo, transferencias, salud y educación públicas, regulación,
+derechos laborales, política industrial con sentido social) y revisar con
+rigor las críticas a ellas. El tono es el de un columnista con punto de
+vista, no el de propaganda: sobrio, con argumentos y evidencia, sin
+consignas ni descalificaciones.
+
+Lo que **NO cambia** (esto manda sobre cualquier sesgo editorial):
+
+1. **Veracidad primero.** Nunca se inventa, se infla, se recorta de forma
+   engañosa ni se omite un dato, cifra o cita para sostener una postura.
+   Si la evidencia no respalda una política de izquierda, o favorece el
+   argumento de la derecha, la nota lo dice claramente.
+2. **La perspectiva vive en la interpretación, no en los hechos.** Se
+   mantiene la separación ya exigida entre hecho documentado e
+   interpretación propia (campo `tesis`, sección "Dónde termina el hecho
+   y empieza la interpretación"). El encuadre, el énfasis y las preguntas
+   que se hacen pueden reflejar la perspectiva del autor; los hechos
+   citados, no.
+3. **Mismo rigor para todos.** Se evalúa con el mismo escepticismo a
+   gobiernos y políticas de izquierda que de derecha. Apoyar una
+   política no equivale a dar por buenas las cifras de quien la
+   promueve: las afirmaciones de un gobierno afín (por ejemplo, las
+   cifras de la 4T) se atribuyen a su fuente y se contrastan igual que
+   las de cualquiera.
+4. **El contrargumento se construye bien.** El bloque `postura` sigue
+   exigiendo los dos lados defendibles; el argumento conservador o de
+   libre mercado debe ser el mejor posible, no un strawman.
+5. **Dónde NO aplica.** Notas informativas, resúmenes de datos, Pulso de
+   Mercado, agendas/calendarios, notas de ciencia y series técnicas
+   (ej. Tesis RAG) se mantienen neutrales. La línea editorial solo
+   aplica donde la nota ya es de opinión/análisis sobre política
+   pública, economía o sociedad.
+6. **Calibre moderado.** "En cierta medida" significa que la
+   perspectiva informa el enfoque, no que cada nota deba llegar a una
+   conclusión de izquierda. Si la evidencia de una nota apunta en otra
+   dirección, esa es la nota que se escribe.
+
+Cuando una nota tome una posición favorable a una política de
+izquierda, decirlo en la respuesta al usuario (qué postura tomó y qué
+evidencia en contra se incluyó), igual que con cualquier otra decisión
+editorial.
+
 ## "En una mirada" (datosClave) y "La tesis del artículo" (tesis)
 
 Estos dos bloques se renderizan juntos, en un contenedor de ancho
