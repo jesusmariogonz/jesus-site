@@ -11,7 +11,7 @@ tags:
   - semiconductores
   - ventas minoristas
   - Target
-resumen: 'Wall Street cerró ayer su quinta sesión consecutiva de pérdidas pese a que Nvidia reportó, después del cierre, ingresos de $115,800 millones de dólares (+103% anual), muy por encima del consenso, en su primer reporte sin Jensen Huang como CEO. Home Depot superó el consenso de ingresos pero cayó 2.4% por una guía débil, y las ventas minoristas de octubre subieron solo 0.2%, muy por debajo de septiembre.'
+resumen: 'Nvidia reportó ingresos que superaron ampliamente el consenso, pero su acción cayó más de 3% y acumuló su quinta sesión consecutiva de pérdidas: el mercado ya no está premiando los buenos números por sí solos. El Dow cayó 1.11% y el S&P 500 0.23%, mientras el Nasdaq subió 0.42% impulsado por otros nombres. Target también superó consenso por un amplio margen, pero sus acciones caían en premarket. Anthropic fijó el precio de su IPO en $83 por acción, por encima del rango esperado.'
 imagen: /blog/portadas/mercados-hoy-fija.jpg
 socialImagen: /blog/social/pulso-mercado-daily-2026-11-18.jpg
 ---
@@ -20,88 +20,90 @@ socialImagen: /blog/social/pulso-mercado-daily-2026-11-18.jpg
 
 | Activo | Nivel | Cambio |
 |---|---|---|
-| S&P 500 | ≈7,341.68 | -1.01% |
-| Nasdaq Composite | ≈24,328.39 | -0.74% |
-| Russell 2000 | ≈2,703.74 | -1.43% |
-| Dow Jones | ≈50,761.80 | -1.64% |
-| VIX | — | — |
+| S&P 500 | 7,323.63 | -0.23% |
+| Nasdaq Composite | 24,429.89 | +0.42% |
+| Russell 2000 | — | — |
+| Dow Jones | 50,198.17 | -1.11% |
+| VIX | 24.63 | -3.26% |
 | S&P/BMV IPC | — | — |
 | USD/MXN | — | — |
-| US 10Y | — | — |
-| WTI | — | — |
+| US 10Y | 5.07% | -0.73% |
+| WTI | $81.88 | -3.27% |
 
 ## Market Regime
 
-Wall Street cerró ayer su quinta sesión consecutiva de pérdidas, aunque de forma más moderada que las anteriores: el S&P 500 cayó 1.01%, el Nasdaq Composite 0.74% y el Dow 1.64%, según niveles reportados vía CNBC y los ETFs que replican cada índice (SPY, DIA, IWM). La sesión se desarrolló con cautela antes de dos eventos: las ventas minoristas de octubre, publicadas por la mañana, y el reporte de resultados de Nvidia, publicado después del cierre. Las ventas minoristas subieron solo 0.2% mensual, por debajo del consenso de +0.3% y muy por debajo del +0.8% de septiembre. Home Depot reportó antes de la apertura con ingresos de $43,400 millones (+4.9% anual), superando el consenso, pero su acción cayó 2.4% después de proyectar utilidades del trimestre de fin de año por debajo de lo esperado.
+Wall Street cerró hoy una sesión mixta y, en el caso de Nvidia, reveladora: el Dow cayó 1.11% a 50,198.17 puntos, arrastrado por Home Depot y otros nombres cíclicos, mientras el S&P 500 cedió apenas 0.23% y el Nasdaq Composite subió 0.42%, sostenido por nombres distintos a Nvidia. Nvidia reportó anoche, después del cierre, ingresos de $115,800 millones de dólares (+103% anual) y utilidad por acción de $2.68, muy por encima del consenso de analistas —pero la acción cayó más de 3% durante la sesión de hoy, su quinta caída consecutiva, y la empresa retrasó la presentación de su reporte 10-Q ante el regulador. Es la confirmación más clara hasta ahora de que el mercado ya no está dispuesto a premiar un buen resultado de Nvidia por sí solo mientras la empresa siga sin un CEO permanente desde la renuncia de Jensen Huang.
 
-Después del cierre, Nvidia reportó resultados que superaron ampliamente el consenso: ingresos de $115,800 millones de dólares, +103% anual, frente a una expectativa cercana a $109,000 millones, con utilidad por acción no-GAAP de $2.68 (consenso ~$2.47). Es el primer reporte de la empresa desde la renuncia de Jensen Huang como CEO, sin sucesor permanente nombrado, con Colette Kress operando como CEO interina. La empresa guio su siguiente trimestre a $130,000 millones de dólares y amplió su autorización de recompra en $150,000 millones. La acción subió en operaciones posteriores al cierre, lo que debería traducirse en una apertura positiva para el sector de semiconductores hoy, aunque esta edición cierra antes de que el mercado abra y pueda confirmar esa reacción en el horario regular.
+Target reportó hoy ventas netas de $27,100 millones de dólares (+7.1% anual), por encima del consenso de $26,500 millones, con utilidad por acción de $2.65 (+49% anual) frente a una expectativa de $2.08 —un resultado que incluyó un beneficio de $0.50 por reembolsos de aranceles— pero sus acciones operaban a la baja en premarket pese al resultado. El patrón se repite: superar el consenso del trimestre ya reportado no está siendo suficiente para sostener el precio de las acciones esta semana, ni en retail ni en semiconductores. Las actas de la Fed del 27-28 de octubre, publicadas hoy, no revelaron sorpresas mayores según las fuentes consultadas, aunque un reporte destaca que el gobernador Christopher Waller favorecería un alza de 50 puntos base en diciembre si la Fed no señala un movimiento en enero; los futuros ya asignan 69% de probabilidad a esa magnitud para fines de enero. El evento más significativo del día en los mercados, sin embargo, fue ajeno a esta lista de calendario: Anthropic fijó el precio de su oferta pública inicial en $83 por acción, por encima del rango de $70-78 que se esperaba, con el tamaño de la colocación también ampliado; las acciones debutan mañana jueves en Nasdaq bajo el símbolo ANT.
 
-No logramos confirmar con fuentes de cierre el VIX, el Treasury a 10 años, el WTI, el FIX de Banxico ni el S&P/BMV IPC para la sesión de ayer.
+No logramos confirmar con fuentes de cierre el nivel del Russell 2000, el FIX de Banxico, ni el S&P/BMV IPC para la sesión de hoy.
 
-Scorecard: Trend → ↓ (quinta sesión consecutiva de pérdidas, aunque más moderada) · Breadth → → (la caída fue menos generalizada que en sesiones previas) · Momentum → ↑ (el reporte de Nvidia después del cierre fue claramente positivo y debería mejorar el ánimo de apertura de hoy) · Volatility → — (sin cierre confirmado del VIX) · Rates → — (sin cierre confirmado del Treasury a 10 años) · USD → — (sin FIX de Banxico confirmado)
+Scorecard: Trend → → (sesión mixta entre índices, sin una dirección unificada) · Breadth → ↓ (Nvidia y Home Depot cayeron pese a superar consenso, mientras otros nombres del Nasdaq sostuvieron el índice) · Momentum → ↓ (el mercado ya no está premiando resultados sólidos por sí solos en esta ronda de earnings) · Volatility → ↓ (VIX cedió 3.26% a 24.63, pese al quinto día de caída de Nvidia) · Rates → ↓ (Treasury a 10 años bajó a 5.07%) · USD → — (sin FIX de Banxico confirmado)
 
 ## Qué importó hoy
 
-**Nvidia reportó, después del cierre de ayer, ingresos de $115,800 millones de dólares (+103% anual) y utilidad por acción no-GAAP de $2.68, muy por encima del consenso de analistas, en su primer reporte desde la renuncia de Jensen Huang como CEO.** La empresa guio su próximo trimestre a $130,000 millones de dólares y amplió su programa de recompra en $150,000 millones; la acción subió en el aftermarket. El resultado complica la narrativa de que la incertidumbre de liderazgo necesariamente deteriora la operación de la empresa, al menos en el trimestre inmediato. Horizonte: Position.
+**Nvidia superó ampliamente el consenso de ingresos y utilidades en su reporte de anoche, pero su acción cayó más de 3% hoy, su quinta sesión consecutiva de pérdidas, y la empresa retrasó la presentación de su 10-Q ante el regulador.** Es la señal más clara hasta ahora de que el mercado está separando el desempeño operativo de la empresa de la incertidumbre sobre su liderazgo, y castigando esta última sin importar qué tan bien reporten los números. Horizonte: Position.
 
-**Home Depot superó el consenso de ingresos del trimestre pero su acción cayó 2.4% después de proyectar utilidades del trimestre de fin de año por debajo de lo esperado.** El contraste con Nvidia es instructivo: el mercado está valorando la proyección hacia adelante por encima del resultado ya reportado, en un entorno donde ya existe cautela sobre el consumidor estadounidense. Horizonte: Position.
+**Target reportó ingresos y utilidad muy por encima del consenso, con un beneficio de $0.50 por acción ligado a reembolsos de aranceles, pero sus acciones operaban a la baja en premarket.** El mismo patrón que Nvidia y Home Depot esta semana: superar el trimestre ya reportado no está bastando para sostener el precio cuando el mercado ya está en un modo de cautela generalizado. Horizonte: Position.
 
-**Las ventas minoristas de octubre subieron solo 0.2% mensual, menos de un tercio del ritmo de septiembre (+0.8%) y por debajo del consenso de +0.3%.** El dato llega en la misma semana en que las ventas de casas existentes tocaron su nivel más bajo desde 2010, una convergencia de señales que pesará sobre cómo el mercado lea los reportes de Target y Walmart esta semana. Horizonte: Position.
+**Anthropic fijó el precio de su oferta pública inicial en $83 por acción, por encima del rango de $70-78 que se esperaba, con el tamaño de la colocación ampliado; debuta mañana en Nasdaq bajo el símbolo ANT.** Es la prueba de mercado más concreta hasta ahora sobre si los inversionistas públicos están dispuestos a pagar, incluso una valuación mayor a la originalmente planteada, por una empresa de IA de frontera en medio de la corrección del sector. Horizonte: Long Term.
+
+**Las actas de la Fed del 27-28 de octubre se publicaron hoy sin sorpresas mayores, aunque un reporte atribuye al gobernador Christopher Waller la postura de favorecer un alza de 50 puntos base en diciembre si la Fed no señala un movimiento para enero.** Los futuros ya asignan 69% de probabilidad a esa magnitud para fines de enero, según datos de CME citados en la cobertura de la sesión. Horizonte: Position.
 
 ## Macro
 
-Las actas de la reunión de la Fed del 27-28 de octubre se publican hoy, la referencia más directa de la semana sobre qué tan dividido está el consejo respecto a un posible movimiento de tasas en diciembre.
+Las actas de la Fed del 27-28 de octubre se publicaron hoy. La cobertura disponible no reporta un consejo marcadamente más dividido de lo ya descontado, aunque destaca la postura del gobernador Christopher Waller a favor de un alza de 50 puntos base en diciembre si no hay señal de movimiento en enero.
 
 ## Tasas y bonos
 
-No logramos confirmar con una fuente de cierre el nivel del Treasury a 10 años para la sesión de ayer. El cierre del lunes fue 5.12%.
+El Treasury a 10 años cerró hoy en 5.07%, una baja de 0.73% frente al cierre de ayer (5.12%).
 
 ## FX y commodities
 
-No logramos confirmar con una fuente de cierre el FIX de Banxico, el nivel del S&P/BMV IPC, ni el precio de cierre del WTI para la sesión de ayer.
+El WTI cerró hoy en $81.88 por barril (-3.27%). No logramos confirmar con una fuente de cierre el FIX de Banxico ni el nivel del S&P/BMV IPC para la sesión de hoy.
 
 ## Sectores
 
-Semiconductores debería ser el sector a vigilar en la apertura de hoy, después de que Nvidia reportó resultados claramente por encima de expectativas y su acción subió en operaciones posteriores al cierre —un contraste directo con las cuatro sesiones previas de presión sobre el sector por la incertidumbre de liderazgo de la empresa. Retail también queda bajo atención, con Home Depot ya reportado y Target y Palo Alto Networks reportando hoy.
+Semiconductores volvió a ser el sector bajo más presión hoy: Nvidia cayó más de 3% pese a superar el consenso de resultados por un margen amplio, su quinta sesión consecutiva de pérdidas. Retail mostró un patrón similar, con Target superando consenso pero cotizando a la baja en premarket, en la misma línea que Home Depot ayer.
 
 ## Swing
 
-La pregunta inmediata es si el reporte de Nvidia es suficiente para revertir, aunque sea parcialmente, el deterioro de ánimo acumulado en cinco sesiones consecutivas de pérdidas, o si el mercado sigue tratando con cautela a la empresa mientras no haya un CEO permanente nombrado, sin importar qué tan bien reporten los números de un solo trimestre.
+La pregunta inmediata ya no es si Nvidia puede reportar bien —lo hizo, por un margen amplio—, sino qué haría falta para que el mercado deje de castigar a la acción mientras no haya un CEO permanente nombrado. Es la misma dinámica que Target enfrenta hoy con su propio resultado.
 
 ## Position
 
-Dos historias de consumo convergieron ayer en direcciones opuestas: un dato nacional de ventas minoristas que desaceleró más de lo esperado, y un reporte de Home Depot que, pese a superar el consenso del trimestre ya reportado, fue castigado por su proyección hacia 2027. Esa misma lógica —premiar o castigar según la guía, no según el resultado ya consumado— es la que se aplicará hoy a Target y Palo Alto Networks.
+El patrón de esta semana se consolidó hoy: superar el consenso del trimestre ya reportado —Home Depot, Nvidia, Target, los tres por márgenes distintos pero todos por encima de expectativas— no ha sido suficiente para sostener el precio de ninguna de las tres acciones. El mercado está cotizando algo distinto al resultado ya consumado: incertidumbre de liderazgo en el caso de Nvidia, cautela sobre el consumidor en el caso de los dos minoristas.
 
 ## Long Term
 
-El reporte de Nvidia, superando el consenso por un margen amplio en su primer trimestre sin Jensen Huang al mando, es el dato más concreto hasta ahora de que la demanda de infraestructura de inteligencia artificial sigue operando en una lógica distinta a la de la crisis de liderazgo de la empresa. Si esa separación se mantiene en los próximos trimestres, cambiaría la forma en que el mercado está descontando el riesgo de gobierno corporativo de Nvidia.
+El debut bursátil de Anthropic mañana, después de fijar su IPO en $83 por acción —por encima del rango original y con la colocación ampliada—, es la prueba de mercado más concreta hasta ahora sobre el apetito real de los inversionistas públicos por una valuación de frontera en inteligencia artificial, en medio de una semana donde ni los resultados sólidos de la propia Nvidia bastaron para sostener su acción.
 
 ## Earnings y calendario
 
 | Empresa | Ticker | Fecha | Qué observar |
 |---|---|---|---|
-| Nvidia | NVDA | Ayer, después del cierre — ya reportó | Ingresos $115,800 millones (+103%), superó consenso; guía de $130,000 millones para el próximo trimestre |
-| Home Depot | HD | Ayer, antes de la apertura — ya reportó | Ingresos $43,400 millones (+4.9%), superó consenso; acción cayó 2.4% por guía débil |
-| Target | TGT | Hoy, 8:00-9:00am ET | Contraste directo con Home Depot y Walmart sobre qué segmento del consumidor resiste mejor |
+| Nvidia | NVDA | Ayer, después del cierre — ya reportó | Ingresos $115,800 millones (+103%), superó consenso; acción cayó >3% hoy pese al resultado |
+| Target | TGT | Hoy — ya reportó | Ingresos $27,100 millones (+7.1%), EPS $2.65 (+49%), ambos por encima de consenso; acción a la baja en premarket |
 | Palo Alto Networks | PANW | Hoy, después del cierre | Referencia del sector de ciberseguridad |
-| Lowe's | LOW | Hoy (fecha tentativa) | Comparación directa con Home Depot en el mismo segmento |
+| Lowe's | LOW | Hoy (fecha tentativa) | Comparación directa con Home Depot y Target en consumo |
+| Anthropic (debut bursátil) | ANT | Mañana jueves | IPO fijada en $83 por acción, por encima del rango de $70-78 esperado |
 
 ## Riesgos
 
-El riesgo más inmediato es que la reacción positiva a Nvidia en el aftermarket no se sostenga durante la sesión regular de hoy, especialmente si las actas de la Fed —publicadas también hoy— revelan un consejo más dividido de lo que el mercado ya descuenta sobre diciembre. Un segundo riesgo es que los reportes de Target, Palo Alto Networks y Lowe's de hoy confirmen la misma desaceleración del consumidor que insinuó el dato de ventas minoristas y la guía de Home Depot.
+El riesgo más inmediato es que la desconexión entre buenos resultados y precio de la acción —ya visible en Nvidia, Home Depot y Target esta semana— se extienda a Palo Alto Networks y Lowe's, confirmando que el mercado está en un modo de aversión al riesgo que ningún reporte individual puede revertir por sí solo. Un segundo riesgo es que el debut de Anthropic mañana, a una valuación ya elevada tras el aumento de precio de la IPO, no logre sostenerse en su primer día de cotización.
 
 ## Qué vigilar mañana
 
-- Reacción completa del mercado al reporte de Nvidia, en la sesión regular de hoy.
-- Resultados de Target, Palo Alto Networks y Lowe's (hoy).
-- Actas de la Fed del 27-28 de octubre (hoy).
-- Si la quinta sesión de pérdidas se revierte o se extiende.
+- Debut bursátil de Anthropic en Nasdaq bajo el símbolo ANT.
+- Resultado de Palo Alto Networks (después del cierre de hoy) y reacción en la sesión de mañana.
+- Si la desconexión entre resultados sólidos y reacción negativa de las acciones se extiende o se revierte.
+- Nivel de cierre de Lowe's, si reporta hoy como estaba tentativamente marcado.
 
 ## Pendientes de esta edición
 
-- VIX, Treasury a 10 años y WTI: no logramos confirmar su nivel de cierre de ayer.
-- S&P/BMV IPC: no localizamos con confianza un nivel de cierre para la sesión de ayer.
-- USD/MXN: no localizamos con confianza el FIX de Banxico de ayer.
+- Russell 2000: no logramos confirmar su nivel de cierre de hoy.
+- S&P/BMV IPC: no localizamos con confianza un nivel de cierre para la sesión de hoy.
+- USD/MXN: no localizamos con confianza el FIX de Banxico de hoy.
 
 ## Fuentes
 
