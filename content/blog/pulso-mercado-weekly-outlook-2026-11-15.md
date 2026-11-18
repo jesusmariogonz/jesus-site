@@ -25,7 +25,7 @@ La semana que entra concentra tres tipos de evento: el primer reporte de resulta
 | Fecha | Evento | País | Importancia | Qué puede afectar |
 |---|---|---|---|---|
 | Lunes 16 de noviembre | [Declaraciones del presidente de la Fed, Kevin Warsh, en el Fed de San Francisco (12:00pm ET)](/blog/warsh-tres-escenarios-ia-economia-fed-productividad-empleo) | Estados Unidos | Alta | Primera oportunidad pública de la semana para que el mercado calibre el tono de la Fed de cara a diciembre |
-| Martes 17 de noviembre, 8:30am ET | Ventas minoristas de octubre | Estados Unidos | Alta | Consenso citado cerca de plano a +0.3% mensual (subyacente +0.4%, desde +0.9% el mes previo); referencia directa sobre la fortaleza del consumidor antes de la temporada de fin de año |
+| Martes 17 de noviembre, 8:30am ET | [Ventas minoristas de octubre](/blog/ventas-minoristas-octubre-2026-desaceleracion-plano) | Estados Unidos | Alta | Consenso citado cerca de plano a +0.3% mensual (subyacente +0.4%, desde +0.9% el mes previo); referencia directa sobre la fortaleza del consumidor antes de la temporada de fin de año |
 | Martes 17 de noviembre | [John Williams (Fed de Nueva York) en el evento de Axios: no ve necesaria una acción "dramática"](/blog/williams-fed-accion-dramatica-diciembre-25-o-50-puntos-base) | Estados Unidos | Media | Probablemente hará falta otra alza de tasas, pero sin movimiento brusco; contrasta con Waller, que abrió la puerta a medio punto en diciembre |
 | Martes 17 de noviembre | Alberto Musalem (Fed de San Luis) y Beth Hammack (Fed de Cleveland) | Estados Unidos | Media | Comentarios adicionales sobre la trayectoria de tasas |
 | Miércoles 18 de noviembre | Actas de la reunión de la Fed del 27-28 de octubre | Estados Unidos | Alta | Detalle sobre el razonamiento interno detrás de la decisión de octubre, clave para calibrar la probabilidad de un alza en diciembre |
@@ -36,8 +36,8 @@ No localizamos con confianza un calendario específico de datos económicos mexi
 
 | Empresa | Ticker | Fecha | Momento | Sector | Por qué importa |
 |---|---|---|---|---|---|
-| Home Depot | HD | Martes 17 de noviembre | 9:00am ET | Retail / Mejoras del hogar | Primer reporte minorista grande de la semana; referencia sobre gasto discrecional ligado a vivienda, en la misma semana que las ventas de casas existentes tocaron su nivel más bajo desde 2010 |
-| Nvidia | NVDA | Martes 17 de noviembre | ~4:20pm ET (1:20pm PT), llamada a las 2:00pm PT | Semiconductores / IA | Primer reporte desde la renuncia de Jensen Huang como CEO; sin sucesor permanente nombrado, con Colette Kress como CEO interina |
+| [Home Depot](/blog/home-depot-nvidia-resultados-17-noviembre-2026) | HD | Martes 17 de noviembre | 9:00am ET | Retail / Mejoras del hogar | Primer reporte minorista grande de la semana; referencia sobre gasto discrecional ligado a vivienda, en la misma semana que las ventas de casas existentes tocaron su nivel más bajo desde 2010 |
+| [Nvidia](/blog/home-depot-nvidia-resultados-17-noviembre-2026) | NVDA | Martes 17 de noviembre | ~4:20pm ET (1:20pm PT), llamada a las 2:00pm PT | Semiconductores / IA | Primer reporte desde la renuncia de Jensen Huang como CEO; sin sucesor permanente nombrado, con Colette Kress como CEO interina |
 | Target | TGT | Miércoles 18 de noviembre | 8:00-9:00am ET | Retail | Contraste directo con Home Depot y Walmart sobre qué segmento del consumidor está resistiendo mejor |
 | Palo Alto Networks | PANW | Miércoles 18 de noviembre | Después del cierre, webcast 4:30pm ET | Ciberseguridad | Referencia del sector de ciberseguridad en la misma semana que esta serie documentó cuestionamientos sobre las métricas de crecimiento de Varonis |
 | Lowe's | LOW | Miércoles 18 de noviembre (fecha marcada como tentativa por la propia empresa) | No confirmado | Retail / Mejoras del hogar | Comparación directa con Home Depot en el mismo segmento |
