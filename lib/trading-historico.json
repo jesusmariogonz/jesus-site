@@ -15,25 +15,25 @@
     "pnl": -1.1,
     "pnl_pct": -1.07,
     "reason": "stop_hit",
-    "actualizado": "2026-11-17T21:38:18.277302+00:00"
+    "actualizado": "2026-11-18T14:42:13.947062+00:00"
   },
   {
     "bucket": "largo_plazo",
     "bucket_label": "Largo Plazo",
     "symbol": "IJH",
     "asset_type": "Equity ETF",
-    "estado": "Abierta",
+    "estado": "Cerrada",
     "entry_date": "2026-10-30",
     "entry_price": 73.33,
     "initial_stop_price": null,
-    "exit_date": null,
-    "exit_price": null,
-    "current_price": 71.75,
+    "exit_date": "2026-11-18",
+    "exit_price": 71.62,
+    "current_price": null,
     "stop_price": 71.62000111171177,
-    "pnl": -1.58,
-    "pnl_pct": -2.15,
-    "reason": null,
-    "actualizado": "2026-11-17T21:38:18.277264+00:00"
+    "pnl": -1.78,
+    "pnl_pct": -2.43,
+    "reason": "stop_hit",
+    "actualizado": "2026-11-18T14:42:13.947070+00:00"
   },
   {
     "bucket": "largo_plazo",
@@ -51,7 +51,7 @@
     "pnl": -3.56,
     "pnl_pct": -2.54,
     "reason": "stop_hit",
-    "actualizado": "2026-11-17T21:38:18.277306+00:00"
+    "actualizado": "2026-11-18T14:42:13.947067+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -64,12 +64,12 @@
     "initial_stop_price": null,
     "exit_date": null,
     "exit_price": null,
-    "current_price": 98.79,
+    "current_price": 98.59,
     "stop_price": 95.61571638924735,
-    "pnl": 4.62,
-    "pnl_pct": 4.91,
+    "pnl": 4.42,
+    "pnl_pct": 4.69,
     "reason": null,
-    "actualizado": "2026-11-17T21:38:18.277312+00:00"
+    "actualizado": "2026-11-18T14:42:13.947077+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -87,7 +87,7 @@
     "pnl": -2.76,
     "pnl_pct": -4.53,
     "reason": "stop_hit",
-    "actualizado": "2026-11-17T21:38:18.277327+00:00"
+    "actualizado": "2026-11-18T14:42:13.947089+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -105,7 +105,7 @@
     "pnl": -3.7,
     "pnl_pct": -5.27,
     "reason": "stop_hit",
-    "actualizado": "2026-11-17T21:38:18.277323+00:00"
+    "actualizado": "2026-11-18T14:42:13.947086+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -123,7 +123,7 @@
     "pnl": 0.55,
     "pnl_pct": 0.98,
     "reason": "stop_hit",
-    "actualizado": "2026-11-17T21:38:18.277330+00:00"
+    "actualizado": "2026-11-18T14:42:13.947092+00:00"
   },
   {
     "bucket": "blend_spy_gld",
@@ -141,7 +141,7 @@
     "pnl": null,
     "pnl_pct": null,
     "reason": null,
-    "actualizado": "2026-11-17T21:38:18.277350+00:00"
+    "actualizado": "2026-11-18T14:42:13.947108+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -154,12 +154,12 @@
     "initial_stop_price": null,
     "exit_date": null,
     "exit_price": null,
-    "current_price": 91.46,
+    "current_price": 91.29,
     "stop_price": 88.86071286882672,
-    "pnl": -0.57,
-    "pnl_pct": -0.62,
+    "pnl": -0.74,
+    "pnl_pct": -0.8,
     "reason": null,
-    "actualizado": "2026-11-17T21:38:18.277315+00:00"
+    "actualizado": "2026-11-18T14:42:13.947080+00:00"
   },
   {
     "bucket": "largo_plazo",
@@ -172,12 +172,12 @@
     "initial_stop_price": null,
     "exit_date": null,
     "exit_price": null,
-    "current_price": 94.89,
+    "current_price": 94.79,
     "stop_price": 92.91464669363839,
-    "pnl": -0.94,
-    "pnl_pct": -0.98,
+    "pnl": -1.04,
+    "pnl_pct": -1.09,
     "reason": null,
-    "actualizado": "2026-11-17T21:38:18.277291+00:00"
+    "actualizado": "2026-11-18T14:42:13.947041+00:00"
   },
   {
     "bucket": "blend_spy_gld",
@@ -202,18 +202,18 @@
     "bucket_label": "Largo Plazo",
     "symbol": "EFA",
     "asset_type": "Equity ETF",
-    "estado": "Abierta",
+    "estado": "Cerrada",
     "entry_date": "2026-11-09",
     "entry_price": 105.06,
     "initial_stop_price": 100.63,
-    "exit_date": null,
-    "exit_price": null,
-    "current_price": 101.35,
+    "exit_date": "2026-11-18",
+    "exit_price": 100.63,
+    "current_price": null,
     "stop_price": 100.63,
-    "pnl": -3.71,
-    "pnl_pct": -3.53,
-    "reason": null,
-    "actualizado": "2026-11-17T21:38:18.277297+00:00"
+    "pnl": -4.53,
+    "pnl_pct": -4.31,
+    "reason": "stop_hit",
+    "actualizado": "2026-11-18T14:42:13.947073+00:00"
   },
   {
     "bucket": "riesgo_alto",
@@ -226,12 +226,12 @@
     "initial_stop_price": 20.14,
     "exit_date": null,
     "exit_price": null,
-    "current_price": 21.15,
+    "current_price": 21.51,
     "stop_price": 20.14,
-    "pnl": -5.3,
-    "pnl_pct": -11.13,
+    "pnl": -4.58,
+    "pnl_pct": -9.62,
     "reason": null,
-    "actualizado": "2026-11-17T21:38:18.277334+00:00"
+    "actualizado": "2026-11-18T14:42:13.947095+00:00"
   },
   {
     "bucket": "riesgo_alto",
@@ -244,12 +244,12 @@
     "initial_stop_price": 52.06,
     "exit_date": null,
     "exit_price": null,
-    "current_price": 64.88,
-    "stop_price": 57.89767483302525,
-    "pnl": 7.19,
-    "pnl_pct": 12.46,
+    "current_price": 64.86,
+    "stop_price": 57.906250953674316,
+    "pnl": 7.17,
+    "pnl_pct": 12.43,
     "reason": null,
-    "actualizado": "2026-11-17T21:38:18.277338+00:00"
+    "actualizado": "2026-11-18T14:42:13.947098+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -262,12 +262,12 @@
     "initial_stop_price": 54.35,
     "exit_date": null,
     "exit_price": null,
-    "current_price": 57.07,
+    "current_price": 56.905,
     "stop_price": 54.35,
-    "pnl": -0.12,
-    "pnl_pct": -0.11,
+    "pnl": -0.45,
+    "pnl_pct": -0.39,
     "reason": null,
-    "actualizado": "2026-11-17T21:38:18.277319+00:00"
+    "actualizado": "2026-11-18T14:42:13.947083+00:00"
   },
   {
     "bucket": "riesgo_alto",
@@ -280,11 +280,29 @@
     "initial_stop_price": 68.51,
     "exit_date": null,
     "exit_price": null,
-    "current_price": 75.93,
-    "stop_price": 68.51,
-    "pnl": -0.08,
-    "pnl_pct": -0.11,
+    "current_price": 76.16,
+    "stop_price": 69.3392881665911,
+    "pnl": 0.15,
+    "pnl_pct": 0.2,
     "reason": null,
-    "actualizado": "2026-11-17T21:38:18.277341+00:00"
+    "actualizado": "2026-11-18T14:42:13.947100+00:00"
+  },
+  {
+    "bucket": "largo_plazo",
+    "bucket_label": "Largo Plazo",
+    "symbol": "IJR",
+    "asset_type": "Equity ETF",
+    "estado": "Abierta",
+    "entry_date": "2026-11-18",
+    "entry_price": 137.2,
+    "initial_stop_price": 129.42,
+    "exit_date": null,
+    "exit_price": null,
+    "current_price": 137.06,
+    "stop_price": 129.42,
+    "pnl": -0.14,
+    "pnl_pct": -0.1,
+    "reason": null,
+    "actualizado": "2026-11-18T14:42:13.947057+00:00"
   }
 ]
