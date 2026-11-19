@@ -28,7 +28,7 @@ La semana que entra concentra tres tipos de evento: el primer reporte de resulta
 | Martes 17 de noviembre, 8:30am ET | [Ventas minoristas de octubre](/blog/ventas-minoristas-octubre-2026-desaceleracion-plano) | Estados Unidos | Alta | Consenso citado cerca de plano a +0.3% mensual (subyacente +0.4%, desde +0.9% el mes previo); referencia directa sobre la fortaleza del consumidor antes de la temporada de fin de año |
 | Martes 17 de noviembre | [John Williams (Fed de Nueva York) en el evento de Axios: no ve necesaria una acción "dramática"](/blog/williams-fed-accion-dramatica-diciembre-25-o-50-puntos-base) | Estados Unidos | Media | Probablemente hará falta otra alza de tasas, pero sin movimiento brusco; contrasta con Waller, que abrió la puerta a medio punto en diciembre |
 | Martes 17 de noviembre | Alberto Musalem (Fed de San Luis) y Beth Hammack (Fed de Cleveland) | Estados Unidos | Media | Comentarios adicionales sobre la trayectoria de tasas |
-| Miércoles 18 de noviembre | Actas de la reunión de la Fed del 27-28 de octubre | Estados Unidos | Alta | Detalle sobre el razonamiento interno detrás de la decisión de octubre, clave para calibrar la probabilidad de un alza en diciembre |
+| Miércoles 18 de noviembre | [Actas de la reunión de la Fed del 27-28 de octubre](/blog/fed-actas-octubre-2026-casi-todos-favorecen-alza-diciembre) | Estados Unidos | Alta | Detalle sobre el razonamiento interno detrás de la decisión de octubre, clave para calibrar la probabilidad de un alza en diciembre |
 
 No localizamos con confianza un calendario específico de datos económicos mexicanos confirmados para esta ventana (INEGI, Banxico); la siguiente publicación confirmada relevante, la balanza comercial de octubre, está programada para el 27 de noviembre, fuera de esta semana.
 
@@ -38,9 +38,9 @@ No localizamos con confianza un calendario específico de datos económicos mexi
 |---|---|---|---|---|---|
 | [Home Depot](/blog/home-depot-nvidia-resultados-17-noviembre-2026) | HD | Martes 17 de noviembre | 9:00am ET | Retail / Mejoras del hogar | Primer reporte minorista grande de la semana; referencia sobre gasto discrecional ligado a vivienda, en la misma semana que las ventas de casas existentes tocaron su nivel más bajo desde 2010 |
 | [Nvidia](/blog/home-depot-nvidia-resultados-17-noviembre-2026) | NVDA | Martes 17 de noviembre | ~4:20pm ET (1:20pm PT), llamada a las 2:00pm PT | Semiconductores / IA | Primer reporte desde la renuncia de Jensen Huang como CEO; sin sucesor permanente nombrado, con Colette Kress como CEO interina |
-| Target | TGT | Miércoles 18 de noviembre | 8:00-9:00am ET | Retail | Contraste directo con Home Depot y Walmart sobre qué segmento del consumidor está resistiendo mejor |
+| [Target](/blog/target-lowes-resultados-18-noviembre-2026) | TGT | Miércoles 18 de noviembre | 8:00-9:00am ET | Retail | Contraste directo con Home Depot y Walmart sobre qué segmento del consumidor está resistiendo mejor |
 | Palo Alto Networks | PANW | Miércoles 18 de noviembre | Después del cierre, webcast 4:30pm ET | Ciberseguridad | Referencia del sector de ciberseguridad en la misma semana que esta serie documentó cuestionamientos sobre las métricas de crecimiento de Varonis |
-| Lowe's | LOW | Miércoles 18 de noviembre (fecha marcada como tentativa por la propia empresa) | No confirmado | Retail / Mejoras del hogar | Comparación directa con Home Depot en el mismo segmento |
+| [Lowe's](/blog/target-lowes-resultados-18-noviembre-2026) | LOW | Miércoles 18 de noviembre (fecha marcada como tentativa por la propia empresa) | No confirmado | Retail / Mejoras del hogar | Comparación directa con Home Depot en el mismo segmento |
 | Walmart | WMT | Jueves 19 de noviembre (estimado, sin confirmación oficial de la empresa en las fuentes consultadas) | Antes de la apertura | Retail | El minorista más grande de Estados Unidos; referencia más amplia sobre el consumidor de cara al Buen Fin y la temporada de fin de año |
 
 No localizamos con confianza una fecha oficial confirmada por Disney para su propio reporte de resultados esta semana; distintas fuentes citan fechas contradictorias entre el 11 y el 17 de noviembre.
