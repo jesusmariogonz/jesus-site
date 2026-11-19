@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { formatFechaHoraCdmx, formatProximaCorrida, proximaActualizacionRiesgo } from "@/lib/pulsoSchedule";
 
 /* Medidor pequeño de riesgo y volatilidad (0–100) de Pulso de Mercado.
    Lee /api/risk-meter, que se recalcula a diario con precios públicos. Nunca
@@ -136,6 +137,11 @@ export default function RiskMeter() {
 
   const score = datos.score;
   const color = colorDe(score);
+  const ultima = formatFechaHoraCdmx(datos.calculadoEn);
+  const fechaDatos = new Date(`${datos.fecha}T12:00:00Z`)
+    .toLocaleDateString("es-MX", { timeZone: "UTC", day: "numeric", month: "short" })
+    .replace(".", "");
+  const proxima = formatProximaCorrida(proximaActualizacionRiesgo());
   const angulo = listo ? -90 + score * 1.8 : -90;
   const d = datos.delta1d;
   const comps = Object.entries(datos.componentes).filter(([, v]) => v);
@@ -194,9 +200,13 @@ export default function RiskMeter() {
         </div>
       )}
 
-      <p className="rm-pie">
-        Datos al {datos.fecha} · se recalcula cada día hábil. {datos.aviso}
-      </p>
+      <div className="rm-actualiza">
+        <span className="rm-act-tipo">Última actualización</span>
+        <span className="rm-act-cuando">{ultima ? `${ultima} (CDMX)` : "—"}</span>
+        <span className="rm-act-datos">Datos al cierre del {fechaDatos}</span>
+        {proxima && <span className="rm-act-prox">Próxima: {proxima}</span>}
+      </div>
+      <p className="rm-pie">{datos.aviso}</p>
     </div>
   );
 }
