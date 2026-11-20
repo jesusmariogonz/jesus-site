@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T17:19:40.413353+00:00",
+  "generated_at": "2026-11-20T21:41:10.118245+00:00",
   "source": "algo_trading_platform motor EN VIVO (cuenta paper real de IBKR, ver ADR 0022/0023)",
   "buckets": {
     "largo_plazo": {
@@ -13,9 +13,9 @@
           "stop_price": 92.69,
           "shares": 3,
           "asset_type": "Equity ETF",
-          "current_price": 93.745,
-          "unrealized_pnl": -4.24,
-          "unrealized_pnl_pct": -1.49
+          "current_price": 92.56,
+          "unrealized_pnl": -7.8,
+          "unrealized_pnl_pct": -2.73
         },
         {
           "symbol": "IJR",
@@ -25,9 +25,9 @@
           "stop_price": 134.89,
           "shares": 2,
           "asset_type": "Equity ETF",
-          "current_price": 132.73,
-          "unrealized_pnl": -9.66,
-          "unrealized_pnl_pct": -3.51
+          "current_price": 131.25,
+          "unrealized_pnl": -12.62,
+          "unrealized_pnl_pct": -4.59
         },
         {
           "symbol": "VTI",
@@ -37,9 +37,9 @@
           "stop_price": 357.21,
           "shares": 1,
           "asset_type": "Equity ETF",
-          "current_price": 345.25,
-          "unrealized_pnl": -17.06,
-          "unrealized_pnl_pct": -4.71
+          "current_price": 340.02,
+          "unrealized_pnl": -22.29,
+          "unrealized_pnl_pct": -6.15
         }
       ],
       "closed_positions": [
@@ -586,14 +586,14 @@
         },
         {
           "date": "2026-11-20",
-          "equity": 437.95,
+          "equity": 426.21,
           "cash": -453.99,
           "blend_value": 0.0,
-          "unrealized_pnl": -30.97,
+          "unrealized_pnl": -42.71,
           "open_count": 3,
           "closed_today": 0,
           "realized_pnl_today": 0,
-          "cumulative_return_pct": -6.19,
+          "cumulative_return_pct": -8.7,
           "closed_today_detail": [],
           "ordenes_fallidas_hoy": [],
           "discarded_candidates_today": [
@@ -609,12 +609,12 @@
               "costo_estimado": 1795.23
             }
           ],
-          "daily_loss_pct": 2.27,
-          "drawdown_pct": 6.26,
+          "daily_loss_pct": 4.9,
+          "drawdown_pct": 8.78,
           "daily_loss_breaker_tripped": true,
           "suspended": true,
           "suspended_reason": "Drawdown 6.3% alcanzó el límite de revisión (6%)",
-          "newly_suspended_today": true
+          "newly_suspended_today": false
         }
       ],
       "suspended": true
@@ -630,9 +630,9 @@
           "stop_price": 28.03,
           "shares": 7,
           "asset_type": "Stock",
-          "current_price": 27.5319,
-          "unrealized_pnl": -9.79,
-          "unrealized_pnl_pct": -4.83
+          "current_price": 27.4,
+          "unrealized_pnl": -10.71,
+          "unrealized_pnl_pct": -5.29
         },
         {
           "symbol": "XLP",
@@ -642,9 +642,9 @@
           "stop_price": 89.10071073259626,
           "shares": 3,
           "asset_type": "Equity ETF",
-          "current_price": 91.5,
-          "unrealized_pnl": 6.6,
-          "unrealized_pnl_pct": 2.46
+          "current_price": 90.46,
+          "unrealized_pnl": 3.48,
+          "unrealized_pnl_pct": 1.3
         },
         {
           "symbol": "XLF",
@@ -654,9 +654,9 @@
           "stop_price": 56.29607146126883,
           "shares": 5,
           "asset_type": "Equity ETF",
-          "current_price": 55.355,
-          "unrealized_pnl": -8.33,
-          "unrealized_pnl_pct": -2.92
+          "current_price": 54.57,
+          "unrealized_pnl": -12.25,
+          "unrealized_pnl_pct": -4.3
         },
         {
           "symbol": "KO",
@@ -666,9 +666,9 @@
           "stop_price": 95.94571822030204,
           "shares": 2,
           "asset_type": "Stock",
-          "current_price": 97.5868,
-          "unrealized_pnl": 6.43,
-          "unrealized_pnl_pct": 3.41
+          "current_price": 96.99,
+          "unrealized_pnl": 5.24,
+          "unrealized_pnl_pct": 2.78
         }
       ],
       "closed_positions": [
@@ -1083,19 +1083,65 @@
         },
         {
           "date": "2026-11-20",
-          "equity": 652.12,
+          "equity": 642.96,
           "cash": -287.05,
           "blend_value": 0.0,
-          "unrealized_pnl": -5.08,
+          "unrealized_pnl": -14.24,
           "open_count": 4,
           "closed_today": 0,
           "realized_pnl_today": 0,
-          "cumulative_return_pct": -5.38,
+          "cumulative_return_pct": -6.71,
           "closed_today_detail": [],
           "ordenes_fallidas_hoy": [],
-          "discarded_candidates_today": [],
-          "daily_loss_pct": -1.04,
-          "drawdown_pct": 8.63,
+          "discarded_candidates_today": [
+            {
+              "symbol": "AAPL",
+              "strategy": "trend_following",
+              "reason": "mercado_cerrado"
+            },
+            {
+              "symbol": "LLY",
+              "strategy": "trend_following",
+              "reason": "mercado_cerrado"
+            },
+            {
+              "symbol": "JNJ",
+              "strategy": "trend_following",
+              "reason": "mercado_cerrado"
+            },
+            {
+              "symbol": "DIS",
+              "strategy": "trend_following",
+              "reason": "mercado_cerrado"
+            },
+            {
+              "symbol": "V",
+              "strategy": "trend_following",
+              "reason": "mercado_cerrado"
+            },
+            {
+              "symbol": "MA",
+              "strategy": "trend_following",
+              "reason": "mercado_cerrado"
+            },
+            {
+              "symbol": "ABBV",
+              "strategy": "trend_following",
+              "reason": "mercado_cerrado"
+            },
+            {
+              "symbol": "MMM",
+              "strategy": "trend_following",
+              "reason": "mercado_cerrado"
+            },
+            {
+              "symbol": "XLV",
+              "strategy": "trend_following",
+              "reason": "mercado_cerrado"
+            }
+          ],
+          "daily_loss_pct": 0.38,
+          "drawdown_pct": 9.92,
           "daily_loss_breaker_tripped": false,
           "suspended": false,
           "suspended_reason": null,
@@ -1115,9 +1161,9 @@
           "stop_price": 80.22,
           "shares": 1,
           "asset_type": "Stock",
-          "current_price": 78.86,
-          "unrealized_pnl": -12.55,
-          "unrealized_pnl_pct": -13.73
+          "current_price": 76.52,
+          "unrealized_pnl": -14.89,
+          "unrealized_pnl_pct": -16.29
         },
         {
           "symbol": "DOCU",
@@ -1127,9 +1173,9 @@
           "stop_price": 73.56660842895508,
           "shares": 1,
           "asset_type": "Stock",
-          "current_price": 76.455,
-          "unrealized_pnl": -1.31,
-          "unrealized_pnl_pct": -1.69
+          "current_price": 74.56,
+          "unrealized_pnl": -3.21,
+          "unrealized_pnl_pct": -4.13
         },
         {
           "symbol": "BILL",
@@ -1140,9 +1186,9 @@
           "initial_stop_price": 54.34,
           "shares": 3,
           "asset_type": "Stock",
-          "current_price": 61.55,
-          "unrealized_pnl": -0.36,
-          "unrealized_pnl_pct": -0.19
+          "current_price": 61.44,
+          "unrealized_pnl": -0.69,
+          "unrealized_pnl_pct": -0.37
         }
       ],
       "closed_positions": [
@@ -1446,19 +1492,19 @@
         },
         {
           "date": "2026-11-20",
-          "equity": 447.78,
+          "equity": 443.21,
           "cash": 107.81,
           "blend_value": 0.0,
-          "unrealized_pnl": -14.22,
+          "unrealized_pnl": -18.79,
           "open_count": 3,
           "closed_today": 0,
           "realized_pnl_today": 0,
-          "cumulative_return_pct": -4.29,
+          "cumulative_return_pct": -5.26,
           "closed_today_detail": [],
           "ordenes_fallidas_hoy": [],
           "discarded_candidates_today": [],
-          "daily_loss_pct": -0.25,
-          "drawdown_pct": 4.49,
+          "daily_loss_pct": 0.77,
+          "drawdown_pct": 5.47,
           "daily_loss_breaker_tripped": false,
           "suspended": false,
           "suspended_reason": null,
