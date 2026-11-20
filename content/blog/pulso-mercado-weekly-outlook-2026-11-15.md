@@ -41,7 +41,7 @@ No localizamos con confianza un calendario específico de datos económicos mexi
 | [Target](/blog/target-lowes-resultados-18-noviembre-2026) | TGT | Miércoles 18 de noviembre | 8:00-9:00am ET | Retail | Contraste directo con Home Depot y Walmart sobre qué segmento del consumidor está resistiendo mejor |
 | Palo Alto Networks | PANW | Miércoles 18 de noviembre | Después del cierre, webcast 4:30pm ET | Ciberseguridad | Referencia del sector de ciberseguridad en la misma semana que esta serie documentó cuestionamientos sobre las métricas de crecimiento de Varonis |
 | [Lowe's](/blog/target-lowes-resultados-18-noviembre-2026) | LOW | Miércoles 18 de noviembre (fecha marcada como tentativa por la propia empresa) | No confirmado | Retail / Mejoras del hogar | Comparación directa con Home Depot en el mismo segmento |
-| Walmart | WMT | Jueves 19 de noviembre (estimado, sin confirmación oficial de la empresa en las fuentes consultadas) | Antes de la apertura | Retail | El minorista más grande de Estados Unidos; referencia más amplia sobre el consumidor de cara al Buen Fin y la temporada de fin de año |
+| [Walmart](/blog/walmart-resultados-tercer-trimestre-19-noviembre-2026) | WMT | Jueves 19 de noviembre (estimado, sin confirmación oficial de la empresa en las fuentes consultadas) | Antes de la apertura | Retail | El minorista más grande de Estados Unidos; referencia más amplia sobre el consumidor de cara al Buen Fin y la temporada de fin de año |
 
 No localizamos con confianza una fecha oficial confirmada por Disney para su propio reporte de resultados esta semana; distintas fuentes citan fechas contradictorias entre el 11 y el 17 de noviembre.
 
