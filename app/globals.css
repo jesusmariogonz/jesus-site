@@ -6610,6 +6610,7 @@ html:not(.dark) .pglobe-land {
 .exp-badge { font-size: .72rem; font-weight: 700; letter-spacing: .08em; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--line); }
 .exp-badge-inconcluso { color: #b45309; border-color: #d97706; background: color-mix(in srgb, #d97706 12%, var(--surface)); }
 .exp-badge-rechazado { color: #dc2626; border-color: #dc2626; background: color-mix(in srgb, #dc2626 12%, var(--surface)); }
+.exp-badge-mixto { color: #7c3aed; border-color: #7c3aed; background: color-mix(in srgb, #7c3aed 12%, var(--surface)); }
 .exp-meta, .exp-nota { font-size: .82rem; color: var(--ink-soft); }
 .exp-criterios { padding-left: 18px; font-size: .88rem; }
 .exp-criterios li { margin-bottom: 6px; }
@@ -6626,6 +6627,7 @@ html:not(.dark) .pglobe-land {
 .exp-estado--validated { color: #16a34a; border: 1px solid #16a34a; }
 .exp-estado--rejected { color: #dc2626; border: 1px solid #dc2626; }
 .exp-estado--inconclusive { color: #eab308; border: 1px solid #eab308; }
+.exp-estado--mixed { color: #7c3aed; border: 1px solid #7c3aed; }
 .exp-ver-link { display: inline-block; margin-top: 10px; text-decoration: none; }
 
 /* Reporte técnico de experimentos */

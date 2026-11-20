@@ -1,0 +1,90 @@
+{
+  "repo_origen": "jesusmariogonz/algo_trading_platform",
+  "ruta_origen": "research/exp-003-validacion-motor-produccion/",
+  "commit_inicio": "8e147ba",
+  "commit_fin": "c971560",
+  "fecha_registro": "2026-11-18",
+  "fecha_cierre": "2026-11-20",
+  "n_tests_suite": 254,
+  "buckets": {
+    "largo_plazo": { "estrategia": "time_series_momentum", "universo": "26 ETFs de clase de activo (acciones, bonos, oro, REIT, internacional)" },
+    "mediano_plazo": { "estrategia": "trend_following", "universo": "74 acciones large/mid-cap diversificado" },
+    "riesgo_alto": { "estrategia": "momentum_breakout", "universo": "43-44 acciones small/mid-cap de alta volatilidad" }
+  },
+  "capa1_walkforward": {
+    "metodo": "5 ventanas rolling, 12m train / 6m test, paso 4 meses, sin filtro adicional, configuración de producción",
+    "criterio": "VALIDATED si >=4/5 ventanas con Sharpe OOS>0 y ninguna aporta >60% del retorno; INCONCLUSIVE si 3/5 o alguna ventana <10 operaciones; REJECTED si <=2/5",
+    "resultado": {
+      "largo_plazo": { "label": "INCONCLUSIVE", "nota": "ventanas con menos de 10 operaciones" },
+      "mediano_plazo": { "label": "INCONCLUSIVE", "nota": "exactamente 3/5 ventanas positivas" },
+      "riesgo_alto": { "label": "INCONCLUSIVE", "nota": "ventanas con menos de 10 operaciones; una ventana de +56% seguida de -24.65%" }
+    }
+  },
+  "capa2_supervivencia": {
+    "metodo": "Comparación contra universo neutral: muestra estratificada de 168 símbolos del S&P 500 actual (fuente pública), misma estrategia de producción",
+    "criterio": "VALIDATED si diferencia de retorno anualizado <=30% relativo; INCONCLUSIVE si no es reconstruible; REJECTED si >30%",
+    "resultado": {
+      "largo_plazo": { "label": "INCONCLUSIVE", "nota": "no aplica — universo de ETFs de clase de activo, no acciones elegidas a mano" },
+      "mediano_plazo": { "label": "VALIDATED", "curado_pct": 30.92, "neutral_pct": 30.65, "diferencia_pct": 0.9, "n_curado": 74, "n_neutral": 165 },
+      "riesgo_alto": { "label": "REJECTED", "curado_pct": 26.21, "neutral_pct": 11.57, "diferencia_pct": 55.9, "n_curado": 44, "n_neutral": 165 }
+    }
+  },
+  "capa3_dsr_pbo": {
+    "metodo": "Deflated Sharpe Ratio (Bailey & López de Prado) sobre 47 configuraciones materialmente distintas catalogadas en 43 ADR del repositorio de origen (18 de 47 con Sharpe explícito, sigma_SR=0.7101 empírico); PBO (CSCV) sobre 3 variantes re-simulables",
+    "criterio": "VALIDATED si DSR>0.95 y PBO<0.5; INCONCLUSIVE si DSR 0.5-0.95 o PBO no calculable; REJECTED si DSR<=0.5",
+    "n_catalogo": 47,
+    "n_con_sharpe": 18,
+    "sigma_sr": 0.7101,
+    "sharpe_techo_azar": 1.60,
+    "resultado": {
+      "largo_plazo": { "label": "AMBIGUO", "nota": "DSR=0.0000 con Sharpe 0.78 (sin filtro) vs. DSR=1.0000 con Sharpe 2.25 (walk-forward OOS publicado del filtro real) — nunca resuelto con el Sharpe corregido de periodo completo (0.92)" },
+      "mediano_plazo": { "label": "REJECTED", "dsr": 0.0001, "pbo": 0.00, "sharpe": 1.39 },
+      "riesgo_alto": { "label": "REJECTED", "dsr": 0.0000, "pbo": 0.15, "sharpe": 0.92 }
+    }
+  },
+  "capa4_placebo": {
+    "metodo": "Moving block bootstrap conjunto, bloques de 21 sesiones (~1 mes), misma secuencia de bloques para todos los símbolos de un bucket + SPY; indicadores y señales recalculados desde cero sobre cada réplica; 300 réplicas por bucket",
+    "criterio": "VALIDATED si percentil>=95 con potencia confirmada; INCONCLUSIVE si no hay potencia o percentil 80-95; REJECTED si percentil<80 con potencia confirmada",
+    "resultado": {
+      "largo_plazo": { "label": "REJECTED", "sharpe_real": 0.92, "percentil": 48.33, "potencia_confirmada": true, "nota": "corregido con el filtro cross-sectional real de producción" },
+      "mediano_plazo": { "label": "REJECTED", "sharpe_real": 1.39, "percentil": 49.33, "potencia_confirmada": true },
+      "riesgo_alto": { "label": "REJECTED", "sharpe_real": 0.91, "percentil": 55.33, "potencia_confirmada": true }
+    }
+  },
+  "capa5_leave_one_group_out": {
+    "metodo": "Agrupación por clase de activo (largo_plazo) o sector GICS aproximado a mano (mediano_plazo/riesgo_alto); re-simulación quitando cada grupo",
+    "criterio": "VALIDATED si ninguna caída >40%; INCONCLUSIVE si algún universo tiene <3 grupos; REJECTED si alguna caída >40% o vuelve el Sharpe negativo",
+    "resultado": {
+      "largo_plazo": { "label": "VALIDATED", "grupo_peor": "Commodities", "caida_pct": 1.3 },
+      "mediano_plazo": { "label": "VALIDATED", "grupo_peor": "Utilities", "caida_pct": 30.2 },
+      "riesgo_alto": { "label": "VALIDATED", "grupo_peor": "Hardware_Semis", "caida_pct": 17.6 }
+    }
+  },
+  "capa6_perturbacion_parametros": {
+    "metodo": "Perturbación ±10%/±20% de cada parámetro continuo real de cada estrategia, uno a la vez",
+    "criterio": "VALIDATED si ningún punto dentro de ±15% cae >50%; INCONCLUSIVE si la malla es muy ruidosa; REJECTED si alguna perturbación <=15% sí cae >50%",
+    "resultado": {
+      "largo_plazo": { "label": "VALIDATED", "parametro": "atr_stop_multiple", "caida_max_10pct": 33.3 },
+      "mediano_plazo": { "label": "VALIDATED", "parametro": "atr_stop_multiple", "caida_max_10pct": 28.1 },
+      "riesgo_alto": { "label": "VALIDATED", "parametro": "4 parámetros (atr_stop_multiple, min_breakout_volume, min_relative_strength, max_atr_contraction)", "caida_max_10pct": 29.7 }
+    }
+  },
+  "capa7_ejecucion": {
+    "metodo": "Fill al open del día siguiente a la señal + 2x fricción, combinados, todo el período disponible",
+    "criterio": "VALIDATED si Sharpe>0 y retorno neto positivo bajo ambos supuestos; REJECTED si no",
+    "resultado": {
+      "largo_plazo": { "label": "VALIDATED", "sharpe_base": 0.92, "sharpe_pesimista": 0.18, "retorno_base_pct": 59.52, "retorno_pesimista_pct": 6.37, "nota": "corregido — con la configuración vieja (sin el filtro real) había salido REJECTED: Sharpe 0.78->-0.09, retorno +45.96%->-9.28%" },
+      "mediano_plazo": { "label": "VALIDATED", "sharpe_base": 1.39, "sharpe_pesimista": 0.53, "retorno_base_pct": 209.36, "retorno_pesimista_pct": 49.19 },
+      "riesgo_alto": { "label": "VALIDATED", "sharpe_base": 0.91, "sharpe_pesimista": 0.33, "retorno_base_pct": 165.28, "retorno_pesimista_pct": 25.65 }
+    }
+  },
+  "correccion_2026_11_19": {
+    "bug": "El harness compartido de las Capas 1/4/5/6/7 nunca implementó CROSS_SECTIONAL_FILTER_BUCKETS (filtro de cross-sectional momentum, activo en producción real para largo_plazo desde un ADR anterior del repositorio de origen, tanto en el motor simulado como en el motor en vivo de IBKR)",
+    "afecta_solo_a": "largo_plazo",
+    "sharpe_full_period_sin_filtro": 0.78,
+    "sharpe_full_period_con_filtro_corregido": 0.92,
+    "cambio_real_de_label": "Capa 7: REJECTED -> VALIDATED",
+    "sin_cambio": ["Capa 1: INCONCLUSIVE", "Capa 4: REJECTED (percentil 27.67 -> 48.33)", "Capa 5: VALIDATED", "Capa 6: VALIDATED"],
+    "bug_propio_encontrado_durante_la_correccion": "Primer cálculo del percentil de la Capa 4 usaba una fórmula que siempre daba 1.0 (percentil falso de 100.0) — corregido y la capa se volvió a correr completa antes de reportar el número"
+  }
+}

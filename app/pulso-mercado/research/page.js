@@ -101,10 +101,15 @@ export default function ResearchLabPage() {
             <span className="research-lab-counter-valor">{conteo.INCONCLUSIVE}</span>
             <span className="research-lab-counter-etiqueta">Inconclusive results</span>
           </div>
+          <div className="research-lab-counter">
+            <span className="research-lab-counter-valor">{conteo.MIXED}</span>
+            <span className="research-lab-counter-etiqueta">Mixed results</span>
+          </div>
         </div>
         <p className="activo-descripcion" style={{ marginTop: -8 }}>
-          Experimentos publicados: EXP-001 (INCONCLUSIVE) y EXP-002 (REJECTED) — ver abajo. Los contadores son reales: un
-          resultado inconcluso o rechazado no cuenta como validado, y se actualizarán solo con investigación real publicada.
+          Experimentos publicados: EXP-001 (INCONCLUSIVE), EXP-002 (REJECTED) y EXP-003 (resultado mixto — 7 pruebas
+          independientes, sin una sola etiqueta) — ver abajo. Los contadores son reales: un resultado inconcluso, mixto o
+          rechazado no cuenta como validado, y se actualizarán solo con investigación real publicada.
           </p>
 
         <div className="activo-bloque">

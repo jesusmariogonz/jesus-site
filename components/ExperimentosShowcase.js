@@ -13,6 +13,7 @@ const ETIQUETA_ESTADO = {
   VALIDATED: "Validado",
   REJECTED: "Rechazado",
   INCONCLUSIVE: "Inconcluso",
+  MIXED: "Mixto",
 };
 
 export default function ExperimentosShowcase({ experimentos }) {

@@ -7,6 +7,7 @@ import Exp001Resultado from "@/components/Exp001Resultado";
 import Exp001Reporte from "@/components/research/Exp001Reporte";
 import Exp002Resultado from "@/components/Exp002Resultado";
 import Exp002Reporte from "@/components/research/Exp002Reporte";
+import Exp003Reporte from "@/components/research/Exp003Reporte";
 
 // Contenido de detalle de cada experimento, por slug. Un experimento nuevo
 // agrega aquí su componente de resultado.
@@ -55,6 +56,7 @@ const DETALLES = {
       </div>
     </>
   ),
+  "exp-003-validacion-motor-produccion": () => <Exp003Reporte />,
 };
 
 export function generateStaticParams() {
