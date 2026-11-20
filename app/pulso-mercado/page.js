@@ -231,6 +231,7 @@ export default async function PulsoMercadoDashboard() {
 
   const calendarioSemana = seccion(weeklyOutlook, "macro calendar");
   const calendarioResultados = seccion(weeklyOutlook, "earnings calendar");
+  const calendarioCorporativo = seccion(weeklyOutlook, "corporate events");
 
   return (
     <>
@@ -374,6 +375,14 @@ export default async function PulsoMercadoDashboard() {
                 titulo="Reportes de resultados de la semana"
                 subtitulo={weeklyOutlook ? `Semana del ${formatFecha(weeklyOutlook.fecha)}` : null}
                 markdown={calendarioResultados}
+                claseExtra="pulsodash-calendario pulsodash-earnings"
+              />
+            )}
+            {calendarioCorporativo && (
+              <Seccion
+                titulo="Eventos corporativos de la semana (IPOs, lock-ups, índices)"
+                subtitulo={weeklyOutlook ? `Semana del ${formatFecha(weeklyOutlook.fecha)}` : null}
+                markdown={calendarioCorporativo}
                 claseExtra="pulsodash-calendario pulsodash-earnings"
               />
             )}
