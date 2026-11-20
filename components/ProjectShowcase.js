@@ -25,12 +25,12 @@ const ETIQUETA_TIPO = {
   independiente: "Proyecto independiente reproducible",
 };
 
-export default function ProjectShowcase() {
+export default function ProjectShowcase({ proyectos = PROYECTOS }) {
   const [abierto, setAbierto] = useState(null);
 
   return (
     <div className="pshow-grid">
-      {PROYECTOS.map((p) => {
+      {proyectos.map((p) => {
         const [hueA, hueB] = PALETA[p.arte] || PALETA.genai;
         const on = abierto === p.id;
         return (

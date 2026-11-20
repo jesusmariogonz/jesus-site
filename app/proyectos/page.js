@@ -1,7 +1,6 @@
 import Link from "next/link";
 import ProjectsMap from "@/components/ProjectsMap";
 import ProjectShowcase from "@/components/ProjectShowcase";
-import StatsStrip from "@/components/StatsStrip";
 
 export const metadata = {
   title: "Proyectos",
@@ -24,8 +23,6 @@ export default function Proyectos() {
             sin restricciones de confidencialidad.
           </p>
         </header>
-
-        <StatsStrip />
 
         <ProjectShowcase />
 
