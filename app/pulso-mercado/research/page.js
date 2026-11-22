@@ -62,6 +62,20 @@ const DOMINIOS = [
       "Modelos de aprendizaje automático aplicados a series financieras, con el mismo estándar de validación fuera de muestra que cualquier otro candidato — nunca una caja negra sin auditoría.",
     metodos: ["XGBoost", "Random Forest", "Bayesian Models", "Meta-labeling"],
   },
+  {
+    slug: "trend-following-funds",
+    nombre: "Fondos de seguimiento de tendencia",
+    resumen:
+      "Cómo se comportan las estrategias sistemáticas de seguimiento de tendencia (CTA / managed futures) frente a acciones y bonos tradicionales — si aportan diversificación real en crisis ('crisis alpha') y si sus reglas, en gran parte públicas, se pueden replicar con instrumentos líquidos.",
+    metodos: ["CTA / Managed Futures", "Time-Series Momentum Multi-Activo", "Crisis Alpha", "Replicación de Reglas Públicas"],
+  },
+  {
+    slug: "pattern-recognition",
+    nombre: "Patrones reconocibles para subir y bajar",
+    resumen:
+      "Si patrones de precio visualmente reconocibles (banderas, triángulos, cabeza-hombros, rupturas de rango) tienen poder predictivo real sobre la dirección futura del precio, más allá de la narrativa que se les atribuye después de los hechos.",
+    metodos: ["Chart Patterns", "Candlestick Patterns", "Breakout Detection", "Template Matching"],
+  },
 ];
 
 const ETIQUETAS_ESTADO = ["EXPERIMENTAL", "VALIDATED", "REJECTED", "INCONCLUSIVE"];
