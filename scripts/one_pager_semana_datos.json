@@ -1,63 +1,63 @@
 {
-  "semana_texto": "SEMANA DEL 9 AL 15 DE NOVIEMBRE DE 2026",
+  "semana_texto": "SEMANA DEL 16 AL 22 DE NOVIEMBRE DE 2026",
   "edicion_texto": "EDICIÓN SEMANAL · TOP 13",
-  "intro": "Una semana en la que CoreWeave confirmó que la demanda de cómputo de IA sigue acelerando mientras su deuda se triplicaba, el caso Taddei en el INE llegó hasta las cuentas personales de su propia familia, y la ASF documentó una nueva triangulación de recursos ligada a Samuel García. Abajo, las 13 notas más relevantes de la semana.",
+  "intro": "Una semana en la que el Ejército capturó a uno de los capos más buscados del FBI tras 15 años de fuga, Anthropic debutó en Nasdaq y devolvió casi toda su ganancia en días, y el expediente Taddei en el INE llegó hasta la consulta cívica para niños. Abajo, las 13 notas más relevantes de la semana.",
   "flash": [
-    {"kicker": "MÉXICO Y LATAM", "fecha": "12 NOV", "titulo": "La UIF ya no solo congeló cuentas de contratistas del INE: ahora llegó a la propia familia Taddei, y su hijo renunció al gobierno de Sonora",
-     "desc": "La UIF incluyó a Luis Rogelio Piñeda Taddei, hijo de la expresidenta del INE, en su lista de cuentas bloqueadas; horas después renunció como secretario particular del gobernador de Sonora. La lista ya suma 40 personas y empresas."},
-    {"kicker": "MÉXICO Y LATAM", "fecha": "14 NOV", "titulo": "La Marina detuvo a \"Lucifer\", presunto jefe operativo del CJNG en Colima, ligado a los dos ataques armados contra la panadería \"El Pichón\" que dejaron ocho muertos",
-     "desc": "Giancarlo \"N\" fue detenido sin disparos en Tlaquepaque, Jalisco. Es la tercera detención de la misma célula en una semana, dentro de la estrategia \"Colima Seguro\"."},
-    {"kicker": "NEGOCIOS", "fecha": "10 NOV", "titulo": "México necesita 1,500 megawatts nuevos para centros de datos de IA antes de 2030. Construir las líneas de transmisión para dárselos puede tardar el doble de ese tiempo",
-     "desc": "Un estudio de la Secretaría de Energía estima la nueva demanda en apenas 3% del pico del sistema eléctrico nacional, pero una nueva línea de transmisión puede tardar entre cuatro y ocho años en construirse."}
+    {"kicker": "GEOPOLÍTICA", "fecha": "20 NOV", "titulo": "Trump le dijo a Sheinbaum, otra vez, que los cárteles gobiernan México. Es al menos la quinta vez documentada este año que repite casi la misma frase",
+     "desc": "Tras reunirse con Sheinbaum en APEC Shenzhen, Trump insistió en la misma acusación de siempre —mientras la negociación arancelaria de fondo, 56 reuniones técnicas sobre la Sección 232, sí avanzó hacia un acuerdo esperado en diciembre."},
+    {"kicker": "GEOPOLÍTICA", "fecha": "19 NOV", "titulo": "Cuatro expresidentes del INE exigieron que el Congreso nombre ya a quien sustituya a Taddei. Morena discute si al puesto le quita poder",
+     "desc": "Woldenberg, Ugalde, Valdés y Córdova pidieron consenso y rapidez. El mismo día, el coordinador de Morena reconoció que su partido estudia revertir las facultades ampliadas que le dio a la presidencia del INE en 2024."},
+    {"kicker": "IA", "fecha": "20 NOV", "titulo": "El 88% de las empresas ya usa agentes de IA. Solo 30% confía en que terminen una tarea sin ayuda humana",
+     "desc": "La encuesta anual de Zapier muestra que la diferencia no es el modelo de IA que usan las empresas, sino si el agente está conectado a un flujo de trabajo automatizado más amplio: 77% de autonomía efectiva contra solo 8% cuando no lo está."}
   ],
   "main": {
-    "kicker": "LO MÁS RELEVANTE DE LA SEMANA · BUSINESS", "fecha": "11 NOV",
-    "titulo": "CoreWeave reporta ingresos que crecen 168% y un backlog de $132.5 mil millones. La pregunta ya no es si hay demanda de cómputo de IA, sino cuánto cuesta financiarla",
-    "dek": "CoreWeave reportó el martes por la noche ingresos de $3,661 millones en el tercer trimestre (+168% anual), superó las estimaciones, subió su guía de 2026 y elevó su backlog a $132.5 mil millones. Pero la pérdida neta se amplió a $709 millones, el gasto neto en intereses casi se triplicó y la deuda ronda los $47 mil millones.",
-    "cuerpo": "El reporte despejó, con la evidencia más dura disponible hasta ahora, la duda sobre si la demanda de infraestructura de cómputo de IA seguía acelerando después de la corrección que sacudió al sector semanas antes: el backlog de contratos ya firmados —$132.5 mil millones de dólares— es la cifra que mejor resume esa confirmación, porque describe compromisos ya asegurados, no proyecciones. La acción subió más de 25% tras el reporte.\n\nLo que el reporte no resuelve es la otra mitad de la historia: financiar esa misma infraestructura le está costando cada vez más a la empresa. La pérdida neta trimestral se amplió a $709 millones, el gasto neto en intereses casi se triplicó frente al año anterior, y la deuda total ronda ya los $47 mil millones. La demanda de cómputo de IA, en otras palabras, dejó de ser la pregunta abierta de esta semana. El costo real de construir la infraestructura para atenderla, no.",
-    "foto": "public/blog/portadas/coreweave-resultados-q3-2026-demanda-ia-costo-financiamiento.jpg"
+    "kicker": "LO MÁS RELEVANTE DE LA SEMANA · SEGURIDAD", "fecha": "21 NOV",
+    "titulo": "La captura de \"El Chapo Isidro\" dejó 11 muertos en Sinaloa. Es el mismo patrón de violencia que en 2019 obligó al gobierno a soltar a Ovidio Guzmán — esta vez no lo soltaron",
+    "dek": "Fuerzas especiales capturaron a Fausto Isidro Meza Flores, líder del cártel de Guasave y de la lista de los Diez Más Buscados del FBI, tras más de 15 años evadiendo la justicia. El operativo dejó al menos 11 muertos y desató bloqueos y vehículos incendiados en Sinaloa.",
+    "cuerpo": "La secuencia es casi un calco de lo que ocurrió en Culiacán en 2019: una captura de alto perfil, resistencia armada inmediata, calles paralizadas por bloqueos y vehículos en llamas. En aquella ocasión, la violencia fue tan intensa que el propio gobierno mexicano decidió liberar a Ovidio Guzmán para detenerla. Esta semana, pese a un saldo de cuatro militares y siete presuntos agresores muertos, el gobierno sostuvo la detención.\n\nMeza Flores tiene un historial de evasión que documenta, por sí solo, cuántas veces el Estado mexicano lo tuvo cerca sin lograr que la detención se sostuviera: un arresto en 2016 terminó en libertad un año después por irregularidades legales. Esta vez la captura llegó con cooperación binacional explícita entre el FBI y la agencia de Investigaciones de Seguridad Nacional de Estados Unidos. Pero el propio historial del capo es un recordatorio de que sostener una detención en la calle es solo la primera de varias pruebas que un caso de este tipo todavía tiene que pasar — la siguiente se juega en los tribunales en los próximos meses.",
+    "foto": "public/blog/portadas/captura-chapo-isidro-guasave-violencia-culiacanazo-patron.jpg"
   },
   "secundaria_larga": {
-    "kicker": "GEOPOLÍTICA · 2ª MÁS RELEVANTE", "fecha": "13 NOV",
-    "titulo": "Broxel: la empresa que reparte las tarjetas de los diputados de Morena es la misma que la Secretaría Anticorrupción investiga por sobrepagos y un conflicto de interés familiar en Hacienda",
-    "desc": "Un oficio de la Secretaría Anticorrupción y Buen Gobierno, fechado el 10 de noviembre, documenta sobrepagos de Servicios Broxel por $29.4 millones de pesos pendientes de reembolso a 39 dependencias federales, y un conflicto de interés: el representante legal de la empresa es hermano de un funcionario de la Unidad de Inversiones de Hacienda. La autoridad recomendó no autorizar un financiamiento de $4,200 millones que Broxel solicitó a Bancomext y Nafin. La misma empresa distribuyó tarjetas prepagadas de $10,000 pesos a los 254 diputados de Morena —un hecho que las fuentes tratan como expediente separado, aunque comparte protagonista.",
+    "kicker": "MERCADOS · 2ª MÁS RELEVANTE", "fecha": "19 NOV",
+    "titulo": "Anthropic debutó en Nasdaq con un alza de 34%. Dos días después, devolvió casi toda la ganancia",
+    "desc": "Anthropic abrió su primer día de cotización en $111.50 por acción —34% sobre su precio de colocación de $83— y tocó un máximo de $114.99, con una capitalización cercana a $2 billones de dólares, en la IPO más grande de la historia según reportes de prensa. Cerró ese primer día con una ganancia de apenas 17.1%, ya muy por debajo del máximo intradía. Al día siguiente, en medio de la peor sesión de Wall Street en 2026, la acción cayó otro 9.58% y cerró cotizando casi exactamente en su precio de colocación. La secuencia completa de tres días —34% arriba, 17% arriba, de vuelta al precio de IPO— es, hasta ahora, la prueba más concreta de que el apetito inicial del mercado por esta valuación de frontera en IA no se sostuvo ni una semana completa de cotización libre.",
     "foto": null
   },
   "secundaria_corta": {
-    "kicker": "GEOPOLÍTICA · 3ª MÁS RELEVANTE", "fecha": "11 NOV",
-    "titulo": "La ASF detectó una presunta triangulación de hasta 928 millones de pesos hacia un despacho ligado a la familia de Samuel García",
-    "desc": "La revisión de la Cuenta Pública 2025 de Nuevo León detectó presuntos esquemas de triangulación y simulación de operaciones; distintos medios reportan montos de 728.1 a 928.13 millones de pesos canalizados hacia el despacho jurídico de la familia del gobernador. Máynez (MC) exigió públicamente que García \"dé la cara\".",
-    "foto": "public/blog/portadas/asf-triangulacion-recursos-samuel-garcia-nuevo-leon.jpg"
+    "kicker": "BUSINESS-ANALYTICS · 3ª MÁS RELEVANTE", "fecha": "20 NOV",
+    "titulo": "El shadow AI duplicó su tasa de incidentes en un año. El reporte que propone la solución no prueba que funcione",
+    "desc": "Los incidentes de \"shadow AI\" —uso de IA sin aprobación de TI— pasaron de 20% a 43% de las organizaciones en un año, según IBM y Ponemon Institute. Un reporte patrocinado por un proveedor de linaje de datos propone esa tecnología como solución, pero se apoya en un escenario hipotético, nunca en un caso real medido.",
+    "foto": "public/blog/portadas/shadow-ai-linaje-datos-gobernanza-ibm-cyberhaven.jpg"
   },
   "datos": [
-    {"valor": "$132,500 millones", "etiqueta": "Backlog de contratos ya firmados que reportó CoreWeave este trimestre"},
-    {"valor": "$29.4 millones", "etiqueta": "Sobrepagos de Broxel pendientes de reembolso a 39 dependencias federales"},
-    {"valor": "928.13 millones de pesos", "etiqueta": "Triangulación de recursos que la ASF ligó a un despacho de la familia de Samuel García"},
-    {"valor": "1,500 megawatts", "etiqueta": "Nueva demanda eléctrica que México necesitará para centros de datos de IA antes de 2030"}
+    {"valor": "11 muertos", "etiqueta": "Saldo del operativo de captura de \"El Chapo Isidro\" en Guasave, Sinaloa"},
+    {"valor": "$83 → $111.50 → $83", "etiqueta": "El ciclo completo del debut de Anthropic en tres días de cotización"},
+    {"valor": "20% → 43%", "etiqueta": "Organizaciones con incidentes de shadow AI, de 2025 a 2026"},
+    {"valor": "$7.4 millones", "etiqueta": "Pesos sin aclarar que la auditoría del INE encontró en la consulta cívica infantil"}
   ],
   "media": [
-    {"kicker": "GEOPOLÍTICA", "fecha": "15 NOV", "titulo": "Un año después de la marcha que terminó en enfrentamientos, la Generación Z volvió al Zócalo —y reunió apenas a 120 personas",
-     "desc": "La marcha de este domingo, con el Movimiento del Sombrero y madres buscadoras, llegó al Zócalo con una fracción de la asistencia de la marcha original de 2025. Un año después, la Fiscalía de la CDMX sigue sin imputar a ningún autor intelectual de los enfrentamientos de entonces.",
-     "foto": "public/blog/portadas/marcha-generacion-z-aniversario-bajo-turnout-movimiento-sombrero.jpg"},
-    {"kicker": "NEGOCIOS", "fecha": "15 NOV", "titulo": "El Banco Mundial calcula que 17.3 millones de personas dejaron la pobreza en México entre 2018 y 2026. Es una proyección de ingreso, no un conteo de bienestar",
-     "desc": "El organismo estima que la pobreza monetaria bajó de 35.3% a 20% en el periodo, atribuyéndolo a mayores ingresos laborales reales y a programas sociales ampliados —pero 2026 es una proyección, no un dato ya medido.",
+    {"kicker": "GEOPOLÍTICA", "fecha": "22 NOV", "titulo": "La auditoría del INE encontró $7.4 millones de pesos sin aclarar en la consulta cívica para niños",
+     "desc": "El Órgano Interno de Control documentó pagos sin comprobar a 105 personas en la Consulta Infantil y Juvenil 2024 —incluido un niño de nueve años que recibió $400 pesos sin justificación—, mostrando que la falla de control del INE bajo Taddei no se limitó a los contratos grandes.",
+     "foto": "public/blog/portadas/ine-auditoria-consulta-infantil-irregularidades-74-millones.jpg"},
+    {"kicker": "FINTECH", "fecha": "20 NOV", "titulo": "Walmart superó expectativas en su tercer trimestre y elevó su guía anual. El propio rango que elevó sigue por debajo del consenso",
+     "desc": "Ingresos de $188,800 millones y EPS de $0.65, ambos por encima de lo esperado. Pero el nuevo rango de guía de utilidad ($2.84-$2.89) apenas iguala los $2.88 que ya esperaban los analistas de LSEG antes del reporte.",
      "foto": null},
-    {"kicker": "GEOPOLÍTICA", "fecha": "13 NOV", "titulo": "El nearshoring ya no necesita más capital. Necesita más electricidad —y nadie en Fibra Uno o Fibra Next pretende que eso se resuelva rápido",
-     "desc": "En el Funo Day 2026, directivos de los fideicomisos industriales más grandes de México describieron el cuello de botella real de la siguiente fase del nearshoring: ya no es el financiamiento, sino la infraestructura de transmisión y distribución de la CFE.",
-     "foto": "public/blog/portadas/nearshoring-mexico-cuello-botella-energia-fibras-reit.jpg"}
+    {"kicker": "BUSINESS", "fecha": "20 NOV", "titulo": "Anthropic recaudó $81,300 millones en su IPO. Quien compra ANT compra acciones sin control",
+     "desc": "El prospecto muestra que los siete cofundadores concentran 50.1% del voto y un fideicomiso elige a la mayoría del consejo —un diseño explícito para proteger la misión, y una pregunta abierta sobre quién puede exigir cuentas.",
+     "foto": "public/blog/portadas/anthropic-ipo-81300-millones-quien-controla-ant-fundadores-fideicomiso.jpg"}
   ],
   "abajo": [
-    {"kicker": "BUSINESS-ANALYTICS", "fecha": "11 NOV", "titulo": "Los despidos atribuidos a la IA en Estados Unidos cayeron a menos de 3% en octubre, después de haber llegado a 40% en mayo",
-     "desc": "El reporte de Challenger, Gray & Christmas muestra apenas 1,265 despidos atribuidos explícitamente a IA en octubre, su nivel más bajo del año. Las condiciones económicas generales, no la IA, ya acumulan más despidos en lo que va de 2026.",
-     "foto": "public/blog/portadas/challenger-despidos-ia-octubre-cayeron-3-por-ciento.jpg"},
-    {"kicker": "BUSINESS-ANALYTICS", "fecha": "11 NOV", "titulo": "Snowflake le acaba de dar a sus agentes de IA un diccionario de términos de negocio aprobados. El problema que no resuelve es quién decide qué significa \"cliente\"",
-     "desc": "La nueva \"Business Ontology\" de Snowflake resuelve un problema real de infraestructura, pero no el problema organizacional, mucho más viejo, de que ventas, finanzas y operaciones ya definían esos mismos términos de forma distinta.",
+    {"kicker": "GEOPOLÍTICA", "fecha": "17 NOV", "titulo": "Guadalupe Taddei no solo manejó mal los contratos del INE. También sustituyó a 71% de sus mandos en tres años",
+     "desc": "Un cotejo de Excélsior entre reportes de transparencia de 2023 y 2026 encontró que 71.44% de las plazas de mando medio y alto en el INE registran ingreso posterior a abril de 2023, cuando Taddei asumió la presidencia.",
+     "foto": "public/blog/portadas/taddei-desmantelo-71-mandos-ine-tres-anos-acoso.jpg"},
+    {"kicker": "BUSINESS", "fecha": "19 NOV", "titulo": "MercadoLibre creció 45% en ingresos y ganó 32 millones de usuarios nuevos en un año. El mercado la castigó con una caída de 7%",
+     "desc": "Pese a superar el consenso de ingresos, la acción cayó porque el margen operativo se comprimió de 9.8% a 6.3%, resultado de una inversión deliberada en capacidad logística y envíos gratuitos antes de la temporada alta.",
+     "foto": "public/blog/portadas/mercadolibre-resultados-q3-2026-margen-logistica-apuesta.jpg"},
+    {"kicker": "ECONOMÍA", "fecha": "20 NOV", "titulo": "Las ventas minoristas de EU crecieron solo 0.2% en el titular. Excluyendo autos, subieron el doble de lo esperado",
+     "desc": "Las actas de la Fed confirmaron que \"casi todos\" los participantes ya ven apropiada otra alza en diciembre, mientras la minuta de Banxico muestra a su propio consejo dividido sobre el ritmo de los próximos recortes.",
      "foto": null},
-    {"kicker": "FINTECH", "fecha": "10 NOV", "titulo": "Meta pagó 190 puntos base más de interés que hace un año para financiar su próximo tramo de centros de datos de IA",
-     "desc": "El paquete de financiamiento de Meta, que puede llegar a $97,500 millones combinando deuda y capital, llega justo cuando su flujo de caja libre se volvió negativo por primera vez debido al gasto en infraestructura de IA.",
-     "foto": "public/blog/portadas/meta-bono-750-cupon-flujo-caja-negativo-capex-ia.jpg"},
-    {"kicker": "BUSINESS", "fecha": "09 NOV", "titulo": "El PMI manufacturero de México volvió a caer por debajo de 50 en octubre. Los nuevos pedidos de exportación subieron el mismo mes",
-     "desc": "El PMI cayó a 49.5, con el empleo cayendo a su ritmo más rápido desde mayo —pero los nuevos pedidos de exportación crecieron el mismo mes, la fotografía más precisa de qué tan lejos está México de capturar la ola de nearshoring.",
+    {"kicker": "IA", "fecha": "17 NOV", "titulo": "Meta canceló la segunda ola de despidos ligados a agentes de IA cuando el costo de limpiar lo que rompían superó el ahorro",
+     "desc": "Project OT buscaba reducir equipos hasta 60%, pero los incidentes técnicos y de seguridad crecieron 40% y el tiempo para resolverlos aumentó 70%. Un estudio de la Fed de Atlanta encuentra que más de 80% de las empresas no reporta impacto medible de la IA en empleo.",
      "foto": null}
   ]
 }
