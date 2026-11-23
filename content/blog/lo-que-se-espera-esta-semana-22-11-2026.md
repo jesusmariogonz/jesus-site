@@ -14,6 +14,7 @@ tags:
 resumen: 'Una semana corta por Acción de Gracias concentra casi todo su riesgo real el miércoles: PCE, bienes durables y la revisión del PIB del tercer trimestre caen el mismo día, 15 días antes de la decisión de la Fed de diciembre. México espera el primer dato de inflación desde el repunte de tres meses consecutivos que esta serie ya documentó.'
 imagen: /blog/portadas/lo-que-se-espera-esta-semana-22-11-2026.jpg
 socialImagen: /blog/social/lo-que-se-espera-esta-semana-22-11-2026.jpg
+tipoNota: calendario
 ---
 
 - **Martes 24 de noviembre — Confianza del consumidor (Conference Board), noviembre.** El dato de octubre fue 91.7 puntos, en recuperación desde 84.2 en septiembre; esta lectura llega apenas días después de que el S&P 500 y el Dow cerraran la semana pasada en corrección formal, la primera oportunidad de ver si esa caída ya afectó el ánimo del consumidor estadounidense.
