@@ -30,17 +30,12 @@ const SCOPES = "openid profile w_member_social";
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
-  const secret = searchParams.get("secret");
   const expected = process.env.NEWSLETTER_NOTIFY_SECRET;
-
   if (!expected) {
     return NextResponse.json(
       { error: "Falta configurar NEWSLETTER_NOTIFY_SECRET en Vercel." },
       { status: 500 }
     );
-  }
-  if (secret !== expected) {
-    return NextResponse.json({ error: "No autorizado." }, { status: 401 });
   }
 
   const clientId = process.env.LINKEDIN_CLIENT_ID;
@@ -55,14 +50,20 @@ export async function GET(request) {
   const redirectUri = absUrl("/api/linkedin/setup");
   const code = searchParams.get("code");
 
-  // Paso 1: sin `code` todavía — redirige a LinkedIn a autorizar.
+  // Paso 1: sin `code` todavía — LinkedIn regresa sin el `secret` original
+  // en la URL, así que la validación de identidad en este paso es el
+  // `secret` de la query; en el callback (abajo) es el `state`.
   if (!code) {
+    const secret = searchParams.get("secret");
+    if (secret !== expected) {
+      return NextResponse.json({ error: "No autorizado." }, { status: 401 });
+    }
     const authUrl = new URL("https://www.linkedin.com/oauth/v2/authorization");
     authUrl.searchParams.set("response_type", "code");
     authUrl.searchParams.set("client_id", clientId);
     authUrl.searchParams.set("redirect_uri", redirectUri);
     authUrl.searchParams.set("scope", SCOPES);
-    authUrl.searchParams.set("state", secret);
+    authUrl.searchParams.set("state", expected);
     return NextResponse.redirect(authUrl.toString());
   }
 
