@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T14:41:52.683007+00:00",
+  "generated_at": "2026-11-23T21:38:03.914330+00:00",
   "source": "algo_trading_platform paper trading engine (simulado, sin dinero real)",
   "buckets": {
     "largo_plazo": {
@@ -15,9 +15,9 @@
           "initial_stop_price": 129.42,
           "shares": 1,
           "asset_type": "Equity ETF",
-          "current_price": 133.86,
-          "unrealized_pnl": -3.34,
-          "unrealized_pnl_pct": -2.43
+          "current_price": 135.29,
+          "unrealized_pnl": -1.91,
+          "unrealized_pnl_pct": -1.39
         }
       ],
       "closed_positions": [
@@ -650,25 +650,25 @@
         },
         {
           "date": "2026-11-23",
-          "equity": 405.28,
+          "equity": 406.71,
           "cash": 271.42,
-          "unrealized_pnl": -3.34,
+          "unrealized_pnl": -1.91,
           "open_count": 1,
           "closed_today": 0,
           "realized_pnl_today": 0,
-          "cumulative_return_pct": -5.42,
+          "cumulative_return_pct": -5.09,
           "closed_today_detail": [],
           "discarded_candidates_today": [],
-          "daily_loss_pct": -1.6,
-          "drawdown_pct": 6.92,
+          "daily_loss_pct": -1.96,
+          "drawdown_pct": 6.6,
           "daily_loss_breaker_tripped": false,
           "suspended": true,
-          "suspended_reason": "Drawdown 6.9% alcanzó el límite de revisión (6%)",
+          "suspended_reason": "Drawdown 6.6% alcanzó el límite de revisión (6%)",
           "newly_suspended_today": true
         }
       ],
       "suspended": true,
-      "suspended_reason": "Drawdown 6.9% alcanzó el límite de revisión (6%)",
+      "suspended_reason": "Drawdown 6.6% alcanzó el límite de revisión (6%)",
       "suspended_since": "2026-11-23"
     },
     "mediano_plazo": {
@@ -683,9 +683,9 @@
           "stop_price": 88.86071286882672,
           "shares": 1,
           "asset_type": "Equity ETF",
-          "current_price": 89.78,
-          "unrealized_pnl": -2.25,
-          "unrealized_pnl_pct": -2.44
+          "current_price": 90.38,
+          "unrealized_pnl": -1.65,
+          "unrealized_pnl_pct": -1.79
         },
         {
           "symbol": "XLF",
@@ -696,9 +696,22 @@
           "initial_stop_price": 54.35,
           "shares": 2,
           "asset_type": "Equity ETF",
-          "current_price": 55.315,
-          "unrealized_pnl": -3.63,
-          "unrealized_pnl_pct": -3.18
+          "current_price": 55.65,
+          "unrealized_pnl": -2.96,
+          "unrealized_pnl_pct": -2.59
+        },
+        {
+          "symbol": "KO",
+          "strategy": "trend_following",
+          "entry_date": "2026-11-23",
+          "entry_price": 95.98,
+          "stop_price": 91.12,
+          "initial_stop_price": 91.12,
+          "shares": 1,
+          "asset_type": "Stock",
+          "current_price": 95.88,
+          "unrealized_pnl": -0.1,
+          "unrealized_pnl_pct": -0.1
         }
       ],
       "closed_positions": [
@@ -1283,17 +1296,106 @@
         },
         {
           "date": "2026-11-23",
-          "equity": 348.75,
-          "cash": 148.34,
-          "unrealized_pnl": -5.88,
-          "open_count": 2,
+          "equity": 349.93,
+          "cash": 52.37,
+          "unrealized_pnl": -4.71,
+          "open_count": 3,
           "closed_today": 0,
           "realized_pnl_today": 0,
-          "cumulative_return_pct": -5.1,
+          "cumulative_return_pct": -4.78,
           "closed_today_detail": [],
-          "discarded_candidates_today": [],
-          "daily_loss_pct": -0.83,
-          "drawdown_pct": 5.56,
+          "discarded_candidates_today": [
+            {
+              "symbol": "AAPL",
+              "strategy": "trend_following",
+              "reason": "capital_insuficiente",
+              "entry_price": 349.08,
+              "stop_price": 326.19,
+              "risk_per_share": 22.89,
+              "risk_amount": 7.0,
+              "shares_calculadas": 0,
+              "costo_estimado": 0.0
+            },
+            {
+              "symbol": "JNJ",
+              "strategy": "trend_following",
+              "reason": "capital_insuficiente",
+              "entry_price": 270.05,
+              "stop_price": 252.72,
+              "risk_per_share": 17.33,
+              "risk_amount": 7.0,
+              "shares_calculadas": 0,
+              "costo_estimado": 0.0
+            },
+            {
+              "symbol": "PG",
+              "strategy": "trend_following",
+              "reason": "capital_insuficiente",
+              "entry_price": 169.6,
+              "stop_price": 160.9,
+              "risk_per_share": 8.7,
+              "risk_amount": 7.0,
+              "shares_calculadas": 0,
+              "costo_estimado": 0.0
+            },
+            {
+              "symbol": "TXN",
+              "strategy": "trend_following",
+              "reason": "capital_insuficiente",
+              "entry_price": 291.19,
+              "stop_price": 246.37,
+              "risk_per_share": 44.82,
+              "risk_amount": 7.0,
+              "shares_calculadas": 0,
+              "costo_estimado": 0.0
+            },
+            {
+              "symbol": "V",
+              "strategy": "trend_following",
+              "reason": "capital_insuficiente",
+              "entry_price": 409.4,
+              "stop_price": 383.9,
+              "risk_per_share": 25.5,
+              "risk_amount": 7.0,
+              "shares_calculadas": 0,
+              "costo_estimado": 0.0
+            },
+            {
+              "symbol": "MA",
+              "strategy": "trend_following",
+              "reason": "capital_insuficiente",
+              "entry_price": 635.48,
+              "stop_price": 596.25,
+              "risk_per_share": 39.23,
+              "risk_amount": 7.0,
+              "shares_calculadas": 0,
+              "costo_estimado": 0.0
+            },
+            {
+              "symbol": "ABBV",
+              "strategy": "trend_following",
+              "reason": "capital_insuficiente",
+              "entry_price": 288.45,
+              "stop_price": 270.53,
+              "risk_per_share": 17.92,
+              "risk_amount": 7.0,
+              "shares_calculadas": 0,
+              "costo_estimado": 0.0
+            },
+            {
+              "symbol": "XLV",
+              "strategy": "trend_following",
+              "reason": "capital_insuficiente",
+              "entry_price": 179.42,
+              "stop_price": 169.6,
+              "risk_per_share": 9.82,
+              "risk_amount": 7.0,
+              "shares_calculadas": 0,
+              "costo_estimado": 0.0
+            }
+          ],
+          "daily_loss_pct": -1.2,
+          "drawdown_pct": 5.21,
           "daily_loss_breaker_tripped": false,
           "suspended": false,
           "suspended_reason": null,
@@ -1317,9 +1419,9 @@
           "initial_stop_price": 20.14,
           "shares": 2,
           "asset_type": "Stock",
-          "current_price": 24.52,
-          "unrealized_pnl": 1.44,
-          "unrealized_pnl_pct": 3.03
+          "current_price": 24.49,
+          "unrealized_pnl": 1.38,
+          "unrealized_pnl_pct": 2.9
         },
         {
           "symbol": "BILL",
@@ -1343,9 +1445,9 @@
           "initial_stop_price": 68.51,
           "shares": 1,
           "asset_type": "Stock",
-          "current_price": 75.4,
-          "unrealized_pnl": -0.61,
-          "unrealized_pnl_pct": -0.8
+          "current_price": 77.04,
+          "unrealized_pnl": 1.03,
+          "unrealized_pnl_pct": 1.36
         }
       ],
       "closed_positions": [],
@@ -1668,29 +1770,29 @@
         },
         {
           "date": "2026-11-23",
-          "equity": 212.58,
+          "equity": 214.16,
           "cash": 26.53,
-          "unrealized_pnl": 4.75,
+          "unrealized_pnl": 6.33,
           "open_count": 3,
           "closed_today": 0,
           "realized_pnl_today": 0,
-          "cumulative_return_pct": 0.45,
+          "cumulative_return_pct": 1.19,
           "closed_today_detail": [],
           "discarded_candidates_today": [
             {
               "symbol": "ZS",
               "strategy": "trend_following",
               "reason": "capital_insuficiente",
-              "entry_price": 229.88,
-              "stop_price": 190.98,
+              "entry_price": 229.24,
+              "stop_price": 190.35,
               "risk_per_share": 38.89,
-              "risk_amount": 10.63,
+              "risk_amount": 10.71,
               "shares_calculadas": 0,
               "costo_estimado": 0.0
             }
           ],
-          "daily_loss_pct": -2.21,
-          "drawdown_pct": 3.94,
+          "daily_loss_pct": -2.97,
+          "drawdown_pct": 3.22,
           "daily_loss_breaker_tripped": false,
           "suspended": false,
           "suspended_reason": null,
@@ -1934,9 +2036,9 @@
         },
         {
           "date": "2026-11-23",
-          "equity": 446.29,
-          "cumulative_return_pct": -5.48,
-          "drawdown_pct": 8.34
+          "equity": 350.32,
+          "cumulative_return_pct": -5.33,
+          "drawdown_pct": 8.2
         }
       ],
       "suspended": false
@@ -2102,6 +2204,16 @@
       "precio": 129.6917,
       "shares": 0.715711,
       "motivo": "producto de cerrar VNQ"
+    },
+    {
+      "bucket": "mediano_plazo",
+      "fecha": "2026-11-23",
+      "tipo": "venta",
+      "simbolo": "BLEND_SPY_GLD",
+      "monto_usd": 95.98,
+      "precio": 131.5145,
+      "shares": 0.729774,
+      "motivo": "financia la compra de KO"
     }
   ],
   "usd_mxn_rate": 19.1134,

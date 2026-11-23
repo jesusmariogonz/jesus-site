@@ -15,7 +15,7 @@
     "pnl": -1.1,
     "pnl_pct": -1.07,
     "reason": "stop_hit",
-    "actualizado": "2026-11-23T14:41:53.062242+00:00"
+    "actualizado": "2026-11-23T21:38:04.277743+00:00"
   },
   {
     "bucket": "largo_plazo",
@@ -33,7 +33,7 @@
     "pnl": -1.78,
     "pnl_pct": -2.43,
     "reason": "stop_hit",
-    "actualizado": "2026-11-23T14:41:53.062257+00:00"
+    "actualizado": "2026-11-23T21:38:04.277753+00:00"
   },
   {
     "bucket": "largo_plazo",
@@ -51,7 +51,7 @@
     "pnl": -3.56,
     "pnl_pct": -2.54,
     "reason": "stop_hit",
-    "actualizado": "2026-11-23T14:41:53.062251+00:00"
+    "actualizado": "2026-11-23T21:38:04.277748+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -69,7 +69,7 @@
     "pnl": 1.35,
     "pnl_pct": 1.43,
     "reason": "stop_hit",
-    "actualizado": "2026-11-23T14:41:53.062286+00:00"
+    "actualizado": "2026-11-23T21:38:04.277782+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -87,7 +87,7 @@
     "pnl": -2.76,
     "pnl_pct": -4.53,
     "reason": "stop_hit",
-    "actualizado": "2026-11-23T14:41:53.062280+00:00"
+    "actualizado": "2026-11-23T21:38:04.277777+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -105,7 +105,7 @@
     "pnl": -3.7,
     "pnl_pct": -5.27,
     "reason": "stop_hit",
-    "actualizado": "2026-11-23T14:41:53.062277+00:00"
+    "actualizado": "2026-11-23T21:38:04.277774+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -123,7 +123,7 @@
     "pnl": 0.55,
     "pnl_pct": 0.98,
     "reason": "stop_hit",
-    "actualizado": "2026-11-23T14:41:53.062283+00:00"
+    "actualizado": "2026-11-23T21:38:04.277780+00:00"
   },
   {
     "bucket": "blend_spy_gld",
@@ -141,7 +141,7 @@
     "pnl": null,
     "pnl_pct": null,
     "reason": null,
-    "actualizado": "2026-11-23T14:41:53.062308+00:00"
+    "actualizado": "2026-11-23T21:38:04.277798+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -154,12 +154,12 @@
     "initial_stop_price": null,
     "exit_date": null,
     "exit_price": null,
-    "current_price": 89.78,
+    "current_price": 90.38,
     "stop_price": 88.86071286882672,
-    "pnl": -2.25,
-    "pnl_pct": -2.44,
+    "pnl": -1.65,
+    "pnl_pct": -1.79,
     "reason": null,
-    "actualizado": "2026-11-23T14:41:53.062269+00:00"
+    "actualizado": "2026-11-23T21:38:04.277764+00:00"
   },
   {
     "bucket": "largo_plazo",
@@ -177,7 +177,7 @@
     "pnl": -3.01,
     "pnl_pct": -3.14,
     "reason": "stop_hit",
-    "actualizado": "2026-11-23T14:41:53.062264+00:00"
+    "actualizado": "2026-11-23T21:38:04.277759+00:00"
   },
   {
     "bucket": "blend_spy_gld",
@@ -213,7 +213,7 @@
     "pnl": -4.53,
     "pnl_pct": -4.31,
     "reason": "stop_hit",
-    "actualizado": "2026-11-23T14:41:53.062261+00:00"
+    "actualizado": "2026-11-23T21:38:04.277755+00:00"
   },
   {
     "bucket": "riesgo_alto",
@@ -226,12 +226,12 @@
     "initial_stop_price": 20.14,
     "exit_date": null,
     "exit_price": null,
-    "current_price": 24.52,
+    "current_price": 24.49,
     "stop_price": 21.08964272907802,
-    "pnl": 1.44,
-    "pnl_pct": 3.03,
+    "pnl": 1.38,
+    "pnl_pct": 2.9,
     "reason": null,
-    "actualizado": "2026-11-23T14:41:53.062294+00:00"
+    "actualizado": "2026-11-23T21:38:04.277785+00:00"
   },
   {
     "bucket": "riesgo_alto",
@@ -249,7 +249,7 @@
     "pnl": 3.92,
     "pnl_pct": 6.79,
     "reason": null,
-    "actualizado": "2026-11-23T14:41:53.062298+00:00"
+    "actualizado": "2026-11-23T21:38:04.277789+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -262,12 +262,12 @@
     "initial_stop_price": 54.35,
     "exit_date": null,
     "exit_price": null,
-    "current_price": 55.315,
+    "current_price": 55.65,
     "stop_price": 54.35,
-    "pnl": -3.63,
-    "pnl_pct": -3.18,
+    "pnl": -2.96,
+    "pnl_pct": -2.59,
     "reason": null,
-    "actualizado": "2026-11-23T14:41:53.062273+00:00"
+    "actualizado": "2026-11-23T21:38:04.277768+00:00"
   },
   {
     "bucket": "riesgo_alto",
@@ -280,12 +280,12 @@
     "initial_stop_price": 68.51,
     "exit_date": null,
     "exit_price": null,
-    "current_price": 75.4,
+    "current_price": 77.04,
     "stop_price": 71.30625179835728,
-    "pnl": -0.61,
-    "pnl_pct": -0.8,
+    "pnl": 1.03,
+    "pnl_pct": 1.36,
     "reason": null,
-    "actualizado": "2026-11-23T14:41:53.062301+00:00"
+    "actualizado": "2026-11-23T21:38:04.277791+00:00"
   },
   {
     "bucket": "largo_plazo",
@@ -298,11 +298,29 @@
     "initial_stop_price": 129.42,
     "exit_date": null,
     "exit_price": null,
-    "current_price": 133.86,
+    "current_price": 135.29,
     "stop_price": 129.91811588832311,
-    "pnl": -3.34,
-    "pnl_pct": -2.43,
+    "pnl": -1.91,
+    "pnl_pct": -1.39,
     "reason": null,
-    "actualizado": "2026-11-23T14:41:53.062219+00:00"
+    "actualizado": "2026-11-23T21:38:04.277722+00:00"
+  },
+  {
+    "bucket": "mediano_plazo",
+    "bucket_label": "Mediano Plazo",
+    "symbol": "KO",
+    "asset_type": "Stock",
+    "estado": "Abierta",
+    "entry_date": "2026-11-23",
+    "entry_price": 95.98,
+    "initial_stop_price": 91.12,
+    "exit_date": null,
+    "exit_price": null,
+    "current_price": 95.88,
+    "stop_price": 91.12,
+    "pnl": -0.1,
+    "pnl_pct": -0.1,
+    "reason": null,
+    "actualizado": "2026-11-23T21:38:04.277771+00:00"
   }
 ]
