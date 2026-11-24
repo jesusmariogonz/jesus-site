@@ -65,7 +65,7 @@ function StatCard({ etiqueta, valor, tono, sub }) {
   );
 }
 
-function EquityChart({ history, startingCapital, height = 220 }) {
+export function EquityChart({ history, startingCapital, height = 220 }) {
   const width = 900;
   const pad = { top: 16, right: 16, bottom: 24, left: 16 };
 

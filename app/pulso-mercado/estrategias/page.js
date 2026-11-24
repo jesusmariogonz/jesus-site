@@ -7,6 +7,8 @@ import {
   COLOR_ESTADO_ESTRATEGIA,
   ETIQUETA_ESTADO_ESTRATEGIA,
 } from "@/lib/strategies/catalog";
+import { getExp005PaperPortfolio } from "@/lib/strategies/paper-portfolio";
+import Exp005PaperPortfolio from "@/components/strategies/Exp005PaperPortfolio";
 
 export const metadata = {
   title: "Strategy Lab — Pulso de Mercado",
@@ -35,9 +37,10 @@ function Badge({ estado }) {
   );
 }
 
-export default function StrategyLabPage() {
+export default async function StrategyLabPage() {
   const produccion = ESTRATEGIAS_TRADING.filter((s) => s.estado === "EN_PRODUCCION");
   const descartadas = ESTRATEGIAS_TRADING.filter((s) => s.estado === "DESCARTADA");
+  const paperPortfolio = await getExp005PaperPortfolio();
 
   return (
     <section className="section">
@@ -76,10 +79,10 @@ export default function StrategyLabPage() {
               <span>El hallazgo se formaliza como una regla de entrada/salida concreta, todavía sin capital.</span>
             </div>
             <span className="strategy-pipeline-flecha">→</span>
-            <div className="strategy-pipeline-paso strategy-pipeline-paso--pendiente">
-              <span className="strategy-pipeline-emoji">⚪</span>
+            <div className="strategy-pipeline-paso">
+              <span className="strategy-pipeline-emoji">🟡</span>
               <strong>Paper Lab</strong>
-              <span>Cartera virtual independiente, con su propio capital, benchmark y métricas — todavía no existe como infraestructura separada.</span>
+              <span>Cartera virtual independiente, con su propio capital, benchmark y métricas — EXP-005 es la primera candidata que llegó aquí (ver abajo).</span>
             </div>
             <span className="strategy-pipeline-flecha">→</span>
             <div className="strategy-pipeline-paso">
@@ -89,12 +92,23 @@ export default function StrategyLabPage() {
             </div>
           </div>
           <p className="activo-descripcion" style={{ marginTop: 14 }}>
-            Hoy no existe un "Paper Lab" separado con carteras virtuales independientes por
-            candidata — construirlo con datos inventados sería peor que no tenerlo. Lo más
-            parecido que existe ahora es la validación forward de EXP-005 (ver su reporte): un
-            recheck estadístico automático sobre el bucket congelado, no una cartera con capital
-            propio. Esta sección se actualizará en cuanto esa infraestructura exista de verdad.
+            Ninguna candidata ha llegado a Production todavía. EXP-005 es la primera en tener una
+            cartera de Paper Lab real — con reglas de sizing nuevas que la validación original
+            nunca probó (ver la sección de abajo y <Link href="https://github.com/jesusmariogonz/pulso-research-lab/blob/main/experiments/EXP-005-reverse-winners/PAPER_PORTFOLIO.md">PAPER_PORTFOLIO.md</Link>{" "}
+            para el detalle). Las demás candidatas siguen sin infraestructura de Paper Lab propia
+            hasta que se construya para cada una.
           </p>
+        </div>
+
+        <div className="activo-bloque">
+          <h2>Paper Lab</h2>
+          <p className="activo-descripcion">
+            La cartera virtual de EXP-005 (Reverse Winners) — opera en tiempo real sobre el bucket
+            congelado de <Link href="/pulso-mercado/research/exp-005-reverse-winners">EXP-005</Link>,
+            sin reoptimizar nada. No sustituye su validación forward estadística; es la vista de
+            "cómo se vería operar" con capital virtual.
+          </p>
+          <Exp005PaperPortfolio data={paperPortfolio} />
         </div>
 
         <div className="activo-bloque">
