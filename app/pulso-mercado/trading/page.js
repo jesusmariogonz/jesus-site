@@ -192,6 +192,7 @@ export default function TradingPublicoPage() {
         <nav className="trading-subnav">
           <Link href="/pulso-mercado/trading/investigacion">Investigación →</Link>
           <Link href="/pulso-mercado/trading/bitacora">Bitácora de decisiones →</Link>
+          <Link href="/pulso-mercado/estrategias">Strategy Lab →</Link>
         </nav>
 
         <TradingPublicoExplorer data={data} dataIbkr={dataIbkr} />

@@ -1,0 +1,77 @@
+{
+  "experimento": "EXP-005",
+  "nombre": "Reverse Winners",
+  "repo": "pulso-research-lab",
+  "ruta_origen": "experiments/EXP-005-reverse-winners",
+  "fecha_registro": "2026-11-22",
+  "commit_registro": "e375e51",
+  "fecha_cierre": "2026-11-23",
+  "commit_cierre": "209c90d",
+  "universo": {
+    "nombre": "S&P 1500 (reutilizado de EXP-004)",
+    "n_simbolos_universo": 1502,
+    "n_simbolos_con_datos": 1501,
+    "simbolo_faltante": "CWEN-A"
+  },
+  "periodo": {
+    "discovery": "2010-01-01 a 2018-12-31",
+    "validation": "2019-01-01 a 2021-12-31",
+    "locked_test": "2022-01-01 a 2026-09-30",
+    "n_fechas_discovery": 227,
+    "n_fechas_validation": 76,
+    "n_fechas_locked": 119
+  },
+  "features_discriminantes": [
+    { "feature": "vol_realizada_20d", "direccion": "alto", "diferencia_medianas": 0.217, "correlacion_punto_biserial": 0.157 },
+    { "feature": "drawdown_60d", "direccion": "bajo", "diferencia_medianas": -0.142, "correlacion_punto_biserial": -0.097 },
+    { "feature": "dist_max20", "direccion": "bajo", "diferencia_medianas": -0.125, "correlacion_punto_biserial": -0.085 },
+    { "feature": "beta_60d", "direccion": "alto", "diferencia_medianas": 0.096, "correlacion_punto_biserial": 0.061 }
+  ],
+  "grid": {
+    "n_variantes_total": 81,
+    "n_variantes_sobreviven_filtro_soporte": 81,
+    "variant_id_ganador": "vol_realizada_20d:alto:0.90|drawdown_60d:bajo:0.90|dist_max20:bajo:0.90|beta_60d:alto:0.75"
+  },
+  "metricas_locked": {
+    "ganador": { "media": 2.269, "mediana": -0.358, "frac_positivo": 49.4 },
+    "baseline_momentum_simple": { "media": 1.941, "mediana": 1.119, "frac_positivo": 53.7 },
+    "baseline_buy_hold": { "media": 1.564, "mediana": 0.895, "frac_positivo": 53.4 },
+    "baseline_rsi_simple": { "media": 1.397, "mediana": 0.474, "frac_positivo": 51.8 },
+    "baseline_combo_ingenuo": { "media": 1.591, "mediana": 1.012, "frac_positivo": 54.2 }
+  },
+  "n_senales_locked": 3067,
+  "robustez": {
+    "bootstrap_vs_baseline1_frac": 87.93,
+    "bootstrap_umbral_validated": 80,
+    "dsr": 0.534,
+    "dsr_umbral_validated": 0.95,
+    "dsr_umbral_rejected": 0.5,
+    "n_trials_dsr": 81,
+    "pbo": 32.9,
+    "pbo_n_particiones": 10,
+    "placebo_percentil": 99.7,
+    "placebo_potencia_confirmada": true,
+    "concentracion_frac_max_ticker": 1.76,
+    "concentracion_ticker_max": "CLSK",
+    "concentracion_umbral_rejected": 20,
+    "leave_one_ticker_out_n_tickers": 516,
+    "leave_one_ticker_out_reversiones": 0,
+    "sensibilidad_vecinos_revierte_signo": false,
+    "sensibilidad_vecinos_destruye_mas_50pct": false
+  },
+  "label": "INCONCLUSIVE",
+  "forward_validation": {
+    "estado": "en curso",
+    "ultima_fecha_original": "2026-09-30",
+    "mecanismo": "workflow programado semanal (domingos), bucket congelado sin reoptimizar",
+    "n_fechas_acumuladas_forward": 0,
+    "proxima_fecha_estimada": "~mediados de diciembre de 2026"
+  },
+  "limitaciones": [
+    "Fuerza relativa vs. sector y concentración por sector: fuera de alcance (sin clasificación GICS en el laboratorio).",
+    "MFE, MAE, máximo drawdown post-señal y tiempo-a-objetivo: fuera de alcance v1 (requieren seguimiento día a día).",
+    "Autocorrelación serial por solapamiento de ventanas forward de 30 días con paso de 10 sesiones: declarada, no corregida más allá de DSR/PBO.",
+    "Universo S&P 1500 actual (no point-in-time): mismo sesgo de supervivencia ya declarado en EXP-004.",
+    "La implementación nunca aplicó los costos de transacción (0.05%+0.05%) que el pre-registro original exigía — todos los retornos son brutos; se documenta la discrepancia en vez de corregirla a mitad de la validación forward."
+  ]
+}

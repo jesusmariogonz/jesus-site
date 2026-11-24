@@ -17,6 +17,7 @@ import LibrosMercadoBanner from "@/components/LibrosMercadoBanner";
 import RiskMeter from "@/components/RiskMeter";
 import TradingAlgoritmicoBanner from "@/components/TradingAlgoritmicoBanner";
 import ResearchLabBanner from "@/components/ResearchLabBanner";
+import StrategyLabBanner from "@/components/StrategyLabBanner";
 import { absUrl } from "@/lib/site";
 
 // Dinámico (no estático) para que "Próxima corrida" en cada tarjeta
@@ -241,6 +242,7 @@ export default async function PulsoMercadoDashboard() {
         <div className="pulso-areas-top">
           <ResearchLabBanner />
           <TradingAlgoritmicoBanner />
+          <StrategyLabBanner />
         </div>
         <header className="pulsodash-hero">
           <span className="pulsodash-eyebrow">

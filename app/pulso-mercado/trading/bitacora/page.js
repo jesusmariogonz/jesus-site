@@ -41,7 +41,7 @@ export default function BitacoraPage() {
 
         <div className="trading-bitacora-lista">
           {DECISIONES.map((d) => (
-            <div key={d.id} className="trading-bitacora-item">
+            <div key={d.id} id={`adr-${d.id}`} className="trading-bitacora-item">
               <div className="trading-bitacora-head">
                 <span className="trading-bitacora-id">ADR {d.id}</span>
                 <span className="trading-bitacora-estado" style={{ color: colorEstado(d.estado) }}>
