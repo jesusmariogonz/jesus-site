@@ -4699,6 +4699,21 @@ html:not(.dark) .pglobe-land {
   color: var(--text-secondary);
 }
 
+.strategy-pipeline { display: flex; flex-direction: column; gap: 8px; margin: 16px 0; }
+.strategy-pipeline-paso {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.strategy-pipeline-paso strong { font-size: 0.92rem; }
+.strategy-pipeline-paso span:last-child { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; }
+.strategy-pipeline-paso--pendiente { border-style: dashed; opacity: 0.75; }
+.strategy-pipeline-emoji { font-size: 1.1rem; }
+.strategy-pipeline-flecha { align-self: center; color: var(--text-dim); font-size: 1.1rem; }
+
 /* ---------- Trading Algorítmico ---------- */
 
 .trading-algo-banner {

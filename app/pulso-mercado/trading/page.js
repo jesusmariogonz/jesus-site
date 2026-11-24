@@ -37,47 +37,21 @@ function BloqueExplicativo({ resumen }) {
         </div>
 
         <div className="trading-intro-card">
-          <span className="trading-intro-kicker">Cómo se construyó</span>
-          <h2>37 decisiones de diseño, ninguna de un día para otro</h2>
-          <p>
-            El diseño actual no salió completo desde el día uno — cada cambio se probó contra el
-            motor completo antes de adoptarse. Los hitos de mayor impacto:
-          </p>
-          <ul className="trading-timeline trading-timeline-resumen">
-            <li className="trading-timeline-item">
-              <span className="trading-timeline-tag">v2</span>
-              <strong>Trailing stop + cash invertido en el índice</strong> — el cambio de mayor
-              impacto medido en todo el proyecto: el retorno pasó de +0.23% a +17.75% en 22 meses.
-            </li>
-            <li className="trading-timeline-item">
-              <span className="trading-timeline-tag">v5–v6</span>
-              <strong>Mean Reversion RSI(2) llegó a operar con capital real y se revirtió</strong>{" "}
-              — no sostuvo una validación walk-forward más rigurosa (Sharpe OOS -0.032); se
-              eliminó el bucket y se restauró el split original de 3 portafolios.
-            </li>
-            <li className="trading-timeline-item">
-              <span className="trading-timeline-tag">v13</span>
-              <strong>Filtro de cross-sectional momentum en Largo Plazo</strong> — de 10 hipótesis
-              de investigación probadas con walk-forward, una se implementó en producción: Sharpe
-              OOS 1.33→2.25, retorno 8.91%→19.14%, 0 de 5 ventanas con pérdida.
-            </li>
-          </ul>
-          <Link href="/pulso-mercado/trading/bitacora" className="trading-historia-link">
-            Ver las 37 decisiones completas en la Bitácora →
-          </Link>
-        </div>
-
-        <div className="trading-intro-card">
           <span className="trading-intro-kicker">Cómo está construido hoy</span>
-          <h2>Tres portafolios, cada uno con sus propias reglas</h2>
+          <h2>Tres portafolios de producción, cada uno con ID propio</h2>
           <p>
-            El capital de referencia ({capitalTexto}) se divide en tres "buckets" independientes, cada
-            uno con su propia estrategia, universo y límites de riesgo:
+            El capital de referencia ({capitalTexto}) se divide en tres "buckets" <strong>🟢
+            EN PRODUCCIÓN</strong>, cada uno con su propia estrategia, universo y límites de
+            riesgo. Una estrategia candidata que todavía está en investigación o validación
+            (como las de <Link href="/pulso-mercado/estrategias">Strategy Lab</Link>) no entra
+            aquí como un cuarto bucket hasta que supere su propia etapa de prueba — nunca se
+            mezcla capital de producción con capital de prueba.
           </p>
           <div className="prose" style={{ overflowX: "auto", marginTop: 12 }}>
             <table>
               <thead>
                 <tr>
+                  <th>ID</th>
                   <th>Bucket</th>
                   <th>Asignación</th>
                   <th>Universo</th>
@@ -89,6 +63,7 @@ function BloqueExplicativo({ resumen }) {
               </thead>
               <tbody>
                 <tr>
+                  <td><code>LP-001</code></td>
                   <td>Largo Plazo</td>
                   <td>43.33%</td>
                   <td>26 ETFs</td>
@@ -98,6 +73,7 @@ function BloqueExplicativo({ resumen }) {
                   <td>6%</td>
                 </tr>
                 <tr>
+                  <td><code>MP-001</code></td>
                   <td>Mediano Plazo</td>
                   <td>33.33%</td>
                   <td>74 símbolos</td>
@@ -107,6 +83,7 @@ function BloqueExplicativo({ resumen }) {
                   <td>10%</td>
                 </tr>
                 <tr>
+                  <td><code>RA-001</code></td>
                   <td>Riesgo Alto</td>
                   <td>23.33%</td>
                   <td>45 símbolos</td>
@@ -118,6 +95,21 @@ function BloqueExplicativo({ resumen }) {
               </tbody>
             </table>
           </div>
+        </div>
+
+        <div className="trading-intro-card">
+          <span className="trading-intro-kicker">Cómo se construyó</span>
+          <h2>37 decisiones de diseño, ninguna de un día para otro</h2>
+          <p>
+            El diseño actual no salió completo desde el día uno — cada cambio se probó contra el
+            motor completo antes de adoptarse, incluyendo el cambio de mayor impacto medido en
+            todo el proyecto (trailing stop + cash invertido en el índice: +0.23% → +17.75% en 22
+            meses) y un bucket que llegó a operar con capital real y se revirtió después (Mean
+            Reversion RSI(2), ver abajo).
+          </p>
+          <Link href="/pulso-mercado/trading/bitacora" className="trading-historia-link">
+            Ver las 37 decisiones completas en la Bitácora →
+          </Link>
         </div>
 
         <div className="trading-intro-card">
@@ -185,9 +177,12 @@ export default function TradingPublicoPage() {
           </p>
         </header>
 
-        <BloqueExplicativo resumen={data.resumen} />
-
         <div className="trading-disclaimer">{TRADING_DISCLAIMER}</div>
+
+        <div className="activo-bloque" style={{ marginTop: 0 }}>
+          <h2>¿Cómo está funcionando el sistema?</h2>
+          <TradingPublicoExplorer data={data} dataIbkr={dataIbkr} />
+        </div>
 
         <nav className="trading-subnav">
           <Link href="/pulso-mercado/trading/investigacion">Investigación →</Link>
@@ -195,7 +190,7 @@ export default function TradingPublicoPage() {
           <Link href="/pulso-mercado/estrategias">Strategy Lab →</Link>
         </nav>
 
-        <TradingPublicoExplorer data={data} dataIbkr={dataIbkr} />
+        <BloqueExplicativo resumen={data.resumen} />
       </div>
     </section>
   );

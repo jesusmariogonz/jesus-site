@@ -57,6 +57,47 @@ export default function StrategyLabPage() {
         </p>
 
         <div className="activo-bloque">
+          <h2>Cómo se mueve una estrategia</h2>
+          <p className="activo-descripcion">
+            Cuatro etapas, no tres portafolios. Ninguna estrategia salta directo de un hallazgo de
+            investigación a capital de producción — y hoy la mayoría de las candidatas de este
+            catálogo están apenas en la primera etapa:
+          </p>
+          <div className="strategy-pipeline">
+            <div className="strategy-pipeline-paso">
+              <span className="strategy-pipeline-emoji">🔵</span>
+              <strong>Research</strong>
+              <span>Un experimento de <Link href="/pulso-mercado/research">Research Lab</Link> encuentra (o descarta) una señal.</span>
+            </div>
+            <span className="strategy-pipeline-flecha">→</span>
+            <div className="strategy-pipeline-paso">
+              <span className="strategy-pipeline-emoji">🟡</span>
+              <strong>Strategy candidate</strong>
+              <span>El hallazgo se formaliza como una regla de entrada/salida concreta, todavía sin capital.</span>
+            </div>
+            <span className="strategy-pipeline-flecha">→</span>
+            <div className="strategy-pipeline-paso strategy-pipeline-paso--pendiente">
+              <span className="strategy-pipeline-emoji">⚪</span>
+              <strong>Paper Lab</strong>
+              <span>Cartera virtual independiente, con su propio capital, benchmark y métricas — todavía no existe como infraestructura separada.</span>
+            </div>
+            <span className="strategy-pipeline-flecha">→</span>
+            <div className="strategy-pipeline-paso">
+              <span className="strategy-pipeline-emoji">🟢</span>
+              <strong>Production</strong>
+              <span>Capital real de <Link href="/pulso-mercado/trading">Trading Algorítmico</Link> (LP-001 / MP-001 / RA-001).</span>
+            </div>
+          </div>
+          <p className="activo-descripcion" style={{ marginTop: 14 }}>
+            Hoy no existe un "Paper Lab" separado con carteras virtuales independientes por
+            candidata — construirlo con datos inventados sería peor que no tenerlo. Lo más
+            parecido que existe ahora es la validación forward de EXP-005 (ver su reporte): un
+            recheck estadístico automático sobre el bucket congelado, no una cartera con capital
+            propio. Esta sección se actualizará en cuanto esa infraestructura exista de verdad.
+          </p>
+        </div>
+
+        <div className="activo-bloque">
           <h2>En producción</h2>
           <p className="activo-descripcion">
             Las {produccion.length} estrategias que hoy deciden las operaciones reales (paper
