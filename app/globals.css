@@ -73,6 +73,12 @@ html.dark {
 
 html {
   scroll-behavior: smooth;
+  /* Evita que Safari móvil "infle" el tamaño de letra dentro de tablas con
+     scroll horizontal (common en Research/Strategy Lab/Trading) — el ajuste
+     ya puesto solo en .prose table/th/td no basta: WebKit decide el boost
+     por la cadena de ancestros, no solo por el elemento con texto. */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
