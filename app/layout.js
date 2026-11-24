@@ -124,8 +124,14 @@ try {
 `;
 
 export default function RootLayout({ children }) {
+  // -webkit-text-size-adjust va inline a propósito: el minificador de CSS
+  // (Lightning CSS) estaba colapsando la regla equivalente en globals.css a
+  // solo "text-size-adjust", la versión sin prefijo que Safari/iOS Safari
+  // NUNCA soportó — dejaba el autoescalado de texto de Safari activo en
+  // tablas con scroll horizontal pese a la regla "arreglada". Un estilo
+  // inline no pasa por ese minificador, así que el prefijo sobrevive siempre.
   return (
-    <html lang="es" suppressHydrationWarning>
+    <html lang="es" suppressHydrationWarning style={{ WebkitTextSizeAdjust: "100%", textSizeAdjust: "100%" }}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: temaScript }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
