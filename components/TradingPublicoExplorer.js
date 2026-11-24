@@ -487,6 +487,113 @@ function TablaAbiertasBucket({ posiciones }) {
   );
 }
 
+function BucketDetalleCard({ bucket }) {
+  if (!bucket) return null;
+  return (
+    <div className="pulsodash-panel">
+      <div className="pulsodash-panel-head">
+        <span className="pulsodash-panel-title">{bucket.etiqueta}</span>
+        <span className="pulsodash-panel-sub">Desde {bucket.startDate}</span>
+      </div>
+
+      {bucket.suspendido && (
+        <div className="postura-aviso error" style={{ margin: "12px 0", padding: 16, borderRadius: 8 }}>
+          <strong>Bucket suspendido</strong> desde {bucket.suspendidoDesde}: {bucket.suspendidoRazon}.
+          No se liquidó nada — solo se bloquearon nuevas compras hasta reautorizar.
+        </div>
+      )}
+      {!bucket.suspendido && bucket.circuitBreakerHoy && (
+        <div className="postura-aviso error" style={{ margin: "12px 0", padding: 16, borderRadius: 8 }}>
+          <strong>Límite de pérdida diaria alcanzado hoy</strong> — sin nuevas compras hasta la próxima sesión.
+        </div>
+      )}
+
+      <div className="highlights-grid" style={{ margin: "16px 0 20px" }}>
+        <div className="highlight-item">
+          <span className="highlight-valor">${bucket.startingCapital}</span>
+          <span className="highlight-etiqueta">capital asignado</span>
+        </div>
+        <div className="highlight-item">
+          <span className="highlight-valor">${bucket.equityActual}</span>
+          <span className="highlight-etiqueta">equity actual</span>
+        </div>
+        <div className="highlight-item">
+          <span className="highlight-valor" style={{ color: toneColor(tonoDe(bucket.retornoAcumuladoPct)) }}>
+            {pct(bucket.retornoAcumuladoPct)}
+          </span>
+          <span className="highlight-etiqueta">retorno acumulado</span>
+        </div>
+        <div className="highlight-item">
+          <span className="highlight-valor">{pct(bucket.drawdownPct, { signo: false })}</span>
+          <span className="highlight-etiqueta">
+            drawdown{bucket.drawdownInconsistente ? " ⚠" : ""}
+          </span>
+        </div>
+        {!bucket.esInformativo && (
+          <div className="highlight-item">
+            <span className="highlight-valor">{bucket.posicionesAbiertas.length} / {bucket.totalCerradas}</span>
+            <span className="highlight-etiqueta">abiertas / cerradas</span>
+          </div>
+        )}
+        {bucket.totalCerradas >= 5 && bucket.winRatePct !== null && (
+          <div className="highlight-item">
+            <span className="highlight-valor">{bucket.winRatePct}%</span>
+            <span className="highlight-etiqueta">win rate</span>
+          </div>
+        )}
+        {!bucket.esInformativo && (
+          <div className="highlight-item">
+            <span className="highlight-valor" style={{ color: toneColor(tonoDe(bucket.pnlRealizadoTotal)) }}>
+              {dinero(bucket.pnlRealizadoTotal)}
+            </span>
+            <span className="highlight-etiqueta">P&amp;L realizado</span>
+          </div>
+        )}
+        {!bucket.esInformativo && (
+          <div className="highlight-item">
+            <span className="highlight-valor" style={{ color: toneColor(tonoDe(bucket.unrealizedPnlTotal)) }}>
+              {dinero(bucket.unrealizedPnlTotal)}
+            </span>
+            <span className="highlight-etiqueta">P&amp;L no realizado</span>
+          </div>
+        )}
+      </div>
+
+      {bucket.meta && (
+        <p className="pulsodash-vacio" style={{ marginBottom: bucket.drawdownInconsistente ? 8 : 20 }}>
+          Estrategia: {bucket.meta.estrategia} · riesgo por operación: {bucket.meta.riesgoPorOperacion} ·
+          límite de pérdida diaria: {bucket.meta.limitePerdidaDiaria} · drawdown de revisión: {bucket.meta.drawdownRevision}.
+        </p>
+      )}
+      {bucket.drawdownInconsistente && (
+        <p className="pulsodash-vacio" style={{ marginBottom: 20, color: "#d97706" }}>
+          ⚠ El equity de este bucket está por debajo de su capital inicial, pero el motor
+          reportó 0% de drawdown — es una inconsistencia conocida en el cálculo del motor
+          (ver Investigación), no un error de esta página.
+        </p>
+      )}
+
+      <h3 style={{ fontSize: "0.95rem", marginBottom: 8 }}>Curva de equity</h3>
+      <EquityChart history={bucket.historialDiario} startingCapital={bucket.startingCapital} height={160} />
+
+      {bucket.esInformativo ? (
+        <p className="pulsodash-vacio" style={{ marginTop: 20 }}>
+          {bucket.key === "benchmark_diversificado"
+            ? "No se muestra un detalle de compras/ventas aquí porque no las hay: esta canasta se compró una sola vez el día de arranque y no ha vuelto a tocarse. La curva de equity de arriba es real, día por día, y refleja solo el movimiento del mercado, no decisiones del motor."
+            : "No se muestra un detalle de compras/ventas individuales aquí: a diferencia de los buckets de arriba, el registro histórico de movimientos del blend en este motor quedó incompleto, así que listar operaciones específicas sería fabricar datos. La curva de equity de arriba sí es real, día por día, desde que arrancó."}
+        </p>
+      ) : (
+        <>
+          <h3 style={{ fontSize: "0.95rem", margin: "24px 0 8px" }}>
+            Posiciones abiertas en {bucket.etiqueta} ({bucket.posicionesAbiertas.length})
+          </h3>
+          <TablaAbiertasBucket posiciones={bucket.posicionesAbiertas} />
+        </>
+      )}
+    </div>
+  );
+}
+
 function ModuloPortafolios({ data }) {
   const opciones = data.bucketsConBlend || data.buckets;
   const [seleccion, setSeleccion] = useState(opciones[0]?.key || null);
@@ -507,110 +614,7 @@ function ModuloPortafolios({ data }) {
         ))}
       </div>
 
-      {bucket && (
-        <div className="pulsodash-panel">
-          <div className="pulsodash-panel-head">
-            <span className="pulsodash-panel-title">{bucket.etiqueta}</span>
-            <span className="pulsodash-panel-sub">Desde {bucket.startDate}</span>
-          </div>
-
-          {bucket.suspendido && (
-            <div className="postura-aviso error" style={{ margin: "12px 0", padding: 16, borderRadius: 8 }}>
-              <strong>Bucket suspendido</strong> desde {bucket.suspendidoDesde}: {bucket.suspendidoRazon}.
-              No se liquidó nada — solo se bloquearon nuevas compras hasta reautorizar.
-            </div>
-          )}
-          {!bucket.suspendido && bucket.circuitBreakerHoy && (
-            <div className="postura-aviso error" style={{ margin: "12px 0", padding: 16, borderRadius: 8 }}>
-              <strong>Límite de pérdida diaria alcanzado hoy</strong> — sin nuevas compras hasta la próxima sesión.
-            </div>
-          )}
-
-          <div className="highlights-grid" style={{ margin: "16px 0 20px" }}>
-            <div className="highlight-item">
-              <span className="highlight-valor">${bucket.startingCapital}</span>
-              <span className="highlight-etiqueta">capital asignado</span>
-            </div>
-            <div className="highlight-item">
-              <span className="highlight-valor">${bucket.equityActual}</span>
-              <span className="highlight-etiqueta">equity actual</span>
-            </div>
-            <div className="highlight-item">
-              <span className="highlight-valor" style={{ color: toneColor(tonoDe(bucket.retornoAcumuladoPct)) }}>
-                {pct(bucket.retornoAcumuladoPct)}
-              </span>
-              <span className="highlight-etiqueta">retorno acumulado</span>
-            </div>
-            <div className="highlight-item">
-              <span className="highlight-valor">{pct(bucket.drawdownPct, { signo: false })}</span>
-              <span className="highlight-etiqueta">
-                drawdown{bucket.drawdownInconsistente ? " ⚠" : ""}
-              </span>
-            </div>
-            {!bucket.esInformativo && (
-              <div className="highlight-item">
-                <span className="highlight-valor">{bucket.posicionesAbiertas.length} / {bucket.totalCerradas}</span>
-                <span className="highlight-etiqueta">abiertas / cerradas</span>
-              </div>
-            )}
-            {bucket.totalCerradas >= 5 && bucket.winRatePct !== null && (
-              <div className="highlight-item">
-                <span className="highlight-valor">{bucket.winRatePct}%</span>
-                <span className="highlight-etiqueta">win rate</span>
-              </div>
-            )}
-            {!bucket.esInformativo && (
-              <div className="highlight-item">
-                <span className="highlight-valor" style={{ color: toneColor(tonoDe(bucket.pnlRealizadoTotal)) }}>
-                  {dinero(bucket.pnlRealizadoTotal)}
-                </span>
-                <span className="highlight-etiqueta">P&amp;L realizado</span>
-              </div>
-            )}
-            {!bucket.esInformativo && (
-              <div className="highlight-item">
-                <span className="highlight-valor" style={{ color: toneColor(tonoDe(bucket.unrealizedPnlTotal)) }}>
-                  {dinero(bucket.unrealizedPnlTotal)}
-                </span>
-                <span className="highlight-etiqueta">P&amp;L no realizado</span>
-              </div>
-            )}
-          </div>
-
-          {bucket.meta && (
-            <p className="pulsodash-vacio" style={{ marginBottom: bucket.drawdownInconsistente ? 8 : 20 }}>
-              Estrategia: {bucket.meta.estrategia} · riesgo por operación: {bucket.meta.riesgoPorOperacion} ·
-              límite de pérdida diaria: {bucket.meta.limitePerdidaDiaria} · drawdown de revisión: {bucket.meta.drawdownRevision}.
-            </p>
-          )}
-          {bucket.drawdownInconsistente && (
-            <p className="pulsodash-vacio" style={{ marginBottom: 20, color: "#d97706" }}>
-              ⚠ El equity de este bucket está por debajo de su capital inicial, pero el motor
-              reportó 0% de drawdown — es una inconsistencia conocida en el cálculo del motor
-              (ver Investigación), no un error de esta página.
-            </p>
-          )}
-
-          <h3 style={{ fontSize: "0.95rem", marginBottom: 8 }}>Curva de equity</h3>
-          <EquityChart history={bucket.historialDiario} startingCapital={bucket.startingCapital} height={160} />
-
-          {bucket.esInformativo ? (
-            <p className="pulsodash-vacio" style={{ marginTop: 20 }}>
-              No se muestra un detalle de compras/ventas individuales aquí: a diferencia de los
-              buckets de arriba, el registro histórico de movimientos del blend en este motor
-              quedó incompleto, así que listar operaciones específicas sería fabricar datos. La
-              curva de equity de arriba sí es real, día por día, desde que arrancó.
-            </p>
-          ) : (
-            <>
-              <h3 style={{ fontSize: "0.95rem", margin: "24px 0 8px" }}>
-                Posiciones abiertas en {bucket.etiqueta} ({bucket.posicionesAbiertas.length})
-              </h3>
-              <TablaAbiertasBucket posiciones={bucket.posicionesAbiertas} />
-            </>
-          )}
-        </div>
-      )}
+      <BucketDetalleCard bucket={bucket} />
 
       <div className="pulsodash-panel" style={{ marginTop: 24 }}>
         <div className="pulsodash-panel-head">
@@ -1002,6 +1006,14 @@ const MOTORES = [
 export default function TradingPublicoExplorer({ data, dataIbkr }) {
   const [motor, setMotor] = useState("paper");
   const datos = { paper: data, ibkr: dataIbkr };
+  // Solo existe en el snapshot del motor paper (ADR 0039) — el motor IBKR
+  // todavía no lo trackea. No es un tercer motor con estrategia propia: es
+  // la misma plata de las 3 canastas, comprada una vez y nunca tocada, para
+  // comparar "operar activamente" contra "comprar y mantener". Se muestra
+  // aparte, con su propio botón, para poder darle seguimiento igual de
+  // detallado que a los motores reales sin mezclarlo con ellos.
+  const benchmark = data?.benchmarkDiversificado || null;
+  const activoBenchmark = motor === "benchmark";
 
   return (
     <div>
@@ -1030,9 +1042,38 @@ export default function TradingPublicoExplorer({ data, dataIbkr }) {
             </button>
           );
         })}
+        {benchmark && (
+          <button
+            type="button"
+            role="tab"
+            aria-selected={activoBenchmark}
+            className={`motor-boton${activoBenchmark ? " activo" : ""}`}
+            onClick={() => setMotor(activoBenchmark ? null : "benchmark")}
+          >
+            <span className="motor-boton-titulo">Benchmark Diversificado</span>
+            <span className="motor-boton-sub">Comprar y mantener: 40% SPY / 30% AGG / 20% GLD / 10% VNQ</span>
+            <span className="motor-boton-cifras">
+              <strong>${benchmark.equityActual}</strong>
+              <span className={`motor-boton-ret ${tonoDe(benchmark.retornoAcumuladoPct)}`}>{pct(benchmark.retornoAcumuladoPct)}</span>
+            </span>
+            <span className="motor-boton-flecha">{activoBenchmark ? "▲ Ocultar" : "▼ Ver detalle"}</span>
+          </button>
+        )}
       </div>
-      {motor && datos[motor] && (
+      {motor && motor !== "benchmark" && datos[motor] && (
         <PanelMotor key={motor} data={datos[motor]} nota={MOTORES.find((m) => m.id === motor).nota} />
+      )}
+      {activoBenchmark && benchmark && (
+        <div className="motor-panel">
+          <p className="motor-nota">
+            No es un cuarto bucket ni un motor con estrategia propia: es la misma cantidad de
+            dinero que tenían las 3 canastas del motor paper el {benchmark.startDate}, invertida
+            una sola vez en esta canasta fija y nunca tocada después — para responder "¿valió la
+            pena operar activamente, o hubiera dado igual comprar y mantener?". Solo existe en el
+            motor paper; el motor IBKR todavía no lo trackea.
+          </p>
+          <BucketDetalleCard bucket={benchmark} />
+        </div>
       )}
     </div>
   );
