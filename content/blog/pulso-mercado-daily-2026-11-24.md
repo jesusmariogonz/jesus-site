@@ -12,7 +12,7 @@ tags:
   - Insmed
   - Dell
   - Fed
-resumen: 'Los futuros de Wall Street caen en premercado y Nvidia revierte parte de su salto del lunes, mientras Anthropic vuelve a tocar su precio de colocación de $83. Sanofi anunció la compra de Insmed por $41,000 millones, la operación de biotecnológicas más grande del año. El mercado entra a una semana corta por Acción de Gracias con el dato de PCE del miércoles como la próxima variable clave.'
+resumen: 'Wall Street cerró mixto: el Dow subió 0.85% pero el Nasdaq cayó 1.48% y el S&P 500 0.50%, arrastrados por una nueva caída de Nvidia y el desplome de Dell antes de reportar resultados. Anthropic cerró por debajo de su precio de colocación de $83 por primera vez. Sanofi anunció la compra de Insmed por $41,000 millones. El peso mexicano se depreció con fuerza, rompiendo los 19.40 por dólar.'
 imagen: /blog/portadas/mercados-hoy-fija.jpg
 socialImagen: /blog/social/pulso-mercado-daily-2026-11-24.jpg
 ---
@@ -21,31 +21,33 @@ socialImagen: /blog/social/pulso-mercado-daily-2026-11-24.jpg
 
 | Activo | Nivel | Cambio |
 |---|---|---|
-| S&P 500 | 7,237.17 | +4.73% |
-| Nasdaq Composite | 24,089.56 | +6.51% |
-| Russell 2000 | 2,669.65 | +3.40% |
-| Dow Jones | 49,595.31 | +3.01% |
-| VIX | 26.55 | -26.02% |
-| S&P/BMV IPC | 69,343.61 | +1.04% |
-| USD/MXN | 19.17 | +0.44% |
-| US 10Y | 4.918% | +0.12% |
-| WTI | $80.26 | -4.43% |
-
-*Niveles del cierre confirmado del lunes 23 de noviembre (ver [Pulso de Mercado — Daily · 23/11/2026](/blog/pulso-mercado-daily-2026-11-23) para el detalle completo de esa sesión). La sesión de hoy todavía no cierra al momento de esta edición.*
+| S&P 500 | 7,201.09 | -0.50% |
+| Nasdaq Composite | 23,733.54 | -1.48% |
+| Russell 2000 | 2,684.94 | +0.57% |
+| Dow Jones | 50,018.70 | +0.85% |
+| VIX | 26.15 | -1.77% |
+| S&P/BMV IPC | 69,293.79 | -0.09% |
+| USD/MXN | 19.42 | +1.79% |
+| US 10Y | 4.904% | -0.28% |
+| WTI | $81.43 | +1.57% |
 
 ## Market Regime
 
-El mercado entra a la sesión de hoy revirtiendo parte del salto del lunes, cuando el S&P 500 saltó 4.73% y el Nasdaq 6.51% después de que Nvidia reinstaló a Jensen Huang como director ejecutivo. En el premercado de hoy, los futuros del S&P 500 caen alrededor de 1%, los del Nasdaq 100 entre 1.7% y 2.3% según el reporte, y los del Dow retroceden cerca de 0.8%, con reportes financieros atribuyendo la reversión a que Nvidia pierde entre 4% y 5.5% en operaciones previas a la apertura, después de haber subido entre 30% y 35% apenas un día antes. Anthropic, que ya había cerrado el lunes prácticamente en su precio de colocación, volvió a cotizar brevemente por debajo de los $83 por acción en el premercado de hoy —la primera vez que el mercado público la valora por debajo de lo que pagaron los compradores de la oferta inicial, según reportes financieros de la mañana—. El mercado entra a una semana corta por el feriado de Acción de Gracias del jueves, con el dato de PCE del miércoles —la medida de inflación preferida de la Fed— como la próxima variable macro relevante antes de la decisión de tasas del 9 de diciembre.
+Wall Street cerró hoy una sesión mixta que revirtió parte del salto del lunes: el Dow Jones subió 0.85% a 50,018.70, impulsado por nombres fuera de tecnología, mientras el S&P 500 cayó 0.50% a 7,201.09 y el Nasdaq Composite retrocedió 1.48% a 23,733.54, arrastrados de nuevo por semiconductores. Nvidia cayó alrededor de 6-7% en la sesión, borrando una parte adicional de su valor de mercado apenas un día después de subir hasta 35% por la reinstalación de Jensen Huang como director ejecutivo —el llamado "efecto Huang" no se sostuvo una segunda sesión—. Dell Technologies cayó cerca de 11% antes de reportar resultados después del cierre, arrastrado por la debilidad de HPE en servidores de IA. Anthropic cerró hoy por primera vez por debajo de su precio de colocación de $83 por acción, cerrando la secuencia que esta serie ha documentado desde su debut: de 34% de ganancia en la apertura a cotizar, apenas días después, por debajo de lo que pagaron los compradores de la oferta inicial. El peso mexicano se depreció con fuerza, rompiendo los 19.40 por dólar por primera vez desde junio de 2025, según reportes financieros de la jornada. El VIX cerró en 26.15, una baja marginal frente a ayer, todavía lejos del pico de pánico del viernes pasado.
 
-Scorecard: Trend → → (el repunte del lunes se revierte parcialmente en el premercado, sin que esta sesión haya cerrado todavía) · Breadth → ↓ (la reversión está otra vez concentrada en semiconductores y Nvidia) · Momentum → ↓ (el "efecto Huang" no logró sostenerse una segunda sesión) · Volatility → — (sin cierre confirmado del VIX para hoy) · Rates → — (sin cierre confirmado del Treasury para hoy) · USD → — (sin cierre confirmado del peso para hoy)
+Scorecard: Trend → ↓ (sesión mixta con sesgo negativo en los índices de más peso tecnológico) · Breadth → ↓ (semiconductores volvió a liderar las pérdidas, mientras Dow y Russell 2000 cerraron en verde) · Momentum → ↓ (el "efecto Huang" no logró sostenerse una segunda sesión) · Volatility → ↓ (VIX cerró marginalmente a la baja, en 26.15) · Rates → ↓ (Treasury a 10 años bajó ligeramente a 4.904%) · USD → ↑ (el peso se depreció con fuerza, rompiendo los 19.40 por dólar)
 
 ## Qué importó hoy
 
-**Nvidia revierte entre 4% y 5.5% en el premercado, apenas un día después de subir entre 30% y 35% por la reinstalación de Jensen Huang como director ejecutivo.** Reportes financieros de la mañana atribuyen la reversión a que el llamado "efecto Huang" —el alivio puntual por su regreso— no se sostiene como catalizador por sí solo mientras la investigación de la SEC sobre la empresa sigue abierta. Horizonte: Swing.
+**Nvidia cayó entre 6% y 7% hoy, apenas un día después de subir hasta 35% por la reinstalación de Jensen Huang como director ejecutivo.** La reversión confirma que el alivio puntual por su regreso no se sostiene como catalizador por sí solo mientras la investigación de la SEC sobre la empresa sigue abierta. Horizonte: Swing.
 
-**Sanofi anunció la compra de Insmed por $41,000 millones de dólares en efectivo, a $175 por acción —una prima significativa sobre el valor de mercado de Insmed antes de que Bloomberg reportara la semana pasada que Sanofi evaluaba la operación—.** Es la operación de fusiones y adquisiciones más grande anunciada en el sector biotecnológico este año, y responde a lo que la propia prensa especializada describe como la necesidad de Sanofi de diversificar su cartera de cara al vencimiento de patente de Dupixent, su medicamento más vendido. Horizonte: Long Term.
+**Dell Technologies cayó cerca de 11% antes de reportar resultados después del cierre de hoy, arrastrado por la debilidad de HPE y otros nombres de servidores de IA.** Es la referencia más esperada de la semana sobre demanda de infraestructura de cómputo para IA, justo en el momento de mayor sensibilidad del mercado hacia cualquier señal sobre el sector. Horizonte: Swing.
 
-**Anthropic volvió a cotizar brevemente por debajo de su precio de colocación de $83 en el premercado de hoy.** Es la secuencia que esta serie ha documentado día a día desde su debut: de 34% de ganancia en la apertura, a 17% al cierre del primer día, a casi de vuelta al precio de IPO el viernes, y ahora, apenas unos días después, por debajo de él. Horizonte: Long Term.
+**Anthropic cerró hoy por primera vez por debajo de su precio de colocación de $83 por acción.** Es la secuencia completa que esta serie ha documentado desde su debut: de 34% de ganancia en la apertura, a 17% al cierre del primer día, a casi de vuelta al precio de IPO el viernes, y ahora, apenas unos días después, por debajo de él. Horizonte: Long Term.
+
+**Sanofi anunció la compra de Insmed por $41,000 millones de dólares en efectivo, a $175 por acción —una prima significativa sobre el valor de mercado de Insmed antes de que Bloomberg reportara la semana pasada que Sanofi evaluaba la operación—.** Es la operación de fusiones y adquisiciones más grande anunciada en el sector biotecnológico este año, y responde a la necesidad de Sanofi de diversificar su cartera de cara al vencimiento de patente de Dupixent, su medicamento más vendido. Horizonte: Long Term.
+
+**El peso mexicano se depreció con fuerza hoy, rompiendo los 19.40 por dólar por primera vez desde junio de 2025.** Es una depreciación notable incluso en un día en que el apetito por riesgo global fue, en el margen, negativo pero no extremo, lo que sugiere que al menos parte del movimiento responde a factores específicos del peso, no solo al ánimo general de Wall Street. Horizonte: Swing.
 
 ## Macro
 
@@ -53,23 +55,23 @@ No hay publicaciones de datos macroeconómicos de Estados Unidos programadas par
 
 ## Tasas y bonos
 
-Sin cierre confirmado del Treasury a 10 años para la sesión de hoy al momento de esta edición; el cierre del lunes fue 4.918%.
+El Treasury a 10 años cerró en 4.904%, una baja marginal de 0.28% frente a ayer, consistente con una sesión de sesgo moderadamente negativo para activos de riesgo.
 
 ## FX y commodities
 
-Sin cierre confirmado del peso mexicano ni del WTI para la sesión de hoy al momento de esta edición.
+El peso mexicano se depreció 1.79% a 19.42 por dólar, rompiendo el umbral de 19.40 por primera vez desde junio de 2025. El WTI subió 1.57% a $81.43 por barril, revirtiendo parte de su caída del lunes.
 
 ## Sectores
 
-Semiconductores lidera la reversión de hoy en sentido contrario al repunte del lunes: Nvidia cae entre 4% y 5.5% en el premercado, revirtiendo buena parte de su salto de ayer. Salud/biotecnología está en el centro de la atención por motivos distintos: Insmed subió con fuerza tras confirmarse la compra de Sanofi, consistente con el salto que ya había tenido la semana pasada cuando se reportó por primera vez el interés de Sanofi.
+Semiconductores volvió a liderar las pérdidas de la sesión: Nvidia cayó entre 6% y 7%, y Dell cedió cerca de 11% antes de reportar resultados, arrastrado por la debilidad de HPE en servidores de IA. Salud/biotecnología estuvo en el centro de la atención por motivos distintos: Insmed subió con fuerza tras confirmarse la compra de Sanofi, consistente con el salto que ya había tenido la semana pasada cuando se reportó por primera vez el interés de Sanofi.
 
 ## Swing
 
-La velocidad con la que el mercado revierte el "efecto Huang" —de una de las mejores sesiones en meses el lunes a futuros en rojo liderados por el propio Nvidia apenas un día después— sugiere que el alivio por su regreso no resuelve, por sí solo, la incertidumbre regulatoria de fondo sobre la empresa. Vale la pena vigilar si esta reversión se profundiza durante la sesión de hoy o si encuentra piso antes del cierre.
+La velocidad con la que el mercado revirtió el "efecto Huang" —de una de las mejores sesiones en meses el lunes a una nueva caída de Nvidia y Dell apenas un día después— confirma que el alivio por el regreso de Huang no resuelve, por sí solo, la incertidumbre regulatoria de fondo sobre la empresa. El reporte de Dell después del cierre de hoy será la primera prueba real de si el sector encuentra un catalizador distinto al ruido de gobierno corporativo de Nvidia.
 
 ## Position
 
-La reversión de hoy no cambia, por ahora, la lectura de fondo que esta serie documentó ayer: el episodio completo de la semana pasada —salida de Huang, investigación de la SEC, liquidación, reinstalación, repunte— sigue sin resolverse en ninguna dirección definitiva. La pregunta de cara a los próximos días es si el mercado encuentra un nuevo catalizador (la propia investigación de la SEC, el reporte de Dell de esta noche, o el dato de PCE de mañana) que le dé una dirección más duradera que la volatilidad de los últimos tres días hábiles.
+La sesión de hoy no cambia la lectura de fondo que esta serie documentó ayer: el episodio completo de la semana pasada —salida de Huang, investigación de la SEC, liquidación, reinstalación, repunte, nueva reversión— sigue sin resolverse en ninguna dirección definitiva. La pregunta de cara a los próximos días es si el mercado encuentra un catalizador (la propia investigación de la SEC, el reporte de Dell de esta noche, o el dato de PCE de mañana) que le dé una dirección más duradera que la volatilidad de los últimos cuatro días hábiles.
 
 ## Long Term
 
@@ -96,13 +98,11 @@ El riesgo más inmediato es que la reversión de Nvidia en el premercado se prof
 - Si Nvidia estabiliza su reversión de hoy o si la liquidación se profundiza.
 - Cualquier desarrollo adicional sobre el alcance de la investigación de la SEC a Nvidia.
 
-## Pendientes de esta edición
-
-- VIX, S&P/BMV IPC, USD/MXN, US 10Y y WTI: la sesión de hoy no había cerrado al momento de esta edición; el Market Snapshot refleja el cierre confirmado del lunes.
-
 ## Fuentes
 
 - [Pulso de Mercado — Daily · 23/11/2026](/blog/pulso-mercado-daily-2026-11-23) — jgonzalez.app
-- [Futures turn red as Huang-effect fails to deliver another day of gains](https://www.cnbc.com/2026/11/24/futures-turn-red-as-huang-effect-fails-to-deliver-another-day-of-gains.html) — CNBC
+- [Stock market today: Dow rises, S&P 500 and Nasdaq decline as chip sector tumbles, Nvidia stock falls 6%](https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-24-dow-sp-500-nasdaq-chip-stocks-nvidia-140629923.html) — Yahoo Finance
+- [Why Is Dell Stock Down Today? Shares Fall 11% to $297.82 as HPE Slide Hits AI Server Names](https://aroundprague.cz/en/news/us/why-is-dell-stock-down-today-shares-fall-11-to-297-82-as-hpe-slide-hits-ai) — reporte de mercado
 - [Facing down Dupixent cliff, Sanofi mulls buyout of Insmed and its blockbuster-to-be Brinsupri](https://www.fiercepharma.com/pharma/facing-down-dupixent-cliff-sanofi-mulls-buyout-insmed-and-its-blockbuster-be-brinsupri) — Fierce Pharma
 - [Sanofi Form 6-K, noviembre 2026](https://www.sec.gov/Archives/edgar/data/0001121404/000119312526473314/d130092dex991.htm) — SEC EDGAR
+- Niveles de cierre de S&P 500, Nasdaq Composite, Dow Jones, Russell 2000, VIX, S&P/BMV IPC, USD/MXN, US 10Y y WTI — Yahoo Finance
