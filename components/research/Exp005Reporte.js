@@ -1,5 +1,7 @@
 import Link from "next/link";
 import r from "@/lib/research/exp005-resultados.json";
+import { getExp005PaperPortfolio } from "@/lib/strategies/paper-portfolio";
+import Exp005PaperPortfolio from "@/components/strategies/Exp005PaperPortfolio";
 
 /* Reporte técnico de EXP-005 (Reverse Winners). Corre en el pipeline propio
    de pulso-research-lab (DeepSeek-TDD para los 5 módulos de cómputo, código
@@ -36,7 +38,8 @@ const NOMBRE_METODO = {
   baseline_combo_ingenuo: "Combo ingenuo",
 };
 
-export default function Exp005Reporte() {
+export default async function Exp005Reporte() {
+  const paperPortfolio = await getExp005PaperPortfolio();
   const metodos = ["ganador", "baseline_momentum_simple", "baseline_buy_hold", "baseline_rsi_simple", "baseline_combo_ingenuo"];
   const criterios = [
     ["Supera a los 4 baselines", "sí", "sí", true],
@@ -55,7 +58,8 @@ export default function Exp005Reporte() {
           ["ficha", "Ficha técnica"], ["discovery", "1 · Qué se descubrió"], ["ganador", "2 · El bucket ganador"],
           ["resultado", "3 · Resultado en locked test"], ["criterios", "4 · Por qué INCONCLUSIVE"],
           ["robustez", "5 · Robustez adicional"], ["forward", "6 · Validación forward en curso"],
-          ["limitaciones", "7 · Limitaciones declaradas"], ["repro", "8 · Reproducibilidad"],
+          ["paper", "7 · Paper Portfolio en vivo"],
+          ["limitaciones", "8 · Limitaciones declaradas"], ["repro", "9 · Reproducibilidad"],
         ].map(([id, t]) => <a key={id} href={`#${id}`}>{t}</a>)}
       </nav>
 
@@ -149,13 +153,28 @@ export default function Exp005Reporte() {
         </p>
       </Sec>
 
-      <Sec id="limitaciones" n="7" titulo="Limitaciones declaradas">
+      <Sec id="paper" n="7" titulo="Paper Portfolio en vivo">
+        <p>
+          Distinto de la validación forward de arriba (que solo puntúa retrospectivamente, con
+          retorno de 30 sesiones ya completo): esta es una cartera con capital virtual que opera en
+          tiempo real sobre el mismo bucket congelado, sin esperar a poder calificar cada señal.
+          Complementa la validación forward, no la sustituye — ver{" "}
+          <Link href="https://github.com/jesusmariogonz/pulso-research-lab/blob/main/experiments/EXP-005-reverse-winners/PAPER_PORTFOLIO.md">
+            PAPER_PORTFOLIO.md
+          </Link>{" "}
+          para qué reglas de cartera son nuevas aquí (nunca probadas por la corrida original) y
+          cuáles son el mismo bucket ya validado.
+        </p>
+        <Exp005PaperPortfolio data={paperPortfolio} />
+      </Sec>
+
+      <Sec id="limitaciones" n="8" titulo="Limitaciones declaradas">
         <ul>
           {r.limitaciones.map((l, i) => <li key={i}>{l}</li>)}
         </ul>
       </Sec>
 
-      <Sec id="repro" n="8" titulo="Reproducibilidad">
+      <Sec id="repro" n="9" titulo="Reproducibilidad">
         <p>
           Pre-registro, contratos de implementación, código y resultado completo en{" "}
           <Link href={EXP_DIR}>{EXP_DIR.replace("https://github.com/", "")}</Link> del repositorio{" "}

@@ -8,7 +8,6 @@ import {
   ETIQUETA_ESTADO_ESTRATEGIA,
 } from "@/lib/strategies/catalog";
 import { getExp005PaperPortfolio } from "@/lib/strategies/paper-portfolio";
-import Exp005PaperPortfolio from "@/components/strategies/Exp005PaperPortfolio";
 
 export const metadata = {
   title: "Strategy Lab — Pulso de Mercado",
@@ -104,11 +103,26 @@ export default async function StrategyLabPage() {
           <h2>Paper Lab</h2>
           <p className="activo-descripcion">
             La cartera virtual de EXP-005 (Reverse Winners) — opera en tiempo real sobre el bucket
-            congelado de <Link href="/pulso-mercado/research/exp-005-reverse-winners">EXP-005</Link>,
-            sin reoptimizar nada. No sustituye su validación forward estadística; es la vista de
-            "cómo se vería operar" con capital virtual.
+            congelado, sin reoptimizar nada. No sustituye su validación forward estadística; es la
+            vista de "cómo se vería operar" con capital virtual. El detalle completo (Dashboard,
+            portafolio, historial de compras/ventas) vive en la propia página del experimento, no
+            aquí, para no duplicar el mismo tablero en dos lugares.
           </p>
-          <Exp005PaperPortfolio data={paperPortfolio} />
+          {paperPortfolio ? (
+            <p className="activo-descripcion">
+              Al cierre de {paperPortfolio.historial_diario.at(-1).fecha}: equity{" "}
+              <strong>${paperPortfolio.equity_actual.toFixed(2)}</strong> ({" "}
+              {paperPortfolio.retorno_acumulado_pct >= 0 ? "+" : ""}
+              {paperPortfolio.retorno_acumulado_pct.toFixed(2)}%), {paperPortfolio.n_posiciones_abiertas}{" "}
+              posiciones abiertas.{" "}
+              <Link href="/pulso-mercado/research/exp-005-reverse-winners#paper">Ver el detalle completo →</Link>
+            </p>
+          ) : (
+            <p className="activo-descripcion">
+              La cartera todavía no ha corrido por primera vez — ver{" "}
+              <Link href="/pulso-mercado/research/exp-005-reverse-winners#paper">EXP-005</Link>.
+            </p>
+          )}
         </div>
 
         <div className="activo-bloque">
