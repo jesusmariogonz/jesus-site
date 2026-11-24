@@ -40,7 +40,7 @@ No logramos confirmar un calendario de oradores de la Fed para esta semana espec
 
 | Empresa | Ticker | Fecha | Momento | Sector | Por qué importa |
 |---|---|---|---|---|---|
-| Zoom | ZM | Lunes 23 de noviembre | Después del cierre | Software empresarial | Referencia sobre gasto corporativo en software de colaboración de cara a 2027 |
+| [Zoom](/blog/zoom-resultados-tercer-trimestre-fiscal-2027-dividendo-enterprise) | ZM | Lunes 23 de noviembre | Después del cierre | Software empresarial | Referencia sobre gasto corporativo en software de colaboración de cara a 2027 |
 | Best Buy | BBY | Martes 24 de noviembre | Antes de la apertura | Retail / electrónica | Referencia directa sobre gasto discrecional en electrónicos justo después del Buen Fin y de cara a la temporada de fin de año |
 | HP | HPQ | Martes 24 de noviembre | Después del cierre | Hardware / PC | Contexto sobre demanda empresarial de equipo de cómputo |
 | Workday | WDAY | Martes 24 de noviembre | Después del cierre | Software empresarial / RR.HH. | Referencia sobre adopción de agentes de IA en software de nómina y recursos humanos |
