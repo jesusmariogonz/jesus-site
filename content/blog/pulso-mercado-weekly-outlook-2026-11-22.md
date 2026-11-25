@@ -25,8 +25,8 @@ Wall Street cierra el viernes 20 de noviembre su peor semana de 2026 —S&P 500 
 
 | Fecha | Evento | País | Importancia | Qué puede afectar |
 |---|---|---|---|---|
-| Martes 24 de noviembre | Confianza del consumidor (Conference Board), noviembre | Estados Unidos | Media | El dato de octubre fue 91.7, en recuperación desde 84.2 en septiembre; la lectura de noviembre llega con el mercado ya en corrección, lo que podría mostrar el primer impacto de la caída bursátil sobre el ánimo del consumidor |
-| Martes 24 de noviembre | INPC primera quincena de noviembre | México | Alta | Primer dato de inflación mexicana desde el repunte de tres meses consecutivos que esta serie documentó en semanas previas; INEGI no había publicado el dato al cierre de esta edición |
+| Martes 24 de noviembre | [Confianza del consumidor (Conference Board), noviembre](/blog/confianza-consumidor-eu-inflacion-mexico-24-noviembre-2026) | Estados Unidos | Media | El dato de octubre fue 91.7, en recuperación desde 84.2 en septiembre; la lectura de noviembre llega con el mercado ya en corrección, lo que podría mostrar el primer impacto de la caída bursátil sobre el ánimo del consumidor |
+| Martes 24 de noviembre | [INPC primera quincena de noviembre](/blog/confianza-consumidor-eu-inflacion-mexico-24-noviembre-2026) | México | Alta | Primer dato de inflación mexicana desde el repunte de tres meses consecutivos que esta serie documentó en semanas previas; INEGI no había publicado el dato al cierre de esta edición |
 | Miércoles 25 de noviembre, 8:30am ET | PCE y Ingreso y Gasto Personal (octubre) | Estados Unidos | Alta | Medida de inflación preferida de la Fed; llega 15 días antes de la decisión de diciembre, donde los futuros ya asignan cerca de 97% de probabilidad a un alza de 25 puntos base |
 | Miércoles 25 de noviembre, 8:30am ET | Pedidos de bienes durables (octubre) | Estados Unidos | Media | Consenso previo de analistas apuntaba a una desaceleración del momentum frente a septiembre |
 | Miércoles 25 de noviembre, 8:30am ET | PIB del tercer trimestre (revisión) y solicitudes iniciales de desempleo | Estados Unidos | Media | Revisión del crecimiento del trimestre ya reportado; las solicitudes de desempleo han rondado 200,000-220,000 en semanas recientes |
@@ -41,12 +41,12 @@ No logramos confirmar un calendario de oradores de la Fed para esta semana espec
 | Empresa | Ticker | Fecha | Momento | Sector | Por qué importa |
 |---|---|---|---|---|---|
 | [Zoom](/blog/zoom-resultados-tercer-trimestre-fiscal-2027-dividendo-enterprise) | ZM | Lunes 23 de noviembre | Después del cierre | Software empresarial | Referencia sobre gasto corporativo en software de colaboración de cara a 2027 |
-| Best Buy | BBY | Martes 24 de noviembre | Antes de la apertura | Retail / electrónica | Referencia directa sobre gasto discrecional en electrónicos justo después del Buen Fin y de cara a la temporada de fin de año |
-| HP | HPQ | Martes 24 de noviembre | Después del cierre | Hardware / PC | Contexto sobre demanda empresarial de equipo de cómputo |
-| Workday | WDAY | Martes 24 de noviembre | Después del cierre | Software empresarial / RR.HH. | Referencia sobre adopción de agentes de IA en software de nómina y recursos humanos |
-| Analog Devices | ADI | Martes 24 de noviembre | Antes de la apertura | Semiconductores | Reporte de un nombre de chips distinto a Nvidia/AMD, en la misma semana que ambas siguen bajo presión regulatoria y de research |
-| Medtronic | MDT | Martes 24 de noviembre | Antes de la apertura | Salud / dispositivos médicos | Sector defensivo, relevante tras la rotación hacia consumo básico y salud que se vio el viernes pasado |
-| Dell Technologies | DELL | Martes 24 de noviembre | Después del cierre | Hardware / infraestructura de IA | Referencia sobre demanda de servidores e infraestructura de cómputo para IA, en medio del nerviosismo sobre el sector |
+| [Best Buy](/blog/resultados-trimestrales-dell-best-buy-hp-workday-adi-medtronic-24-noviembre) | BBY | Martes 24 de noviembre | Antes de la apertura | Retail / electrónica | Referencia directa sobre gasto discrecional en electrónicos justo después del Buen Fin y de cara a la temporada de fin de año |
+| [HP](/blog/resultados-trimestrales-dell-best-buy-hp-workday-adi-medtronic-24-noviembre) | HPQ | Martes 24 de noviembre | Después del cierre | Hardware / PC | Contexto sobre demanda empresarial de equipo de cómputo |
+| [Workday](/blog/resultados-trimestrales-dell-best-buy-hp-workday-adi-medtronic-24-noviembre) | WDAY | Martes 24 de noviembre | Después del cierre | Software empresarial / RR.HH. | Referencia sobre adopción de agentes de IA en software de nómina y recursos humanos |
+| [Analog Devices](/blog/resultados-trimestrales-dell-best-buy-hp-workday-adi-medtronic-24-noviembre) | ADI | Martes 24 de noviembre | Antes de la apertura | Semiconductores | Reporte de un nombre de chips distinto a Nvidia/AMD, en la misma semana que ambas siguen bajo presión regulatoria y de research |
+| [Medtronic](/blog/resultados-trimestrales-dell-best-buy-hp-workday-adi-medtronic-24-noviembre) | MDT | Martes 24 de noviembre | Antes de la apertura | Salud / dispositivos médicos | Sector defensivo, relevante tras la rotación hacia consumo básico y salud que se vio el viernes pasado |
+| [Dell Technologies](/blog/resultados-trimestrales-dell-best-buy-hp-workday-adi-medtronic-24-noviembre) | DELL | Martes 24 de noviembre | Después del cierre | Hardware / infraestructura de IA | Referencia sobre demanda de servidores e infraestructura de cómputo para IA, en medio del nerviosismo sobre el sector |
 | Deere & Company | DE | Miércoles 25 de noviembre | No confirmado | Maquinaria agrícola | Referencia sobre gasto de capital en el sector agrícola estadounidense |
 
 ## Market Setup
