@@ -11,7 +11,7 @@ tags:
   - PCE
   - Fed
   - Acción de Gracias
-resumen: 'Wall Street cerró ayer mixto: el Dow subió 0.85% pero el S&P 500 y el Nasdaq cayeron, arrastrados por una nueva caída de Nvidia. Dell reportó después del cierre un salto de 103% en ingresos por servidores de IA, con una reacción modesta por preocupaciones de margen. El mercado entra hoy a la sesión clave de la semana: el dato de PCE, 15 días antes de la decisión de la Fed, en la antesala del feriado de Acción de Gracias.'
+resumen: 'El PCE de octubre confirmó que la inflación subyacente subió a 3.3% anual, su nivel más alto en casi tres años, reforzando las apuestas de otra alza de la Fed en diciembre. Wall Street cerró mixto y el peso mexicano se desplomó a su nivel más débil en casi 19 meses, presionado por el cierre de operaciones de carry trade y una nueva amenaza arancelaria de Trump.'
 imagen: /blog/portadas/mercados-hoy-fija.jpg
 socialImagen: /blog/social/pulso-mercado-daily-2026-11-25.jpg
 ---
@@ -20,47 +20,45 @@ socialImagen: /blog/social/pulso-mercado-daily-2026-11-25.jpg
 
 | Activo | Nivel | Cambio |
 |---|---|---|
-| S&P 500 | 7,201.09 | -0.50% |
-| Nasdaq Composite | 23,733.54 | -1.48% |
-| Russell 2000 | 2,684.94 | +0.57% |
-| Dow Jones | 50,018.70 | +0.85% |
-| VIX | 26.36 | -0.98% |
-| S&P/BMV IPC | 69,301.41 | -0.08% |
-| USD/MXN | 19.17 | +0.51% |
-| US 10Y | 4.904% | -0.28% |
-| WTI | $82.05 | +2.35% |
-
-*Niveles del cierre confirmado del martes 24 de noviembre (ver [Pulso de Mercado — Daily · 24/11/2026](/blog/pulso-mercado-daily-2026-11-24) para el detalle completo de esa sesión).*
+| S&P 500 | 7,182.78 | -0.25% |
+| Nasdaq Composite | 23,585.80 | -0.62% |
+| Russell 2000 | 2,704.06 | +0.71% |
+| Dow Jones | 50,182.95 | +0.33% |
+| VIX | 28.15 | +6.79% |
+| S&P/BMV IPC | 71,404.96 | +3.04% |
+| USD/MXN | 19.58 | +2.10% |
+| US 10Y | 4.848% | -1.14% |
+| WTI | $84.19 | +2.61% |
 
 ## Market Regime
 
-Wall Street cerró ayer una sesión mixta por segundo día consecutivo: el Dow Jones subió 0.85% a 50,018.70, mientras el S&P 500 cayó 0.50% a 7,201.09 y el Nasdaq Composite retrocedió 1.48% a 23,733.54, arrastrados de nuevo por semiconductores. Después del cierre, Dell Technologies reportó un trimestre histórico —ingresos de $54,900 millones, un salto de 103% interanual, con ingresos de servidores de IA de $22,000 millones (+291%) y un backlog récord de $132,300 millones—, pero la reacción de la acción fue modesta, entre 2% y 4% en operaciones posteriores al cierre, atemperada por una guía de márgenes más débil para el cuarto trimestre. Es el mismo patrón que esta serie documentó ayer con Analog Devices: superar el consenso del trimestre que ya pasó importa cada vez menos si la guía hacia adelante genera dudas. El mercado entra hoy a una sesión corta antes del feriado de Acción de Gracias de mañana, con el dato de PCE de octubre —la medida de inflación preferida de la Fed, 15 días antes de la decisión de diciembre— como la variable más esperada del día, programado para las 8:30am ET.
+El PCE de octubre, publicado hoy, confirmó que la inflación subyacente —la medida preferida de la Fed— subió a 3.3% interanual, por encima del 3.2% esperado y su nivel más alto en casi tres años, mientras el índice general subió 3.8%, en línea con el consenso. El mercado ya asigna una probabilidad prácticamente total a un alza de 25 puntos base en la decisión del 9 de diciembre. Wall Street cerró con una sesión mixta: el Dow Jones subió 0.33% a 50,182.95 y el Russell 2000 ganó 0.71%, mientras el S&P 500 cayó 0.25% y el Nasdaq Composite retrocedió 0.62%, con el VIX subiendo con fuerza 6.79% a 28.15. El movimiento más dramático del día, sin embargo, ocurrió en México: el peso se depreció 2.10% a 19.58 por dólar —su nivel más débil en casi 19 meses, según reportes financieros—, presionado por el cierre de posiciones de carry trade, un menor apetito global por riesgo y una nueva amenaza arancelaria de Trump contra México ligada a migración. El S&P/BMV IPC, en cambio, avanzó con fuerza —3.04% en el día, según datos de Yahoo Finance, aunque reportes de medios mexicanos a media sesión mostraban un alza mucho más modesta de 0.43%—, una divergencia que esta edición no pudo reconciliar con una sola fuente de cierre confiable.
 
-Scorecard: Trend → → (sesión mixta, sin una dirección clara en los índices de mayor peso tecnológico) · Breadth → ↓ (semiconductores sigue liderando el nerviosismo, pese a resultados corporativos sólidos) · Momentum → ↓ (el mercado está exigiendo guías cada vez más convincentes, no solo resultados del trimestre ya cerrado) · Volatility → ↓ (VIX bajó marginalmente a 26.36) · Rates → ↓ (Treasury a 10 años bajó a 4.904%) · USD → ↑ (el peso se depreció 0.51% adicional, tras romper los 19.40 el día anterior)
+Scorecard: Trend → → (sesión mixta en EU, con el Dow y el Russell en verde y el Nasdaq en rojo) · Breadth → ↓ (el nerviosismo en semiconductores persiste pese a los resultados de Dell y Analog Devices) · Momentum → ↓ (el mercado exige guías cada vez más convincentes, no solo resultados ya reportados) · Volatility → ↑ (VIX subió con fuerza a 28.15) · Rates → ↓ (Treasury a 10 años bajó a 4.848%, pese al dato de inflación más caliente de lo esperado) · USD → ↑ (el peso se desplomó 2.10% a su nivel más débil en casi 19 meses)
 
 ## Qué importó hoy
 
-**Dell Technologies reportó ingresos de $54,900 millones (+103% interanual) después del cierre de ayer, con un backlog de pedidos de IA que alcanzó un récord de $132,300 millones.** Pese al salto histórico, la acción solo subió entre 2% y 4% en operaciones posteriores al cierre, porque la empresa guio a un margen operativo de su división de infraestructura por debajo de 15% para el cuarto trimestre, frente a 17% en el tercero. Horizonte: Position.
+**El PCE subyacente de octubre subió a 3.3% interanual, por encima del 3.2% esperado y su nivel más alto en casi tres años, mientras el índice general avanzó 3.8%, en línea con el consenso.** El mercado ya da por hecho un alza de 25 puntos base en la decisión de la Fed del 9 de diciembre. Horizonte: Position.
 
-**El dato de PCE de octubre se publica hoy a las 8:30am ET, 15 días antes de la decisión de tasas de la Fed del 9 de diciembre.** Es la variable macro más esperada de la semana corta por el feriado, y llega en un momento en que el mercado ya asigna una probabilidad alta a un alza de 25 puntos base en diciembre. Horizonte: Position.
+**El peso mexicano se desplomó 2.10% a 19.58 por dólar, su nivel más débil en casi 19 meses, en una sesión que reportes financieros atribuyeron al cierre de operaciones de carry trade, menor apetito global por riesgo y una nueva amenaza arancelaria de Trump contra México ligada a migración.** Es la segunda sesión consecutiva de depreciación marcada del peso, después de romper el umbral de 19.40 ayer. Horizonte: Swing.
 
-**El WTI subió 2.35% ayer a $82.05 por barril, revirtiendo parte de la caída de la sesión anterior.** Esta edición no pudo atribuir el movimiento con confianza a una causa específica de la sesión. Horizonte: Swing.
+**El Treasury a 10 años cayó a 4.848% pese a que el dato de PCE subyacente resultó más caliente de lo esperado.** Es un movimiento que normalmente se esperaría en sentido contrario ante una sorpresa inflacionaria al alza; esta edición no pudo atribuir la baja de rendimientos con confianza a una causa específica distinta a una posible búsqueda de refugio ante el nerviosismo cambiario y bursátil del día. Horizonte: Swing.
 
 ## Macro
 
-El dato de PCE e Ingreso y Gasto Personal de octubre se publica hoy a las 8:30am ET, junto con pedidos de bienes durables, la revisión del PIB del tercer trimestre y ventas de casas nuevas —una acumulación inusual de datos económicos antes del cierre por el feriado de mañana—. Esta edición, publicada antes de la apertura, no incluye todavía los resultados de esas publicaciones.
+El PCE e Ingreso y Gasto Personal de octubre confirmó una inflación subyacente de 3.3% anual (+0.29% mensual), por encima del 3.2% esperado y la lectura más alta desde hace casi tres años; el índice general subió 3.8%, en línea con el consenso. Es el último dato de inflación relevante antes de la decisión de la Fed del 9 de diciembre.
 
 ## Tasas y bonos
 
-El Treasury a 10 años cerró ayer en 4.904%, una baja de 0.28% frente al cierre anterior, en la antesala del dato de PCE de hoy.
+El Treasury a 10 años cerró en 4.848%, una baja de 1.14% frente a ayer, pese al dato de inflación subyacente más caliente de lo esperado.
 
 ## FX y commodities
 
-El peso mexicano se depreció 0.51% adicional ayer, a 19.17 por dólar, extendiendo la ruptura del umbral de 19.40 del día anterior. El WTI subió 2.35% a $82.05 por barril.
+El peso mexicano se desplomó 2.10% a 19.58 por dólar, su nivel más débil en casi 19 meses, presionado por el cierre de operaciones de carry trade, menor apetito global por riesgo y una nueva amenaza arancelaria de Trump contra México. El WTI subió 2.61% a $84.19 por barril.
 
 ## Sectores
 
-Semiconductores volvió a ser el sector más vigilado: Analog Devices cayó hasta 19% pese a superar expectativas, y aunque Dell reportó un trimestre histórico en servidores de IA, su reacción bursátil fue modesta por preocupaciones de margen. El patrón sugiere que el mercado está discriminando cada vez más entre el resultado ya reportado y la calidad de la guía hacia adelante.
+Semiconductores sigue siendo el sector más vigilado tras las reacciones dispares de Dell y Analog Devices esta semana. El peso mexicano protagonizó el movimiento más marcado del día, con una depreciación que reportes financieros vincularon al cierre de operaciones de carry trade y a renovadas tensiones comerciales con Estados Unidos.
 
 ## Swing
 
@@ -86,14 +84,20 @@ El riesgo más inmediato es que el dato de PCE de hoy sorprenda al alza, lo que 
 
 ## Qué vigilar mañana
 
-- El resultado del dato de PCE de hoy y la reacción del mercado antes del cierre por el feriado.
 - Mercados cerrados el jueves 26 por Acción de Gracias; sesión de cierre adelantado el viernes 27 (1:00pm ET).
+- Si la depreciación del peso se extiende o encuentra piso tras el nivel más débil en casi 19 meses.
+- Cualquier escalamiento o respuesta oficial de México a la nueva amenaza arancelaria de Trump.
 - Si la preocupación por márgenes en servidores de IA se extiende más allá de Dell y Analog Devices.
-- Cualquier desarrollo adicional sobre la investigación de la SEC a Nvidia.
+
+## Pendientes de esta edición
+
+- S&P/BMV IPC: el cierre de 71,404.96 puntos (+3.04%) proviene de Yahoo Finance, pero un reporte de medios mexicanos a media sesión mostraba un alza mucho más modesta (+0.43%, a 69,596 puntos); no logramos reconciliar ambas cifras con una fuente de cierre oficial confiable.
 
 ## Fuentes
 
 - [Pulso de Mercado — Daily · 24/11/2026](/blog/pulso-mercado-daily-2026-11-24) — jgonzalez.app
 - [Dell, Best Buy, HP, Workday, Analog Devices y Medtronic: resultados del 24 de noviembre](/blog/resultados-trimestrales-dell-best-buy-hp-workday-adi-medtronic-24-noviembre) — jgonzalez.app
-- [DELL Stock Gains After-Hours As AI Server Boom Leads Record Q3, Prompts Third Annual Forecast Hike](https://finance.yahoo.com/markets/stocks/articles/dell-stock-gains-hours-ai-223102322.html) — Yahoo Finance
+- [La confianza del consumidor en EU saltó a su nivel más alto en casi dos años. La inflación en México subió por cuarta quincena consecutiva](/blog/confianza-consumidor-eu-inflacion-mexico-24-noviembre-2026) — jgonzalez.app
+- [PCE inflation report October 2026: Fed's preferred inflation gauge accelerated to 3.8%](https://www.cnbc.com/2026/11/25/pce-inflation-report-october-2026.html) — CNBC
+- [Precio del Dólar hoy, máximo en casi 18 meses: Peso mexicano cae tras inflación](https://mx.investing.com/news/forex-news/precio-del-dolar-hoy-maximo-en-casi-18-meses-peso-mexicano-cae-tras-inflacion-3861794) — Investing.com
 - Niveles de cierre de S&P 500, Nasdaq Composite, Dow Jones, Russell 2000, VIX, S&P/BMV IPC, USD/MXN, US 10Y y WTI — Yahoo Finance
