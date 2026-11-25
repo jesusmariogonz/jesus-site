@@ -156,6 +156,17 @@ Nota técnica: en commits de merge, el gate solo revisa las notas que
 son nuevas respecto a **todos** los padres del merge, para no volver a
 marcar como "nueva" una nota que ya se revisó en su propio push.
 
+## Git: no cambies la identidad del repo desde worktrees de prueba
+
+El 25-nov-2026 se descubrió que, desde el 17-nov, los commits de algunas
+sesiones salían con autor `t <t@t>`: una prueba del gate en un worktree
+temporal corrió `git config user.name/email`, y en un worktree eso escribe
+en la configuración **compartida** del repositorio. Si necesitas una
+identidad en una prueba, usa `git -c user.name=... -c user.email=... commit`
+(solo vale para ese comando) y verifica antes de empujar con
+`git config user.email` que sigue siendo la de siempre
+(`noreply@anthropic.com`).
+
 ## Toda nota nueva debe traer su portada "tratada", no una foto cruda del banco
 
 `public/blog/portadas/` tiene un banco de fotos genéricas reutilizables
