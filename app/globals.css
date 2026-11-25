@@ -6779,3 +6779,7 @@ html:not(.dark) .pglobe-land {
   .pulso-mini-layout { flex-direction: column; }
   .pulso-mini-meter { justify-content: center; }
 }
+
+/* Panel /admin/llm */
+.admin-llm-tabla { width: 100%; border-collapse: collapse; margin-bottom: 8px; font-size: 14px; }
+.admin-llm-tabla th, .admin-llm-tabla td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--border, #2a2a2a); }
