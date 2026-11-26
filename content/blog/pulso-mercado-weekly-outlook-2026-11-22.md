@@ -47,7 +47,7 @@ No logramos confirmar un calendario de oradores de la Fed para esta semana espec
 | [Analog Devices](/blog/resultados-trimestrales-dell-best-buy-hp-workday-adi-medtronic-24-noviembre) | ADI | Martes 24 de noviembre | Antes de la apertura | Semiconductores | Reporte de un nombre de chips distinto a Nvidia/AMD, en la misma semana que ambas siguen bajo presión regulatoria y de research |
 | [Medtronic](/blog/resultados-trimestrales-dell-best-buy-hp-workday-adi-medtronic-24-noviembre) | MDT | Martes 24 de noviembre | Antes de la apertura | Salud / dispositivos médicos | Sector defensivo, relevante tras la rotación hacia consumo básico y salud que se vio el viernes pasado |
 | [Dell Technologies](/blog/resultados-trimestrales-dell-best-buy-hp-workday-adi-medtronic-24-noviembre) | DELL | Martes 24 de noviembre | Después del cierre | Hardware / infraestructura de IA | Referencia sobre demanda de servidores e infraestructura de cómputo para IA, en medio del nerviosismo sobre el sector |
-| Deere & Company | DE | Miércoles 25 de noviembre | No confirmado | Maquinaria agrícola | Referencia sobre gasto de capital en el sector agrícola estadounidense |
+| [Deere & Company](/blog/deere-resultados-cuarto-trimestre-fiscal-2026-racha-seis-trimestres) | DE | Miércoles 25 de noviembre | No confirmado | Maquinaria agrícola | Referencia sobre gasto de capital en el sector agrícola estadounidense |
 
 ## Market Setup
 
