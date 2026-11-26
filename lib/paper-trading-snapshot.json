@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T21:37:53.300242+00:00",
+  "generated_at": "2026-11-26T14:43:27.411620+00:00",
   "source": "algo_trading_platform paper trading engine (simulado, sin dinero real)",
   "buckets": {
     "largo_plazo": {
@@ -700,7 +700,7 @@
           "daily_loss_breaker_tripped": true,
           "suspended": true,
           "suspended_reason": "Drawdown 8.8% alcanzó el límite de revisión (6%)",
-          "newly_suspended_today": true
+          "newly_suspended_today": false
         }
       ],
       "suspended": true,
@@ -1507,6 +1507,17 @@
               "entry_price": 355.58,
               "stop_price": 335.51,
               "risk_per_share": 20.07,
+              "risk_amount": 7.06,
+              "shares_calculadas": 0,
+              "costo_estimado": 0.0
+            },
+            {
+              "symbol": "JNJ",
+              "strategy": "trend_following",
+              "reason": "capital_insuficiente",
+              "entry_price": 273.94,
+              "stop_price": 257.73,
+              "risk_per_share": 16.21,
               "risk_amount": 7.06,
               "shares_calculadas": 0,
               "costo_estimado": 0.0
@@ -2485,6 +2496,6 @@
       "motivo": "financia la compra de KO"
     }
   ],
-  "usd_mxn_rate": 19.3755,
-  "usd_mxn_rate_fecha": "2026-11-25"
+  "usd_mxn_rate": 19.6407,
+  "usd_mxn_rate_fecha": "2026-11-26"
 }
