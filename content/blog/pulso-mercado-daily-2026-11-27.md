@@ -11,7 +11,7 @@ tags:
   - Fed
   - peso mexicano
   - WTI
-resumen: 'Wall Street no tuvo sesión el jueves por el feriado de Acción de Gracias, así que el último cierre confirmado sigue siendo el del miércoles. Hoy es la sesión de Black Friday, con cierre adelantado a la 1:00pm ET y volumen tradicionalmente bajo; los primeros resultados reales de ventas en línea todavía no se han publicado.'
+resumen: 'Wall Street cerró con fuerza la sesión reducida de Black Friday: el Nasdaq subió 2.3%, el S&P 500 1.6% y el Dow 1.18%, con un rebote generalizado en semiconductores después de una semana volátil. El peso mexicano, en cambio, extendió su depreciación a su nivel más débil en casi 19 meses.'
 imagen: /blog/portadas/mercados-hoy-fija.jpg
 socialImagen: /blog/social/pulso-mercado-daily-2026-11-27.jpg
 ---
@@ -20,29 +20,29 @@ socialImagen: /blog/social/pulso-mercado-daily-2026-11-27.jpg
 
 | Activo | Nivel | Cambio |
 |---|---|---|
-| S&P 500 | 7,182.78 | — (último cierre: miércoles 25/11, sin sesión el jueves) |
-| Nasdaq Composite | 23,585.80 | — (último cierre: miércoles 25/11, sin sesión el jueves) |
-| Russell 2000 | 2,704.06 | — (último cierre: miércoles 25/11, sin sesión el jueves) |
-| Dow Jones | 50,182.95 | — (último cierre: miércoles 25/11, sin sesión el jueves) |
-| VIX | ≈25.42 | -10.1% frente al cierre del miércoles (nivel indicativo de premercado, no un cierre confirmado) |
-| S&P/BMV IPC | ≈70,353.18 | -1.4% frente al cierre del miércoles (nivel del jueves, no confirmado con una fuente de cierre oficial) |
-| USD/MXN | 19.59 | +0.75% frente al cierre del miércoles |
-| US 10Y | 4.904% | +5.6 puntos base frente al cierre del miércoles (nivel indicativo de premercado) |
-| WTI | $84.49 | +0.97% frente al cierre del miércoles |
+| S&P 500 | 7,297.49 | +1.60% |
+| Nasdaq Composite | 24,129.50 | +2.30% |
+| Russell 2000 | 2,750.30 | +1.71% |
+| Dow Jones | 50,774.94 | +1.18% |
+| VIX | 23.81 | -15.84% |
+| S&P/BMV IPC | 71,673.08 | +0.42% |
+| USD/MXN | 19.66 | +0.86% (el peso se depreció) |
+| US 10Y | 4.936% | +8.8 puntos base |
+| WTI | $83.08 | -0.72% |
 
 ## Market Regime
 
-Wall Street no tuvo sesión ayer jueves 26 de noviembre por el feriado de Acción de Gracias —no hubo cierre de acciones ni de bonos que reportar—, así que los niveles de S&P 500, Nasdaq, Dow y Russell 2000 de la tabla siguen siendo los del cierre del miércoles, ya reportados en esta serie. Hoy viernes es la sesión de Black Friday: el mercado de acciones cierra de forma adelantada a la 1:00pm ET y el de bonos a las 2:00pm ET, con el volumen tradicionalmente más bajo del año. Fuera de la renta variable, sí hubo movimiento: el peso mexicano continuó debilitándose, ahora en 19.59 por dólar, y el WTI subió ligeramente a $84.49. El VIX, en cotizaciones de premercado, retrocedió con fuerza frente al cierre del miércoles, aunque esta edición no pudo confirmar ese nivel con una fuente de cierre oficial, dado que corre antes de que la sesión de hoy abra formalmente.
+Wall Street cerró con fuerza su sesión reducida de Black Friday: los inversionistas regresaron del feriado a comprar las acciones de semiconductores e infraestructura de IA que más habían castigado durante la semana volátil que terminó el miércoles. El índice de semiconductores de Filadelfia subió con fuerza, con sus 30 componentes avanzando, y ese impulso arrastró al Nasdaq Composite a un alza de 2.30%, su mejor sesión en semanas. El S&P 500 y el Dow Jones también cerraron con ganancias sólidas, mientras el VIX se desplomó casi 16%, señal de que el nerviosismo que dominó el miércoles se disipó con la reapertura del mercado. El trasfondo de la semana —el regreso de Jensen Huang como CEO de Nvidia, la breve caída de Anthropic por debajo de su precio de colocación, la preocupación por el gasto en IA y la amenaza de nuevos aranceles de Trump contra 14 socios comerciales— no desapareció, pero hoy el mercado decidió leerlo como una oportunidad de compra en nombres golpeados, no como una razón para seguir vendiendo. El peso mexicano, en cambio, no participó del alivio: se depreció de nuevo, a 19.66 por dólar, su nivel más débil en casi 19 meses y su cuarta sesión consecutiva de debilidad.
 
-Scorecard: Trend → — (sin sesión de acciones desde el miércoles) · Breadth → — (sin sesión) · Momentum → — (sin sesión) · Volatility → ↓ (VIX retrocede en premercado frente al cierre del miércoles, de forma indicativa) · Rates → ↑ (Treasury a 10 años sube ligeramente en cotizaciones de premercado) · USD → ↑ (el peso se debilita de nuevo, a 19.59 por dólar)
+Scorecard: Trend → ↑ (los tres principales índices cerraron la semana con ganancias después de una sesión fuerte de Black Friday) · Breadth → ↑ (semiconductores lideraron con los 30 componentes del índice de Filadelfia en verde) · Momentum → ↑ (rebote generalizado tras la liquidación de la semana) · Volatility → ↓ (VIX cayó casi 16% a 23.81) · Rates → ↑ (Treasury a 10 años subió a 4.936%) · USD → ↑ (el peso se debilitó de nuevo, a 19.66 por dólar, su nivel más débil en casi 19 meses)
 
 ## Qué importó hoy
 
-**Wall Street permaneció cerrado ayer por el feriado de Acción de Gracias; hoy opera en sesión reducida de Black Friday, con cierre a la 1:00pm ET.** No hay ningún desarrollo de mercado propiamente dicho que reportar más allá del calendario de la semana. Horizonte: —.
+**Wall Street cerró con fuerza una sesión reducida de Black Friday, liderada por un rebote generalizado en semiconductores: el Nasdaq subió 2.30%, el S&P 500 1.60% y el Dow Jones 1.18%, mientras el VIX cayó casi 16% a 23.81.** Los inversionistas compraron las acciones de IA que más habían caído durante una semana marcada por el regreso de Jensen Huang como CEO de Nvidia y la breve caída de Anthropic por debajo de su precio de colocación. Horizonte: Swing.
 
-**Los resultados reales de ventas en línea de Black Friday todavía no se han publicado; el pronóstico de Adobe Analytics, difundido en septiembre, proyectaba $12,900 millones de dólares en ventas en línea para hoy, un alza de 9.2% interanual, y $15,100 millones para el Cyber Monday del próximo lunes.** El año pasado, Adobe reportó que el Black Friday real de 2025 alcanzó $11,800 millones, también un récord en su momento. Esta serie dará seguimiento a la cifra real de 2026 conforme Adobe la publique, probablemente este fin de semana o el lunes. Horizonte: Swing.
+**El peso mexicano se depreció de nuevo, a 19.66 por dólar, su nivel más débil en casi 19 meses y su cuarta sesión consecutiva de debilidad, en contraste directo con el alivio que mostró la renta variable estadounidense el mismo día.** La moneda no participó del rebote de apetito por riesgo que impulsó a Wall Street. Horizonte: Swing.
 
-**El peso mexicano extendió su depreciación a 19.59 por dólar, continuando la tendencia que esta serie documentó el miércoles tras el cierre de operaciones de carry trade y la nueva amenaza arancelaria de Trump contra México.** Es la tercera sesión consecutiva de debilidad para la moneda. Horizonte: Swing.
+**Los resultados reales de ventas en línea de Black Friday todavía no se han publicado; el pronóstico de Adobe Analytics, difundido en septiembre, proyectaba $12,900 millones de dólares en ventas en línea para hoy.** Adobe suele publicar su cifra real al día siguiente, así que esta serie dará seguimiento el próximo día hábil. Horizonte: Swing.
 
 ## Macro
 
@@ -50,15 +50,15 @@ Sin publicaciones de datos económicos relevantes hoy ni ayer, por el feriado. E
 
 ## Tasas y bonos
 
-El mercado de bonos de EU no tuvo sesión completa ayer y cierra hoy de forma adelantada a las 2:00pm ET. El Treasury a 10 años cotiza en premercado alrededor de 4.904%, ligeramente por encima del cierre del miércoles (4.848%), aunque esta edición no pudo confirmar ese movimiento con un cierre oficial dado que la sesión de hoy todavía no concluye.
+El Treasury a 10 años cerró en 4.936%, 8.8 puntos base por encima del miércoles, en una sesión de bonos también reducida por el feriado (cierre adelantado a las 2:00pm ET).
 
 ## FX y commodities
 
-El peso mexicano se debilitó de nuevo, a 19.59 pesos por dólar, +0.75% frente al cierre del miércoles y su tercera sesión consecutiva de depreciación. El WTI subió a $84.49 por barril, +0.97% frente al miércoles, en un mercado de energía que opera con horario reducido hoy por el feriado.
+El peso mexicano se depreció de nuevo, a 19.66 pesos por dólar, +0.86% frente al cierre del miércoles y su cuarta sesión consecutiva de debilidad, llegando a su nivel más débil en casi 19 meses. El WTI cayó a $83.08 por barril, -0.72% frente al miércoles.
 
 ## Sectores
 
-Sin sesión completa de acciones que reportar. El tema que esta serie sigue vigilando de cara a la próxima semana es si la reacción dispar del mercado a los resultados trimestrales de semiconductores e infraestructura de IA (Dell, Analog Devices, Deere) se extiende a los reportes pendientes de la semana del 30 de noviembre.
+Semiconductores lideró con fuerza la sesión: el índice de Filadelfia (SOX) subió con sus 30 componentes en verde, en un rebote generalizado después de la liquidación de la semana que afectó a Nvidia, AMD y nombres relacionados con infraestructura de IA. El tema que esta serie sigue vigilando de cara a la próxima semana es si este rebote se sostiene o si vuelve el mismo patrón de nerviosismo que dominó gran parte de noviembre.
 
 ## Swing
 
@@ -80,23 +80,19 @@ Sin desarrollos nuevos de largo plazo que reportar esta semana, dado el cierre d
 
 ## Riesgos
 
-El riesgo más inmediato sigue siendo si la depreciación del peso mexicano se extiende más allá de los niveles ya alcanzados esta semana, y si el gasto real del consumidor estadounidense en Black Friday y Cyber Monday confirma o contradice las señales contradictorias que mostraron distintas encuestas de confianza del consumidor esta semana.
+El riesgo más inmediato sigue siendo si la depreciación del peso mexicano se extiende más allá de los niveles ya alcanzados esta semana —ahora en su nivel más débil en casi 19 meses—, en marcado contraste con el apetito por riesgo que mostró Wall Street hoy. Un segundo riesgo es que el rebote de semiconductores de hoy resulte una recuperación puntual de una sesión de bajo volumen, no el fin del nerviosismo que dominó buena parte de noviembre.
 
 ## Qué vigilar mañana
 
 - Las cifras reales de ventas de Black Friday de Adobe Analytics, frente al pronóstico de $12,900 millones.
-- Si la depreciación del peso mexicano encuentra piso o se extiende tras tres sesiones consecutivas de debilidad.
-- El cierre adelantado de la sesión de hoy (1:00pm ET) y el volumen de la jornada.
+- Si la depreciación del peso mexicano encuentra piso o se extiende tras cuatro sesiones consecutivas de debilidad.
+- Si el rebote de semiconductores de hoy se sostiene la próxima semana o resulta una recuperación puntual de una sesión de bajo volumen.
 - El calendario de resultados y datos económicos que retoma la semana del 30 de noviembre.
-
-## Pendientes de esta edición
-
-- VIX y S&P/BMV IPC: los niveles del jueves y viernes en la tabla son indicativos de cotizaciones de premercado/fuentes secundarias, no cierres oficiales confirmados; no logramos verificarlos con una fuente de cierre primaria al momento de esta edición.
-- US Treasury a 10 años: el nivel de hoy es una cotización de premercado, no un cierre confirmado, dado que la sesión de bonos de hoy todavía no concluye al momento de esta edición.
 
 ## Fuentes
 
 - [Pulso de Mercado — Daily · 26/11/2026](/blog/pulso-mercado-daily-2026-11-26) — jgonzalez.app
 - [El miércoles de cuatro datos: PCE más caliente de lo esperado, PIB revisado a 4.3%, bienes durables débiles y casas nuevas que sorprenden al alza](/blog/pce-pib-bienes-durables-casas-nuevas-25-noviembre-2026) — jgonzalez.app
+- [Global stocks rally as investors shrug off U.S. tariffs and AI jitters to 'fish for bargains'](https://www.cnbc.com/2026/11/26/stock-markets-today-.html) — CNBC
 - [Adobe Forecasts Record $275.1 Billion in U.S. Holiday Online Sales](https://www.retailtouchpoints.com/news/adobe-forecasts-record-275.1-billion-in-u.s.-holiday-online-sales/621583/) — Retail TouchPoints / Adobe Analytics
-- Niveles de cierre del 25 de noviembre de 2026 y cotizaciones intradía del 26-27 de noviembre de S&P 500, Nasdaq Composite, Dow Jones, Russell 2000, VIX, S&P/BMV IPC, USD/MXN, US 10Y y WTI — Yahoo Finance
+- Niveles de cierre del 27 de noviembre de 2026 de S&P 500, Nasdaq Composite, Dow Jones, Russell 2000, VIX, S&P/BMV IPC, USD/MXN, US 10Y y WTI — Yahoo Finance
