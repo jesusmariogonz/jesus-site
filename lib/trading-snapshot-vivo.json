@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T19:29:20.431893+00:00",
+  "generated_at": "2026-11-27T19:35:03.424983+00:00",
   "source": "algo_trading_platform motor EN VIVO (cuenta paper real de IBKR, ver ADR 0022/0023)",
   "buckets": {
     "largo_plazo": {
@@ -724,7 +724,52 @@
           "cumulative_return_pct": 0.15,
           "closed_today_detail": [],
           "ordenes_fallidas_hoy": [],
-          "discarded_candidates_today": [],
+          "discarded_candidates_today": [
+            {
+              "symbol": "DIA",
+              "strategy": "time_series_momentum",
+              "reason": "capital_insuficiente",
+              "entry_price": 507.6,
+              "stop_price": 479.07,
+              "risk_per_share": 28.53,
+              "risk_amount": 9.35,
+              "shares_calculadas": 0,
+              "costo_estimado": 0.0
+            },
+            {
+              "symbol": "SHY",
+              "strategy": "time_series_momentum",
+              "reason": "efectivo_insuficiente",
+              "entry_price": 81.62,
+              "stop_price": 81.23,
+              "risk_per_share": 0.39,
+              "risk_amount": 9.35,
+              "shares_calculadas": 23,
+              "costo_estimado": 1879.14
+            },
+            {
+              "symbol": "DBC",
+              "strategy": "time_series_momentum",
+              "reason": "efectivo_insuficiente",
+              "entry_price": 29.55,
+              "stop_price": 28.15,
+              "risk_per_share": 1.4,
+              "risk_amount": 9.35,
+              "shares_calculadas": 6,
+              "costo_estimado": 177.48
+            },
+            {
+              "symbol": "USO",
+              "strategy": "time_series_momentum",
+              "reason": "capital_insuficiente",
+              "entry_price": 137.77,
+              "stop_price": 123.5,
+              "risk_per_share": 14.27,
+              "risk_amount": 9.35,
+              "shares_calculadas": 0,
+              "costo_estimado": 0.0
+            }
+          ],
           "daily_loss_pct": -1.87,
           "drawdown_pct": 0.0,
           "daily_loss_breaker_tripped": false,

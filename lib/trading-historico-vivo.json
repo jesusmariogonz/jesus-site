@@ -15,7 +15,7 @@
     "pnl": -17.7,
     "pnl_pct": -5.61,
     "reason": "cierre_manual_deslaverancaje",
-    "actualizado": "2026-11-27T19:29:45.886400+00:00"
+    "actualizado": "2026-11-27T19:35:05.249142+00:00"
   },
   {
     "bucket": "largo_plazo",
@@ -33,7 +33,7 @@
     "pnl": -3.92,
     "pnl_pct": -0.97,
     "reason": "stop_hit",
-    "actualizado": "2026-11-27T19:29:45.886404+00:00"
+    "actualizado": "2026-11-27T19:35:05.249145+00:00"
   },
   {
     "bucket": "largo_plazo",
@@ -51,7 +51,7 @@
     "pnl": 1.9,
     "pnl_pct": 0.69,
     "reason": null,
-    "actualizado": "2026-11-27T19:29:45.886391+00:00"
+    "actualizado": "2026-11-27T19:35:05.249137+00:00"
   },
   {
     "bucket": "largo_plazo",
@@ -69,7 +69,7 @@
     "pnl": 3.24,
     "pnl_pct": 1.13,
     "reason": null,
-    "actualizado": "2026-11-27T19:29:45.886362+00:00"
+    "actualizado": "2026-11-27T19:35:05.249114+00:00"
   },
   {
     "bucket": "largo_plazo",
@@ -87,7 +87,7 @@
     "pnl": -6.52,
     "pnl_pct": -1.8,
     "reason": "cierre_manual_deslaverancaje",
-    "actualizado": "2026-11-27T19:29:45.886408+00:00"
+    "actualizado": "2026-11-27T19:35:05.249147+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -105,7 +105,7 @@
     "pnl": 6.06,
     "pnl_pct": 3.21,
     "reason": null,
-    "actualizado": "2026-11-27T19:29:45.886423+00:00"
+    "actualizado": "2026-11-27T19:35:05.249155+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -123,7 +123,7 @@
     "pnl": -6.97,
     "pnl_pct": -4.84,
     "reason": "cierre_manual_deslaverancaje",
-    "actualizado": "2026-11-27T19:29:45.886427+00:00"
+    "actualizado": "2026-11-27T19:35:05.249157+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -141,7 +141,7 @@
     "pnl": -2.87,
     "pnl_pct": -1.42,
     "reason": null,
-    "actualizado": "2026-11-27T19:29:45.886413+00:00"
+    "actualizado": "2026-11-27T19:35:05.249149+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -159,7 +159,7 @@
     "pnl": 0.7,
     "pnl_pct": 0.25,
     "reason": null,
-    "actualizado": "2026-11-27T19:29:45.886420+00:00"
+    "actualizado": "2026-11-27T19:35:05.249153+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -177,7 +177,7 @@
     "pnl": 10.14,
     "pnl_pct": 3.78,
     "reason": null,
-    "actualizado": "2026-11-27T19:29:45.886417+00:00"
+    "actualizado": "2026-11-27T19:35:05.249151+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -195,7 +195,7 @@
     "pnl": -2.47,
     "pnl_pct": -1.35,
     "reason": "cierre_manual_deslaverancaje",
-    "actualizado": "2026-11-27T19:29:45.886430+00:00"
+    "actualizado": "2026-11-27T19:35:05.249159+00:00"
   },
   {
     "bucket": "riesgo_alto",
@@ -213,7 +213,7 @@
     "pnl": 2.94,
     "pnl_pct": 3.78,
     "reason": null,
-    "actualizado": "2026-11-27T19:29:45.886433+00:00"
+    "actualizado": "2026-11-27T19:35:05.249162+00:00"
   },
   {
     "bucket": "riesgo_alto",
@@ -231,7 +231,7 @@
     "pnl": -11.84,
     "pnl_pct": -12.95,
     "reason": "cierre_manual_deslaverancaje",
-    "actualizado": "2026-11-27T19:29:45.886443+00:00"
+    "actualizado": "2026-11-27T19:35:05.249168+00:00"
   },
   {
     "bucket": "riesgo_alto",
@@ -249,7 +249,7 @@
     "pnl": -4.67,
     "pnl_pct": -5.55,
     "reason": "stop_hit",
-    "actualizado": "2026-11-27T19:29:45.886440+00:00"
+    "actualizado": "2026-11-27T19:35:05.249166+00:00"
   },
   {
     "bucket": "riesgo_alto",
@@ -267,6 +267,6 @@
     "pnl": 0.18,
     "pnl_pct": 0.1,
     "reason": null,
-    "actualizado": "2026-11-27T19:29:45.886436+00:00"
+    "actualizado": "2026-11-27T19:35:05.249164+00:00"
   }
 ]

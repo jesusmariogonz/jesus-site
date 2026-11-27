@@ -1101,7 +1101,7 @@
     "ganadoras": 0,
     "win_rate_pct": null,
     "suspended": false,
-    "actualizado": "2026-11-27T14:42:22.623574+00:00"
+    "actualizado": "2026-11-27T19:34:38.961176+00:00"
   },
   {
     "fecha": "2026-11-27",
@@ -1110,61 +1110,61 @@
     "capital_inicial": 1007.66,
     "equity": 350.48,
     "ganancia_perdida": -657.18,
-    "retorno_pct": -5.44,
-    "drawdown_pct": 8.31,
+    "retorno_pct": -4.74,
+    "drawdown_pct": 7.62,
     "abiertas": 1,
     "cerradas": 0,
     "ganadoras": 0,
     "win_rate_pct": null,
     "suspended": false,
-    "actualizado": "2026-11-27T14:42:22.623580+00:00"
+    "actualizado": "2026-11-27T19:34:38.961180+00:00"
   },
   {
     "fecha": "2026-11-27",
     "bucket": "largo_plazo",
     "bucket_label": "Largo Plazo",
     "capital_inicial": 428.52,
-    "equity": 409.1,
-    "ganancia_perdida": -19.42,
-    "retorno_pct": -4.53,
-    "drawdown_pct": 6.05,
+    "equity": 410.05,
+    "ganancia_perdida": -18.47,
+    "retorno_pct": -4.31,
+    "drawdown_pct": 5.83,
     "abiertas": 1,
     "cerradas": 5,
     "ganadoras": 0,
     "win_rate_pct": 0.0,
     "suspended": true,
-    "actualizado": "2026-11-27T14:42:22.623537+00:00"
+    "actualizado": "2026-11-27T19:34:38.961155+00:00"
   },
   {
     "fecha": "2026-11-27",
     "bucket": "mediano_plazo",
     "bucket_label": "Mediano Plazo",
     "capital_inicial": 367.5,
-    "equity": 355.39,
-    "ganancia_perdida": -12.11,
-    "retorno_pct": -3.3,
-    "drawdown_pct": 3.76,
+    "equity": 356.79,
+    "ganancia_perdida": -10.71,
+    "retorno_pct": -2.91,
+    "drawdown_pct": 3.38,
     "abiertas": 3,
     "cerradas": 4,
     "ganadoras": 2,
     "win_rate_pct": 50.0,
     "suspended": false,
-    "actualizado": "2026-11-27T14:42:22.623560+00:00"
+    "actualizado": "2026-11-27T19:34:38.961167+00:00"
   },
   {
     "fecha": "2026-11-27",
     "bucket": "riesgo_alto",
     "bucket_label": "Riesgo Alto",
     "capital_inicial": 211.64,
-    "equity": 218.08,
-    "ganancia_perdida": 6.44,
-    "retorno_pct": 3.04,
-    "drawdown_pct": 1.45,
+    "equity": 219.57,
+    "ganancia_perdida": 7.93,
+    "retorno_pct": 3.74,
+    "drawdown_pct": 0.78,
     "abiertas": 3,
     "cerradas": 0,
     "ganadoras": 0,
     "win_rate_pct": null,
     "suspended": false,
-    "actualizado": "2026-11-27T14:42:22.623568+00:00"
+    "actualizado": "2026-11-27T19:34:38.961172+00:00"
   }
 ]

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T14:42:21.979261+00:00",
+  "generated_at": "2026-11-27T19:34:38.373364+00:00",
   "source": "algo_trading_platform paper trading engine (simulado, sin dinero real)",
   "buckets": {
     "largo_plazo": {
@@ -11,13 +11,13 @@
           "strategy": "time_series_momentum",
           "entry_date": "2026-11-18",
           "entry_price": 137.2,
-          "stop_price": 129.91811588832311,
+          "stop_price": 130.09928676060267,
           "initial_stop_price": 129.42,
           "shares": 1,
           "asset_type": "Equity ETF",
-          "current_price": 137.56,
-          "unrealized_pnl": 0.36,
-          "unrealized_pnl_pct": 0.26
+          "current_price": 138.51,
+          "unrealized_pnl": 1.31,
+          "unrealized_pnl_pct": 0.95
         }
       ],
       "closed_positions": [
@@ -704,21 +704,21 @@
         },
         {
           "date": "2026-11-27",
-          "equity": 409.1,
+          "equity": 410.05,
           "cash": 271.54,
-          "unrealized_pnl": 0.36,
+          "unrealized_pnl": 1.31,
           "open_count": 1,
           "closed_today": 0,
           "realized_pnl_today": 0,
-          "cumulative_return_pct": -4.53,
+          "cumulative_return_pct": -4.31,
           "closed_today_detail": [],
           "discarded_candidates_today": [],
-          "daily_loss_pct": -3.07,
-          "drawdown_pct": 6.05,
+          "daily_loss_pct": -3.31,
+          "drawdown_pct": 5.83,
           "daily_loss_breaker_tripped": false,
           "suspended": true,
           "suspended_reason": "Drawdown 6.0% alcanzó el límite de revisión (6%)",
-          "newly_suspended_today": true
+          "newly_suspended_today": false
         }
       ],
       "suspended": true,
@@ -734,25 +734,25 @@
           "strategy": "trend_following",
           "entry_date": "2026-11-04",
           "entry_price": 92.03,
-          "stop_price": 88.92553247724261,
+          "stop_price": 89.34428187779018,
           "shares": 1,
           "asset_type": "Equity ETF",
-          "current_price": 92.205,
-          "unrealized_pnl": 0.18,
-          "unrealized_pnl_pct": 0.19
+          "current_price": 92.68,
+          "unrealized_pnl": 0.65,
+          "unrealized_pnl_pct": 0.71
         },
         {
           "symbol": "XLF",
           "strategy": "trend_following",
           "entry_date": "2026-11-17",
           "entry_price": 57.13,
-          "stop_price": 54.553750446864534,
+          "stop_price": 54.648393630981445,
           "initial_stop_price": 54.35,
           "shares": 2,
           "asset_type": "Equity ETF",
-          "current_price": 57.035,
-          "unrealized_pnl": -0.19,
-          "unrealized_pnl_pct": -0.17
+          "current_price": 57.16,
+          "unrealized_pnl": 0.06,
+          "unrealized_pnl_pct": 0.05
         },
         {
           "symbol": "KO",
@@ -763,9 +763,9 @@
           "initial_stop_price": 91.12,
           "shares": 1,
           "asset_type": "Stock",
-          "current_price": 96.725,
-          "unrealized_pnl": 0.74,
-          "unrealized_pnl_pct": 0.78
+          "current_price": 97.4,
+          "unrealized_pnl": 1.42,
+          "unrealized_pnl_pct": 1.48
         }
       ],
       "closed_positions": [
@@ -1605,17 +1605,17 @@
         },
         {
           "date": "2026-11-27",
-          "equity": 355.39,
+          "equity": 356.79,
           "cash": 52.39,
-          "unrealized_pnl": 0.73,
+          "unrealized_pnl": 2.13,
           "open_count": 3,
           "closed_today": 0,
           "realized_pnl_today": 0,
-          "cumulative_return_pct": -3.3,
+          "cumulative_return_pct": -2.91,
           "closed_today_detail": [],
           "discarded_candidates_today": [],
-          "daily_loss_pct": -0.63,
-          "drawdown_pct": 3.76,
+          "daily_loss_pct": -1.02,
+          "drawdown_pct": 3.38,
           "daily_loss_breaker_tripped": false,
           "suspended": false,
           "suspended_reason": null,
@@ -1635,13 +1635,13 @@
           "strategy": "trend_following",
           "entry_date": "2026-11-11",
           "entry_price": 23.8,
-          "stop_price": 21.08964272907802,
+          "stop_price": 21.324643543788365,
           "initial_stop_price": 20.14,
           "shares": 2,
           "asset_type": "Stock",
-          "current_price": 24.156,
-          "unrealized_pnl": 0.71,
-          "unrealized_pnl_pct": 1.5
+          "current_price": 25.29,
+          "unrealized_pnl": 2.98,
+          "unrealized_pnl_pct": 6.26
         },
         {
           "symbol": "BILL",
@@ -1652,9 +1652,9 @@
           "initial_stop_price": 52.06,
           "shares": 1,
           "asset_type": "Stock",
-          "current_price": 61.625,
-          "unrealized_pnl": 3.94,
-          "unrealized_pnl_pct": 6.82
+          "current_price": 61.73,
+          "unrealized_pnl": 4.04,
+          "unrealized_pnl_pct": 7.0
         },
         {
           "symbol": "DOCU",
@@ -1665,9 +1665,9 @@
           "initial_stop_price": 68.51,
           "shares": 1,
           "asset_type": "Stock",
-          "current_price": 81.6,
-          "unrealized_pnl": 5.59,
-          "unrealized_pnl_pct": 7.35
+          "current_price": 80.71,
+          "unrealized_pnl": 4.7,
+          "unrealized_pnl_pct": 6.18
         }
       ],
       "closed_positions": [],
@@ -2068,17 +2068,17 @@
         },
         {
           "date": "2026-11-27",
-          "equity": 218.08,
+          "equity": 219.57,
           "cash": 26.55,
-          "unrealized_pnl": 10.24,
+          "unrealized_pnl": 11.72,
           "open_count": 3,
           "closed_today": 0,
           "realized_pnl_today": 0,
-          "cumulative_return_pct": 3.04,
+          "cumulative_return_pct": 3.74,
           "closed_today_detail": [],
           "discarded_candidates_today": [],
-          "daily_loss_pct": -0.99,
-          "drawdown_pct": 1.45,
+          "daily_loss_pct": -1.68,
+          "drawdown_pct": 0.78,
           "daily_loss_breaker_tripped": false,
           "suspended": false,
           "suspended_reason": null,
@@ -2395,8 +2395,8 @@
         {
           "date": "2026-11-27",
           "equity": 350.48,
-          "cumulative_return_pct": -5.44,
-          "drawdown_pct": 8.31
+          "cumulative_return_pct": -4.74,
+          "drawdown_pct": 7.62
         }
       ],
       "suspended": false
