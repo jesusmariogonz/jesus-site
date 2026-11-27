@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T21:40:56.763186+00:00",
+  "generated_at": "2026-11-27T14:52:18.304066+00:00",
   "source": "algo_trading_platform motor EN VIVO (cuenta paper real de IBKR, ver ADR 0022/0023)",
   "buckets": {
     "largo_plazo": {
@@ -28,18 +28,6 @@
           "current_price": 136.39,
           "unrealized_pnl": -2.34,
           "unrealized_pnl_pct": -0.85
-        },
-        {
-          "symbol": "VTI",
-          "strategy": "time_series_momentum",
-          "entry_date": "2026-11-08",
-          "entry_price": 362.31,
-          "stop_price": 357.21,
-          "shares": 1,
-          "asset_type": "Equity ETF",
-          "current_price": 353.2,
-          "unrealized_pnl": -9.11,
-          "unrealized_pnl_pct": -2.51
         }
       ],
       "closed_positions": [
@@ -69,6 +57,20 @@
           "pnl": -3.92,
           "pnl_pct": -0.97,
           "reason": "stop_hit",
+          "asset_type": "Equity ETF"
+        },
+        {
+          "symbol": "VTI",
+          "strategy": "time_series_momentum",
+          "entry_date": "2026-11-08",
+          "entry_price": 362.31,
+          "stop_price": 357.21,
+          "shares": 1,
+          "exit_date": "2026-11-27",
+          "exit_price": 355.79,
+          "pnl": -6.52,
+          "pnl_pct": -1.8,
+          "reason": "cierre_manual_deslaverancaje",
           "asset_type": "Equity ETF"
         }
       ],
@@ -1396,18 +1398,6 @@
       "starting_capital": 467.84,
       "open_positions": [
         {
-          "symbol": "ETSY",
-          "strategy": "trend_following",
-          "entry_date": "2026-11-08",
-          "entry_price": 91.41,
-          "stop_price": 80.22,
-          "shares": 1,
-          "asset_type": "Stock",
-          "current_price": 78.9,
-          "unrealized_pnl": -12.51,
-          "unrealized_pnl_pct": -13.69
-        },
-        {
           "symbol": "DOCU",
           "strategy": "trend_following",
           "entry_date": "2026-11-08",
@@ -1446,6 +1436,20 @@
           "pnl": -4.67,
           "pnl_pct": -5.55,
           "reason": "stop_hit",
+          "asset_type": "Stock"
+        },
+        {
+          "symbol": "ETSY",
+          "strategy": "trend_following",
+          "entry_date": "2026-11-08",
+          "entry_price": 91.41,
+          "stop_price": 80.22,
+          "shares": 1,
+          "exit_date": "2026-11-27",
+          "exit_price": 79.57,
+          "pnl": -11.84,
+          "pnl_pct": -12.95,
+          "reason": "cierre_manual_deslaverancaje",
           "asset_type": "Stock"
         }
       ],

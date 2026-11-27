@@ -15,7 +15,7 @@
     "pnl": -17.7,
     "pnl_pct": -5.61,
     "reason": "cierre_manual_deslaverancaje",
-    "actualizado": "2026-11-25T21:41:02.819638+00:00"
+    "actualizado": "2026-11-27T14:52:29.892669+00:00"
   },
   {
     "bucket": "largo_plazo",
@@ -33,7 +33,7 @@
     "pnl": -3.92,
     "pnl_pct": -0.97,
     "reason": "stop_hit",
-    "actualizado": "2026-11-25T21:41:02.819643+00:00"
+    "actualizado": "2026-11-27T14:52:29.892673+00:00"
   },
   {
     "bucket": "largo_plazo",
@@ -51,7 +51,7 @@
     "pnl": -2.34,
     "pnl_pct": -0.85,
     "reason": null,
-    "actualizado": "2026-11-25T21:41:02.819627+00:00"
+    "actualizado": "2026-11-27T14:52:29.892663+00:00"
   },
   {
     "bucket": "largo_plazo",
@@ -69,25 +69,25 @@
     "pnl": 1.5,
     "pnl_pct": 0.53,
     "reason": null,
-    "actualizado": "2026-11-25T21:41:02.819601+00:00"
+    "actualizado": "2026-11-27T14:52:29.892635+00:00"
   },
   {
     "bucket": "largo_plazo",
     "bucket_label": "Largo Plazo",
     "symbol": "VTI",
     "asset_type": "Equity ETF",
-    "estado": "Abierta",
+    "estado": "Cerrada",
     "entry_date": "2026-11-08",
     "entry_price": 362.31,
     "initial_stop_price": null,
-    "exit_date": null,
-    "exit_price": null,
-    "current_price": 353.2,
+    "exit_date": "2026-11-27",
+    "exit_price": 355.79,
+    "current_price": null,
     "stop_price": 357.21,
-    "pnl": -9.11,
-    "pnl_pct": -2.51,
-    "reason": null,
-    "actualizado": "2026-11-25T21:41:02.819633+00:00"
+    "pnl": -6.52,
+    "pnl_pct": -1.8,
+    "reason": "cierre_manual_deslaverancaje",
+    "actualizado": "2026-11-27T14:52:29.892678+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -105,7 +105,7 @@
     "pnl": 6.44,
     "pnl_pct": 3.41,
     "reason": null,
-    "actualizado": "2026-11-25T21:41:02.819655+00:00"
+    "actualizado": "2026-11-27T14:52:29.892692+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -123,7 +123,7 @@
     "pnl": -6.97,
     "pnl_pct": -4.84,
     "reason": "cierre_manual_deslaverancaje",
-    "actualizado": "2026-11-25T21:41:02.819659+00:00"
+    "actualizado": "2026-11-27T14:52:29.892696+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -141,7 +141,7 @@
     "pnl": -3.29,
     "pnl_pct": -1.62,
     "reason": null,
-    "actualizado": "2026-11-25T21:41:02.819647+00:00"
+    "actualizado": "2026-11-27T14:52:29.892682+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -159,7 +159,7 @@
     "pnl": -2.55,
     "pnl_pct": -0.89,
     "reason": null,
-    "actualizado": "2026-11-25T21:41:02.819653+00:00"
+    "actualizado": "2026-11-27T14:52:29.892689+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -177,7 +177,7 @@
     "pnl": 9.0,
     "pnl_pct": 3.36,
     "reason": null,
-    "actualizado": "2026-11-25T21:41:02.819650+00:00"
+    "actualizado": "2026-11-27T14:52:29.892686+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -195,7 +195,7 @@
     "pnl": -2.47,
     "pnl_pct": -1.35,
     "reason": "cierre_manual_deslaverancaje",
-    "actualizado": "2026-11-25T21:41:02.819663+00:00"
+    "actualizado": "2026-11-27T14:52:29.892700+00:00"
   },
   {
     "bucket": "riesgo_alto",
@@ -213,25 +213,25 @@
     "pnl": 2.98,
     "pnl_pct": 3.83,
     "reason": null,
-    "actualizado": "2026-11-25T21:41:02.819670+00:00"
+    "actualizado": "2026-11-27T14:52:29.892704+00:00"
   },
   {
     "bucket": "riesgo_alto",
     "bucket_label": "Riesgo Alto",
     "symbol": "ETSY",
     "asset_type": "Stock",
-    "estado": "Abierta",
+    "estado": "Cerrada",
     "entry_date": "2026-11-08",
     "entry_price": 91.41,
     "initial_stop_price": null,
-    "exit_date": null,
-    "exit_price": null,
-    "current_price": 78.9,
+    "exit_date": "2026-11-27",
+    "exit_price": 79.57,
+    "current_price": null,
     "stop_price": 80.22,
-    "pnl": -12.51,
-    "pnl_pct": -13.69,
-    "reason": null,
-    "actualizado": "2026-11-25T21:41:02.819667+00:00"
+    "pnl": -11.84,
+    "pnl_pct": -12.95,
+    "reason": "cierre_manual_deslaverancaje",
+    "actualizado": "2026-11-27T14:52:29.892714+00:00"
   },
   {
     "bucket": "riesgo_alto",
@@ -249,7 +249,7 @@
     "pnl": -4.67,
     "pnl_pct": -5.55,
     "reason": "stop_hit",
-    "actualizado": "2026-11-25T21:41:02.819677+00:00"
+    "actualizado": "2026-11-27T14:52:29.892711+00:00"
   },
   {
     "bucket": "riesgo_alto",
@@ -267,6 +267,6 @@
     "pnl": -0.36,
     "pnl_pct": -0.19,
     "reason": null,
-    "actualizado": "2026-11-25T21:41:02.819673+00:00"
+    "actualizado": "2026-11-27T14:52:29.892708+00:00"
   }
 ]
