@@ -15,7 +15,7 @@
     "pnl": -1.1,
     "pnl_pct": -1.07,
     "reason": "stop_hit",
-    "actualizado": "2026-11-27T19:34:38.960426+00:00"
+    "actualizado": "2026-11-27T21:37:30.516722+00:00"
   },
   {
     "bucket": "largo_plazo",
@@ -33,7 +33,7 @@
     "pnl": -1.78,
     "pnl_pct": -2.43,
     "reason": "stop_hit",
-    "actualizado": "2026-11-27T19:34:38.960436+00:00"
+    "actualizado": "2026-11-27T21:37:30.516732+00:00"
   },
   {
     "bucket": "largo_plazo",
@@ -51,7 +51,7 @@
     "pnl": -3.56,
     "pnl_pct": -2.54,
     "reason": "stop_hit",
-    "actualizado": "2026-11-27T19:34:38.960431+00:00"
+    "actualizado": "2026-11-27T21:37:30.516727+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -69,7 +69,7 @@
     "pnl": 1.35,
     "pnl_pct": 1.43,
     "reason": "stop_hit",
-    "actualizado": "2026-11-27T19:34:38.960468+00:00"
+    "actualizado": "2026-11-27T21:37:30.516762+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -87,7 +87,7 @@
     "pnl": -2.76,
     "pnl_pct": -4.53,
     "reason": "stop_hit",
-    "actualizado": "2026-11-27T19:34:38.960464+00:00"
+    "actualizado": "2026-11-27T21:37:30.516757+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -105,7 +105,7 @@
     "pnl": -3.7,
     "pnl_pct": -5.27,
     "reason": "stop_hit",
-    "actualizado": "2026-11-27T19:34:38.960461+00:00"
+    "actualizado": "2026-11-27T21:37:30.516755+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -123,7 +123,7 @@
     "pnl": 0.55,
     "pnl_pct": 0.98,
     "reason": "stop_hit",
-    "actualizado": "2026-11-27T19:34:38.960466+00:00"
+    "actualizado": "2026-11-27T21:37:30.516760+00:00"
   },
   {
     "bucket": "blend_spy_gld",
@@ -141,7 +141,7 @@
     "pnl": null,
     "pnl_pct": null,
     "reason": null,
-    "actualizado": "2026-11-27T19:34:38.960483+00:00"
+    "actualizado": "2026-11-27T21:37:30.516781+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -159,7 +159,7 @@
     "pnl": 0.65,
     "pnl_pct": 0.71,
     "reason": null,
-    "actualizado": "2026-11-27T19:34:38.960446+00:00"
+    "actualizado": "2026-11-27T21:37:30.516744+00:00"
   },
   {
     "bucket": "largo_plazo",
@@ -177,7 +177,7 @@
     "pnl": -3.01,
     "pnl_pct": -3.14,
     "reason": "stop_hit",
-    "actualizado": "2026-11-27T19:34:38.960442+00:00"
+    "actualizado": "2026-11-27T21:37:30.516738+00:00"
   },
   {
     "bucket": "blend_spy_gld",
@@ -213,7 +213,7 @@
     "pnl": -4.53,
     "pnl_pct": -4.31,
     "reason": "stop_hit",
-    "actualizado": "2026-11-27T19:34:38.960439+00:00"
+    "actualizado": "2026-11-27T21:37:30.516735+00:00"
   },
   {
     "bucket": "riesgo_alto",
@@ -227,11 +227,11 @@
     "exit_date": null,
     "exit_price": null,
     "current_price": 25.29,
-    "stop_price": 21.324643543788365,
+    "stop_price": 21.325536591666086,
     "pnl": 2.98,
     "pnl_pct": 6.26,
     "reason": null,
-    "actualizado": "2026-11-27T19:34:38.960471+00:00"
+    "actualizado": "2026-11-27T21:37:30.516767+00:00"
   },
   {
     "bucket": "riesgo_alto",
@@ -249,7 +249,7 @@
     "pnl": 4.04,
     "pnl_pct": 7.0,
     "reason": null,
-    "actualizado": "2026-11-27T19:34:38.960474+00:00"
+    "actualizado": "2026-11-27T21:37:30.516770+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -267,7 +267,7 @@
     "pnl": 0.06,
     "pnl_pct": 0.05,
     "reason": null,
-    "actualizado": "2026-11-27T19:34:38.960454+00:00"
+    "actualizado": "2026-11-27T21:37:30.516748+00:00"
   },
   {
     "bucket": "riesgo_alto",
@@ -285,7 +285,7 @@
     "pnl": 4.7,
     "pnl_pct": 6.18,
     "reason": null,
-    "actualizado": "2026-11-27T19:34:38.960476+00:00"
+    "actualizado": "2026-11-27T21:37:30.516773+00:00"
   },
   {
     "bucket": "largo_plazo",
@@ -303,7 +303,7 @@
     "pnl": 1.31,
     "pnl_pct": 0.95,
     "reason": null,
-    "actualizado": "2026-11-27T19:34:38.960408+00:00"
+    "actualizado": "2026-11-27T21:37:30.516697+00:00"
   },
   {
     "bucket": "mediano_plazo",
@@ -321,6 +321,6 @@
     "pnl": 1.42,
     "pnl_pct": 1.48,
     "reason": null,
-    "actualizado": "2026-11-27T19:34:38.960458+00:00"
+    "actualizado": "2026-11-27T21:37:30.516751+00:00"
   }
 ]

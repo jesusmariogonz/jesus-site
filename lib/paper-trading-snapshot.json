@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T19:34:38.373364+00:00",
+  "generated_at": "2026-11-27T21:37:29.907643+00:00",
   "source": "algo_trading_platform paper trading engine (simulado, sin dinero real)",
   "buckets": {
     "largo_plazo": {
@@ -1635,7 +1635,7 @@
           "strategy": "trend_following",
           "entry_date": "2026-11-11",
           "entry_price": 23.8,
-          "stop_price": 21.324643543788365,
+          "stop_price": 21.325536591666086,
           "initial_stop_price": 20.14,
           "shares": 2,
           "asset_type": "Stock",
