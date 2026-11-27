@@ -193,8 +193,8 @@ export default function ProductoToolkit({ params }) {
           <div>
             <h2 className="tk-product-block-title">Quién lo escribió</h2>
             <p>
-              Soy Jesús González, Arquitecto de Soluciones y Product Owner de
-              Data &amp; Analytics en FEMSA. Estas consultas y modelos salen
+              Soy Jesús González, Data, Analytics &amp; AI Solutions Architect
+              en FEMSA. Estas consultas y modelos salen
               de más de 13 años resolviendo problemas reales de retail, no de
               ejemplos de tutorial.
             </p>

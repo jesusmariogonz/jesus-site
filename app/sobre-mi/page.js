@@ -6,7 +6,7 @@ import SobreFocos from "@/components/SobreFocos";
 export const metadata = {
   title: "Sobre mí",
   description:
-    "Jesús Mario González Siller (Chuy): Arquitecto de Soluciones y Product Owner de Data, Analytics & IA en FEMSA, desde Saltillo, México. Trayectoria y CV.",
+    "Jesús Mario González Siller (Chuy): Data, Analytics & AI Solutions Architect en FEMSA Proximidad y Salud, desde Saltillo, México. Trayectoria, logros y CV.",
   alternates: { canonical: "/sobre-mi" },
 };
 
@@ -57,9 +57,8 @@ export default function SobreMi() {
         </header>
         <div className="prose">
           <p>
-            Soy <strong>Responsable de Producto Data &amp; Analytics y
-            Arquitecto de Soluciones Analíticas</strong> en FEMSA Proximidad y
-            Salud, desde Saltillo, Coahuila. Ingeniero en Electrónica y
+            Soy <strong>Data, Analytics &amp; AI Solutions Architect</strong> en
+            FEMSA Proximidad y Salud, desde Saltillo, Coahuila. Ingeniero en Electrónica y
             Comunicaciones por la UANL, con más de 13 años de experiencia en
             tecnologías de información y datos.
           </p>
@@ -89,6 +88,30 @@ export default function SobreMi() {
           </p>
           <SobreFocos focos={focos} />
 
+          <h2>Logros destacados</h2>
+          <ul>
+            <li>
+              Más de <strong>20 iniciativas estratégicas</strong> de datos e IA
+              en <strong>7 países</strong> y más de 5 unidades de negocio.
+            </li>
+            <li>
+              Arquitectura de plataformas analíticas que procesan{" "}
+              <strong>millones de transacciones diarias</strong> en retail.
+            </li>
+            <li>
+              Liderazgo de migraciones de infraestructura cloud a Snowflake,
+              con casos de negocio ante comités financieros (ROI, TIR, VPN).
+            </li>
+            <li>
+              Formación de equipos multidisciplinarios: cursos internos de IA
+              generativa y despliegue de casos de uso de negocio.
+            </li>
+            <li>
+              Autor de <em>La Analítica Avanzada: Fundamentos, Implementación
+              y Aplicaciones en la Industria</em>.
+            </li>
+          </ul>
+
           <h2>Mi trayectoria</h2>
           <p>
             Antes de mi rol actual fui <strong>Arquitecto de Datos en FEMSA
@@ -117,6 +140,36 @@ export default function SobreMi() {
             </a>
           </p>
           <CvTimeline />
+
+          <h2>En qué estoy construyendo</h2>
+          <p>
+            Mi siguiente paso es llevar el rigor de la arquitectura de datos
+            corporativa a la IA aplicada y a la investigación cuantitativa
+            abierta. No lo cuento como promesa: lo estoy haciendo en público,
+            con resultados que cualquiera puede revisar.
+          </p>
+          <ul>
+            <li>
+              <Link href="/pulso-mercado">Pulso de Mercado</Link>: un medidor
+              de riesgo y volatilidad que se actualiza a diario, con su
+              metodología publicada y probada contra datos históricos.
+            </li>
+            <li>
+              <Link href="/pulso-mercado/research">Research Lab</Link>:
+              experimentos con hipótesis fijadas antes de ver resultados, y
+              resultados publicados aunque sean negativos o inconclusos.
+            </li>
+            <li>
+              <Link href="/tesis-rag">Tesis RAG</Link>: una serie de
+              investigación con experimentos reproducibles sobre persistencia
+              no gobernada en sistemas RAG.
+            </li>
+            <li>
+              <Link href="/recursos">Biblioteca</Link>: libros y recursos
+              sobre analítica, IA y mercados, con nuevos títulos en
+              preparación.
+            </li>
+          </ul>
 
           <h2>Qué encontrarás en este sitio</h2>
           <ul>
