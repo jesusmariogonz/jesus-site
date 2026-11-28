@@ -166,6 +166,15 @@ function OperacionesTab({ data }) {
         {data.posiciones_cerradas.length} cerradas
         {data.win_rate_pct != null ? ` (win rate ${data.win_rate_pct}%)` : ""}.
       </p>
+      {data.posiciones_abiertas.length > 0 &&
+        data.posiciones_abiertas.every((p) => p.entry_fecha === data.historial_diario.at(-1)?.fecha) && (
+          <p className="pulsodash-vacio" style={{ marginBottom: 12 }}>
+            Las {data.posiciones_abiertas.length} compras se hicieron al cierre del {data.historial_diario.at(-1).fecha},
+            por eso todas muestran +0.00%: el precio de compra es ese mismo cierre. El retorno empieza a moverse
+            con el cierre de la siguiente sesión, y cada posición se vende a las 30 sesiones de mercado de su compra,
+            así que todavía no hay ventas.
+          </p>
+        )}
       <div className="prose" style={{ overflowX: "auto" }}>
         <table>
           <thead>
