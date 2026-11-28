@@ -18,7 +18,7 @@ function rango(semana) {
 
 export default function ResumenSemanalCard({ ultima }) {
   if (!ultima) return null;
-  const { slug, resumen } = ultima;
+  const { resumen } = ultima;
   const mejor = resumen.motores
     .filter((m) => m.activos_semana?.length)
     .flatMap((m) => m.activos_semana)
@@ -60,12 +60,8 @@ export default function ResumenSemanalCard({ ultima }) {
         </p>
       )}
       <p style={{ marginTop: 12 }}>
-        <Link href={`/pulso-mercado/trading/resumen-semanal/${slug}`} className="trading-symbol-link">
-          Ver el resumen semanal completo →
-        </Link>
-        {" · "}
         <Link href="/pulso-mercado/trading/resumen-semanal" className="trading-symbol-link">
-          Semanas anteriores
+          Ver el resumen semanal completo →
         </Link>
       </p>
     </div>
