@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-28T00:09:24+00:00",
+  "generado": "2026-11-28T00:20:08+00:00",
   "semana": {
     "inicio": "2026-11-23",
     "fin": "2026-11-27"
@@ -530,6 +530,28 @@
           ]
         }
       ],
+      "buckets": [
+        {
+          "bucket": "largo_plazo",
+          "equity": 467.54,
+          "retorno_acumulado_pct": 0.15,
+          "suspendido": false
+        },
+        {
+          "bucket": "mediano_plazo",
+          "equity": 671.23,
+          "retorno_acumulado_pct": -2.61,
+          "suspendido": false
+        },
+        {
+          "bucket": "riesgo_alto",
+          "equity": 453.28,
+          "retorno_acumulado_pct": -3.11,
+          "suspendido": false
+        }
+      ],
+      "pnl_semana_usd": 79.67,
+      "pnl_semana_pct": 5.27,
       "activos_semana": [
         {
           "symbol": "ETSY",
@@ -542,7 +564,9 @@
           "precio_actual_o_salida": 79.57,
           "pnl_total_usd": -11.84,
           "pnl_total_pct": -12.95,
-          "pnl_semana_usd": 3.05
+          "pnl_semana_usd": 3.05,
+          "cambio_ultimo_dia_pct": 0.85,
+          "cambio_semana_pct": 3.99
         },
         {
           "symbol": "VTI",
@@ -555,7 +579,9 @@
           "precio_actual_o_salida": 355.79,
           "pnl_total_usd": -6.52,
           "pnl_total_pct": -1.8,
-          "pnl_semana_usd": 15.77
+          "pnl_semana_usd": 15.77,
+          "cambio_ultimo_dia_pct": 0.73,
+          "cambio_semana_pct": 4.64
         },
         {
           "symbol": "PFE",
@@ -568,7 +594,9 @@
           "precio_actual_o_salida": 28.52,
           "pnl_total_usd": -2.87,
           "pnl_total_pct": -1.42,
-          "pnl_semana_usd": 7.84
+          "pnl_semana_usd": 7.84,
+          "cambio_ultimo_dia_pct": 0.21,
+          "cambio_semana_pct": 4.09
         },
         {
           "symbol": "BILL",
@@ -581,7 +609,9 @@
           "precio_actual_o_salida": 61.73,
           "pnl_total_usd": 0.18,
           "pnl_total_pct": 0.1,
-          "pnl_semana_usd": 0.87
+          "pnl_semana_usd": 0.87,
+          "cambio_ultimo_dia_pct": 0.29,
+          "cambio_semana_pct": 0.47
         },
         {
           "symbol": "XLF",
@@ -594,7 +624,9 @@
           "precio_actual_o_salida": 57.16,
           "pnl_total_usd": 0.7,
           "pnl_total_pct": 0.25,
-          "pnl_semana_usd": 12.95
+          "pnl_semana_usd": 12.95,
+          "cambio_ultimo_dia_pct": 1.15,
+          "cambio_semana_pct": 4.75
         },
         {
           "symbol": "IJR",
@@ -607,7 +639,9 @@
           "precio_actual_o_salida": 138.51,
           "pnl_total_usd": 1.9,
           "pnl_total_pct": 0.69,
-          "pnl_semana_usd": 14.52
+          "pnl_semana_usd": 14.52,
+          "cambio_ultimo_dia_pct": 1.55,
+          "cambio_semana_pct": 5.53
         },
         {
           "symbol": "DOCU",
@@ -620,7 +654,9 @@
           "precio_actual_o_salida": 80.71,
           "pnl_total_usd": 2.94,
           "pnl_total_pct": 3.78,
-          "pnl_semana_usd": 6.15
+          "pnl_semana_usd": 6.15,
+          "cambio_ultimo_dia_pct": -0.05,
+          "cambio_semana_pct": 8.25
         },
         {
           "symbol": "VNQ",
@@ -633,7 +669,9 @@
           "precio_actual_o_salida": 96.24,
           "pnl_total_usd": 3.24,
           "pnl_total_pct": 1.13,
-          "pnl_semana_usd": 11.04
+          "pnl_semana_usd": 11.04,
+          "cambio_ultimo_dia_pct": 0.61,
+          "cambio_semana_pct": 3.98
         },
         {
           "symbol": "KO",
@@ -646,7 +684,9 @@
           "precio_actual_o_salida": 97.4,
           "pnl_total_usd": 6.06,
           "pnl_total_pct": 3.21,
-          "pnl_semana_usd": 0.82
+          "pnl_semana_usd": 0.82,
+          "cambio_ultimo_dia_pct": -0.19,
+          "cambio_semana_pct": 0.42
         },
         {
           "symbol": "XLP",
@@ -659,7 +699,9 @@
           "precio_actual_o_salida": 92.68,
           "pnl_total_usd": 10.14,
           "pnl_total_pct": 3.78,
-          "pnl_semana_usd": 6.66
+          "pnl_semana_usd": 6.66,
+          "cambio_ultimo_dia_pct": 0.41,
+          "cambio_semana_pct": 2.45
         }
       ]
     },
@@ -980,6 +1022,28 @@
           ]
         }
       ],
+      "buckets": [
+        {
+          "bucket": "largo_plazo",
+          "equity": 410.05,
+          "retorno_acumulado_pct": -4.31,
+          "suspendido": true
+        },
+        {
+          "bucket": "mediano_plazo",
+          "equity": 356.79,
+          "retorno_acumulado_pct": -2.91,
+          "suspendido": false
+        },
+        {
+          "bucket": "riesgo_alto",
+          "equity": 219.57,
+          "retorno_acumulado_pct": 3.75,
+          "suspendido": false
+        }
+      ],
+      "pnl_semana_usd": 33.62,
+      "pnl_semana_pct": 3.53,
       "activos_semana": [
         {
           "symbol": "XLF",
@@ -992,7 +1056,9 @@
           "precio_actual_o_salida": 57.16,
           "pnl_total_usd": 0.06,
           "pnl_total_pct": 0.05,
-          "pnl_semana_usd": 5.18
+          "pnl_semana_usd": 5.18,
+          "cambio_ultimo_dia_pct": 1.15,
+          "cambio_semana_pct": 4.75
         },
         {
           "symbol": "XLP",
@@ -1005,7 +1071,9 @@
           "precio_actual_o_salida": 92.68,
           "pnl_total_usd": 0.65,
           "pnl_total_pct": 0.71,
-          "pnl_semana_usd": 2.22
+          "pnl_semana_usd": 2.22,
+          "cambio_ultimo_dia_pct": 0.41,
+          "cambio_semana_pct": 2.45
         },
         {
           "symbol": "IJR",
@@ -1018,7 +1086,9 @@
           "precio_actual_o_salida": 138.51,
           "pnl_total_usd": 1.31,
           "pnl_total_pct": 0.95,
-          "pnl_semana_usd": 7.26
+          "pnl_semana_usd": 7.26,
+          "cambio_ultimo_dia_pct": 1.55,
+          "cambio_semana_pct": 5.53
         },
         {
           "symbol": "KO",
@@ -1031,7 +1101,9 @@
           "precio_actual_o_salida": 97.4,
           "pnl_total_usd": 1.42,
           "pnl_total_pct": 1.48,
-          "pnl_semana_usd": 1.42
+          "pnl_semana_usd": 1.42,
+          "cambio_ultimo_dia_pct": -0.19,
+          "cambio_semana_pct": 1.48
         },
         {
           "symbol": "S",
@@ -1044,7 +1116,9 @@
           "precio_actual_o_salida": 25.29,
           "pnl_total_usd": 2.98,
           "pnl_total_pct": 6.26,
-          "pnl_semana_usd": 4.76
+          "pnl_semana_usd": 4.76,
+          "cambio_ultimo_dia_pct": 4.98,
+          "cambio_semana_pct": 10.39
         },
         {
           "symbol": "BILL",
@@ -1057,7 +1131,9 @@
           "precio_actual_o_salida": 61.73,
           "pnl_total_usd": 4.04,
           "pnl_total_pct": 7.0,
-          "pnl_semana_usd": 0.29
+          "pnl_semana_usd": 0.29,
+          "cambio_ultimo_dia_pct": 0.29,
+          "cambio_semana_pct": 0.47
         },
         {
           "symbol": "DOCU",
@@ -1070,9 +1146,15 @@
           "precio_actual_o_salida": 80.71,
           "pnl_total_usd": 4.7,
           "pnl_total_pct": 6.18,
-          "pnl_semana_usd": 6.15
+          "pnl_semana_usd": 6.15,
+          "cambio_ultimo_dia_pct": -0.05,
+          "cambio_semana_pct": 8.25
         }
-      ]
+      ],
+      "benchmark": {
+        "equity": 1644.19,
+        "retorno_acumulado_pct": -2.32
+      }
     },
     {
       "id": "reverse_winners",
@@ -1172,6 +1254,8 @@
           ]
         }
       ],
+      "pnl_semana_usd": 0,
+      "pnl_semana_pct": 0.0,
       "n_posiciones_abiertas": 60,
       "efectivo": 0.0,
       "primeras_ventas_estimadas": "tras 30 sesiones de mercado desde cada compra (las del 27-nov, ≈ 12-ene-2027)"

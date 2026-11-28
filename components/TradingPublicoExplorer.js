@@ -10,7 +10,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import ResumenSemanalTrading from "@/components/ResumenSemanalTrading";
+import ResumenSemanalCard from "@/components/ResumenSemanalCard";
 
 function LinkSimbolo({ symbol }) {
   return (
@@ -299,7 +299,7 @@ function TablaEfectivoYBlend({ efectivoYBlend, fuente }) {
   );
 }
 
-function ModuloDashboard({ data }) {
+function ModuloDashboard({ data, resumenSemanal }) {
   const { resumen } = data;
   return (
     <div>
@@ -387,7 +387,7 @@ function ModuloDashboard({ data }) {
 
       <ContribucionRetorno contribucionRetorno={data.contribucionRetorno} />
 
-      <ResumenSemanalTrading />
+      <ResumenSemanalCard ultima={resumenSemanal} />
 
       <div className="pulsodash-panel" style={{ marginBottom: 24 }}>
         <div className="pulsodash-panel-head">
@@ -949,7 +949,7 @@ function DecisionHoy({ data }) {
   );
 }
 
-function PanelMotor({ data, nota }) {
+function PanelMotor({ data, nota, resumenSemanal }) {
   const [tab, setTab] = useState("dashboard");
   return (
     <div className="motor-panel">
@@ -957,7 +957,7 @@ function PanelMotor({ data, nota }) {
       <DecisionHoy data={data} />
       <TabsNav tab={tab} setTab={setTab} />
       <div style={{ marginTop: 24 }}>
-        {tab === "dashboard" && <ModuloDashboard data={data} />}
+        {tab === "dashboard" && <ModuloDashboard data={data} resumenSemanal={resumenSemanal} />}
         {tab === "portafolios" && <ModuloPortafolios data={data} />}
         {tab === "operaciones" && <ModuloOperaciones data={data} />}
       </div>
@@ -983,7 +983,7 @@ const MOTORES = [
   },
 ];
 
-export default function TradingPublicoExplorer({ data, dataIbkr }) {
+export default function TradingPublicoExplorer({ data, dataIbkr, resumenSemanal }) {
   const [motor, setMotor] = useState("paper");
   const datos = { paper: data, ibkr: dataIbkr };
   // Solo existe en el snapshot del motor paper (ADR 0039) — el motor IBKR
@@ -1041,7 +1041,7 @@ export default function TradingPublicoExplorer({ data, dataIbkr }) {
         )}
       </div>
       {motor && motor !== "benchmark" && datos[motor] && (
-        <PanelMotor key={motor} data={datos[motor]} nota={MOTORES.find((m) => m.id === motor).nota} />
+        <PanelMotor key={motor} data={datos[motor]} nota={MOTORES.find((m) => m.id === motor).nota} resumenSemanal={resumenSemanal} />
       )}
       {activoBenchmark && benchmark && (
         <div className="motor-panel">

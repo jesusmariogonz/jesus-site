@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getTradingPublicSnapshot, TRADING_DISCLAIMER } from "@/lib/trading/public-snapshot";
 import TradingPublicoExplorer from "@/components/TradingPublicoExplorer";
+import { getUltimaSemana } from "@/lib/trading/resumen-semanal";
 import { absUrl } from "@/lib/site";
 
 export const metadata = {
@@ -181,7 +182,7 @@ export default function TradingPublicoPage() {
 
         <div className="activo-bloque" style={{ marginTop: 0 }}>
           <h2>¿Cómo está funcionando el sistema?</h2>
-          <TradingPublicoExplorer data={data} dataIbkr={dataIbkr} />
+          <TradingPublicoExplorer data={data} dataIbkr={dataIbkr} resumenSemanal={getUltimaSemana()} />
         </div>
 
         <nav className="trading-subnav">
