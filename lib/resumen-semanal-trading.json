@@ -1,0 +1,1262 @@
+{
+  "generado": "2026-11-28T00:09:24+00:00",
+  "semana": {
+    "inicio": "2026-11-23",
+    "fin": "2026-11-27"
+  },
+  "mercado": {
+    "dias": [
+      {
+        "fecha": "2026-11-23",
+        "spy_pct": 4.71,
+        "qqq_pct": 7.0,
+        "ijr_pct": 3.08,
+        "gld_pct": 3.14,
+        "texto": "Rebote de alivio de la IA: S&P 500 +4.7% y Nasdaq cerca de +6.5% después de que Nvidia reinstalara a Jensen Huang como CEO (la acción subió más de 30%)."
+      },
+      {
+        "fecha": "2026-11-24",
+        "spy_pct": -0.49,
+        "qqq_pct": -1.99,
+        "ijr_pct": 0.08,
+        "gld_pct": -2.27,
+        "texto": "El rebote se frena: el S&P 500 cede −0.5%."
+      },
+      {
+        "fecha": "2026-11-25",
+        "spy_pct": -0.29,
+        "qqq_pct": -0.65,
+        "ijr_pct": 0.73,
+        "gld_pct": 0.61,
+        "texto": "Vuelve la venta de IA con inflación persistente: el Nasdaq llegó a caer cerca de 4% a media sesión, pero recuperó antes del cierre y el S&P 500 terminó −0.3%."
+      },
+      {
+        "fecha": "2026-11-27",
+        "spy_pct": 1.62,
+        "qqq_pct": 2.69,
+        "ijr_pct": 1.55,
+        "gld_pct": 2.12,
+        "texto": "Sesión corta de Black Friday (cierre a la 1pm ET): el S&P 500 sube cerca de +1.6% y las acciones de IA rebotan. Las fuentes difieren en el cierre exacto."
+      }
+    ],
+    "narrativa": [
+      "Semana de recuperación parcial después de la peor semana del año: del 16 al 20-nov el S&P 500 cayó cerca de 8.6% por una venta fuerte de acciones de IA liderada por Nvidia, y entró en corrección (10% bajo su récord de octubre).",
+      "El oro cayó a mínimos de 14 meses (18-nov) por dólar fuerte, rendimientos al alza y señales hawkish de la Fed; hoy rebotó, y las fuentes consultadas no explican ese rebote.",
+      "Los activos defensivos (XLP, KO) aguantaron mejor que los índices durante la caída; es una lectura mía, no una causa confirmada por las fuentes."
+    ],
+    "fuentes": [
+      {
+        "titulo": "Yahoo Finance: Dow, S&P 500, Nasdaq end holiday week with gains as AI stocks rebound",
+        "url": "https://finance.yahoo.com/markets/live/stock-market-today-firday-november-27-dow-sp-500-nasdaq-black-friday-holiday-091152065.html"
+      },
+      {
+        "titulo": "Investrade: Market Review, 27-nov-2026",
+        "url": "https://investrade.com/market-review-november-27-2026/"
+      },
+      {
+        "titulo": "Yahoo Finance: mejor día desde abril de 2025 con Nvidia +31% (23-nov)",
+        "url": "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-23-dow-sp-500-nasdaq-surge-after-nvidia-reinstates-jensen-huang-182039397.html"
+      },
+      {
+        "titulo": "Motley Fool: la peor semana del S&P 500 en 2026",
+        "url": "https://www.fool.com/investing/2026/11/24/the-sp-500-just-had-its-worst-week-of-2026-heres-why-im-still-investing/"
+      },
+      {
+        "titulo": "Motley Fool: Stock Market Midday, 25-nov",
+        "url": "https://fool.com/coverage/stock-market-today/2026/11/25/stock-market-midday-nov-25-nasdaq-plunges-4-as-ai-sell-off-deepens-and-inflation-remains-stubborn"
+      },
+      {
+        "titulo": "NST: el oro cae a mínimos de un año por señales hawkish de la Fed",
+        "url": "https://www.nst.com.my/amp/business/economy/2026/11/1580594/gold-drops-2pct-over-one-year-low-hawkish-fed-signals-boost-dollar"
+      },
+      {
+        "titulo": "Tickeron: DocuSign (DOCU) cae 5% por venta de software de aplicaciones",
+        "url": "https://tickeron.com/blogs/why-is-docusign-inc-docu-stock-down-5-11-today-39882/"
+      },
+      {
+        "titulo": "Tickeron: SentinelOne (S) sube 7.94%",
+        "url": "https://tickeron.com/blogs/why-is-sentinelone-s-stock-up-7-94-today-40584/"
+      }
+    ]
+  },
+  "notas_activos": {
+    "ETSY": "Cayó −7.3% el 19-nov y −2.9% el 20-nov; no encontré noticia propia que lo explique. Su stop no se disparó por un bug de NaN en el precio en vivo y se cerró a mano el 27-nov.",
+    "VTI": "Siguió al mercado general (caída 19-20, rebote 23). Su stop tampoco se disparó por el mismo bug y se cerró a mano el 27-nov.",
+    "DOCU": "−4.9% el 17-nov: Tickeron lo atribuyó a una venta general de software de aplicaciones, no a noticias propias. Después se recuperó.",
+    "BILL": "Subió +5.8% y +12.6% el 16 y 17-nov, sin causa confirmada en las fuentes; cayó −2.9% y −4.1% el 19 y 20-nov con el mercado.",
+    "S": "+10.4% el 18-nov: Tickeron habla de compras sectoriales tras una racha bajista (también hay una mejora de Scotiabank sin fecha clara). El +5.0% de hoy no tiene causa confirmada.",
+    "PFE": "Resultados del 3T (3-nov) por encima de lo esperado y guía elevada. El +3.9% del 24-nov no tiene cobertura que lo explique.",
+    "XLP": "Defensivo: subió el 20-nov mientras el mercado caía. Probable refugio (interpretación mía).",
+    "KO": "Defensivo: subió el 20-nov (+0.9%) y el 24-nov (+1.8%). Probable refugio (interpretación mía).",
+    "IJR": "Sigue al mercado general: cayó el 19-20 y rebotó el 23.",
+    "VNQ": "Sigue al mercado general: cayó el 19-20 y rebotó el 23-24.",
+    "XLF": "Sigue al mercado general: cayó el 19-20 y rebotó el 23-24."
+  },
+  "motores": [
+    {
+      "id": "ibkr_vivo",
+      "nombre": "Motor IBKR (paper de IBKR)",
+      "dias": [
+        {
+          "fecha": "2026-11-23",
+          "equity": 1547.47,
+          "pnl_dia_usd": 35.09,
+          "pnl_dia_pct": 2.32,
+          "activos": [
+            {
+              "symbol": "KO",
+              "bucket": "mediano_plazo",
+              "shares": 2,
+              "accion": "mantenida",
+              "precio_referencia": 96.99,
+              "precio_fin": 95.88,
+              "cambio_pct": -1.14,
+              "pnl_usd": -2.22
+            },
+            {
+              "symbol": "XLP",
+              "bucket": "mediano_plazo",
+              "shares": 3,
+              "accion": "mantenida",
+              "precio_referencia": 90.46,
+              "precio_fin": 90.38,
+              "cambio_pct": -0.09,
+              "pnl_usd": -0.24
+            },
+            {
+              "symbol": "PFE",
+              "bucket": "mediano_plazo",
+              "shares": 7,
+              "accion": "mantenida",
+              "precio_referencia": 27.4,
+              "precio_fin": 27.4,
+              "cambio_pct": 0.0,
+              "pnl_usd": 0.0
+            },
+            {
+              "symbol": "BILL",
+              "bucket": "riesgo_alto",
+              "shares": 3,
+              "accion": "mantenida",
+              "precio_referencia": 61.44,
+              "precio_fin": 61.61,
+              "cambio_pct": 0.28,
+              "pnl_usd": 0.51
+            },
+            {
+              "symbol": "DOCU",
+              "bucket": "riesgo_alto",
+              "shares": 1,
+              "accion": "mantenida",
+              "precio_referencia": 74.56,
+              "precio_fin": 77.04,
+              "cambio_pct": 3.33,
+              "pnl_usd": 2.48
+            },
+            {
+              "symbol": "ETSY",
+              "bucket": "riesgo_alto",
+              "shares": 1,
+              "accion": "mantenida",
+              "precio_referencia": 76.52,
+              "precio_fin": 79.02,
+              "cambio_pct": 3.27,
+              "pnl_usd": 2.5
+            },
+            {
+              "symbol": "VNQ",
+              "bucket": "largo_plazo",
+              "shares": 3,
+              "accion": "mantenida",
+              "precio_referencia": 92.56,
+              "precio_fin": 93.67,
+              "cambio_pct": 1.2,
+              "pnl_usd": 3.33
+            },
+            {
+              "symbol": "XLF",
+              "bucket": "mediano_plazo",
+              "shares": 5,
+              "accion": "mantenida",
+              "precio_referencia": 54.57,
+              "precio_fin": 55.65,
+              "cambio_pct": 1.98,
+              "pnl_usd": 5.4
+            },
+            {
+              "symbol": "IJR",
+              "bucket": "largo_plazo",
+              "shares": 2,
+              "accion": "mantenida",
+              "precio_referencia": 131.25,
+              "precio_fin": 135.29,
+              "cambio_pct": 3.08,
+              "pnl_usd": 8.08
+            },
+            {
+              "symbol": "VTI",
+              "bucket": "largo_plazo",
+              "shares": 1,
+              "accion": "mantenida",
+              "precio_referencia": 340.02,
+              "precio_fin": 355.27,
+              "cambio_pct": 4.49,
+              "pnl_usd": 15.25
+            }
+          ]
+        },
+        {
+          "fecha": "2026-11-24",
+          "equity": 1570.49,
+          "pnl_dia_usd": 23.02,
+          "pnl_dia_pct": 1.49,
+          "activos": [
+            {
+              "symbol": "VTI",
+              "bucket": "largo_plazo",
+              "shares": 1,
+              "accion": "mantenida",
+              "precio_referencia": 355.27,
+              "precio_fin": 353.84,
+              "cambio_pct": -0.4,
+              "pnl_usd": -1.43
+            },
+            {
+              "symbol": "BILL",
+              "bucket": "riesgo_alto",
+              "shares": 3,
+              "accion": "mantenida",
+              "precio_referencia": 61.61,
+              "precio_fin": 61.45,
+              "cambio_pct": -0.26,
+              "pnl_usd": -0.48
+            },
+            {
+              "symbol": "IJR",
+              "bucket": "largo_plazo",
+              "shares": 2,
+              "accion": "mantenida",
+              "precio_referencia": 135.29,
+              "precio_fin": 135.4,
+              "cambio_pct": 0.08,
+              "pnl_usd": 0.22
+            },
+            {
+              "symbol": "ETSY",
+              "bucket": "riesgo_alto",
+              "shares": 1,
+              "accion": "mantenida",
+              "precio_referencia": 79.02,
+              "precio_fin": 79.7,
+              "cambio_pct": 0.86,
+              "pnl_usd": 0.68
+            },
+            {
+              "symbol": "XLF",
+              "bucket": "mediano_plazo",
+              "shares": 5,
+              "accion": "mantenida",
+              "precio_referencia": 55.65,
+              "precio_fin": 56.11,
+              "cambio_pct": 0.83,
+              "pnl_usd": 2.3
+            },
+            {
+              "symbol": "DOCU",
+              "bucket": "riesgo_alto",
+              "shares": 1,
+              "accion": "mantenida",
+              "precio_referencia": 77.04,
+              "precio_fin": 80.04,
+              "cambio_pct": 3.89,
+              "pnl_usd": 3.0
+            },
+            {
+              "symbol": "VNQ",
+              "bucket": "largo_plazo",
+              "shares": 3,
+              "accion": "mantenida",
+              "precio_referencia": 93.67,
+              "precio_fin": 94.78,
+              "cambio_pct": 1.19,
+              "pnl_usd": 3.33
+            },
+            {
+              "symbol": "KO",
+              "bucket": "mediano_plazo",
+              "shares": 2,
+              "accion": "mantenida",
+              "precio_referencia": 95.88,
+              "precio_fin": 97.62,
+              "cambio_pct": 1.81,
+              "pnl_usd": 3.48
+            },
+            {
+              "symbol": "XLP",
+              "bucket": "mediano_plazo",
+              "shares": 3,
+              "accion": "mantenida",
+              "precio_referencia": 90.38,
+              "precio_fin": 91.88,
+              "cambio_pct": 1.66,
+              "pnl_usd": 4.5
+            },
+            {
+              "symbol": "PFE",
+              "bucket": "mediano_plazo",
+              "shares": 7,
+              "accion": "mantenida",
+              "precio_referencia": 27.4,
+              "precio_fin": 28.46,
+              "cambio_pct": 3.87,
+              "pnl_usd": 7.42
+            }
+          ]
+        },
+        {
+          "fecha": "2026-11-25",
+          "equity": 1577.88,
+          "pnl_dia_usd": 7.39,
+          "pnl_dia_pct": 0.47,
+          "activos": [
+            {
+              "symbol": "ETSY",
+              "bucket": "riesgo_alto",
+              "shares": 1,
+              "accion": "mantenida",
+              "precio_referencia": 79.7,
+              "precio_fin": 78.9,
+              "cambio_pct": -1.0,
+              "pnl_usd": -0.8
+            },
+            {
+              "symbol": "VTI",
+              "bucket": "largo_plazo",
+              "shares": 1,
+              "accion": "mantenida",
+              "precio_referencia": 353.84,
+              "precio_fin": 353.2,
+              "cambio_pct": -0.18,
+              "pnl_usd": -0.64
+            },
+            {
+              "symbol": "KO",
+              "bucket": "mediano_plazo",
+              "shares": 2,
+              "accion": "mantenida",
+              "precio_referencia": 97.62,
+              "precio_fin": 97.59,
+              "cambio_pct": -0.03,
+              "pnl_usd": -0.06
+            },
+            {
+              "symbol": "PFE",
+              "bucket": "mediano_plazo",
+              "shares": 7,
+              "accion": "mantenida",
+              "precio_referencia": 28.46,
+              "precio_fin": 28.46,
+              "cambio_pct": 0.0,
+              "pnl_usd": 0.0
+            },
+            {
+              "symbol": "BILL",
+              "bucket": "riesgo_alto",
+              "shares": 3,
+              "accion": "mantenida",
+              "precio_referencia": 61.45,
+              "precio_fin": 61.55,
+              "cambio_pct": 0.16,
+              "pnl_usd": 0.3
+            },
+            {
+              "symbol": "DOCU",
+              "bucket": "riesgo_alto",
+              "shares": 1,
+              "accion": "mantenida",
+              "precio_referencia": 80.04,
+              "precio_fin": 80.75,
+              "cambio_pct": 0.89,
+              "pnl_usd": 0.71
+            },
+            {
+              "symbol": "XLP",
+              "bucket": "mediano_plazo",
+              "shares": 3,
+              "accion": "mantenida",
+              "precio_referencia": 91.88,
+              "precio_fin": 92.3,
+              "cambio_pct": 0.46,
+              "pnl_usd": 1.26
+            },
+            {
+              "symbol": "IJR",
+              "bucket": "largo_plazo",
+              "shares": 2,
+              "accion": "mantenida",
+              "precio_referencia": 135.4,
+              "precio_fin": 136.39,
+              "cambio_pct": 0.73,
+              "pnl_usd": 1.98
+            },
+            {
+              "symbol": "XLF",
+              "bucket": "mediano_plazo",
+              "shares": 5,
+              "accion": "mantenida",
+              "precio_referencia": 56.11,
+              "precio_fin": 56.51,
+              "cambio_pct": 0.71,
+              "pnl_usd": 2.0
+            },
+            {
+              "symbol": "VNQ",
+              "bucket": "largo_plazo",
+              "shares": 3,
+              "accion": "mantenida",
+              "precio_referencia": 94.78,
+              "precio_fin": 95.66,
+              "cambio_pct": 0.93,
+              "pnl_usd": 2.64
+            }
+          ]
+        },
+        {
+          "fecha": "2026-11-27",
+          "equity": 1592.05,
+          "pnl_dia_usd": 14.17,
+          "pnl_dia_pct": 0.9,
+          "activos": [
+            {
+              "symbol": "KO",
+              "bucket": "mediano_plazo",
+              "shares": 2,
+              "accion": "mantenida",
+              "precio_referencia": 97.59,
+              "precio_fin": 97.4,
+              "cambio_pct": -0.19,
+              "pnl_usd": -0.38
+            },
+            {
+              "symbol": "DOCU",
+              "bucket": "riesgo_alto",
+              "shares": 1,
+              "accion": "mantenida",
+              "precio_referencia": 80.75,
+              "precio_fin": 80.71,
+              "cambio_pct": -0.05,
+              "pnl_usd": -0.04
+            },
+            {
+              "symbol": "PFE",
+              "bucket": "mediano_plazo",
+              "shares": 7,
+              "accion": "mantenida",
+              "precio_referencia": 28.46,
+              "precio_fin": 28.52,
+              "cambio_pct": 0.21,
+              "pnl_usd": 0.42
+            },
+            {
+              "symbol": "BILL",
+              "bucket": "riesgo_alto",
+              "shares": 3,
+              "accion": "mantenida",
+              "precio_referencia": 61.55,
+              "precio_fin": 61.73,
+              "cambio_pct": 0.29,
+              "pnl_usd": 0.54
+            },
+            {
+              "symbol": "ETSY",
+              "bucket": "riesgo_alto",
+              "shares": 1,
+              "accion": "vendida",
+              "precio_referencia": 78.9,
+              "precio_fin": 79.57,
+              "cambio_pct": 0.85,
+              "pnl_usd": 0.67
+            },
+            {
+              "symbol": "XLP",
+              "bucket": "mediano_plazo",
+              "shares": 3,
+              "accion": "mantenida",
+              "precio_referencia": 92.3,
+              "precio_fin": 92.68,
+              "cambio_pct": 0.41,
+              "pnl_usd": 1.14
+            },
+            {
+              "symbol": "VNQ",
+              "bucket": "largo_plazo",
+              "shares": 3,
+              "accion": "mantenida",
+              "precio_referencia": 95.66,
+              "precio_fin": 96.24,
+              "cambio_pct": 0.61,
+              "pnl_usd": 1.74
+            },
+            {
+              "symbol": "VTI",
+              "bucket": "largo_plazo",
+              "shares": 1,
+              "accion": "vendida",
+              "precio_referencia": 353.2,
+              "precio_fin": 355.79,
+              "cambio_pct": 0.73,
+              "pnl_usd": 2.59
+            },
+            {
+              "symbol": "XLF",
+              "bucket": "mediano_plazo",
+              "shares": 5,
+              "accion": "mantenida",
+              "precio_referencia": 56.51,
+              "precio_fin": 57.16,
+              "cambio_pct": 1.15,
+              "pnl_usd": 3.25
+            },
+            {
+              "symbol": "IJR",
+              "bucket": "largo_plazo",
+              "shares": 2,
+              "accion": "mantenida",
+              "precio_referencia": 136.39,
+              "precio_fin": 138.51,
+              "cambio_pct": 1.55,
+              "pnl_usd": 4.24
+            }
+          ]
+        }
+      ],
+      "activos_semana": [
+        {
+          "symbol": "ETSY",
+          "bucket": "riesgo_alto",
+          "shares": 1,
+          "fecha_entrada": "2026-11-08",
+          "precio_entrada": 91.41,
+          "estado": "cerrada",
+          "fecha_salida": "2026-11-27",
+          "precio_actual_o_salida": 79.57,
+          "pnl_total_usd": -11.84,
+          "pnl_total_pct": -12.95,
+          "pnl_semana_usd": 3.05
+        },
+        {
+          "symbol": "VTI",
+          "bucket": "largo_plazo",
+          "shares": 1,
+          "fecha_entrada": "2026-11-08",
+          "precio_entrada": 362.31,
+          "estado": "cerrada",
+          "fecha_salida": "2026-11-27",
+          "precio_actual_o_salida": 355.79,
+          "pnl_total_usd": -6.52,
+          "pnl_total_pct": -1.8,
+          "pnl_semana_usd": 15.77
+        },
+        {
+          "symbol": "PFE",
+          "bucket": "mediano_plazo",
+          "shares": 7,
+          "fecha_entrada": "2026-11-08",
+          "precio_entrada": 28.93,
+          "estado": "abierta",
+          "fecha_salida": null,
+          "precio_actual_o_salida": 28.52,
+          "pnl_total_usd": -2.87,
+          "pnl_total_pct": -1.42,
+          "pnl_semana_usd": 7.84
+        },
+        {
+          "symbol": "BILL",
+          "bucket": "riesgo_alto",
+          "shares": 3,
+          "fecha_entrada": "2026-11-20",
+          "precio_entrada": 61.67,
+          "estado": "abierta",
+          "fecha_salida": null,
+          "precio_actual_o_salida": 61.73,
+          "pnl_total_usd": 0.18,
+          "pnl_total_pct": 0.1,
+          "pnl_semana_usd": 0.87
+        },
+        {
+          "symbol": "XLF",
+          "bucket": "mediano_plazo",
+          "shares": 5,
+          "fecha_entrada": "2026-11-08",
+          "precio_entrada": 57.02,
+          "estado": "abierta",
+          "fecha_salida": null,
+          "precio_actual_o_salida": 57.16,
+          "pnl_total_usd": 0.7,
+          "pnl_total_pct": 0.25,
+          "pnl_semana_usd": 12.95
+        },
+        {
+          "symbol": "IJR",
+          "bucket": "largo_plazo",
+          "shares": 2,
+          "fecha_entrada": "2026-11-08",
+          "precio_entrada": 137.56,
+          "estado": "abierta",
+          "fecha_salida": null,
+          "precio_actual_o_salida": 138.51,
+          "pnl_total_usd": 1.9,
+          "pnl_total_pct": 0.69,
+          "pnl_semana_usd": 14.52
+        },
+        {
+          "symbol": "DOCU",
+          "bucket": "riesgo_alto",
+          "shares": 1,
+          "fecha_entrada": "2026-11-08",
+          "precio_entrada": 77.77,
+          "estado": "abierta",
+          "fecha_salida": null,
+          "precio_actual_o_salida": 80.71,
+          "pnl_total_usd": 2.94,
+          "pnl_total_pct": 3.78,
+          "pnl_semana_usd": 6.15
+        },
+        {
+          "symbol": "VNQ",
+          "bucket": "largo_plazo",
+          "shares": 3,
+          "fecha_entrada": "2026-11-08",
+          "precio_entrada": 95.16,
+          "estado": "abierta",
+          "fecha_salida": null,
+          "precio_actual_o_salida": 96.24,
+          "pnl_total_usd": 3.24,
+          "pnl_total_pct": 1.13,
+          "pnl_semana_usd": 11.04
+        },
+        {
+          "symbol": "KO",
+          "bucket": "mediano_plazo",
+          "shares": 2,
+          "fecha_entrada": "2026-11-08",
+          "precio_entrada": 94.37,
+          "estado": "abierta",
+          "fecha_salida": null,
+          "precio_actual_o_salida": 97.4,
+          "pnl_total_usd": 6.06,
+          "pnl_total_pct": 3.21,
+          "pnl_semana_usd": 0.82
+        },
+        {
+          "symbol": "XLP",
+          "bucket": "mediano_plazo",
+          "shares": 3,
+          "fecha_entrada": "2026-11-08",
+          "precio_entrada": 89.3,
+          "estado": "abierta",
+          "fecha_salida": null,
+          "precio_actual_o_salida": 92.68,
+          "pnl_total_usd": 10.14,
+          "pnl_total_pct": 3.78,
+          "pnl_semana_usd": 6.66
+        }
+      ]
+    },
+    {
+      "id": "paper_simulado",
+      "nombre": "Paper trading simulado",
+      "dias": [
+        {
+          "fecha": "2026-11-23",
+          "equity": 970.8,
+          "pnl_dia_usd": 18.01,
+          "pnl_dia_pct": 1.89,
+          "activos": [
+            {
+              "symbol": "KO",
+              "bucket": "mediano_plazo",
+              "shares": 1,
+              "accion": "comprada",
+              "precio_referencia": 95.98,
+              "precio_fin": 95.88,
+              "cambio_pct": -0.1,
+              "pnl_usd": -0.1
+            },
+            {
+              "symbol": "XLP",
+              "bucket": "mediano_plazo",
+              "shares": 1,
+              "accion": "mantenida",
+              "precio_referencia": 90.46,
+              "precio_fin": 90.38,
+              "cambio_pct": -0.09,
+              "pnl_usd": -0.08
+            },
+            {
+              "symbol": "BILL",
+              "bucket": "riesgo_alto",
+              "shares": 1,
+              "accion": "mantenida",
+              "precio_referencia": 61.44,
+              "precio_fin": 61.61,
+              "cambio_pct": 0.28,
+              "pnl_usd": 0.17
+            },
+            {
+              "symbol": "XLF",
+              "bucket": "mediano_plazo",
+              "shares": 2,
+              "accion": "mantenida",
+              "precio_referencia": 54.57,
+              "precio_fin": 55.65,
+              "cambio_pct": 1.98,
+              "pnl_usd": 2.16
+            },
+            {
+              "symbol": "DOCU",
+              "bucket": "riesgo_alto",
+              "shares": 1,
+              "accion": "mantenida",
+              "precio_referencia": 74.56,
+              "precio_fin": 77.04,
+              "cambio_pct": 3.33,
+              "pnl_usd": 2.48
+            },
+            {
+              "symbol": "S",
+              "bucket": "riesgo_alto",
+              "shares": 2,
+              "accion": "mantenida",
+              "precio_referencia": 22.91,
+              "precio_fin": 24.49,
+              "cambio_pct": 6.9,
+              "pnl_usd": 3.16
+            },
+            {
+              "symbol": "IJR",
+              "bucket": "largo_plazo",
+              "shares": 1,
+              "accion": "mantenida",
+              "precio_referencia": 131.25,
+              "precio_fin": 135.29,
+              "cambio_pct": 3.08,
+              "pnl_usd": 4.04
+            }
+          ]
+        },
+        {
+          "fecha": "2026-11-24",
+          "equity": 975.64,
+          "pnl_dia_usd": 4.84,
+          "pnl_dia_pct": 0.5,
+          "activos": [
+            {
+              "symbol": "S",
+              "bucket": "riesgo_alto",
+              "shares": 2,
+              "accion": "mantenida",
+              "precio_referencia": 24.49,
+              "precio_fin": 24.0,
+              "cambio_pct": -2.0,
+              "pnl_usd": -0.98
+            },
+            {
+              "symbol": "BILL",
+              "bucket": "riesgo_alto",
+              "shares": 1,
+              "accion": "mantenida",
+              "precio_referencia": 61.61,
+              "precio_fin": 61.45,
+              "cambio_pct": -0.26,
+              "pnl_usd": -0.16
+            },
+            {
+              "symbol": "IJR",
+              "bucket": "largo_plazo",
+              "shares": 1,
+              "accion": "mantenida",
+              "precio_referencia": 135.29,
+              "precio_fin": 135.4,
+              "cambio_pct": 0.08,
+              "pnl_usd": 0.11
+            },
+            {
+              "symbol": "XLF",
+              "bucket": "mediano_plazo",
+              "shares": 2,
+              "accion": "mantenida",
+              "precio_referencia": 55.65,
+              "precio_fin": 56.11,
+              "cambio_pct": 0.83,
+              "pnl_usd": 0.92
+            },
+            {
+              "symbol": "XLP",
+              "bucket": "mediano_plazo",
+              "shares": 1,
+              "accion": "mantenida",
+              "precio_referencia": 90.38,
+              "precio_fin": 91.88,
+              "cambio_pct": 1.66,
+              "pnl_usd": 1.5
+            },
+            {
+              "symbol": "KO",
+              "bucket": "mediano_plazo",
+              "shares": 1,
+              "accion": "mantenida",
+              "precio_referencia": 95.88,
+              "precio_fin": 97.62,
+              "cambio_pct": 1.81,
+              "pnl_usd": 1.74
+            },
+            {
+              "symbol": "DOCU",
+              "bucket": "riesgo_alto",
+              "shares": 1,
+              "accion": "mantenida",
+              "precio_referencia": 77.04,
+              "precio_fin": 80.04,
+              "cambio_pct": 3.89,
+              "pnl_usd": 3.0
+            }
+          ]
+        },
+        {
+          "fecha": "2026-11-25",
+          "equity": 966.03,
+          "pnl_dia_usd": -9.61,
+          "pnl_dia_pct": -0.98,
+          "activos": [
+            {
+              "symbol": "KO",
+              "bucket": "mediano_plazo",
+              "shares": 1,
+              "accion": "mantenida",
+              "precio_referencia": 97.62,
+              "precio_fin": 97.59,
+              "cambio_pct": -0.03,
+              "pnl_usd": -0.03
+            },
+            {
+              "symbol": "BILL",
+              "bucket": "riesgo_alto",
+              "shares": 1,
+              "accion": "mantenida",
+              "precio_referencia": 61.45,
+              "precio_fin": 61.55,
+              "cambio_pct": 0.16,
+              "pnl_usd": 0.1
+            },
+            {
+              "symbol": "S",
+              "bucket": "riesgo_alto",
+              "shares": 2,
+              "accion": "mantenida",
+              "precio_referencia": 24.0,
+              "precio_fin": 24.09,
+              "cambio_pct": 0.38,
+              "pnl_usd": 0.18
+            },
+            {
+              "symbol": "XLP",
+              "bucket": "mediano_plazo",
+              "shares": 1,
+              "accion": "mantenida",
+              "precio_referencia": 91.88,
+              "precio_fin": 92.3,
+              "cambio_pct": 0.46,
+              "pnl_usd": 0.42
+            },
+            {
+              "symbol": "DOCU",
+              "bucket": "riesgo_alto",
+              "shares": 1,
+              "accion": "mantenida",
+              "precio_referencia": 80.04,
+              "precio_fin": 80.75,
+              "cambio_pct": 0.89,
+              "pnl_usd": 0.71
+            },
+            {
+              "symbol": "XLF",
+              "bucket": "mediano_plazo",
+              "shares": 2,
+              "accion": "mantenida",
+              "precio_referencia": 56.11,
+              "precio_fin": 56.51,
+              "cambio_pct": 0.71,
+              "pnl_usd": 0.8
+            },
+            {
+              "symbol": "IJR",
+              "bucket": "largo_plazo",
+              "shares": 1,
+              "accion": "mantenida",
+              "precio_referencia": 135.4,
+              "precio_fin": 136.39,
+              "cambio_pct": 0.73,
+              "pnl_usd": 0.99
+            }
+          ]
+        },
+        {
+          "fecha": "2026-11-27",
+          "equity": 986.41,
+          "pnl_dia_usd": 20.38,
+          "pnl_dia_pct": 2.11,
+          "activos": [
+            {
+              "symbol": "KO",
+              "bucket": "mediano_plazo",
+              "shares": 1,
+              "accion": "mantenida",
+              "precio_referencia": 97.59,
+              "precio_fin": 97.4,
+              "cambio_pct": -0.19,
+              "pnl_usd": -0.19
+            },
+            {
+              "symbol": "DOCU",
+              "bucket": "riesgo_alto",
+              "shares": 1,
+              "accion": "mantenida",
+              "precio_referencia": 80.75,
+              "precio_fin": 80.71,
+              "cambio_pct": -0.05,
+              "pnl_usd": -0.04
+            },
+            {
+              "symbol": "BILL",
+              "bucket": "riesgo_alto",
+              "shares": 1,
+              "accion": "mantenida",
+              "precio_referencia": 61.55,
+              "precio_fin": 61.73,
+              "cambio_pct": 0.29,
+              "pnl_usd": 0.18
+            },
+            {
+              "symbol": "XLP",
+              "bucket": "mediano_plazo",
+              "shares": 1,
+              "accion": "mantenida",
+              "precio_referencia": 92.3,
+              "precio_fin": 92.68,
+              "cambio_pct": 0.41,
+              "pnl_usd": 0.38
+            },
+            {
+              "symbol": "XLF",
+              "bucket": "mediano_plazo",
+              "shares": 2,
+              "accion": "mantenida",
+              "precio_referencia": 56.51,
+              "precio_fin": 57.16,
+              "cambio_pct": 1.15,
+              "pnl_usd": 1.3
+            },
+            {
+              "symbol": "IJR",
+              "bucket": "largo_plazo",
+              "shares": 1,
+              "accion": "mantenida",
+              "precio_referencia": 136.39,
+              "precio_fin": 138.51,
+              "cambio_pct": 1.55,
+              "pnl_usd": 2.12
+            },
+            {
+              "symbol": "S",
+              "bucket": "riesgo_alto",
+              "shares": 2,
+              "accion": "mantenida",
+              "precio_referencia": 24.09,
+              "precio_fin": 25.29,
+              "cambio_pct": 4.98,
+              "pnl_usd": 2.4
+            }
+          ]
+        }
+      ],
+      "activos_semana": [
+        {
+          "symbol": "XLF",
+          "bucket": "mediano_plazo",
+          "shares": 2,
+          "fecha_entrada": "2026-11-17",
+          "precio_entrada": 57.13,
+          "estado": "abierta",
+          "fecha_salida": null,
+          "precio_actual_o_salida": 57.16,
+          "pnl_total_usd": 0.06,
+          "pnl_total_pct": 0.05,
+          "pnl_semana_usd": 5.18
+        },
+        {
+          "symbol": "XLP",
+          "bucket": "mediano_plazo",
+          "shares": 1,
+          "fecha_entrada": "2026-11-04",
+          "precio_entrada": 92.03,
+          "estado": "abierta",
+          "fecha_salida": null,
+          "precio_actual_o_salida": 92.68,
+          "pnl_total_usd": 0.65,
+          "pnl_total_pct": 0.71,
+          "pnl_semana_usd": 2.22
+        },
+        {
+          "symbol": "IJR",
+          "bucket": "largo_plazo",
+          "shares": 1,
+          "fecha_entrada": "2026-11-18",
+          "precio_entrada": 137.2,
+          "estado": "abierta",
+          "fecha_salida": null,
+          "precio_actual_o_salida": 138.51,
+          "pnl_total_usd": 1.31,
+          "pnl_total_pct": 0.95,
+          "pnl_semana_usd": 7.26
+        },
+        {
+          "symbol": "KO",
+          "bucket": "mediano_plazo",
+          "shares": 1,
+          "fecha_entrada": "2026-11-23",
+          "precio_entrada": 95.98,
+          "estado": "abierta",
+          "fecha_salida": null,
+          "precio_actual_o_salida": 97.4,
+          "pnl_total_usd": 1.42,
+          "pnl_total_pct": 1.48,
+          "pnl_semana_usd": 1.42
+        },
+        {
+          "symbol": "S",
+          "bucket": "riesgo_alto",
+          "shares": 2,
+          "fecha_entrada": "2026-11-11",
+          "precio_entrada": 23.8,
+          "estado": "abierta",
+          "fecha_salida": null,
+          "precio_actual_o_salida": 25.29,
+          "pnl_total_usd": 2.98,
+          "pnl_total_pct": 6.26,
+          "pnl_semana_usd": 4.76
+        },
+        {
+          "symbol": "BILL",
+          "bucket": "riesgo_alto",
+          "shares": 1,
+          "fecha_entrada": "2026-11-16",
+          "precio_entrada": 57.69,
+          "estado": "abierta",
+          "fecha_salida": null,
+          "precio_actual_o_salida": 61.73,
+          "pnl_total_usd": 4.04,
+          "pnl_total_pct": 7.0,
+          "pnl_semana_usd": 0.29
+        },
+        {
+          "symbol": "DOCU",
+          "bucket": "riesgo_alto",
+          "shares": 1,
+          "fecha_entrada": "2026-11-17",
+          "precio_entrada": 76.01,
+          "estado": "abierta",
+          "fecha_salida": null,
+          "precio_actual_o_salida": 80.71,
+          "pnl_total_usd": 4.7,
+          "pnl_total_pct": 6.18,
+          "pnl_semana_usd": 6.15
+        }
+      ]
+    },
+    {
+      "id": "reverse_winners",
+      "nombre": "Reverse Winners (paper portfolio, EXP-005)",
+      "dias": [
+        {
+          "fecha": "2026-11-23",
+          "equity": 1000.0,
+          "pnl_dia_usd": 0.0,
+          "pnl_dia_pct": 0.0,
+          "compradas": 0,
+          "tickers_comprados": []
+        },
+        {
+          "fecha": "2026-11-24",
+          "equity": 1000.0,
+          "pnl_dia_usd": 0.0,
+          "pnl_dia_pct": 0.0,
+          "compradas": 0,
+          "tickers_comprados": []
+        },
+        {
+          "fecha": "2026-11-25",
+          "equity": 1000.0,
+          "pnl_dia_usd": 0.0,
+          "pnl_dia_pct": 0.0,
+          "compradas": 0,
+          "tickers_comprados": []
+        },
+        {
+          "fecha": "2026-11-27",
+          "equity": 1000.0,
+          "pnl_dia_usd": 0.0,
+          "pnl_dia_pct": 0.0,
+          "compradas": 60,
+          "tickers_comprados": [
+            "ABR",
+            "ADEA",
+            "AESI",
+            "AGNT",
+            "AMAT",
+            "AMD",
+            "AVAV",
+            "BE",
+            "CCOI",
+            "CDE",
+            "CIEN",
+            "CLSK",
+            "COHU",
+            "DAVE",
+            "DDOG",
+            "DELL",
+            "DOCN",
+            "DY",
+            "ECG",
+            "ENPH",
+            "FLEX",
+            "FORM",
+            "HIMS",
+            "HL",
+            "HPE",
+            "ICHR",
+            "KLIC",
+            "KRMN",
+            "LBRT",
+            "LEU",
+            "LITE",
+            "LRCX",
+            "MARA",
+            "MRVL",
+            "MTZ",
+            "MU",
+            "MXL",
+            "NVDA",
+            "NXT",
+            "ORCL",
+            "P",
+            "PENG",
+            "PRIM",
+            "QDEL",
+            "ROCK",
+            "SEDG",
+            "SMCI",
+            "SMTC",
+            "SNDK",
+            "SNEX",
+            "STRA",
+            "STRL",
+            "STX",
+            "TER",
+            "TTMI",
+            "UCTT",
+            "VCYT",
+            "VICR",
+            "VRT",
+            "WDC"
+          ]
+        }
+      ],
+      "n_posiciones_abiertas": 60,
+      "efectivo": 0.0,
+      "primeras_ventas_estimadas": "tras 30 sesiones de mercado desde cada compra (las del 27-nov, ≈ 12-ene-2027)"
+    }
+  ],
+  "candidatos": {
+    "compra": [
+      {
+        "symbol": "DBC",
+        "bucket": "largo_plazo",
+        "estrategia": "time_series_momentum",
+        "fecha_dato": "2026-11-27",
+        "precio_entrada": 29.55,
+        "stop": 28.15,
+        "acciones_sugeridas": 6,
+        "motivo_no_entro": "efectivo_insuficiente"
+      },
+      {
+        "symbol": "DIA",
+        "bucket": "largo_plazo",
+        "estrategia": "time_series_momentum",
+        "fecha_dato": "2026-11-27",
+        "precio_entrada": 507.6,
+        "stop": 479.07,
+        "acciones_sugeridas": 0,
+        "motivo_no_entro": "capital_insuficiente"
+      },
+      {
+        "symbol": "SHY",
+        "bucket": "largo_plazo",
+        "estrategia": "time_series_momentum",
+        "fecha_dato": "2026-11-27",
+        "precio_entrada": 81.62,
+        "stop": 81.23,
+        "acciones_sugeridas": 23,
+        "motivo_no_entro": "efectivo_insuficiente"
+      },
+      {
+        "symbol": "USO",
+        "bucket": "largo_plazo",
+        "estrategia": "time_series_momentum",
+        "fecha_dato": "2026-11-27",
+        "precio_entrada": 137.77,
+        "stop": 123.51,
+        "acciones_sugeridas": 0,
+        "motivo_no_entro": "capital_insuficiente"
+      }
+    ],
+    "vigilar_venta": [
+      {
+        "symbol": "IJR",
+        "bucket": "largo_plazo",
+        "motor": "vivo",
+        "cierre": 138.51,
+        "stop": 134.89,
+        "distancia_al_stop_pct": 2.68,
+        "senal_de_salida": false
+      },
+      {
+        "symbol": "PFE",
+        "bucket": "mediano_plazo",
+        "motor": "vivo",
+        "cierre": 28.52,
+        "stop": 28.03,
+        "distancia_al_stop_pct": 1.75,
+        "senal_de_salida": false
+      },
+      {
+        "symbol": "XLF",
+        "bucket": "mediano_plazo",
+        "motor": "vivo",
+        "cierre": 57.16,
+        "stop": 56.3,
+        "distancia_al_stop_pct": 1.53,
+        "senal_de_salida": false
+      },
+      {
+        "symbol": "KO",
+        "bucket": "mediano_plazo",
+        "motor": "vivo",
+        "cierre": 97.4,
+        "stop": 95.95,
+        "distancia_al_stop_pct": 1.52,
+        "senal_de_salida": false
+      }
+    ]
+  }
+}

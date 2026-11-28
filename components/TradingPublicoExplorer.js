@@ -10,6 +10,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import ResumenSemanalTrading from "@/components/ResumenSemanalTrading";
 
 function LinkSimbolo({ symbol }) {
   return (
@@ -184,8 +185,6 @@ function AvisoMoneda({ resumen }) {
   );
 }
 
-const ESTADO_ICONO = { ok: "🟢", revision: "🟡", alerta: "🔴", falta: "🔴" };
-
 function EstadoSistemaChips({ resumen }) {
   const chips = [
     {
@@ -211,25 +210,6 @@ function EstadoSistemaChips({ resumen }) {
           {c.ok ? "🟢" : "🔴"} {c.ok ? c.textoOk : c.textoMal}
         </span>
       ))}
-    </div>
-  );
-}
-
-function ScorecardSistema({ scorecard }) {
-  return (
-    <div className="pulsodash-panel" style={{ marginBottom: 24 }}>
-      <div className="pulsodash-panel-head">
-        <span className="pulsodash-panel-title">Salud del sistema</span>
-      </div>
-      <div className="trading-scorecard" style={{ marginTop: 12 }}>
-        {scorecard.map((s) => (
-          <div key={s.dimension} className="trading-scorecard-row">
-            <span className="trading-scorecard-icono">{ESTADO_ICONO[s.estado]}</span>
-            <span className="trading-scorecard-dim">{s.dimension}</span>
-            <span className="trading-scorecard-detalle">{s.detalle}</span>
-          </div>
-        ))}
-      </div>
     </div>
   );
 }
@@ -407,7 +387,7 @@ function ModuloDashboard({ data }) {
 
       <ContribucionRetorno contribucionRetorno={data.contribucionRetorno} />
 
-      <ScorecardSistema scorecard={data.scorecard} />
+      <ResumenSemanalTrading />
 
       <div className="pulsodash-panel" style={{ marginBottom: 24 }}>
         <div className="pulsodash-panel-head">
